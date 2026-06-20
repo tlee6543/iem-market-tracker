@@ -180,7 +180,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 89/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 12/15, source diversity 5/10, price consistency 7/10. Current inputs: 22 included priced sample(s), 2 in the last 90 days, 4 in the last 180 days, latest sample 14d ago, 1 source type(s), price CV 0.21." aria-label="Liquidity/confidence score: 89/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 12/15, source diversity 5/10, price consistency 7/10. Current inputs: 22 included priced sample(s), 2 in the last 90 days, 4 in the last 180 days, latest sample 14d ago, 1 source type(s), price CV 0.21." tabindex="0">High (89/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">22 included sample(s), latest 14d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 69/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 15/30, recent sample depth 7/15, source diversity 5/10, price consistency 7/10. Current inputs: 20 included priced sample(s), 0 in the last 90 days, 2 in the last 180 days, latest sample 94d ago, 1 source type(s), price CV 0.20." aria-label="Liquidity/confidence score: 69/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 15/30, recent sample depth 7/15, source diversity 5/10, price consistency 7/10. Current inputs: 20 included priced sample(s), 0 in the last 90 days, 2 in the last 180 days, latest sample 94d ago, 1 source type(s), price CV 0.20." tabindex="0">Medium (69/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">20 included sample(s), latest 94d ago.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -210,8 +210,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
+<tr id="row-0" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
 <td>2026-06-06</td>
 <td>$925</td>
 <td><span class="pill">active</span></td>
@@ -221,7 +221,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>robbf818</td>
 <td>0</td>
 <td>0</td>
-<td>Fair (3.6% below market)</td>
+<td>Good Deal (13.4% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition.110299/" target="_blank">source</a></td>
 </tr>
 
@@ -236,12 +236,12 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>gwompki</td>
 <td>0</td>
 <td>0</td>
-<td>Great Deal (24.5% below market)</td>
+<td>Great Deal (32.1% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition-with-monarch-cable.110263/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
+<tr id="row-2" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" ></td>
 <td>2026-05-16</td>
 <td>$750</td>
 <td><span class="pill">active</span></td>
@@ -251,7 +251,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>alsorkin</td>
 <td>0</td>
 <td>0</td>
-<td>Great Deal (21.9% below market)</td>
+<td>Great Deal (29.8% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition.109122/" target="_blank">source</a></td>
 </tr>
 
@@ -281,7 +281,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>tink97</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.6% above market)</td>
+<td>Closed: Fair (8.7% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition.105658/" target="_blank">source</a></td>
 </tr>
 
@@ -296,7 +296,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>CL14715</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (35.4% above market)</td>
+<td>Closed: High (21.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-fe.102793/" target="_blank">source</a></td>
 </tr>
 
@@ -326,7 +326,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>tink97</td>
 <td>1</td>
 <td>1</td>
-<td>Closed: Fair (1.0% below market)</td>
+<td>Closed: Good Deal (11.1% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-iem.98138/" target="_blank">source</a></td>
 </tr>
 
@@ -341,7 +341,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>wharfrat1</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.6% above market)</td>
+<td>Closed: Fair (2.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/sold-empire-ears-triton-launch-edition.97169/" target="_blank">source</a></td>
 </tr>
 
@@ -356,7 +356,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>dpwolfordMD</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.5% above market)</td>
+<td>Closed: Fair (2.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton.96456/" target="_blank">source</a></td>
 </tr>
 
@@ -371,7 +371,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>lefty748</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (45.9% above market)</td>
+<td>Closed: Overpriced (31.0% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition.95548/" target="_blank">source</a></td>
 </tr>
 
@@ -386,7 +386,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Mllump</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (16.7% below market)</td>
+<td>Closed: Great Deal (25.1% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-le-no-cable.94930/" target="_blank">source</a></td>
 </tr>
 
@@ -431,7 +431,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>thnkdifferent</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.8% below market)</td>
+<td>Closed: Good Deal (16.2% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition.91645/" target="_blank">source</a></td>
 </tr>
 
@@ -446,7 +446,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Yamson</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.0% below market)</td>
+<td>Closed: Good Deal (11.1% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/sold-empire-ears-triton.89258/" target="_blank">source</a></td>
 </tr>
 
@@ -461,7 +461,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>StarlingCurve</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.0% below market)</td>
+<td>Closed: Good Deal (11.1% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition.87117/" target="_blank">source</a></td>
 </tr>
 
@@ -476,7 +476,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>subguy812</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.6% above market)</td>
+<td>Closed: Fair (2.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition-mint.86212/" target="_blank">source</a></td>
 </tr>
 
@@ -491,7 +491,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>osanchez4808</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (13.5% below market)</td>
+<td>Closed: Great Deal (22.3% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton.86131/" target="_blank">source</a></td>
 </tr>
 
@@ -506,7 +506,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>apagumila</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.6% above market)</td>
+<td>Closed: Fair (2.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition.85838/" target="_blank">source</a></td>
 </tr>
 
@@ -521,7 +521,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Scott2578</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (19.8% above market)</td>
+<td>Closed: Fair (7.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/like-new-empire-ears-triton-launch-edition-w-warranty.85475/" target="_blank">source</a></td>
 </tr>
 
@@ -536,7 +536,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>bradyc100</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.2% below market)</td>
+<td>Closed: Good Deal (15.8% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition.84710/" target="_blank">source</a></td>
 </tr>
 
@@ -551,7 +551,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>superpete93</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (35.4% above market)</td>
+<td>Closed: High (21.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition.83605/" target="_blank">source</a></td>
 </tr>
 
@@ -566,7 +566,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>BDalton</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (30.2% above market)</td>
+<td>Closed: High (17.0% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition-sold.82349/" target="_blank">source</a></td>
 </tr>
 
@@ -581,7 +581,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Mllump</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (48.5% above market)</td>
+<td>Closed: Overpriced (33.4% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition-open-box.80881/" target="_blank">source</a></td>
 </tr>
 
@@ -596,7 +596,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Mllump</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (55.8% above market)</td>
+<td>Closed: Overpriced (39.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition-open-box.80375/" target="_blank">source</a></td>
 </tr>
 
@@ -611,7 +611,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Dandelion777</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (51.1% above market)</td>
+<td>Closed: Overpriced (35.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton-launch-edition.80079/" target="_blank">source</a></td>
 </tr>
 
@@ -626,7 +626,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>PassionForMusic</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (71.9% above market)</td>
+<td>Closed: Overpriced (54.4% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-triton.78091/" target="_blank">source</a></td>
 </tr>
 

@@ -180,7 +180,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 63/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 15/30, recent sample depth 4/15, source diversity 5/10, price consistency 4/10. Current inputs: 21 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 91d ago, 1 source type(s), price CV 0.23." aria-label="Liquidity/confidence score: 63/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 15/30, recent sample depth 4/15, source diversity 5/10, price consistency 4/10. Current inputs: 21 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 91d ago, 1 source type(s), price CV 0.23." tabindex="0">Medium (63/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">21 included sample(s), latest 91d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 56/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 8/30, recent sample depth 4/15, source diversity 5/10, price consistency 4/10. Current inputs: 20 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 250d ago, 1 source type(s), price CV 0.24." aria-label="Liquidity/confidence score: 56/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 8/30, recent sample depth 4/15, source diversity 5/10, price consistency 4/10. Current inputs: 20 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 250d ago, 1 source type(s), price CV 0.24." tabindex="0">Medium (56/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">20 included sample(s), latest 250d ago.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -210,8 +210,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
+<tr id="row-0" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
 <td>2026-03-21</td>
 <td>$2,100</td>
 <td><span class="pill">active</span></td>
@@ -221,7 +221,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Riyaz</td>
 <td>0</td>
 <td>0</td>
-<td>High (15.0% above market)</td>
+<td>Overpriced (33.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-gm-iem.105832/" target="_blank">source</a></td>
 </tr>
 
@@ -236,7 +236,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>ajimon</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Great Deal (39.7% below market)</td>
+<td>Closed: Great Deal (29.9% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro-ciem.96702/" target="_blank">source</a></td>
 </tr>
 
@@ -251,7 +251,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>MicDavism141</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (12.3% above market)</td>
+<td>Closed: Overpriced (30.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro-mint-condition.96652/" target="_blank">source</a></td>
 </tr>
 
@@ -266,7 +266,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Chiu</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Great Deal (31.5% below market)</td>
+<td>Closed: Great Deal (20.3% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro%E2%80%94ciem.92928/" target="_blank">source</a></td>
 </tr>
 
@@ -281,7 +281,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>bradyc100</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (4.1% above market)</td>
+<td>Closed: High (21.1% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/wts-wtt-fatfreq-grand-maestro.86502/" target="_blank">source</a></td>
 </tr>
 
@@ -296,7 +296,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Amit</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (17.8% below market)</td>
+<td>Closed: Fair (4.4% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro-priced-to-sell.86333/" target="_blank">source</a></td>
 </tr>
 
@@ -311,7 +311,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Yamson</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (4.1% above market)</td>
+<td>Closed: High (21.1% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro.85847/" target="_blank">source</a></td>
 </tr>
 
@@ -326,7 +326,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>jawicedman</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (12.3% below market)</td>
+<td>Closed: Fair (2.0% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro.85717/" target="_blank">source</a></td>
 </tr>
 
@@ -341,7 +341,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Kang</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (4.1% above market)</td>
+<td>Closed: High (21.1% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro.80484/" target="_blank">source</a></td>
 </tr>
 
@@ -356,7 +356,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Echo42987</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (9.6% above market)</td>
+<td>Closed: Overpriced (27.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro-upgraded-cable-free-effect-audio-cable.75929/" target="_blank">source</a></td>
 </tr>
 
@@ -371,7 +371,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>MarkPharaohII</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (4.1% above market)</td>
+<td>Closed: High (21.1% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro-upgraded-cable-black-blue-noah-modules.74984/" target="_blank">source</a></td>
 </tr>
 
@@ -386,7 +386,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Prohono</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (9.6% above market)</td>
+<td>Closed: Overpriced (27.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro.72013/" target="_blank">source</a></td>
 </tr>
 
@@ -401,7 +401,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Aetherhole</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (27.4% above market)</td>
+<td>Closed: Overpriced (48.2% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro-upgraded-cable-and-black-blue-noah-modules.71210/" target="_blank">source</a></td>
 </tr>
 
@@ -416,7 +416,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>harshkamboj</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (27.4% above market)</td>
+<td>Closed: Overpriced (48.2% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro-w-upgraded-cable.69010/" target="_blank">source</a></td>
 </tr>
 
@@ -431,7 +431,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Amit</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (82.7% above market)</td>
+<td>Closed: Overpriced (112.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro.67678/" target="_blank">source</a></td>
 </tr>
 
@@ -446,7 +446,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>ranfan</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (31.5% above market)</td>
+<td>Closed: Overpriced (53.0% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro.64200/" target="_blank">source</a></td>
 </tr>
 
@@ -461,7 +461,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>tfenton02</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (31.5% above market)</td>
+<td>Closed: Overpriced (53.0% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro-black-blue-module-gold-upgrade-cable.62803/" target="_blank">source</a></td>
 </tr>
 
@@ -476,7 +476,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>evo</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (9.6% below market)</td>
+<td>Closed: Fair (5.2% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro-ciems.62496/" target="_blank">source</a></td>
 </tr>
 
@@ -491,7 +491,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>harshkamboj</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (31.5% above market)</td>
+<td>Closed: Overpriced (53.0% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro.61596/" target="_blank">source</a></td>
 </tr>
 
@@ -506,7 +506,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>mt-hifidelity</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (15.0% above market)</td>
+<td>Closed: Overpriced (33.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro-price-drop.61591/" target="_blank">source</a></td>
 </tr>
 
@@ -521,7 +521,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Visceral</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (37.0% above market)</td>
+<td>Closed: Overpriced (59.4% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro-for-trade.59453/" target="_blank">source</a></td>
 </tr>
 
@@ -536,7 +536,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>fiascogarcia</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (26.0% above market)</td>
+<td>Closed: Overpriced (46.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro.53879/" target="_blank">source</a></td>
 </tr>
 
@@ -551,7 +551,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>harshkamboj</td>
 <td>1</td>
 <td>1</td>
-<td>Closed: Overpriced (26.0% above market)</td>
+<td>Closed: Overpriced (46.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/pending-fatfreq-grand-maestro-w-blue-apex-modules.51128/" target="_blank">source</a></td>
 </tr>
 
@@ -566,7 +566,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>Natesdailies</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (34.2% above market)</td>
+<td>Closed: Overpriced (56.2% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fatfreq-grand-maestro-upgrade-cable.49227/" target="_blank">source</a></td>
 </tr>
 
