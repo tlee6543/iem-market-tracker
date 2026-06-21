@@ -1,6 +1,6 @@
 
 <html>
-<head><title>Symphonium Helios - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
+<head><title>Unique Melody MEXT - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
 body { font-family: Arial; margin: 40px; background: #f7f7f7; color: #111; }
 table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
 .main-table .iem-col { width: 28%; max-width: 320px; }
@@ -165,14 +165,14 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     </div>
     
 <p><a href="index.html">← Back</a></p>
-<h1>Symphonium Helios</h1>
-<p><a href="brand-symphonium.html">Symphonium</a></p>
+<h1>Unique Melody MEXT</h1>
+<p><a href="brand-unique-melody.html">Unique Melody</a></p>
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$1,100</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2021</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">4BA</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
 
@@ -180,15 +180,13 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 77/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 22/30, recent sample depth 8/15, source diversity 8/10, price consistency 4/10. Current inputs: 19 included priced sample(s), 1 in the last 90 days, 6 in the last 180 days, latest sample 87d ago, 2 source type(s), price CV 0.23." aria-label="Liquidity/confidence score: 77/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 22/30, recent sample depth 8/15, source diversity 8/10, price consistency 4/10. Current inputs: 19 included priced sample(s), 1 in the last 90 days, 6 in the last 180 days, latest sample 87d ago, 2 source type(s), price CV 0.23." tabindex="0">High (77/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">19 included sample(s), latest 87d ago.</span></div>
-    
-    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>21</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>1</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -203,8 +201,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
-            <canvas id="msrpChart"></canvas>
+            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
             
         </div>
     </div>
@@ -213,430 +210,40 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
-<td>2026-03-26</td>
-<td>$500</td>
-<td><span class="pill">closed</span></td>
-<td>and good cosmetic condition with two very small nicks</td>
+<tr id="row-0" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<td>2026-06-21</td>
+<td>$450</td>
+<td><span class="pill">active</span></td>
+<td>like new, excellent</td>
 <td>0</td>
-<td>reddit_rss</td>
-<td>OmieOneKenomi</td>
+<td>headfi</td>
+<td>ToobinTobes</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.2% above market)</td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1s499em/wtsusacahsymphonium_helioswpaypal_500_gs/#item-1" target="_blank">source</a></td>
+<td>N/A</td>
+<td><a href="https://www.head-fi.org/classifieds/unique-melody-mext.111035/" target="_blank">source</a></td>
 </tr>
 
 <tr id="row-1" class="excluded">
 <td></td>
-<td>2026-03-23</td>
 <td></td>
-<td><span class="pill">active</span></td>
 <td></td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>OmieOneKenomi</td>
-<td>1</td>
-<td>0</td>
-<td>N/A</td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1s1ludk/wtsusacahsymphonium_helioswpaypal_550/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-2" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
-<td>2026-03-19</td>
-<td>$470</td>
 <td><span class="pill">closed</span></td>
-<td>great condition</td>
+<td></td>
 <td>0</td>
 <td>headfi</td>
-<td>Silco</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Fair (0.8% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios-w-original-accessories.105754/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-3" class="excluded">
-<td></td>
-<td>2026-02-26</td>
-<td></td>
-<td><span class="pill">active</span></td>
-<td></td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>SMD_BigBanana</td>
+<td>unknown</td>
 <td>0</td>
 <td>0</td>
 <td>N/A</td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1rflx4f/wtsuscah_symphonium_helios_og_oriolus_ba300s_w/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-4" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="4" checked></td>
-<td>2026-02-12</td>
-<td>$350</td>
-<td><span class="pill">closed</span></td>
-<td></td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>YayBlueJay</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Great Deal (25.0% below market)</td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1r39o69/wts_usma_h_fiio_fa7_w_60_shipping/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-5" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="5" checked></td>
-<td>2026-02-01</td>
-<td>$465</td>
-<td><span class="pill">closed</span></td>
-<td></td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>kwoodell</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Fair (0.3% below market)</td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1qt76x3/wts_usamo_h_melodic_artification_alter_ego/#item-2" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-6" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="6" checked></td>
-<td>2026-01-20</td>
-<td>$465</td>
-<td><span class="pill">closed</span></td>
-<td></td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>ekman321</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Fair (0.3% below market)</td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1qhsuhg/wts_usca_h_boutique_brands_standout_iems_w_pp/#item-4" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-7" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="7" checked></td>
-<td>2026-01-17</td>
-<td>$475</td>
-<td><span class="pill">closed</span></td>
-<td></td>
-<td>0</td>
-<td>headfi</td>
-<td>ekman321</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Fair (1.8% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios.102132/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-8" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="8" checked></td>
-<td>2025-11-06</td>
-<td>$510</td>
-<td><span class="pill">closed</span></td>
-<td>excellent, used</td>
-<td>0</td>
-<td>headfi</td>
-<td>musiclover2932</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Fair (9.4% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios.98056/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-9" class="excluded">
-<td></td>
-<td>2025-09-22</td>
-<td></td>
-<td><span class="pill">closed</span></td>
-<td>and have a very unique one of a kind faceplate as they were originally designed for an overseas distributor</td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>Markmurd61</td>
-<td>0</td>
-<td>0</td>
-<td>N/A</td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1nntx5y/wtsustxhsymphonium_helios_unique_faceplatewpaypal/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-10" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="10" checked></td>
-<td>2025-09-19</td>
-<td>$475</td>
-<td><span class="pill">closed</span></td>
-<td>good condition</td>
-<td>0</td>
-<td>headfi</td>
-<td>Markmurd</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Fair (1.8% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios-unique-faceplate-price-drop.95329/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-11" class="excluded">
-<td></td>
-<td>2025-09-08</td>
-<td></td>
-<td><span class="pill">active</span></td>
-<td>and have a very unique faceplate as they were originally designed for an overseas distributor</td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>Markmurd61</td>
-<td>1</td>
-<td>0</td>
-<td>N/A</td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1nbzvdv/wtsustxhsymphonium_helios_unique_faceplate/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-12" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="12" ></td>
-<td>2025-09-08</td>
-<td>$650</td>
-<td><span class="pill">closed</span></td>
-<td>excellent</td>
-<td>0</td>
-<td>headfi</td>
-<td>Markmurd</td>
-<td>1</td>
-<td>0</td>
-<td>Closed: Overpriced (39.4% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios-unique-faceplate.94687/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-13" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="13" checked></td>
-<td>2025-08-23</td>
-<td>$610</td>
-<td><span class="pill">closed</span></td>
-<td>mint, like new, excellent, great condition, used</td>
-<td>0</td>
-<td>headfi</td>
-<td>Sharppain</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Overpriced (30.8% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios-iem-mint.93802/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-14" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="14" ></td>
-<td>2025-08-21</td>
-<td>$550</td>
-<td><span class="pill">active</span></td>
-<td></td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>ksli99</td>
-<td>0</td>
-<td>0</td>
-<td>High (17.9% above market)</td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1mwjveo/wts_usany_h_symphonium_helios_w_paypal/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-15" class="excluded">
-<td></td>
-<td>2025-06-09</td>
-<td></td>
-<td><span class="pill">closed</span></td>
-<td>and include all horiginal packaging as well as most of the original accessories</td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>Markmurd61</td>
-<td>1</td>
-<td>0</td>
-<td>N/A</td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1l7gt1i/wtsustxh_symphonium_helios_iemwpaypal_55000_obo/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-16" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="16" checked></td>
-<td>2024-09-13</td>
-<td>$500</td>
-<td><span class="pill">closed</span></td>
-<td>great condition</td>
-<td>0</td>
-<td>headfi</td>
-<td>AsciiJC</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Fair (7.2% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios.74766/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-17" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="17" checked></td>
-<td>2024-06-20</td>
-<td>$480</td>
-<td><span class="pill">closed</span></td>
-<td></td>
-<td>0</td>
-<td>headfi</td>
-<td>DavidLovesIEMs</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Fair (2.9% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios.70156/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-18" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="18" checked></td>
-<td>2023-06-30</td>
-<td>$700</td>
-<td><span class="pill">closed</span></td>
-<td>like new, excellent</td>
-<td>0</td>
-<td>headfi</td>
-<td>Cessnas172</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Overpriced (50.1% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios.50181/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-19" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="19" checked></td>
-<td>2023-06-16</td>
-<td>$700</td>
-<td><span class="pill">closed</span></td>
-<td>like new, excellent</td>
-<td>0</td>
-<td>headfi</td>
-<td>mjagger77</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Overpriced (50.1% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios-price-drop.49417/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-20" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="20" checked></td>
-<td>2023-05-12</td>
-<td>$750</td>
-<td><span class="pill">closed</span></td>
-<td>like new, excellent</td>
-<td>0</td>
-<td>headfi</td>
-<td>Retrorai</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Overpriced (60.8% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios.47581/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-21" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="21" checked></td>
-<td>2023-04-11</td>
-<td>$750</td>
-<td><span class="pill">closed</span></td>
-<td>like new, excellent</td>
-<td>0</td>
-<td>headfi</td>
-<td>Chiu</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Overpriced (60.8% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios.45589/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-22" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="22" checked></td>
-<td>2023-03-01</td>
-<td>$750</td>
-<td><span class="pill">closed</span></td>
-<td></td>
-<td>0</td>
-<td>headfi</td>
-<td>freeryder05</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Overpriced (60.8% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/price-drop-symphonium-helios-4-4mm-to-3-5mm-ddhifi-adapter.42678/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-23" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="23" checked></td>
-<td>2023-02-22</td>
-<td>$650</td>
-<td><span class="pill">closed</span></td>
-<td>like new, excellent</td>
-<td>0</td>
-<td>headfi</td>
-<td>PacoTaco</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Overpriced (39.4% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios.42209/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-24" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="24" checked></td>
-<td>2023-02-16</td>
-<td>$780</td>
-<td><span class="pill">closed</span></td>
-<td>mint, like new, excellent</td>
-<td>0</td>
-<td>headfi</td>
-<td>evo</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Overpriced (67.2% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios-4-4mm.41807/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-25" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="25" checked></td>
-<td>2023-02-12</td>
-<td>$825</td>
-<td><span class="pill">closed</span></td>
-<td>like new, excellent, used</td>
-<td>0</td>
-<td>headfi</td>
-<td>DavidLovesIEMs</td>
-<td>0</td>
-<td>0</td>
-<td>Closed: Overpriced (76.9% above market)</td>
-<td><a href="https://www.head-fi.org/classifieds/sold-symphonium-helios.41553/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-26" class="excluded">
-<td></td>
-<td>2023-02-11</td>
-<td></td>
-<td><span class="pill">closed</span></td>
-<td>like new, excellent</td>
-<td>0</td>
-<td>headfi</td>
-<td>DavidLovesIEMs</td>
-<td>1</td>
-<td>0</td>
-<td>N/A</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios-for-effect-x-elysian-gaea.41525/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-27" class="excluded">
-<td></td>
-<td>2023-01-17</td>
-<td></td>
-<td><span class="pill">closed</span></td>
-<td>like new, excellent</td>
-<td>0</td>
-<td>headfi</td>
-<td>DavidLovesIEMs</td>
-<td>1</td>
-<td>0</td>
-<td>N/A</td>
-<td><a href="https://www.head-fi.org/classifieds/symphonium-helios.39933/" target="_blank">source</a></td>
+<td><a href="https://www.head-fi.org/classifieds/new-unique-melody-um-mext-4-4mm.105136/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Symphonium Helios", "url": "https://old.reddit.com/r/AVexchange/comments/1s499em/wtsusacahsymphonium_helioswpaypal_500_gs/#item-1", "price_num": 500.0, "date_ms": 1774535883000, "listing_status": "closed", "condition_text": "and good cosmetic condition with two very small nicks", "platform": "reddit_rss"}, {"row_id": 1, "title": "Symphonium Helios", "url": "https://old.reddit.com/r/AVexchange/comments/1s1ludk/wtsusacahsymphonium_helioswpaypal_550/#item-1", "price_num": null, "date_ms": 1774283640000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 2, "title": "Sold: Symphonium Helios w/ original accessories", "url": "https://www.head-fi.org/classifieds/symphonium-helios-w-original-accessories.105754/", "price_num": 470.0, "date_ms": 1773878400000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi"}, {"row_id": 3, "title": "Symphonium Helios OG, Oriolus Ba300s", "url": "https://old.reddit.com/r/AVexchange/comments/1rflx4f/wtsuscah_symphonium_helios_og_oriolus_ba300s_w/#item-1", "price_num": null, "date_ms": 1772138865000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 4, "title": "I sold my Symphonium Helios on here for", "url": "https://old.reddit.com/r/AVexchange/comments/1r39o69/wts_usma_h_fiio_fa7_w_60_shipping/#item-1", "price_num": 350.0, "date_ms": 1770940410000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 5, "title": "at asking) Symphonium Helios", "url": "https://old.reddit.com/r/AVexchange/comments/1qt76x3/wts_usamo_h_melodic_artification_alter_ego/#item-2", "price_num": 465.0, "date_ms": 1769972220000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 6, "title": "Symphonium Helios ($1099 MSRP) - Priced @", "url": "https://old.reddit.com/r/AVexchange/comments/1qhsuhg/wts_usca_h_boutique_brands_standout_iems_w_pp/#item-4", "price_num": 465.0, "date_ms": 1768888097000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 7, "title": "Closed: Symphonium Helios", "url": "https://www.head-fi.org/classifieds/symphonium-helios.102132/", "price_num": 475.0, "date_ms": 1768608000000, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 8, "title": "Sold: Symphonium Helios", "url": "https://www.head-fi.org/classifieds/symphonium-helios.98056/", "price_num": 510.0, "date_ms": 1762387200000, "listing_status": "closed", "condition_text": "excellent, used", "platform": "headfi"}, {"row_id": 9, "title": "Symphonium Helios - Unique Faceplate", "url": "https://old.reddit.com/r/AVexchange/comments/1nntx5y/wtsustxhsymphonium_helios_unique_faceplatewpaypal/#item-1", "price_num": null, "date_ms": 1758564518000, "listing_status": "closed", "condition_text": "and have a very unique one of a kind faceplate as they were originally designed for an overseas distributor", "platform": "reddit_rss"}, {"row_id": 10, "title": "Closed: Symphonium Helios - Unique Faceplate (Price Drop)", "url": "https://www.head-fi.org/classifieds/symphonium-helios-unique-faceplate-price-drop.95329/", "price_num": 475.0, "date_ms": 1758240000000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi"}, {"row_id": 11, "title": "Symphonium Helios - Unique Faceplate", "url": "https://old.reddit.com/r/AVexchange/comments/1nbzvdv/wtsustxhsymphonium_helios_unique_faceplate/#item-1", "price_num": null, "date_ms": 1757365544000, "listing_status": "active", "condition_text": "and have a very unique faceplate as they were originally designed for an overseas distributor", "platform": "reddit_rss"}, {"row_id": 12, "title": "Closed: Symphonium Helios - Unique Faceplate", "url": "https://www.head-fi.org/classifieds/symphonium-helios-unique-faceplate.94687/", "price_num": 650.0, "date_ms": 1757289600000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi"}, {"row_id": 13, "title": "Sold: Symphonium Helios IEM mint", "url": "https://www.head-fi.org/classifieds/symphonium-helios-iem-mint.93802/", "price_num": 610.0, "date_ms": 1755907200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, great condition, used", "platform": "headfi"}, {"row_id": 14, "title": "Symphonium Helios", "url": "https://old.reddit.com/r/AVexchange/comments/1mwjveo/wts_usany_h_symphonium_helios_w_paypal/#item-1", "price_num": 550.0, "date_ms": 1755802657000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 15, "title": "Symphonium Helios IEM", "url": "https://old.reddit.com/r/AVexchange/comments/1l7gt1i/wtsustxh_symphonium_helios_iemwpaypal_55000_obo/#item-1", "price_num": null, "date_ms": 1749503835000, "listing_status": "closed", "condition_text": "and include all horiginal packaging as well as most of the original accessories", "platform": "reddit_rss"}, {"row_id": 16, "title": "Closed: Symphonium Helios", "url": "https://www.head-fi.org/classifieds/symphonium-helios.74766/", "price_num": 500.0, "date_ms": 1726185600000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi"}, {"row_id": 17, "title": "Closed: Symphonium Helios", "url": "https://www.head-fi.org/classifieds/symphonium-helios.70156/", "price_num": 480.0, "date_ms": 1718841600000, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 18, "title": "Sold: Symphonium Helios", "url": "https://www.head-fi.org/classifieds/symphonium-helios.50181/", "price_num": 700.0, "date_ms": 1688083200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 19, "title": "Closed: Symphonium Helios-Price Drop", "url": "https://www.head-fi.org/classifieds/symphonium-helios-price-drop.49417/", "price_num": 700.0, "date_ms": 1686873600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 20, "title": "Closed: Symphonium Helios", "url": "https://www.head-fi.org/classifieds/symphonium-helios.47581/", "price_num": 750.0, "date_ms": 1683849600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 21, "title": "Sold: Symphonium Helios", "url": "https://www.head-fi.org/classifieds/symphonium-helios.45589/", "price_num": 750.0, "date_ms": 1681171200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 22, "title": "Closed: **Price Drop** Symphonium Helios + 4.4mm to 3.5mm ddHifi Adapter", "url": "https://www.head-fi.org/classifieds/price-drop-symphonium-helios-4-4mm-to-3-5mm-ddhifi-adapter.42678/", "price_num": 750.0, "date_ms": 1677628800000, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 23, "title": "Sold: Symphonium Helios", "url": "https://www.head-fi.org/classifieds/symphonium-helios.42209/", "price_num": 650.0, "date_ms": 1677024000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 24, "title": "Sold: Symphonium Helios 4.4mm", "url": "https://www.head-fi.org/classifieds/symphonium-helios-4-4mm.41807/", "price_num": 780.0, "date_ms": 1676505600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 25, "title": "Sold: SOLD - Symphonium Helios", "url": "https://www.head-fi.org/classifieds/sold-symphonium-helios.41553/", "price_num": 825.0, "date_ms": 1676160000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 26, "title": "Closed: Symphonium Helios for Effect x Elysian Gaea", "url": "https://www.head-fi.org/classifieds/symphonium-helios-for-effect-x-elysian-gaea.41525/", "price_num": null, "date_ms": 1676073600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 27, "title": "Closed: Symphonium Helios", "url": "https://www.head-fi.org/classifieds/symphonium-helios.39933/", "price_num": null, "date_ms": 1673913600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}];
-const originalMsrpUsd = 1100.0;
+const allRows = [{"row_id": 0, "title": "Unique Melody MEXT", "url": "https://www.head-fi.org/classifieds/unique-melody-mext.111035/", "price_num": 450.0, "date_ms": 1782000000000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 1, "title": "Traded: NEW Unique Melody UM MEXT 4.4mm", "url": "https://www.head-fi.org/classifieds/new-unique-melody-um-mext-4-4mm.105136/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi"}];
+const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
 function moneyRound(value) { return money(value); }
