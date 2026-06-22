@@ -211,7 +211,22 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
 <tr id="row-0" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<td></td>
+<td>2026-06-22</td>
+<td></td>
+<td><span class="pill">active</span></td>
+<td></td>
+<td>0</td>
+<td>reddit_rss</td>
+<td>ahdez91</td>
+<td>0</td>
+<td>0</td>
+<td>N/A</td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1ucrp9z/wtsusacah_penon_impact_wpaypal/#item-1" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
 <td>2026-06-19</td>
 <td>$900</td>
 <td><span class="pill">active</span></td>
@@ -219,14 +234,14 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>0</td>
 <td>reddit_rss</td>
 <td>ahdez91</td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 <td>N/A</td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1uabwhi/wtsusacah_penon_impact_wpaypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
+<tr id="row-2" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" ></td>
 <td>2026-06-13</td>
 <td>$950</td>
 <td><span class="pill">active</span></td>
@@ -242,7 +257,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Penon Impact", "url": "https://old.reddit.com/r/AVexchange/comments/1uabwhi/wtsusacah_penon_impact_wpaypal/#item-1", "price_num": 900.0, "date_ms": 1781898698000, "listing_status": "active", "condition_text": "used", "platform": "reddit_rss"}, {"row_id": 1, "title": "Penon Impact", "url": "https://www.head-fi.org/classifieds/penon-impact.110662/", "price_num": 950.0, "date_ms": 1781308800000, "listing_status": "active", "condition_text": "used", "platform": "headfi"}];
+const allRows = [{"row_id": 0, "title": "Penon Impact", "url": "https://old.reddit.com/r/AVexchange/comments/1ucrp9z/wtsusacah_penon_impact_wpaypal/#item-1", "price_num": null, "date_ms": 1782150728000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 1, "title": "Penon Impact", "url": "https://old.reddit.com/r/AVexchange/comments/1uabwhi/wtsusacah_penon_impact_wpaypal/#item-1", "price_num": 900.0, "date_ms": 1781898698000, "listing_status": "active", "condition_text": "used", "platform": "reddit_rss"}, {"row_id": 2, "title": "Penon Impact", "url": "https://www.head-fi.org/classifieds/penon-impact.110662/", "price_num": 950.0, "date_ms": 1781308800000, "listing_status": "active", "condition_text": "used", "platform": "headfi"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

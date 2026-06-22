@@ -244,20 +244,20 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><input type="checkbox" class="row-toggle" data-row-id="2" ></td>
 <td>2025-12-12</td>
 <td>$175</td>
-<td><span class="pill">active</span></td>
+<td><span class="pill">closed</span></td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
 <td>blklbl83</td>
 <td>0</td>
 <td>0</td>
-<td>Overpriced (75.0% above market)</td>
+<td>Closed: Overpriced (75.0% above market)</td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1pl6miz/wts_usanc_h_moondrop_aria_2_supermix_4_apple/#item-3" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "AirPods Pro 3", "url": "https://old.reddit.com/r/AVexchange/comments/1ucjx6i/wts_usama_h_airpods_pro_3_w_paypal/#item-1", "price_num": 170.0, "date_ms": 1782133197000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 1, "title": "Airpods Pro 2 : https://imgur.com/a/4cLmyif .", "url": "https://old.reddit.com/r/AVexchange/comments/1qlacb2/wts_usaca_h_etymotic_er2xr_ikko_obsidian_oh10/#item-3", "price_num": 100.0, "date_ms": 1769220704000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 2, "title": "Apple Airpods Pro 3 - with blue protective case", "url": "https://old.reddit.com/r/AVexchange/comments/1pl6miz/wts_usanc_h_moondrop_aria_2_supermix_4_apple/#item-3", "price_num": 175.0, "date_ms": 1765582496000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss"}];
+const allRows = [{"row_id": 0, "title": "AirPods Pro 3", "url": "https://old.reddit.com/r/AVexchange/comments/1ucjx6i/wts_usama_h_airpods_pro_3_w_paypal/#item-1", "price_num": 170.0, "date_ms": 1782133197000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 1, "title": "Airpods Pro 2 : https://imgur.com/a/4cLmyif .", "url": "https://old.reddit.com/r/AVexchange/comments/1qlacb2/wts_usaca_h_etymotic_er2xr_ikko_obsidian_oh10/#item-3", "price_num": 100.0, "date_ms": 1769220704000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 2, "title": "Apple Airpods Pro 3 - with blue protective case", "url": "https://old.reddit.com/r/AVexchange/comments/1pl6miz/wts_usanc_h_moondrop_aria_2_supermix_4_apple/#item-3", "price_num": 175.0, "date_ms": 1765582496000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

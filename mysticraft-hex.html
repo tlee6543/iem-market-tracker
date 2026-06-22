@@ -232,14 +232,14 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
 <td>2026-05-25</td>
 <td>$750</td>
-<td><span class="pill">active</span></td>
+<td><span class="pill">closed</span></td>
 <td></td>
 <td>0</td>
 <td>headfi</td>
 <td>Mcleenx</td>
 <td>0</td>
 <td>0</td>
-<td>Great Deal (91.9% below market)</td>
+<td>Closed: Great Deal (91.9% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/mysticraft-hex-cable.109616/" target="_blank">source</a></td>
 </tr>
 
@@ -320,7 +320,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Sold: [WTS] Mysticraft Acoustic Research 'HEX' S/N. 013", "url": "https://www.head-fi.org/classifieds/wts-mysticraft-acoustic-research-hex-s-n-013.110409/", "price_num": 9500.0, "date_ms": 1780876800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 1, "title": "MYSTICRAFT HEX CABLE", "url": "https://www.head-fi.org/classifieds/mysticraft-hex-cable.109616/", "price_num": 750.0, "date_ms": 1779667200000, "listing_status": "active", "condition_text": "", "platform": "headfi"}, {"row_id": 2, "title": "Sold: Mysticraft Acoustics Research Hex S/N #5", "url": "https://www.head-fi.org/classifieds/mysticraft-acoustics-research-hex-s-n-5.102878/", "price_num": 9000.0, "date_ms": 1769731200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 3, "title": "Sold: ***SOLD*** Mysticraft HEX S/N # 005", "url": "https://www.head-fi.org/classifieds/sold-mysticraft-hex-s-n-005.99476/", "price_num": null, "date_ms": 1764547200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 4, "title": "Sold: Mysticraft HEX", "url": "https://www.head-fi.org/classifieds/mysticraft-hex.96669/", "price_num": 9075.0, "date_ms": 1760227200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 5, "title": "Sold: Mysticraft Hex Allocation (Batch 6)", "url": "https://www.head-fi.org/classifieds/mysticraft-hex-allocation-batch-6.92657/", "price_num": 8500.0, "date_ms": 1754006400000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi"}, {"row_id": 6, "title": "Sold: Mysticraft HEX og cable", "url": "https://www.head-fi.org/classifieds/mysticraft-hex-og-cable.107797/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi"}];
+const allRows = [{"row_id": 0, "title": "Sold: [WTS] Mysticraft Acoustic Research 'HEX' S/N. 013", "url": "https://www.head-fi.org/classifieds/wts-mysticraft-acoustic-research-hex-s-n-013.110409/", "price_num": 9500.0, "date_ms": 1780876800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 1, "title": "MYSTICRAFT HEX CABLE", "url": "https://www.head-fi.org/classifieds/mysticraft-hex-cable.109616/", "price_num": 750.0, "date_ms": 1779667200000, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 2, "title": "Sold: Mysticraft Acoustics Research Hex S/N #5", "url": "https://www.head-fi.org/classifieds/mysticraft-acoustics-research-hex-s-n-5.102878/", "price_num": 9000.0, "date_ms": 1769731200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 3, "title": "Sold: ***SOLD*** Mysticraft HEX S/N # 005", "url": "https://www.head-fi.org/classifieds/sold-mysticraft-hex-s-n-005.99476/", "price_num": null, "date_ms": 1764547200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 4, "title": "Sold: Mysticraft HEX", "url": "https://www.head-fi.org/classifieds/mysticraft-hex.96669/", "price_num": 9075.0, "date_ms": 1760227200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 5, "title": "Sold: Mysticraft Hex Allocation (Batch 6)", "url": "https://www.head-fi.org/classifieds/mysticraft-hex-allocation-batch-6.92657/", "price_num": 8500.0, "date_ms": 1754006400000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi"}, {"row_id": 6, "title": "Sold: Mysticraft HEX og cable", "url": "https://www.head-fi.org/classifieds/mysticraft-hex-og-cable.107797/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi"}];
 const originalMsrpUsd = 9800.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

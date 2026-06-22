@@ -229,14 +229,14 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
 <td>2026-05-03</td>
 <td>$675</td>
-<td><span class="pill">active</span></td>
+<td><span class="pill">closed</span></td>
 <td>used</td>
 <td>0</td>
 <td>reddit_rss</td>
 <td>dabtech</td>
 <td>0</td>
 <td>0</td>
-<td>Overpriced (28.6% above market)</td>
+<td>Closed: Overpriced (28.6% above market)</td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1t2v08h/wtsusilhmeze_astruwpaypal/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -244,7 +244,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td></td>
 <td>2026-04-30</td>
 <td></td>
-<td><span class="pill">active</span></td>
+<td><span class="pill">closed</span></td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -272,7 +272,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Meze Astru IEM", "url": "https://old.reddit.com/r/AVexchange/comments/1tcmq1r/wtsusawah_meze_astru_iem_w_525_paypal/#item-1", "price_num": 525.0, "date_ms": 1778730882000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 1, "title": "Meze Astru", "url": "https://old.reddit.com/r/AVexchange/comments/1t2v08h/wtsusilhmeze_astruwpaypal/#item-1", "price_num": 675.0, "date_ms": 1777836552000, "listing_status": "active", "condition_text": "used", "platform": "reddit_rss"}, {"row_id": 2, "title": "(Price Drop) Meze Astru", "url": "https://old.reddit.com/r/AVexchange/comments/1szy4s8/wts_usany_h_price_drop_meze_astru_w_675_paypal_or/#item-1", "price_num": null, "date_ms": 1777560312000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 3, "title": "Meze Astru", "url": "https://old.reddit.com/r/AVexchange/comments/1su4xa3/wts_usany_h_meze_astru_w_700_paypal_or_local_cash/#item-1", "price_num": 650.0, "date_ms": 1777003377000, "listing_status": "closed", "condition_text": "excellent", "platform": "reddit_rss"}];
+const allRows = [{"row_id": 0, "title": "Meze Astru IEM", "url": "https://old.reddit.com/r/AVexchange/comments/1tcmq1r/wtsusawah_meze_astru_iem_w_525_paypal/#item-1", "price_num": 525.0, "date_ms": 1778730882000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 1, "title": "Meze Astru", "url": "https://old.reddit.com/r/AVexchange/comments/1t2v08h/wtsusilhmeze_astruwpaypal/#item-1", "price_num": 675.0, "date_ms": 1777836552000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss"}, {"row_id": 2, "title": "(Price Drop) Meze Astru", "url": "https://old.reddit.com/r/AVexchange/comments/1szy4s8/wts_usany_h_price_drop_meze_astru_w_675_paypal_or/#item-1", "price_num": null, "date_ms": 1777560312000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 3, "title": "Meze Astru", "url": "https://old.reddit.com/r/AVexchange/comments/1su4xa3/wts_usany_h_meze_astru_w_700_paypal_or_local_cash/#item-1", "price_num": 650.0, "date_ms": 1777003377000, "listing_status": "closed", "condition_text": "excellent", "platform": "reddit_rss"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

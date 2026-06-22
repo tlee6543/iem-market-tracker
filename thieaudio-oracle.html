@@ -229,14 +229,14 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
 <td>2026-04-04</td>
 <td>$440</td>
-<td><span class="pill">active</span></td>
+<td><span class="pill">closed</span></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
 <td>Tim941</td>
 <td>0</td>
 <td>0</td>
-<td>Fair (7.3% above market)</td>
+<td>Closed: Fair (7.3% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/thieaudio-oracle-mkiii.106719/" target="_blank">source</a></td>
 </tr>
 
@@ -257,7 +257,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "IE600, Thieaudio Oracle MKIII", "url": "https://old.reddit.com/r/AVexchange/comments/1siuq7n/wtsuscthie600_thieaudio_oracle_mkiii_w_paypal/#item-1", "price_num": null, "date_ms": 1775941034000, "listing_status": "closed", "condition_text": "with all accessories", "platform": "reddit_rss"}, {"row_id": 1, "title": "ThieAudio Oracle MKIII", "url": "https://www.head-fi.org/classifieds/thieaudio-oracle-mkiii.106719/", "price_num": 440.0, "date_ms": 1775260800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Closed: WTT Thieaudio Oracle for Clairvoyance, Variations or Orchestra", "url": "https://www.head-fi.org/classifieds/wtt-thieaudio-oracle-for-clairvoyance-variations-or-orchestra.7286/", "price_num": 410.0, "date_ms": 1625529600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}];
+const allRows = [{"row_id": 0, "title": "IE600, Thieaudio Oracle MKIII", "url": "https://old.reddit.com/r/AVexchange/comments/1siuq7n/wtsuscthie600_thieaudio_oracle_mkiii_w_paypal/#item-1", "price_num": null, "date_ms": 1775941034000, "listing_status": "closed", "condition_text": "with all accessories", "platform": "reddit_rss"}, {"row_id": 1, "title": "ThieAudio Oracle MKIII", "url": "https://www.head-fi.org/classifieds/thieaudio-oracle-mkiii.106719/", "price_num": 440.0, "date_ms": 1775260800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Closed: WTT Thieaudio Oracle for Clairvoyance, Variations or Orchestra", "url": "https://www.head-fi.org/classifieds/wtt-thieaudio-oracle-for-clairvoyance-variations-or-orchestra.7286/", "price_num": 410.0, "date_ms": 1625529600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

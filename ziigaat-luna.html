@@ -186,7 +186,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -212,9 +212,24 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 <tr id="row-0" class="excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<td>2026-06-22</td>
+<td>$175</td>
+<td><span class="pill">active</span></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>bschnell9</td>
+<td>0</td>
+<td>0</td>
+<td>N/A</td>
+<td><a href="https://www.head-fi.org/classifieds/ziigaat-luna.111092/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
 <td>2026-05-05</td>
 <td>$275</td>
-<td><span class="pill">active</span></td>
+<td><span class="pill">closed</span></td>
 <td>mint, like new, excellent, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -227,7 +242,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "ZiiGaat Luna Balanced Armature IEMs MINT IN BOX", "url": "https://www.head-fi.org/classifieds/ziigaat-luna-balanced-armature-iems-mint-in-box.108531/", "price_num": 275.0, "date_ms": 1777939200000, "listing_status": "active", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}];
+const allRows = [{"row_id": 0, "title": "Ziigaat Luna", "url": "https://www.head-fi.org/classifieds/ziigaat-luna.111092/", "price_num": 175.0, "date_ms": 1782086400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 1, "title": "ZiiGaat Luna Balanced Armature IEMs MINT IN BOX", "url": "https://www.head-fi.org/classifieds/ziigaat-luna-balanced-armature-iems-mint-in-box.108531/", "price_num": 275.0, "date_ms": 1777939200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

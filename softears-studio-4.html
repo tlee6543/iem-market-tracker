@@ -180,7 +180,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 46/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 19d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 46/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 19d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Medium (46/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 19d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 46/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 20d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 46/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 20d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Medium (46/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 20d ago.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -229,7 +229,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td></td>
 <td>2024-05-20</td>
 <td></td>
-<td><span class="pill">active</span></td>
+<td><span class="pill">closed</span></td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -242,7 +242,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Studio 4 is a neutral set with fantastic vocals and wide staging. Purchased this a few weeks ago for", "url": "https://old.reddit.com/r/AVexchange/comments/1tutk62/wtsusacah_studio_4_w_230_paypal_ff/#item-1", "price_num": 250.0, "date_ms": 1780412469000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss"}, {"row_id": 1, "title": "QDC Anole V6, Moondrop Sparks, Softears Studio 4", "url": "https://old.reddit.com/r/AVexchange/comments/1cwu42x/wtsusacah_qdc_anole_v6_moondrop_sparks_softears/#item-1", "price_num": null, "date_ms": 1716248935000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss"}];
+const allRows = [{"row_id": 0, "title": "Studio 4 is a neutral set with fantastic vocals and wide staging. Purchased this a few weeks ago for", "url": "https://old.reddit.com/r/AVexchange/comments/1tutk62/wtsusacah_studio_4_w_230_paypal_ff/#item-1", "price_num": 250.0, "date_ms": 1780412469000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss"}, {"row_id": 1, "title": "QDC Anole V6, Moondrop Sparks, Softears Studio 4", "url": "https://old.reddit.com/r/AVexchange/comments/1cwu42x/wtsusacah_qdc_anole_v6_moondrop_sparks_softears/#item-1", "price_num": null, "date_ms": 1716248935000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

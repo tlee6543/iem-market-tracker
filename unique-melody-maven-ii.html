@@ -214,7 +214,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
 <td>2026-05-13</td>
 <td>$980</td>
-<td><span class="pill">active</span></td>
+<td><span class="pill">closed</span></td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -229,7 +229,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td></td>
 <td>2026-04-05</td>
 <td></td>
-<td><span class="pill">active</span></td>
+<td><span class="pill">closed</span></td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -242,7 +242,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Unique Melody Maven 2 #74", "url": "https://old.reddit.com/r/AVexchange/comments/1tblhgn/wtsusailh_aful_dawnx_maven_2_andromeda_10_w_paypal/#item-2", "price_num": 980.0, "date_ms": 1778636616000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 1, "title": "Unique Melody Maven II", "url": "https://old.reddit.com/r/AVexchange/comments/1scrtgm/wtsuscah_unique_melody_maven_ii_w_paypal_zelle/#item-1", "price_num": null, "date_ms": 1775356052000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss"}];
+const allRows = [{"row_id": 0, "title": "Unique Melody Maven 2 #74", "url": "https://old.reddit.com/r/AVexchange/comments/1tblhgn/wtsusailh_aful_dawnx_maven_2_andromeda_10_w_paypal/#item-2", "price_num": 980.0, "date_ms": 1778636616000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 1, "title": "Unique Melody Maven II", "url": "https://old.reddit.com/r/AVexchange/comments/1scrtgm/wtsuscah_unique_melody_maven_ii_w_paypal_zelle/#item-1", "price_num": null, "date_ms": 1775356052000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

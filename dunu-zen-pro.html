@@ -244,7 +244,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><input type="checkbox" class="row-toggle" data-row-id="2" ></td>
 <td>2026-04-25</td>
 <td>$350</td>
-<td><span class="pill">active</span></td>
+<td><span class="pill">closed</span></td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -257,7 +257,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Dunu Zen Pro", "url": "https://www.head-fi.org/classifieds/dunu-zen-pro.109803/", "price_num": 450.0, "date_ms": 1779926400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 1, "title": "Final PD!!! Dunu Zen Pro", "url": "https://www.head-fi.org/classifieds/final-pd-dunu-zen-pro.109803/", "price_num": 379.0, "date_ms": 1779926400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Zen Pro", "url": "https://old.reddit.com/r/AVexchange/comments/1svpzbl/wtsusazh_fiio_bta30_pro_campfire_solaris_dunu_zen/#item-2", "price_num": 350.0, "date_ms": 1777156202000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss"}];
+const allRows = [{"row_id": 0, "title": "Dunu Zen Pro", "url": "https://www.head-fi.org/classifieds/dunu-zen-pro.109803/", "price_num": 450.0, "date_ms": 1779926400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 1, "title": "Final PD!!! Dunu Zen Pro", "url": "https://www.head-fi.org/classifieds/final-pd-dunu-zen-pro.109803/", "price_num": 379.0, "date_ms": 1779926400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Zen Pro", "url": "https://old.reddit.com/r/AVexchange/comments/1svpzbl/wtsusazh_fiio_bta30_pro_campfire_solaris_dunu_zen/#item-2", "price_num": 350.0, "date_ms": 1777156202000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

@@ -229,14 +229,14 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
 <td>2025-12-27</td>
 <td>$1,900</td>
-<td><span class="pill">active</span></td>
+<td><span class="pill">closed</span></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
 <td>Pabsu</td>
 <td>0</td>
 <td>0</td>
-<td>Good Deal (18.9% below market)</td>
+<td>Closed: Good Deal (18.9% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/pd-vision-ears-ext-mkii.100871/" target="_blank">source</a></td>
 </tr>
 
@@ -317,7 +317,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Sold: [PD] Vision Ears EXT MKII Limited Edition", "url": "https://www.head-fi.org/classifieds/pd-vision-ears-ext-mkii-limited-edition.105905/", "price_num": 2300.0, "date_ms": 1774137600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 1, "title": "[PD] Vision Ears EXT MKII", "url": "https://www.head-fi.org/classifieds/pd-vision-ears-ext-mkii.100871/", "price_num": 1900.0, "date_ms": 1766793600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Traded: Vision Ears EXT MkII", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.97367/", "price_num": 2150.0, "date_ms": 1761350400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 3, "title": "Closed: Vision Ears EXT MKII", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.97257/", "price_num": 2150.0, "date_ms": 1761091200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 4, "title": "Traded: Vision Ears EXT MKII", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.96621/", "price_num": 2700.0, "date_ms": 1760140800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 5, "title": "Sold: Vision Ears EXT MK2 (Gray) *mint*", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mk2-gray-mint.95332/", "price_num": null, "date_ms": 1758240000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}, {"row_id": 6, "title": "Traded: Vision Ears EXT MK2 (Gray) *MINT*", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mk2-gray-mint.92468/", "price_num": null, "date_ms": 1753660800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}];
+const allRows = [{"row_id": 0, "title": "Sold: [PD] Vision Ears EXT MKII Limited Edition", "url": "https://www.head-fi.org/classifieds/pd-vision-ears-ext-mkii-limited-edition.105905/", "price_num": 2300.0, "date_ms": 1774137600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 1, "title": "[PD] Vision Ears EXT MKII", "url": "https://www.head-fi.org/classifieds/pd-vision-ears-ext-mkii.100871/", "price_num": 1900.0, "date_ms": 1766793600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Traded: Vision Ears EXT MkII", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.97367/", "price_num": 2150.0, "date_ms": 1761350400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 3, "title": "Closed: Vision Ears EXT MKII", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.97257/", "price_num": 2150.0, "date_ms": 1761091200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 4, "title": "Traded: Vision Ears EXT MKII", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.96621/", "price_num": 2700.0, "date_ms": 1760140800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 5, "title": "Sold: Vision Ears EXT MK2 (Gray) *mint*", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mk2-gray-mint.95332/", "price_num": null, "date_ms": 1758240000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}, {"row_id": 6, "title": "Traded: Vision Ears EXT MK2 (Gray) *MINT*", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mk2-gray-mint.92468/", "price_num": null, "date_ms": 1753660800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
