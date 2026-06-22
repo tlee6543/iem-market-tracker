@@ -95,6 +95,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
+.status-reason { max-width: 240px; font-size: 12px; color: #555; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
 .compare-select { width: 100%; padding: 10px; font-size: 14px; }
@@ -211,13 +212,14 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 </div>
 <h2>Listings</h2>
 <table>
-<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
+<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th>Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
 <tr id="row-0" class="included">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
 <td>2026-06-07</td>
 <td>$1,995</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>good condition, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -233,6 +235,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2026-06-02</td>
 <td>$2,350</td>
 <td><span class="pill">active</span></td>
+<td class="status-reason">headfi_page_loaded_unclear_status</td>
 <td>like new, excellent, good condition</td>
 <td>0</td>
 <td>headfi</td>
@@ -248,6 +251,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2026-04-26</td>
 <td>$2,450</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -263,6 +267,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2026-04-12</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>used</td>
 <td>1</td>
 <td>headfi</td>
@@ -278,6 +283,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2026-03-27</td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -293,6 +299,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2026-03-14</td>
 <td>$2,200</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -308,6 +315,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2026-03-10</td>
 <td>$3,000</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -323,6 +331,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2026-02-27</td>
 <td>$2,180</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -338,6 +347,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2026-02-16</td>
 <td>$2,200</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -353,6 +363,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2026-01-05</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, great condition</td>
 <td>0</td>
 <td>headfi</td>
@@ -368,6 +379,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2025-09-15</td>
 <td>$2,200</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>good condition</td>
 <td>0</td>
 <td>headfi</td>
@@ -383,6 +395,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2025-07-27</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td></td>
 <td>0</td>
 <td>headfi</td>
@@ -398,6 +411,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2025-06-24</td>
 <td>$2,200</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, great condition</td>
 <td>0</td>
 <td>headfi</td>
@@ -413,6 +427,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2025-06-10</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -428,6 +443,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2025-05-23</td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td></td>
 <td>0</td>
 <td>headfi</td>
@@ -443,6 +459,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2025-05-10</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -458,6 +475,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2025-04-23</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -473,6 +491,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2025-04-23</td>
 <td>$3,200</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -488,6 +507,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2025-04-17</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -503,6 +523,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2025-04-17</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -518,6 +539,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2025-04-13</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -533,6 +555,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2025-03-31</td>
 <td>$2,899</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -548,6 +571,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2025-03-27</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -563,6 +587,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2025-01-30</td>
 <td>$2,400</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -578,6 +603,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-12-10</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -593,6 +619,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-12-07</td>
 <td>$2,550</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -608,6 +635,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-11-20</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -623,6 +651,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-11-12</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -638,6 +667,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-11-07</td>
 <td>$1,825</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -653,6 +683,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-11-07</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -668,6 +699,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-11-02</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -683,6 +715,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-10-31</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -698,6 +731,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-10-26</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -713,6 +747,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-10-23</td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -728,6 +763,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-10-16</td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -743,6 +779,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-10-11</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -758,6 +795,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-10-01</td>
 <td>$2,600</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>good condition</td>
 <td>0</td>
 <td>headfi</td>
@@ -773,6 +811,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-09-27</td>
 <td>$2,025</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -788,6 +827,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-09-14</td>
 <td>$2,200</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -803,6 +843,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-09-11</td>
 <td>$2,300</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -818,6 +859,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-09-10</td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -833,6 +875,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-09-08</td>
 <td>$2,300</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, good condition</td>
 <td>0</td>
 <td>headfi</td>
@@ -848,6 +891,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-09-06</td>
 <td>$2,300</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -863,6 +907,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-08-22</td>
 <td>$2,399</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -878,6 +923,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-08-19</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -893,6 +939,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-08-18</td>
 <td>$2,350</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -908,6 +955,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-08-11</td>
 <td>$1,990</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -923,6 +971,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-08-09</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>1</td>
 <td>headfi</td>
@@ -938,6 +987,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-08-03</td>
 <td>$2,450</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, great condition</td>
 <td>0</td>
 <td>headfi</td>
@@ -953,6 +1003,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-07-29</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -968,6 +1019,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-07-18</td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, great condition</td>
 <td>0</td>
 <td>headfi</td>
@@ -983,6 +1035,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-07-01</td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -998,6 +1051,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-07-01</td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, fair</td>
 <td>0</td>
 <td>headfi</td>
@@ -1013,6 +1067,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-06-30</td>
 <td>$2,400</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td></td>
 <td>0</td>
 <td>headfi</td>
@@ -1028,6 +1083,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-06-29</td>
 <td>$2,600</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1043,6 +1099,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-06-27</td>
 <td>$2,300</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1058,6 +1115,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-06-03</td>
 <td>$2,600</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1073,6 +1131,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-05-17</td>
 <td>$2,650</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1088,6 +1147,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-05-14</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1103,6 +1163,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-05-14</td>
 <td>$2,400</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1118,6 +1179,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-05-13</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, great condition</td>
 <td>0</td>
 <td>headfi</td>
@@ -1133,6 +1195,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-05-09</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1148,6 +1211,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-04-29</td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1163,6 +1227,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-04-29</td>
 <td>$2,650</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1178,6 +1243,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-04-21</td>
 <td>$1,400</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1193,6 +1259,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-04-17</td>
 <td>$2,650</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1208,6 +1275,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-04-11</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1223,6 +1291,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-04-06</td>
 <td>$2,750</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1238,6 +1307,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-04-05</td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1253,6 +1323,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-04-04</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>great condition</td>
 <td>0</td>
 <td>headfi</td>
@@ -1268,6 +1339,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-03-30</td>
 <td>$2,600</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td></td>
 <td>0</td>
 <td>headfi</td>
@@ -1283,6 +1355,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-03-16</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>used</td>
 <td>0</td>
 <td>headfi</td>
@@ -1298,6 +1371,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-02-23</td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -1313,6 +1387,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-02-22</td>
 <td>$2,800</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1328,6 +1403,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-02-01</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td></td>
 <td>0</td>
 <td>headfi</td>
@@ -1343,6 +1419,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2024-01-19</td>
 <td>$3,000</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1358,6 +1435,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2023-12-14</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>good condition</td>
 <td>0</td>
 <td>headfi</td>
@@ -1373,6 +1451,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2023-12-06</td>
 <td>$2,800</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1388,6 +1467,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2023-11-27</td>
 <td>$2,800</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -1403,6 +1483,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2023-09-17</td>
 <td>$2,650</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1418,6 +1499,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2023-08-29</td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1433,6 +1515,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2023-08-17</td>
 <td>$2,750</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1448,6 +1531,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2023-08-07</td>
 <td>$2,800</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1463,6 +1547,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2023-06-14</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1478,6 +1563,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2023-05-24</td>
 <td>$2,900</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1493,6 +1579,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2023-03-11</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1508,6 +1595,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2023-02-25</td>
 <td>$2,900</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1523,6 +1611,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2022-12-10</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1538,6 +1627,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2022-11-30</td>
 <td>$1,750</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1553,6 +1643,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2022-11-09</td>
 <td>$2,750</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1568,6 +1659,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2022-10-25</td>
 <td>$2,800</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1583,6 +1675,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2022-10-06</td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1598,6 +1691,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td>2022-01-23</td>
 <td>$2,800</td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -1613,6 +1707,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td></td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td></td>
 <td>0</td>
 <td>headfi</td>
@@ -1628,6 +1723,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td></td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td></td>
 <td>0</td>
 <td>headfi</td>
@@ -1643,6 +1739,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td></td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td></td>
 <td>0</td>
 <td>headfi</td>
@@ -1658,6 +1755,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td></td>
 <td></td>
 <td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
 <td></td>
 <td>1</td>
 <td>headfi</td>
