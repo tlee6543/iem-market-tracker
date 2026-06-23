@@ -95,7 +95,19 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-.status-reason { max-width: 240px; font-size: 12px; color: #555; }
+/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+.status-reason {
+    width: 260px;
+    max-width: 260px;
+    font-size: 12px;
+    color: #555;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.35;
+}
+th.reason-col { width: 260px; max-width: 260px; }
+td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
 .compare-select { width: 100%; padding: 10px; font-size: 14px; }
@@ -209,14 +221,14 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 </div>
 <h2>Listings</h2>
 <table>
-<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th>Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
+<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
 <tr id="row-0" class="excluded">
 <td></td>
 <td>2026-06-22</td>
 <td></td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len73813_json=403:len189908</td>
+<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len73820_json=403:len189908</td>
 <td>mint</td>
 <td>1</td>
 <td>reddit_rss</td>
@@ -246,9 +258,9 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <tr id="row-2" class="excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="2" ></td>
 <td>2026-06-19</td>
-<td>$775</td>
+<td>$750</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">headfi_page_loaded_unclear_status</td>
+<td class="status-reason">headfi_classified_status_line_active</td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -261,7 +273,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Acoustune HS1900X Shinogi - Mint Condition", "url": "https://old.reddit.com/r/AVexchange/comments/1ucugrx/wtsustxhacoustune_hs1900x_shinogi_mint_condition/#item-1", "price_num": null, "date_ms": 1782156772000, "listing_status": "active", "condition_text": "mint", "platform": "reddit_rss"}, {"row_id": 1, "title": "Acoustune HS1900X Shinogi - Mint Condition", "url": "https://old.reddit.com/r/AVexchange/comments/1uak8b1/wtsustxh_acoustune_hs1900x_shinogi_mint_condition/#item-1", "price_num": null, "date_ms": 1781920910000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss"}, {"row_id": 2, "title": "Acoustune HS1900X Shinogi - Mint", "url": "https://www.head-fi.org/classifieds/acoustune-hs1900x-shinogi-mint.110957/", "price_num": 775.0, "date_ms": 1781827200000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi"}];
+const allRows = [{"row_id": 0, "title": "Acoustune HS1900X Shinogi - Mint Condition", "url": "https://old.reddit.com/r/AVexchange/comments/1ucugrx/wtsustxhacoustune_hs1900x_shinogi_mint_condition/#item-1", "price_num": null, "date_ms": 1782156772000, "listing_status": "active", "condition_text": "mint", "platform": "reddit_rss"}, {"row_id": 1, "title": "Acoustune HS1900X Shinogi - Mint Condition", "url": "https://old.reddit.com/r/AVexchange/comments/1uak8b1/wtsustxh_acoustune_hs1900x_shinogi_mint_condition/#item-1", "price_num": null, "date_ms": 1781920910000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss"}, {"row_id": 2, "title": "Acoustune HS1900X Shinogi - Mint", "url": "https://www.head-fi.org/classifieds/acoustune-hs1900x-shinogi-mint.110957/", "price_num": 750.0, "date_ms": 1781827200000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

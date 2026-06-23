@@ -95,7 +95,19 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-.status-reason { max-width: 240px; font-size: 12px; color: #555; }
+/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+.status-reason {
+    width: 260px;
+    max-width: 260px;
+    font-size: 12px;
+    color: #555;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.35;
+}
+th.reason-col { width: 260px; max-width: 260px; }
+td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
 .compare-select { width: 100%; padding: 10px; font-size: 14px; }
@@ -209,14 +221,14 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 </div>
 <h2>Listings</h2>
 <table>
-<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th>Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
+<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
 <tr id="row-0" class="excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
 <td>2026-05-30</td>
 <td>$3,100</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">headfi_page_loaded_unclear_status</td>
+<td class="status-reason">headfi_classified_status_line_active</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -456,7 +468,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td></td>
 <td>$3,250</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">headfi_page_loaded_unclear_status</td>
+<td class="status-reason">headfi_classified_status_line_active</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>

@@ -95,7 +95,19 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-.status-reason { max-width: 240px; font-size: 12px; color: #555; }
+/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+.status-reason {
+    width: 260px;
+    max-width: 260px;
+    font-size: 12px;
+    color: #555;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.35;
+}
+th.reason-col { width: 260px; max-width: 260px; }
+td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
 .compare-select { width: 100%; padding: 10px; font-size: 14px; }
@@ -209,7 +221,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 </div>
 <h2>Listings</h2>
 <table>
-<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th>Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
+<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
 <tr id="row-0" class="included">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
@@ -231,15 +243,15 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
 <td>2025-11-01</td>
 <td>$999</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason"></td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">lister never updated</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
 <td>Joe-Siow</td>
 <td>0</td>
 <td>0</td>
-<td>Overpriced (127.0% above market)</td>
+<td>Closed: Overpriced (127.0% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/tansio-mirai-akiba-iem.97755/" target="_blank">source</a></td>
 </tr>
 
@@ -248,7 +260,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td></td>
 <td>$520</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">headfi_page_loaded_unclear_status</td>
+<td class="status-reason">headfi_classified_status_line_active</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -261,7 +273,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Dunu Mirai", "url": "https://old.reddit.com/r/AVexchange/comments/1tnx4nk/wts_usca_h_13_iems_27_cables_snowsky_melody_dac_w/#item-10", "price_num": 440.0, "date_ms": 1779772529000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 1, "title": "Tansio Mirai Akiba IEM", "url": "https://www.head-fi.org/classifieds/tansio-mirai-akiba-iem.97755/", "price_num": 999.0, "date_ms": 1761955200000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Dunu Mirai For Sale 520.00 USD Condition Excellent/Like New Negotiability Firm Ships To North America", "url": "https://www.head-fi.org/classifieds/dunu-mirai.110075/", "price_num": 520.0, "date_ms": null, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}];
+const allRows = [{"row_id": 0, "title": "Dunu Mirai", "url": "https://old.reddit.com/r/AVexchange/comments/1tnx4nk/wts_usca_h_13_iems_27_cables_snowsky_melody_dac_w/#item-10", "price_num": 440.0, "date_ms": 1779772529000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 1, "title": "Tansio Mirai Akiba IEM", "url": "https://www.head-fi.org/classifieds/tansio-mirai-akiba-iem.97755/", "price_num": 999.0, "date_ms": 1761955200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Dunu Mirai For Sale 520.00 USD Condition Excellent/Like New Negotiability Firm Ships To North America", "url": "https://www.head-fi.org/classifieds/dunu-mirai.110075/", "price_num": 520.0, "date_ms": null, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

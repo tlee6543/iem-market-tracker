@@ -95,7 +95,19 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-.status-reason { max-width: 240px; font-size: 12px; color: #555; }
+/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+.status-reason {
+    width: 260px;
+    max-width: 260px;
+    font-size: 12px;
+    color: #555;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.35;
+}
+th.reason-col { width: 260px; max-width: 260px; }
+td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
 .compare-select { width: 100%; padding: 10px; font-size: 14px; }
@@ -187,7 +199,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>39</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>38</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -209,26 +221,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 </div>
 <h2>Listings</h2>
 <table>
-<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th>Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
+<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
-<td>2026-06-23</td>
-<td>$125</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason"></td>
-<td>like new, excellent</td>
-<td>1</td>
-<td>headfi</td>
-<td>Ace</td>
-<td>0</td>
-<td>0</td>
-<td>Great Deal (93.0% below market)</td>
-<td><a href="https://www.head-fi.org/classifieds/wts-lrey-faunus-with-cema-electroacousti-raven-series-6n-occ-cable.111126/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-1" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
+<tr id="row-0" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
 <td>2026-05-27</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
@@ -243,8 +239,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-mirror-gold.109716/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
+<tr id="row-1" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
 <td>2026-03-30</td>
 <td>$1,400</td>
 <td><span class="pill">closed</span></td>
@@ -259,7 +255,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-v2.106435/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" class="excluded">
+<tr id="row-2" class="excluded">
 <td></td>
 <td>2026-03-06</td>
 <td></td>
@@ -275,8 +271,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-v2-pending-sale.104952/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-4" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="4" checked></td>
+<tr id="row-3" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" checked></td>
 <td>2026-01-30</td>
 <td>$1,650</td>
 <td><span class="pill">closed</span></td>
@@ -291,8 +287,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-glossy-finish-v2-shells.102875/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-5" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="5" checked></td>
+<tr id="row-4" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" checked></td>
 <td>2026-01-25</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
@@ -307,8 +303,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-v2-shells-launch-edition.102630/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-6" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="6" checked></td>
+<tr id="row-5" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="5" checked></td>
 <td>2026-01-03</td>
 <td>$1,699</td>
 <td><span class="pill">closed</span></td>
@@ -323,8 +319,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/sold-empire-ears-raven-w-brand-new-%E2%80%9Cv2%E2%80%9D-shells-1699-99.101311/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-7" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="7" checked></td>
+<tr id="row-6" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" checked></td>
 <td>2025-10-08</td>
 <td>$1,999</td>
 <td><span class="pill">closed</span></td>
@@ -339,8 +335,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven.96452/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-8" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="8" checked></td>
+<tr id="row-7" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="7" checked></td>
 <td>2025-10-07</td>
 <td>$2,150</td>
 <td><span class="pill">closed</span></td>
@@ -355,7 +351,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-2nd-edition.96418/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-9" class="excluded">
+<tr id="row-8" class="excluded">
 <td></td>
 <td>2025-09-18</td>
 <td></td>
@@ -371,8 +367,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-in-excellent-condition.95277/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-10" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="10" checked></td>
+<tr id="row-9" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="9" checked></td>
 <td>2025-08-27</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
@@ -387,8 +383,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition.94059/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-11" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="11" checked></td>
+<tr id="row-10" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="10" checked></td>
 <td>2025-06-26</td>
 <td>$1,700</td>
 <td><span class="pill">closed</span></td>
@@ -403,8 +399,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven.90693/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-12" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="12" checked></td>
+<tr id="row-11" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="11" checked></td>
 <td>2025-06-22</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -419,8 +415,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/pending-empire-ears-raven.90514/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-13" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="13" checked></td>
+<tr id="row-12" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="12" checked></td>
 <td>2025-06-08</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
@@ -435,8 +431,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-mint-and-near-new.89796/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-14" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="14" checked></td>
+<tr id="row-13" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="13" checked></td>
 <td>2025-05-27</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -451,7 +447,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-matte-gold-finish.89071/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-15" class="excluded">
+<tr id="row-14" class="excluded">
 <td></td>
 <td>2025-05-22</td>
 <td></td>
@@ -467,8 +463,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-v2-sold-elsewhere.88772/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-16" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="16" checked></td>
+<tr id="row-15" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="15" checked></td>
 <td>2025-05-13</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
@@ -483,8 +479,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/pd-empire-ears-raven.88261/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-17" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="17" checked></td>
+<tr id="row-16" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="16" checked></td>
 <td>2025-05-02</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
@@ -499,8 +495,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-v2-launch-edition-matte-gold.87598/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-18" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="18" checked></td>
+<tr id="row-17" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="17" checked></td>
 <td>2025-04-28</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
@@ -515,8 +511,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition.87370/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-19" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="19" checked></td>
+<tr id="row-18" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="18" checked></td>
 <td>2025-04-24</td>
 <td>$2,200</td>
 <td><span class="pill">closed</span></td>
@@ -531,8 +527,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-v2-non-shiny-reserved.87139/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-20" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="20" checked></td>
+<tr id="row-19" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="19" checked></td>
 <td>2025-04-17</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
@@ -547,8 +543,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven.86796/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-21" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="21" checked></td>
+<tr id="row-20" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="20" checked></td>
 <td>2025-04-14</td>
 <td>$2,200</td>
 <td><span class="pill">closed</span></td>
@@ -563,8 +559,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-v2-black.86618/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-22" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="22" checked></td>
+<tr id="row-21" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="21" checked></td>
 <td>2025-03-22</td>
 <td>$2,200</td>
 <td><span class="pill">closed</span></td>
@@ -579,7 +575,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/sold-empire-ears-raven-launch-edition.85316/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-23" class="excluded">
+<tr id="row-22" class="excluded">
 <td></td>
 <td>2025-01-04</td>
 <td></td>
@@ -595,8 +591,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-black-v2.80922/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-24" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="24" checked></td>
+<tr id="row-23" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="23" checked></td>
 <td>2024-12-09</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
@@ -611,8 +607,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-price-drop.79539/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-25" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="25" checked></td>
+<tr id="row-24" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="24" checked></td>
 <td>2024-10-17</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
@@ -627,8 +623,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-v2-matte-black.76582/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-26" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="26" checked></td>
+<tr id="row-25" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="25" checked></td>
 <td>2024-10-06</td>
 <td>$2,250</td>
 <td><span class="pill">closed</span></td>
@@ -643,8 +639,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-limited-edition-astral-pulse-cable-free.75931/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-27" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="27" checked></td>
+<tr id="row-26" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="26" checked></td>
 <td>2024-09-06</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
@@ -659,8 +655,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-v2-le.74390/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-28" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="28" checked></td>
+<tr id="row-27" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="27" checked></td>
 <td>2024-08-11</td>
 <td>$2,200</td>
 <td><span class="pill">closed</span></td>
@@ -675,8 +671,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven.72975/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-29" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="29" ></td>
+<tr id="row-28" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="28" ></td>
 <td>2024-07-30</td>
 <td>$2,400</td>
 <td><span class="pill">closed</span></td>
@@ -691,8 +687,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/canpur-cp622b-for-empire-ears-raven.72285/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-30" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="30" checked></td>
+<tr id="row-29" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="29" checked></td>
 <td>2024-07-19</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
@@ -707,8 +703,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven.71672/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-31" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="31" checked></td>
+<tr id="row-30" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="30" checked></td>
 <td>2024-06-02</td>
 <td>$2,349</td>
 <td><span class="pill">closed</span></td>
@@ -723,8 +719,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-v2-excellent.69055/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-32" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="32" checked></td>
+<tr id="row-31" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="31" checked></td>
 <td>2024-05-24</td>
 <td>$2,450</td>
 <td><span class="pill">closed</span></td>
@@ -739,8 +735,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-gold.68553/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-33" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="33" checked></td>
+<tr id="row-32" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="32" checked></td>
 <td>2024-04-21</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
@@ -755,8 +751,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/final-pd-empire-ears-raven.66597/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-34" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="34" checked></td>
+<tr id="row-33" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="33" checked></td>
 <td>2024-04-12</td>
 <td>$2,475</td>
 <td><span class="pill">closed</span></td>
@@ -771,8 +767,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-v2-gold-mirror-finish.66044/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-35" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="35" checked></td>
+<tr id="row-34" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="34" checked></td>
 <td>2024-03-31</td>
 <td>$2,450</td>
 <td><span class="pill">closed</span></td>
@@ -787,8 +783,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-v2-mirror-finish.65376/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-36" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="36" checked></td>
+<tr id="row-35" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="35" checked></td>
 <td>2024-03-25</td>
 <td>$2,800</td>
 <td><span class="pill">closed</span></td>
@@ -803,8 +799,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-final-matte-version.65034/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-37" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="37" checked></td>
+<tr id="row-36" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="36" checked></td>
 <td>2024-03-06</td>
 <td>$2,900</td>
 <td><span class="pill">closed</span></td>
@@ -819,8 +815,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven.63885/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-38" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="38" checked></td>
+<tr id="row-37" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="37" checked></td>
 <td>2024-02-13</td>
 <td>$2,900</td>
 <td><span class="pill">closed</span></td>
@@ -835,8 +831,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition.62576/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-39" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="39" checked></td>
+<tr id="row-38" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="38" checked></td>
 <td>2024-01-07</td>
 <td>$2,750</td>
 <td><span class="pill">closed</span></td>
@@ -851,8 +847,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-v2-as-new.60363/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-40" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="40" checked></td>
+<tr id="row-39" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="39" checked></td>
 <td>2023-09-30</td>
 <td>$3,199</td>
 <td><span class="pill">closed</span></td>
@@ -867,7 +863,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-brand-new.55185/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-41" class="excluded">
+<tr id="row-40" class="excluded">
 <td></td>
 <td></td>
 <td></td>
@@ -883,8 +879,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-raven-v2-le.75111/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-42" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="42" checked></td>
+<tr id="row-41" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="41" checked></td>
 <td></td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -899,8 +895,8 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <td><a href="https://www.head-fi.org/classifieds/first-owner-like-new-empire-ears-raven-v-2-w-extended-protection-plan.110044/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-43" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="43" checked></td>
+<tr id="row-42" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="42" checked></td>
 <td></td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -917,7 +913,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "WTS LREY Faunus with CEMA Electroacousti Raven series (6N OCC) cable", "url": "https://www.head-fi.org/classifieds/wts-lrey-faunus-with-cema-electroacousti-raven-series-6n-occ-cable.111126/", "price_num": 125.0, "date_ms": 1782172800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 1, "title": "Sold: Empire Ears Raven Launch Edition - Mirror Gold", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-mirror-gold.109716/", "price_num": 1950.0, "date_ms": 1779840000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Sold: Empire Ears Raven V2", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2.106435/", "price_num": 1400.0, "date_ms": 1774828800000, "listing_status": "closed", "condition_text": "fair", "platform": "headfi"}, {"row_id": 3, "title": "Sold: Empire Ears Raven Launch Edition v2-Pending sale", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-v2-pending-sale.104952/", "price_num": null, "date_ms": 1772755200000, "listing_status": "closed", "condition_text": "used", "platform": "headfi"}, {"row_id": 4, "title": "Sold: Empire Ears Raven Launch Edition Glossy Finish V2 Shells", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-glossy-finish-v2-shells.102875/", "price_num": 1650.0, "date_ms": 1769731200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 5, "title": "Traded: Empire Ears Raven - V2 Shells Launch Edition", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-shells-launch-edition.102630/", "price_num": 1950.0, "date_ms": 1769299200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 6, "title": "Closed: SOLD: Empire Ears Raven w. Brand New \u201cV2\u201d shells: $1699.99", "url": "https://www.head-fi.org/classifieds/sold-empire-ears-raven-w-brand-new-%E2%80%9Cv2%E2%80%9D-shells-1699-99.101311/", "price_num": 1699.0, "date_ms": 1767398400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 7, "title": "Sold: Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/empire-ears-raven.96452/", "price_num": 1999.0, "date_ms": 1759881600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 8, "title": "Closed: Empire Ears Raven 2nd Edition", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-2nd-edition.96418/", "price_num": 2150.0, "date_ms": 1759795200000, "listing_status": "closed", "condition_text": "used", "platform": "headfi"}, {"row_id": 9, "title": "Sold: Empire Ears Raven in Excellent Condition", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-in-excellent-condition.95277/", "price_num": null, "date_ms": 1758153600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 10, "title": "Sold: Empire Ears Raven Launch Edition", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition.94059/", "price_num": 2000.0, "date_ms": 1756252800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 11, "title": "Sold: Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/empire-ears-raven.90693/", "price_num": 1700.0, "date_ms": 1750896000000, "listing_status": "closed", "condition_text": "good condition, used", "platform": "headfi"}, {"row_id": 12, "title": "Sold: [pending] Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/pending-empire-ears-raven.90514/", "price_num": 1900.0, "date_ms": 1750550400000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi"}, {"row_id": 13, "title": "Traded: Empire Ears Raven, Mint and near new.", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-mint-and-near-new.89796/", "price_num": 2000.0, "date_ms": 1749340800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 14, "title": "Sold: Empire Ears Raven launch edition (matte gold finish)", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-matte-gold-finish.89071/", "price_num": 1900.0, "date_ms": 1748304000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 15, "title": "Closed: Empire Ears Raven v2 *Sold elsewhere*", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-sold-elsewhere.88772/", "price_num": null, "date_ms": 1747872000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 16, "title": "Sold: {PD} Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/pd-empire-ears-raven.88261/", "price_num": 1950.0, "date_ms": 1747094400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 17, "title": "Sold: Empire Ears Raven V2 Launch Edition (Matte Gold)", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-launch-edition-matte-gold.87598/", "price_num": 2000.0, "date_ms": 1746144000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 18, "title": "Sold: Empire Ears Raven Launch Edition", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition.87370/", "price_num": 1950.0, "date_ms": 1745798400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 19, "title": "Traded: Empire Ears Raven V2 (non shiny) [Reserved]", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-non-shiny-reserved.87139/", "price_num": 2200.0, "date_ms": 1745452800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 20, "title": "Traded: Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/empire-ears-raven.86796/", "price_num": 2000.0, "date_ms": 1744848000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 21, "title": "Sold: Empire Ears Raven V2 Black", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-black.86618/", "price_num": 2200.0, "date_ms": 1744588800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 22, "title": "Sold: SOLD: Empire Ears Raven Launch Edition", "url": "https://www.head-fi.org/classifieds/sold-empire-ears-raven-launch-edition.85316/", "price_num": 2200.0, "date_ms": 1742601600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 23, "title": "Sold: Empire Ears Raven (Black) v2", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-black-v2.80922/", "price_num": null, "date_ms": 1735948800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 24, "title": "Sold: Empire Ears Raven Launch Edition (price drop)", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-price-drop.79539/", "price_num": 1950.0, "date_ms": 1733702400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 25, "title": "Sold: Empire Ears Raven V2 - Matte Black", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-matte-black.76582/", "price_num": 1950.0, "date_ms": 1729123200000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi"}, {"row_id": 26, "title": "Sold: Empire Ears Raven - Limited Edition *Astral Pulse Cable FREE*", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-limited-edition-astral-pulse-cable-free.75931/", "price_num": 2250.0, "date_ms": 1728172800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 27, "title": "Sold: Empire Ears Raven V2 LE", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-le.74390/", "price_num": 2100.0, "date_ms": 1725580800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 28, "title": "Traded: Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/empire-ears-raven.72975/", "price_num": 2200.0, "date_ms": 1723334400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 29, "title": "Traded: Canpur CP622B for Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/canpur-cp622b-for-empire-ears-raven.72285/", "price_num": 2400.0, "date_ms": 1722297600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 30, "title": "Traded: Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/empire-ears-raven.71672/", "price_num": 2100.0, "date_ms": 1721347200000, "listing_status": "closed", "condition_text": "like new", "platform": "headfi"}, {"row_id": 31, "title": "Closed: Empire Ears Raven Launch Edition V2 Excellent", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-v2-excellent.69055/", "price_num": 2349.0, "date_ms": 1717286400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 32, "title": "Sold: Empire Ears Raven - Launch Edition Gold", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-gold.68553/", "price_num": 2450.0, "date_ms": 1716508800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 33, "title": "Sold: *final pd* Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/final-pd-empire-ears-raven.66597/", "price_num": 2500.0, "date_ms": 1713657600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 34, "title": "Traded: Empire Ears Raven V2 (Gold Mirror Finish)", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-gold-mirror-finish.66044/", "price_num": 2475.0, "date_ms": 1712880000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 35, "title": "Traded: Empire Ears Raven V2 (Mirror Finish)", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-mirror-finish.65376/", "price_num": 2450.0, "date_ms": 1711843200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 36, "title": "Closed: Empire Ears Raven (Final Matte Version)", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-final-matte-version.65034/", "price_num": 2800.0, "date_ms": 1711324800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 37, "title": "Traded: Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/empire-ears-raven.63885/", "price_num": 2900.0, "date_ms": 1709683200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 38, "title": "Sold: Empire Ears RAVEN Launch Edition", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition.62576/", "price_num": 2900.0, "date_ms": 1707782400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 39, "title": "Sold: Empire Ears Raven Launch Edition V2 as new", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-v2-as-new.60363/", "price_num": 2750.0, "date_ms": 1704585600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 40, "title": "Sold: Empire Ears Raven Launch Edition BRAND NEW!", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-brand-new.55185/", "price_num": 3199.0, "date_ms": 1696032000000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi"}, {"row_id": 41, "title": "Closed: Empire Ears raven v2 LE", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-le.75111/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 42, "title": "FIRST OWNER Like New Empire Ears Raven v.2 w/ extended protection plan", "url": "https://www.head-fi.org/classifieds/first-owner-like-new-empire-ears-raven-v-2-w-extended-protection-plan.110044/", "price_num": 1900.0, "date_ms": null, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 43, "title": "FIRST OWNER Like New Empire Ears Raven v.2", "url": "https://www.head-fi.org/classifieds/first-owner-like-new-empire-ears-raven-v-2.110044/", "price_num": 1900.0, "date_ms": null, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}];
+const allRows = [{"row_id": 0, "title": "Sold: Empire Ears Raven Launch Edition - Mirror Gold", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-mirror-gold.109716/", "price_num": 1950.0, "date_ms": 1779840000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 1, "title": "Sold: Empire Ears Raven V2", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2.106435/", "price_num": 1400.0, "date_ms": 1774828800000, "listing_status": "closed", "condition_text": "fair", "platform": "headfi"}, {"row_id": 2, "title": "Sold: Empire Ears Raven Launch Edition v2-Pending sale", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-v2-pending-sale.104952/", "price_num": null, "date_ms": 1772755200000, "listing_status": "closed", "condition_text": "used", "platform": "headfi"}, {"row_id": 3, "title": "Sold: Empire Ears Raven Launch Edition Glossy Finish V2 Shells", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-glossy-finish-v2-shells.102875/", "price_num": 1650.0, "date_ms": 1769731200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 4, "title": "Traded: Empire Ears Raven - V2 Shells Launch Edition", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-shells-launch-edition.102630/", "price_num": 1950.0, "date_ms": 1769299200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 5, "title": "Closed: SOLD: Empire Ears Raven w. Brand New \u201cV2\u201d shells: $1699.99", "url": "https://www.head-fi.org/classifieds/sold-empire-ears-raven-w-brand-new-%E2%80%9Cv2%E2%80%9D-shells-1699-99.101311/", "price_num": 1699.0, "date_ms": 1767398400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 6, "title": "Sold: Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/empire-ears-raven.96452/", "price_num": 1999.0, "date_ms": 1759881600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 7, "title": "Closed: Empire Ears Raven 2nd Edition", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-2nd-edition.96418/", "price_num": 2150.0, "date_ms": 1759795200000, "listing_status": "closed", "condition_text": "used", "platform": "headfi"}, {"row_id": 8, "title": "Sold: Empire Ears Raven in Excellent Condition", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-in-excellent-condition.95277/", "price_num": null, "date_ms": 1758153600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 9, "title": "Sold: Empire Ears Raven Launch Edition", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition.94059/", "price_num": 2000.0, "date_ms": 1756252800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 10, "title": "Sold: Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/empire-ears-raven.90693/", "price_num": 1700.0, "date_ms": 1750896000000, "listing_status": "closed", "condition_text": "good condition, used", "platform": "headfi"}, {"row_id": 11, "title": "Sold: [pending] Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/pending-empire-ears-raven.90514/", "price_num": 1900.0, "date_ms": 1750550400000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi"}, {"row_id": 12, "title": "Traded: Empire Ears Raven, Mint and near new.", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-mint-and-near-new.89796/", "price_num": 2000.0, "date_ms": 1749340800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 13, "title": "Sold: Empire Ears Raven launch edition (matte gold finish)", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-matte-gold-finish.89071/", "price_num": 1900.0, "date_ms": 1748304000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 14, "title": "Closed: Empire Ears Raven v2 *Sold elsewhere*", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-sold-elsewhere.88772/", "price_num": null, "date_ms": 1747872000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 15, "title": "Sold: {PD} Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/pd-empire-ears-raven.88261/", "price_num": 1950.0, "date_ms": 1747094400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 16, "title": "Sold: Empire Ears Raven V2 Launch Edition (Matte Gold)", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-launch-edition-matte-gold.87598/", "price_num": 2000.0, "date_ms": 1746144000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 17, "title": "Sold: Empire Ears Raven Launch Edition", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition.87370/", "price_num": 1950.0, "date_ms": 1745798400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 18, "title": "Traded: Empire Ears Raven V2 (non shiny) [Reserved]", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-non-shiny-reserved.87139/", "price_num": 2200.0, "date_ms": 1745452800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 19, "title": "Traded: Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/empire-ears-raven.86796/", "price_num": 2000.0, "date_ms": 1744848000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 20, "title": "Sold: Empire Ears Raven V2 Black", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-black.86618/", "price_num": 2200.0, "date_ms": 1744588800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 21, "title": "Sold: SOLD: Empire Ears Raven Launch Edition", "url": "https://www.head-fi.org/classifieds/sold-empire-ears-raven-launch-edition.85316/", "price_num": 2200.0, "date_ms": 1742601600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 22, "title": "Sold: Empire Ears Raven (Black) v2", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-black-v2.80922/", "price_num": null, "date_ms": 1735948800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 23, "title": "Sold: Empire Ears Raven Launch Edition (price drop)", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-price-drop.79539/", "price_num": 1950.0, "date_ms": 1733702400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 24, "title": "Sold: Empire Ears Raven V2 - Matte Black", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-matte-black.76582/", "price_num": 1950.0, "date_ms": 1729123200000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi"}, {"row_id": 25, "title": "Sold: Empire Ears Raven - Limited Edition *Astral Pulse Cable FREE*", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-limited-edition-astral-pulse-cable-free.75931/", "price_num": 2250.0, "date_ms": 1728172800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 26, "title": "Sold: Empire Ears Raven V2 LE", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-le.74390/", "price_num": 2100.0, "date_ms": 1725580800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 27, "title": "Traded: Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/empire-ears-raven.72975/", "price_num": 2200.0, "date_ms": 1723334400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 28, "title": "Traded: Canpur CP622B for Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/canpur-cp622b-for-empire-ears-raven.72285/", "price_num": 2400.0, "date_ms": 1722297600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 29, "title": "Traded: Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/empire-ears-raven.71672/", "price_num": 2100.0, "date_ms": 1721347200000, "listing_status": "closed", "condition_text": "like new", "platform": "headfi"}, {"row_id": 30, "title": "Closed: Empire Ears Raven Launch Edition V2 Excellent", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-v2-excellent.69055/", "price_num": 2349.0, "date_ms": 1717286400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 31, "title": "Sold: Empire Ears Raven - Launch Edition Gold", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-gold.68553/", "price_num": 2450.0, "date_ms": 1716508800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 32, "title": "Sold: *final pd* Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/final-pd-empire-ears-raven.66597/", "price_num": 2500.0, "date_ms": 1713657600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 33, "title": "Traded: Empire Ears Raven V2 (Gold Mirror Finish)", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-gold-mirror-finish.66044/", "price_num": 2475.0, "date_ms": 1712880000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 34, "title": "Traded: Empire Ears Raven V2 (Mirror Finish)", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-mirror-finish.65376/", "price_num": 2450.0, "date_ms": 1711843200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 35, "title": "Closed: Empire Ears Raven (Final Matte Version)", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-final-matte-version.65034/", "price_num": 2800.0, "date_ms": 1711324800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 36, "title": "Traded: Empire Ears Raven", "url": "https://www.head-fi.org/classifieds/empire-ears-raven.63885/", "price_num": 2900.0, "date_ms": 1709683200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 37, "title": "Sold: Empire Ears RAVEN Launch Edition", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition.62576/", "price_num": 2900.0, "date_ms": 1707782400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 38, "title": "Sold: Empire Ears Raven Launch Edition V2 as new", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-v2-as-new.60363/", "price_num": 2750.0, "date_ms": 1704585600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 39, "title": "Sold: Empire Ears Raven Launch Edition BRAND NEW!", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-launch-edition-brand-new.55185/", "price_num": 3199.0, "date_ms": 1696032000000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi"}, {"row_id": 40, "title": "Closed: Empire Ears raven v2 LE", "url": "https://www.head-fi.org/classifieds/empire-ears-raven-v2-le.75111/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 41, "title": "FIRST OWNER Like New Empire Ears Raven v.2 w/ extended protection plan", "url": "https://www.head-fi.org/classifieds/first-owner-like-new-empire-ears-raven-v-2-w-extended-protection-plan.110044/", "price_num": 1900.0, "date_ms": null, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 42, "title": "FIRST OWNER Like New Empire Ears Raven v.2", "url": "https://www.head-fi.org/classifieds/first-owner-like-new-empire-ears-raven-v-2.110044/", "price_num": 1900.0, "date_ms": null, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

@@ -95,7 +95,19 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-.status-reason { max-width: 240px; font-size: 12px; color: #555; }
+/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+.status-reason {
+    width: 260px;
+    max-width: 260px;
+    font-size: 12px;
+    color: #555;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.35;
+}
+th.reason-col { width: 260px; max-width: 260px; }
+td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
 .compare-select { width: 100%; padding: 10px; font-size: 14px; }
@@ -209,7 +221,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 </div>
 <h2>Listings</h2>
 <table>
-<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th>Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
+<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
 <tr id="row-0" class="included">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
@@ -230,16 +242,16 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 <tr id="row-1" class="excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
 <td>2026-06-18</td>
-<td>$500</td>
+<td>$475</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">headfi_page_loaded_unclear_status</td>
+<td class="status-reason">headfi_classified_status_line_active</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
 <td>MilitaryHifi</td>
 <td>0</td>
 <td>0</td>
-<td>Fair (2.0% below market)</td>
+<td>Fair (6.9% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/softears-rsv-mkii.110884/" target="_blank">source</a></td>
 </tr>
 
@@ -421,7 +433,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Softears RSV MK2", "url": "https://old.reddit.com/r/AVexchange/comments/1ubwg3y/wts_usmd_h_softears_rsv_mk2_w_paypal_450/#item-1", "price_num": 450.0, "date_ms": 1782064278000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 1, "title": "Softears RSV MKII", "url": "https://www.head-fi.org/classifieds/softears-rsv-mkii.110884/", "price_num": 500.0, "date_ms": 1781740800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Softears RSV MKII", "url": "https://old.reddit.com/r/AVexchange/comments/1tv4iis/wts_usmn_h_softears_rsv_mkii_w_paypal_520/#item-1", "price_num": null, "date_ms": 1780435097000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 3, "title": "Softears RSV MKII", "url": "https://old.reddit.com/r/AVexchange/comments/1trzq3v/wts_usmn_h_softears_rsv_mkii_w_paypal_550/#item-1", "price_num": null, "date_ms": 1780147014000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 4, "title": "Softears RSV-MKII", "url": "https://old.reddit.com/r/AVexchange/comments/1tocfeu/wts_usmn_h_softears_rsvmkii_w_paypal_price_drop/#item-1", "price_num": null, "date_ms": 1779813548000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 5, "title": "Closed: Softears RSV MKII", "url": "https://www.head-fi.org/classifieds/softears-rsv-mkii.104058/", "price_num": 550.0, "date_ms": 1771372800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 6, "title": "Sold: [[Paid]] Softears RSV MK2", "url": "https://www.head-fi.org/classifieds/paid-softears-rsv-mk2.103291/", "price_num": null, "date_ms": 1770336000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 7, "title": "Sold: Softears RSV - MK2", "url": "https://www.head-fi.org/classifieds/softears-rsv-mk2.101698/", "price_num": 549.0, "date_ms": 1767916800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 8, "title": "Sold: Softears RSV MK2 **MINT**", "url": "https://www.head-fi.org/classifieds/softears-rsv-mk2-mint.100755/", "price_num": 500.0, "date_ms": 1766534400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 9, "title": "Closed: Softears RSV MK2 Mint", "url": "https://www.head-fi.org/classifieds/softears-rsv-mk2-mint.99332/", "price_num": 550.0, "date_ms": 1764374400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}, {"row_id": 10, "title": "Sold: Softears RSV Mk2", "url": "https://www.head-fi.org/classifieds/softears-rsv-mk2.98857/", "price_num": 566.0, "date_ms": 1763683200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 11, "title": "Sold: Softears RSV mk2", "url": "https://www.head-fi.org/classifieds/softears-rsv-mk2.97582/", "price_num": 550.0, "date_ms": 1761609600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 12, "title": "Sold: Softears RSV-MK2", "url": "https://www.head-fi.org/classifieds/softears-rsv-mk2.95806/", "price_num": 600.0, "date_ms": 1758931200000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi"}];
+const allRows = [{"row_id": 0, "title": "Softears RSV MK2", "url": "https://old.reddit.com/r/AVexchange/comments/1ubwg3y/wts_usmd_h_softears_rsv_mk2_w_paypal_450/#item-1", "price_num": 450.0, "date_ms": 1782064278000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 1, "title": "Softears RSV MKII", "url": "https://www.head-fi.org/classifieds/softears-rsv-mkii.110884/", "price_num": 475.0, "date_ms": 1781740800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Softears RSV MKII", "url": "https://old.reddit.com/r/AVexchange/comments/1tv4iis/wts_usmn_h_softears_rsv_mkii_w_paypal_520/#item-1", "price_num": null, "date_ms": 1780435097000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 3, "title": "Softears RSV MKII", "url": "https://old.reddit.com/r/AVexchange/comments/1trzq3v/wts_usmn_h_softears_rsv_mkii_w_paypal_550/#item-1", "price_num": null, "date_ms": 1780147014000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 4, "title": "Softears RSV-MKII", "url": "https://old.reddit.com/r/AVexchange/comments/1tocfeu/wts_usmn_h_softears_rsvmkii_w_paypal_price_drop/#item-1", "price_num": null, "date_ms": 1779813548000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 5, "title": "Closed: Softears RSV MKII", "url": "https://www.head-fi.org/classifieds/softears-rsv-mkii.104058/", "price_num": 550.0, "date_ms": 1771372800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 6, "title": "Sold: [[Paid]] Softears RSV MK2", "url": "https://www.head-fi.org/classifieds/paid-softears-rsv-mk2.103291/", "price_num": null, "date_ms": 1770336000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 7, "title": "Sold: Softears RSV - MK2", "url": "https://www.head-fi.org/classifieds/softears-rsv-mk2.101698/", "price_num": 549.0, "date_ms": 1767916800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 8, "title": "Sold: Softears RSV MK2 **MINT**", "url": "https://www.head-fi.org/classifieds/softears-rsv-mk2-mint.100755/", "price_num": 500.0, "date_ms": 1766534400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 9, "title": "Closed: Softears RSV MK2 Mint", "url": "https://www.head-fi.org/classifieds/softears-rsv-mk2-mint.99332/", "price_num": 550.0, "date_ms": 1764374400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}, {"row_id": 10, "title": "Sold: Softears RSV Mk2", "url": "https://www.head-fi.org/classifieds/softears-rsv-mk2.98857/", "price_num": 566.0, "date_ms": 1763683200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 11, "title": "Sold: Softears RSV mk2", "url": "https://www.head-fi.org/classifieds/softears-rsv-mk2.97582/", "price_num": 550.0, "date_ms": 1761609600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 12, "title": "Sold: Softears RSV-MK2", "url": "https://www.head-fi.org/classifieds/softears-rsv-mk2.95806/", "price_num": 600.0, "date_ms": 1758931200000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
