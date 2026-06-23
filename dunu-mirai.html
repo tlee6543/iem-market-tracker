@@ -187,7 +187,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>2</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>3</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -229,6 +229,22 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 <tr id="row-1" class="excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
+<td>2025-11-01</td>
+<td>$999</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>Joe-Siow</td>
+<td>0</td>
+<td>0</td>
+<td>Overpriced (127.0% above market)</td>
+<td><a href="https://www.head-fi.org/classifieds/tansio-mirai-akiba-iem.97755/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-2" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" ></td>
 <td></td>
 <td>$520</td>
 <td><span class="pill">active</span></td>
@@ -245,7 +261,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Dunu Mirai", "url": "https://old.reddit.com/r/AVexchange/comments/1tnx4nk/wts_usca_h_13_iems_27_cables_snowsky_melody_dac_w/#item-10", "price_num": 440.0, "date_ms": 1779772529000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 1, "title": "Dunu Mirai For Sale 520.00 USD Condition Excellent/Like New Negotiability Firm Ships To North America", "url": "https://www.head-fi.org/classifieds/dunu-mirai.110075/", "price_num": 520.0, "date_ms": null, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}];
+const allRows = [{"row_id": 0, "title": "Dunu Mirai", "url": "https://old.reddit.com/r/AVexchange/comments/1tnx4nk/wts_usca_h_13_iems_27_cables_snowsky_melody_dac_w/#item-10", "price_num": 440.0, "date_ms": 1779772529000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 1, "title": "Tansio Mirai Akiba IEM", "url": "https://www.head-fi.org/classifieds/tansio-mirai-akiba-iem.97755/", "price_num": 999.0, "date_ms": 1761955200000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Dunu Mirai For Sale 520.00 USD Condition Excellent/Like New Negotiability Firm Ships To North America", "url": "https://www.head-fi.org/classifieds/dunu-mirai.110075/", "price_num": 520.0, "date_ms": null, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
