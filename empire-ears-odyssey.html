@@ -173,7 +173,7 @@ td.status-reason { overflow: hidden; }
         <div class="supporter-card">
             <div class="supporter-label">Supporters</div>
             <div class="small">Thanks to the people helping keep this tool alive.</div>
-            <div class="supporter-list"><span class="supporter-chip">Supporter shoutouts coming soon</span></div>
+            <div class="supporter-list"><span class="supporter-chip">tester</span></div>
         </div>
     </div>
     
@@ -183,9 +183,9 @@ td.status-reason { overflow: hidden; }
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$3,400</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2022</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">2DD/5BA/2EST/1BC</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
 
@@ -194,6 +194,8 @@ td.status-reason { overflow: hidden; }
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 50/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 7/10. Current inputs: 11 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 391d ago, 1 source type(s), price CV 0.18." aria-label="Liquidity/confidence score: 50/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 7/10. Current inputs: 11 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 391d ago, 1 source type(s), price CV 0.18." tabindex="0">Medium (50/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">11 included sample(s), latest 391d ago.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -214,7 +216,8 @@ td.status-reason { overflow: hidden; }
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -450,7 +453,7 @@ td.status-reason { overflow: hidden; }
 </table>
 <script>
 const allRows = [{"row_id": 0, "title": "Astell & Kern x Empire Ears Odyssey", "url": "https://www.head-fi.org/classifieds/astell-kern-x-empire-ears-odyssey.107405/", "price_num": 1450.0, "date_ms": 1776211200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 1, "title": "Sold: Price Drop: Empire Ears Odyssey (Priced to Sell)", "url": "https://www.head-fi.org/classifieds/price-drop-empire-ears-odyssey-priced-to-sell.89201/", "price_num": 1525.0, "date_ms": 1748476800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Sold: Astell Kern Empire Ears Odyssey", "url": "https://www.head-fi.org/classifieds/astell-kern-empire-ears-odyssey.88853/", "price_num": 1575.0, "date_ms": 1747958400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 3, "title": "Closed: Empire Ears Odyssey", "url": "https://www.head-fi.org/classifieds/empire-ears-odyssey.80800/", "price_num": 1700.0, "date_ms": 1735776000000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi"}, {"row_id": 4, "title": "Closed: Astell Kern Empire Ears Odyssey", "url": "https://www.head-fi.org/classifieds/astell-kern-empire-ears-odyssey.79748/", "price_num": 1595.0, "date_ms": 1734048000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 5, "title": "Sold: Brand New Empire Ears Odyssey", "url": "https://www.head-fi.org/classifieds/brand-new-empire-ears-odyssey.77987/", "price_num": 1800.0, "date_ms": 1731283200000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi"}, {"row_id": 6, "title": "Sold: Empire Ears Odyssey", "url": "https://www.head-fi.org/classifieds/empire-ears-odyssey.77364/", "price_num": 1900.0, "date_ms": 1730419200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 7, "title": "Sold: Empire Ears Odyssey", "url": "https://www.head-fi.org/classifieds/empire-ears-odyssey.60231/", "price_num": 1900.0, "date_ms": 1704412800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 8, "title": "Sold: Empire Ears Odyssey", "url": "https://www.head-fi.org/classifieds/empire-ears-odyssey.59788/", "price_num": 9999.0, "date_ms": 1703721600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 9, "title": "Closed: Empire Ears Odyssey Price Drop (traded elsewhere)", "url": "https://www.head-fi.org/classifieds/empire-ears-odyssey-price-drop-traded-elsewhere.54230/", "price_num": 2150.0, "date_ms": 1694476800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 10, "title": "Sold: Astell & Kern + Empire Ears Odyssey BIG Price Drop", "url": "https://www.head-fi.org/classifieds/astell-kern-empire-ears-odyssey-big-price-drop.53078/", "price_num": 2200.0, "date_ms": 1692748800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 11, "title": "Traded: Astell & Kern + Empire Ears Odyssey", "url": "https://www.head-fi.org/classifieds/astell-kern-empire-ears-odyssey.52555/", "price_num": null, "date_ms": 1691884800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 12, "title": "Sold: Astell & Kern x Empire Ears Odyssey *mint", "url": "https://www.head-fi.org/classifieds/astell-kern-x-empire-ears-odyssey-mint.47609/", "price_num": 2500.0, "date_ms": 1683936000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 13, "title": "Sold: Astell & Kern X Empire Ears Odyssey - Brand New", "url": "https://www.head-fi.org/classifieds/astell-kern-x-empire-ears-odyssey-brand-new.46698/", "price_num": 2650.0, "date_ms": 1682553600000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi"}];
-const originalMsrpUsd = null;
+const originalMsrpUsd = 3400.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
 function moneyRound(value) { return money(value); }
