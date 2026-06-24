@@ -199,7 +199,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>2</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>3</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -233,14 +233,30 @@ td.status-reason { overflow: hidden; }
 <td>0</td>
 <td>headfi</td>
 <td>ToobinTobes</td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 <td>Overpriced (31.0% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/nicehck-nx8ti-1pzt-6ba-1dd.110909/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
+<tr id="row-1" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
+<td>2026-06-19</td>
+<td>$275</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason"></td>
+<td>like new, excellent, used</td>
+<td>0</td>
+<td>headfi</td>
+<td>ToobinTobes</td>
+<td>0</td>
+<td>1</td>
+<td>High (20.1% above market)</td>
+<td><a href="https://www.head-fi.org/classifieds/price-drop-nicehck-nx8ti-1pzt-6ba-1dd.110909/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-2" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
 <td>2026-06-07</td>
 <td>$229</td>
 <td><span class="pill">closed</span></td>
@@ -257,7 +273,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "NiceHCK NX8Ti | 1PZT + 6BA + 1DD", "url": "https://www.head-fi.org/classifieds/nicehck-nx8ti-1pzt-6ba-1dd.110909/", "price_num": 300.0, "date_ms": 1781827200000, "listing_status": "active", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 1, "title": "NiceHCK NX8Ti", "url": "https://www.head-fi.org/classifieds/nicehck-nx8ti.110373/", "price_num": 229.0, "date_ms": 1780790400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}];
+const allRows = [{"row_id": 0, "title": "NiceHCK NX8Ti | 1PZT + 6BA + 1DD", "url": "https://www.head-fi.org/classifieds/nicehck-nx8ti-1pzt-6ba-1dd.110909/", "price_num": 300.0, "date_ms": 1781827200000, "listing_status": "active", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 1, "title": "(PRICE DROP) NiceHCK NX8Ti | 1PZT + 6BA + 1DD", "url": "https://www.head-fi.org/classifieds/price-drop-nicehck-nx8ti-1pzt-6ba-1dd.110909/", "price_num": 275.0, "date_ms": 1781827200000, "listing_status": "active", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 2, "title": "NiceHCK NX8Ti", "url": "https://www.head-fi.org/classifieds/nicehck-nx8ti.110373/", "price_num": 229.0, "date_ms": 1780790400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

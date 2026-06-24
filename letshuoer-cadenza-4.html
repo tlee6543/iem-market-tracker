@@ -199,7 +199,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>2</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>3</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -223,8 +223,8 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
+<tr id="row-0" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
 <td>2026-05-29</td>
 <td>$150</td>
 <td><span class="pill">closed</span></td>
@@ -233,14 +233,30 @@ td.status-reason { overflow: hidden; }
 <td>0</td>
 <td>headfi</td>
 <td>ToobinTobes</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>Closed: Fair (7.0% below market)</td>
+<td>Closed: Fair (1.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/letshuoer-cadenza-4-price-drop.109821/" target="_blank">source</a></td>
 </tr>
 
 <tr id="row-1" class="included">
 <td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
+<td>2026-05-29</td>
+<td>$125</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>ToobinTobes</td>
+<td>0</td>
+<td>1</td>
+<td>Closed: Good Deal (15.3% below market)</td>
+<td><a href="https://www.head-fi.org/classifieds/price-drop-letshuoer-cadenza-4.109821/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-2" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
 <td>2026-05-03</td>
 <td>$175</td>
 <td><span class="pill">closed</span></td>
@@ -251,13 +267,13 @@ td.status-reason { overflow: hidden; }
 <td>superfrogyto</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (8.5% above market)</td>
+<td>Closed: High (18.6% above market)</td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1t2mo6t/wts_wtt_usany_h_letshuoer_cadenza_4_soundrhyme/#item-1" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Letshuoer Cadenza 4 (PRICE DROP)", "url": "https://www.head-fi.org/classifieds/letshuoer-cadenza-4-price-drop.109821/", "price_num": 150.0, "date_ms": 1780012800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 1, "title": "Letshuoer Cadenza 4 - Full Accesories.", "url": "https://old.reddit.com/r/AVexchange/comments/1t2mo6t/wts_wtt_usany_h_letshuoer_cadenza_4_soundrhyme/#item-1", "price_num": 175.0, "date_ms": 1777817831000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}];
+const allRows = [{"row_id": 0, "title": "Letshuoer Cadenza 4 (PRICE DROP)", "url": "https://www.head-fi.org/classifieds/letshuoer-cadenza-4-price-drop.109821/", "price_num": 150.0, "date_ms": 1780012800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 1, "title": "(PRICE DROP) Letshuoer Cadenza 4", "url": "https://www.head-fi.org/classifieds/price-drop-letshuoer-cadenza-4.109821/", "price_num": 125.0, "date_ms": 1780012800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Letshuoer Cadenza 4 - Full Accesories.", "url": "https://old.reddit.com/r/AVexchange/comments/1t2mo6t/wts_wtt_usany_h_letshuoer_cadenza_4_soundrhyme/#item-1", "price_num": 175.0, "date_ms": 1777817831000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

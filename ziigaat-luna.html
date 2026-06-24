@@ -243,7 +243,7 @@ td.status-reason { overflow: hidden; }
 <td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
 <td>2026-05-05</td>
 <td>$275</td>
-<td><span class="pill">closed</span></td>
+<td><span class="pill">active</span></td>
 <td class="status-reason">lister never updated</td>
 <td>mint, like new, excellent, used</td>
 <td>0</td>
@@ -257,7 +257,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Ziigaat Luna", "url": "https://www.head-fi.org/classifieds/ziigaat-luna.111092/", "price_num": 175.0, "date_ms": 1782086400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 1, "title": "ZiiGaat Luna Balanced Armature IEMs MINT IN BOX", "url": "https://www.head-fi.org/classifieds/ziigaat-luna-balanced-armature-iems-mint-in-box.108531/", "price_num": 275.0, "date_ms": 1777939200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}];
+const allRows = [{"row_id": 0, "title": "Ziigaat Luna", "url": "https://www.head-fi.org/classifieds/ziigaat-luna.111092/", "price_num": 175.0, "date_ms": 1782086400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 1, "title": "ZiiGaat Luna Balanced Armature IEMs MINT IN BOX", "url": "https://www.head-fi.org/classifieds/ziigaat-luna-balanced-armature-iems-mint-in-box.108531/", "price_num": 275.0, "date_ms": 1777939200000, "listing_status": "active", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

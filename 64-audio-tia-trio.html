@@ -193,7 +193,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 72/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 15/30, recent sample depth 7/15, source diversity 5/10, price consistency 10/10. Current inputs: 32 included priced sample(s), 0 in the last 90 days, 2 in the last 180 days, latest sample 108d ago, 1 source type(s), price CV 0.11." aria-label="Liquidity/confidence score: 72/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 15/30, recent sample depth 7/15, source diversity 5/10, price consistency 10/10. Current inputs: 32 included priced sample(s), 0 in the last 90 days, 2 in the last 180 days, latest sample 108d ago, 1 source type(s), price CV 0.11." tabindex="0">Medium (72/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">32 included sample(s), latest 108d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 88/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 27/30, recent sample depth 8/15, source diversity 8/10, price consistency 10/10. Current inputs: 33 included priced sample(s), 1 in the last 90 days, 3 in the last 180 days, latest sample 16d ago, 2 source type(s), price CV 0.12." aria-label="Liquidity/confidence score: 88/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 27/30, recent sample depth 8/15, source diversity 8/10, price consistency 10/10. Current inputs: 33 included priced sample(s), 1 in the last 90 days, 3 in the last 180 days, latest sample 16d ago, 2 source type(s), price CV 0.12." tabindex="0">High (88/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">33 included sample(s), latest 16d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -201,7 +201,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>38</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>39</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -226,10 +226,10 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="excluded">
-<td></td>
+<tr id="row-0" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
 <td>2026-06-08</td>
-<td></td>
+<td>$950</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason">confirmed sold from source check</td>
 <td>used</td>
@@ -238,7 +238,7 @@ td.status-reason { overflow: hidden; }
 <td>Sonnie98</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td>Closed: Fair (6.1% below market)</td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1tzut5n/wts_usamn_h_64_audio_tia_trio_w_paypal_950/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -254,7 +254,7 @@ td.status-reason { overflow: hidden; }
 <td>Sonnie98</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: High (11.8% above market)</td>
+<td>Closed: High (18.6% above market)</td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1sf7cyx/wts_usamn_h_64_audio_tia_trio_w_paypal_1200/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -270,7 +270,7 @@ td.status-reason { overflow: hidden; }
 <td>drewbadour</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (0.2% above market)</td>
+<td>Closed: Fair (6.3% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64audio-tia-trio-and-utws5-2025-combo.105083/" target="_blank">source</a></td>
 </tr>
 
@@ -286,7 +286,7 @@ td.status-reason { overflow: hidden; }
 <td>ctjacks336</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (2.5% above market)</td>
+<td>Closed: Fair (8.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64audio-tia-trio.102792/" target="_blank">source</a></td>
 </tr>
 
@@ -302,7 +302,7 @@ td.status-reason { overflow: hidden; }
 <td>gofishus</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.8% below market)</td>
+<td>Closed: Fair (1.2% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio-tubeless-iems.96082/" target="_blank">source</a></td>
 </tr>
 
@@ -318,7 +318,7 @@ td.status-reason { overflow: hidden; }
 <td>Audioenophile</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (2.5% above market)</td>
+<td>Closed: Fair (8.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/like-new-64-audio-tia-trio.84457/" target="_blank">source</a></td>
 </tr>
 
@@ -334,7 +334,7 @@ td.status-reason { overflow: hidden; }
 <td>doushi</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Great Deal (85.1% below market)</td>
+<td>Closed: Great Deal (84.2% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/mofasest-trio-ee-wraith-s8f-hidisz-mp145-tia-trio.81298/" target="_blank">source</a></td>
 </tr>
 
@@ -350,7 +350,7 @@ td.status-reason { overflow: hidden; }
 <td>SPLWF</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (11.8% above market)</td>
+<td>Closed: High (18.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.80050/" target="_blank">source</a></td>
 </tr>
 
@@ -366,7 +366,7 @@ td.status-reason { overflow: hidden; }
 <td>Thomastb</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (11.8% above market)</td>
+<td>Closed: High (18.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.79439/" target="_blank">source</a></td>
 </tr>
 
@@ -382,7 +382,7 @@ td.status-reason { overflow: hidden; }
 <td>Strayngs</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (2.2% below market)</td>
+<td>Closed: Fair (3.8% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio-with-astral-acoustics-pulse-upgraded-cable.76626/" target="_blank">source</a></td>
 </tr>
 
@@ -398,7 +398,7 @@ td.status-reason { overflow: hidden; }
 <td>doushi</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.2% above market)</td>
+<td>Closed: High (13.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.73817/" target="_blank">source</a></td>
 </tr>
 
@@ -414,7 +414,7 @@ td.status-reason { overflow: hidden; }
 <td>doushi</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (49.1% above market)</td>
+<td>Closed: Overpriced (58.2% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio-bnib.73818/" target="_blank">source</a></td>
 </tr>
 
@@ -430,7 +430,7 @@ td.status-reason { overflow: hidden; }
 <td>PeterPan55</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (11.8% above market)</td>
+<td>Closed: High (18.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.72807/" target="_blank">source</a></td>
 </tr>
 
@@ -446,7 +446,7 @@ td.status-reason { overflow: hidden; }
 <td>jmo04</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (2.2% below market)</td>
+<td>Closed: Fair (3.8% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.69206/" target="_blank">source</a></td>
 </tr>
 
@@ -462,7 +462,7 @@ td.status-reason { overflow: hidden; }
 <td>OrangeStar257</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (17.1% below market)</td>
+<td>Closed: Good Deal (12.0% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/update-64-audio-tia-trio.68468/" target="_blank">source</a></td>
 </tr>
 
@@ -478,7 +478,7 @@ td.status-reason { overflow: hidden; }
 <td>jmo04</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (25.8% above market)</td>
+<td>Closed: Overpriced (33.4% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio-new-logo-version.66429/" target="_blank">source</a></td>
 </tr>
 
@@ -526,7 +526,7 @@ td.status-reason { overflow: hidden; }
 <td>zephyrstar</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (11.8% above market)</td>
+<td>Closed: High (18.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio-like-new.62145/" target="_blank">source</a></td>
 </tr>
 
@@ -558,7 +558,7 @@ td.status-reason { overflow: hidden; }
 <td>hede11</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.8% below market)</td>
+<td>Closed: Fair (1.2% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.55914/" target="_blank">source</a></td>
 </tr>
 
@@ -590,7 +590,7 @@ td.status-reason { overflow: hidden; }
 <td>osanchez4808</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (8.7% below market)</td>
+<td>Closed: Fair (3.1% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.54759/" target="_blank">source</a></td>
 </tr>
 
@@ -606,7 +606,7 @@ td.status-reason { overflow: hidden; }
 <td>Mllump</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (18.8% above market)</td>
+<td>Closed: Overpriced (26.0% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.52822/" target="_blank">source</a></td>
 </tr>
 
@@ -622,7 +622,7 @@ td.status-reason { overflow: hidden; }
 <td>KevinS2020</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (30.5% above market)</td>
+<td>Closed: Overpriced (38.4% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio-in-excellent-condition.52414/" target="_blank">source</a></td>
 </tr>
 
@@ -638,7 +638,7 @@ td.status-reason { overflow: hidden; }
 <td>Amit</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (2.5% above market)</td>
+<td>Closed: Fair (8.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.52163/" target="_blank">source</a></td>
 </tr>
 
@@ -654,7 +654,7 @@ td.status-reason { overflow: hidden; }
 <td>evo</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (11.8% above market)</td>
+<td>Closed: High (18.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.49368/" target="_blank">source</a></td>
 </tr>
 
@@ -686,7 +686,7 @@ td.status-reason { overflow: hidden; }
 <td>Bootup22</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.2% above market)</td>
+<td>Closed: High (13.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio-b-stock.44549/" target="_blank">source</a></td>
 </tr>
 
@@ -702,7 +702,7 @@ td.status-reason { overflow: hidden; }
 <td>pfurey89</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (28.1% above market)</td>
+<td>Closed: Overpriced (35.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.42506/" target="_blank">source</a></td>
 </tr>
 
@@ -718,7 +718,7 @@ td.status-reason { overflow: hidden; }
 <td>DavidLovesIEMs</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (16.5% above market)</td>
+<td>Closed: High (23.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio-for-u12t.35392/" target="_blank">source</a></td>
 </tr>
 
@@ -734,7 +734,7 @@ td.status-reason { overflow: hidden; }
 <td>sladewilson411</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (21.1% above market)</td>
+<td>Closed: Overpriced (28.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio-reduced-price.34100/" target="_blank">source</a></td>
 </tr>
 
@@ -750,7 +750,7 @@ td.status-reason { overflow: hidden; }
 <td>ExpiredLabel</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.2% above market)</td>
+<td>Closed: High (13.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.33867/" target="_blank">source</a></td>
 </tr>
 
@@ -766,7 +766,7 @@ td.status-reason { overflow: hidden; }
 <td>ThiccSound</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (35.1% above market)</td>
+<td>Closed: Overpriced (43.3% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.23120/" target="_blank">source</a></td>
 </tr>
 
@@ -782,7 +782,7 @@ td.status-reason { overflow: hidden; }
 <td>solstice15</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (11.8% above market)</td>
+<td>Closed: High (18.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.22504/" target="_blank">source</a></td>
 </tr>
 
@@ -798,7 +798,7 @@ td.status-reason { overflow: hidden; }
 <td>ThiccSound</td>
 <td>1</td>
 <td>1</td>
-<td>Closed: Fair (8.1% above market)</td>
+<td>Closed: High (14.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.19517/" target="_blank">source</a></td>
 </tr>
 
@@ -814,7 +814,7 @@ td.status-reason { overflow: hidden; }
 <td>ctop</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (11.8% above market)</td>
+<td>Closed: High (18.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.17932/" target="_blank">source</a></td>
 </tr>
 
@@ -830,7 +830,7 @@ td.status-reason { overflow: hidden; }
 <td>Malevolint</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (23.0% above market)</td>
+<td>Closed: Overpriced (30.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.17023/" target="_blank">source</a></td>
 </tr>
 
@@ -846,7 +846,7 @@ td.status-reason { overflow: hidden; }
 <td>Chodorovski</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (16.5% above market)</td>
+<td>Closed: High (23.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.16676/" target="_blank">source</a></td>
 </tr>
 
@@ -862,7 +862,7 @@ td.status-reason { overflow: hidden; }
 <td>jfopps</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (28.1% above market)</td>
+<td>Closed: Overpriced (35.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.6349/" target="_blank">source</a></td>
 </tr>
 
@@ -878,7 +878,7 @@ td.status-reason { overflow: hidden; }
 <td>Towa</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (30.5% above market)</td>
+<td>Closed: Overpriced (38.4% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.6179/" target="_blank">source</a></td>
 </tr>
 
@@ -894,7 +894,7 @@ td.status-reason { overflow: hidden; }
 <td>kadinh</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (28.1% above market)</td>
+<td>Closed: Overpriced (35.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio-iems.2777/" target="_blank">source</a></td>
 </tr>
 
@@ -910,7 +910,7 @@ td.status-reason { overflow: hidden; }
 <td>Giler</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (4.8% above market)</td>
+<td>Closed: High (11.2% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/64-audio-tia-trio.2524/" target="_blank">source</a></td>
 </tr>
 
@@ -926,13 +926,13 @@ td.status-reason { overflow: hidden; }
 <td>ThiccSound</td>
 <td>1</td>
 <td>1</td>
-<td>Closed: High (13.7% above market)</td>
+<td>Closed: High (20.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fs-64-audio-tia-trio.983/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "64 Audio Tia Trio", "url": "https://old.reddit.com/r/AVexchange/comments/1tzut5n/wts_usamn_h_64_audio_tia_trio_w_paypal_950/#item-1", "price_num": null, "date_ms": 1780884336000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss"}, {"row_id": 1, "title": "64 Audio Tia Trio", "url": "https://old.reddit.com/r/AVexchange/comments/1sf7cyx/wts_usamn_h_64_audio_tia_trio_w_paypal_1200/#item-1", "price_num": 1200.0, "date_ms": 1775592955000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss"}, {"row_id": 2, "title": "Sold: 64Audio Tia Trio and UTWS5 2025 Combo", "url": "https://www.head-fi.org/classifieds/64audio-tia-trio-and-utws5-2025-combo.105083/", "price_num": 1075.0, "date_ms": 1772928000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 3, "title": "Traded: 64audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64audio-tia-trio.102792/", "price_num": 1100.0, "date_ms": 1769558400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 4, "title": "Closed: 64 Audio Tia Trio Tubeless IEMs", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-tubeless-iems.96082/", "price_num": 1000.0, "date_ms": 1759363200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 5, "title": "Sold: Like New 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/like-new-64-audio-tia-trio.84457/", "price_num": 1100.0, "date_ms": 1741305600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 6, "title": "Closed: Mofasest Trio, EE Wraith, S8F, Hidisz MP145, Tia Trio,", "url": "https://www.head-fi.org/classifieds/mofasest-trio-ee-wraith-s8f-hidisz-mp145-tia-trio.81298/", "price_num": 160.0, "date_ms": 1736467200000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi"}, {"row_id": 7, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.80050/", "price_num": 1200.0, "date_ms": 1734480000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 8, "title": "Closed: 64 audio Tia trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.79439/", "price_num": 1200.0, "date_ms": 1733616000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 9, "title": "Closed: 64 Audio Tia Trio with Astral Acoustics Pulse upgraded cable", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-with-astral-acoustics-pulse-upgraded-cable.76626/", "price_num": 1050.0, "date_ms": 1729209600000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi"}, {"row_id": 10, "title": "Traded: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.73817/", "price_num": 1150.0, "date_ms": 1724716800000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi"}, {"row_id": 11, "title": "Closed: 64 Audio Tia Trio BNIB", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-bnib.73818/", "price_num": 1600.0, "date_ms": 1724716800000, "listing_status": "closed", "condition_text": "used, new in box", "platform": "headfi"}, {"row_id": 12, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.72807/", "price_num": 1200.0, "date_ms": 1723075200000, "listing_status": "closed", "condition_text": "like new, excellent, b-stock", "platform": "headfi"}, {"row_id": 13, "title": "Closed: 64 audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.69206/", "price_num": 1050.0, "date_ms": 1717459200000, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 14, "title": "Sold: [Update] 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/update-64-audio-tia-trio.68468/", "price_num": 890.0, "date_ms": 1716336000000, "listing_status": "closed", "condition_text": "mint, fair", "platform": "headfi"}, {"row_id": 15, "title": "Closed: 64 Audio Tia Trio (new logo version)", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-new-logo-version.66429/", "price_num": 1350.0, "date_ms": 1713398400000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi"}, {"row_id": 16, "title": "Closed: 64 audio Tia trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.66250/", "price_num": null, "date_ms": 1713139200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}, {"row_id": 17, "title": "Sold: (reserved) 64 audio Tia trio", "url": "https://www.head-fi.org/classifieds/reserved-64-audio-tia-trio.62113/", "price_num": null, "date_ms": 1707177600000, "listing_status": "closed", "condition_text": "like new, excellent, good condition, used", "platform": "headfi"}, {"row_id": 18, "title": "Sold: 64 Audio Tia Trio Like New", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-like-new.62145/", "price_num": 1200.0, "date_ms": 1707177600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 19, "title": "Closed: 64 Audio tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.59561/", "price_num": null, "date_ms": 1703376000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 20, "title": "Closed: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.55914/", "price_num": 1000.0, "date_ms": 1697241600000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi"}, {"row_id": 21, "title": "Closed: 64 audio Tia trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.55126/", "price_num": null, "date_ms": 1695945600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}, {"row_id": 22, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.54759/", "price_num": 980.0, "date_ms": 1695254400000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi"}, {"row_id": 23, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.52822/", "price_num": 1275.0, "date_ms": 1692316800000, "listing_status": "closed", "condition_text": "like new, excellent, open box", "platform": "headfi"}, {"row_id": 24, "title": "Sold: 64 Audio Tia Trio in Excellent Condition", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-in-excellent-condition.52414/", "price_num": 1400.0, "date_ms": 1691712000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 25, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.52163/", "price_num": 1100.0, "date_ms": 1691280000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 26, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.49368/", "price_num": 1200.0, "date_ms": 1686787200000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi"}, {"row_id": 27, "title": "Sold: 64 audio tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.46697/", "price_num": null, "date_ms": 1682553600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 28, "title": "Sold: 64 Audio Tia Trio (B-Stock)", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-b-stock.44549/", "price_num": 1150.0, "date_ms": 1679875200000, "listing_status": "closed", "condition_text": "excellent, b-stock", "platform": "headfi"}, {"row_id": 29, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.42506/", "price_num": 1375.0, "date_ms": 1677369600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 30, "title": "Closed: 64 Audio Tia Trio for U12T", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-for-u12t.35392/", "price_num": 1250.0, "date_ms": 1667001600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 31, "title": "Sold: 64 Audio Tia Trio Reduced Price!!", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-reduced-price.34100/", "price_num": 1300.0, "date_ms": 1665100800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 32, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.33867/", "price_num": 1150.0, "date_ms": 1664668800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 33, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.23120/", "price_num": 1450.0, "date_ms": 1648684800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 34, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.22504/", "price_num": 1200.0, "date_ms": 1647820800000, "listing_status": "closed", "condition_text": "great condition, used", "platform": "headfi"}, {"row_id": 35, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.19517/", "price_num": 1160.0, "date_ms": 1643932800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi"}, {"row_id": 36, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.17932/", "price_num": 1200.0, "date_ms": 1641859200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 37, "title": "Closed: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.17023/", "price_num": 1320.0, "date_ms": 1640649600000, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 38, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.16676/", "price_num": 1250.0, "date_ms": 1639958400000, "listing_status": "closed", "condition_text": "excellent, fair, used", "platform": "headfi"}, {"row_id": 39, "title": "Closed: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.6349/", "price_num": 1375.0, "date_ms": 1623974400000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi"}, {"row_id": 40, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.6179/", "price_num": 1400.0, "date_ms": 1623715200000, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 41, "title": "Sold: 64 Audio Tia Trio IEMs", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-iems.2777/", "price_num": 1375.0, "date_ms": 1618531200000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi"}, {"row_id": 42, "title": "Sold: 64 Audio Tia trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.2524/", "price_num": 1125.0, "date_ms": 1618272000000, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 43, "title": "Sold: FS: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/fs-64-audio-tia-trio.983/", "price_num": 1220.0, "date_ms": 1616025600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}];
+const allRows = [{"row_id": 0, "title": "64 Audio Tia Trio", "url": "https://old.reddit.com/r/AVexchange/comments/1tzut5n/wts_usamn_h_64_audio_tia_trio_w_paypal_950/#item-1", "price_num": 950.0, "date_ms": 1780884336000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss"}, {"row_id": 1, "title": "64 Audio Tia Trio", "url": "https://old.reddit.com/r/AVexchange/comments/1sf7cyx/wts_usamn_h_64_audio_tia_trio_w_paypal_1200/#item-1", "price_num": 1200.0, "date_ms": 1775592955000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss"}, {"row_id": 2, "title": "Sold: 64Audio Tia Trio and UTWS5 2025 Combo", "url": "https://www.head-fi.org/classifieds/64audio-tia-trio-and-utws5-2025-combo.105083/", "price_num": 1075.0, "date_ms": 1772928000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 3, "title": "Traded: 64audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64audio-tia-trio.102792/", "price_num": 1100.0, "date_ms": 1769558400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 4, "title": "Closed: 64 Audio Tia Trio Tubeless IEMs", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-tubeless-iems.96082/", "price_num": 1000.0, "date_ms": 1759363200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 5, "title": "Sold: Like New 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/like-new-64-audio-tia-trio.84457/", "price_num": 1100.0, "date_ms": 1741305600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 6, "title": "Closed: Mofasest Trio, EE Wraith, S8F, Hidisz MP145, Tia Trio,", "url": "https://www.head-fi.org/classifieds/mofasest-trio-ee-wraith-s8f-hidisz-mp145-tia-trio.81298/", "price_num": 160.0, "date_ms": 1736467200000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi"}, {"row_id": 7, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.80050/", "price_num": 1200.0, "date_ms": 1734480000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 8, "title": "Closed: 64 audio Tia trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.79439/", "price_num": 1200.0, "date_ms": 1733616000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 9, "title": "Closed: 64 Audio Tia Trio with Astral Acoustics Pulse upgraded cable", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-with-astral-acoustics-pulse-upgraded-cable.76626/", "price_num": 1050.0, "date_ms": 1729209600000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi"}, {"row_id": 10, "title": "Traded: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.73817/", "price_num": 1150.0, "date_ms": 1724716800000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi"}, {"row_id": 11, "title": "Closed: 64 Audio Tia Trio BNIB", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-bnib.73818/", "price_num": 1600.0, "date_ms": 1724716800000, "listing_status": "closed", "condition_text": "used, new in box", "platform": "headfi"}, {"row_id": 12, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.72807/", "price_num": 1200.0, "date_ms": 1723075200000, "listing_status": "closed", "condition_text": "like new, excellent, b-stock", "platform": "headfi"}, {"row_id": 13, "title": "Closed: 64 audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.69206/", "price_num": 1050.0, "date_ms": 1717459200000, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 14, "title": "Sold: [Update] 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/update-64-audio-tia-trio.68468/", "price_num": 890.0, "date_ms": 1716336000000, "listing_status": "closed", "condition_text": "mint, fair", "platform": "headfi"}, {"row_id": 15, "title": "Closed: 64 Audio Tia Trio (new logo version)", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-new-logo-version.66429/", "price_num": 1350.0, "date_ms": 1713398400000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi"}, {"row_id": 16, "title": "Closed: 64 audio Tia trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.66250/", "price_num": null, "date_ms": 1713139200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}, {"row_id": 17, "title": "Sold: (reserved) 64 audio Tia trio", "url": "https://www.head-fi.org/classifieds/reserved-64-audio-tia-trio.62113/", "price_num": null, "date_ms": 1707177600000, "listing_status": "closed", "condition_text": "like new, excellent, good condition, used", "platform": "headfi"}, {"row_id": 18, "title": "Sold: 64 Audio Tia Trio Like New", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-like-new.62145/", "price_num": 1200.0, "date_ms": 1707177600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 19, "title": "Closed: 64 Audio tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.59561/", "price_num": null, "date_ms": 1703376000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 20, "title": "Closed: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.55914/", "price_num": 1000.0, "date_ms": 1697241600000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi"}, {"row_id": 21, "title": "Closed: 64 audio Tia trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.55126/", "price_num": null, "date_ms": 1695945600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}, {"row_id": 22, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.54759/", "price_num": 980.0, "date_ms": 1695254400000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi"}, {"row_id": 23, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.52822/", "price_num": 1275.0, "date_ms": 1692316800000, "listing_status": "closed", "condition_text": "like new, excellent, open box", "platform": "headfi"}, {"row_id": 24, "title": "Sold: 64 Audio Tia Trio in Excellent Condition", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-in-excellent-condition.52414/", "price_num": 1400.0, "date_ms": 1691712000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 25, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.52163/", "price_num": 1100.0, "date_ms": 1691280000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 26, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.49368/", "price_num": 1200.0, "date_ms": 1686787200000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi"}, {"row_id": 27, "title": "Sold: 64 audio tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.46697/", "price_num": null, "date_ms": 1682553600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 28, "title": "Sold: 64 Audio Tia Trio (B-Stock)", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-b-stock.44549/", "price_num": 1150.0, "date_ms": 1679875200000, "listing_status": "closed", "condition_text": "excellent, b-stock", "platform": "headfi"}, {"row_id": 29, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.42506/", "price_num": 1375.0, "date_ms": 1677369600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 30, "title": "Closed: 64 Audio Tia Trio for U12T", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-for-u12t.35392/", "price_num": 1250.0, "date_ms": 1667001600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 31, "title": "Sold: 64 Audio Tia Trio Reduced Price!!", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-reduced-price.34100/", "price_num": 1300.0, "date_ms": 1665100800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 32, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.33867/", "price_num": 1150.0, "date_ms": 1664668800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 33, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.23120/", "price_num": 1450.0, "date_ms": 1648684800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 34, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.22504/", "price_num": 1200.0, "date_ms": 1647820800000, "listing_status": "closed", "condition_text": "great condition, used", "platform": "headfi"}, {"row_id": 35, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.19517/", "price_num": 1160.0, "date_ms": 1643932800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi"}, {"row_id": 36, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.17932/", "price_num": 1200.0, "date_ms": 1641859200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 37, "title": "Closed: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.17023/", "price_num": 1320.0, "date_ms": 1640649600000, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 38, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.16676/", "price_num": 1250.0, "date_ms": 1639958400000, "listing_status": "closed", "condition_text": "excellent, fair, used", "platform": "headfi"}, {"row_id": 39, "title": "Closed: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.6349/", "price_num": 1375.0, "date_ms": 1623974400000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi"}, {"row_id": 40, "title": "Sold: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.6179/", "price_num": 1400.0, "date_ms": 1623715200000, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 41, "title": "Sold: 64 Audio Tia Trio IEMs", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio-iems.2777/", "price_num": 1375.0, "date_ms": 1618531200000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi"}, {"row_id": 42, "title": "Sold: 64 Audio Tia trio", "url": "https://www.head-fi.org/classifieds/64-audio-tia-trio.2524/", "price_num": 1125.0, "date_ms": 1618272000000, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 43, "title": "Sold: FS: 64 Audio Tia Trio", "url": "https://www.head-fi.org/classifieds/fs-64-audio-tia-trio.983/", "price_num": 1220.0, "date_ms": 1616025600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}];
 const originalMsrpUsd = 2300.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
