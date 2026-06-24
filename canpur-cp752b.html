@@ -183,9 +183,9 @@ td.status-reason { overflow: hidden; }
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$5,500</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2025</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">7BA/4EST/1PM/1BC</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
 
@@ -194,6 +194,8 @@ td.status-reason { overflow: hidden; }
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 98/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 15/15, source diversity 8/10, price consistency 10/10. Current inputs: 11 included priced sample(s), 5 in the last 90 days, 8 in the last 180 days, latest sample 3d ago, 2 source type(s), price CV 0.10." aria-label="Liquidity/confidence score: 98/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 15/15, source diversity 8/10, price consistency 10/10. Current inputs: 11 included priced sample(s), 5 in the last 90 days, 8 in the last 180 days, latest sample 3d ago, 2 source type(s), price CV 0.10." tabindex="0">High (98/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">11 included sample(s), latest 3d ago.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -214,7 +216,8 @@ td.status-reason { overflow: hidden; }
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -482,7 +485,7 @@ td.status-reason { overflow: hidden; }
 </table>
 <script>
 const allRows = [{"row_id": 0, "title": "Canpur CP752b", "url": "https://www.head-fi.org/classifieds/canpur-cp752b.111070/", "price_num": 3400.0, "date_ms": 1782000000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 1, "title": "Traded: Canpur cp752b", "url": "https://www.head-fi.org/classifieds/canpur-cp752b.109715/", "price_num": 3400.0, "date_ms": 1779840000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 2, "title": "Closed: Canpur CP752B Serial #1", "url": "https://www.head-fi.org/classifieds/canpur-cp752b-serial-1.109558/", "price_num": 3650.0, "date_ms": 1779580800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 3, "title": "Canpur 752B IEM\u2019s - summit-fi set", "url": "https://old.reddit.com/r/AVexchange/comments/1ti4fdc/wtsusawahcanpur_752b_iems_summitfi_set_w_paypal/#item-1", "price_num": 4700.0, "date_ms": 1779234156000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 4, "title": "Closed: Canpur 752b Serial #1", "url": "https://www.head-fi.org/classifieds/canpur-752b-serial-1.106813/", "price_num": 4000.0, "date_ms": 1775347200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 5, "title": "Sold: Canpur CP752B", "url": "https://www.head-fi.org/classifieds/canpur-cp752b.106205/", "price_num": null, "date_ms": 1774569600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 6, "title": "Sold: Canpur CP752b, like new (price drop)", "url": "https://www.head-fi.org/classifieds/canpur-cp752b-like-new-price-drop.105110/", "price_num": 3800.0, "date_ms": 1773014400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}, {"row_id": 7, "title": "Closed: Canpur CP752b", "url": "https://www.head-fi.org/classifieds/canpur-cp752b.104297/", "price_num": 99.0, "date_ms": 1771804800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 8, "title": "Sold: Canpur CP752B", "url": "https://www.head-fi.org/classifieds/canpur-cp752b.102631/", "price_num": 4150.0, "date_ms": 1769299200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 9, "title": "Traded: Canpur CP752B *Serial #1*", "url": "https://www.head-fi.org/classifieds/canpur-cp752b-serial-1.101886/", "price_num": null, "date_ms": 1768176000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}, {"row_id": 10, "title": "Sold: Canpur cp752b", "url": "https://www.head-fi.org/classifieds/canpur-cp752b.101608/", "price_num": 4200.0, "date_ms": 1767830400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 11, "title": "Sold: ***SOLD***. Canpur CP752B", "url": "https://www.head-fi.org/classifieds/sold-canpur-cp752b.100395/", "price_num": null, "date_ms": 1765929600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 12, "title": "Closed: Canpur CP752b (Brand New, Opened Box) #18", "url": "https://www.head-fi.org/classifieds/canpur-cp752b-brand-new-opened-box-18.100308/", "price_num": 4400.0, "date_ms": 1765756800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi"}, {"row_id": 13, "title": "Closed: Canpur CP752B", "url": "https://www.head-fi.org/classifieds/canpur-cp752b.99513/", "price_num": 4450.0, "date_ms": 1764633600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 14, "title": "Sold: Canpur CP752B", "url": "https://www.head-fi.org/classifieds/canpur-cp752b.99079/", "price_num": 4299.0, "date_ms": 1763942400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 15, "title": "Closed: Noble Kronos (MINT) for your CP752b Canpur; will add cash", "url": "https://www.head-fi.org/classifieds/noble-kronos-mint-for-your-cp752b-canpur-will-add-cash.97967/", "price_num": null, "date_ms": 1762300800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}];
-const originalMsrpUsd = null;
+const originalMsrpUsd = 5500.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
 function moneyRound(value) { return money(value); }

@@ -183,9 +183,9 @@ td.status-reason { overflow: hidden; }
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$800</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2024</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">14BA</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
 
@@ -194,6 +194,8 @@ td.status-reason { overflow: hidden; }
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 69/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 15/30, recent sample depth 4/15, source diversity 8/10, price consistency 7/10. Current inputs: 10 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 163d ago, 2 source type(s), price CV 0.13." aria-label="Liquidity/confidence score: 69/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 15/30, recent sample depth 4/15, source diversity 8/10, price consistency 7/10. Current inputs: 10 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 163d ago, 2 source type(s), price CV 0.13." tabindex="0">Medium (69/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">10 included sample(s), latest 163d ago.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -214,7 +216,8 @@ td.status-reason { overflow: hidden; }
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -418,7 +421,7 @@ td.status-reason { overflow: hidden; }
 </table>
 <script>
 const allRows = [{"row_id": 0, "title": "PD!!! Aful Cantor Fullset", "url": "https://www.head-fi.org/classifieds/pd-aful-cantor-fullset.109799/", "price_num": 350.0, "date_ms": 1779926400000, "listing_status": "active", "condition_text": "good condition, used", "platform": "headfi"}, {"row_id": 1, "title": "Aful Cantor 14ba Starry Night", "url": "https://www.head-fi.org/classifieds/aful-cantor-14ba-starry-night.109799/", "price_num": 399.0, "date_ms": 1779926400000, "listing_status": "active", "condition_text": "good condition, used", "platform": "headfi"}, {"row_id": 2, "title": "Sold: Aful Cantor IEMs Mint", "url": "https://www.head-fi.org/classifieds/aful-cantor-iems-mint.101895/", "price_num": 430.0, "date_ms": 1768176000000, "listing_status": "closed", "condition_text": "mint, used", "platform": "headfi"}, {"row_id": 3, "title": "Sold: Aful Cantor", "url": "https://www.head-fi.org/classifieds/aful-cantor.99668/", "price_num": 475.0, "date_ms": 1764806400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 4, "title": "Closed: [FLASH SALE] Aful Cantor", "url": "https://www.head-fi.org/classifieds/flash-sale-aful-cantor.96087/", "price_num": 500.0, "date_ms": 1759363200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 5, "title": "Aful Cantor - Starry Night shell mint condition with all accessories", "url": "https://old.reddit.com/r/AVexchange/comments/1m55n8o/wts_usmi_h_aful_cantor_nightjar_singularity_dita/#item-1", "price_num": 550.0, "date_ms": 1753060471000, "listing_status": "closed", "condition_text": "with all accessories -", "platform": "reddit_rss"}, {"row_id": 6, "title": "Sold: Aful Audio Cantor", "url": "https://www.head-fi.org/classifieds/aful-audio-cantor.91509/", "price_num": 580.0, "date_ms": 1752192000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 7, "title": "Traded: Aful Cantor, Starry Night, 4.4mm (Pending Trade)", "url": "https://www.head-fi.org/classifieds/aful-cantor-starry-night-4-4mm-pending-trade.88932/", "price_num": 650.0, "date_ms": 1748044800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 8, "title": "Sold: Aful Cantor", "url": "https://www.head-fi.org/classifieds/aful-cantor.88132/", "price_num": 600.0, "date_ms": 1746921600000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi"}, {"row_id": 9, "title": "Sold: Aful Cantor", "url": "https://www.head-fi.org/classifieds/aful-cantor.84966/", "price_num": 599.0, "date_ms": 1741996800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 10, "title": "Sold: Aful Cantor - Mint Condition 14 BA/side", "url": "https://www.head-fi.org/classifieds/aful-cantor-mint-condition-14-ba-side.79943/", "price_num": 600.0, "date_ms": 1734307200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi"}, {"row_id": 11, "title": "Traded: Aful Cantor (Starry)", "url": "https://www.head-fi.org/classifieds/aful-cantor-starry.77343/", "price_num": 675.0, "date_ms": 1730332800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}];
-const originalMsrpUsd = null;
+const originalMsrpUsd = 800.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
 function moneyRound(value) { return money(value); }

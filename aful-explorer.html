@@ -183,9 +183,9 @@ td.status-reason { overflow: hidden; }
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$120</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2024</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">1DD/2BA</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
 
@@ -194,6 +194,8 @@ td.status-reason { overflow: hidden; }
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 85/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 8/15, source diversity 8/10, price consistency 4/10. Current inputs: 8 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 4d ago, 2 source type(s), price CV 0.29." aria-label="Liquidity/confidence score: 85/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 8/15, source diversity 8/10, price consistency 4/10. Current inputs: 8 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 4d ago, 2 source type(s), price CV 0.29." tabindex="0">High (85/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">8 included sample(s), latest 4d ago.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -214,7 +216,8 @@ td.status-reason { overflow: hidden; }
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -418,7 +421,7 @@ td.status-reason { overflow: hidden; }
 </table>
 <script>
 const allRows = [{"row_id": 0, "title": "Aful Explorer - 3.5mm cable", "url": "https://old.reddit.com/r/AVexchange/comments/1uaf14v/wtsusasch_kiwi_ears_punch_thieaudio_hype4/#item-4", "price_num": 85.0, "date_ms": 1781906366000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 1, "title": "Mest MK2, Maven 2, Ka17, Aful Explorer", "url": "https://old.reddit.com/r/AVexchange/comments/1snkwtw/wtsusailh_mest_mk2_maven_2_ka17_aful_explorer_w/#item-1", "price_num": 700.0, "date_ms": 1776384364000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 2, "title": "price drop 6-Item Bundle: Aful Explorer, EA500LM, EA500 (Shortbus Mod), Tin P1 Panda, Shure, Iris", "url": "https://old.reddit.com/r/AVexchange/comments/1rf4z7k/wts_usaca_h_price_drop_6item_bundle_aful_explorer/#item-1", "price_num": null, "date_ms": 1772095217000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 3, "title": "Shure SE215, Tin P1 Max (Giant Panda), Simgot EA500 (Shortbus Mod), EA500LM, AFUL Explorer", "url": "https://old.reddit.com/r/AVexchange/comments/1r7x0y5/wts_usaca_h_shure_se215_tin_p1_max_giant_panda/#item-1", "price_num": 40.0, "date_ms": 1771401457000, "listing_status": "closed", "condition_text": "excellent", "platform": "reddit_rss"}, {"row_id": 4, "title": "AFUL Explorer", "url": "https://old.reddit.com/r/AVexchange/comments/1prqjy8/wts_usaca_h_nicehck_rockies_softears_volume_s/#item-9", "price_num": 70.0, "date_ms": 1766269747000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 5, "title": "Sold: AFUL Explorer IEMs", "url": "https://www.head-fi.org/classifieds/aful-explorer-iems.100357/", "price_num": 68.0, "date_ms": 1765843200000, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 6, "title": "Sold: PD AFUL Explorer", "url": "https://www.head-fi.org/classifieds/pd-aful-explorer.98506/", "price_num": 55.0, "date_ms": 1763164800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi"}, {"row_id": 7, "title": "Closed: Aful Explorer", "url": "https://www.head-fi.org/classifieds/aful-explorer.95643/", "price_num": 50.0, "date_ms": 1758672000000, "listing_status": "closed", "condition_text": "", "platform": "headfi"}, {"row_id": 8, "title": "Aful Explorer with Blu Tripowin upgrade cable", "url": "https://old.reddit.com/r/AVexchange/comments/1ncotol/wts_usmn_h_letshuoer_s12_pro_kiwi_ears_aether/#item-7", "price_num": 50.0, "date_ms": 1757438019000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 9, "title": "Aful Explorer", "url": "https://old.reddit.com/r/AVexchange/comments/1mpz05y/wts_usanm_h_softears_volume_s_aful_performer_52/#item-4", "price_num": 90.0, "date_ms": 1755173837000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss"}, {"row_id": 10, "title": "Closed: Aful Magicone and Explorer Combo", "url": "https://www.head-fi.org/classifieds/aful-magicone-and-explorer-combo.82326/", "price_num": 125.0, "date_ms": 1737936000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}, {"row_id": 11, "title": "Sold: AFUL Explorer 1DD+2BA Hybrid In-Ear Monitors (4.4mm)", "url": "https://www.head-fi.org/classifieds/aful-explorer-1dd-2ba-hybrid-in-ear-monitors-4-4mm.75641/", "price_num": 74.0, "date_ms": 1727740800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi"}];
-const originalMsrpUsd = null;
+const originalMsrpUsd = 120.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
 function moneyRound(value) { return money(value); }
