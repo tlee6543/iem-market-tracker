@@ -199,7 +199,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -239,9 +239,25 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1uhafw6/wts_usca_h_thieaudio_oracle_mkii_iems_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
+<tr id="row-1" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
+<td>2026-06-27</td>
+<td>$300</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason"></td>
+<td>mint, like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>lostrockets</td>
+<td>0</td>
+<td>0</td>
+<td>N/A</td>
+<td><a href="https://www.head-fi.org/classifieds/thieaudio-oracle-mkii-iems.111341/" target="_blank">source</a></td>
+</tr>
+
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Thieaudio Oracle MKII IEMs", "url": "https://old.reddit.com/r/AVexchange/comments/1uhafw6/wts_usca_h_thieaudio_oracle_mkii_iems_w_paypal/#item-1", "price_num": 300.0, "date_ms": 1782585720000, "listing_status": "active", "condition_text": "includes all that", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked"}];
+const allRows = [{"row_id": 0, "title": "Thieaudio Oracle MKII IEMs", "url": "https://old.reddit.com/r/AVexchange/comments/1uhafw6/wts_usca_h_thieaudio_oracle_mkii_iems_w_paypal/#item-1", "price_num": 300.0, "date_ms": 1782585720000, "listing_status": "active", "condition_text": "includes all that", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked"}, {"row_id": 1, "title": "Thieaudio Oracle MKII IEMs", "url": "https://www.head-fi.org/classifieds/thieaudio-oracle-mkii-iems.111341/", "price_num": 300.0, "date_ms": 1782518400000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
