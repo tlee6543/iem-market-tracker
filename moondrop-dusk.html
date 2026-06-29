@@ -199,7 +199,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>2</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>3</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -223,8 +223,24 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
+<tr id="row-0" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<td>2026-06-29</td>
+<td>$290</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason"></td>
+<td>4/5</td>
+<td>0</td>
+<td>reddit_rss</td>
+<td>Koufiii</td>
+<td>0</td>
+<td>0</td>
+<td>High (15.5% above market)</td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1uj221j/wts_usaca_h_sennheiser_hdb_630_wireless_moondrop/#item-2" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
 <td>2025-01-22</td>
 <td>$250</td>
 <td><span class="pill">closed</span></td>
@@ -239,8 +255,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/moondrop-dusk.82037/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
+<tr id="row-2" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
 <td>2023-01-13</td>
 <td>$270</td>
 <td><span class="pill">closed</span></td>
@@ -257,7 +273,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Closed: Moondrop Dusk", "url": "https://www.head-fi.org/classifieds/moondrop-dusk.82037/", "price_num": 250.0, "date_ms": 1737504000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Closed: Moondrop Dusk Blessing 2 - Shipped", "url": "https://www.head-fi.org/classifieds/moondrop-dusk-blessing-2-shipped.39656/", "price_num": 270.0, "date_ms": 1673568000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Moondrop x Crinacle DUSK", "url": "https://old.reddit.com/r/AVexchange/comments/1uj221j/wts_usaca_h_sennheiser_hdb_630_wireless_moondrop/#item-2", "price_num": 290.0, "date_ms": 1782760751000, "listing_status": "active", "condition_text": "4/5", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v13_item_level_sold_and_strikethrough_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Closed: Moondrop Dusk", "url": "https://www.head-fi.org/classifieds/moondrop-dusk.82037/", "price_num": 250.0, "date_ms": 1737504000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Closed: Moondrop Dusk Blessing 2 - Shipped", "url": "https://www.head-fi.org/classifieds/moondrop-dusk-blessing-2-shipped.39656/", "price_num": 270.0, "date_ms": 1673568000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
