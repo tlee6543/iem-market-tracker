@@ -193,13 +193,13 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 19/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 8/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 315d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 19/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 8/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 315d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (19/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 315d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 59/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 30/30, recent sample depth 8/15, source diversity 8/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 0d ago, 2 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 59/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 30/30, recent sample depth 8/15, source diversity 8/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 0d ago, 2 source type(s), two samples; limited volatility read." tabindex="0">Medium (59/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 0d ago.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -225,6 +225,22 @@ td.status-reason { overflow: hidden; }
 
 <tr id="row-0" class="included">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
+<td>2026-06-30</td>
+<td>$550</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td></td>
+<td>0</td>
+<td>reddit_rss</td>
+<td>graefeln</td>
+<td>0</td>
+<td>0</td>
+<td>Closed: Fair (0.0% above market)</td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1ujqkx5/wts_usawi_h_iems_daps_questyle_sigma_w_paypal/#item-4" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
 <td>2025-08-19</td>
 <td>$550</td>
 <td><span class="pill">closed</span></td>
@@ -241,7 +257,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Closed: Symphonium Titan", "url": "https://www.head-fi.org/classifieds/symphonium-titan.93614/", "price_num": 550.0, "date_ms": 1755561600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Symphonium Titan", "url": "https://old.reddit.com/r/AVexchange/comments/1ujqkx5/wts_usawi_h_iems_daps_questyle_sigma_w_paypal/#item-4", "price_num": 550.0, "date_ms": 1782829216000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | reddit_item_line_strikethrough_sold | comments_checked_rss_and_html | confirmed_priced_nonbundle_included"}, {"row_id": 1, "title": "Closed: Symphonium Titan", "url": "https://www.head-fi.org/classifieds/symphonium-titan.93614/", "price_num": 550.0, "date_ms": 1755561600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
