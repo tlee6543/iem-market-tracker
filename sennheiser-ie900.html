@@ -193,7 +193,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 85/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 27/30, recent sample depth 8/15, source diversity 8/10, price consistency 7/10. Current inputs: 31 included priced sample(s), 1 in the last 90 days, 4 in the last 180 days, latest sample 29d ago, 2 source type(s), price CV 0.19." aria-label="Liquidity/confidence score: 85/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 27/30, recent sample depth 8/15, source diversity 8/10, price consistency 7/10. Current inputs: 31 included priced sample(s), 1 in the last 90 days, 4 in the last 180 days, latest sample 29d ago, 2 source type(s), price CV 0.19." tabindex="0">High (85/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">31 included sample(s), latest 29d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 85/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 27/30, recent sample depth 8/15, source diversity 8/10, price consistency 7/10. Current inputs: 31 included priced sample(s), 1 in the last 90 days, 4 in the last 180 days, latest sample 30d ago, 2 source type(s), price CV 0.19." aria-label="Liquidity/confidence score: 85/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 27/30, recent sample depth 8/15, source diversity 8/10, price consistency 7/10. Current inputs: 31 included priced sample(s), 1 in the last 90 days, 4 in the last 180 days, latest sample 30d ago, 2 source type(s), price CV 0.19." tabindex="0">High (85/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">31 included sample(s), latest 30d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -201,7 +201,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>32</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>33</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -226,8 +226,24 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
+<tr id="row-0" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<td>2026-07-06</td>
+<td>$675</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason"></td>
+<td>mint</td>
+<td>1</td>
+<td>reddit_rss</td>
+<td>ianto7</td>
+<td>0</td>
+<td>0</td>
+<td>Fair (6.7% below market)</td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1upd39i/wtsusakyh_monarch_mkiv_sennheiser_ie900_fiio_fh5/#item-2" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
 <td>2026-06-07</td>
 <td>$850</td>
 <td><span class="pill">closed</span></td>
@@ -242,8 +258,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900-%E2%80%93-brand-new-factory-sealed.110380/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
+<tr id="row-2" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
 <td>2026-04-06</td>
 <td>$600</td>
 <td><span class="pill">closed</span></td>
@@ -258,8 +274,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.106900/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
+<tr id="row-3" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" checked></td>
 <td>2026-03-12</td>
 <td>$620</td>
 <td><span class="pill">closed</span></td>
@@ -274,8 +290,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.105282/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" checked></td>
+<tr id="row-4" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" checked></td>
 <td>2026-02-17</td>
 <td>$740</td>
 <td><span class="pill">closed</span></td>
@@ -290,8 +306,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900-genuine-brand-new-replacement.103985/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-4" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="4" checked></td>
+<tr id="row-5" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="5" checked></td>
 <td>2025-07-09</td>
 <td>$670</td>
 <td><span class="pill">closed</span></td>
@@ -306,8 +322,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900-authentic-price-drop.91374/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-5" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="5" checked></td>
+<tr id="row-6" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" checked></td>
 <td>2025-02-25</td>
 <td>$750</td>
 <td><span class="pill">closed</span></td>
@@ -322,8 +338,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900-iems.83893/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-6" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="6" checked></td>
+<tr id="row-7" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="7" checked></td>
 <td>2025-02-06</td>
 <td>$900</td>
 <td><span class="pill">closed</span></td>
@@ -338,8 +354,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900-mint-options.82864/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-7" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="7" checked></td>
+<tr id="row-8" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="8" checked></td>
 <td>2025-01-04</td>
 <td>$675</td>
 <td><span class="pill">closed</span></td>
@@ -354,8 +370,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.80945/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-8" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="8" checked></td>
+<tr id="row-9" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="9" checked></td>
 <td>2024-12-15</td>
 <td>$600</td>
 <td><span class="pill">closed</span></td>
@@ -370,8 +386,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1hf05um/wtsusca_h_anole_vx_ierz1r_ie900_n5005_beats_fit/#item-3" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-9" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="9" ></td>
+<tr id="row-10" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="10" ></td>
 <td>2024-12-07</td>
 <td>$600</td>
 <td><span class="pill">closed</span></td>
@@ -386,8 +402,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1h94i8f/wtsusca_h_anole_vx_ierz1r_ierm9_ie900_lcdgx_hd600/#item-3" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-10" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="10" checked></td>
+<tr id="row-11" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="11" checked></td>
 <td>2024-10-20</td>
 <td>$650</td>
 <td><span class="pill">closed</span></td>
@@ -402,8 +418,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.76753/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-11" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="11" checked></td>
+<tr id="row-12" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="12" checked></td>
 <td>2024-08-31</td>
 <td>$650</td>
 <td><span class="pill">closed</span></td>
@@ -418,8 +434,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.74050/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-12" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="12" checked></td>
+<tr id="row-13" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="13" checked></td>
 <td>2024-07-04</td>
 <td>$650</td>
 <td><span class="pill">closed</span></td>
@@ -434,8 +450,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.70866/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-13" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="13" checked></td>
+<tr id="row-14" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="14" checked></td>
 <td>2024-06-26</td>
 <td>$699</td>
 <td><span class="pill">closed</span></td>
@@ -450,8 +466,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.70475/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-14" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="14" checked></td>
+<tr id="row-15" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="15" checked></td>
 <td>2024-05-28</td>
 <td>$650</td>
 <td><span class="pill">closed</span></td>
@@ -466,8 +482,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.68799/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-15" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="15" checked></td>
+<tr id="row-16" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="16" checked></td>
 <td>2024-05-12</td>
 <td>$715</td>
 <td><span class="pill">closed</span></td>
@@ -482,8 +498,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.67814/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-16" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="16" checked></td>
+<tr id="row-17" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="17" checked></td>
 <td>2024-02-26</td>
 <td>$780</td>
 <td><span class="pill">closed</span></td>
@@ -498,8 +514,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.63321/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-17" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="17" checked></td>
+<tr id="row-18" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="18" checked></td>
 <td>2024-02-21</td>
 <td>$650</td>
 <td><span class="pill">closed</span></td>
@@ -514,8 +530,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.63021/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-18" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="18" checked></td>
+<tr id="row-19" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="19" checked></td>
 <td>2024-01-22</td>
 <td>$700</td>
 <td><span class="pill">closed</span></td>
@@ -530,8 +546,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.61191/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-19" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="19" checked></td>
+<tr id="row-20" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="20" checked></td>
 <td>2023-12-03</td>
 <td>$650</td>
 <td><span class="pill">closed</span></td>
@@ -546,8 +562,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/ie900.58525/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-20" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="20" checked></td>
+<tr id="row-21" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="21" checked></td>
 <td>2023-08-22</td>
 <td>$750</td>
 <td><span class="pill">closed</span></td>
@@ -562,8 +578,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.53034/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-21" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="21" checked></td>
+<tr id="row-22" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="22" checked></td>
 <td>2023-08-12</td>
 <td>$700</td>
 <td><span class="pill">closed</span></td>
@@ -578,8 +594,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.52488/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-22" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="22" checked></td>
+<tr id="row-23" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="23" checked></td>
 <td>2023-04-13</td>
 <td>$850</td>
 <td><span class="pill">closed</span></td>
@@ -594,8 +610,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.45757/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-23" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="23" checked></td>
+<tr id="row-24" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="24" checked></td>
 <td>2023-03-26</td>
 <td>$900</td>
 <td><span class="pill">closed</span></td>
@@ -610,8 +626,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900-iem.44431/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-24" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="24" checked></td>
+<tr id="row-25" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="25" checked></td>
 <td>2023-03-13</td>
 <td>$775</td>
 <td><span class="pill">closed</span></td>
@@ -626,8 +642,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.43582/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-25" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="25" checked></td>
+<tr id="row-26" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="26" checked></td>
 <td>2022-11-28</td>
 <td>$850</td>
 <td><span class="pill">closed</span></td>
@@ -642,8 +658,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/fs-sennheiser-ie900.36997/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-26" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="26" checked></td>
+<tr id="row-27" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="27" checked></td>
 <td>2022-04-09</td>
 <td>$950</td>
 <td><span class="pill">closed</span></td>
@@ -658,8 +674,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.23637/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-27" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="27" checked></td>
+<tr id="row-28" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="28" checked></td>
 <td>2022-02-01</td>
 <td>$1,000</td>
 <td><span class="pill">closed</span></td>
@@ -674,8 +690,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.19361/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-28" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="28" checked></td>
+<tr id="row-29" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="29" checked></td>
 <td>2021-11-21</td>
 <td>$975</td>
 <td><span class="pill">closed</span></td>
@@ -690,8 +706,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.15015/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-29" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="29" checked></td>
+<tr id="row-30" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="30" checked></td>
 <td>2021-11-19</td>
 <td>$1,200</td>
 <td><span class="pill">closed</span></td>
@@ -706,8 +722,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.14895/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-30" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="30" checked></td>
+<tr id="row-31" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="31" checked></td>
 <td>2021-10-25</td>
 <td>$1,100</td>
 <td><span class="pill">closed</span></td>
@@ -722,8 +738,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.13478/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-31" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="31" checked></td>
+<tr id="row-32" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="32" checked></td>
 <td>2021-10-21</td>
 <td>$925</td>
 <td><span class="pill">closed</span></td>
@@ -738,7 +754,7 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie900.13286/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-32" class="excluded">
+<tr id="row-33" class="excluded">
 <td></td>
 <td></td>
 <td></td>
@@ -756,7 +772,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Sennheiser IE900 \u2013 Brand New / Factory Sealed", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900-%E2%80%93-brand-new-factory-sealed.110380/", "price_num": 850.0, "date_ms": 1780790400000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_confirmed_sold_from_headfi_page"}, {"row_id": 1, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.106900/", "price_num": 600.0, "date_ms": 1775433600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 2, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.105282/", "price_num": 620.0, "date_ms": 1773273600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 3, "title": "Sold: Sennheiser IE900 (Genuine + Brand New Replacement)", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900-genuine-brand-new-replacement.103985/", "price_num": 740.0, "date_ms": 1771286400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 4, "title": "Sold: Sennheiser IE900 authentic: price drop", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900-authentic-price-drop.91374/", "price_num": 670.0, "date_ms": 1752019200000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 5, "title": "Sold: Sennheiser IE900 IEMs", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900-iems.83893/", "price_num": 750.0, "date_ms": 1740441600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 6, "title": "Sold: Sennheiser IE900 mint + options", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900-mint-options.82864/", "price_num": 900.0, "date_ms": 1738800000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 7, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.80945/", "price_num": 675.0, "date_ms": 1735948800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 8, "title": "Sennheiser IE 900", "url": "https://old.reddit.com/r/AVexchange/comments/1hf05um/wtsusca_h_anole_vx_ierz1r_ie900_n5005_beats_fit/#item-3", "price_num": 600.0, "date_ms": 1734290776000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=qdc anole"}, {"row_id": 9, "title": "Sennheiser IE 900", "url": "https://old.reddit.com/r/AVexchange/comments/1h94i8f/wtsusca_h_anole_vx_ierz1r_ierm9_ie900_lcdgx_hd600/#item-3", "price_num": 600.0, "date_ms": 1733611987000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=qdc anole | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 10, "title": "Sold: SENNHEISER IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.76753/", "price_num": 650.0, "date_ms": 1729382400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 11, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.74050/", "price_num": 650.0, "date_ms": 1725062400000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 12, "title": "Closed: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.70866/", "price_num": 650.0, "date_ms": 1720051200000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 13, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.70475/", "price_num": 699.0, "date_ms": 1719360000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 14, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.68799/", "price_num": 650.0, "date_ms": 1716854400000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 15, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.67814/", "price_num": 715.0, "date_ms": 1715472000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 16, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.63321/", "price_num": 780.0, "date_ms": 1708905600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 17, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.63021/", "price_num": 650.0, "date_ms": 1708473600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 18, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.61191/", "price_num": 700.0, "date_ms": 1705881600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 19, "title": "Sold: IE900", "url": "https://www.head-fi.org/classifieds/ie900.58525/", "price_num": 650.0, "date_ms": 1701561600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 20, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.53034/", "price_num": 750.0, "date_ms": 1692662400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 21, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.52488/", "price_num": 700.0, "date_ms": 1691798400000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 22, "title": "Closed: Sennheiser ie900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.45757/", "price_num": 850.0, "date_ms": 1681344000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 23, "title": "Closed: Sennheiser IE900 IEM", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900-iem.44431/", "price_num": 900.0, "date_ms": 1679788800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 24, "title": "Traded: Sennheiser ie900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.43582/", "price_num": 775.0, "date_ms": 1678665600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 25, "title": "Sold: FS: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/fs-sennheiser-ie900.36997/", "price_num": 850.0, "date_ms": 1669593600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 26, "title": "Closed: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.23637/", "price_num": 950.0, "date_ms": 1649462400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 27, "title": "Sold: Sennheiser ie900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.19361/", "price_num": 1000.0, "date_ms": 1643673600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 28, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.15015/", "price_num": 975.0, "date_ms": 1637452800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 29, "title": "Closed: Sennheiser ie900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.14895/", "price_num": 1200.0, "date_ms": 1637280000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 30, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.13478/", "price_num": 1100.0, "date_ms": 1635120000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 31, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.13286/", "price_num": 925.0, "date_ms": 1634774400000, "listing_status": "closed", "condition_text": "excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 32, "title": "Closed: Hart MMCX Cable for Sennheiser IE900/IE600/IE200 , Sony IER-M9, etc.", "url": "https://www.head-fi.org/classifieds/hart-mmcx-cable-for-sennheiser-ie900-ie600-ie200-sony-ier-m9-etc.80749/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Sennheiser IE900", "url": "https://old.reddit.com/r/AVexchange/comments/1upd39i/wtsusakyh_monarch_mkiv_sennheiser_ie900_fiio_fh5/#item-2", "price_num": 675.0, "date_ms": 1783378420000, "listing_status": "active", "condition_text": "mint", "platform": "reddit_rss", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Sennheiser IE900 \u2013 Brand New / Factory Sealed", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900-%E2%80%93-brand-new-factory-sealed.110380/", "price_num": 850.0, "date_ms": 1780790400000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_confirmed_sold_from_headfi_page"}, {"row_id": 2, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.106900/", "price_num": 600.0, "date_ms": 1775433600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 3, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.105282/", "price_num": 620.0, "date_ms": 1773273600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 4, "title": "Sold: Sennheiser IE900 (Genuine + Brand New Replacement)", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900-genuine-brand-new-replacement.103985/", "price_num": 740.0, "date_ms": 1771286400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 5, "title": "Sold: Sennheiser IE900 authentic: price drop", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900-authentic-price-drop.91374/", "price_num": 670.0, "date_ms": 1752019200000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 6, "title": "Sold: Sennheiser IE900 IEMs", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900-iems.83893/", "price_num": 750.0, "date_ms": 1740441600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 7, "title": "Sold: Sennheiser IE900 mint + options", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900-mint-options.82864/", "price_num": 900.0, "date_ms": 1738800000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 8, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.80945/", "price_num": 675.0, "date_ms": 1735948800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 9, "title": "Sennheiser IE 900", "url": "https://old.reddit.com/r/AVexchange/comments/1hf05um/wtsusca_h_anole_vx_ierz1r_ie900_n5005_beats_fit/#item-3", "price_num": 600.0, "date_ms": 1734290776000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=qdc anole"}, {"row_id": 10, "title": "Sennheiser IE 900", "url": "https://old.reddit.com/r/AVexchange/comments/1h94i8f/wtsusca_h_anole_vx_ierz1r_ierm9_ie900_lcdgx_hd600/#item-3", "price_num": 600.0, "date_ms": 1733611987000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=qdc anole | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 11, "title": "Sold: SENNHEISER IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.76753/", "price_num": 650.0, "date_ms": 1729382400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 12, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.74050/", "price_num": 650.0, "date_ms": 1725062400000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 13, "title": "Closed: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.70866/", "price_num": 650.0, "date_ms": 1720051200000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 14, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.70475/", "price_num": 699.0, "date_ms": 1719360000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 15, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.68799/", "price_num": 650.0, "date_ms": 1716854400000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 16, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.67814/", "price_num": 715.0, "date_ms": 1715472000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 17, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.63321/", "price_num": 780.0, "date_ms": 1708905600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 18, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.63021/", "price_num": 650.0, "date_ms": 1708473600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 19, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.61191/", "price_num": 700.0, "date_ms": 1705881600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 20, "title": "Sold: IE900", "url": "https://www.head-fi.org/classifieds/ie900.58525/", "price_num": 650.0, "date_ms": 1701561600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 21, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.53034/", "price_num": 750.0, "date_ms": 1692662400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 22, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.52488/", "price_num": 700.0, "date_ms": 1691798400000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 23, "title": "Closed: Sennheiser ie900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.45757/", "price_num": 850.0, "date_ms": 1681344000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 24, "title": "Closed: Sennheiser IE900 IEM", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900-iem.44431/", "price_num": 900.0, "date_ms": 1679788800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 25, "title": "Traded: Sennheiser ie900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.43582/", "price_num": 775.0, "date_ms": 1678665600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 26, "title": "Sold: FS: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/fs-sennheiser-ie900.36997/", "price_num": 850.0, "date_ms": 1669593600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 27, "title": "Closed: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.23637/", "price_num": 950.0, "date_ms": 1649462400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 28, "title": "Sold: Sennheiser ie900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.19361/", "price_num": 1000.0, "date_ms": 1643673600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 29, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.15015/", "price_num": 975.0, "date_ms": 1637452800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 30, "title": "Closed: Sennheiser ie900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.14895/", "price_num": 1200.0, "date_ms": 1637280000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 31, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.13478/", "price_num": 1100.0, "date_ms": 1635120000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 32, "title": "Sold: Sennheiser IE900", "url": "https://www.head-fi.org/classifieds/sennheiser-ie900.13286/", "price_num": 925.0, "date_ms": 1634774400000, "listing_status": "closed", "condition_text": "excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 33, "title": "Closed: Hart MMCX Cable for Sennheiser IE900/IE600/IE200 , Sony IER-M9, etc.", "url": "https://www.head-fi.org/classifieds/hart-mmcx-cable-for-sennheiser-ie900-ie600-ie200-sony-ier-m9-etc.80749/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 1500.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
