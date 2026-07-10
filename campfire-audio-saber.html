@@ -199,7 +199,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -223,8 +223,24 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
+<tr id="row-0" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<td>2026-05-19</td>
+<td>$69</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">headfi_classified_status_line_active</td>
+<td>like new, excellent, used</td>
+<td>0</td>
+<td>headfi</td>
+<td>salman91</td>
+<td>0</td>
+<td>0</td>
+<td>Great Deal (23.3% below market)</td>
+<td><a href="https://www.head-fi.org/classifieds/rikubuds-saber-3.109315/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
 <td>2025-09-11</td>
 <td>$90</td>
 <td><span class="pill">closed</span></td>
@@ -241,7 +257,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Hiby R3 Saber Pro DAP", "url": "https://old.reddit.com/r/AVexchange/comments/1ndysgw/wts_usawa_h_focal_azurys_hifiman_edition_xs/#item-19", "price_num": 90.0, "date_ms": 1757562421000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears"}];
+const allRows = [{"row_id": 0, "title": "RikuBuds Saber 3 Listing ID: 109315 For Sale 69.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere I used it for only several hours. Listed by: salman91 (1) Listed: 2026-05-19 Last edited: 2026-07-10", "url": "https://www.head-fi.org/classifieds/rikubuds-saber-3.109315/", "price_num": 69.0, "date_ms": 1779148800000, "listing_status": "active", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "visible_card_collect_with_price_title_match_v6 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Hiby R3 Saber Pro DAP", "url": "https://old.reddit.com/r/AVexchange/comments/1ndysgw/wts_usawa_h_focal_azurys_hifiman_edition_xs/#item-19", "price_num": 90.0, "date_ms": 1757562421000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
