@@ -227,8 +227,8 @@ td.status-reason { overflow: hidden; }
 <td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
 <td>2026-03-21</td>
 <td>$1,700</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">headfi_classified_status_line_active</td>
+<td><span class="pill">stale</span></td>
+<td class="status-reason">stale unsold after 60d; not counted as a sale</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -241,7 +241,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Acoustune HS2000mx MKiii (PD)", "url": "https://www.head-fi.org/classifieds/acoustune-hs2000mx-mkiii-pd.105898/", "price_num": 1700.0, "date_ms": 1774051200000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "category_listing_id_text_fallback_v8 | headfi_extension_status_checker_verified_or_left_active"}];
+const allRows = [{"row_id": 0, "title": "Acoustune HS2000mx MKiii (PD)", "url": "https://www.head-fi.org/classifieds/acoustune-hs2000mx-mkiii-pd.105898/", "price_num": 1700.0, "date_ms": 1774051200000, "listing_status": "stale", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "category_listing_id_text_fallback_v8 | headfi_extension_status_checker_verified_or_left_active | active_status_checker_stale_unsold_60d_lister_never_updated"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
