@@ -193,7 +193,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 52/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 18/35, recency 15/30, recent sample depth 4/15, source diversity 5/10, price consistency 10/10. Current inputs: 4 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 142d ago, 1 source type(s), price CV 0.10." aria-label="Liquidity/confidence score: 52/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 18/35, recency 15/30, recent sample depth 4/15, source diversity 5/10, price consistency 10/10. Current inputs: 4 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 142d ago, 1 source type(s), price CV 0.10." tabindex="0">Medium (52/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">4 included sample(s), latest 142d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 78/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 22/35, recency 30/30, recent sample depth 8/15, source diversity 8/10, price consistency 10/10. Current inputs: 5 included priced sample(s), 1 in the last 90 days, 2 in the last 180 days, latest sample 0d ago, 2 source type(s), price CV 0.10." aria-label="Liquidity/confidence score: 78/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 22/35, recency 30/30, recent sample depth 8/15, source diversity 8/10, price consistency 10/10. Current inputs: 5 included priced sample(s), 1 in the last 90 days, 2 in the last 180 days, latest sample 0d ago, 2 source type(s), price CV 0.10." tabindex="0">High (78/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">5 included sample(s), latest 0d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -226,11 +226,11 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<tr id="row-0" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
 <td>2026-07-11</td>
 <td>$6,499</td>
-<td><span class="pill">unknown</span></td>
+<td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
 <td></td>
 <td>0</td>
@@ -238,7 +238,7 @@ td.status-reason { overflow: hidden; }
 <td>SolLegend</td>
 <td>0</td>
 <td>0</td>
-<td>High (14.8% above market)</td>
+<td>Closed: Fair (5.4% above market)</td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1utsi0q/wtsusvah_subtonic_storm_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -254,7 +254,7 @@ td.status-reason { overflow: hidden; }
 <td>Dr Riyaz</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (11.7% below market)</td>
+<td>Closed: Good Deal (18.9% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/subtonic-storm-iem.104159/" target="_blank">source</a></td>
 </tr>
 
@@ -270,7 +270,7 @@ td.status-reason { overflow: hidden; }
 <td>KuroKitsu</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (9.5% above market)</td>
+<td>Closed: Fair (0.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/subtonic-storm-re.97337/" target="_blank">source</a></td>
 </tr>
 
@@ -286,7 +286,7 @@ td.status-reason { overflow: hidden; }
 <td>smirks_audio</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (18.3% above market)</td>
+<td>Closed: Fair (8.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/subtonic-storm-re-sovereign-2w.94790/" target="_blank">source</a></td>
 </tr>
 
@@ -302,13 +302,13 @@ td.status-reason { overflow: hidden; }
 <td>warrenj</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (9.5% above market)</td>
+<td>Closed: Fair (0.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/subtonic-storm-re.94756/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Subtonic STORM", "url": "https://old.reddit.com/r/AVexchange/comments/1utsi0q/wtsusvah_subtonic_storm_w_paypal/#item-1", "price_num": 6499.0, "date_ms": 1783796266000, "listing_status": "unknown", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Closed: Subtonic storm iem", "url": "https://www.head-fi.org/classifieds/subtonic-storm-iem.104159/", "price_num": 5000.0, "date_ms": 1771545600000, "listing_status": "closed", "condition_text": "fair, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 2, "title": "Sold: Subtonic Storm RE", "url": "https://www.head-fi.org/classifieds/subtonic-storm-re.97337/", "price_num": 6200.0, "date_ms": 1761264000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 3, "title": "Sold: Subtonic Storm RE + Sovereign 2W", "url": "https://www.head-fi.org/classifieds/subtonic-storm-re-sovereign-2w.94790/", "price_num": 6700.0, "date_ms": 1757462400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 4, "title": "Sold: Subtonic Storm RE", "url": "https://www.head-fi.org/classifieds/subtonic-storm-re.94756/", "price_num": 6200.0, "date_ms": 1757462400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}];
+const allRows = [{"row_id": 0, "title": "Subtonic STORM", "url": "https://old.reddit.com/r/AVexchange/comments/1utsi0q/wtsusvah_subtonic_storm_w_paypal/#item-1", "price_num": 6499.0, "date_ms": 1783796266000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included"}, {"row_id": 1, "title": "Closed: Subtonic storm iem", "url": "https://www.head-fi.org/classifieds/subtonic-storm-iem.104159/", "price_num": 5000.0, "date_ms": 1771545600000, "listing_status": "closed", "condition_text": "fair, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 2, "title": "Sold: Subtonic Storm RE", "url": "https://www.head-fi.org/classifieds/subtonic-storm-re.97337/", "price_num": 6200.0, "date_ms": 1761264000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 3, "title": "Sold: Subtonic Storm RE + Sovereign 2W", "url": "https://www.head-fi.org/classifieds/subtonic-storm-re-sovereign-2w.94790/", "price_num": 6700.0, "date_ms": 1757462400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 4, "title": "Sold: Subtonic Storm RE", "url": "https://www.head-fi.org/classifieds/subtonic-storm-re.94756/", "price_num": 6200.0, "date_ms": 1757462400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}];
 const originalMsrpUsd = 6600.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
