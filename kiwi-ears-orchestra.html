@@ -183,9 +183,9 @@ td.status-reason { overflow: hidden; }
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$500</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2022</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">8BA</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
 
@@ -194,6 +194,8 @@ td.status-reason { overflow: hidden; }
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -214,7 +216,8 @@ td.status-reason { overflow: hidden; }
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -274,7 +277,7 @@ td.status-reason { overflow: hidden; }
 </table>
 <script>
 const allRows = [{"row_id": 0, "title": "Kiwi Ears Orchestra II - Ice Blue", "url": "https://old.reddit.com/r/AVexchange/comments/1urwz9o/wts_usca_h_kiwi_ears_orchestra_ii_sennheiser_hd/#item-1", "price_num": 235.0, "date_ms": 1783618126000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8502_json=429:len0", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Kiwi Ears Orchestra II - Ice Blue", "url": "https://old.reddit.com/r/AVexchange/comments/1ul0g00/wts_usca_h_kiwi_ears_orchestra_ii_se_electronics/#item-1", "price_num": 250.0, "date_ms": 1782945518000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "is_bundle": 1, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8503_json=429:len0", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Kiwi Ears Orchestra II", "url": "https://old.reddit.com/r/AVexchange/comments/1q4nv1u/wtsusanyh_kiwi_ears_orchestra_ii_w_paypal/#item-1", "price_num": 250.0, "date_ms": 1767625156000, "listing_status": "closed", "condition_text": "with all accessories included", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=kiwiears | active_status_checker_stale_timeout_30d_lister_never_updated"}];
-const originalMsrpUsd = null;
+const originalMsrpUsd = 500.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
 function moneyRound(value) { return money(value); }
