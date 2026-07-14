@@ -199,7 +199,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>2</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>3</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -223,8 +223,24 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
+<tr id="row-0" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<td>2026-07-14</td>
+<td>$600</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason"></td>
+<td>like new</td>
+<td>0</td>
+<td>reddit_rss</td>
+<td>Heiuyuu</td>
+<td>0</td>
+<td>0</td>
+<td>Fair (0.0% above market)</td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1uwfffm/wts_usanm_h_penon_archangel_w_paypal_ff_or_gs/#item-1" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
 <td>2026-07-04</td>
 <td>$600</td>
 <td><span class="pill">closed</span></td>
@@ -239,8 +255,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/penon-x-effect-audio-archangel-original-owner-minty-all-accessories.111695/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
+<tr id="row-2" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" ></td>
 <td>2026-06-29</td>
 <td>$650</td>
 <td><span class="pill">active</span></td>
@@ -257,7 +273,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Penon X Effect Audio Archangel, Original Owner, Minty, All Accessories", "url": "https://www.head-fi.org/classifieds/penon-x-effect-audio-archangel-original-owner-minty-all-accessories.111695/", "price_num": 600.0, "date_ms": 1783123200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 1, "title": "FIRST OWNER Penon x Effect Audio Archangel", "url": "https://www.head-fi.org/classifieds/first-owner-penon-x-effect-audio-archangel.111463/", "price_num": 650.0, "date_ms": 1782691200000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}];
+const allRows = [{"row_id": 0, "title": "Penon Archangel", "url": "https://old.reddit.com/r/AVexchange/comments/1uwfffm/wts_usanm_h_penon_archangel_w_paypal_ff_or_gs/#item-1", "price_num": 600.0, "date_ms": 1784050375000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Penon X Effect Audio Archangel, Original Owner, Minty, All Accessories", "url": "https://www.head-fi.org/classifieds/penon-x-effect-audio-archangel-original-owner-minty-all-accessories.111695/", "price_num": 600.0, "date_ms": 1783123200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 2, "title": "FIRST OWNER Penon x Effect Audio Archangel", "url": "https://www.head-fi.org/classifieds/first-owner-penon-x-effect-audio-archangel.111463/", "price_num": 650.0, "date_ms": 1782691200000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
