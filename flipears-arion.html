@@ -199,7 +199,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>4</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -223,8 +223,40 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
+<tr id="row-0" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<td>2026-07-15</td>
+<td>$1,850</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">headfi_skipped_after_429_rate_limit_this_run</td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>Pelilin</td>
+<td>0</td>
+<td>0</td>
+<td>Fair (2.8% above market)</td>
+<td><a href="https://www.head-fi.org/classifieds/flipears-arion.112240/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
+<td>2026-07-13</td>
+<td>$1,950</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">headfi_skipped_after_429_rate_limit_this_run</td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>piscesyy</td>
+<td>0</td>
+<td>0</td>
+<td>Fair (8.4% above market)</td>
+<td><a href="https://www.head-fi.org/classifieds/like-new-flipears-arion-2-pin-4-4mm.112156/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-2" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
 <td>2026-05-30</td>
 <td>$1,799</td>
 <td><span class="pill">closed</span></td>
@@ -239,9 +271,25 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/flipears-arion.109909/" target="_blank">source</a></td>
 </tr>
 
+<tr id="row-3" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" ></td>
+<td></td>
+<td>$1,800</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">headfi_skipped_after_429_rate_limit_this_run</td>
+<td>mint, like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>unknown</td>
+<td>0</td>
+<td>0</td>
+<td>Fair (0.1% above market)</td>
+<td><a href="https://www.head-fi.org/classifieds/flipears-arion-mint.111843/" target="_blank">source</a></td>
+</tr>
+
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Flipears Arion", "url": "https://www.head-fi.org/classifieds/flipears-arion.109909/", "price_num": 1799.0, "date_ms": 1780099200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_confirmed_sold_from_headfi_page"}];
+const allRows = [{"row_id": 0, "title": "Flipears Arion", "url": "https://www.head-fi.org/classifieds/flipears-arion.112240/", "price_num": 1850.0, "date_ms": 1784073600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "LIKE NEW FlipEars Arion [2-pin 4.4mm]", "url": "https://www.head-fi.org/classifieds/like-new-flipears-arion-2-pin-4-4mm.112156/", "price_num": 1950.0, "date_ms": 1783900800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 2, "title": "Flipears Arion", "url": "https://www.head-fi.org/classifieds/flipears-arion.109909/", "price_num": 1799.0, "date_ms": 1780099200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_confirmed_sold_from_headfi_page"}, {"row_id": 3, "title": "FlipEars Arion *MINT*", "url": "https://www.head-fi.org/classifieds/flipears-arion-mint.111843/", "price_num": 1800.0, "date_ms": null, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

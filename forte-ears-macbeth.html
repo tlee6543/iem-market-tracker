@@ -199,7 +199,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>2</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>4</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -233,13 +233,45 @@ td.status-reason { overflow: hidden; }
 <td>0</td>
 <td>headfi</td>
 <td>PaKiwiAl</td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 <td>N/A</td>
 <td><a href="https://www.head-fi.org/classifieds/forte-ears-macbeth.112050/" target="_blank">source</a></td>
 </tr>
 
 <tr id="row-1" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
+<td>2026-07-12</td>
+<td>$2,100</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">headfi_skipped_after_429_rate_limit_this_run</td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>PaKiwiAl</td>
+<td>0</td>
+<td>1</td>
+<td>N/A</td>
+<td><a href="https://www.head-fi.org/classifieds/pd-forte-ears-macbeth.112050/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-2" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" ></td>
+<td>2026-07-10</td>
+<td>$2,200</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">headfi_skipped_after_429_rate_limit_this_run</td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>IvanE92</td>
+<td>0</td>
+<td>0</td>
+<td>N/A</td>
+<td><a href="https://www.head-fi.org/classifieds/pd-forte-ears-macbeth.111971/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-3" class="excluded">
 <td></td>
 <td>2026-07-08</td>
 <td></td>
@@ -255,8 +287,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/forte-ears-macbeth.111900/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" ></td>
+<tr id="row-4" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" ></td>
 <td>2026-06-30</td>
 <td>$2,200</td>
 <td><span class="pill">active</span></td>
@@ -273,7 +305,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Forte Ears MacBeth", "url": "https://www.head-fi.org/classifieds/forte-ears-macbeth.112050/", "price_num": 2200.0, "date_ms": 1783814400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "Forte Ears Macbeth Listing ID: 111900 For Sale 1.00 USD Condition Good Negotiability Firm Ships To North America Adding for feedback purposes. Listed by: bradyc100 (71) Listed: 2026-07-08 SOLD", "url": "https://www.head-fi.org/classifieds/forte-ears-macbeth.111900/", "price_num": null, "date_ms": 1783468800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 2, "title": "Forte Ears Macbeth in Excellent Condition", "url": "https://www.head-fi.org/classifieds/forte-ears-macbeth-in-excellent-condition.111493/", "price_num": 2200.0, "date_ms": 1782777600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}];
+const allRows = [{"row_id": 0, "title": "Forte Ears MacBeth", "url": "https://www.head-fi.org/classifieds/forte-ears-macbeth.112050/", "price_num": 2200.0, "date_ms": 1783814400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 1, "title": "PD Forte Ears MacBeth", "url": "https://www.head-fi.org/classifieds/pd-forte-ears-macbeth.112050/", "price_num": 2100.0, "date_ms": 1783814400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 2, "title": "PD!!! Forte Ears MacBeth", "url": "https://www.head-fi.org/classifieds/pd-forte-ears-macbeth.111971/", "price_num": 2200.0, "date_ms": 1783641600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 3, "title": "Forte Ears Macbeth Listing ID: 111900 For Sale 1.00 USD Condition Good Negotiability Firm Ships To North America Adding for feedback purposes. Listed by: bradyc100 (71) Listed: 2026-07-08 SOLD", "url": "https://www.head-fi.org/classifieds/forte-ears-macbeth.111900/", "price_num": null, "date_ms": 1783468800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 4, "title": "Forte Ears Macbeth in Excellent Condition", "url": "https://www.head-fi.org/classifieds/forte-ears-macbeth-in-excellent-condition.111493/", "price_num": 2200.0, "date_ms": 1782777600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

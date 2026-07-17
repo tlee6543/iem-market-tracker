@@ -193,7 +193,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 83/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 27/30, recent sample depth 12/15, source diversity 5/10, price consistency 4/10. Current inputs: 28 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 26d ago, 1 source type(s), price CV 0.24." aria-label="Liquidity/confidence score: 83/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 27/30, recent sample depth 12/15, source diversity 5/10, price consistency 4/10. Current inputs: 28 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 26d ago, 1 source type(s), price CV 0.24." tabindex="0">High (83/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">28 included sample(s), latest 26d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 79/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 4/10. Current inputs: 27 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 26d ago, 1 source type(s), price CV 0.23." aria-label="Liquidity/confidence score: 79/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 4/10. Current inputs: 27 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 26d ago, 1 source type(s), price CV 0.23." tabindex="0">High (79/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">27 included sample(s), latest 26d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -201,7 +201,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>32</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>33</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -254,12 +254,28 @@ td.status-reason { overflow: hidden; }
 <td>Markmurd</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.0% above market)</td>
+<td>Closed: Fair (0.6% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext-original-mint-condition.111078/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
+<tr id="row-2" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" ></td>
+<td>2026-06-18</td>
+<td>$1,050</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">headfi_skipped_after_429_rate_limit_this_run</td>
+<td>good condition</td>
+<td>0</td>
+<td>headfi</td>
+<td>eggwool</td>
+<td>0</td>
+<td>0</td>
+<td>Fair (5.1% below market)</td>
+<td><a href="https://www.head-fi.org/classifieds/vision-ears-ext-og.110873/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-3" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" ></td>
 <td>2026-06-18</td>
 <td>$975</td>
 <td><span class="pill">closed</span></td>
@@ -268,14 +284,14 @@ td.status-reason { overflow: hidden; }
 <td>0</td>
 <td>headfi</td>
 <td>eggwool</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>Closed: Fair (6.1% below market)</td>
+<td>Closed: Good Deal (11.9% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/sold-pending-vision-ears-ext-og.110873/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" checked></td>
+<tr id="row-4" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" checked></td>
 <td>2025-05-26</td>
 <td>$850</td>
 <td><span class="pill">closed</span></td>
@@ -286,12 +302,12 @@ td.status-reason { overflow: hidden; }
 <td>osanchez4808</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (18.1% below market)</td>
+<td>Closed: Great Deal (23.2% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.89030/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-4" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="4" ></td>
+<tr id="row-5" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="5" ></td>
 <td>2024-10-03</td>
 <td>$1,350</td>
 <td><span class="pill">closed</span></td>
@@ -302,12 +318,12 @@ td.status-reason { overflow: hidden; }
 <td>domq422</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (30.0% above market)</td>
+<td>Closed: High (22.0% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/price-drop-vision-ears-ext-og-extra-cable.75812/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-5" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="5" checked></td>
+<tr id="row-6" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" checked></td>
 <td>2024-07-12</td>
 <td>$1,200</td>
 <td><span class="pill">closed</span></td>
@@ -318,12 +334,12 @@ td.status-reason { overflow: hidden; }
 <td>sladewilson411</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (15.6% above market)</td>
+<td>Closed: Fair (8.4% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext-price-drop.71328/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-6" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="6" checked></td>
+<tr id="row-7" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="7" checked></td>
 <td>2023-11-13</td>
 <td>$1,300</td>
 <td><span class="pill">closed</span></td>
@@ -334,12 +350,12 @@ td.status-reason { overflow: hidden; }
 <td>chickenmcnug</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (25.2% above market)</td>
+<td>Closed: High (17.4% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/fs-vision-ears-ext.57474/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-7" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="7" checked></td>
+<tr id="row-8" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="8" checked></td>
 <td>2023-11-05</td>
 <td>$1,600</td>
 <td><span class="pill">closed</span></td>
@@ -350,12 +366,12 @@ td.status-reason { overflow: hidden; }
 <td>rushofblood</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (54.1% above market)</td>
+<td>Closed: Overpriced (44.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.57148/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-8" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="8" checked></td>
+<tr id="row-9" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="9" checked></td>
 <td>2023-10-27</td>
 <td>$1,525</td>
 <td><span class="pill">closed</span></td>
@@ -366,12 +382,12 @@ td.status-reason { overflow: hidden; }
 <td>btwine</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (46.9% above market)</td>
+<td>Closed: Overpriced (37.8% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.56664/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-9" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="9" checked></td>
+<tr id="row-10" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="10" checked></td>
 <td>2023-06-11</td>
 <td>$1,250</td>
 <td><span class="pill">closed</span></td>
@@ -382,11 +398,11 @@ td.status-reason { overflow: hidden; }
 <td>NoleRock1996</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (20.4% above market)</td>
+<td>Closed: High (12.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.49174/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-10" class="excluded">
+<tr id="row-11" class="excluded">
 <td></td>
 <td>2023-05-25</td>
 <td></td>
@@ -402,7 +418,7 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.48327/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-11" class="excluded">
+<tr id="row-12" class="excluded">
 <td></td>
 <td>2023-05-24</td>
 <td></td>
@@ -418,8 +434,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.48276/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-12" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="12" checked></td>
+<tr id="row-13" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="13" checked></td>
 <td>2023-05-03</td>
 <td>$1,700</td>
 <td><span class="pill">closed</span></td>
@@ -430,12 +446,12 @@ td.status-reason { overflow: hidden; }
 <td>Tybot</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (63.7% above market)</td>
+<td>Closed: Overpriced (53.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext-and-purple-cable-bonanza.47044/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-13" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="13" checked></td>
+<tr id="row-14" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="14" checked></td>
 <td>2023-04-22</td>
 <td>$1,600</td>
 <td><span class="pill">closed</span></td>
@@ -446,11 +462,11 @@ td.status-reason { overflow: hidden; }
 <td>DonChuy</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (54.1% above market)</td>
+<td>Closed: Overpriced (44.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext-like-new.46327/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-14" class="excluded">
+<tr id="row-15" class="excluded">
 <td></td>
 <td>2023-04-20</td>
 <td></td>
@@ -466,8 +482,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext-excellent-condition.46210/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-15" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="15" checked></td>
+<tr id="row-16" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="16" checked></td>
 <td>2023-03-17</td>
 <td>$1,600</td>
 <td><span class="pill">closed</span></td>
@@ -478,12 +494,12 @@ td.status-reason { overflow: hidden; }
 <td>ucrags84</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (54.1% above market)</td>
+<td>Closed: Overpriced (44.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.43828/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-16" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="16" checked></td>
+<tr id="row-17" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="17" checked></td>
 <td>2023-02-26</td>
 <td>$1,675</td>
 <td><span class="pill">closed</span></td>
@@ -494,12 +510,12 @@ td.status-reason { overflow: hidden; }
 <td>SLC1966</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (61.3% above market)</td>
+<td>Closed: Overpriced (51.3% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.42452/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-17" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="17" checked></td>
+<tr id="row-18" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="18" checked></td>
 <td>2023-02-09</td>
 <td>$1,690</td>
 <td><span class="pill">closed</span></td>
@@ -510,12 +526,12 @@ td.status-reason { overflow: hidden; }
 <td>Xerath</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (62.8% above market)</td>
+<td>Closed: Overpriced (52.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.41371/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-18" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="18" checked></td>
+<tr id="row-19" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="19" checked></td>
 <td>2023-02-08</td>
 <td>$1,700</td>
 <td><span class="pill">closed</span></td>
@@ -526,12 +542,12 @@ td.status-reason { overflow: hidden; }
 <td>DrumSeb</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (63.7% above market)</td>
+<td>Closed: Overpriced (53.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.41335/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-19" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="19" checked></td>
+<tr id="row-20" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="20" checked></td>
 <td>2023-01-16</td>
 <td>$1,750</td>
 <td><span class="pill">closed</span></td>
@@ -542,11 +558,11 @@ td.status-reason { overflow: hidden; }
 <td>harshkamboj</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (68.6% above market)</td>
+<td>Closed: Overpriced (58.1% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/price-drop-vision-ears-ext.39841/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-20" class="excluded">
+<tr id="row-21" class="excluded">
 <td></td>
 <td>2023-01-12</td>
 <td></td>
@@ -562,8 +578,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext-ve-ext.39602/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-21" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="21" checked></td>
+<tr id="row-22" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="22" checked></td>
 <td>2022-12-21</td>
 <td>$1,500</td>
 <td><span class="pill">closed</span></td>
@@ -574,12 +590,12 @@ td.status-reason { overflow: hidden; }
 <td>gnahra</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (44.5% above market)</td>
+<td>Closed: Overpriced (35.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.38300/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-22" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="22" checked></td>
+<tr id="row-23" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="23" checked></td>
 <td>2022-11-29</td>
 <td>$1,600</td>
 <td><span class="pill">closed</span></td>
@@ -590,12 +606,12 @@ td.status-reason { overflow: hidden; }
 <td>AEIOU9</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (54.1% above market)</td>
+<td>Closed: Overpriced (44.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/holiday-price-drop-vision-ears-ext.37026/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-23" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="23" checked></td>
+<tr id="row-24" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="24" checked></td>
 <td>2022-11-15</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
@@ -606,12 +622,12 @@ td.status-reason { overflow: hidden; }
 <td>metaljem77</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (73.4% above market)</td>
+<td>Closed: Overpriced (62.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/sold-vision-ears-ext.36318/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-24" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="24" checked></td>
+<tr id="row-25" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="25" checked></td>
 <td>2022-10-10</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
@@ -622,12 +638,12 @@ td.status-reason { overflow: hidden; }
 <td>KevinS2020</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (92.6% above market)</td>
+<td>Closed: Overpriced (80.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext-in-mint-condition-3k-msrp.34287/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-25" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="25" checked></td>
+<tr id="row-26" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="26" checked></td>
 <td>2022-09-30</td>
 <td>$1,825</td>
 <td><span class="pill">closed</span></td>
@@ -638,12 +654,12 @@ td.status-reason { overflow: hidden; }
 <td>cn11</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (75.8% above market)</td>
+<td>Closed: Overpriced (64.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext-mint-sold.33774/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-26" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="26" checked></td>
+<tr id="row-27" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="27" checked></td>
 <td>2022-09-10</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
@@ -654,12 +670,12 @@ td.status-reason { overflow: hidden; }
 <td>discord</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (87.8% above market)</td>
+<td>Closed: Overpriced (76.2% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.32655/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-27" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="27" checked></td>
+<tr id="row-28" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="28" checked></td>
 <td>2022-08-25</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
@@ -670,12 +686,12 @@ td.status-reason { overflow: hidden; }
 <td>harshkamboj</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (102.3% above market)</td>
+<td>Closed: Overpriced (89.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.31708/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-28" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="28" checked></td>
+<tr id="row-29" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="29" checked></td>
 <td>2022-08-04</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
@@ -686,12 +702,12 @@ td.status-reason { overflow: hidden; }
 <td>iLL</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (92.6% above market)</td>
+<td>Closed: Overpriced (80.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.30478/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-29" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="29" checked></td>
+<tr id="row-30" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="30" checked></td>
 <td>2022-07-08</td>
 <td>$2,190</td>
 <td><span class="pill">closed</span></td>
@@ -702,12 +718,12 @@ td.status-reason { overflow: hidden; }
 <td>Jawsq</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (110.9% above market)</td>
+<td>Closed: Overpriced (97.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.28934/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-30" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="30" checked></td>
+<tr id="row-31" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="31" checked></td>
 <td>2022-06-09</td>
 <td>$1,600</td>
 <td><span class="pill">closed</span></td>
@@ -718,12 +734,12 @@ td.status-reason { overflow: hidden; }
 <td>PHLHarmonic</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (54.1% above market)</td>
+<td>Closed: Overpriced (44.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.27256/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-31" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="31" ></td>
+<tr id="row-32" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="32" ></td>
 <td>2022-05-18</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
@@ -734,12 +750,12 @@ td.status-reason { overflow: hidden; }
 <td>PHLHarmonic</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (73.4% above market)</td>
+<td>Closed: Overpriced (62.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/price-drop-vision-ears-ext-w-optional-premium-leather-case.25972/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-32" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="32" ></td>
+<tr id="row-33" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="33" ></td>
 <td>2022-04-20</td>
 <td>$2,300</td>
 <td><span class="pill">closed</span></td>
@@ -750,12 +766,12 @@ td.status-reason { overflow: hidden; }
 <td>PHLHarmonic</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (121.5% above market)</td>
+<td>Closed: Overpriced (107.8% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.24286/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-33" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="33" checked></td>
+<tr id="row-34" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="34" checked></td>
 <td>2022-03-28</td>
 <td>$2,300</td>
 <td><span class="pill">closed</span></td>
@@ -766,12 +782,12 @@ td.status-reason { overflow: hidden; }
 <td>jaker782</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (121.5% above market)</td>
+<td>Closed: Overpriced (107.8% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.22904/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-34" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="34" checked></td>
+<tr id="row-35" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="35" checked></td>
 <td>2022-03-08</td>
 <td>$2,300</td>
 <td><span class="pill">closed</span></td>
@@ -782,11 +798,11 @@ td.status-reason { overflow: hidden; }
 <td>Garney</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (121.5% above market)</td>
+<td>Closed: Overpriced (107.8% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.21647/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-35" class="excluded">
+<tr id="row-36" class="excluded">
 <td></td>
 <td>2022-01-20</td>
 <td></td>
@@ -802,8 +818,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.18496/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-36" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="36" ></td>
+<tr id="row-37" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="37" ></td>
 <td>2022-01-19</td>
 <td>$2,399</td>
 <td><span class="pill">closed</span></td>
@@ -814,12 +830,12 @@ td.status-reason { overflow: hidden; }
 <td>snowy8171</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (131.1% above market)</td>
+<td>Closed: Overpriced (116.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.18463/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-37" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="37" checked></td>
+<tr id="row-38" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="38" checked></td>
 <td>2021-12-06</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
@@ -830,13 +846,13 @@ td.status-reason { overflow: hidden; }
 <td>evo</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (160.1% above market)</td>
+<td>Closed: Overpriced (143.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext.15874/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Vision Ears EXT (Original)-Mint Condition", "url": "https://old.reddit.com/r/AVexchange/comments/1uc6xym/wtsustxhvision_ears_ext_originalmint/#item-1", "price_num": null, "date_ms": 1782091393000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 1, "title": "Vision Ears EXT (Original) - Mint Condition", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-original-mint-condition.111078/", "price_num": 1100.0, "date_ms": 1782000000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_status_unclear_left_unchanged | active_status_checker_confirmed_sold_from_headfi_page"}, {"row_id": 2, "title": "PENDING- Vision Ears EXT OG", "url": "https://www.head-fi.org/classifieds/sold-pending-vision-ears-ext-og.110873/", "price_num": 975.0, "date_ms": 1781740800000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 3, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.89030/", "price_num": 850.0, "date_ms": 1748217600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: *Price DROP* Vision Ears EXT OG + Extra Cable", "url": "https://www.head-fi.org/classifieds/price-drop-vision-ears-ext-og-extra-cable.75812/", "price_num": 1350.0, "date_ms": 1727913600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Vision Ears EXT - Price Drop", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-price-drop.71328/", "price_num": 1200.0, "date_ms": 1720742400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: [FS] - Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/fs-vision-ears-ext.57474/", "price_num": 1300.0, "date_ms": 1699833600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Closed: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.57148/", "price_num": 1600.0, "date_ms": 1699142400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.56664/", "price_num": 1525.0, "date_ms": 1698364800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.49174/", "price_num": 1250.0, "date_ms": 1686441600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.48327/", "price_num": null, "date_ms": 1684972800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Vision ears ext", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.48276/", "price_num": null, "date_ms": 1684886400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Vision Ears EXT and purple cable bonanza", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-and-purple-cable-bonanza.47044/", "price_num": 1700.0, "date_ms": 1683072000000, "listing_status": "closed", "condition_text": "like new, excellent, fair", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Closed: Vision Ears EXT - like new", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-like-new.46327/", "price_num": 1600.0, "date_ms": 1682121600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: Vision Ears EXT [Excellent condition]", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-excellent-condition.46210/", "price_num": null, "date_ms": 1681948800000, "listing_status": "closed", "condition_text": "like new, excellent, used, open box", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 15, "title": "Closed: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.43828/", "price_num": 1600.0, "date_ms": 1679011200000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.42452/", "price_num": 1675.0, "date_ms": 1677369600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Closed: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.41371/", "price_num": 1690.0, "date_ms": 1675900800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Traded: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.41335/", "price_num": 1700.0, "date_ms": 1675814400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Closed: Price Drop: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/price-drop-vision-ears-ext.39841/", "price_num": 1750.0, "date_ms": 1673827200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Vision Ears EXT / VE EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-ve-ext.39602/", "price_num": null, "date_ms": 1673481600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.38300/", "price_num": 1500.0, "date_ms": 1671580800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: HOLIDAY PRICE DROP: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/holiday-price-drop-vision-ears-ext.37026/", "price_num": 1600.0, "date_ms": 1669680000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Closed: Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/sold-vision-ears-ext.36318/", "price_num": 1800.0, "date_ms": 1668470400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Traded: Vision Ears EXT in Mint Condition ~ $3K MSRP", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-in-mint-condition-3k-msrp.34287/", "price_num": 2000.0, "date_ms": 1665360000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: Vision Ears EXT - Mint {Sold}", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mint-sold.33774/", "price_num": 1825.0, "date_ms": 1664496000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.32655/", "price_num": 1950.0, "date_ms": 1662768000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Traded: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.31708/", "price_num": 2100.0, "date_ms": 1661385600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Traded: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.30478/", "price_num": 2000.0, "date_ms": 1659571200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Closed: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.28934/", "price_num": 2190.0, "date_ms": 1657238400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.27256/", "price_num": 1600.0, "date_ms": 1654732800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Sold: **Price Drop** Vision Ears EXT w/Optional Premium Leather Case", "url": "https://www.head-fi.org/classifieds/price-drop-vision-ears-ext-w-optional-premium-leather-case.25972/", "price_num": 1800.0, "date_ms": 1652832000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 32, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.24286/", "price_num": 2300.0, "date_ms": 1650412800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 33, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.22904/", "price_num": 2300.0, "date_ms": 1648425600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 34, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.21647/", "price_num": 2300.0, "date_ms": 1646697600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 35, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.18496/", "price_num": null, "date_ms": 1642636800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 36, "title": "Closed: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.18463/", "price_num": 2399.0, "date_ms": 1642550400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 37, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.15874/", "price_num": 2700.0, "date_ms": 1638748800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Vision Ears EXT (Original)-Mint Condition", "url": "https://old.reddit.com/r/AVexchange/comments/1uc6xym/wtsustxhvision_ears_ext_originalmint/#item-1", "price_num": null, "date_ms": 1782091393000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 1, "title": "Vision Ears EXT (Original) - Mint Condition", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-original-mint-condition.111078/", "price_num": 1100.0, "date_ms": 1782000000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_status_unclear_left_unchanged | active_status_checker_confirmed_sold_from_headfi_page"}, {"row_id": 2, "title": "Vision Ears EXT OG", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-og.110873/", "price_num": 1050.0, "date_ms": 1781740800000, "listing_status": "active", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 3, "title": "PENDING- Vision Ears EXT OG", "url": "https://www.head-fi.org/classifieds/sold-pending-vision-ears-ext-og.110873/", "price_num": 975.0, "date_ms": 1781740800000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 4, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.89030/", "price_num": 850.0, "date_ms": 1748217600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: *Price DROP* Vision Ears EXT OG + Extra Cable", "url": "https://www.head-fi.org/classifieds/price-drop-vision-ears-ext-og-extra-cable.75812/", "price_num": 1350.0, "date_ms": 1727913600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: Vision Ears EXT - Price Drop", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-price-drop.71328/", "price_num": 1200.0, "date_ms": 1720742400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: [FS] - Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/fs-vision-ears-ext.57474/", "price_num": 1300.0, "date_ms": 1699833600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Closed: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.57148/", "price_num": 1600.0, "date_ms": 1699142400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.56664/", "price_num": 1525.0, "date_ms": 1698364800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.49174/", "price_num": 1250.0, "date_ms": 1686441600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.48327/", "price_num": null, "date_ms": 1684972800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Vision ears ext", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.48276/", "price_num": null, "date_ms": 1684886400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Vision Ears EXT and purple cable bonanza", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-and-purple-cable-bonanza.47044/", "price_num": 1700.0, "date_ms": 1683072000000, "listing_status": "closed", "condition_text": "like new, excellent, fair", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Closed: Vision Ears EXT - like new", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-like-new.46327/", "price_num": 1600.0, "date_ms": 1682121600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Vision Ears EXT [Excellent condition]", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-excellent-condition.46210/", "price_num": null, "date_ms": 1681948800000, "listing_status": "closed", "condition_text": "like new, excellent, used, open box", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 16, "title": "Closed: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.43828/", "price_num": 1600.0, "date_ms": 1679011200000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.42452/", "price_num": 1675.0, "date_ms": 1677369600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Closed: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.41371/", "price_num": 1690.0, "date_ms": 1675900800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Traded: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.41335/", "price_num": 1700.0, "date_ms": 1675814400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Closed: Price Drop: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/price-drop-vision-ears-ext.39841/", "price_num": 1750.0, "date_ms": 1673827200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Vision Ears EXT / VE EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-ve-ext.39602/", "price_num": null, "date_ms": 1673481600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 22, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.38300/", "price_num": 1500.0, "date_ms": 1671580800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Sold: HOLIDAY PRICE DROP: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/holiday-price-drop-vision-ears-ext.37026/", "price_num": 1600.0, "date_ms": 1669680000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Closed: Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/sold-vision-ears-ext.36318/", "price_num": 1800.0, "date_ms": 1668470400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Traded: Vision Ears EXT in Mint Condition ~ $3K MSRP", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-in-mint-condition-3k-msrp.34287/", "price_num": 2000.0, "date_ms": 1665360000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: Vision Ears EXT - Mint {Sold}", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mint-sold.33774/", "price_num": 1825.0, "date_ms": 1664496000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.32655/", "price_num": 1950.0, "date_ms": 1662768000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Traded: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.31708/", "price_num": 2100.0, "date_ms": 1661385600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Traded: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.30478/", "price_num": 2000.0, "date_ms": 1659571200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Closed: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.28934/", "price_num": 2190.0, "date_ms": 1657238400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.27256/", "price_num": 1600.0, "date_ms": 1654732800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 32, "title": "Sold: **Price Drop** Vision Ears EXT w/Optional Premium Leather Case", "url": "https://www.head-fi.org/classifieds/price-drop-vision-ears-ext-w-optional-premium-leather-case.25972/", "price_num": 1800.0, "date_ms": 1652832000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 33, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.24286/", "price_num": 2300.0, "date_ms": 1650412800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 34, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.22904/", "price_num": 2300.0, "date_ms": 1648425600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 35, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.21647/", "price_num": 2300.0, "date_ms": 1646697600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 36, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.18496/", "price_num": null, "date_ms": 1642636800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 37, "title": "Closed: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.18463/", "price_num": 2399.0, "date_ms": 1642550400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 38, "title": "Sold: Vision Ears EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-ext.15874/", "price_num": 2700.0, "date_ms": 1638748800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 2960.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

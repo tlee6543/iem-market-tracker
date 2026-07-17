@@ -193,7 +193,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 66/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 15/30, recent sample depth 4/15, source diversity 5/10, price consistency 7/10. Current inputs: 49 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 91d ago, 1 source type(s), price CV 0.19." aria-label="Liquidity/confidence score: 66/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 15/30, recent sample depth 4/15, source diversity 5/10, price consistency 7/10. Current inputs: 49 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 91d ago, 1 source type(s), price CV 0.19." tabindex="0">Medium (66/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">49 included sample(s), latest 91d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 85/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 27/30, recent sample depth 8/15, source diversity 8/10, price consistency 7/10. Current inputs: 50 included priced sample(s), 1 in the last 90 days, 2 in the last 180 days, latest sample 22d ago, 2 source type(s), price CV 0.20." aria-label="Liquidity/confidence score: 85/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 27/30, recent sample depth 8/15, source diversity 8/10, price consistency 7/10. Current inputs: 50 included priced sample(s), 1 in the last 90 days, 2 in the last 180 days, latest sample 22d ago, 2 source type(s), price CV 0.20." tabindex="0">High (85/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">50 included sample(s), latest 22d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -226,19 +226,19 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<tr id="row-0" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
 <td>2026-06-25</td>
 <td>$145</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len75881_json=403:len189908</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">confirmed sold from source check</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
 <td>uberfrog</td>
 <td>0</td>
 <td>1</td>
-<td>Good Deal (10.2% below market)</td>
+<td>Closed: Fair (6.4% below market)</td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1uf98rm/wtsusakyh_schiit_magnius_modi_moondrop_blessing_2/#item-3" target="_blank">source</a></td>
 </tr>
 
@@ -246,15 +246,15 @@ td.status-reason { overflow: hidden; }
 <td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
 <td>2026-06-25</td>
 <td>$200</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len75885_json=403:len189908</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">confirmed sold from source check</td>
 <td></td>
 <td>1</td>
 <td>reddit_rss</td>
 <td>uberfrog</td>
 <td>1</td>
 <td>0</td>
-<td>High (23.8% above market)</td>
+<td>Closed: Overpriced (29.1% above market)</td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1uf98rm/wtsusakyh_schiit_magnius_modi_moondrop_blessing_2/#item-6" target="_blank">source</a></td>
 </tr>
 
@@ -270,7 +270,7 @@ td.status-reason { overflow: hidden; }
 <td>NierSighted</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (2.2% above market)</td>
+<td>Closed: Fair (6.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.107479/" target="_blank">source</a></td>
 </tr>
 
@@ -286,7 +286,7 @@ td.status-reason { overflow: hidden; }
 <td>NierSighted</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Fair (2.2% above market)</td>
+<td>Closed: Fair (6.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.95949/" target="_blank">source</a></td>
 </tr>
 
@@ -302,7 +302,7 @@ td.status-reason { overflow: hidden; }
 <td>trojan2900</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (23.8% above market)</td>
+<td>Closed: Overpriced (29.1% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.90705/" target="_blank">source</a></td>
 </tr>
 
@@ -318,7 +318,7 @@ td.status-reason { overflow: hidden; }
 <td>DNewWin</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (5.3% above market)</td>
+<td>Closed: Fair (9.7% above market)</td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1k9bwx8/wtsuswvh_sennheiser_hd800s_hd600_marble_hd599/#item-5" target="_blank">source</a></td>
 </tr>
 
@@ -334,7 +334,7 @@ td.status-reason { overflow: hidden; }
 <td>Kneez</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Great Deal (22.6% below market)</td>
+<td>Closed: Good Deal (19.3% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.84919/" target="_blank">source</a></td>
 </tr>
 
@@ -350,7 +350,7 @@ td.status-reason { overflow: hidden; }
 <td>swva</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.1% below market)</td>
+<td>Closed: Fair (3.2% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.83813/" target="_blank">source</a></td>
 </tr>
 
@@ -366,7 +366,7 @@ td.status-reason { overflow: hidden; }
 <td>robertsong</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.1% below market)</td>
+<td>Closed: Fair (3.2% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-iems.74791/" target="_blank">source</a></td>
 </tr>
 
@@ -382,7 +382,7 @@ td.status-reason { overflow: hidden; }
 <td>ramkvp</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.1% below market)</td>
+<td>Closed: Fair (3.2% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.73438/" target="_blank">source</a></td>
 </tr>
 
@@ -398,7 +398,7 @@ td.status-reason { overflow: hidden; }
 <td>ctjacks336</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Great Deal (25.7% below market)</td>
+<td>Closed: Great Deal (22.5% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.72436/" target="_blank">source</a></td>
 </tr>
 
@@ -414,7 +414,7 @@ td.status-reason { overflow: hidden; }
 <td>trojan2900</td>
 <td>1</td>
 <td>1</td>
-<td>Closed: Fair (7.1% below market)</td>
+<td>Closed: Fair (3.2% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-green-face.72349/" target="_blank">source</a></td>
 </tr>
 
@@ -430,7 +430,7 @@ td.status-reason { overflow: hidden; }
 <td>ribosome233</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (23.8% above market)</td>
+<td>Closed: Overpriced (29.1% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.66344/" target="_blank">source</a></td>
 </tr>
 
@@ -446,7 +446,7 @@ td.status-reason { overflow: hidden; }
 <td>dawningistheday</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (39.3% above market)</td>
+<td>Closed: Overpriced (45.3% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-blue.57688/" target="_blank">source</a></td>
 </tr>
 
@@ -462,7 +462,7 @@ td.status-reason { overflow: hidden; }
 <td>hede11</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.1% below market)</td>
+<td>Closed: Fair (3.2% below market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.56196/" target="_blank">source</a></td>
 </tr>
 
@@ -478,7 +478,7 @@ td.status-reason { overflow: hidden; }
 <td>harshkamboj</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (30.0% above market)</td>
+<td>Closed: Overpriced (35.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-engraved-version.53973/" target="_blank">source</a></td>
 </tr>
 
@@ -494,7 +494,7 @@ td.status-reason { overflow: hidden; }
 <td>traherntsui</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (23.8% above market)</td>
+<td>Closed: Overpriced (29.1% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-og-swappable-cable.52693/" target="_blank">source</a></td>
 </tr>
 
@@ -510,7 +510,7 @@ td.status-reason { overflow: hidden; }
 <td>ndhuanhuan</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (36.2% above market)</td>
+<td>Closed: Overpriced (42.0% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/bundle-blessing-2-7hz-dioko.48683/" target="_blank">source</a></td>
 </tr>
 
@@ -526,7 +526,7 @@ td.status-reason { overflow: hidden; }
 <td>daveemac</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (0.9% below market)</td>
+<td>Closed: Fair (3.3% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-near-new-one-screen-missing.47909/" target="_blank">source</a></td>
 </tr>
 
@@ -542,7 +542,7 @@ td.status-reason { overflow: hidden; }
 <td>jbhatnagar00</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (17.6% above market)</td>
+<td>Closed: High (22.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-obo.45950/" target="_blank">source</a></td>
 </tr>
 
@@ -558,7 +558,7 @@ td.status-reason { overflow: hidden; }
 <td>tsktsk</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (23.8% above market)</td>
+<td>Closed: Overpriced (29.1% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.45376/" target="_blank">source</a></td>
 </tr>
 
@@ -574,7 +574,7 @@ td.status-reason { overflow: hidden; }
 <td>TBomb06</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (39.3% above market)</td>
+<td>Closed: Overpriced (45.3% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/blessing-2.45136/" target="_blank">source</a></td>
 </tr>
 
@@ -590,7 +590,7 @@ td.status-reason { overflow: hidden; }
 <td>JP281</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (33.1% above market)</td>
+<td>Closed: Overpriced (38.8% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.43672/" target="_blank">source</a></td>
 </tr>
 
@@ -606,7 +606,7 @@ td.status-reason { overflow: hidden; }
 <td>trojan2900</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (51.7% above market)</td>
+<td>Closed: Overpriced (58.2% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-engraved.40979/" target="_blank">source</a></td>
 </tr>
 
@@ -622,7 +622,7 @@ td.status-reason { overflow: hidden; }
 <td>harshkamboj</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (73.4% above market)</td>
+<td>Closed: Overpriced (80.8% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-jade-guitar-rare.40945/" target="_blank">source</a></td>
 </tr>
 
@@ -638,7 +638,7 @@ td.status-reason { overflow: hidden; }
 <td>Clay49</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (39.3% above market)</td>
+<td>Closed: Overpriced (45.3% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-iem%E2%80%99s.37792/" target="_blank">source</a></td>
 </tr>
 
@@ -654,7 +654,7 @@ td.status-reason { overflow: hidden; }
 <td>taropaste</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (42.4% above market)</td>
+<td>Closed: Overpriced (48.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.35232/" target="_blank">source</a></td>
 </tr>
 
@@ -670,7 +670,7 @@ td.status-reason { overflow: hidden; }
 <td>trojan2900</td>
 <td>1</td>
 <td>1</td>
-<td>Closed: Fair (0.9% below market)</td>
+<td>Closed: Fair (3.3% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.35024/" target="_blank">source</a></td>
 </tr>
 
@@ -686,7 +686,7 @@ td.status-reason { overflow: hidden; }
 <td>Audio-In</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (39.3% above market)</td>
+<td>Closed: Overpriced (45.3% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.34907/" target="_blank">source</a></td>
 </tr>
 
@@ -702,7 +702,7 @@ td.status-reason { overflow: hidden; }
 <td>moodyrn</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (30.0% above market)</td>
+<td>Closed: Overpriced (35.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.33772/" target="_blank">source</a></td>
 </tr>
 
@@ -718,7 +718,7 @@ td.status-reason { overflow: hidden; }
 <td>harshkamboj</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (42.4% above market)</td>
+<td>Closed: Overpriced (48.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/pd-moondrop-blessing-2-w-custom-engraving.33754/" target="_blank">source</a></td>
 </tr>
 
@@ -734,7 +734,7 @@ td.status-reason { overflow: hidden; }
 <td>trojan2900</td>
 <td>1</td>
 <td>1</td>
-<td>Closed: High (20.7% above market)</td>
+<td>Closed: Overpriced (25.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.31993/" target="_blank">source</a></td>
 </tr>
 
@@ -750,7 +750,7 @@ td.status-reason { overflow: hidden; }
 <td>jclyle</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (42.4% above market)</td>
+<td>Closed: Overpriced (48.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.30642/" target="_blank">source</a></td>
 </tr>
 
@@ -766,7 +766,7 @@ td.status-reason { overflow: hidden; }
 <td>jp11801</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (23.8% above market)</td>
+<td>Closed: Overpriced (29.1% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.30394/" target="_blank">source</a></td>
 </tr>
 
@@ -782,7 +782,7 @@ td.status-reason { overflow: hidden; }
 <td>trojan2900</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (42.4% above market)</td>
+<td>Closed: Overpriced (48.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.29894/" target="_blank">source</a></td>
 </tr>
 
@@ -798,7 +798,7 @@ td.status-reason { overflow: hidden; }
 <td>DavidLovesIEMs</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (42.4% above market)</td>
+<td>Closed: Overpriced (48.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.29332/" target="_blank">source</a></td>
 </tr>
 
@@ -814,7 +814,7 @@ td.status-reason { overflow: hidden; }
 <td>shwnwllms</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (61.0% above market)</td>
+<td>Closed: Overpriced (67.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-mint.28753/" target="_blank">source</a></td>
 </tr>
 
@@ -846,7 +846,7 @@ td.status-reason { overflow: hidden; }
 <td>jokervn91</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (85.1% above market)</td>
+<td>Closed: Overpriced (93.0% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-es100-bundle.27550/" target="_blank">source</a></td>
 </tr>
 
@@ -862,7 +862,7 @@ td.status-reason { overflow: hidden; }
 <td>jokervn91</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (54.8% above market)</td>
+<td>Closed: Overpriced (61.4% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.27582/" target="_blank">source</a></td>
 </tr>
 
@@ -878,7 +878,7 @@ td.status-reason { overflow: hidden; }
 <td>jeanft</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (61.0% above market)</td>
+<td>Closed: Overpriced (67.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-with-steel-plates.26868/" target="_blank">source</a></td>
 </tr>
 
@@ -894,7 +894,7 @@ td.status-reason { overflow: hidden; }
 <td>jeanft</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (61.0% above market)</td>
+<td>Closed: Overpriced (67.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/for-sale-moondrop-blessing-2-iems-with-steel-faceplates.26365/" target="_blank">source</a></td>
 </tr>
 
@@ -910,7 +910,7 @@ td.status-reason { overflow: hidden; }
 <td>the1andonly</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (67.2% above market)</td>
+<td>Closed: Overpriced (74.3% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-metal-backplate.22171/" target="_blank">source</a></td>
 </tr>
 
@@ -926,7 +926,7 @@ td.status-reason { overflow: hidden; }
 <td>koikoikoi</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (67.2% above market)</td>
+<td>Closed: Overpriced (74.3% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-green-wood.19586/" target="_blank">source</a></td>
 </tr>
 
@@ -942,7 +942,7 @@ td.status-reason { overflow: hidden; }
 <td>Mllump</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (57.9% above market)</td>
+<td>Closed: Overpriced (64.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-blue-wood.18652/" target="_blank">source</a></td>
 </tr>
 
@@ -974,7 +974,7 @@ td.status-reason { overflow: hidden; }
 <td>Andy777777</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (61.0% above market)</td>
+<td>Closed: Overpriced (67.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-iem-blue-wood-grain-excellent-condition-w-all-accessories-and-packaging-nearly-new.17311/" target="_blank">source</a></td>
 </tr>
 
@@ -990,7 +990,7 @@ td.status-reason { overflow: hidden; }
 <td>fejnomit</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (60.4% above market)</td>
+<td>Closed: Overpriced (67.2% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-silver-mint.17173/" target="_blank">source</a></td>
 </tr>
 
@@ -1006,7 +1006,7 @@ td.status-reason { overflow: hidden; }
 <td>Eryc</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (48.6% above market)</td>
+<td>Closed: Overpriced (54.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.15856/" target="_blank">source</a></td>
 </tr>
 
@@ -1022,7 +1022,7 @@ td.status-reason { overflow: hidden; }
 <td>miter53</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (45.5% above market)</td>
+<td>Closed: Overpriced (51.7% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-like-new.15183/" target="_blank">source</a></td>
 </tr>
 
@@ -1038,7 +1038,7 @@ td.status-reason { overflow: hidden; }
 <td>senorx12562</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (70.3% above market)</td>
+<td>Closed: Overpriced (77.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-w-green-face-plates.12777/" target="_blank">source</a></td>
 </tr>
 
@@ -1054,7 +1054,7 @@ td.status-reason { overflow: hidden; }
 <td>damadaka</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (57.9% above market)</td>
+<td>Closed: Overpriced (64.6% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.11679/" target="_blank">source</a></td>
 </tr>
 
@@ -1070,7 +1070,7 @@ td.status-reason { overflow: hidden; }
 <td>mfadio</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (54.8% above market)</td>
+<td>Closed: Overpriced (61.4% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/sold-moondrop-blessing-2.8985/" target="_blank">source</a></td>
 </tr>
 
@@ -1086,7 +1086,7 @@ td.status-reason { overflow: hidden; }
 <td>qboogie</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (61.0% above market)</td>
+<td>Closed: Overpriced (67.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.8207/" target="_blank">source</a></td>
 </tr>
 
@@ -1102,7 +1102,7 @@ td.status-reason { overflow: hidden; }
 <td>Rpg2</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (61.0% above market)</td>
+<td>Closed: Overpriced (67.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-mint-condition-w-3-5mm-and-4-4mm-balanced-cables.7546/" target="_blank">source</a></td>
 </tr>
 
@@ -1118,7 +1118,7 @@ td.status-reason { overflow: hidden; }
 <td>cor0086</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (54.8% above market)</td>
+<td>Closed: Overpriced (61.4% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/sold-moondrop-blessing-2-original.6994/" target="_blank">source</a></td>
 </tr>
 
@@ -1134,7 +1134,7 @@ td.status-reason { overflow: hidden; }
 <td>shotgunshane</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (42.4% above market)</td>
+<td>Closed: Overpriced (48.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-sold.6872/" target="_blank">source</a></td>
 </tr>
 
@@ -1150,7 +1150,7 @@ td.status-reason { overflow: hidden; }
 <td>granularclouds</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (33.1% above market)</td>
+<td>Closed: Overpriced (38.8% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/blessing-2.6755/" target="_blank">source</a></td>
 </tr>
 
@@ -1166,7 +1166,7 @@ td.status-reason { overflow: hidden; }
 <td>earthtodan</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (54.8% above market)</td>
+<td>Closed: Overpriced (61.4% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-silver.6053/" target="_blank">source</a></td>
 </tr>
 
@@ -1182,7 +1182,7 @@ td.status-reason { overflow: hidden; }
 <td>roach7</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (72.8% above market)</td>
+<td>Closed: Overpriced (80.1% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2-w-engraving-no-1.3656/" target="_blank">source</a></td>
 </tr>
 
@@ -1198,7 +1198,7 @@ td.status-reason { overflow: hidden; }
 <td>LifeOnMercury</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (61.0% above market)</td>
+<td>Closed: Overpriced (67.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-%E6%B0%B4%E6%9C%88%E9%9B%A8-blessing-2.3033/" target="_blank">source</a></td>
 </tr>
 
@@ -1214,7 +1214,7 @@ td.status-reason { overflow: hidden; }
 <td>Dash</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (61.0% above market)</td>
+<td>Closed: Overpriced (67.9% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.2119/" target="_blank">source</a></td>
 </tr>
 
@@ -1230,7 +1230,7 @@ td.status-reason { overflow: hidden; }
 <td>trojan2900</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (42.4% above market)</td>
+<td>Closed: Overpriced (48.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-blessing-2.1751/" target="_blank">source</a></td>
 </tr>
 
@@ -1246,7 +1246,7 @@ td.status-reason { overflow: hidden; }
 <td>ThePeave</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (54.8% above market)</td>
+<td>Closed: Overpriced (61.4% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/sold-moondrop-blessing-2-2-5mm-trrs-cable.920/" target="_blank">source</a></td>
 </tr>
 
@@ -1300,7 +1300,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Moondrop Blessing 2", "url": "https://old.reddit.com/r/AVexchange/comments/1uf98rm/wtsusakyh_schiit_magnius_modi_moondrop_blessing_2/#item-3", "price_num": 145.0, "date_ms": 1782392167000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len75881_json=403:len189908", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Blessing 2 + Hart Cable + Fiio KA2 bundle", "url": "https://old.reddit.com/r/AVexchange/comments/1uf98rm/wtsusakyh_schiit_magnius_modi_moondrop_blessing_2/#item-6", "price_num": 200.0, "date_ms": 1782392167000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "is_bundle": 1, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len75885_json=403:len189908", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.107479/", "price_num": 165.0, "date_ms": 1776384000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.95949/", "price_num": 165.0, "date_ms": 1759104000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.90705/", "price_num": 200.0, "date_ms": 1750896000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Moondrop Blessing 2", "url": "https://old.reddit.com/r/AVexchange/comments/1k9bwx8/wtsuswvh_sennheiser_hd800s_hd600_marble_hd599/#item-5", "price_num": 170.0, "date_ms": 1745781272000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=moondrop aria | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 6, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.84919/", "price_num": 125.0, "date_ms": 1741996800000, "listing_status": "closed", "condition_text": "good condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.83813/", "price_num": 150.0, "date_ms": 1740268800000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Moondrop Blessing 2 IEM's", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-iems.74791/", "price_num": 150.0, "date_ms": 1726185600000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.73438/", "price_num": 150.0, "date_ms": 1724112000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.72436/", "price_num": 120.0, "date_ms": 1722556800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Closed: Moondrop Blessing 2 green face", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-green-face.72349/", "price_num": 150.0, "date_ms": 1722470400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.66344/", "price_num": 200.0, "date_ms": 1713225600000, "listing_status": "closed", "condition_text": "fair", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Moondrop Blessing 2 (Blue)", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-blue.57688/", "price_num": 225.0, "date_ms": 1700179200000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.56196/", "price_num": 150.0, "date_ms": 1697587200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Closed: Moondrop Blessing 2 (Engraved Version)", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-engraved-version.53973/", "price_num": 210.0, "date_ms": 1694131200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Moondrop Blessing 2 OG + swappable cable", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-og-swappable-cable.52693/", "price_num": 200.0, "date_ms": 1692057600000, "listing_status": "closed", "condition_text": "fair, used", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Closed: (Bundle) Blessing 2 + 7hz Dioko", "url": "https://www.head-fi.org/classifieds/bundle-blessing-2-7hz-dioko.48683/", "price_num": 220.0, "date_ms": 1685664000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: Moondrop Blessing 2--near new, one screen missing", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-near-new-one-screen-missing.47909/", "price_num": 160.0, "date_ms": 1684368000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Closed: Moondrop Blessing 2 (OBO)", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-obo.45950/", "price_num": 190.0, "date_ms": 1681603200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.45376/", "price_num": 200.0, "date_ms": 1680912000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Blessing 2", "url": "https://www.head-fi.org/classifieds/blessing-2.45136/", "price_num": 225.0, "date_ms": 1680652800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.43672/", "price_num": 215.0, "date_ms": 1678838400000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Sold: Moondrop Blessing 2 engraved", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-engraved.40979/", "price_num": 245.0, "date_ms": 1675382400000, "listing_status": "closed", "condition_text": "like new, excellent, open box", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Sold: Moondrop Blessing 2 Jade Guitar (Rare)", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-jade-guitar-rare.40945/", "price_num": 280.0, "date_ms": 1675296000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: Moondrop Blessing 2 IEM\u2019s", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-iem%E2%80%99s.37792/", "price_num": 225.0, "date_ms": 1670716800000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.35232/", "price_num": 230.0, "date_ms": 1666742400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.35024/", "price_num": 160.0, "date_ms": 1666483200000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 28, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.34907/", "price_num": 225.0, "date_ms": 1666224000000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.33772/", "price_num": 210.0, "date_ms": 1664496000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: PD: Moondrop Blessing 2 w/ Custom Engraving", "url": "https://www.head-fi.org/classifieds/pd-moondrop-blessing-2-w-custom-engraving.33754/", "price_num": 230.0, "date_ms": 1664496000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.31993/", "price_num": 195.0, "date_ms": 1661817600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 32, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.30642/", "price_num": 230.0, "date_ms": 1659830400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 33, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.30394/", "price_num": 200.0, "date_ms": 1659398400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 34, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.29894/", "price_num": 230.0, "date_ms": 1658620800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 35, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.29332/", "price_num": 230.0, "date_ms": 1657756800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 36, "title": "Sold: Moondrop Blessing 2 - Mint!", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-mint.28753/", "price_num": 260.0, "date_ms": 1657065600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 37, "title": "Closed: Moondrop Blessing 2 in excellent condition (India only)", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-in-excellent-condition-india-only.28624/", "price_num": null, "date_ms": 1656892800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 38, "title": "Closed: Moondrop Blessing 2 + ES100 bundle", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-es100-bundle.27550/", "price_num": 299.0, "date_ms": 1655164800000, "listing_status": "closed", "condition_text": "good condition, used", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 39, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.27582/", "price_num": 250.0, "date_ms": 1655164800000, "listing_status": "closed", "condition_text": "good condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 40, "title": "Closed: Moondrop Blessing 2 with steel plates", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-with-steel-plates.26868/", "price_num": 260.0, "date_ms": 1654128000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 41, "title": "Closed: FOR SALE: Moondrop Blessing 2 IEMs with steel faceplates", "url": "https://www.head-fi.org/classifieds/for-sale-moondrop-blessing-2-iems-with-steel-faceplates.26365/", "price_num": 260.0, "date_ms": 1653436800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 42, "title": "Sold: Moondrop Blessing 2 Metal Backplate", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-metal-backplate.22171/", "price_num": 270.0, "date_ms": 1647388800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 43, "title": "Sold: Moondrop Blessing 2 Green Wood", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-green-wood.19586/", "price_num": 270.0, "date_ms": 1643932800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 44, "title": "Sold: Moondrop Blessing 2 - Blue wood", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-blue-wood.18652/", "price_num": 255.0, "date_ms": 1642809600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 45, "title": "Sold: SOLD!! Moondrop Blessing 2 - Exotic Blue Wood", "url": "https://www.head-fi.org/classifieds/sold-moondrop-blessing-2-exotic-blue-wood.18305/", "price_num": null, "date_ms": 1642377600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 46, "title": "Sold: Moondrop Blessing 2 IEM Blue Wood Grain - Excellent Condition w/All Accessories and Packaging - Nearly New!", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-iem-blue-wood-grain-excellent-condition-w-all-accessories-and-packaging-nearly-new.17311/", "price_num": 260.0, "date_ms": 1640995200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 47, "title": "Sold: Moondrop Blessing 2 - Silver - Mint!", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-silver-mint.17173/", "price_num": 259.0, "date_ms": 1640822400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 48, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.15856/", "price_num": 240.0, "date_ms": 1638748800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 49, "title": "Sold: Moondrop Blessing 2 - like new", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-like-new.15183/", "price_num": 235.0, "date_ms": 1637798400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 50, "title": "Closed: Moondrop Blessing 2 w/ green face plates", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-w-green-face-plates.12777/", "price_num": 275.0, "date_ms": 1633996800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 51, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.11679/", "price_num": 255.0, "date_ms": 1632268800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 52, "title": "Closed: SOLD. Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/sold-moondrop-blessing-2.8985/", "price_num": 250.0, "date_ms": 1628294400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 53, "title": "Sold: MoonDrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.8207/", "price_num": 260.0, "date_ms": 1626998400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 54, "title": "Closed: Moondrop Blessing 2 mint condition w/ 3.5mm and 4.4mm balanced cables", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-mint-condition-w-3-5mm-and-4-4mm-balanced-cables.7546/", "price_num": 260.0, "date_ms": 1626048000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 55, "title": "Closed: SOLD Moondrop Blessing 2 Original", "url": "https://www.head-fi.org/classifieds/sold-moondrop-blessing-2-original.6994/", "price_num": 250.0, "date_ms": 1625097600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 56, "title": "Closed: Moondrop Blessing 2 ***Sold", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-sold.6872/", "price_num": 230.0, "date_ms": 1624924800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 57, "title": "Closed: Blessing 2", "url": "https://www.head-fi.org/classifieds/blessing-2.6755/", "price_num": 215.0, "date_ms": 1624665600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 58, "title": "Sold: Moondrop Blessing 2 silver", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-silver.6053/", "price_num": 250.0, "date_ms": 1623542400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 59, "title": "Closed: Moondrop Blessing 2 w/ Engraving No. 1", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-w-engraving-no-1.3656/", "price_num": 279.0, "date_ms": 1619740800000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 60, "title": "Closed: Moondrop \u6c34\u6708\u96e8 Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-%E6%B0%B4%E6%9C%88%E9%9B%A8-blessing-2.3033/", "price_num": 260.0, "date_ms": 1618876800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 61, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.2119/", "price_num": 260.0, "date_ms": 1617667200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 62, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.1751/", "price_num": 230.0, "date_ms": 1617148800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 63, "title": "Sold: [SOLD] Moondrop Blessing 2 + 2.5mm TRRS Cable", "url": "https://www.head-fi.org/classifieds/sold-moondrop-blessing-2-2-5mm-trrs-cable.920/", "price_num": 250.0, "date_ms": 1615939200000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 64, "title": "Sold: Moondrop Blessing 2 + tipset", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-tipset.22310/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 65, "title": "Sold: PRICE DROP!!! Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/price-drop-moondrop-blessing-2.4537/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 66, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.3890/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Moondrop Blessing 2", "url": "https://old.reddit.com/r/AVexchange/comments/1uf98rm/wtsusakyh_schiit_magnius_modi_moondrop_blessing_2/#item-3", "price_num": 145.0, "date_ms": 1782392167000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 1, "title": "Blessing 2 + Hart Cable + Fiio KA2 bundle", "url": "https://old.reddit.com/r/AVexchange/comments/1uf98rm/wtsusakyh_schiit_magnius_modi_moondrop_blessing_2/#item-6", "price_num": 200.0, "date_ms": 1782392167000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 1, "is_possible_duplicate": 1, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.107479/", "price_num": 165.0, "date_ms": 1776384000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.95949/", "price_num": 165.0, "date_ms": 1759104000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.90705/", "price_num": 200.0, "date_ms": 1750896000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Moondrop Blessing 2", "url": "https://old.reddit.com/r/AVexchange/comments/1k9bwx8/wtsuswvh_sennheiser_hd800s_hd600_marble_hd599/#item-5", "price_num": 170.0, "date_ms": 1745781272000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=moondrop aria | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 6, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.84919/", "price_num": 125.0, "date_ms": 1741996800000, "listing_status": "closed", "condition_text": "good condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.83813/", "price_num": 150.0, "date_ms": 1740268800000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Moondrop Blessing 2 IEM's", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-iems.74791/", "price_num": 150.0, "date_ms": 1726185600000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.73438/", "price_num": 150.0, "date_ms": 1724112000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.72436/", "price_num": 120.0, "date_ms": 1722556800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Closed: Moondrop Blessing 2 green face", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-green-face.72349/", "price_num": 150.0, "date_ms": 1722470400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.66344/", "price_num": 200.0, "date_ms": 1713225600000, "listing_status": "closed", "condition_text": "fair", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Moondrop Blessing 2 (Blue)", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-blue.57688/", "price_num": 225.0, "date_ms": 1700179200000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.56196/", "price_num": 150.0, "date_ms": 1697587200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Closed: Moondrop Blessing 2 (Engraved Version)", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-engraved-version.53973/", "price_num": 210.0, "date_ms": 1694131200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Moondrop Blessing 2 OG + swappable cable", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-og-swappable-cable.52693/", "price_num": 200.0, "date_ms": 1692057600000, "listing_status": "closed", "condition_text": "fair, used", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Closed: (Bundle) Blessing 2 + 7hz Dioko", "url": "https://www.head-fi.org/classifieds/bundle-blessing-2-7hz-dioko.48683/", "price_num": 220.0, "date_ms": 1685664000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: Moondrop Blessing 2--near new, one screen missing", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-near-new-one-screen-missing.47909/", "price_num": 160.0, "date_ms": 1684368000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Closed: Moondrop Blessing 2 (OBO)", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-obo.45950/", "price_num": 190.0, "date_ms": 1681603200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.45376/", "price_num": 200.0, "date_ms": 1680912000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Blessing 2", "url": "https://www.head-fi.org/classifieds/blessing-2.45136/", "price_num": 225.0, "date_ms": 1680652800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.43672/", "price_num": 215.0, "date_ms": 1678838400000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Sold: Moondrop Blessing 2 engraved", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-engraved.40979/", "price_num": 245.0, "date_ms": 1675382400000, "listing_status": "closed", "condition_text": "like new, excellent, open box", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Sold: Moondrop Blessing 2 Jade Guitar (Rare)", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-jade-guitar-rare.40945/", "price_num": 280.0, "date_ms": 1675296000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: Moondrop Blessing 2 IEM\u2019s", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-iem%E2%80%99s.37792/", "price_num": 225.0, "date_ms": 1670716800000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.35232/", "price_num": 230.0, "date_ms": 1666742400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.35024/", "price_num": 160.0, "date_ms": 1666483200000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 28, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.34907/", "price_num": 225.0, "date_ms": 1666224000000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.33772/", "price_num": 210.0, "date_ms": 1664496000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: PD: Moondrop Blessing 2 w/ Custom Engraving", "url": "https://www.head-fi.org/classifieds/pd-moondrop-blessing-2-w-custom-engraving.33754/", "price_num": 230.0, "date_ms": 1664496000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.31993/", "price_num": 195.0, "date_ms": 1661817600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 32, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.30642/", "price_num": 230.0, "date_ms": 1659830400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 33, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.30394/", "price_num": 200.0, "date_ms": 1659398400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 34, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.29894/", "price_num": 230.0, "date_ms": 1658620800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 35, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.29332/", "price_num": 230.0, "date_ms": 1657756800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 36, "title": "Sold: Moondrop Blessing 2 - Mint!", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-mint.28753/", "price_num": 260.0, "date_ms": 1657065600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 37, "title": "Closed: Moondrop Blessing 2 in excellent condition (India only)", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-in-excellent-condition-india-only.28624/", "price_num": null, "date_ms": 1656892800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 38, "title": "Closed: Moondrop Blessing 2 + ES100 bundle", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-es100-bundle.27550/", "price_num": 299.0, "date_ms": 1655164800000, "listing_status": "closed", "condition_text": "good condition, used", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 39, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.27582/", "price_num": 250.0, "date_ms": 1655164800000, "listing_status": "closed", "condition_text": "good condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 40, "title": "Closed: Moondrop Blessing 2 with steel plates", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-with-steel-plates.26868/", "price_num": 260.0, "date_ms": 1654128000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 41, "title": "Closed: FOR SALE: Moondrop Blessing 2 IEMs with steel faceplates", "url": "https://www.head-fi.org/classifieds/for-sale-moondrop-blessing-2-iems-with-steel-faceplates.26365/", "price_num": 260.0, "date_ms": 1653436800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 42, "title": "Sold: Moondrop Blessing 2 Metal Backplate", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-metal-backplate.22171/", "price_num": 270.0, "date_ms": 1647388800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 43, "title": "Sold: Moondrop Blessing 2 Green Wood", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-green-wood.19586/", "price_num": 270.0, "date_ms": 1643932800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 44, "title": "Sold: Moondrop Blessing 2 - Blue wood", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-blue-wood.18652/", "price_num": 255.0, "date_ms": 1642809600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 45, "title": "Sold: SOLD!! Moondrop Blessing 2 - Exotic Blue Wood", "url": "https://www.head-fi.org/classifieds/sold-moondrop-blessing-2-exotic-blue-wood.18305/", "price_num": null, "date_ms": 1642377600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 46, "title": "Sold: Moondrop Blessing 2 IEM Blue Wood Grain - Excellent Condition w/All Accessories and Packaging - Nearly New!", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-iem-blue-wood-grain-excellent-condition-w-all-accessories-and-packaging-nearly-new.17311/", "price_num": 260.0, "date_ms": 1640995200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 47, "title": "Sold: Moondrop Blessing 2 - Silver - Mint!", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-silver-mint.17173/", "price_num": 259.0, "date_ms": 1640822400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 48, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.15856/", "price_num": 240.0, "date_ms": 1638748800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 49, "title": "Sold: Moondrop Blessing 2 - like new", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-like-new.15183/", "price_num": 235.0, "date_ms": 1637798400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 50, "title": "Closed: Moondrop Blessing 2 w/ green face plates", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-w-green-face-plates.12777/", "price_num": 275.0, "date_ms": 1633996800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 51, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.11679/", "price_num": 255.0, "date_ms": 1632268800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 52, "title": "Closed: SOLD. Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/sold-moondrop-blessing-2.8985/", "price_num": 250.0, "date_ms": 1628294400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 53, "title": "Sold: MoonDrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.8207/", "price_num": 260.0, "date_ms": 1626998400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 54, "title": "Closed: Moondrop Blessing 2 mint condition w/ 3.5mm and 4.4mm balanced cables", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-mint-condition-w-3-5mm-and-4-4mm-balanced-cables.7546/", "price_num": 260.0, "date_ms": 1626048000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 55, "title": "Closed: SOLD Moondrop Blessing 2 Original", "url": "https://www.head-fi.org/classifieds/sold-moondrop-blessing-2-original.6994/", "price_num": 250.0, "date_ms": 1625097600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 56, "title": "Closed: Moondrop Blessing 2 ***Sold", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-sold.6872/", "price_num": 230.0, "date_ms": 1624924800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 57, "title": "Closed: Blessing 2", "url": "https://www.head-fi.org/classifieds/blessing-2.6755/", "price_num": 215.0, "date_ms": 1624665600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 58, "title": "Sold: Moondrop Blessing 2 silver", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-silver.6053/", "price_num": 250.0, "date_ms": 1623542400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 59, "title": "Closed: Moondrop Blessing 2 w/ Engraving No. 1", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-w-engraving-no-1.3656/", "price_num": 279.0, "date_ms": 1619740800000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 60, "title": "Closed: Moondrop \u6c34\u6708\u96e8 Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-%E6%B0%B4%E6%9C%88%E9%9B%A8-blessing-2.3033/", "price_num": 260.0, "date_ms": 1618876800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 61, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.2119/", "price_num": 260.0, "date_ms": 1617667200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 62, "title": "Sold: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.1751/", "price_num": 230.0, "date_ms": 1617148800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 63, "title": "Sold: [SOLD] Moondrop Blessing 2 + 2.5mm TRRS Cable", "url": "https://www.head-fi.org/classifieds/sold-moondrop-blessing-2-2-5mm-trrs-cable.920/", "price_num": 250.0, "date_ms": 1615939200000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 64, "title": "Sold: Moondrop Blessing 2 + tipset", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2-tipset.22310/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 65, "title": "Sold: PRICE DROP!!! Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/price-drop-moondrop-blessing-2.4537/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 66, "title": "Closed: Moondrop Blessing 2", "url": "https://www.head-fi.org/classifieds/moondrop-blessing-2.3890/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 320.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

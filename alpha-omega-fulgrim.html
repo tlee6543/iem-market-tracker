@@ -201,7 +201,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>5</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>6</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -226,8 +226,24 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
+<tr id="row-0" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<td>2026-07-16</td>
+<td>$4,500</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">headfi_skipped_after_429_rate_limit_this_run</td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>Echo42987</td>
+<td>0</td>
+<td>0</td>
+<td>Fair (3.7% below market)</td>
+<td><a href="https://www.head-fi.org/classifieds/alpha-omega-fulgrim-14-69.112312/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
 <td>2026-04-08</td>
 <td>$4,600</td>
 <td><span class="pill">closed</span></td>
@@ -242,8 +258,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-fulgrim.107002/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
+<tr id="row-2" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
 <td>2026-03-30</td>
 <td>$4,750</td>
 <td><span class="pill">closed</span></td>
@@ -258,7 +274,7 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/ao-fulgrim-luna-add-on-available.106410/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" class="excluded">
+<tr id="row-3" class="excluded">
 <td></td>
 <td>2026-03-27</td>
 <td></td>
@@ -274,8 +290,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-fulgrim-32.106219/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" checked></td>
+<tr id="row-4" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" checked></td>
 <td>2026-03-14</td>
 <td>$4,750</td>
 <td><span class="pill">closed</span></td>
@@ -290,8 +306,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/ao-fulgrim-15-of-69.105390/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-4" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="4" ></td>
+<tr id="row-5" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="5" ></td>
 <td>2026-01-19</td>
 <td>$4,750</td>
 <td><span class="pill">closed</span></td>
@@ -306,8 +322,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/ao-fulgrim-36-69.102278/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-5" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="5" checked></td>
+<tr id="row-6" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" checked></td>
 <td>2025-12-04</td>
 <td>$4,500</td>
 <td><span class="pill">closed</span></td>
@@ -322,7 +338,7 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-fulgrim-32.99673/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-6" class="excluded">
+<tr id="row-7" class="excluded">
 <td></td>
 <td>2025-06-29</td>
 <td></td>
@@ -340,7 +356,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Sold: Alpha Omega - Fulgrim", "url": "https://www.head-fi.org/classifieds/alpha-omega-fulgrim.107002/", "price_num": 4600.0, "date_ms": 1775606400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Sold: AO Fulgrim (Luna add-on available)", "url": "https://www.head-fi.org/classifieds/ao-fulgrim-luna-add-on-available.106410/", "price_num": 4750.0, "date_ms": 1774828800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: Alpha Omega Fulgrim #32", "url": "https://www.head-fi.org/classifieds/alpha-omega-fulgrim-32.106219/", "price_num": null, "date_ms": 1774569600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 3, "title": "Closed: AO Fulgrim (#15 of 69)", "url": "https://www.head-fi.org/classifieds/ao-fulgrim-15-of-69.105390/", "price_num": 4750.0, "date_ms": 1773446400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: AO Fulgrim (#36/69)", "url": "https://www.head-fi.org/classifieds/ao-fulgrim-36-69.102278/", "price_num": 4750.0, "date_ms": 1768780800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Sold: Alpha Omega Fulgrim #32", "url": "https://www.head-fi.org/classifieds/alpha-omega-fulgrim-32.99673/", "price_num": 4500.0, "date_ms": 1764806400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Alpha Omega Fulgrim", "url": "https://www.head-fi.org/classifieds/alpha-omega-fulgrim.90875/", "price_num": null, "date_ms": 1751155200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Alpha & Omega Fulgrim #14/69", "url": "https://www.head-fi.org/classifieds/alpha-omega-fulgrim-14-69.112312/", "price_num": 4500.0, "date_ms": 1784160000000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "Sold: Alpha Omega - Fulgrim", "url": "https://www.head-fi.org/classifieds/alpha-omega-fulgrim.107002/", "price_num": 4600.0, "date_ms": 1775606400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: AO Fulgrim (Luna add-on available)", "url": "https://www.head-fi.org/classifieds/ao-fulgrim-luna-add-on-available.106410/", "price_num": 4750.0, "date_ms": 1774828800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Alpha Omega Fulgrim #32", "url": "https://www.head-fi.org/classifieds/alpha-omega-fulgrim-32.106219/", "price_num": null, "date_ms": 1774569600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 4, "title": "Closed: AO Fulgrim (#15 of 69)", "url": "https://www.head-fi.org/classifieds/ao-fulgrim-15-of-69.105390/", "price_num": 4750.0, "date_ms": 1773446400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: AO Fulgrim (#36/69)", "url": "https://www.head-fi.org/classifieds/ao-fulgrim-36-69.102278/", "price_num": 4750.0, "date_ms": 1768780800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 6, "title": "Sold: Alpha Omega Fulgrim #32", "url": "https://www.head-fi.org/classifieds/alpha-omega-fulgrim-32.99673/", "price_num": 4500.0, "date_ms": 1764806400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Closed: Alpha Omega Fulgrim", "url": "https://www.head-fi.org/classifieds/alpha-omega-fulgrim.90875/", "price_num": null, "date_ms": 1751155200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 6900.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }

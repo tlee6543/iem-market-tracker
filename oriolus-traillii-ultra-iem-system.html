@@ -199,7 +199,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -225,6 +225,22 @@ td.status-reason { overflow: hidden; }
 
 <tr id="row-0" class="excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<td>2026-07-11</td>
+<td>$7,500</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">headfi_skipped_after_429_rate_limit_this_run</td>
+<td>mint, like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>Crazeee</td>
+<td>0</td>
+<td>0</td>
+<td>High (11.2% above market)</td>
+<td><a href="https://www.head-fi.org/classifieds/oriolus-traillii-ultra-iem-system.111995/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
 <td>2026-05-19</td>
 <td>$7,100</td>
 <td><span class="pill">active</span></td>
@@ -241,7 +257,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Oriolus Traillii Ultra IEM", "url": "https://www.head-fi.org/classifieds/oriolus-traillii-ultra-iem.109318/", "price_num": 7100.0, "date_ms": 1779148800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}];
+const allRows = [{"row_id": 0, "title": "Oriolus Traillii Ultra IEM System", "url": "https://www.head-fi.org/classifieds/oriolus-traillii-ultra-iem-system.111995/", "price_num": 7500.0, "date_ms": 1783728000000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "Oriolus Traillii Ultra IEM", "url": "https://www.head-fi.org/classifieds/oriolus-traillii-ultra-iem.109318/", "price_num": 7100.0, "date_ms": 1779148800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
