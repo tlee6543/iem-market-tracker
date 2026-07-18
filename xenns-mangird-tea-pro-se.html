@@ -193,7 +193,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 51/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 8/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 70d ago, 2 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 51/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 8/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 70d ago, 2 source type(s), two samples; limited volatility read." tabindex="0">Medium (51/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 70d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 70/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 30/30, recent sample depth 12/15, source diversity 8/10, price consistency 7/10. Current inputs: 3 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 0d ago, 2 source type(s), price CV 0.12." aria-label="Liquidity/confidence score: 70/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 30/30, recent sample depth 12/15, source diversity 8/10, price consistency 7/10. Current inputs: 3 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 0d ago, 2 source type(s), price CV 0.12." tabindex="0">Medium (70/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">3 included sample(s), latest 0d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -226,11 +226,11 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<tr id="row-0" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
 <td>2026-07-18</td>
 <td>$350</td>
-<td><span class="pill">active</span></td>
+<td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
 <td></td>
 <td>0</td>
@@ -238,7 +238,7 @@ td.status-reason { overflow: hidden; }
 <td>biezwax</td>
 <td>0</td>
 <td>1</td>
-<td>High (14.2% above market)</td>
+<td>Closed: Fair (5.9% above market)</td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1uziuf2/wts_usca_h_dan_clark_audio_noire_x_xenns_mangird/#item-2" target="_blank">source</a></td>
 </tr>
 
@@ -254,7 +254,7 @@ td.status-reason { overflow: hidden; }
 <td>gearofwar</td>
 <td>0</td>
 <td>0</td>
-<td>Overpriced (27.3% above market)</td>
+<td>High (18.0% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-mangird-tea-pro-se.110940/" target="_blank">source</a></td>
 </tr>
 
@@ -270,7 +270,7 @@ td.status-reason { overflow: hidden; }
 <td>biezwax</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: High (20.8% above market)</td>
+<td>Closed: High (11.9% above market)</td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1tk1a7f/wts_usca_h_dunu_x_koto_ito_xenns_mangird_tea_pro/#item-2" target="_blank">source</a></td>
 </tr>
 
@@ -286,7 +286,7 @@ td.status-reason { overflow: hidden; }
 <td>Caterham7</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (8.6% below market)</td>
+<td>Closed: Good Deal (15.3% below market)</td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1t7pxkg/wts_usapa_h_fiio_m21_casette_case_xenns_mangird/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -302,13 +302,13 @@ td.status-reason { overflow: hidden; }
 <td>Markmurd</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (22.4% above market)</td>
+<td>Closed: High (13.5% above market)</td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-mangird-tea-pro-se-mint-condition.101390/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "XENNS Mangird Tea Pro SE", "url": "https://old.reddit.com/r/AVexchange/comments/1uziuf2/wts_usca_h_dan_clark_audio_noire_x_xenns_mangird/#item-2", "price_num": 350.0, "date_ms": 1784339684000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "XENNS Mangird Tea Pro SE", "url": "https://www.head-fi.org/classifieds/xenns-mangird-tea-pro-se.110940/", "price_num": 390.0, "date_ms": 1781827200000, "listing_status": "active", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 2, "title": "XENNS Mangird Tea Pro SE - full set excellent condition", "url": "https://old.reddit.com/r/AVexchange/comments/1tk1a7f/wts_usca_h_dunu_x_koto_ito_xenns_mangird_tea_pro/#item-2", "price_num": 370.0, "date_ms": 1779405405000, "listing_status": "closed", "condition_text": "-", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=xenns | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "FiiO M21 & Casette Case, Xenns Mangird Tea Pro SE", "url": "https://old.reddit.com/r/AVexchange/comments/1t7pxkg/wts_usapa_h_fiio_m21_casette_case_xenns_mangird/#item-1", "price_num": 280.0, "date_ms": 1778287426000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=xenns"}, {"row_id": 4, "title": "Closed: XENNS Mangird Tea Pro SE - Mint Condition", "url": "https://www.head-fi.org/classifieds/xenns-mangird-tea-pro-se-mint-condition.101390/", "price_num": 375.0, "date_ms": 1767571200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "XENNS Mangird Tea Pro SE", "url": "https://old.reddit.com/r/AVexchange/comments/1uziuf2/wts_usca_h_dan_clark_audio_noire_x_xenns_mangird/#item-2", "price_num": 350.0, "date_ms": 1784339684000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | reddit_item_line_strikethrough_sold | comments_checked_rss_and_html | confirmed_priced_nonbundle_included"}, {"row_id": 1, "title": "XENNS Mangird Tea Pro SE", "url": "https://www.head-fi.org/classifieds/xenns-mangird-tea-pro-se.110940/", "price_num": 390.0, "date_ms": 1781827200000, "listing_status": "active", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 2, "title": "XENNS Mangird Tea Pro SE - full set excellent condition", "url": "https://old.reddit.com/r/AVexchange/comments/1tk1a7f/wts_usca_h_dunu_x_koto_ito_xenns_mangird_tea_pro/#item-2", "price_num": 370.0, "date_ms": 1779405405000, "listing_status": "closed", "condition_text": "-", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=xenns | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "FiiO M21 & Casette Case, Xenns Mangird Tea Pro SE", "url": "https://old.reddit.com/r/AVexchange/comments/1t7pxkg/wts_usapa_h_fiio_m21_casette_case_xenns_mangird/#item-1", "price_num": 280.0, "date_ms": 1778287426000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=xenns"}, {"row_id": 4, "title": "Closed: XENNS Mangird Tea Pro SE - Mint Condition", "url": "https://www.head-fi.org/classifieds/xenns-mangird-tea-pro-se-mint-condition.101390/", "price_num": 375.0, "date_ms": 1767571200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 450.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
