@@ -201,7 +201,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>2</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span>3</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -228,6 +228,22 @@ td.status-reason { overflow: hidden; }
 
 <tr id="row-0" class="excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<td>2026-07-18</td>
+<td>$750</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason"></td>
+<td>like new</td>
+<td>0</td>
+<td>reddit_rss</td>
+<td>omidixman</td>
+<td>0</td>
+<td>0</td>
+<td>Fair (7.1% above market)</td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1uzkd8u/wts_caon_h_moritz_enzo_noble_spartacus_tangzu/#item-1" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" class="excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
 <td>2026-06-15</td>
 <td>$799</td>
 <td><span class="pill">active</span></td>
@@ -242,8 +258,8 @@ td.status-reason { overflow: hidden; }
 <td><a href="https://www.head-fi.org/classifieds/moritz-enzo.110755/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
+<tr id="row-2" class="included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
 <td></td>
 <td>$700</td>
 <td><span class="pill">closed</span></td>
@@ -260,7 +276,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Moritz ENZO", "url": "https://www.head-fi.org/classifieds/moritz-enzo.110755/", "price_num": 799.0, "date_ms": 1781481600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "(Price Drop) Moritz Enzo For Sale / Trade 700.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere", "url": "https://www.head-fi.org/classifieds/price-drop-moritz-enzo.109795/", "price_num": 700.0, "date_ms": null, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "visible_card_collect_with_price_title_match_v6 | active_status_checker_confirmed_sold_from_headfi_page"}];
+const allRows = [{"row_id": 0, "title": "Moritz Enzo", "url": "https://old.reddit.com/r/AVexchange/comments/1uzkd8u/wts_caon_h_moritz_enzo_noble_spartacus_tangzu/#item-1", "price_num": 750.0, "date_ms": 1784344113000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Moritz ENZO", "url": "https://www.head-fi.org/classifieds/moritz-enzo.110755/", "price_num": 799.0, "date_ms": 1781481600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 2, "title": "(Price Drop) Moritz Enzo For Sale / Trade 700.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere", "url": "https://www.head-fi.org/classifieds/price-drop-moritz-enzo.109795/", "price_num": 700.0, "date_ms": null, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "visible_card_collect_with_price_title_match_v6 | active_status_checker_confirmed_sold_from_headfi_page"}];
 const originalMsrpUsd = 1370.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
