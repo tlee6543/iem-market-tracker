@@ -231,7 +231,7 @@ td.status-reason { overflow: hidden; }
 <td>2026-07-16</td>
 <td>$350</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">headfi_skipped_after_429_rate_limit_this_run</td>
+<td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
 <td>like new, excellent, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -260,7 +260,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Softears Edge - Like New - Free Worldwide Shipping Included", "url": "https://www.head-fi.org/classifieds/softears-edge-like-new-free-worldwide-shipping-included.112330/", "price_num": 350.0, "date_ms": 1784160000000, "listing_status": "active", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 1, "title": "Up for sale is my Softears Edge which I just purchased last week from MusicTeck for", "url": "https://old.reddit.com/r/AVexchange/comments/1umxj8o/wtsusawah_softears_edge_single_dd_iem_w_paypal_or/#item-1", "price_num": 499.0, "date_ms": 1783133427000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}];
+const allRows = [{"row_id": 0, "title": "Softears Edge - Like New - Free Worldwide Shipping Included", "url": "https://www.head-fi.org/classifieds/softears-edge-like-new-free-worldwide-shipping-included.112330/", "price_num": 350.0, "date_ms": 1784160000000, "listing_status": "active", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "Up for sale is my Softears Edge which I just purchased last week from MusicTeck for", "url": "https://old.reddit.com/r/AVexchange/comments/1umxj8o/wtsusawah_softears_edge_single_dd_iem_w_paypal_or/#item-1", "price_num": 499.0, "date_ms": 1783133427000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}];
 const originalMsrpUsd = 442.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
