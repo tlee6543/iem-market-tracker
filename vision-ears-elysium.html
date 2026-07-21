@@ -59,6 +59,11 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 .filter-btn { padding: 9px 12px; border: 1px solid #ccc; background: #fff; border-radius: 999px; cursor: pointer; }
 .filter-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-toggle { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+.source-toggle-label { font-size: 13px; color: #555; font-weight: bold; margin-right: 2px; }
+.source-btn { padding: 9px 14px; border: 1px solid #bbb; background: #fff; border-radius: 999px; cursor: pointer; font-weight: bold; }
+.source-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-hidden { display: none; }
 .badge { display: inline-block; padding: 3px 8px; border-radius: 999px; border: 1px solid #ccc; background: #fafafa; font-size: 12px; white-space: nowrap; }
 .badge-high { background: #ecfdf3; border-color: #b7e4c7; }
 .badge-medium { background: #fff8e1; border-color: #ead88a; }
@@ -177,9 +182,18 @@ td.status-reason { overflow: hidden; }
         </div>
     </div>
     
-<p><a href="index.html">← Back</a></p>
+<p><a id="back-link" href="index.html">← Back</a></p>
 <h1>Vision Ears Elysium</h1>
 <p><a href="brand-vision-ears.html">Vision Ears</a></p>
+<div class="card">
+    <div class="source-toggle" aria-label="Marketplace source">
+        <span class="source-toggle-label">Marketplace:</span>
+        <button class="source-btn active" data-source="both" onclick="setMarketplaceSource('both')">Both</button>
+        <button class="source-btn" data-source="reddit" onclick="setMarketplaceSource('reddit')">Reddit</button>
+        <button class="source-btn" data-source="headfi" onclick="setMarketplaceSource('headfi')">Head-Fi</button>
+    </div>
+    <p class="small">The selected marketplace filters the listing table, charts, market value, sample counts, and confidence score.</p>
+</div>
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
@@ -199,12 +213,12 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>47</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">47</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 60+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
-    <div class="controls"><button onclick="setAllCheckboxes(true)">Select all priced rows</button><button onclick="setAllCheckboxes(false)">Clear all</button></div>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
         <div class="chart-panel">
@@ -223,7 +237,7 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="excluded">
+<tr id="row-0" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2025-11-26</td>
 <td></td>
@@ -235,11 +249,11 @@ td.status-reason { overflow: hidden; }
 <td>dubudubutofu</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-0">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.99162/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" class="excluded">
+<tr id="row-1" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2025-11-24</td>
 <td></td>
@@ -251,12 +265,12 @@ td.status-reason { overflow: hidden; }
 <td>dubudubutofu</td>
 <td>1</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-1">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.99049/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
+<tr id="row-2" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" checked></td>
 <td>2024-12-30</td>
 <td>$975</td>
 <td><span class="pill">closed</span></td>
@@ -267,11 +281,11 @@ td.status-reason { overflow: hidden; }
 <td>kaavik47</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.2% below market)</td>
+<td><span id="deal-score-2">Closed: Fair (1.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.80628/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" class="excluded">
+<tr id="row-3" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2024-06-15</td>
 <td></td>
@@ -283,12 +297,12 @@ td.status-reason { overflow: hidden; }
 <td>vikinguy</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-3">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-w-effect-leonidas-ii.69855/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-4" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="4" checked></td>
+<tr id="row-4" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="headfi" checked></td>
 <td>2024-05-09</td>
 <td>$1,000</td>
 <td><span class="pill">closed</span></td>
@@ -299,12 +313,12 @@ td.status-reason { overflow: hidden; }
 <td>jmo04</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.3% above market)</td>
+<td><span id="deal-score-4">Closed: Fair (1.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.67638/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-5" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="5" checked></td>
+<tr id="row-5" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="headfi" checked></td>
 <td>2024-02-19</td>
 <td>$1,100</td>
 <td><span class="pill">closed</span></td>
@@ -315,12 +329,12 @@ td.status-reason { overflow: hidden; }
 <td>straleno</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (11.4% above market)</td>
+<td><span id="deal-score-5">Closed: High (11.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-uiems-complete-set-near-mint.62965/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-6" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="6" checked></td>
+<tr id="row-6" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="headfi" checked></td>
 <td>2023-08-05</td>
 <td>$1,020</td>
 <td><span class="pill">closed</span></td>
@@ -331,11 +345,11 @@ td.status-reason { overflow: hidden; }
 <td>KaiserTK</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (3.3% above market)</td>
+<td><span id="deal-score-6">Closed: Fair (3.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-uiem.52149/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-7" class="excluded">
+<tr id="row-7" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2023-07-19</td>
 <td></td>
@@ -347,11 +361,11 @@ td.status-reason { overflow: hidden; }
 <td>zlayde</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-7">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.51258/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-8" class="excluded">
+<tr id="row-8" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2023-06-18</td>
 <td></td>
@@ -363,11 +377,11 @@ td.status-reason { overflow: hidden; }
 <td>shofilm</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-8">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.49525/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-9" class="excluded">
+<tr id="row-9" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2023-06-10</td>
 <td></td>
@@ -379,12 +393,12 @@ td.status-reason { overflow: hidden; }
 <td>OneEyedHito</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-9">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/fs-vision-ears-elysium-iems-pristine-condition-superb-value.49118/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-10" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="10" checked></td>
+<tr id="row-10" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="10" data-source="headfi" checked></td>
 <td>2023-05-07</td>
 <td>$1,250</td>
 <td><span class="pill">closed</span></td>
@@ -395,12 +409,12 @@ td.status-reason { overflow: hidden; }
 <td>Homrsimson</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (26.6% above market)</td>
+<td><span id="deal-score-10">Closed: Overpriced (26.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-iems-complete-and-like-new.47265/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-11" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="11" checked></td>
+<tr id="row-11" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="11" data-source="headfi" checked></td>
 <td>2023-04-17</td>
 <td>$1,250</td>
 <td><span class="pill">closed</span></td>
@@ -411,12 +425,12 @@ td.status-reason { overflow: hidden; }
 <td>Strayngs</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (26.6% above market)</td>
+<td><span id="deal-score-11">Closed: Overpriced (26.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pending%E2%80%A6-vision-ears-elysium.46022/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-12" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="12" checked></td>
+<tr id="row-12" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="12" data-source="headfi" checked></td>
 <td>2023-03-11</td>
 <td>$1,225</td>
 <td><span class="pill">closed</span></td>
@@ -427,12 +441,12 @@ td.status-reason { overflow: hidden; }
 <td>SLC1966</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (24.1% above market)</td>
+<td><span id="deal-score-12">Closed: High (24.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.43389/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-13" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="13" checked></td>
+<tr id="row-13" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="13" data-source="headfi" checked></td>
 <td>2023-02-16</td>
 <td>$1,700</td>
 <td><span class="pill">closed</span></td>
@@ -443,12 +457,12 @@ td.status-reason { overflow: hidden; }
 <td>Chronos</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (72.2% above market)</td>
+<td><span id="deal-score-13">Closed: Overpriced (72.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-ext.41821/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-14" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="14" checked></td>
+<tr id="row-14" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="14" data-source="headfi" checked></td>
 <td>2023-02-12</td>
 <td>$1,300</td>
 <td><span class="pill">closed</span></td>
@@ -459,12 +473,12 @@ td.status-reason { overflow: hidden; }
 <td>harshkamboj</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (31.7% above market)</td>
+<td><span id="deal-score-14">Closed: Overpriced (31.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-serial-no-260.41593/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-15" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="15" checked></td>
+<tr id="row-15" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="15" data-source="headfi" checked></td>
 <td>2023-02-05</td>
 <td>$1,000</td>
 <td><span class="pill">closed</span></td>
@@ -475,12 +489,12 @@ td.status-reason { overflow: hidden; }
 <td>35FLE</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.3% above market)</td>
+<td><span id="deal-score-15">Closed: Fair (1.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-iem.41140/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-16" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="16" checked></td>
+<tr id="row-16" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="16" data-source="headfi" checked></td>
 <td>2023-01-24</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
@@ -491,12 +505,12 @@ td.status-reason { overflow: hidden; }
 <td>dwong</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (82.4% above market)</td>
+<td><span id="deal-score-16">Closed: Overpriced (82.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-ext.40368/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-17" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="17" checked></td>
+<tr id="row-17" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="17" data-source="headfi" checked></td>
 <td>2023-01-22</td>
 <td>$1,500</td>
 <td><span class="pill">closed</span></td>
@@ -507,12 +521,12 @@ td.status-reason { overflow: hidden; }
 <td>Ivabign</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (52.0% above market)</td>
+<td><span id="deal-score-17">Closed: Overpriced (52.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-effect-audio-leonidas-ii-4-4m.40242/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-18" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="18" checked></td>
+<tr id="row-18" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="18" data-source="headfi" checked></td>
 <td>2022-11-24</td>
 <td>$1,050</td>
 <td><span class="pill">closed</span></td>
@@ -523,12 +537,12 @@ td.status-reason { overflow: hidden; }
 <td>ImMcLovin</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.4% above market)</td>
+<td><span id="deal-score-18">Closed: Fair (6.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.36792/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-19" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="19" checked></td>
+<tr id="row-19" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="19" data-source="headfi" checked></td>
 <td>2022-10-25</td>
 <td>$1,639</td>
 <td><span class="pill">closed</span></td>
@@ -539,12 +553,12 @@ td.status-reason { overflow: hidden; }
 <td>vikinguy</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (66.0% above market)</td>
+<td><span id="deal-score-19">Closed: Overpriced (66.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-ext.35168/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-20" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="20" checked></td>
+<tr id="row-20" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="20" data-source="headfi" checked></td>
 <td>2022-09-02</td>
 <td>$925</td>
 <td><span class="pill">closed</span></td>
@@ -555,12 +569,12 @@ td.status-reason { overflow: hidden; }
 <td>morndewey</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.3% below market)</td>
+<td><span id="deal-score-20">Closed: Fair (6.3% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.32244/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-21" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="21" checked></td>
+<tr id="row-21" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="21" data-source="headfi" checked></td>
 <td>2022-08-09</td>
 <td>$1,200</td>
 <td><span class="pill">closed</span></td>
@@ -571,12 +585,12 @@ td.status-reason { overflow: hidden; }
 <td>ucrags84</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (21.6% above market)</td>
+<td><span id="deal-score-21">Closed: High (21.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-in-great-condition-price-drop-1200.30762/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-22" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="22" ></td>
+<tr id="row-22" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="22" data-source="headfi" ></td>
 <td>2022-07-11</td>
 <td>$1,500</td>
 <td><span class="pill">closed</span></td>
@@ -587,12 +601,12 @@ td.status-reason { overflow: hidden; }
 <td>alsorkin</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (52.0% above market)</td>
+<td><span id="deal-score-22">Closed: Overpriced (52.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-with-effect-audio-leonidas-ii-premium-upgrade-cable.29150/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-23" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="23" checked></td>
+<tr id="row-23" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="23" data-source="headfi" checked></td>
 <td>2022-06-20</td>
 <td>$1,300</td>
 <td><span class="pill">closed</span></td>
@@ -603,12 +617,12 @@ td.status-reason { overflow: hidden; }
 <td>KaiserTK</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (31.7% above market)</td>
+<td><span id="deal-score-23">Closed: Overpriced (31.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.27889/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-24" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="24" checked></td>
+<tr id="row-24" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="24" data-source="headfi" checked></td>
 <td>2022-03-02</td>
 <td>$1,275</td>
 <td><span class="pill">closed</span></td>
@@ -619,12 +633,12 @@ td.status-reason { overflow: hidden; }
 <td>KevinS2020</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (29.2% above market)</td>
+<td><span id="deal-score-24">Closed: Overpriced (29.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-iem-in-mint-condition.21252/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-25" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="25" checked></td>
+<tr id="row-25" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="25" data-source="headfi" checked></td>
 <td>2022-02-19</td>
 <td>$1,350</td>
 <td><span class="pill">closed</span></td>
@@ -635,12 +649,12 @@ td.status-reason { overflow: hidden; }
 <td>jaker782</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (36.8% above market)</td>
+<td><span id="deal-score-25">Closed: Overpriced (36.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/fs-vision-ears-elysium.20608/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-26" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="26" checked></td>
+<tr id="row-26" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="26" data-source="headfi" checked></td>
 <td>2022-02-08</td>
 <td>$1,850</td>
 <td><span class="pill">closed</span></td>
@@ -651,12 +665,12 @@ td.status-reason { overflow: hidden; }
 <td>ucrags84</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (87.4% above market)</td>
+<td><span id="deal-score-26">Closed: Overpriced (87.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/price-drop-new-vision-ears-elysium-universal-fit.19884/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-27" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="27" checked></td>
+<tr id="row-27" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="27" data-source="headfi" checked></td>
 <td>2022-02-08</td>
 <td>$1,300</td>
 <td><span class="pill">closed</span></td>
@@ -667,12 +681,12 @@ td.status-reason { overflow: hidden; }
 <td>morndewey</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (31.7% above market)</td>
+<td><span id="deal-score-27">Closed: Overpriced (31.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.19891/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-28" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="28" checked></td>
+<tr id="row-28" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="28" data-source="headfi" checked></td>
 <td>2021-12-09</td>
 <td>$2,400</td>
 <td><span class="pill">closed</span></td>
@@ -683,12 +697,12 @@ td.status-reason { overflow: hidden; }
 <td>cradon</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (143.1% above market)</td>
+<td><span id="deal-score-28">Closed: Overpriced (143.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-ext.16036/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-29" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="29" checked></td>
+<tr id="row-29" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="29" data-source="headfi" checked></td>
 <td>2021-12-05</td>
 <td>$1,490</td>
 <td><span class="pill">closed</span></td>
@@ -699,12 +713,12 @@ td.status-reason { overflow: hidden; }
 <td>Tybot</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (50.9% above market)</td>
+<td><span id="deal-score-29">Closed: Overpriced (50.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.15815/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-30" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="30" checked></td>
+<tr id="row-30" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="30" data-source="headfi" checked></td>
 <td>2021-11-12</td>
 <td>$1,500</td>
 <td><span class="pill">closed</span></td>
@@ -715,12 +729,12 @@ td.status-reason { overflow: hidden; }
 <td>circafreedom</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (52.0% above market)</td>
+<td><span id="deal-score-30">Closed: Overpriced (52.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-sold.14480/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-31" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="31" checked></td>
+<tr id="row-31" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="31" data-source="headfi" checked></td>
 <td>2021-11-06</td>
 <td>$1,250</td>
 <td><span class="pill">closed</span></td>
@@ -731,12 +745,12 @@ td.status-reason { overflow: hidden; }
 <td>S7R0N63R-B455</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (26.6% above market)</td>
+<td><span id="deal-score-31">Closed: Overpriced (26.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.14203/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-32" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="32" checked></td>
+<tr id="row-32" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="32" data-source="headfi" checked></td>
 <td>2021-10-30</td>
 <td>$1,599</td>
 <td><span class="pill">closed</span></td>
@@ -747,12 +761,12 @@ td.status-reason { overflow: hidden; }
 <td>Homrsimson</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (62.0% above market)</td>
+<td><span id="deal-score-32">Closed: Overpriced (62.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-big-price-drop-almost-new.13786/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-33" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="33" checked></td>
+<tr id="row-33" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="33" data-source="headfi" checked></td>
 <td>2021-10-26</td>
 <td>$1,550</td>
 <td><span class="pill">closed</span></td>
@@ -763,12 +777,12 @@ td.status-reason { overflow: hidden; }
 <td>Damz87</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (57.0% above market)</td>
+<td><span id="deal-score-33">Closed: Overpriced (57.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-iems.13532/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-34" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="34" checked></td>
+<tr id="row-34" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="34" data-source="headfi" checked></td>
 <td>2021-10-14</td>
 <td>$1,350</td>
 <td><span class="pill">closed</span></td>
@@ -779,12 +793,12 @@ td.status-reason { overflow: hidden; }
 <td>gnahra</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (36.8% above market)</td>
+<td><span id="deal-score-34">Closed: Overpriced (36.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/price-drop-vision-ears-elysium.12902/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-35" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="35" checked></td>
+<tr id="row-35" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="35" data-source="headfi" checked></td>
 <td>2021-09-23</td>
 <td>$1,700</td>
 <td><span class="pill">closed</span></td>
@@ -795,12 +809,12 @@ td.status-reason { overflow: hidden; }
 <td>solstice15</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (72.2% above market)</td>
+<td><span id="deal-score-35">Closed: Overpriced (72.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.11726/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-36" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="36" checked></td>
+<tr id="row-36" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="36" data-source="headfi" checked></td>
 <td>2021-08-11</td>
 <td>$1,650</td>
 <td><span class="pill">closed</span></td>
@@ -811,12 +825,12 @@ td.status-reason { overflow: hidden; }
 <td>DrumSeb</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (67.2% above market)</td>
+<td><span id="deal-score-36">Closed: Overpriced (67.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.9220/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-37" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="37" checked></td>
+<tr id="row-37" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="37" data-source="headfi" checked></td>
 <td>2021-08-04</td>
 <td>$1,550</td>
 <td><span class="pill">closed</span></td>
@@ -827,12 +841,12 @@ td.status-reason { overflow: hidden; }
 <td>soocha2</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (57.0% above market)</td>
+<td><span id="deal-score-37">Closed: Overpriced (57.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/price-drop-vision-ears-elysium.8805/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-38" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="38" checked></td>
+<tr id="row-38" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="38" data-source="headfi" checked></td>
 <td>2021-07-21</td>
 <td>$1,650</td>
 <td><span class="pill">closed</span></td>
@@ -843,11 +857,11 @@ td.status-reason { overflow: hidden; }
 <td>kdphan</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (67.2% above market)</td>
+<td><span id="deal-score-38">Closed: Overpriced (67.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-universal.8082/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-39" class="excluded">
+<tr id="row-39" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2021-07-17</td>
 <td></td>
@@ -859,12 +873,12 @@ td.status-reason { overflow: hidden; }
 <td>ajlolo</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-39">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.7878/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-40" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="40" checked></td>
+<tr id="row-40" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="40" data-source="headfi" checked></td>
 <td>2021-07-15</td>
 <td>$1,680</td>
 <td><span class="pill">closed</span></td>
@@ -875,12 +889,12 @@ td.status-reason { overflow: hidden; }
 <td>endless402</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (70.2% above market)</td>
+<td><span id="deal-score-40">Closed: Overpriced (70.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.7736/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-41" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="41" ></td>
+<tr id="row-41" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="41" data-source="headfi" ></td>
 <td>2021-07-09</td>
 <td>$1,750</td>
 <td><span class="pill">closed</span></td>
@@ -891,12 +905,12 @@ td.status-reason { overflow: hidden; }
 <td>Homrsimson</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (77.3% above market)</td>
+<td><span id="deal-score-41">Closed: Overpriced (77.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-like-new.7421/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-42" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="42" checked></td>
+<tr id="row-42" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="42" data-source="headfi" checked></td>
 <td>2021-07-01</td>
 <td>$1,750</td>
 <td><span class="pill">closed</span></td>
@@ -907,12 +921,12 @@ td.status-reason { overflow: hidden; }
 <td>Rockwell75</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (77.3% above market)</td>
+<td><span id="deal-score-42">Closed: Overpriced (77.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-universal.7012/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-43" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="43" checked></td>
+<tr id="row-43" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="43" data-source="headfi" checked></td>
 <td>2021-06-22</td>
 <td>$1,700</td>
 <td><span class="pill">closed</span></td>
@@ -923,12 +937,12 @@ td.status-reason { overflow: hidden; }
 <td>SBranson</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (72.2% above market)</td>
+<td><span id="deal-score-43">Closed: Overpriced (72.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-on-hold.6555/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-44" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="44" checked></td>
+<tr id="row-44" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="44" data-source="headfi" checked></td>
 <td>2021-06-07</td>
 <td>$1,750</td>
 <td><span class="pill">closed</span></td>
@@ -939,12 +953,12 @@ td.status-reason { overflow: hidden; }
 <td>woodcans</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (77.3% above market)</td>
+<td><span id="deal-score-44">Closed: Overpriced (77.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.5804/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-45" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="45" ></td>
+<tr id="row-45" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="45" data-source="headfi" ></td>
 <td>2021-06-03</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
@@ -955,12 +969,12 @@ td.status-reason { overflow: hidden; }
 <td>Homrsimson</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (82.4% above market)</td>
+<td><span id="deal-score-45">Closed: Overpriced (82.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/wts-vision-ears-elysium-and-or-noble-sultan.5615/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-46" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="46" checked></td>
+<tr id="row-46" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="46" data-source="headfi" checked></td>
 <td>2021-05-18</td>
 <td>$1,749</td>
 <td><span class="pill">closed</span></td>
@@ -971,12 +985,12 @@ td.status-reason { overflow: hidden; }
 <td>fejnomit</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (77.2% above market)</td>
+<td><span id="deal-score-46">Closed: Overpriced (77.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-mint-5-months-old.4785/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-47" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="47" checked></td>
+<tr id="row-47" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="47" data-source="headfi" checked></td>
 <td>2021-05-07</td>
 <td>$1,850</td>
 <td><span class="pill">closed</span></td>
@@ -987,12 +1001,12 @@ td.status-reason { overflow: hidden; }
 <td>Blues</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (87.4% above market)</td>
+<td><span id="deal-score-47">Closed: Overpriced (87.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.4089/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-48" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="48" checked></td>
+<tr id="row-48" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="48" data-source="headfi" checked></td>
 <td>2021-04-27</td>
 <td>$1,735</td>
 <td><span class="pill">closed</span></td>
@@ -1003,12 +1017,12 @@ td.status-reason { overflow: hidden; }
 <td>morndewey</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (75.8% above market)</td>
+<td><span id="deal-score-48">Closed: Overpriced (75.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.3501/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-49" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="49" checked></td>
+<tr id="row-49" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="49" data-source="headfi" checked></td>
 <td>2021-04-18</td>
 <td>$1,750</td>
 <td><span class="pill">closed</span></td>
@@ -1019,12 +1033,12 @@ td.status-reason { overflow: hidden; }
 <td>circafreedom</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (77.3% above market)</td>
+<td><span id="deal-score-49">Closed: Overpriced (77.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-sold.2882/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-50" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="50" checked></td>
+<tr id="row-50" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="50" data-source="headfi" checked></td>
 <td>2021-04-15</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
@@ -1035,12 +1049,12 @@ td.status-reason { overflow: hidden; }
 <td>Giraku</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (82.4% above market)</td>
+<td><span id="deal-score-50">Closed: Overpriced (82.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-universal-mint-condition.2647/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-51" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="51" checked></td>
+<tr id="row-51" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="51" data-source="headfi" checked></td>
 <td>2021-04-10</td>
 <td>$1,855</td>
 <td><span class="pill">closed</span></td>
@@ -1051,12 +1065,12 @@ td.status-reason { overflow: hidden; }
 <td>DrumSeb</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (87.9% above market)</td>
+<td><span id="deal-score-51">Closed: Overpriced (87.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium.2364/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-52" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="52" checked></td>
+<tr id="row-52" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="52" data-source="headfi" checked></td>
 <td>2021-03-15</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
@@ -1067,12 +1081,12 @@ td.status-reason { overflow: hidden; }
 <td>EndGameSearch</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (112.7% above market)</td>
+<td><span id="deal-score-52">Closed: Overpriced (112.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/mint-condition-vision-ears-elysium-universal.775/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-53" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="53" checked></td>
+<tr id="row-53" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="53" data-source="headfi" checked></td>
 <td>2021-03-08</td>
 <td>$1,650</td>
 <td><span class="pill">closed</span></td>
@@ -1083,11 +1097,11 @@ td.status-reason { overflow: hidden; }
 <td>cradon</td>
 <td>1</td>
 <td>1</td>
-<td>Closed: Overpriced (67.2% above market)</td>
+<td><span id="deal-score-53">Closed: Overpriced (67.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-universal-1-month-old.398/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-54" class="excluded">
+<tr id="row-54" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td></td>
 <td></td>
@@ -1099,11 +1113,11 @@ td.status-reason { overflow: hidden; }
 <td>unknown</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-54">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/price-drop-vision-ears-elysium-cable.47311/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-55" class="excluded">
+<tr id="row-55" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td></td>
 <td></td>
@@ -1115,11 +1129,11 @@ td.status-reason { overflow: hidden; }
 <td>unknown</td>
 <td>1</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-55">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-ext.40178/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-56" class="excluded">
+<tr id="row-56" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td></td>
 <td></td>
@@ -1131,22 +1145,99 @@ td.status-reason { overflow: hidden; }
 <td>unknown</td>
 <td>1</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-56">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-elysium-universal.2521/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.99162/", "price_num": null, "date_ms": 1764115200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 1, "title": "Closed: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.99049/", "price_num": null, "date_ms": 1763942400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.80628/", "price_num": 975.0, "date_ms": 1735516800000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Closed: Vision Ears Elysium w/ Effect Leonidas ii", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-w-effect-leonidas-ii.69855/", "price_num": null, "date_ms": 1718409600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 4, "title": "Traded: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.67638/", "price_num": 1000.0, "date_ms": 1715212800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Vision Ears Elysium UIEMs, complete set, near mint", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-uiems-complete-set-near-mint.62965/", "price_num": 1100.0, "date_ms": 1708300800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Vision Ears Elysium UIEM", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-uiem.52149/", "price_num": 1020.0, "date_ms": 1691193600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.51258/", "price_num": null, "date_ms": 1689724800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.49525/", "price_num": null, "date_ms": 1687046400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 9, "title": "Sold: [FS] Vision Ears Elysium IEMs - Pristine Condition & Superb Value!", "url": "https://www.head-fi.org/classifieds/fs-vision-ears-elysium-iems-pristine-condition-superb-value.49118/", "price_num": null, "date_ms": 1686355200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Vision Ears Elysium iems - complete and like new", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-iems-complete-and-like-new.47265/", "price_num": 1250.0, "date_ms": 1683417600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Traded: Pending\u2026.Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/pending%E2%80%A6-vision-ears-elysium.46022/", "price_num": 1250.0, "date_ms": 1681689600000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.43389/", "price_num": 1225.0, "date_ms": 1678492800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Vision Ears Elysium EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-ext.41821/", "price_num": 1700.0, "date_ms": 1676505600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Traded: Vision Ears Elysium (Serial No. 260)", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-serial-no-260.41593/", "price_num": 1300.0, "date_ms": 1676160000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Vision Ears Elysium IEM", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-iem.41140/", "price_num": 1000.0, "date_ms": 1675555200000, "listing_status": "closed", "condition_text": "excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Closed: Vision Ears Elysium EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-ext.40368/", "price_num": 1800.0, "date_ms": 1674518400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Traded: Vision Ears Elysium + Effect Audio Leonidas II 4.4m", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-effect-audio-leonidas-ii-4-4m.40242/", "price_num": 1500.0, "date_ms": 1674345600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.36792/", "price_num": 1050.0, "date_ms": 1669248000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Traded: Vision Ears Elysium Ext", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-ext.35168/", "price_num": 1639.0, "date_ms": 1666656000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.32244/", "price_num": 925.0, "date_ms": 1662076800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Closed: Vision Ears Elysium in great Condition! Price drop 1200", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-in-great-condition-price-drop-1200.30762/", "price_num": 1200.0, "date_ms": 1660003200000, "listing_status": "closed", "condition_text": "great condition, good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: Vision Ears Elysium with Effect Audio Leonidas II premium upgrade cable", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-with-effect-audio-leonidas-ii-premium-upgrade-cable.29150/", "price_num": 1500.0, "date_ms": 1657497600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Closed: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.27889/", "price_num": 1300.0, "date_ms": 1655683200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Sold: Vision Ears Elysium IEM in Mint Condition", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-iem-in-mint-condition.21252/", "price_num": 1275.0, "date_ms": 1646179200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Traded: FS: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/fs-vision-ears-elysium.20608/", "price_num": 1350.0, "date_ms": 1645228800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Closed: Price Drop: New Vision Ears Elysium Universal Fit", "url": "https://www.head-fi.org/classifieds/price-drop-new-vision-ears-elysium-universal-fit.19884/", "price_num": 1850.0, "date_ms": 1644278400000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Closed: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.19891/", "price_num": 1300.0, "date_ms": 1644278400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Sold: Vision Ears Elysium EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-ext.16036/", "price_num": 2400.0, "date_ms": 1639008000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Traded: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.15815/", "price_num": 1490.0, "date_ms": 1638662400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: Vision Ears Elysium SOLD", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-sold.14480/", "price_num": 1500.0, "date_ms": 1636675200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Sold: Vision Ears - Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.14203/", "price_num": 1250.0, "date_ms": 1636156800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 32, "title": "Sold: Vision Ears Elysium, *Big price drop* Almost new", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-big-price-drop-almost-new.13786/", "price_num": 1599.0, "date_ms": 1635552000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 33, "title": "Closed: Vision Ears Elysium IEMs", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-iems.13532/", "price_num": 1550.0, "date_ms": 1635206400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 34, "title": "Sold: [PRICE DROP] Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/price-drop-vision-ears-elysium.12902/", "price_num": 1350.0, "date_ms": 1634169600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 35, "title": "Traded: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.11726/", "price_num": 1700.0, "date_ms": 1632355200000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 36, "title": "Closed: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.9220/", "price_num": 1650.0, "date_ms": 1628640000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 37, "title": "Sold: *Price Drop - Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/price-drop-vision-ears-elysium.8805/", "price_num": 1550.0, "date_ms": 1628035200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 38, "title": "Sold: Vision Ears Elysium Universal", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-universal.8082/", "price_num": 1650.0, "date_ms": 1626825600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 39, "title": "Traded: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.7878/", "price_num": null, "date_ms": 1626480000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 40, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.7736/", "price_num": 1680.0, "date_ms": 1626307200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 41, "title": "Sold: Vision Ears Elysium - like new", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-like-new.7421/", "price_num": 1750.0, "date_ms": 1625788800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 42, "title": "Sold: Vision Ears Elysium Universal", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-universal.7012/", "price_num": 1750.0, "date_ms": 1625097600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 43, "title": "Sold: Vision Ears Elysium - on hold", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-on-hold.6555/", "price_num": 1700.0, "date_ms": 1624320000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 44, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.5804/", "price_num": 1750.0, "date_ms": 1623024000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 45, "title": "Closed: WTS Vision Ears Elysium and / or Noble Sultan", "url": "https://www.head-fi.org/classifieds/wts-vision-ears-elysium-and-or-noble-sultan.5615/", "price_num": 1800.0, "date_ms": 1622678400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 46, "title": "Sold: Vision Ears Elysium - Mint - 5 months old", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-mint-5-months-old.4785/", "price_num": 1749.0, "date_ms": 1621296000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 47, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.4089/", "price_num": 1850.0, "date_ms": 1620345600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 48, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.3501/", "price_num": 1735.0, "date_ms": 1619481600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 49, "title": "Closed: Vision Ears ELYSIUM SOLD", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-sold.2882/", "price_num": 1750.0, "date_ms": 1618704000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 50, "title": "Sold: Vision Ears Elysium (Universal) Mint Condition", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-universal-mint-condition.2647/", "price_num": 1800.0, "date_ms": 1618444800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 51, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.2364/", "price_num": 1855.0, "date_ms": 1618012800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 52, "title": "Closed: Mint Condition Vision Ears Elysium Universal", "url": "https://www.head-fi.org/classifieds/mint-condition-vision-ears-elysium-universal.775/", "price_num": 2100.0, "date_ms": 1615766400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 53, "title": "Sold: Vision Ears Elysium Universal 1 month old", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-universal-1-month-old.398/", "price_num": 1650.0, "date_ms": 1615161600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 54, "title": "Sold: [Price Drop] Vision Ears Elysium Cable", "url": "https://www.head-fi.org/classifieds/price-drop-vision-ears-elysium-cable.47311/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 55, "title": "Closed: Vision Ears Elysium EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-ext.40178/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 56, "title": "Sold: Vision Ears Elysium Universal", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-universal.2521/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.99162/", "price_num": null, "date_ms": 1764115200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 1, "title": "Closed: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.99049/", "price_num": null, "date_ms": 1763942400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.80628/", "price_num": 975.0, "date_ms": 1735516800000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Closed: Vision Ears Elysium w/ Effect Leonidas ii", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-w-effect-leonidas-ii.69855/", "price_num": null, "date_ms": 1718409600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 4, "title": "Traded: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.67638/", "price_num": 1000.0, "date_ms": 1715212800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Vision Ears Elysium UIEMs, complete set, near mint", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-uiems-complete-set-near-mint.62965/", "price_num": 1100.0, "date_ms": 1708300800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Vision Ears Elysium UIEM", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-uiem.52149/", "price_num": 1020.0, "date_ms": 1691193600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.51258/", "price_num": null, "date_ms": 1689724800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.49525/", "price_num": null, "date_ms": 1687046400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 9, "title": "Sold: [FS] Vision Ears Elysium IEMs - Pristine Condition & Superb Value!", "url": "https://www.head-fi.org/classifieds/fs-vision-ears-elysium-iems-pristine-condition-superb-value.49118/", "price_num": null, "date_ms": 1686355200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Vision Ears Elysium iems - complete and like new", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-iems-complete-and-like-new.47265/", "price_num": 1250.0, "date_ms": 1683417600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Traded: Pending\u2026.Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/pending%E2%80%A6-vision-ears-elysium.46022/", "price_num": 1250.0, "date_ms": 1681689600000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.43389/", "price_num": 1225.0, "date_ms": 1678492800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Vision Ears Elysium EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-ext.41821/", "price_num": 1700.0, "date_ms": 1676505600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Traded: Vision Ears Elysium (Serial No. 260)", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-serial-no-260.41593/", "price_num": 1300.0, "date_ms": 1676160000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Vision Ears Elysium IEM", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-iem.41140/", "price_num": 1000.0, "date_ms": 1675555200000, "listing_status": "closed", "condition_text": "excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Closed: Vision Ears Elysium EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-ext.40368/", "price_num": 1800.0, "date_ms": 1674518400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Traded: Vision Ears Elysium + Effect Audio Leonidas II 4.4m", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-effect-audio-leonidas-ii-4-4m.40242/", "price_num": 1500.0, "date_ms": 1674345600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.36792/", "price_num": 1050.0, "date_ms": 1669248000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Traded: Vision Ears Elysium Ext", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-ext.35168/", "price_num": 1639.0, "date_ms": 1666656000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.32244/", "price_num": 925.0, "date_ms": 1662076800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Closed: Vision Ears Elysium in great Condition! Price drop 1200", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-in-great-condition-price-drop-1200.30762/", "price_num": 1200.0, "date_ms": 1660003200000, "listing_status": "closed", "condition_text": "great condition, good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: Vision Ears Elysium with Effect Audio Leonidas II premium upgrade cable", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-with-effect-audio-leonidas-ii-premium-upgrade-cable.29150/", "price_num": 1500.0, "date_ms": 1657497600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Closed: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.27889/", "price_num": 1300.0, "date_ms": 1655683200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Sold: Vision Ears Elysium IEM in Mint Condition", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-iem-in-mint-condition.21252/", "price_num": 1275.0, "date_ms": 1646179200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Traded: FS: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/fs-vision-ears-elysium.20608/", "price_num": 1350.0, "date_ms": 1645228800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Closed: Price Drop: New Vision Ears Elysium Universal Fit", "url": "https://www.head-fi.org/classifieds/price-drop-new-vision-ears-elysium-universal-fit.19884/", "price_num": 1850.0, "date_ms": 1644278400000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Closed: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.19891/", "price_num": 1300.0, "date_ms": 1644278400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Sold: Vision Ears Elysium EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-ext.16036/", "price_num": 2400.0, "date_ms": 1639008000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Traded: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.15815/", "price_num": 1490.0, "date_ms": 1638662400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: Vision Ears Elysium SOLD", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-sold.14480/", "price_num": 1500.0, "date_ms": 1636675200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Sold: Vision Ears - Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.14203/", "price_num": 1250.0, "date_ms": 1636156800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 32, "title": "Sold: Vision Ears Elysium, *Big price drop* Almost new", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-big-price-drop-almost-new.13786/", "price_num": 1599.0, "date_ms": 1635552000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 33, "title": "Closed: Vision Ears Elysium IEMs", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-iems.13532/", "price_num": 1550.0, "date_ms": 1635206400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 34, "title": "Sold: [PRICE DROP] Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/price-drop-vision-ears-elysium.12902/", "price_num": 1350.0, "date_ms": 1634169600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 35, "title": "Traded: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.11726/", "price_num": 1700.0, "date_ms": 1632355200000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 36, "title": "Closed: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.9220/", "price_num": 1650.0, "date_ms": 1628640000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 37, "title": "Sold: *Price Drop - Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/price-drop-vision-ears-elysium.8805/", "price_num": 1550.0, "date_ms": 1628035200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 38, "title": "Sold: Vision Ears Elysium Universal", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-universal.8082/", "price_num": 1650.0, "date_ms": 1626825600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 39, "title": "Traded: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.7878/", "price_num": null, "date_ms": 1626480000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 40, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.7736/", "price_num": 1680.0, "date_ms": 1626307200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 41, "title": "Sold: Vision Ears Elysium - like new", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-like-new.7421/", "price_num": 1750.0, "date_ms": 1625788800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 42, "title": "Sold: Vision Ears Elysium Universal", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-universal.7012/", "price_num": 1750.0, "date_ms": 1625097600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 43, "title": "Sold: Vision Ears Elysium - on hold", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-on-hold.6555/", "price_num": 1700.0, "date_ms": 1624320000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 44, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.5804/", "price_num": 1750.0, "date_ms": 1623024000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 45, "title": "Closed: WTS Vision Ears Elysium and / or Noble Sultan", "url": "https://www.head-fi.org/classifieds/wts-vision-ears-elysium-and-or-noble-sultan.5615/", "price_num": 1800.0, "date_ms": 1622678400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 46, "title": "Sold: Vision Ears Elysium - Mint - 5 months old", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-mint-5-months-old.4785/", "price_num": 1749.0, "date_ms": 1621296000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 47, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.4089/", "price_num": 1850.0, "date_ms": 1620345600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 48, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.3501/", "price_num": 1735.0, "date_ms": 1619481600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 49, "title": "Closed: Vision Ears ELYSIUM SOLD", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-sold.2882/", "price_num": 1750.0, "date_ms": 1618704000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 50, "title": "Sold: Vision Ears Elysium (Universal) Mint Condition", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-universal-mint-condition.2647/", "price_num": 1800.0, "date_ms": 1618444800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 51, "title": "Sold: Vision Ears Elysium", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium.2364/", "price_num": 1855.0, "date_ms": 1618012800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 52, "title": "Closed: Mint Condition Vision Ears Elysium Universal", "url": "https://www.head-fi.org/classifieds/mint-condition-vision-ears-elysium-universal.775/", "price_num": 2100.0, "date_ms": 1615766400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 53, "title": "Sold: Vision Ears Elysium Universal 1 month old", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-universal-1-month-old.398/", "price_num": 1650.0, "date_ms": 1615161600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 54, "title": "Sold: [Price Drop] Vision Ears Elysium Cable", "url": "https://www.head-fi.org/classifieds/price-drop-vision-ears-elysium-cable.47311/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 55, "title": "Closed: Vision Ears Elysium EXT", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-ext.40178/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 56, "title": "Sold: Vision Ears Elysium Universal", "url": "https://www.head-fi.org/classifieds/vision-ears-elysium-universal.2521/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
+let currentMarketplaceSource = "both";
+
+function normalizeMarketplaceSource(platform) {
+    const text = String(platform || "").toLowerCase().trim();
+    if (["reddit", "reddit_rss", "avexchange", "r/avexchange"].includes(text)) return "reddit";
+    if (["headfi", "head-fi", "head-fi classifieds"].includes(text)) return "headfi";
+    if (["manual", "manual_csv", "manual input"].includes(text)) return "manual";
+    return "other";
+}
+function sourceMatches(row) {
+    return currentMarketplaceSource === "both" || row.source_key === currentMarketplaceSource;
+}
+function getSourceRows() {
+    return allRows.filter(sourceMatches);
+}
+function safeLocalStorageGet(key) {
+    try { return window.localStorage.getItem(key); } catch (error) { return null; }
+}
+function safeLocalStorageSet(key, value) {
+    try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function getInitialMarketplaceSource() {
+    const params = new URLSearchParams(window.location.search);
+    const querySource = String(params.get("source") || "").toLowerCase();
+    if (["both", "reddit", "headfi"].includes(querySource)) return querySource;
+
+    const storedSource = String(safeLocalStorageGet("iemMarketplaceSource") || "").toLowerCase();
+    if (["both", "reddit", "headfi"].includes(storedSource)) return storedSource;
+
+    return "both";
+}
+function updateCurrentPageSourceQuery(source) {
+    try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("source", source);
+        window.history.replaceState({}, "", url);
+    } catch (error) {}
+}
+function setMarketplaceSource(source) {
+    if (!["both", "reddit", "headfi"].includes(source)) source = "both";
+    currentMarketplaceSource = source;
+    safeLocalStorageSet("iemMarketplaceSource", source);
+    updateCurrentPageSourceQuery(source);
+
+    document.querySelectorAll(".source-btn").forEach(function(button) {
+        button.classList.toggle("active", button.getAttribute("data-source") === source);
+    });
+
+    allRows.forEach(function(row) {
+        const tableRow = document.getElementById("row-" + row.row_id);
+        if (tableRow) tableRow.classList.toggle("source-hidden", !sourceMatches(row));
+    });
+
+    const backLink = document.getElementById("back-link");
+    if (backLink) backLink.href = "index.html?source=" + encodeURIComponent(source);
+
+    updateStatsAndChart();
+}
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
 function moneyRound(value) { return money(value); }
 function dateLabel(value) { if (value === null || value === undefined || Number.isNaN(value)) return ""; return new Date(value).toLocaleDateString(); }
 function pct(value) { if (value === null || value === undefined || Number.isNaN(value)) return "N/A"; return Number(value).toLocaleString(undefined, {maximumFractionDigits: 1}) + "%"; }
 function median(values) { if (!values.length) return null; const sorted = [...values].sort((a,b)=>a-b); const mid = Math.floor(sorted.length/2); return sorted.length % 2 === 0 ? (sorted[mid-1] + sorted[mid]) / 2 : sorted[mid]; }
 function average(values) { if (!values.length) return null; return values.reduce((a,b)=>a+b, 0) / values.length; }
-const staleUnsoldMarketDays = 60;
+function dealScoreDisplay(row, marketValue) {
+    const price = Number(row.price_num);
+    const market = Number(marketValue);
+    if (!Number.isFinite(price) || price <= 0 || !Number.isFinite(market) || market <= 0) return "N/A";
+
+    const deltaPct = ((price - market) / market) * 100;
+    let label = "Fair";
+    if (deltaPct <= -20) label = "Great Deal";
+    else if (deltaPct <= -10) label = "Good Deal";
+    else if (deltaPct <= 10) label = "Fair";
+    else if (deltaPct <= 25) label = "High";
+    else label = "Overpriced";
+
+    const direction = deltaPct < 0 ? "below" : "above";
+    const detail = Math.abs(deltaPct).toFixed(1) + "% " + direction + " market";
+    return String(row.listing_status || "").toLowerCase() === "closed"
+        ? "Closed: " + label + " (" + detail + ")"
+        : label + " (" + detail + ")";
+}
+const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
@@ -1168,9 +1259,11 @@ function isStaleUnsoldCeilingRow(row) {
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
     const statusComment = String(row.status_comment || "").toLowerCase().trim();
     const staleMarker = status === "stale" || status === "stale_unsold" || closedReason.startsWith("stale_unsold") || closedReason === "stale_active_timeout" || statusComment.includes("stale unsold") || statusComment.includes("lister never updated");
-    if (staleMarker) return true;
-
     const ageDays = rowAgeDays(row);
+    // Older checker runs may already have written a stale marker using a
+    // shorter timeout. Do not use it as a ceiling until the current 180d
+    // threshold is reached. Preserve explicit stale rows with no usable date.
+    if (staleMarker) return ageDays === null || ageDays >= staleUnsoldMarketDays;
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
@@ -1395,13 +1488,27 @@ function calculateLiquidityConfidenceFromRows(rows) {
 }
 function getSelectedRows() {
     const selectedIds = new Set();
+
     document.querySelectorAll(".row-toggle").forEach(function(cb) {
         const rowId = Number(cb.dataset.rowId);
-        if (cb.checked) { selectedIds.add(rowId); document.getElementById("row-" + rowId).className = "included"; }
-        else { document.getElementById("row-" + rowId).className = "excluded"; }
+        const tableRow = document.getElementById("row-" + rowId);
+
+        if (cb.checked) selectedIds.add(rowId);
+
+        if (tableRow) {
+            tableRow.classList.toggle("included", cb.checked);
+            tableRow.classList.toggle("excluded", !cb.checked);
+        }
     });
-    return allRows.filter(row => selectedIds.has(row.row_id) && row.price_num !== null);
+
+    return allRows.filter(function(row) {
+        return sourceMatches(row) &&
+            selectedIds.has(row.row_id) &&
+            row.price_num !== null &&
+            !Number.isNaN(row.price_num);
+    });
 }
+
 function getSmoothingConfig(sampleCount) {
     // More samples can support a wider smoothing window and a denser curve.
     // Thin datasets stay close to the actual points.
@@ -1526,30 +1633,40 @@ function calculateSmoothedRetentionLine(rows) {
 }
 
 function updateStatsAndChart() {
+    const sourceRows = getSourceRows();
     const selectedRows = getSelectedRows();
     const prices = selectedRows.map(r => r.price_num).filter(v => v !== null && !Number.isNaN(v));
-    const marketValueResult = calculateMarketValueFromRows(selectedRows, allRows);
+    const marketValueResult = calculateMarketValueFromRows(selectedRows, sourceRows);
+
     document.getElementById("stat-market-value").textContent = money(marketValueResult.value);
     document.getElementById("stat-market-basis").textContent = marketValueResult.basis;
+    document.getElementById("stat-total-priced-rows").textContent = sourceRows.filter(
+        row => row.price_num !== null && !Number.isNaN(row.price_num)
+    ).length;
+
     if (hasOriginalMsrp && document.getElementById("stat-market-vs-msrp")) {
         if (marketValueResult.value !== null && !Number.isNaN(marketValueResult.value)) {
             const mvRetention = (marketValueResult.value / originalMsrpUsd) * 100;
             const mvDelta = mvRetention - 100;
             const direction = mvDelta >= 0 ? "above" : "below";
             document.getElementById("stat-market-vs-msrp").textContent = pct(mvRetention) + " of MSRP";
-            document.getElementById("stat-market-vs-msrp-detail").textContent = Math.abs(mvDelta).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction;
+            document.getElementById("stat-market-vs-msrp-detail").textContent =
+                Math.abs(mvDelta).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction;
         } else {
             document.getElementById("stat-market-vs-msrp").textContent = "N/A";
             document.getElementById("stat-market-vs-msrp-detail").textContent = "";
         }
     }
+
     document.getElementById("stat-average").textContent = money(average(prices));
     document.getElementById("stat-low").textContent = money(prices.length ? Math.min(...prices) : null);
     document.getElementById("stat-high").textContent = money(prices.length ? Math.max(...prices) : null);
     document.getElementById("stat-samples").textContent = prices.length;
+
     const liquidityConfidence = calculateLiquidityConfidenceFromRows(selectedRows);
     const liquidityBadge = document.getElementById("stat-liquidity-confidence");
     const liquidityDetail = document.getElementById("stat-liquidity-confidence-detail");
+
     if (liquidityBadge) {
         liquidityBadge.textContent = liquidityConfidence.display;
         liquidityBadge.className = "badge badge-score " + liquidityConfidence.cssClass;
@@ -1558,10 +1675,28 @@ function updateStatsAndChart() {
         liquidityBadge.removeAttribute("title");
     }
     if (liquidityDetail) liquidityDetail.textContent = liquidityConfidence.detail;
-    const priceScatter = selectedRows.filter(r => r.date_ms !== null && r.price_num !== null).map(row => ({x: row.date_ms, y: row.price_num, url: row.url, title: row.title, status: row.listing_status, condition: row.condition_text, platform: row.platform}));
+
+    sourceRows.forEach(function(row) {
+        const dealElement = document.getElementById("deal-score-" + row.row_id);
+        if (dealElement) dealElement.textContent = dealScoreDisplay(row, marketValueResult.value);
+    });
+
+    const priceScatter = selectedRows
+        .filter(r => r.date_ms !== null && r.price_num !== null)
+        .map(row => ({
+            x: row.date_ms,
+            y: row.price_num,
+            url: row.url,
+            title: row.title,
+            status: row.listing_status,
+            condition: row.condition_text,
+            platform: row.platform
+        }));
+
     chart.data.datasets[0].data = priceScatter;
     chart.data.datasets[1].data = calculateSmoothedPriceLine(selectedRows);
     chart.update();
+
     if (hasOriginalMsrp && msrpChart) {
         msrpChart.data.datasets[0].data = selectedRows
             .filter(r => r.date_ms !== null && r.price_num !== null)
@@ -1575,11 +1710,21 @@ function updateStatsAndChart() {
                 condition: row.condition_text,
                 platform: row.platform
             }));
+
         msrpChart.data.datasets[1].data = calculateSmoothedRetentionLine(selectedRows);
         msrpChart.update();
     }
 }
-function setAllCheckboxes(checked) { document.querySelectorAll(".row-toggle").forEach(cb => cb.checked = checked); updateStatsAndChart(); }
+
+function setAllCheckboxes(checked) {
+    document.querySelectorAll(".row-toggle").forEach(function(cb) {
+        const checkboxSource = String(cb.getAttribute("data-source") || "other");
+        if (currentMarketplaceSource === "both" || checkboxSource === currentMarketplaceSource) {
+            cb.checked = checked;
+        }
+    });
+    updateStatsAndChart();
+}
 const chart = new Chart(document.getElementById("chart"), {
     type: "scatter",
     data: {
@@ -1746,7 +1891,7 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
-updateStatsAndChart();
+setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>
 </body>

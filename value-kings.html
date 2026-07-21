@@ -59,6 +59,11 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 .filter-btn { padding: 9px 12px; border: 1px solid #ccc; background: #fff; border-radius: 999px; cursor: pointer; }
 .filter-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-toggle { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+.source-toggle-label { font-size: 13px; color: #555; font-weight: bold; margin-right: 2px; }
+.source-btn { padding: 9px 14px; border: 1px solid #bbb; background: #fff; border-radius: 999px; cursor: pointer; font-weight: bold; }
+.source-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-hidden { display: none; }
 .badge { display: inline-block; padding: 3px 8px; border-radius: 999px; border: 1px solid #ccc; background: #fafafa; font-size: 12px; white-space: nowrap; }
 .badge-high { background: #ecfdf3; border-color: #b7e4c7; }
 .badge-medium { background: #fff8e1; border-color: #ead88a; }
@@ -189,12 +194,12 @@ td.status-reason { overflow: hidden; }
 <div class="metric-row">
     <div class="metric-card">
         <div class="product-label">Average Retention</div>
-        <div class="metric-value">58.1%</div>
+        <div class="metric-value">59.0%</div>
         <div class="small">Across 111 qualifying IEMs with at least 3 samples.</div>
     </div>
     <div class="metric-card">
         <div class="product-label">Highest Retention</div>
-        <div class="metric-value">104.5%</div>
+        <div class="metric-value">105.0%</div>
         <div class="small">Mysticraft Myth</div>
     </div>
 </div>
@@ -214,11 +219,11 @@ td.status-reason { overflow: hidden; }
     <td class="rank-col">1</td>
     <td class="iem-col"><a href="mysticraft-myth.html">Mysticraft Myth</a></td>
     <td><a href="brand-mysticraft.html">Mysticraft</a></td>
-    <td>$1,045</td>
+    <td>$1,049.88</td>
     <td>$1,000</td>
-    <td><b>104.5%</b></td>
+    <td><b>105.0%</b></td>
     <td>25</td>
-    <td class="small">90d closed-sale avg, 8 samples; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $1,100, 5% discount</td>
+    <td class="small">90d closed-sale avg, 8 samples</td>
 </tr>
 
 <tr>
@@ -256,6 +261,17 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="rank-col">5</td>
+    <td class="iem-col"><a href="yu9-que.html">YU9 Que</a></td>
+    <td><a href="brand-yu9.html">YU9</a></td>
+    <td>$374.17</td>
+    <td>$400</td>
+    <td><b>93.5%</b></td>
+    <td>16</td>
+    <td class="small">90d closed-sale avg, 6 samples</td>
+</tr>
+
+<tr>
+    <td class="rank-col">6</td>
     <td class="iem-col"><a href="subtonic-storm.html">Subtonic Storm</a></td>
     <td><a href="brand-subtonic.html">Subtonic</a></td>
     <td>$6,166.38</td>
@@ -263,17 +279,6 @@ td.status-reason { overflow: hidden; }
     <td><b>93.4%</b></td>
     <td>5</td>
     <td class="small">recency-weighted 365d closed sales, 5 samples, 90d half-life</td>
-</tr>
-
-<tr>
-    <td class="rank-col">6</td>
-    <td class="iem-col"><a href="yu9-que.html">YU9 Que</a></td>
-    <td><a href="brand-yu9.html">YU9</a></td>
-    <td>$372.88</td>
-    <td>$400</td>
-    <td><b>93.2%</b></td>
-    <td>16</td>
-    <td class="small">90d closed-sale avg, 6 samples; capped by stale unsold ask ceiling: 2 ask(s) ≥60d, median ask $392.5, 5% discount</td>
 </tr>
 
 <tr>
@@ -306,7 +311,7 @@ td.status-reason { overflow: hidden; }
     <td>$750</td>
     <td><b>84.1%</b></td>
     <td>40</td>
-    <td class="small">recency-weighted 365d closed sales, 12 samples, 90d half-life; stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $700, 5% discount did not cap</td>
+    <td class="small">recency-weighted 365d closed sales, 12 samples, 90d half-life</td>
 </tr>
 
 <tr>
@@ -471,7 +476,7 @@ td.status-reason { overflow: hidden; }
     <td>$2,000</td>
     <td><b>72.2%</b></td>
     <td>24</td>
-    <td class="small">90d closed-sale avg, 4 samples; stale unsold ask ceiling: 2 ask(s) ≥60d, median ask $1,575, 5% discount did not cap</td>
+    <td class="small">90d closed-sale avg, 4 samples</td>
 </tr>
 
 <tr>
@@ -531,6 +536,17 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="rank-col">30</td>
+    <td class="iem-col"><a href="dunu-glacier.html">Dunu Glacier</a></td>
+    <td><a href="brand-dunu.html">Dunu</a></td>
+    <td>$921.8</td>
+    <td>$1,350</td>
+    <td><b>68.3%</b></td>
+    <td>8</td>
+    <td class="small">recency-weighted 365d closed sales, 5 samples, 90d half-life</td>
+</tr>
+
+<tr>
+    <td class="rank-col">31</td>
     <td class="iem-col"><a href="alpha-omega-fulgrim.html">Alpha&Omega Fulgrim</a></td>
     <td><a href="brand-alpha-omega.html">Alpha&Omega</a></td>
     <td>$4,671.82</td>
@@ -541,7 +557,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">31</td>
+    <td class="rank-col">32</td>
     <td class="iem-col"><a href="aful-performer-5.html">Aful Performer 5</a></td>
     <td><a href="brand-aful.html">Aful</a></td>
     <td>$148.07</td>
@@ -552,7 +568,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">32</td>
+    <td class="rank-col">33</td>
     <td class="iem-col"><a href="elysian-apostle-2026.html">Elysian Apostle 2026</a></td>
     <td><a href="brand-elysian.html">Elysian</a></td>
     <td>$1,342.13</td>
@@ -563,18 +579,29 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">33</td>
-    <td class="iem-col"><a href="dunu-glacier.html">Dunu Glacier</a></td>
-    <td><a href="brand-dunu.html">Dunu</a></td>
-    <td>$902.5</td>
-    <td>$1,350</td>
-    <td><b>66.9%</b></td>
-    <td>8</td>
-    <td class="small">recency-weighted 365d closed sales, 5 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $950, 5% discount</td>
+    <td class="rank-col">34</td>
+    <td class="iem-col"><a href="aful-dawn-x.html">Aful Dawn-X</a></td>
+    <td><a href="brand-aful.html">Aful</a></td>
+    <td>$857.75</td>
+    <td>$1,300</td>
+    <td><b>66.0%</b></td>
+    <td>17</td>
+    <td class="small">recency-weighted 365d closed sales, 12 samples, 90d half-life</td>
 </tr>
 
 <tr>
-    <td class="rank-col">34</td>
+    <td class="rank-col">35</td>
+    <td class="iem-col"><a href="canpur-cp622b-ti.html">Canpur CP622B Ti</a></td>
+    <td><a href="brand-canpur.html">Canpur</a></td>
+    <td>$2,887.44</td>
+    <td>$4,400</td>
+    <td><b>65.6%</b></td>
+    <td>6</td>
+    <td class="small">recency-weighted 365d closed sales, 6 samples, 90d half-life</td>
+</tr>
+
+<tr>
+    <td class="rank-col">36</td>
     <td class="iem-col"><a href="fatfreq-grand-maestro-anniversary.html">FatFreq Grand Maestro Anniversary</a></td>
     <td><a href="brand-fatfreq.html">FatFreq</a></td>
     <td>$3,592.88</td>
@@ -585,7 +612,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">35</td>
+    <td class="rank-col">37</td>
     <td class="iem-col"><a href="kiwi-ears-astral.html">Kiwi Ears Astral</a></td>
     <td><a href="brand-kiwi-ears.html">Kiwi Ears</a></td>
     <td>$195</td>
@@ -596,7 +623,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">36</td>
+    <td class="rank-col">38</td>
     <td class="iem-col"><a href="brise-audio-fugaku.html">Brise Audio Fugaku</a></td>
     <td><a href="brand-brise-audio.html">Brise Audio</a></td>
     <td>$11,447.83</td>
@@ -607,7 +634,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">37</td>
+    <td class="rank-col">39</td>
     <td class="iem-col"><a href="aful-explorer.html">Aful Explorer</a></td>
     <td><a href="brand-aful.html">Aful</a></td>
     <td>$75.82</td>
@@ -618,7 +645,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">38</td>
+    <td class="rank-col">40</td>
     <td class="iem-col"><a href="crinear-daybreak.html">CrinEar Daybreak</a></td>
     <td><a href="brand-crinear.html">CrinEar</a></td>
     <td>$106.67</td>
@@ -629,29 +656,40 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">39</td>
+    <td class="rank-col">41</td>
+    <td class="iem-col"><a href="campfire-andromeda-10.html">Campfire Andromeda 10</a></td>
+    <td><a href="brand-campfire-audio.html">Campfire Audio</a></td>
+    <td>$1,066.55</td>
+    <td>$1,700</td>
+    <td><b>62.7%</b></td>
+    <td>4</td>
+    <td class="small">recency-weighted 365d closed sales, 4 samples, 90d half-life</td>
+</tr>
+
+<tr>
+    <td class="rank-col">42</td>
     <td class="iem-col"><a href="elysian-diva.html">Elysian Diva</a></td>
     <td><a href="brand-elysian.html">Elysian</a></td>
     <td>$939.58</td>
     <td>$1,500</td>
     <td><b>62.6%</b></td>
     <td>35</td>
-    <td class="small">recency-weighted 365d closed sales, 12 samples, 90d half-life; stale unsold ask ceiling: 2 ask(s) ≥60d, median ask $1,451.5, 5% discount did not cap</td>
+    <td class="small">recency-weighted 365d closed sales, 12 samples, 90d half-life; stale unsold ask ceiling: 2 ask(s) ≥180d, median ask $1,451.5, 5% discount did not cap</td>
 </tr>
 
 <tr>
-    <td class="rank-col">40</td>
+    <td class="rank-col">43</td>
     <td class="iem-col"><a href="empire-ears-novus.html">Empire Ears Novus</a></td>
     <td><a href="brand-empire-ears.html">Empire Ears</a></td>
     <td>$3,117.54</td>
     <td>$5,000</td>
     <td><b>62.4%</b></td>
     <td>10</td>
-    <td class="small">recency-weighted 365d closed sales, 9 samples, 90d half-life; stale unsold ask ceiling: 2 ask(s) ≥60d, median ask $3,399.5, 5% discount did not cap</td>
+    <td class="small">recency-weighted 365d closed sales, 9 samples, 90d half-life; stale unsold ask ceiling: 1 ask(s) ≥180d, median ask $4,099, 5% discount did not cap</td>
 </tr>
 
 <tr>
-    <td class="rank-col">41</td>
+    <td class="rank-col">44</td>
     <td class="iem-col"><a href="aful-cantor.html">Aful Cantor</a></td>
     <td><a href="brand-aful.html">Aful</a></td>
     <td>$497.84</td>
@@ -662,18 +700,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">42</td>
-    <td class="iem-col"><a href="aful-dawn-x.html">Aful Dawn-X</a></td>
-    <td><a href="brand-aful.html">Aful</a></td>
-    <td>$807.5</td>
-    <td>$1,300</td>
-    <td><b>62.1%</b></td>
-    <td>17</td>
-    <td class="small">recency-weighted 365d closed sales, 12 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $850, 5% discount</td>
-</tr>
-
-<tr>
-    <td class="rank-col">43</td>
+    <td class="rank-col">45</td>
     <td class="iem-col"><a href="softears-volume-s.html">Softears Volume S</a></td>
     <td><a href="brand-softears.html">Softears</a></td>
     <td>$195.83</td>
@@ -684,18 +711,18 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">44</td>
+    <td class="rank-col">46</td>
     <td class="iem-col"><a href="ziigaat-x-hangout-odyssey-2.html">Ziigaat x Hangout Odyssey 2</a></td>
     <td><a href="brand-ziigaat.html">Ziigaat</a></td>
     <td>$151.67</td>
     <td>$250</td>
     <td><b>60.7%</b></td>
     <td>4</td>
-    <td class="small">90d closed-sale avg, 3 samples; stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $180, 5% discount did not cap</td>
+    <td class="small">90d closed-sale avg, 3 samples; stale unsold ask ceiling: 1 ask(s) ≥180d, median ask $180, 5% discount did not cap</td>
 </tr>
 
 <tr>
-    <td class="rank-col">45</td>
+    <td class="rank-col">47</td>
     <td class="iem-col"><a href="softears-rsv.html">Softears RSV</a></td>
     <td><a href="brand-softears.html">Softears</a></td>
     <td>$437.71</td>
@@ -706,7 +733,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">46</td>
+    <td class="rank-col">48</td>
     <td class="iem-col"><a href="thieaudio-monarch-mkiii.html">ThieAudio Monarch MKIII</a></td>
     <td><a href="brand-thieaudio.html">ThieAudio</a></td>
     <td>$598.33</td>
@@ -717,7 +744,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">47</td>
+    <td class="rank-col">49</td>
     <td class="iem-col"><a href="moondrop-blessing-2-dusk.html">Moondrop Blessing 2 Dusk</a></td>
     <td><a href="brand-moondrop.html">Moondrop</a></td>
     <td>$196.7</td>
@@ -728,7 +755,18 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">48</td>
+    <td class="rank-col">50</td>
+    <td class="iem-col"><a href="empire-ears-triton.html">Empire Ears Triton</a></td>
+    <td><a href="brand-empire-ears.html">Empire Ears</a></td>
+    <td>$1,068.48</td>
+    <td>$1,800</td>
+    <td><b>59.4%</b></td>
+    <td>20</td>
+    <td class="small">recency-weighted 365d closed sales, 12 samples, 90d half-life</td>
+</tr>
+
+<tr>
+    <td class="rank-col">51</td>
     <td class="iem-col"><a href="64-audio-u4s.html">64 Audio U4s</a></td>
     <td><a href="brand-64-audio.html">64 Audio</a></td>
     <td>$707.5</td>
@@ -739,7 +777,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">49</td>
+    <td class="rank-col">52</td>
     <td class="iem-col"><a href="moondrop-variations.html">Moondrop Variations</a></td>
     <td><a href="brand-moondrop.html">Moondrop</a></td>
     <td>$304.05</td>
@@ -750,7 +788,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">50</td>
+    <td class="rank-col">53</td>
     <td class="iem-col"><a href="campfire-andromeda-2020.html">Campfire Andromeda 2020</a></td>
     <td><a href="brand-campfire-audio.html">Campfire Audio</a></td>
     <td>$642.42</td>
@@ -761,18 +799,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">51</td>
-    <td class="iem-col"><a href="canpur-cp622b-ti.html">Canpur CP622B Ti</a></td>
-    <td><a href="brand-canpur.html">Canpur</a></td>
-    <td>$2,565</td>
-    <td>$4,400</td>
-    <td><b>58.3%</b></td>
-    <td>6</td>
-    <td class="small">recency-weighted 365d closed sales, 6 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $2,700, 5% discount</td>
-</tr>
-
-<tr>
-    <td class="rank-col">52</td>
+    <td class="rank-col">54</td>
     <td class="iem-col"><a href="fir-audio-radon-6.html">FIR Audio Radon 6</a></td>
     <td><a href="brand-fir-audio.html">FIR Audio</a></td>
     <td>$1,920.39</td>
@@ -783,7 +810,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">53</td>
+    <td class="rank-col">55</td>
     <td class="iem-col"><a href="aful-performer-5-2.html">Aful Performer 5+2</a></td>
     <td><a href="brand-aful.html">Aful</a></td>
     <td>$138.81</td>
@@ -794,7 +821,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">54</td>
+    <td class="rank-col">56</td>
     <td class="iem-col"><a href="fatfreq-x-hbb-deuce.html">FatFreq x HBB Deuce</a></td>
     <td><a href="brand-fatfreq.html">FatFreq</a></td>
     <td>$171.67</td>
@@ -805,7 +832,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">55</td>
+    <td class="rank-col">57</td>
     <td class="iem-col"><a href="alpha-omega-omega.html">Alpha&Omega Omega</a></td>
     <td><a href="brand-alpha-omega.html">Alpha&Omega</a></td>
     <td>$1,525</td>
@@ -816,7 +843,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">56</td>
+    <td class="rank-col">58</td>
     <td class="iem-col"><a href="64-audio-solo.html">64 Audio Solo</a></td>
     <td><a href="brand-64-audio.html">64 Audio</a></td>
     <td>$790.57</td>
@@ -827,18 +854,18 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">57</td>
-    <td class="iem-col"><a href="campfire-andromeda-10.html">Campfire Andromeda 10</a></td>
-    <td><a href="brand-campfire-audio.html">Campfire Audio</a></td>
-    <td>$950</td>
-    <td>$1,700</td>
-    <td><b>55.9%</b></td>
-    <td>4</td>
-    <td class="small">recency-weighted 365d closed sales, 4 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $1,000, 5% discount</td>
+    <td class="rank-col">59</td>
+    <td class="iem-col"><a href="thieaudio-monarch-mkii.html">ThieAudio Monarch MKII</a></td>
+    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
+    <td>$563.96</td>
+    <td>$1,000</td>
+    <td><b>56.4%</b></td>
+    <td>67</td>
+    <td class="small">recency-weighted 365d closed sales, 12 samples, 90d half-life</td>
 </tr>
 
 <tr>
-    <td class="rank-col">58</td>
+    <td class="rank-col">60</td>
     <td class="iem-col"><a href="dunu-sa6.html">Dunu SA6</a></td>
     <td><a href="brand-dunu.html">Dunu</a></td>
     <td>$304.74</td>
@@ -849,7 +876,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">59</td>
+    <td class="rank-col">61</td>
     <td class="iem-col"><a href="64-audio-volur.html">64 Audio Volur</a></td>
     <td><a href="brand-64-audio.html">64 Audio</a></td>
     <td>$1,385.57</td>
@@ -860,7 +887,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">60</td>
+    <td class="rank-col">62</td>
     <td class="iem-col"><a href="letshuoer-cadenza-12.html">Letshuoer Cadenza 12</a></td>
     <td><a href="brand-letshuoer.html">Letshuoer</a></td>
     <td>$1,250</td>
@@ -871,29 +898,40 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">61</td>
+    <td class="rank-col">63</td>
     <td class="iem-col"><a href="fatfreq-grand-maestro.html">FatFreq Grand Maestro</a></td>
     <td><a href="brand-fatfreq.html">FatFreq</a></td>
     <td>$1,568.7</td>
     <td>$2,900</td>
     <td><b>54.1%</b></td>
     <td>20</td>
-    <td class="small">recency-weighted 365d closed sales, 8 samples, 90d half-life; stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $2,100, 5% discount did not cap</td>
+    <td class="small">recency-weighted 365d closed sales, 8 samples, 90d half-life</td>
 </tr>
 
 <tr>
-    <td class="rank-col">62</td>
+    <td class="rank-col">64</td>
     <td class="iem-col"><a href="truthear-nova.html">Truthear Nova</a></td>
     <td><a href="brand-truthear.html">Truthear</a></td>
     <td>$80.59</td>
     <td>$150</td>
     <td><b>53.7%</b></td>
     <td>7</td>
-    <td class="small">recency-weighted 365d closed sales, 3 samples, 90d half-life; stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $90, 5% discount did not cap</td>
+    <td class="small">recency-weighted 365d closed sales, 3 samples, 90d half-life</td>
 </tr>
 
 <tr>
-    <td class="rank-col">63</td>
+    <td class="rank-col">65</td>
+    <td class="iem-col"><a href="aroma-audio-fei-wan.html">Aroma Audio Fei Wan</a></td>
+    <td><a href="brand-aroma-audio.html">Aroma Audio</a></td>
+    <td>$2,502.64</td>
+    <td>$4,688</td>
+    <td><b>53.4%</b></td>
+    <td>34</td>
+    <td class="small">recency-weighted 365d closed sales, 12 samples, 90d half-life</td>
+</tr>
+
+<tr>
+    <td class="rank-col">66</td>
     <td class="iem-col"><a href="campfire-andromeda-emerald-sea.html">Campfire Andromeda Emerald Sea</a></td>
     <td><a href="brand-campfire-audio.html">Campfire Audio</a></td>
     <td>$747.17</td>
@@ -904,7 +942,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">64</td>
+    <td class="rank-col">67</td>
     <td class="iem-col"><a href="canpur-cp622b.html">Canpur CP622B</a></td>
     <td><a href="brand-canpur.html">Canpur</a></td>
     <td>$1,863.87</td>
@@ -915,7 +953,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">65</td>
+    <td class="rank-col">68</td>
     <td class="iem-col"><a href="sennheiser-ie200.html">Sennheiser IE200</a></td>
     <td><a href="brand-sennheiser.html">Sennheiser</a></td>
     <td>$80</td>
@@ -926,7 +964,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">66</td>
+    <td class="rank-col">69</td>
     <td class="iem-col"><a href="dunu-sa6-ultra.html">Dunu SA6 Ultra</a></td>
     <td><a href="brand-dunu.html">Dunu</a></td>
     <td>$318.82</td>
@@ -937,18 +975,18 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">67</td>
+    <td class="rank-col">70</td>
     <td class="iem-col"><a href="vision-ears-ext-mkii.html">Vision Ears EXT MKII</a></td>
     <td><a href="brand-vision-ears.html">Vision Ears</a></td>
     <td>$1,805</td>
     <td>$3,400</td>
     <td><b>53.1%</b></td>
     <td>3</td>
-    <td class="small">recency-weighted 365d closed sales, 3 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $1,900, 5% discount</td>
+    <td class="small">recency-weighted 365d closed sales, 3 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥180d, median ask $1,900, 5% discount</td>
 </tr>
 
 <tr>
-    <td class="rank-col">68</td>
+    <td class="rank-col">71</td>
     <td class="iem-col"><a href="symphonium-helios-se.html">Symphonium Helios SE</a></td>
     <td><a href="brand-symphonium.html">Symphonium</a></td>
     <td>$630.82</td>
@@ -959,7 +997,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">69</td>
+    <td class="rank-col">72</td>
     <td class="iem-col"><a href="sony-ier-m9.html">Sony IER-M9</a></td>
     <td><a href="brand-sony.html">Sony</a></td>
     <td>$520.95</td>
@@ -970,7 +1008,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">70</td>
+    <td class="rank-col">73</td>
     <td class="iem-col"><a href="fir-audio-xenon-6.html">FIR Audio Xenon 6</a></td>
     <td><a href="brand-fir-audio.html">FIR Audio</a></td>
     <td>$2,003.9</td>
@@ -981,7 +1019,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">71</td>
+    <td class="rank-col">74</td>
     <td class="iem-col"><a href="fatfreq-scarlet-mini.html">FatFreq Scarlet Mini</a></td>
     <td><a href="brand-fatfreq.html">FatFreq</a></td>
     <td>$406.53</td>
@@ -992,7 +1030,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">72</td>
+    <td class="rank-col">75</td>
     <td class="iem-col"><a href="aful-performer-8.html">Aful Performer 8</a></td>
     <td><a href="brand-aful.html">Aful</a></td>
     <td>$187.26</td>
@@ -1003,7 +1041,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">73</td>
+    <td class="rank-col">76</td>
     <td class="iem-col"><a href="empire-ears-raven.html">Empire Ears Raven</a></td>
     <td><a href="brand-empire-ears.html">Empire Ears</a></td>
     <td>$1,798.32</td>
@@ -1014,7 +1052,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">74</td>
+    <td class="rank-col">77</td>
     <td class="iem-col"><a href="64-audio-u6t.html">64 Audio U6t</a></td>
     <td><a href="brand-64-audio.html">64 Audio</a></td>
     <td>$635.88</td>
@@ -1025,7 +1063,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">75</td>
+    <td class="rank-col">78</td>
     <td class="iem-col"><a href="moondrop-s8.html">Moondrop S8</a></td>
     <td><a href="brand-moondrop.html">Moondrop</a></td>
     <td>$340.28</td>
@@ -1036,18 +1074,18 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">76</td>
+    <td class="rank-col">79</td>
     <td class="iem-col"><a href="moondrop-blessing-2.html">Moondrop Blessing 2</a></td>
     <td><a href="brand-moondrop.html">Moondrop</a></td>
     <td>$154.9</td>
     <td>$320</td>
     <td><b>48.4%</b></td>
     <td>50</td>
-    <td class="small">recency-weighted 365d closed sales, 4 samples, 90d half-life; stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $170, 5% discount did not cap</td>
+    <td class="small">recency-weighted 365d closed sales, 4 samples, 90d half-life; stale unsold ask ceiling: 1 ask(s) ≥180d, median ask $170, 5% discount did not cap</td>
 </tr>
 
 <tr>
-    <td class="rank-col">77</td>
+    <td class="rank-col">80</td>
     <td class="iem-col"><a href="sennheiser-ie900.html">Sennheiser IE900</a></td>
     <td><a href="brand-sennheiser.html">Sennheiser</a></td>
     <td>$723.46</td>
@@ -1058,7 +1096,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">78</td>
+    <td class="rank-col">81</td>
     <td class="iem-col"><a href="thieaudio-monarch-mki.html">ThieAudio Monarch MKI</a></td>
     <td><a href="brand-thieaudio.html">ThieAudio</a></td>
     <td>$348.24</td>
@@ -1069,7 +1107,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">79</td>
+    <td class="rank-col">82</td>
     <td class="iem-col"><a href="sony-ier-z1r.html">Sony IER-Z1R</a></td>
     <td><a href="brand-sony.html">Sony</a></td>
     <td>$951.4</td>
@@ -1080,7 +1118,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">80</td>
+    <td class="rank-col">83</td>
     <td class="iem-col"><a href="64-audio-nio.html">64 Audio Nio</a></td>
     <td><a href="brand-64-audio.html">64 Audio</a></td>
     <td>$808.65</td>
@@ -1091,7 +1129,18 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">81</td>
+    <td class="rank-col">84</td>
+    <td class="iem-col"><a href="empire-ears-odyssey.html">Empire Ears Odyssey</a></td>
+    <td><a href="brand-empire-ears.html">Empire Ears</a></td>
+    <td>$1,611.84</td>
+    <td>$3,400</td>
+    <td><b>47.4%</b></td>
+    <td>11</td>
+    <td class="small">recency-weighted 365d closed sales, 6 samples, 90d half-life</td>
+</tr>
+
+<tr>
+    <td class="rank-col">85</td>
     <td class="iem-col"><a href="fir-audio-krypton-5.html">FIR Audio Krypton 5</a></td>
     <td><a href="brand-fir-audio.html">FIR Audio</a></td>
     <td>$1,416.42</td>
@@ -1102,7 +1151,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">82</td>
+    <td class="rank-col">86</td>
     <td class="iem-col"><a href="64-audio-u12t.html">64 Audio U12t</a></td>
     <td><a href="brand-64-audio.html">64 Audio</a></td>
     <td>$933.14</td>
@@ -1113,7 +1162,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">83</td>
+    <td class="rank-col">87</td>
     <td class="iem-col"><a href="unique-melody-mest.html">Unique Melody MEST</a></td>
     <td><a href="brand-unique-melody.html">Unique Melody</a></td>
     <td>$652.88</td>
@@ -1124,7 +1173,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">84</td>
+    <td class="rank-col">88</td>
     <td class="iem-col"><a href="unique-melody-mest-jet-black.html">Unique Melody MEST Jet Black</a></td>
     <td><a href="brand-unique-melody.html">Unique Melody</a></td>
     <td>$922.46</td>
@@ -1135,7 +1184,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">85</td>
+    <td class="rank-col">89</td>
     <td class="iem-col"><a href="hidition-viento-b.html">Hidition Viento-B</a></td>
     <td><a href="brand-hidition.html">Hidition</a></td>
     <td>$451.09</td>
@@ -1146,7 +1195,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">86</td>
+    <td class="rank-col">90</td>
     <td class="iem-col"><a href="oriolus-traillii-jp.html">Oriolus Traillii JP</a></td>
     <td><a href="brand-oriolus.html">Oriolus</a></td>
     <td>$2,998.97</td>
@@ -1157,18 +1206,18 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">87</td>
-    <td class="iem-col"><a href="thieaudio-monarch-mkii.html">ThieAudio Monarch MKII</a></td>
-    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
-    <td>$446.5</td>
-    <td>$1,000</td>
+    <td class="rank-col">91</td>
+    <td class="iem-col"><a href="64-audio-fourte-blanc.html">64 Audio Fourte Blanc</a></td>
+    <td><a href="brand-64-audio.html">64 Audio</a></td>
+    <td>$1,648.42</td>
+    <td>$3,700</td>
     <td><b>44.6%</b></td>
-    <td>67</td>
-    <td class="small">recency-weighted 365d closed sales, 12 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $470, 5% discount</td>
+    <td>15</td>
+    <td class="small">recency-weighted 365d closed sales, 3 samples, 90d half-life</td>
 </tr>
 
 <tr>
-    <td class="rank-col">88</td>
+    <td class="rank-col">92</td>
     <td class="iem-col"><a href="64-audio-tia-trio.html">64 Audio Tia Trio</a></td>
     <td><a href="brand-64-audio.html">64 Audio</a></td>
     <td>$1,011.65</td>
@@ -1179,7 +1228,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">89</td>
+    <td class="rank-col">93</td>
     <td class="iem-col"><a href="empire-ears-odin.html">Empire Ears Odin</a></td>
     <td><a href="brand-empire-ears.html">Empire Ears</a></td>
     <td>$1,488.69</td>
@@ -1190,7 +1239,18 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">90</td>
+    <td class="rank-col">94</td>
+    <td class="iem-col"><a href="unique-melody-mest-mk2.html">Unique Melody MEST MK2</a></td>
+    <td><a href="brand-unique-melody.html">Unique Melody</a></td>
+    <td>$641.83</td>
+    <td>$1,500</td>
+    <td><b>42.8%</b></td>
+    <td>23</td>
+    <td class="small">recency-weighted 365d closed sales, 6 samples, 90d half-life</td>
+</tr>
+
+<tr>
+    <td class="rank-col">95</td>
     <td class="iem-col"><a href="symphonium-helios.html">Symphonium Helios</a></td>
     <td><a href="brand-symphonium.html">Symphonium</a></td>
     <td>$466.38</td>
@@ -1201,7 +1261,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">91</td>
+    <td class="rank-col">96</td>
     <td class="iem-col"><a href="aroma-audio-jewel.html">Aroma Audio Jewel</a></td>
     <td><a href="brand-aroma-audio.html">Aroma Audio</a></td>
     <td>$2,171.59</td>
@@ -1212,7 +1272,18 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">92</td>
+    <td class="rank-col">97</td>
+    <td class="iem-col"><a href="campfire-andromeda-pre-2020.html">Campfire Andromeda pre-2020</a></td>
+    <td><a href="brand-campfire-audio.html">Campfire Audio</a></td>
+    <td>$460.88</td>
+    <td>$1,100</td>
+    <td><b>41.9%</b></td>
+    <td>97</td>
+    <td class="small">recency-weighted 365d closed sales, 12 samples, 90d half-life</td>
+</tr>
+
+<tr>
+    <td class="rank-col">98</td>
     <td class="iem-col"><a href="64-audio-duo.html">64 Audio Duo</a></td>
     <td><a href="brand-64-audio.html">64 Audio</a></td>
     <td>$499.88</td>
@@ -1223,40 +1294,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">93</td>
-    <td class="iem-col"><a href="aroma-audio-fei-wan.html">Aroma Audio Fei Wan</a></td>
-    <td><a href="brand-aroma-audio.html">Aroma Audio</a></td>
-    <td>$1,947.5</td>
-    <td>$4,688</td>
-    <td><b>41.5%</b></td>
-    <td>34</td>
-    <td class="small">recency-weighted 365d closed sales, 12 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $2,050, 5% discount</td>
-</tr>
-
-<tr>
-    <td class="rank-col">94</td>
-    <td class="iem-col"><a href="64-audio-fourte-blanc.html">64 Audio Fourte Blanc</a></td>
-    <td><a href="brand-64-audio.html">64 Audio</a></td>
-    <td>$1,520</td>
-    <td>$3,700</td>
-    <td><b>41.1%</b></td>
-    <td>15</td>
-    <td class="small">recency-weighted 365d closed sales, 3 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $1,600, 5% discount</td>
-</tr>
-
-<tr>
-    <td class="rank-col">95</td>
-    <td class="iem-col"><a href="empire-ears-odyssey.html">Empire Ears Odyssey</a></td>
-    <td><a href="brand-empire-ears.html">Empire Ears</a></td>
-    <td>$1,377.5</td>
-    <td>$3,400</td>
-    <td><b>40.5%</b></td>
-    <td>11</td>
-    <td class="small">recency-weighted 365d closed sales, 6 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $1,450, 5% discount</td>
-</tr>
-
-<tr>
-    <td class="rank-col">96</td>
+    <td class="rank-col">99</td>
     <td class="iem-col"><a href="unique-melody-mest-mk3.html">Unique Melody MEST MK3</a></td>
     <td><a href="brand-unique-melody.html">Unique Melody</a></td>
     <td>$769.73</td>
@@ -1267,7 +1305,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">97</td>
+    <td class="rank-col">100</td>
     <td class="iem-col"><a href="empire-ears-evo.html">Empire Ears EVO</a></td>
     <td><a href="brand-empire-ears.html">Empire Ears</a></td>
     <td>$1,241.8</td>
@@ -1278,7 +1316,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">98</td>
+    <td class="rank-col">101</td>
     <td class="iem-col"><a href="dunu-sa6-mk2.html">Dunu SA6 MK2</a></td>
     <td><a href="brand-dunu.html">Dunu</a></td>
     <td>$232.14</td>
@@ -1289,29 +1327,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">99</td>
-    <td class="iem-col"><a href="unique-melody-mest-mk2.html">Unique Melody MEST MK2</a></td>
-    <td><a href="brand-unique-melody.html">Unique Melody</a></td>
-    <td>$593.75</td>
-    <td>$1,500</td>
-    <td><b>39.6%</b></td>
-    <td>23</td>
-    <td class="small">recency-weighted 365d closed sales, 6 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $625, 5% discount</td>
-</tr>
-
-<tr>
-    <td class="rank-col">100</td>
-    <td class="iem-col"><a href="empire-ears-triton.html">Empire Ears Triton</a></td>
-    <td><a href="brand-empire-ears.html">Empire Ears</a></td>
-    <td>$712.5</td>
-    <td>$1,800</td>
-    <td><b>39.6%</b></td>
-    <td>20</td>
-    <td class="small">recency-weighted 365d closed sales, 12 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $750, 5% discount</td>
-</tr>
-
-<tr>
-    <td class="rank-col">101</td>
+    <td class="rank-col">102</td>
     <td class="iem-col"><a href="vision-ears-ext.html">Vision Ears EXT</a></td>
     <td><a href="brand-vision-ears.html">Vision Ears</a></td>
     <td>$1,106.88</td>
@@ -1322,7 +1338,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">102</td>
+    <td class="rank-col">103</td>
     <td class="iem-col"><a href="64-audio-u18t.html">64 Audio U18t</a></td>
     <td><a href="brand-64-audio.html">64 Audio</a></td>
     <td>$1,115.34</td>
@@ -1333,7 +1349,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">103</td>
+    <td class="rank-col">104</td>
     <td class="iem-col"><a href="64-audio-tia-fourte.html">64 Audio Tia Fourte</a></td>
     <td><a href="brand-64-audio.html">64 Audio</a></td>
     <td>$1,275.11</td>
@@ -1344,7 +1360,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">104</td>
+    <td class="rank-col">105</td>
     <td class="iem-col"><a href="vision-ears-ve8.html">Vision Ears VE8</a></td>
     <td><a href="brand-vision-ears.html">Vision Ears</a></td>
     <td>$921.06</td>
@@ -1355,7 +1371,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">105</td>
+    <td class="rank-col">106</td>
     <td class="iem-col"><a href="empire-ears-legend-x.html">Empire Ears Legend X</a></td>
     <td><a href="brand-empire-ears.html">Empire Ears</a></td>
     <td>$800.84</td>
@@ -1366,7 +1382,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">106</td>
+    <td class="rank-col">107</td>
     <td class="iem-col"><a href="64-audio-u18s.html">64 Audio U18s</a></td>
     <td><a href="brand-64-audio.html">64 Audio</a></td>
     <td>$1,037.45</td>
@@ -1377,7 +1393,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">107</td>
+    <td class="rank-col">108</td>
     <td class="iem-col"><a href="qdc-anole-v14.html">qdc Anole V14</a></td>
     <td><a href="brand-qdc.html">qdc</a></td>
     <td>$967.96</td>
@@ -1388,7 +1404,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="rank-col">108</td>
+    <td class="rank-col">109</td>
     <td class="iem-col"><a href="qdc-anole-vx.html">qdc Anole VX</a></td>
     <td><a href="brand-qdc.html">qdc</a></td>
     <td>$769.15</td>
@@ -1396,17 +1412,6 @@ td.status-reason { overflow: hidden; }
     <td><b>30.8%</b></td>
     <td>28</td>
     <td class="small">recency-weighted 365d closed sales, 5 samples, 90d half-life</td>
-</tr>
-
-<tr>
-    <td class="rank-col">109</td>
-    <td class="iem-col"><a href="campfire-andromeda-pre-2020.html">Campfire Andromeda pre-2020</a></td>
-    <td><a href="brand-campfire-audio.html">Campfire Audio</a></td>
-    <td>$285</td>
-    <td>$1,100</td>
-    <td><b>25.9%</b></td>
-    <td>97</td>
-    <td class="small">recency-weighted 365d closed sales, 12 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $300, 5% discount</td>
 </tr>
 
 <tr>
@@ -1428,7 +1433,7 @@ td.status-reason { overflow: hidden; }
     <td>$700</td>
     <td><b>20.4%</b></td>
     <td>53</td>
-    <td class="small">recency-weighted 365d closed sales, 11 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $150, 5% discount</td>
+    <td class="small">recency-weighted 365d closed sales, 11 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥180d, median ask $150, 5% discount</td>
 </tr>
 
 </table>

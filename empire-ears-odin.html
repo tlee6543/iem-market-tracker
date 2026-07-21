@@ -59,6 +59,11 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 .filter-btn { padding: 9px 12px; border: 1px solid #ccc; background: #fff; border-radius: 999px; cursor: pointer; }
 .filter-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-toggle { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+.source-toggle-label { font-size: 13px; color: #555; font-weight: bold; margin-right: 2px; }
+.source-btn { padding: 9px 14px; border: 1px solid #bbb; background: #fff; border-radius: 999px; cursor: pointer; font-weight: bold; }
+.source-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-hidden { display: none; }
 .badge { display: inline-block; padding: 3px 8px; border-radius: 999px; border: 1px solid #ccc; background: #fafafa; font-size: 12px; white-space: nowrap; }
 .badge-high { background: #ecfdf3; border-color: #b7e4c7; }
 .badge-medium { background: #fff8e1; border-color: #ead88a; }
@@ -177,9 +182,18 @@ td.status-reason { overflow: hidden; }
         </div>
     </div>
     
-<p><a href="index.html">← Back</a></p>
+<p><a id="back-link" href="index.html">← Back</a></p>
 <h1>Empire Ears Odin</h1>
 <p><a href="brand-empire-ears.html">Empire Ears</a></p>
+<div class="card">
+    <div class="source-toggle" aria-label="Marketplace source">
+        <span class="source-toggle-label">Marketplace:</span>
+        <button class="source-btn active" data-source="both" onclick="setMarketplaceSource('both')">Both</button>
+        <button class="source-btn" data-source="reddit" onclick="setMarketplaceSource('reddit')">Reddit</button>
+        <button class="source-btn" data-source="headfi" onclick="setMarketplaceSource('headfi')">Head-Fi</button>
+    </div>
+    <p class="small">The selected marketplace filters the listing table, charts, market value, sample counts, and confidence score.</p>
+</div>
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
@@ -201,12 +215,12 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>43</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">43</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 60+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
-    <div class="controls"><button onclick="setAllCheckboxes(true)">Select all priced rows</button><button onclick="setAllCheckboxes(false)">Clear all</button></div>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
         <div class="chart-panel">
@@ -226,7 +240,7 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="excluded">
+<tr id="row-0" data-source="reddit" class="listing-row excluded">
 <td></td>
 <td>2026-06-22</td>
 <td></td>
@@ -238,12 +252,12 @@ td.status-reason { overflow: hidden; }
 <td>mzup87</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-0">N/A</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1ucog0b/wts_usmn_h_empire_ears_odin_founders_edition/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
+<tr id="row-1" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="reddit" checked></td>
 <td>2026-04-24</td>
 <td>$1,400</td>
 <td><span class="pill">closed</span></td>
@@ -254,12 +268,12 @@ td.status-reason { overflow: hidden; }
 <td>boyinliu</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.0% below market)</td>
+<td><span id="deal-score-1">Closed: Fair (6.0% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1su0ure/wts_usawa_h_elysian_x_empire_ears_odin_w_cash/#item-2" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
+<tr id="row-2" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" checked></td>
 <td>2026-03-30</td>
 <td>$1,400</td>
 <td><span class="pill">closed</span></td>
@@ -270,12 +284,12 @@ td.status-reason { overflow: hidden; }
 <td>bodegacow</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.0% below market)</td>
+<td><span id="deal-score-2">Closed: Fair (6.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.106411/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" ></td>
+<tr id="row-3" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="headfi" ></td>
 <td>2026-02-10</td>
 <td>$1,600</td>
 <td><span class="pill">closed</span></td>
@@ -286,12 +300,12 @@ td.status-reason { overflow: hidden; }
 <td>gwompki</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.5% above market)</td>
+<td><span id="deal-score-3">Closed: Fair (7.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-with-stormbreaker-cable.103510/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-4" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="4" checked></td>
+<tr id="row-4" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="headfi" checked></td>
 <td>2026-02-04</td>
 <td>$1,700</td>
 <td><span class="pill">closed</span></td>
@@ -302,12 +316,12 @@ td.status-reason { overflow: hidden; }
 <td>dnewtonn</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.2% above market)</td>
+<td><span id="deal-score-4">Closed: High (14.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-original.103186/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-5" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="5" checked></td>
+<tr id="row-5" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="headfi" checked></td>
 <td>2026-02-03</td>
 <td>$1,500</td>
 <td><span class="pill">closed</span></td>
@@ -318,12 +332,12 @@ td.status-reason { overflow: hidden; }
 <td>bradyc100</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (0.8% above market)</td>
+<td><span id="deal-score-5">Closed: Fair (0.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-mk1-og.103104/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-6" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="6" checked></td>
+<tr id="row-6" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="headfi" checked></td>
 <td>2026-01-08</td>
 <td>$1,600</td>
 <td><span class="pill">closed</span></td>
@@ -334,12 +348,12 @@ td.status-reason { overflow: hidden; }
 <td>iemsforme</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.5% above market)</td>
+<td><span id="deal-score-6">Closed: Fair (7.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.101639/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-7" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="7" checked></td>
+<tr id="row-7" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="7" data-source="headfi" checked></td>
 <td>2025-11-26</td>
 <td>$1,500</td>
 <td><span class="pill">closed</span></td>
@@ -350,12 +364,12 @@ td.status-reason { overflow: hidden; }
 <td>Audioenophile</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (0.8% above market)</td>
+<td><span id="deal-score-7">Closed: Fair (0.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.99190/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-8" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="8" checked></td>
+<tr id="row-8" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="8" data-source="headfi" checked></td>
 <td>2025-07-21</td>
 <td>$1,375</td>
 <td><span class="pill">closed</span></td>
@@ -366,12 +380,12 @@ td.status-reason { overflow: hidden; }
 <td>Angel</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.6% below market)</td>
+<td><span id="deal-score-8">Closed: Fair (7.6% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-fe.92097/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-9" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="9" checked></td>
+<tr id="row-9" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="9" data-source="headfi" checked></td>
 <td>2025-06-10</td>
 <td>$1,400</td>
 <td><span class="pill">closed</span></td>
@@ -382,12 +396,12 @@ td.status-reason { overflow: hidden; }
 <td>acaldejon</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.0% below market)</td>
+<td><span id="deal-score-9">Closed: Fair (6.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.89880/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-10" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="10" checked></td>
+<tr id="row-10" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="10" data-source="headfi" checked></td>
 <td>2025-06-03</td>
 <td>$1,600</td>
 <td><span class="pill">closed</span></td>
@@ -398,12 +412,12 @@ td.status-reason { overflow: hidden; }
 <td>shaunbr15</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.5% above market)</td>
+<td><span id="deal-score-10">Closed: Fair (7.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.89509/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-11" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="11" checked></td>
+<tr id="row-11" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="11" data-source="headfi" checked></td>
 <td>2025-04-02</td>
 <td>$1,395</td>
 <td><span class="pill">closed</span></td>
@@ -414,12 +428,12 @@ td.status-reason { overflow: hidden; }
 <td>NaturalMusic</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.3% below market)</td>
+<td><span id="deal-score-11">Closed: Fair (6.3% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-in-mint-condition.86000/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-12" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="12" checked></td>
+<tr id="row-12" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="12" data-source="headfi" checked></td>
 <td>2025-02-06</td>
 <td>$1,825</td>
 <td><span class="pill">closed</span></td>
@@ -430,12 +444,12 @@ td.status-reason { overflow: hidden; }
 <td>SLC1966</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (22.6% above market)</td>
+<td><span id="deal-score-12">Closed: High (22.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-w-4-4mm-termination.82880/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-13" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="13" checked></td>
+<tr id="row-13" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="13" data-source="headfi" checked></td>
 <td>2024-11-25</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
@@ -446,12 +460,12 @@ td.status-reason { overflow: hidden; }
 <td>jh88</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (34.3% above market)</td>
+<td><span id="deal-score-13">Closed: Overpriced (34.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.78788/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-14" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="14" checked></td>
+<tr id="row-14" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="14" data-source="headfi" checked></td>
 <td>2024-11-16</td>
 <td>$1,500</td>
 <td><span class="pill">closed</span></td>
@@ -462,12 +476,12 @@ td.status-reason { overflow: hidden; }
 <td>shaunbr15</td>
 <td>1</td>
 <td>1</td>
-<td>Closed: Fair (0.8% above market)</td>
+<td><span id="deal-score-14">Closed: Fair (0.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.78261/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-15" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="15" ></td>
+<tr id="row-15" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="15" data-source="headfi" ></td>
 <td>2024-09-09</td>
 <td>$1,300</td>
 <td><span class="pill">closed</span></td>
@@ -478,12 +492,12 @@ td.status-reason { overflow: hidden; }
 <td>Echo42987</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (12.7% below market)</td>
+<td><span id="deal-score-15">Closed: Good Deal (12.7% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-w-dragon-cable-and-stormbreakers.74598/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-16" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="16" checked></td>
+<tr id="row-16" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="16" data-source="headfi" checked></td>
 <td>2024-09-06</td>
 <td>$1,100</td>
 <td><span class="pill">closed</span></td>
@@ -494,12 +508,12 @@ td.status-reason { overflow: hidden; }
 <td>acaldejon</td>
 <td>1</td>
 <td>1</td>
-<td>Closed: Great Deal (26.1% below market)</td>
+<td><span id="deal-score-16">Closed: Great Deal (26.1% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.74413/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-17" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="17" checked></td>
+<tr id="row-17" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="17" data-source="headfi" checked></td>
 <td>2024-08-03</td>
 <td>$1,350</td>
 <td><span class="pill">closed</span></td>
@@ -510,12 +524,12 @@ td.status-reason { overflow: hidden; }
 <td>Chiu</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (9.3% below market)</td>
+<td><span id="deal-score-17">Closed: Fair (9.3% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-ciem.72498/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-18" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="18" checked></td>
+<tr id="row-18" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="18" data-source="headfi" checked></td>
 <td>2024-06-29</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
@@ -526,12 +540,12 @@ td.status-reason { overflow: hidden; }
 <td>Mh996</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (20.9% above market)</td>
+<td><span id="deal-score-18">Closed: High (20.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.70628/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-19" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="19" checked></td>
+<tr id="row-19" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="19" data-source="headfi" checked></td>
 <td>2024-06-27</td>
 <td>$1,550</td>
 <td><span class="pill">closed</span></td>
@@ -542,12 +556,12 @@ td.status-reason { overflow: hidden; }
 <td>jmo04</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (4.1% above market)</td>
+<td><span id="deal-score-19">Closed: Fair (4.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.70542/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-20" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="20" checked></td>
+<tr id="row-20" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="20" data-source="headfi" checked></td>
 <td>2024-06-21</td>
 <td>$1,400</td>
 <td><span class="pill">closed</span></td>
@@ -558,12 +572,12 @@ td.status-reason { overflow: hidden; }
 <td>Buckeyedentite</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.0% below market)</td>
+<td><span id="deal-score-20">Closed: Fair (6.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.70190/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-21" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="21" checked></td>
+<tr id="row-21" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="21" data-source="headfi" checked></td>
 <td>2024-04-30</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
@@ -574,12 +588,12 @@ td.status-reason { overflow: hidden; }
 <td>Guzomx</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (20.9% above market)</td>
+<td><span id="deal-score-21">Closed: High (20.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.67152/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-22" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="22" checked></td>
+<tr id="row-22" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="22" data-source="headfi" checked></td>
 <td>2024-04-27</td>
 <td>$1,450</td>
 <td><span class="pill">closed</span></td>
@@ -590,11 +604,11 @@ td.status-reason { overflow: hidden; }
 <td>RazorItoh</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (2.6% below market)</td>
+<td><span id="deal-score-22">Closed: Fair (2.6% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.66958/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-23" class="excluded">
+<tr id="row-23" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2024-04-23</td>
 <td></td>
@@ -606,12 +620,12 @@ td.status-reason { overflow: hidden; }
 <td>Aeonyx</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-23">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.66732/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-24" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="24" checked></td>
+<tr id="row-24" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="24" data-source="headfi" checked></td>
 <td>2024-04-12</td>
 <td>$1,750</td>
 <td><span class="pill">closed</span></td>
@@ -622,12 +636,12 @@ td.status-reason { overflow: hidden; }
 <td>shonkhochil</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (17.6% above market)</td>
+<td><span id="deal-score-24">Closed: High (17.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sold-empire-ears-odin.66042/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-25" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="25" checked></td>
+<tr id="row-25" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="25" data-source="headfi" checked></td>
 <td>2024-02-23</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
@@ -638,12 +652,12 @@ td.status-reason { overflow: hidden; }
 <td>iemsforme</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (41.1% above market)</td>
+<td><span id="deal-score-25">Closed: Overpriced (41.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-iems.63127/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-26" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="26" checked></td>
+<tr id="row-26" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="26" data-source="headfi" checked></td>
 <td>2024-01-05</td>
 <td>$1,750</td>
 <td><span class="pill">closed</span></td>
@@ -654,11 +668,11 @@ td.status-reason { overflow: hidden; }
 <td>KevinS2020</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (17.6% above market)</td>
+<td><span id="deal-score-26">Closed: High (17.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-in-excellent-condition.60198/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-27" class="excluded">
+<tr id="row-27" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2023-12-24</td>
 <td></td>
@@ -670,12 +684,12 @@ td.status-reason { overflow: hidden; }
 <td>zlayde</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-27">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-silver-dragon-4-4mm-cable.59565/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-28" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="28" checked></td>
+<tr id="row-28" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="28" data-source="headfi" checked></td>
 <td>2023-12-18</td>
 <td>$1,400</td>
 <td><span class="pill">closed</span></td>
@@ -686,12 +700,12 @@ td.status-reason { overflow: hidden; }
 <td>KuroKitsu</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.0% below market)</td>
+<td><span id="deal-score-28">Closed: Fair (6.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-no-cable.59329/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-29" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="29" checked></td>
+<tr id="row-29" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="29" data-source="headfi" checked></td>
 <td>2023-12-11</td>
 <td>$1,898</td>
 <td><span class="pill">closed</span></td>
@@ -702,11 +716,11 @@ td.status-reason { overflow: hidden; }
 <td>alamnp</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (27.5% above market)</td>
+<td><span id="deal-score-29">Closed: Overpriced (27.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-founders-edition-2-5mm.58943/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-30" class="excluded">
+<tr id="row-30" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2023-12-09</td>
 <td></td>
@@ -718,12 +732,12 @@ td.status-reason { overflow: hidden; }
 <td>Natesdailies</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-30">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-4-4.58894/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-31" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="31" ></td>
+<tr id="row-31" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="31" data-source="headfi" ></td>
 <td>2023-12-08</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
@@ -734,11 +748,11 @@ td.status-reason { overflow: hidden; }
 <td>alamnp</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (41.1% above market)</td>
+<td><span id="deal-score-31">Closed: Overpriced (41.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-founders-edition-with-luxury-precision-w2.58793/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-32" class="excluded">
+<tr id="row-32" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2023-12-01</td>
 <td></td>
@@ -750,12 +764,12 @@ td.status-reason { overflow: hidden; }
 <td>Delitia</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-32">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-4-4mm-stormbreaker.58430/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-33" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="33" checked></td>
+<tr id="row-33" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="33" data-source="headfi" checked></td>
 <td>2023-11-29</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -766,12 +780,12 @@ td.status-reason { overflow: hidden; }
 <td>firefighter9</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (27.6% above market)</td>
+<td><span id="deal-score-33">Closed: Overpriced (27.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-mint.58307/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-34" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="34" checked></td>
+<tr id="row-34" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="34" data-source="headfi" checked></td>
 <td>2023-11-15</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
@@ -782,12 +796,12 @@ td.status-reason { overflow: hidden; }
 <td>hede11</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (34.3% above market)</td>
+<td><span id="deal-score-34">Closed: Overpriced (34.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-universal-founder-edition-234.57598/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-35" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="35" ></td>
+<tr id="row-35" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="35" data-source="headfi" ></td>
 <td>2023-11-03</td>
 <td>$1,890</td>
 <td><span class="pill">closed</span></td>
@@ -798,12 +812,12 @@ td.status-reason { overflow: hidden; }
 <td>Homrsimson</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (27.0% above market)</td>
+<td><span id="deal-score-35">Closed: Overpriced (27.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-mint-and-complete-with-stormbreaker-cable.57032/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-36" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="36" checked></td>
+<tr id="row-36" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="36" data-source="headfi" checked></td>
 <td>2023-11-02</td>
 <td>$1,470</td>
 <td><span class="pill">closed</span></td>
@@ -814,12 +828,12 @@ td.status-reason { overflow: hidden; }
 <td>Missha1981</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.3% below market)</td>
+<td><span id="deal-score-36">Closed: Fair (1.3% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-without-cable-mint.56973/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-37" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="37" checked></td>
+<tr id="row-37" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="37" data-source="headfi" checked></td>
 <td>2023-10-16</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
@@ -830,12 +844,12 @@ td.status-reason { overflow: hidden; }
 <td>ajlolo</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (20.9% above market)</td>
+<td><span id="deal-score-37">Closed: High (20.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.56072/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-38" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="38" ></td>
+<tr id="row-38" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="38" data-source="headfi" ></td>
 <td>2023-10-01</td>
 <td>$1,850</td>
 <td><span class="pill">closed</span></td>
@@ -846,12 +860,12 @@ td.status-reason { overflow: hidden; }
 <td>Fantanest</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (24.3% above market)</td>
+<td><span id="deal-score-38">Closed: High (24.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-with-4-4-stormbreaker-cable.55286/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-39" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="39" checked></td>
+<tr id="row-39" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="39" data-source="headfi" checked></td>
 <td>2023-09-29</td>
 <td>$1,799</td>
 <td><span class="pill">closed</span></td>
@@ -862,12 +876,12 @@ td.status-reason { overflow: hidden; }
 <td>OneEyedHito</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (20.8% above market)</td>
+<td><span id="deal-score-39">Closed: High (20.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-iems-excellent-condition-complete.55167/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-40" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="40" checked></td>
+<tr id="row-40" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="40" data-source="headfi" checked></td>
 <td>2023-09-05</td>
 <td>$2,099</td>
 <td><span class="pill">closed</span></td>
@@ -878,12 +892,12 @@ td.status-reason { overflow: hidden; }
 <td>briantrinh86</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (41.0% above market)</td>
+<td><span id="deal-score-40">Closed: Overpriced (41.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-3-months-old-no-trade.53816/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-41" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="41" checked></td>
+<tr id="row-41" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="41" data-source="headfi" checked></td>
 <td>2023-08-16</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
@@ -894,12 +908,12 @@ td.status-reason { overflow: hidden; }
 <td>Bootup22</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (41.1% above market)</td>
+<td><span id="deal-score-41">Closed: Overpriced (41.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/for-sale-empire-ears-odin-w-2-5mm-stormbreaker-and-4-4-adapter.52743/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-42" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="42" ></td>
+<tr id="row-42" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="42" data-source="headfi" ></td>
 <td>2023-08-04</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
@@ -910,12 +924,12 @@ td.status-reason { overflow: hidden; }
 <td>pali</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (41.1% above market)</td>
+<td><span id="deal-score-42">Closed: Overpriced (41.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sold-mint-empire-ears-odin-w-2-5mm-stormbreaker-cable.52095/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-43" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="43" ></td>
+<tr id="row-43" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="43" data-source="headfi" ></td>
 <td>2023-06-30</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -926,12 +940,12 @@ td.status-reason { overflow: hidden; }
 <td>antdroid</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (27.6% above market)</td>
+<td><span id="deal-score-43">Closed: Overpriced (27.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-with-multi-plug-modular-cable.50157/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-44" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="44" checked></td>
+<tr id="row-44" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="44" data-source="headfi" checked></td>
 <td>2023-06-26</td>
 <td>$2,050</td>
 <td><span class="pill">closed</span></td>
@@ -942,12 +956,12 @@ td.status-reason { overflow: hidden; }
 <td>kmsjazz</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (37.7% above market)</td>
+<td><span id="deal-score-44">Closed: Overpriced (37.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-4-4-mm.49942/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-45" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="45" checked></td>
+<tr id="row-45" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="45" data-source="headfi" checked></td>
 <td>2023-06-06</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
@@ -958,12 +972,12 @@ td.status-reason { overflow: hidden; }
 <td>MJSable</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (20.9% above market)</td>
+<td><span id="deal-score-45">Closed: High (20.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin.48891/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-46" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="46" checked></td>
+<tr id="row-46" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="46" data-source="headfi" checked></td>
 <td>2023-05-01</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
@@ -974,12 +988,12 @@ td.status-reason { overflow: hidden; }
 <td>Strayngs</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (20.9% above market)</td>
+<td><span id="deal-score-46">Closed: High (20.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pending-sale-empire-ears-odin-without-cable.46915/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-47" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="47" checked></td>
+<tr id="row-47" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="47" data-source="headfi" checked></td>
 <td>2022-11-22</td>
 <td>$1,700</td>
 <td><span class="pill">closed</span></td>
@@ -990,11 +1004,11 @@ td.status-reason { overflow: hidden; }
 <td>Wyllio</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.2% above market)</td>
+<td><span id="deal-score-47">Closed: High (14.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/empire-ears-odin-tribrid-electrostatic-ba-dynamic-universal-iems.68808/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-48" class="excluded">
+<tr id="row-48" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td></td>
 <td></td>
@@ -1006,22 +1020,99 @@ td.status-reason { overflow: hidden; }
 <td>unknown</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-48">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pw-stormbreaker-cable-2-5mm-from-empire-ears-odin.53832/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Empire Ears Odin Founders Edition (#49/200) w/ Stormbreaker Cable", "url": "https://old.reddit.com/r/AVexchange/comments/1ucog0b/wts_usmn_h_empire_ears_odin_founders_edition/#item-1", "price_num": null, "date_ms": 1782143640000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 1, "title": "The EE Odin is terminated in 2.5mm asking", "url": "https://old.reddit.com/r/AVexchange/comments/1su0ure/wts_usawa_h_elysian_x_empire_ears_odin_w_cash/#item-2", "price_num": 1400.0, "date_ms": 1776992032000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=elysian"}, {"row_id": 2, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.106411/", "price_num": 1400.0, "date_ms": 1774828800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Empire Ears Odin with Stormbreaker Cable", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-with-stormbreaker-cable.103510/", "price_num": 1600.0, "date_ms": 1770681600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Empire Ears Odin (original)", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-original.103186/", "price_num": 1700.0, "date_ms": 1770163200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Empire Ears Odin Mk1(OG)", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-mk1-og.103104/", "price_num": 1500.0, "date_ms": 1770076800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.101639/", "price_num": 1600.0, "date_ms": 1767830400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.99190/", "price_num": 1500.0, "date_ms": 1764115200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Empire Ears Odin FE", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-fe.92097/", "price_num": 1375.0, "date_ms": 1753056000000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Empire Ears ODIN", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.89880/", "price_num": 1400.0, "date_ms": 1749513600000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.89509/", "price_num": 1600.0, "date_ms": 1748908800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Closed: Empire Ears Odin in Mint Condition", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-in-mint-condition.86000/", "price_num": 1395.0, "date_ms": 1743552000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Empire Ears Odin w 4.4mm termination", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-w-4-4mm-termination.82880/", "price_num": 1825.0, "date_ms": 1738800000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.78788/", "price_num": 2000.0, "date_ms": 1732492800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.78261/", "price_num": 1500.0, "date_ms": 1731715200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Empire Ears Odin w/ Dragon Cable and Stormbreakers", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-w-dragon-cable-and-stormbreakers.74598/", "price_num": 1300.0, "date_ms": 1725840000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.74413/", "price_num": 1100.0, "date_ms": 1725580800000, "listing_status": "closed", "condition_text": "fair", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Closed: Empire Ears Odin CIEM", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-ciem.72498/", "price_num": 1350.0, "date_ms": 1722643200000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.70628/", "price_num": 1800.0, "date_ms": 1719619200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.70542/", "price_num": 1550.0, "date_ms": 1719446400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.70190/", "price_num": 1400.0, "date_ms": 1718928000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.67152/", "price_num": 1800.0, "date_ms": 1714435200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.66958/", "price_num": 1450.0, "date_ms": 1714176000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Traded: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.66732/", "price_num": null, "date_ms": 1713830400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 24, "title": "Closed: SOLD -- Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/sold-empire-ears-odin.66042/", "price_num": 1750.0, "date_ms": 1712880000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Closed: Empire Ears Odin IEMs", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-iems.63127/", "price_num": 2100.0, "date_ms": 1708646400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: Empire Ears Odin in Excellent Condition", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-in-excellent-condition.60198/", "price_num": 1750.0, "date_ms": 1704412800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Traded: Empire Ears Odin + Silver Dragon 4.4mm cable", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-silver-dragon-4-4mm-cable.59565/", "price_num": null, "date_ms": 1703376000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 28, "title": "Sold: Empire Ears Odin (No cable)", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-no-cable.59329/", "price_num": 1400.0, "date_ms": 1702857600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Sold: Empire Ears Odin Founder's Edition 2.5mm", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-founders-edition-2-5mm.58943/", "price_num": 1898.0, "date_ms": 1702252800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: Empire Ears Odin 4.4", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-4-4.58894/", "price_num": null, "date_ms": 1702080000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 31, "title": "Closed: Empire Ears Odin Founder's Edition with Luxury Precision W2", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-founders-edition-with-luxury-precision-w2.58793/", "price_num": 2100.0, "date_ms": 1701993600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 32, "title": "Sold: Empire Ears Odin - 4.4mm Stormbreaker", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-4-4mm-stormbreaker.58430/", "price_num": null, "date_ms": 1701388800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 33, "title": "Closed: Empire ears Odin mint", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-mint.58307/", "price_num": 1900.0, "date_ms": 1701216000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 34, "title": "Sold: Empire Ears Odin Universal Founder Edition #234", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-universal-founder-edition-234.57598/", "price_num": 2000.0, "date_ms": 1700006400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 35, "title": "Sold: Empire Ears Odin - mint and complete with stormbreaker cable", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-mint-and-complete-with-stormbreaker-cable.57032/", "price_num": 1890.0, "date_ms": 1698969600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 36, "title": "Closed: Empire Ears Odin ( without cable) Mint", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-without-cable-mint.56973/", "price_num": 1470.0, "date_ms": 1698883200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 37, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.56072/", "price_num": 1800.0, "date_ms": 1697414400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 38, "title": "Sold: Empire Ears Odin with 4.4 Stormbreaker cable", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-with-4-4-stormbreaker-cable.55286/", "price_num": 1850.0, "date_ms": 1696118400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 39, "title": "Sold: Empire Ears Odin IEMs - Excellent Condition & Complete", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-iems-excellent-condition-complete.55167/", "price_num": 1799.0, "date_ms": 1695945600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 40, "title": "Sold: Empire Ears Odin 3 months old NO TRADE", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-3-months-old-no-trade.53816/", "price_num": 2099.0, "date_ms": 1693872000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 41, "title": "Sold: For sale: Empire Ears Odin w/ 2.5mm Stormbreaker and 4.4 Adapter", "url": "https://www.head-fi.org/classifieds/for-sale-empire-ears-odin-w-2-5mm-stormbreaker-and-4-4-adapter.52743/", "price_num": 2100.0, "date_ms": 1692144000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 42, "title": "Closed: SOLD: MINT Empire Ears Odin w/ 2.5mm Stormbreaker Cable", "url": "https://www.head-fi.org/classifieds/sold-mint-empire-ears-odin-w-2-5mm-stormbreaker-cable.52095/", "price_num": 2100.0, "date_ms": 1691107200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 43, "title": "Sold: Empire Ears Odin with multi-plug modular cable", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-with-multi-plug-modular-cable.50157/", "price_num": 1900.0, "date_ms": 1688083200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 44, "title": "Sold: Empire Ears Odin 4.4 mm", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-4-4-mm.49942/", "price_num": 2050.0, "date_ms": 1687737600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 45, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.48891/", "price_num": 1800.0, "date_ms": 1686009600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 46, "title": "Sold: Pending Sale Empire Ears Odin without cable", "url": "https://www.head-fi.org/classifieds/pending-sale-empire-ears-odin-without-cable.46915/", "price_num": 1800.0, "date_ms": 1682899200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 47, "title": "Sold: Empire Ears ODIN Tribrid Electrostatic, BA, + Dynamic Universal IEMs", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-tribrid-electrostatic-ba-dynamic-universal-iems.68808/", "price_num": 1700.0, "date_ms": 1669075200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 48, "title": "Closed: PW stormbreaker cable 2.5mm (from empire ears odin)", "url": "https://www.head-fi.org/classifieds/pw-stormbreaker-cable-2-5mm-from-empire-ears-odin.53832/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Empire Ears Odin Founders Edition (#49/200) w/ Stormbreaker Cable", "url": "https://old.reddit.com/r/AVexchange/comments/1ucog0b/wts_usmn_h_empire_ears_odin_founders_edition/#item-1", "price_num": null, "date_ms": 1782143640000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 1, "title": "The EE Odin is terminated in 2.5mm asking", "url": "https://old.reddit.com/r/AVexchange/comments/1su0ure/wts_usawa_h_elysian_x_empire_ears_odin_w_cash/#item-2", "price_num": 1400.0, "date_ms": 1776992032000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=elysian"}, {"row_id": 2, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.106411/", "price_num": 1400.0, "date_ms": 1774828800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Empire Ears Odin with Stormbreaker Cable", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-with-stormbreaker-cable.103510/", "price_num": 1600.0, "date_ms": 1770681600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Empire Ears Odin (original)", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-original.103186/", "price_num": 1700.0, "date_ms": 1770163200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Empire Ears Odin Mk1(OG)", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-mk1-og.103104/", "price_num": 1500.0, "date_ms": 1770076800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.101639/", "price_num": 1600.0, "date_ms": 1767830400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.99190/", "price_num": 1500.0, "date_ms": 1764115200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Empire Ears Odin FE", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-fe.92097/", "price_num": 1375.0, "date_ms": 1753056000000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Empire Ears ODIN", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.89880/", "price_num": 1400.0, "date_ms": 1749513600000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.89509/", "price_num": 1600.0, "date_ms": 1748908800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Closed: Empire Ears Odin in Mint Condition", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-in-mint-condition.86000/", "price_num": 1395.0, "date_ms": 1743552000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Empire Ears Odin w 4.4mm termination", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-w-4-4mm-termination.82880/", "price_num": 1825.0, "date_ms": 1738800000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.78788/", "price_num": 2000.0, "date_ms": 1732492800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.78261/", "price_num": 1500.0, "date_ms": 1731715200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Empire Ears Odin w/ Dragon Cable and Stormbreakers", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-w-dragon-cable-and-stormbreakers.74598/", "price_num": 1300.0, "date_ms": 1725840000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.74413/", "price_num": 1100.0, "date_ms": 1725580800000, "listing_status": "closed", "condition_text": "fair", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Closed: Empire Ears Odin CIEM", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-ciem.72498/", "price_num": 1350.0, "date_ms": 1722643200000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.70628/", "price_num": 1800.0, "date_ms": 1719619200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.70542/", "price_num": 1550.0, "date_ms": 1719446400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.70190/", "price_num": 1400.0, "date_ms": 1718928000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.67152/", "price_num": 1800.0, "date_ms": 1714435200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.66958/", "price_num": 1450.0, "date_ms": 1714176000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Traded: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.66732/", "price_num": null, "date_ms": 1713830400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 24, "title": "Closed: SOLD -- Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/sold-empire-ears-odin.66042/", "price_num": 1750.0, "date_ms": 1712880000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Closed: Empire Ears Odin IEMs", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-iems.63127/", "price_num": 2100.0, "date_ms": 1708646400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: Empire Ears Odin in Excellent Condition", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-in-excellent-condition.60198/", "price_num": 1750.0, "date_ms": 1704412800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Traded: Empire Ears Odin + Silver Dragon 4.4mm cable", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-silver-dragon-4-4mm-cable.59565/", "price_num": null, "date_ms": 1703376000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 28, "title": "Sold: Empire Ears Odin (No cable)", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-no-cable.59329/", "price_num": 1400.0, "date_ms": 1702857600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Sold: Empire Ears Odin Founder's Edition 2.5mm", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-founders-edition-2-5mm.58943/", "price_num": 1898.0, "date_ms": 1702252800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: Empire Ears Odin 4.4", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-4-4.58894/", "price_num": null, "date_ms": 1702080000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 31, "title": "Closed: Empire Ears Odin Founder's Edition with Luxury Precision W2", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-founders-edition-with-luxury-precision-w2.58793/", "price_num": 2100.0, "date_ms": 1701993600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 32, "title": "Sold: Empire Ears Odin - 4.4mm Stormbreaker", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-4-4mm-stormbreaker.58430/", "price_num": null, "date_ms": 1701388800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 33, "title": "Closed: Empire ears Odin mint", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-mint.58307/", "price_num": 1900.0, "date_ms": 1701216000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 34, "title": "Sold: Empire Ears Odin Universal Founder Edition #234", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-universal-founder-edition-234.57598/", "price_num": 2000.0, "date_ms": 1700006400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 35, "title": "Sold: Empire Ears Odin - mint and complete with stormbreaker cable", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-mint-and-complete-with-stormbreaker-cable.57032/", "price_num": 1890.0, "date_ms": 1698969600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 36, "title": "Closed: Empire Ears Odin ( without cable) Mint", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-without-cable-mint.56973/", "price_num": 1470.0, "date_ms": 1698883200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 37, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.56072/", "price_num": 1800.0, "date_ms": 1697414400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 38, "title": "Sold: Empire Ears Odin with 4.4 Stormbreaker cable", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-with-4-4-stormbreaker-cable.55286/", "price_num": 1850.0, "date_ms": 1696118400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 39, "title": "Sold: Empire Ears Odin IEMs - Excellent Condition & Complete", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-iems-excellent-condition-complete.55167/", "price_num": 1799.0, "date_ms": 1695945600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 40, "title": "Sold: Empire Ears Odin 3 months old NO TRADE", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-3-months-old-no-trade.53816/", "price_num": 2099.0, "date_ms": 1693872000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 41, "title": "Sold: For sale: Empire Ears Odin w/ 2.5mm Stormbreaker and 4.4 Adapter", "url": "https://www.head-fi.org/classifieds/for-sale-empire-ears-odin-w-2-5mm-stormbreaker-and-4-4-adapter.52743/", "price_num": 2100.0, "date_ms": 1692144000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 42, "title": "Closed: SOLD: MINT Empire Ears Odin w/ 2.5mm Stormbreaker Cable", "url": "https://www.head-fi.org/classifieds/sold-mint-empire-ears-odin-w-2-5mm-stormbreaker-cable.52095/", "price_num": 2100.0, "date_ms": 1691107200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 43, "title": "Sold: Empire Ears Odin with multi-plug modular cable", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-with-multi-plug-modular-cable.50157/", "price_num": 1900.0, "date_ms": 1688083200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 44, "title": "Sold: Empire Ears Odin 4.4 mm", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-4-4-mm.49942/", "price_num": 2050.0, "date_ms": 1687737600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 45, "title": "Sold: Empire Ears Odin", "url": "https://www.head-fi.org/classifieds/empire-ears-odin.48891/", "price_num": 1800.0, "date_ms": 1686009600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 46, "title": "Sold: Pending Sale Empire Ears Odin without cable", "url": "https://www.head-fi.org/classifieds/pending-sale-empire-ears-odin-without-cable.46915/", "price_num": 1800.0, "date_ms": 1682899200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 47, "title": "Sold: Empire Ears ODIN Tribrid Electrostatic, BA, + Dynamic Universal IEMs", "url": "https://www.head-fi.org/classifieds/empire-ears-odin-tribrid-electrostatic-ba-dynamic-universal-iems.68808/", "price_num": 1700.0, "date_ms": 1669075200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 48, "title": "Closed: PW stormbreaker cable 2.5mm (from empire ears odin)", "url": "https://www.head-fi.org/classifieds/pw-stormbreaker-cable-2-5mm-from-empire-ears-odin.53832/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 3400.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
+let currentMarketplaceSource = "both";
+
+function normalizeMarketplaceSource(platform) {
+    const text = String(platform || "").toLowerCase().trim();
+    if (["reddit", "reddit_rss", "avexchange", "r/avexchange"].includes(text)) return "reddit";
+    if (["headfi", "head-fi", "head-fi classifieds"].includes(text)) return "headfi";
+    if (["manual", "manual_csv", "manual input"].includes(text)) return "manual";
+    return "other";
+}
+function sourceMatches(row) {
+    return currentMarketplaceSource === "both" || row.source_key === currentMarketplaceSource;
+}
+function getSourceRows() {
+    return allRows.filter(sourceMatches);
+}
+function safeLocalStorageGet(key) {
+    try { return window.localStorage.getItem(key); } catch (error) { return null; }
+}
+function safeLocalStorageSet(key, value) {
+    try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function getInitialMarketplaceSource() {
+    const params = new URLSearchParams(window.location.search);
+    const querySource = String(params.get("source") || "").toLowerCase();
+    if (["both", "reddit", "headfi"].includes(querySource)) return querySource;
+
+    const storedSource = String(safeLocalStorageGet("iemMarketplaceSource") || "").toLowerCase();
+    if (["both", "reddit", "headfi"].includes(storedSource)) return storedSource;
+
+    return "both";
+}
+function updateCurrentPageSourceQuery(source) {
+    try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("source", source);
+        window.history.replaceState({}, "", url);
+    } catch (error) {}
+}
+function setMarketplaceSource(source) {
+    if (!["both", "reddit", "headfi"].includes(source)) source = "both";
+    currentMarketplaceSource = source;
+    safeLocalStorageSet("iemMarketplaceSource", source);
+    updateCurrentPageSourceQuery(source);
+
+    document.querySelectorAll(".source-btn").forEach(function(button) {
+        button.classList.toggle("active", button.getAttribute("data-source") === source);
+    });
+
+    allRows.forEach(function(row) {
+        const tableRow = document.getElementById("row-" + row.row_id);
+        if (tableRow) tableRow.classList.toggle("source-hidden", !sourceMatches(row));
+    });
+
+    const backLink = document.getElementById("back-link");
+    if (backLink) backLink.href = "index.html?source=" + encodeURIComponent(source);
+
+    updateStatsAndChart();
+}
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
 function moneyRound(value) { return money(value); }
 function dateLabel(value) { if (value === null || value === undefined || Number.isNaN(value)) return ""; return new Date(value).toLocaleDateString(); }
 function pct(value) { if (value === null || value === undefined || Number.isNaN(value)) return "N/A"; return Number(value).toLocaleString(undefined, {maximumFractionDigits: 1}) + "%"; }
 function median(values) { if (!values.length) return null; const sorted = [...values].sort((a,b)=>a-b); const mid = Math.floor(sorted.length/2); return sorted.length % 2 === 0 ? (sorted[mid-1] + sorted[mid]) / 2 : sorted[mid]; }
 function average(values) { if (!values.length) return null; return values.reduce((a,b)=>a+b, 0) / values.length; }
-const staleUnsoldMarketDays = 60;
+function dealScoreDisplay(row, marketValue) {
+    const price = Number(row.price_num);
+    const market = Number(marketValue);
+    if (!Number.isFinite(price) || price <= 0 || !Number.isFinite(market) || market <= 0) return "N/A";
+
+    const deltaPct = ((price - market) / market) * 100;
+    let label = "Fair";
+    if (deltaPct <= -20) label = "Great Deal";
+    else if (deltaPct <= -10) label = "Good Deal";
+    else if (deltaPct <= 10) label = "Fair";
+    else if (deltaPct <= 25) label = "High";
+    else label = "Overpriced";
+
+    const direction = deltaPct < 0 ? "below" : "above";
+    const detail = Math.abs(deltaPct).toFixed(1) + "% " + direction + " market";
+    return String(row.listing_status || "").toLowerCase() === "closed"
+        ? "Closed: " + label + " (" + detail + ")"
+        : label + " (" + detail + ")";
+}
+const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
@@ -1043,9 +1134,11 @@ function isStaleUnsoldCeilingRow(row) {
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
     const statusComment = String(row.status_comment || "").toLowerCase().trim();
     const staleMarker = status === "stale" || status === "stale_unsold" || closedReason.startsWith("stale_unsold") || closedReason === "stale_active_timeout" || statusComment.includes("stale unsold") || statusComment.includes("lister never updated");
-    if (staleMarker) return true;
-
     const ageDays = rowAgeDays(row);
+    // Older checker runs may already have written a stale marker using a
+    // shorter timeout. Do not use it as a ceiling until the current 180d
+    // threshold is reached. Preserve explicit stale rows with no usable date.
+    if (staleMarker) return ageDays === null || ageDays >= staleUnsoldMarketDays;
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
@@ -1270,13 +1363,27 @@ function calculateLiquidityConfidenceFromRows(rows) {
 }
 function getSelectedRows() {
     const selectedIds = new Set();
+
     document.querySelectorAll(".row-toggle").forEach(function(cb) {
         const rowId = Number(cb.dataset.rowId);
-        if (cb.checked) { selectedIds.add(rowId); document.getElementById("row-" + rowId).className = "included"; }
-        else { document.getElementById("row-" + rowId).className = "excluded"; }
+        const tableRow = document.getElementById("row-" + rowId);
+
+        if (cb.checked) selectedIds.add(rowId);
+
+        if (tableRow) {
+            tableRow.classList.toggle("included", cb.checked);
+            tableRow.classList.toggle("excluded", !cb.checked);
+        }
     });
-    return allRows.filter(row => selectedIds.has(row.row_id) && row.price_num !== null);
+
+    return allRows.filter(function(row) {
+        return sourceMatches(row) &&
+            selectedIds.has(row.row_id) &&
+            row.price_num !== null &&
+            !Number.isNaN(row.price_num);
+    });
 }
+
 function getSmoothingConfig(sampleCount) {
     // More samples can support a wider smoothing window and a denser curve.
     // Thin datasets stay close to the actual points.
@@ -1401,30 +1508,40 @@ function calculateSmoothedRetentionLine(rows) {
 }
 
 function updateStatsAndChart() {
+    const sourceRows = getSourceRows();
     const selectedRows = getSelectedRows();
     const prices = selectedRows.map(r => r.price_num).filter(v => v !== null && !Number.isNaN(v));
-    const marketValueResult = calculateMarketValueFromRows(selectedRows, allRows);
+    const marketValueResult = calculateMarketValueFromRows(selectedRows, sourceRows);
+
     document.getElementById("stat-market-value").textContent = money(marketValueResult.value);
     document.getElementById("stat-market-basis").textContent = marketValueResult.basis;
+    document.getElementById("stat-total-priced-rows").textContent = sourceRows.filter(
+        row => row.price_num !== null && !Number.isNaN(row.price_num)
+    ).length;
+
     if (hasOriginalMsrp && document.getElementById("stat-market-vs-msrp")) {
         if (marketValueResult.value !== null && !Number.isNaN(marketValueResult.value)) {
             const mvRetention = (marketValueResult.value / originalMsrpUsd) * 100;
             const mvDelta = mvRetention - 100;
             const direction = mvDelta >= 0 ? "above" : "below";
             document.getElementById("stat-market-vs-msrp").textContent = pct(mvRetention) + " of MSRP";
-            document.getElementById("stat-market-vs-msrp-detail").textContent = Math.abs(mvDelta).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction;
+            document.getElementById("stat-market-vs-msrp-detail").textContent =
+                Math.abs(mvDelta).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction;
         } else {
             document.getElementById("stat-market-vs-msrp").textContent = "N/A";
             document.getElementById("stat-market-vs-msrp-detail").textContent = "";
         }
     }
+
     document.getElementById("stat-average").textContent = money(average(prices));
     document.getElementById("stat-low").textContent = money(prices.length ? Math.min(...prices) : null);
     document.getElementById("stat-high").textContent = money(prices.length ? Math.max(...prices) : null);
     document.getElementById("stat-samples").textContent = prices.length;
+
     const liquidityConfidence = calculateLiquidityConfidenceFromRows(selectedRows);
     const liquidityBadge = document.getElementById("stat-liquidity-confidence");
     const liquidityDetail = document.getElementById("stat-liquidity-confidence-detail");
+
     if (liquidityBadge) {
         liquidityBadge.textContent = liquidityConfidence.display;
         liquidityBadge.className = "badge badge-score " + liquidityConfidence.cssClass;
@@ -1433,10 +1550,28 @@ function updateStatsAndChart() {
         liquidityBadge.removeAttribute("title");
     }
     if (liquidityDetail) liquidityDetail.textContent = liquidityConfidence.detail;
-    const priceScatter = selectedRows.filter(r => r.date_ms !== null && r.price_num !== null).map(row => ({x: row.date_ms, y: row.price_num, url: row.url, title: row.title, status: row.listing_status, condition: row.condition_text, platform: row.platform}));
+
+    sourceRows.forEach(function(row) {
+        const dealElement = document.getElementById("deal-score-" + row.row_id);
+        if (dealElement) dealElement.textContent = dealScoreDisplay(row, marketValueResult.value);
+    });
+
+    const priceScatter = selectedRows
+        .filter(r => r.date_ms !== null && r.price_num !== null)
+        .map(row => ({
+            x: row.date_ms,
+            y: row.price_num,
+            url: row.url,
+            title: row.title,
+            status: row.listing_status,
+            condition: row.condition_text,
+            platform: row.platform
+        }));
+
     chart.data.datasets[0].data = priceScatter;
     chart.data.datasets[1].data = calculateSmoothedPriceLine(selectedRows);
     chart.update();
+
     if (hasOriginalMsrp && msrpChart) {
         msrpChart.data.datasets[0].data = selectedRows
             .filter(r => r.date_ms !== null && r.price_num !== null)
@@ -1450,11 +1585,21 @@ function updateStatsAndChart() {
                 condition: row.condition_text,
                 platform: row.platform
             }));
+
         msrpChart.data.datasets[1].data = calculateSmoothedRetentionLine(selectedRows);
         msrpChart.update();
     }
 }
-function setAllCheckboxes(checked) { document.querySelectorAll(".row-toggle").forEach(cb => cb.checked = checked); updateStatsAndChart(); }
+
+function setAllCheckboxes(checked) {
+    document.querySelectorAll(".row-toggle").forEach(function(cb) {
+        const checkboxSource = String(cb.getAttribute("data-source") || "other");
+        if (currentMarketplaceSource === "both" || checkboxSource === currentMarketplaceSource) {
+            cb.checked = checked;
+        }
+    });
+    updateStatsAndChart();
+}
 const chart = new Chart(document.getElementById("chart"), {
     type: "scatter",
     data: {
@@ -1621,7 +1766,7 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
-updateStatsAndChart();
+setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>
 </body>

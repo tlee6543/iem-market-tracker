@@ -59,6 +59,11 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 .filter-btn { padding: 9px 12px; border: 1px solid #ccc; background: #fff; border-radius: 999px; cursor: pointer; }
 .filter-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-toggle { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+.source-toggle-label { font-size: 13px; color: #555; font-weight: bold; margin-right: 2px; }
+.source-btn { padding: 9px 14px; border: 1px solid #bbb; background: #fff; border-radius: 999px; cursor: pointer; font-weight: bold; }
+.source-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-hidden { display: none; }
 .badge { display: inline-block; padding: 3px 8px; border-radius: 999px; border: 1px solid #ccc; background: #fafafa; font-size: 12px; white-space: nowrap; }
 .badge-high { background: #ecfdf3; border-color: #b7e4c7; }
 .badge-medium { background: #fff8e1; border-color: #ead88a; }
@@ -185,7 +190,7 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="iem-col"><a href="campfire-andromeda-10.html">Campfire Andromeda 10</a></td>
-    <td title="recency-weighted 365d closed sales, 4 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $1,000, 5% discount">$950</td>
+    <td title="recency-weighted 365d closed sales, 4 samples, 90d half-life">$1,066.55</td>
     <td>$1,092.5</td>
     <td>$1,000</td>
     <td>$1,370</td>
@@ -212,7 +217,7 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="iem-col"><a href="campfire-andromeda-pre-2020.html">Campfire Andromeda pre-2020</a></td>
-    <td title="recency-weighted 365d closed sales, 12 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $300, 5% discount">$285</td>
+    <td title="recency-weighted 365d closed sales, 12 samples, 90d half-life">$460.88</td>
     <td>$554.94</td>
     <td>$190</td>
     <td>$900</td>
@@ -221,7 +226,7 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="iem-col"><a href="campfire-audio-ara.html">Campfire Audio Ara</a></td>
-    <td title="recency-weighted 365d closed sales, 2 samples, 90d half-life; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $370, 5% discount">$351.5</td>
+    <td title="recency-weighted 365d closed sales, 2 samples, 90d half-life">$478.17</td>
     <td>$510</td>
     <td>$420</td>
     <td>$600</td>
@@ -256,8 +261,17 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
+    <td class="iem-col"><a href="campfire-audio-mammoth.html">Campfire Audio Mammoth</a></td>
+    <td title="no clean closed-sale samples">N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>0</td>
+</tr>
+
+<tr>
     <td class="iem-col"><a href="campfire-audio-saber.html">Campfire Audio Saber</a></td>
-    <td title="single clean closed-sale sample; capped by stale unsold ask ceiling: 1 ask(s) ≥60d, median ask $69, 5% discount">$65.55</td>
+    <td title="single clean closed-sale sample">$90</td>
     <td>$90</td>
     <td>$90</td>
     <td>$90</td>

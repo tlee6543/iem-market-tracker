@@ -59,6 +59,11 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 .filter-btn { padding: 9px 12px; border: 1px solid #ccc; background: #fff; border-radius: 999px; cursor: pointer; }
 .filter-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-toggle { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+.source-toggle-label { font-size: 13px; color: #555; font-weight: bold; margin-right: 2px; }
+.source-btn { padding: 9px 14px; border: 1px solid #bbb; background: #fff; border-radius: 999px; cursor: pointer; font-weight: bold; }
+.source-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-hidden { display: none; }
 .badge { display: inline-block; padding: 3px 8px; border-radius: 999px; border: 1px solid #ccc; background: #fafafa; font-size: 12px; white-space: nowrap; }
 .badge-high { background: #ecfdf3; border-color: #b7e4c7; }
 .badge-medium { background: #fff8e1; border-color: #ead88a; }
@@ -177,9 +182,18 @@ td.status-reason { overflow: hidden; }
         </div>
     </div>
     
-<p><a href="index.html">← Back</a></p>
+<p><a id="back-link" href="index.html">← Back</a></p>
 <h1>Dunu SA6</h1>
 <p><a href="brand-dunu.html">Dunu</a></p>
+<div class="card">
+    <div class="source-toggle" aria-label="Marketplace source">
+        <span class="source-toggle-label">Marketplace:</span>
+        <button class="source-btn active" data-source="both" onclick="setMarketplaceSource('both')">Both</button>
+        <button class="source-btn" data-source="reddit" onclick="setMarketplaceSource('reddit')">Reddit</button>
+        <button class="source-btn" data-source="headfi" onclick="setMarketplaceSource('headfi')">Head-Fi</button>
+    </div>
+    <p class="small">The selected marketplace filters the listing table, charts, market value, sample counts, and confidence score.</p>
+</div>
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
@@ -201,12 +215,12 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>47</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">47</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 60+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
-    <div class="controls"><button onclick="setAllCheckboxes(true)">Select all priced rows</button><button onclick="setAllCheckboxes(false)">Clear all</button></div>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
         <div class="chart-panel">
@@ -226,8 +240,8 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
+<tr id="row-0" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
 <td>2025-10-18</td>
 <td>$300</td>
 <td><span class="pill">closed</span></td>
@@ -238,12 +252,12 @@ td.status-reason { overflow: hidden; }
 <td>ekman321</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.6% below market)</td>
+<td><span id="deal-score-0">Closed: Fair (1.6% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-mkii.96960/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2025-09-26</td>
 <td>$300</td>
 <td><span class="pill">closed</span></td>
@@ -254,12 +268,12 @@ td.status-reason { overflow: hidden; }
 <td>DisgorgeMexico</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.6% below market)</td>
+<td><span id="deal-score-1">Closed: Fair (1.6% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-mkii.95783/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
+<tr id="row-2" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" checked></td>
 <td>2025-06-03</td>
 <td>$330</td>
 <td><span class="pill">closed</span></td>
@@ -270,12 +284,12 @@ td.status-reason { overflow: hidden; }
 <td>Stzz</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (8.3% above market)</td>
+<td><span id="deal-score-2">Closed: Fair (8.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-est.89506/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" checked></td>
+<tr id="row-3" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="headfi" checked></td>
 <td>2025-04-25</td>
 <td>$300</td>
 <td><span class="pill">closed</span></td>
@@ -286,12 +300,12 @@ td.status-reason { overflow: hidden; }
 <td>Markmurd</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.6% below market)</td>
+<td><span id="deal-score-3">Closed: Fair (1.6% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-mkii.87195/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-4" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="4" checked></td>
+<tr id="row-4" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="headfi" checked></td>
 <td>2025-04-18</td>
 <td>$333</td>
 <td><span class="pill">closed</span></td>
@@ -302,11 +316,11 @@ td.status-reason { overflow: hidden; }
 <td>osanchez4808</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (9.3% above market)</td>
+<td><span id="deal-score-4">Closed: Fair (9.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-est.86839/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-5" class="excluded">
+<tr id="row-5" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2025-03-02</td>
 <td></td>
@@ -318,12 +332,12 @@ td.status-reason { overflow: hidden; }
 <td>OrionDayz</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-5">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.84168/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-6" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="6" ></td>
+<tr id="row-6" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="headfi" ></td>
 <td>2025-01-20</td>
 <td>$475</td>
 <td><span class="pill">closed</span></td>
@@ -334,12 +348,12 @@ td.status-reason { overflow: hidden; }
 <td>Markmurd</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (55.9% above market)</td>
+<td><span id="deal-score-6">Closed: Overpriced (55.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-est-iem-mint.81913/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-7" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="7" checked></td>
+<tr id="row-7" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="7" data-source="headfi" checked></td>
 <td>2025-01-15</td>
 <td>$299</td>
 <td><span class="pill">closed</span></td>
@@ -350,12 +364,12 @@ td.status-reason { overflow: hidden; }
 <td>harshkamboj</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.9% below market)</td>
+<td><span id="deal-score-7">Closed: Fair (1.9% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/price-drop-dunu-sa6.81630/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-8" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="8" checked></td>
+<tr id="row-8" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="8" data-source="headfi" checked></td>
 <td>2024-11-21</td>
 <td>$240</td>
 <td><span class="pill">closed</span></td>
@@ -366,12 +380,12 @@ td.status-reason { overflow: hidden; }
 <td>Sitilac</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Great Deal (21.2% below market)</td>
+<td><span id="deal-score-8">Closed: Great Deal (21.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pending-sale-dunu-sa6.78566/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-9" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="9" checked></td>
+<tr id="row-9" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="9" data-source="headfi" checked></td>
 <td>2024-09-17</td>
 <td>$300</td>
 <td><span class="pill">closed</span></td>
@@ -382,12 +396,12 @@ td.status-reason { overflow: hidden; }
 <td>Erkil</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.6% below market)</td>
+<td><span id="deal-score-9">Closed: Fair (1.6% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.74950/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-10" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="10" checked></td>
+<tr id="row-10" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="10" data-source="headfi" checked></td>
 <td>2024-09-15</td>
 <td>$285</td>
 <td><span class="pill">closed</span></td>
@@ -398,12 +412,12 @@ td.status-reason { overflow: hidden; }
 <td>NeedtoBurn</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.5% below market)</td>
+<td><span id="deal-score-10">Closed: Fair (6.5% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-og.74902/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-11" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="11" checked></td>
+<tr id="row-11" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="11" data-source="headfi" checked></td>
 <td>2024-08-20</td>
 <td>$300</td>
 <td><span class="pill">closed</span></td>
@@ -414,12 +428,12 @@ td.status-reason { overflow: hidden; }
 <td>ramkvp</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.6% below market)</td>
+<td><span id="deal-score-11">Closed: Fair (1.6% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-og.73442/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-12" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="12" checked></td>
+<tr id="row-12" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="12" data-source="headfi" checked></td>
 <td>2024-05-18</td>
 <td>$350</td>
 <td><span class="pill">closed</span></td>
@@ -430,12 +444,12 @@ td.status-reason { overflow: hidden; }
 <td>PineappleButtonUp</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.9% above market)</td>
+<td><span id="deal-score-12">Closed: High (14.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-mkii.68234/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-13" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="13" checked></td>
+<tr id="row-13" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="13" data-source="headfi" checked></td>
 <td>2024-02-12</td>
 <td>$415</td>
 <td><span class="pill">closed</span></td>
@@ -446,12 +460,12 @@ td.status-reason { overflow: hidden; }
 <td>Gladly</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (36.2% above market)</td>
+<td><span id="deal-score-13">Closed: Overpriced (36.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-ultras-blue-faceplate-no-original-packaging-cable.62463/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-14" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="14" checked></td>
+<tr id="row-14" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="14" data-source="headfi" checked></td>
 <td>2023-11-06</td>
 <td>$275</td>
 <td><span class="pill">closed</span></td>
@@ -462,12 +476,12 @@ td.status-reason { overflow: hidden; }
 <td>JAYAUDIO88</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (9.8% below market)</td>
+<td><span id="deal-score-14">Closed: Fair (9.8% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/og-dunu-sa6.57186/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-15" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="15" checked></td>
+<tr id="row-15" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="15" data-source="headfi" checked></td>
 <td>2023-09-20</td>
 <td>$275</td>
 <td><span class="pill">closed</span></td>
@@ -478,12 +492,12 @@ td.status-reason { overflow: hidden; }
 <td>inventionlws</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (9.8% below market)</td>
+<td><span id="deal-score-15">Closed: Fair (9.8% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/price-dropped-dunu-sa6-mk1.54688/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-16" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="16" checked></td>
+<tr id="row-16" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="16" data-source="headfi" checked></td>
 <td>2023-09-09</td>
 <td>$480</td>
 <td><span class="pill">closed</span></td>
@@ -494,12 +508,12 @@ td.status-reason { overflow: hidden; }
 <td>Zeno26</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (57.5% above market)</td>
+<td><span id="deal-score-16">Closed: Overpriced (57.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/price-drop-dunu-sa6-mk-ii.54033/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-17" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="17" checked></td>
+<tr id="row-17" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="17" data-source="headfi" checked></td>
 <td>2023-08-28</td>
 <td>$320</td>
 <td><span class="pill">closed</span></td>
@@ -510,12 +524,12 @@ td.status-reason { overflow: hidden; }
 <td>JayDM</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (5.0% above market)</td>
+<td><span id="deal-score-17">Closed: Fair (5.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-mk1-iems.53341/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-18" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="18" checked></td>
+<tr id="row-18" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="18" data-source="headfi" checked></td>
 <td>2023-08-24</td>
 <td>$295</td>
 <td><span class="pill">closed</span></td>
@@ -526,12 +540,12 @@ td.status-reason { overflow: hidden; }
 <td>trojan2900</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (3.2% below market)</td>
+<td><span id="deal-score-18">Closed: Fair (3.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.53119/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-19" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="19" checked></td>
+<tr id="row-19" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="19" data-source="headfi" checked></td>
 <td>2023-08-10</td>
 <td>$350</td>
 <td><span class="pill">closed</span></td>
@@ -542,12 +556,12 @@ td.status-reason { overflow: hidden; }
 <td>Gromu</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.9% above market)</td>
+<td><span id="deal-score-19">Closed: High (14.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.52380/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-20" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="20" checked></td>
+<tr id="row-20" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="20" data-source="headfi" checked></td>
 <td>2023-08-01</td>
 <td>$325</td>
 <td><span class="pill">closed</span></td>
@@ -558,12 +572,12 @@ td.status-reason { overflow: hidden; }
 <td>buffalomatt</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.6% above market)</td>
+<td><span id="deal-score-20">Closed: Fair (6.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-mk1.51908/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-21" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="21" checked></td>
+<tr id="row-21" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="21" data-source="headfi" checked></td>
 <td>2023-06-01</td>
 <td>$525</td>
 <td><span class="pill">closed</span></td>
@@ -574,12 +588,12 @@ td.status-reason { overflow: hidden; }
 <td>Retrorai</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (72.3% above market)</td>
+<td><span id="deal-score-21">Closed: Overpriced (72.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-mkii.48623/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-22" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="22" checked></td>
+<tr id="row-22" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="22" data-source="headfi" checked></td>
 <td>2023-04-26</td>
 <td>$425</td>
 <td><span class="pill">closed</span></td>
@@ -590,12 +604,12 @@ td.status-reason { overflow: hidden; }
 <td>theflyingtoad</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (39.5% above market)</td>
+<td><span id="deal-score-22">Closed: Overpriced (39.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-purple.46603/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-23" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="23" checked></td>
+<tr id="row-23" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="23" data-source="headfi" checked></td>
 <td>2023-03-28</td>
 <td>$350</td>
 <td><span class="pill">closed</span></td>
@@ -606,12 +620,12 @@ td.status-reason { overflow: hidden; }
 <td>listen4joy</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.9% above market)</td>
+<td><span id="deal-score-23">Closed: High (14.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.44557/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-24" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="24" checked></td>
+<tr id="row-24" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="24" data-source="headfi" checked></td>
 <td>2023-03-04</td>
 <td>$360</td>
 <td><span class="pill">closed</span></td>
@@ -622,12 +636,12 @@ td.status-reason { overflow: hidden; }
 <td>Krekmate</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (18.1% above market)</td>
+<td><span id="deal-score-24">Closed: High (18.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.42889/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-25" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="25" ></td>
+<tr id="row-25" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="25" data-source="headfi" ></td>
 <td>2023-01-17</td>
 <td>$385</td>
 <td><span class="pill">closed</span></td>
@@ -638,12 +652,12 @@ td.status-reason { overflow: hidden; }
 <td>mcmyers</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (26.3% above market)</td>
+<td><span id="deal-score-25">Closed: Overpriced (26.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-with-extra-cable.39907/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-26" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="26" checked></td>
+<tr id="row-26" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="26" data-source="headfi" checked></td>
 <td>2022-09-20</td>
 <td>$420</td>
 <td><span class="pill">closed</span></td>
@@ -654,12 +668,12 @@ td.status-reason { overflow: hidden; }
 <td>jclyle</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (37.8% above market)</td>
+<td><span id="deal-score-26">Closed: Overpriced (37.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.33192/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-27" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="27" checked></td>
+<tr id="row-27" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="27" data-source="headfi" checked></td>
 <td>2022-07-18</td>
 <td>$425</td>
 <td><span class="pill">closed</span></td>
@@ -670,12 +684,12 @@ td.status-reason { overflow: hidden; }
 <td>Olumm</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (39.5% above market)</td>
+<td><span id="deal-score-27">Closed: Overpriced (39.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.29558/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-28" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="28" checked></td>
+<tr id="row-28" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="28" data-source="headfi" checked></td>
 <td>2022-07-09</td>
 <td>$409</td>
 <td><span class="pill">closed</span></td>
@@ -686,12 +700,12 @@ td.status-reason { overflow: hidden; }
 <td>vikinguy</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (34.2% above market)</td>
+<td><span id="deal-score-28">Closed: Overpriced (34.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-priority-shipping.28981/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-29" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="29" checked></td>
+<tr id="row-29" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="29" data-source="headfi" checked></td>
 <td>2022-06-22</td>
 <td>$445</td>
 <td><span class="pill">closed</span></td>
@@ -702,12 +716,12 @@ td.status-reason { overflow: hidden; }
 <td>04gto</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (46.0% above market)</td>
+<td><span id="deal-score-29">Closed: Overpriced (46.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.27987/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-30" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="30" checked></td>
+<tr id="row-30" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="30" data-source="headfi" checked></td>
 <td>2022-06-11</td>
 <td>$400</td>
 <td><span class="pill">closed</span></td>
@@ -718,12 +732,12 @@ td.status-reason { overflow: hidden; }
 <td>Ruprit</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (31.3% above market)</td>
+<td><span id="deal-score-30">Closed: Overpriced (31.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.27374/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-31" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="31" checked></td>
+<tr id="row-31" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="31" data-source="headfi" checked></td>
 <td>2022-05-18</td>
 <td>$450</td>
 <td><span class="pill">closed</span></td>
@@ -734,12 +748,12 @@ td.status-reason { overflow: hidden; }
 <td>drewbadour</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (47.7% above market)</td>
+<td><span id="deal-score-31">Closed: Overpriced (47.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.25968/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-32" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="32" checked></td>
+<tr id="row-32" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="32" data-source="headfi" checked></td>
 <td>2022-02-05</td>
 <td>$400</td>
 <td><span class="pill">closed</span></td>
@@ -750,12 +764,12 @@ td.status-reason { overflow: hidden; }
 <td>declinedesign</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (31.3% above market)</td>
+<td><span id="deal-score-32">Closed: Overpriced (31.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-like-new.19636/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-33" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="33" checked></td>
+<tr id="row-33" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="33" data-source="headfi" checked></td>
 <td>2022-01-30</td>
 <td>$380</td>
 <td><span class="pill">closed</span></td>
@@ -766,12 +780,12 @@ td.status-reason { overflow: hidden; }
 <td>Garney</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (24.7% above market)</td>
+<td><span id="deal-score-33">Closed: High (24.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.19213/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-34" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="34" checked></td>
+<tr id="row-34" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="34" data-source="headfi" checked></td>
 <td>2021-12-18</td>
 <td>$450</td>
 <td><span class="pill">closed</span></td>
@@ -782,12 +796,12 @@ td.status-reason { overflow: hidden; }
 <td>kadinh</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (47.7% above market)</td>
+<td><span id="deal-score-34">Closed: Overpriced (47.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.16561/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-35" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="35" checked></td>
+<tr id="row-35" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="35" data-source="headfi" checked></td>
 <td>2021-12-03</td>
 <td>$430</td>
 <td><span class="pill">closed</span></td>
@@ -798,12 +812,12 @@ td.status-reason { overflow: hidden; }
 <td>thomasu</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (41.1% above market)</td>
+<td><span id="deal-score-35">Closed: Overpriced (41.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-final-e-tip-set.15642/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-36" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="36" ></td>
+<tr id="row-36" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="36" data-source="headfi" ></td>
 <td>2021-11-13</td>
 <td>$425</td>
 <td><span class="pill">closed</span></td>
@@ -814,12 +828,12 @@ td.status-reason { overflow: hidden; }
 <td>imnostatic</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (39.5% above market)</td>
+<td><span id="deal-score-36">Closed: Overpriced (39.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sold-dunu-sa6-iem-like-new-extra-cable-price-drop.14551/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-37" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="37" ></td>
+<tr id="row-37" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="37" data-source="headfi" ></td>
 <td>2021-11-10</td>
 <td>$425</td>
 <td><span class="pill">closed</span></td>
@@ -830,12 +844,12 @@ td.status-reason { overflow: hidden; }
 <td>thomasu</td>
 <td>1</td>
 <td>1</td>
-<td>Closed: Overpriced (39.5% above market)</td>
+<td><span id="deal-score-37">Closed: Overpriced (39.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6-like-new.14381/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-38" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="38" checked></td>
+<tr id="row-38" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="38" data-source="headfi" checked></td>
 <td>2021-10-15</td>
 <td>$410</td>
 <td><span class="pill">closed</span></td>
@@ -846,12 +860,12 @@ td.status-reason { overflow: hidden; }
 <td>koopig</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (34.5% above market)</td>
+<td><span id="deal-score-38">Closed: Overpriced (34.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.12929/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-39" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="39" checked></td>
+<tr id="row-39" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="39" data-source="headfi" checked></td>
 <td>2021-10-04</td>
 <td>$420</td>
 <td><span class="pill">closed</span></td>
@@ -862,12 +876,12 @@ td.status-reason { overflow: hidden; }
 <td>fabio19</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (37.8% above market)</td>
+<td><span id="deal-score-39">Closed: Overpriced (37.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.12315/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-40" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="40" checked></td>
+<tr id="row-40" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="40" data-source="headfi" checked></td>
 <td>2021-09-14</td>
 <td>$460</td>
 <td><span class="pill">closed</span></td>
@@ -878,11 +892,11 @@ td.status-reason { overflow: hidden; }
 <td>Aenemo</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (50.9% above market)</td>
+<td><span id="deal-score-40">Closed: Overpriced (50.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.11236/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-41" class="excluded">
+<tr id="row-41" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2021-09-04</td>
 <td></td>
@@ -894,12 +908,12 @@ td.status-reason { overflow: hidden; }
 <td>Pete7</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-41">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.10633/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-42" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="42" checked></td>
+<tr id="row-42" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="42" data-source="headfi" checked></td>
 <td>2021-08-17</td>
 <td>$420</td>
 <td><span class="pill">closed</span></td>
@@ -910,12 +924,12 @@ td.status-reason { overflow: hidden; }
 <td>Eight</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (37.8% above market)</td>
+<td><span id="deal-score-42">Closed: Overpriced (37.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/fs-us-ga-dunu-sa6.9549/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-43" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="43" checked></td>
+<tr id="row-43" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="43" data-source="headfi" checked></td>
 <td>2021-05-18</td>
 <td>$400</td>
 <td><span class="pill">closed</span></td>
@@ -926,12 +940,12 @@ td.status-reason { overflow: hidden; }
 <td>SteelCookie</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (31.3% above market)</td>
+<td><span id="deal-score-43">Closed: Overpriced (31.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.4765/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-44" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="44" checked></td>
+<tr id="row-44" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="44" data-source="headfi" checked></td>
 <td>2021-05-16</td>
 <td>$365</td>
 <td><span class="pill">closed</span></td>
@@ -942,12 +956,12 @@ td.status-reason { overflow: hidden; }
 <td>morndewey</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (19.8% above market)</td>
+<td><span id="deal-score-44">Closed: High (19.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.4641/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-45" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="45" checked></td>
+<tr id="row-45" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="45" data-source="headfi" checked></td>
 <td>2021-04-06</td>
 <td>$440</td>
 <td><span class="pill">closed</span></td>
@@ -958,12 +972,12 @@ td.status-reason { overflow: hidden; }
 <td>williamVT</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (44.4% above market)</td>
+<td><span id="deal-score-45">Closed: Overpriced (44.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.2138/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-46" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="46" checked></td>
+<tr id="row-46" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="46" data-source="headfi" checked></td>
 <td>2021-04-05</td>
 <td>$430</td>
 <td><span class="pill">closed</span></td>
@@ -974,12 +988,12 @@ td.status-reason { overflow: hidden; }
 <td>thesheik137</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (41.1% above market)</td>
+<td><span id="deal-score-46">Closed: Overpriced (41.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.2040/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-47" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="47" checked></td>
+<tr id="row-47" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="47" data-source="headfi" checked></td>
 <td>2021-03-27</td>
 <td>$450</td>
 <td><span class="pill">closed</span></td>
@@ -990,12 +1004,12 @@ td.status-reason { overflow: hidden; }
 <td>Dash</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (47.7% above market)</td>
+<td><span id="deal-score-47">Closed: Overpriced (47.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.1561/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-48" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="48" checked></td>
+<tr id="row-48" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="48" data-source="headfi" checked></td>
 <td>2021-03-09</td>
 <td>$420</td>
 <td><span class="pill">closed</span></td>
@@ -1006,11 +1020,11 @@ td.status-reason { overflow: hidden; }
 <td>andra555</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (37.8% above market)</td>
+<td><span id="deal-score-48">Closed: Overpriced (37.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-sa6.419/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-49" class="excluded">
+<tr id="row-49" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td></td>
 <td></td>
@@ -1022,22 +1036,99 @@ td.status-reason { overflow: hidden; }
 <td>unknown</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-49">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/canjam-socal-sale-heavy-discounts-heddphone-two-dunu-sa6-ibassodx300max-more.75381/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Sold: Dunu SA6 MKII", "url": "https://www.head-fi.org/classifieds/dunu-sa6-mkii.96960/", "price_num": 300.0, "date_ms": 1760745600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Closed: Dunu Sa6 MKII", "url": "https://www.head-fi.org/classifieds/dunu-sa6-mkii.95783/", "price_num": 300.0, "date_ms": 1758844800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: DUNU - SA6 EST", "url": "https://www.head-fi.org/classifieds/dunu-sa6-est.89506/", "price_num": 330.0, "date_ms": 1748908800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Closed: DUNU SA6 MKII", "url": "https://www.head-fi.org/classifieds/dunu-sa6-mkii.87195/", "price_num": 300.0, "date_ms": 1745539200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Dunu SA6 EST", "url": "https://www.head-fi.org/classifieds/dunu-sa6-est.86839/", "price_num": 333.0, "date_ms": 1744934400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.84168/", "price_num": null, "date_ms": 1740873600000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 6, "title": "Closed: DUNU SA6 EST IEM - Mint", "url": "https://www.head-fi.org/classifieds/dunu-sa6-est-iem-mint.81913/", "price_num": 475.0, "date_ms": 1737331200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 7, "title": "Sold: Price Drop: Dunu SA6", "url": "https://www.head-fi.org/classifieds/price-drop-dunu-sa6.81630/", "price_num": 299.0, "date_ms": 1736899200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: *Pending Sale* Dunu SA6", "url": "https://www.head-fi.org/classifieds/pending-sale-dunu-sa6.78566/", "price_num": 240.0, "date_ms": 1732147200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Traded: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.74950/", "price_num": 300.0, "date_ms": 1726531200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Dunu SA6 OG", "url": "https://www.head-fi.org/classifieds/dunu-sa6-og.74902/", "price_num": 285.0, "date_ms": 1726358400000, "listing_status": "closed", "condition_text": "like new, excellent, used, open box", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Closed: Dunu SA6 OG", "url": "https://www.head-fi.org/classifieds/dunu-sa6-og.73442/", "price_num": 300.0, "date_ms": 1724112000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Closed: DUNU SA6 MKII", "url": "https://www.head-fi.org/classifieds/dunu-sa6-mkii.68234/", "price_num": 350.0, "date_ms": 1715990400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Closed: Dunu SA6 Ultras Blue Faceplate (No original packaging/Cable)", "url": "https://www.head-fi.org/classifieds/dunu-sa6-ultras-blue-faceplate-no-original-packaging-cable.62463/", "price_num": 415.0, "date_ms": 1707696000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Closed: OG Dunu SA6", "url": "https://www.head-fi.org/classifieds/og-dunu-sa6.57186/", "price_num": 275.0, "date_ms": 1699228800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: [price dropped] Dunu SA6 MK1", "url": "https://www.head-fi.org/classifieds/price-dropped-dunu-sa6-mk1.54688/", "price_num": 275.0, "date_ms": 1695168000000, "listing_status": "closed", "condition_text": "good condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Closed: (PRICE DROP) Dunu Sa6 MK II", "url": "https://www.head-fi.org/classifieds/price-drop-dunu-sa6-mk-ii.54033/", "price_num": 480.0, "date_ms": 1694217600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Closed: Dunu SA6 MK1 IEMs", "url": "https://www.head-fi.org/classifieds/dunu-sa6-mk1-iems.53341/", "price_num": 320.0, "date_ms": 1693180800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Closed: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.53119/", "price_num": 295.0, "date_ms": 1692835200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Closed: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.52380/", "price_num": 350.0, "date_ms": 1691625600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Dunu SA6 MK1", "url": "https://www.head-fi.org/classifieds/dunu-sa6-mk1.51908/", "price_num": 325.0, "date_ms": 1690848000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Closed: Dunu SA6 MKII", "url": "https://www.head-fi.org/classifieds/dunu-sa6-mkii.48623/", "price_num": 525.0, "date_ms": 1685577600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Closed: DUNU SA6 (Purple)", "url": "https://www.head-fi.org/classifieds/dunu-sa6-purple.46603/", "price_num": 425.0, "date_ms": 1682467200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.44557/", "price_num": 350.0, "date_ms": 1679961600000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Traded: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.42889/", "price_num": 360.0, "date_ms": 1677888000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: DUNU SA6 with Extra Cable", "url": "https://www.head-fi.org/classifieds/dunu-sa6-with-extra-cable.39907/", "price_num": 385.0, "date_ms": 1673913600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: DUNU SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.33192/", "price_num": 420.0, "date_ms": 1663632000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.29558/", "price_num": 425.0, "date_ms": 1658102400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Sold: Dunu SA6 **Priority Shipping**", "url": "https://www.head-fi.org/classifieds/dunu-sa6-priority-shipping.28981/", "price_num": 409.0, "date_ms": 1657324800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Sold: DUNU SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.27987/", "price_num": 445.0, "date_ms": 1655856000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.27374/", "price_num": 400.0, "date_ms": 1654905600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Closed: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.25968/", "price_num": 450.0, "date_ms": 1652832000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 32, "title": "Sold: Dunu SA6 Like new!", "url": "https://www.head-fi.org/classifieds/dunu-sa6-like-new.19636/", "price_num": 400.0, "date_ms": 1644019200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 33, "title": "Sold: DUNU SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.19213/", "price_num": 380.0, "date_ms": 1643500800000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 34, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.16561/", "price_num": 450.0, "date_ms": 1639785600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 35, "title": "Sold: Dunu SA6 + Final E Tip Set", "url": "https://www.head-fi.org/classifieds/dunu-sa6-final-e-tip-set.15642/", "price_num": 430.0, "date_ms": 1638489600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 36, "title": "Closed: SOLD Dunu SA6 IEM - like new, extra cable - price drop", "url": "https://www.head-fi.org/classifieds/sold-dunu-sa6-iem-like-new-extra-cable-price-drop.14551/", "price_num": 425.0, "date_ms": 1636761600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 37, "title": "Closed: Dunu SA6 (Like New)", "url": "https://www.head-fi.org/classifieds/dunu-sa6-like-new.14381/", "price_num": 425.0, "date_ms": 1636502400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 38, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.12929/", "price_num": 410.0, "date_ms": 1634256000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 39, "title": "Sold: DUNU SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.12315/", "price_num": 420.0, "date_ms": 1633305600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 40, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.11236/", "price_num": 460.0, "date_ms": 1631577600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 41, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.10633/", "price_num": null, "date_ms": 1630713600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 42, "title": "Sold: FS [US-GA]: Dunu SA6", "url": "https://www.head-fi.org/classifieds/fs-us-ga-dunu-sa6.9549/", "price_num": 420.0, "date_ms": 1629158400000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 43, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.4765/", "price_num": 400.0, "date_ms": 1621296000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 44, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.4641/", "price_num": 365.0, "date_ms": 1621123200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 45, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.2138/", "price_num": 440.0, "date_ms": 1617667200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 46, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.2040/", "price_num": 430.0, "date_ms": 1617580800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 47, "title": "Closed: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.1561/", "price_num": 450.0, "date_ms": 1616803200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 48, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.419/", "price_num": 420.0, "date_ms": 1615248000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 49, "title": "Closed: CanJam SoCal Sale Heavy discounts! HEDDphone Two, Dunu SA6, IBassoDX300MAX, & More", "url": "https://www.head-fi.org/classifieds/canjam-socal-sale-heavy-discounts-heddphone-two-dunu-sa6-ibassodx300max-more.75381/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Sold: Dunu SA6 MKII", "url": "https://www.head-fi.org/classifieds/dunu-sa6-mkii.96960/", "price_num": 300.0, "date_ms": 1760745600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Closed: Dunu Sa6 MKII", "url": "https://www.head-fi.org/classifieds/dunu-sa6-mkii.95783/", "price_num": 300.0, "date_ms": 1758844800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: DUNU - SA6 EST", "url": "https://www.head-fi.org/classifieds/dunu-sa6-est.89506/", "price_num": 330.0, "date_ms": 1748908800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Closed: DUNU SA6 MKII", "url": "https://www.head-fi.org/classifieds/dunu-sa6-mkii.87195/", "price_num": 300.0, "date_ms": 1745539200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Dunu SA6 EST", "url": "https://www.head-fi.org/classifieds/dunu-sa6-est.86839/", "price_num": 333.0, "date_ms": 1744934400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.84168/", "price_num": null, "date_ms": 1740873600000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 6, "title": "Closed: DUNU SA6 EST IEM - Mint", "url": "https://www.head-fi.org/classifieds/dunu-sa6-est-iem-mint.81913/", "price_num": 475.0, "date_ms": 1737331200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 7, "title": "Sold: Price Drop: Dunu SA6", "url": "https://www.head-fi.org/classifieds/price-drop-dunu-sa6.81630/", "price_num": 299.0, "date_ms": 1736899200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: *Pending Sale* Dunu SA6", "url": "https://www.head-fi.org/classifieds/pending-sale-dunu-sa6.78566/", "price_num": 240.0, "date_ms": 1732147200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Traded: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.74950/", "price_num": 300.0, "date_ms": 1726531200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Dunu SA6 OG", "url": "https://www.head-fi.org/classifieds/dunu-sa6-og.74902/", "price_num": 285.0, "date_ms": 1726358400000, "listing_status": "closed", "condition_text": "like new, excellent, used, open box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Closed: Dunu SA6 OG", "url": "https://www.head-fi.org/classifieds/dunu-sa6-og.73442/", "price_num": 300.0, "date_ms": 1724112000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Closed: DUNU SA6 MKII", "url": "https://www.head-fi.org/classifieds/dunu-sa6-mkii.68234/", "price_num": 350.0, "date_ms": 1715990400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Closed: Dunu SA6 Ultras Blue Faceplate (No original packaging/Cable)", "url": "https://www.head-fi.org/classifieds/dunu-sa6-ultras-blue-faceplate-no-original-packaging-cable.62463/", "price_num": 415.0, "date_ms": 1707696000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Closed: OG Dunu SA6", "url": "https://www.head-fi.org/classifieds/og-dunu-sa6.57186/", "price_num": 275.0, "date_ms": 1699228800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: [price dropped] Dunu SA6 MK1", "url": "https://www.head-fi.org/classifieds/price-dropped-dunu-sa6-mk1.54688/", "price_num": 275.0, "date_ms": 1695168000000, "listing_status": "closed", "condition_text": "good condition, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Closed: (PRICE DROP) Dunu Sa6 MK II", "url": "https://www.head-fi.org/classifieds/price-drop-dunu-sa6-mk-ii.54033/", "price_num": 480.0, "date_ms": 1694217600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Closed: Dunu SA6 MK1 IEMs", "url": "https://www.head-fi.org/classifieds/dunu-sa6-mk1-iems.53341/", "price_num": 320.0, "date_ms": 1693180800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Closed: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.53119/", "price_num": 295.0, "date_ms": 1692835200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Closed: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.52380/", "price_num": 350.0, "date_ms": 1691625600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Dunu SA6 MK1", "url": "https://www.head-fi.org/classifieds/dunu-sa6-mk1.51908/", "price_num": 325.0, "date_ms": 1690848000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Closed: Dunu SA6 MKII", "url": "https://www.head-fi.org/classifieds/dunu-sa6-mkii.48623/", "price_num": 525.0, "date_ms": 1685577600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Closed: DUNU SA6 (Purple)", "url": "https://www.head-fi.org/classifieds/dunu-sa6-purple.46603/", "price_num": 425.0, "date_ms": 1682467200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.44557/", "price_num": 350.0, "date_ms": 1679961600000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Traded: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.42889/", "price_num": 360.0, "date_ms": 1677888000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: DUNU SA6 with Extra Cable", "url": "https://www.head-fi.org/classifieds/dunu-sa6-with-extra-cable.39907/", "price_num": 385.0, "date_ms": 1673913600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: DUNU SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.33192/", "price_num": 420.0, "date_ms": 1663632000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.29558/", "price_num": 425.0, "date_ms": 1658102400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Sold: Dunu SA6 **Priority Shipping**", "url": "https://www.head-fi.org/classifieds/dunu-sa6-priority-shipping.28981/", "price_num": 409.0, "date_ms": 1657324800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Sold: DUNU SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.27987/", "price_num": 445.0, "date_ms": 1655856000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.27374/", "price_num": 400.0, "date_ms": 1654905600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Closed: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.25968/", "price_num": 450.0, "date_ms": 1652832000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 32, "title": "Sold: Dunu SA6 Like new!", "url": "https://www.head-fi.org/classifieds/dunu-sa6-like-new.19636/", "price_num": 400.0, "date_ms": 1644019200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 33, "title": "Sold: DUNU SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.19213/", "price_num": 380.0, "date_ms": 1643500800000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 34, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.16561/", "price_num": 450.0, "date_ms": 1639785600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 35, "title": "Sold: Dunu SA6 + Final E Tip Set", "url": "https://www.head-fi.org/classifieds/dunu-sa6-final-e-tip-set.15642/", "price_num": 430.0, "date_ms": 1638489600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 36, "title": "Closed: SOLD Dunu SA6 IEM - like new, extra cable - price drop", "url": "https://www.head-fi.org/classifieds/sold-dunu-sa6-iem-like-new-extra-cable-price-drop.14551/", "price_num": 425.0, "date_ms": 1636761600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 37, "title": "Closed: Dunu SA6 (Like New)", "url": "https://www.head-fi.org/classifieds/dunu-sa6-like-new.14381/", "price_num": 425.0, "date_ms": 1636502400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 38, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.12929/", "price_num": 410.0, "date_ms": 1634256000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 39, "title": "Sold: DUNU SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.12315/", "price_num": 420.0, "date_ms": 1633305600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 40, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.11236/", "price_num": 460.0, "date_ms": 1631577600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 41, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.10633/", "price_num": null, "date_ms": 1630713600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 42, "title": "Sold: FS [US-GA]: Dunu SA6", "url": "https://www.head-fi.org/classifieds/fs-us-ga-dunu-sa6.9549/", "price_num": 420.0, "date_ms": 1629158400000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 43, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.4765/", "price_num": 400.0, "date_ms": 1621296000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 44, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.4641/", "price_num": 365.0, "date_ms": 1621123200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 45, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.2138/", "price_num": 440.0, "date_ms": 1617667200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 46, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.2040/", "price_num": 430.0, "date_ms": 1617580800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 47, "title": "Closed: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.1561/", "price_num": 450.0, "date_ms": 1616803200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 48, "title": "Sold: Dunu SA6", "url": "https://www.head-fi.org/classifieds/dunu-sa6.419/", "price_num": 420.0, "date_ms": 1615248000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 49, "title": "Closed: CanJam SoCal Sale Heavy discounts! HEDDphone Two, Dunu SA6, IBassoDX300MAX, & More", "url": "https://www.head-fi.org/classifieds/canjam-socal-sale-heavy-discounts-heddphone-two-dunu-sa6-ibassodx300max-more.75381/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 550.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
+let currentMarketplaceSource = "both";
+
+function normalizeMarketplaceSource(platform) {
+    const text = String(platform || "").toLowerCase().trim();
+    if (["reddit", "reddit_rss", "avexchange", "r/avexchange"].includes(text)) return "reddit";
+    if (["headfi", "head-fi", "head-fi classifieds"].includes(text)) return "headfi";
+    if (["manual", "manual_csv", "manual input"].includes(text)) return "manual";
+    return "other";
+}
+function sourceMatches(row) {
+    return currentMarketplaceSource === "both" || row.source_key === currentMarketplaceSource;
+}
+function getSourceRows() {
+    return allRows.filter(sourceMatches);
+}
+function safeLocalStorageGet(key) {
+    try { return window.localStorage.getItem(key); } catch (error) { return null; }
+}
+function safeLocalStorageSet(key, value) {
+    try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function getInitialMarketplaceSource() {
+    const params = new URLSearchParams(window.location.search);
+    const querySource = String(params.get("source") || "").toLowerCase();
+    if (["both", "reddit", "headfi"].includes(querySource)) return querySource;
+
+    const storedSource = String(safeLocalStorageGet("iemMarketplaceSource") || "").toLowerCase();
+    if (["both", "reddit", "headfi"].includes(storedSource)) return storedSource;
+
+    return "both";
+}
+function updateCurrentPageSourceQuery(source) {
+    try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("source", source);
+        window.history.replaceState({}, "", url);
+    } catch (error) {}
+}
+function setMarketplaceSource(source) {
+    if (!["both", "reddit", "headfi"].includes(source)) source = "both";
+    currentMarketplaceSource = source;
+    safeLocalStorageSet("iemMarketplaceSource", source);
+    updateCurrentPageSourceQuery(source);
+
+    document.querySelectorAll(".source-btn").forEach(function(button) {
+        button.classList.toggle("active", button.getAttribute("data-source") === source);
+    });
+
+    allRows.forEach(function(row) {
+        const tableRow = document.getElementById("row-" + row.row_id);
+        if (tableRow) tableRow.classList.toggle("source-hidden", !sourceMatches(row));
+    });
+
+    const backLink = document.getElementById("back-link");
+    if (backLink) backLink.href = "index.html?source=" + encodeURIComponent(source);
+
+    updateStatsAndChart();
+}
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
 function moneyRound(value) { return money(value); }
 function dateLabel(value) { if (value === null || value === undefined || Number.isNaN(value)) return ""; return new Date(value).toLocaleDateString(); }
 function pct(value) { if (value === null || value === undefined || Number.isNaN(value)) return "N/A"; return Number(value).toLocaleString(undefined, {maximumFractionDigits: 1}) + "%"; }
 function median(values) { if (!values.length) return null; const sorted = [...values].sort((a,b)=>a-b); const mid = Math.floor(sorted.length/2); return sorted.length % 2 === 0 ? (sorted[mid-1] + sorted[mid]) / 2 : sorted[mid]; }
 function average(values) { if (!values.length) return null; return values.reduce((a,b)=>a+b, 0) / values.length; }
-const staleUnsoldMarketDays = 60;
+function dealScoreDisplay(row, marketValue) {
+    const price = Number(row.price_num);
+    const market = Number(marketValue);
+    if (!Number.isFinite(price) || price <= 0 || !Number.isFinite(market) || market <= 0) return "N/A";
+
+    const deltaPct = ((price - market) / market) * 100;
+    let label = "Fair";
+    if (deltaPct <= -20) label = "Great Deal";
+    else if (deltaPct <= -10) label = "Good Deal";
+    else if (deltaPct <= 10) label = "Fair";
+    else if (deltaPct <= 25) label = "High";
+    else label = "Overpriced";
+
+    const direction = deltaPct < 0 ? "below" : "above";
+    const detail = Math.abs(deltaPct).toFixed(1) + "% " + direction + " market";
+    return String(row.listing_status || "").toLowerCase() === "closed"
+        ? "Closed: " + label + " (" + detail + ")"
+        : label + " (" + detail + ")";
+}
+const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
@@ -1059,9 +1150,11 @@ function isStaleUnsoldCeilingRow(row) {
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
     const statusComment = String(row.status_comment || "").toLowerCase().trim();
     const staleMarker = status === "stale" || status === "stale_unsold" || closedReason.startsWith("stale_unsold") || closedReason === "stale_active_timeout" || statusComment.includes("stale unsold") || statusComment.includes("lister never updated");
-    if (staleMarker) return true;
-
     const ageDays = rowAgeDays(row);
+    // Older checker runs may already have written a stale marker using a
+    // shorter timeout. Do not use it as a ceiling until the current 180d
+    // threshold is reached. Preserve explicit stale rows with no usable date.
+    if (staleMarker) return ageDays === null || ageDays >= staleUnsoldMarketDays;
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
@@ -1286,13 +1379,27 @@ function calculateLiquidityConfidenceFromRows(rows) {
 }
 function getSelectedRows() {
     const selectedIds = new Set();
+
     document.querySelectorAll(".row-toggle").forEach(function(cb) {
         const rowId = Number(cb.dataset.rowId);
-        if (cb.checked) { selectedIds.add(rowId); document.getElementById("row-" + rowId).className = "included"; }
-        else { document.getElementById("row-" + rowId).className = "excluded"; }
+        const tableRow = document.getElementById("row-" + rowId);
+
+        if (cb.checked) selectedIds.add(rowId);
+
+        if (tableRow) {
+            tableRow.classList.toggle("included", cb.checked);
+            tableRow.classList.toggle("excluded", !cb.checked);
+        }
     });
-    return allRows.filter(row => selectedIds.has(row.row_id) && row.price_num !== null);
+
+    return allRows.filter(function(row) {
+        return sourceMatches(row) &&
+            selectedIds.has(row.row_id) &&
+            row.price_num !== null &&
+            !Number.isNaN(row.price_num);
+    });
 }
+
 function getSmoothingConfig(sampleCount) {
     // More samples can support a wider smoothing window and a denser curve.
     // Thin datasets stay close to the actual points.
@@ -1417,30 +1524,40 @@ function calculateSmoothedRetentionLine(rows) {
 }
 
 function updateStatsAndChart() {
+    const sourceRows = getSourceRows();
     const selectedRows = getSelectedRows();
     const prices = selectedRows.map(r => r.price_num).filter(v => v !== null && !Number.isNaN(v));
-    const marketValueResult = calculateMarketValueFromRows(selectedRows, allRows);
+    const marketValueResult = calculateMarketValueFromRows(selectedRows, sourceRows);
+
     document.getElementById("stat-market-value").textContent = money(marketValueResult.value);
     document.getElementById("stat-market-basis").textContent = marketValueResult.basis;
+    document.getElementById("stat-total-priced-rows").textContent = sourceRows.filter(
+        row => row.price_num !== null && !Number.isNaN(row.price_num)
+    ).length;
+
     if (hasOriginalMsrp && document.getElementById("stat-market-vs-msrp")) {
         if (marketValueResult.value !== null && !Number.isNaN(marketValueResult.value)) {
             const mvRetention = (marketValueResult.value / originalMsrpUsd) * 100;
             const mvDelta = mvRetention - 100;
             const direction = mvDelta >= 0 ? "above" : "below";
             document.getElementById("stat-market-vs-msrp").textContent = pct(mvRetention) + " of MSRP";
-            document.getElementById("stat-market-vs-msrp-detail").textContent = Math.abs(mvDelta).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction;
+            document.getElementById("stat-market-vs-msrp-detail").textContent =
+                Math.abs(mvDelta).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction;
         } else {
             document.getElementById("stat-market-vs-msrp").textContent = "N/A";
             document.getElementById("stat-market-vs-msrp-detail").textContent = "";
         }
     }
+
     document.getElementById("stat-average").textContent = money(average(prices));
     document.getElementById("stat-low").textContent = money(prices.length ? Math.min(...prices) : null);
     document.getElementById("stat-high").textContent = money(prices.length ? Math.max(...prices) : null);
     document.getElementById("stat-samples").textContent = prices.length;
+
     const liquidityConfidence = calculateLiquidityConfidenceFromRows(selectedRows);
     const liquidityBadge = document.getElementById("stat-liquidity-confidence");
     const liquidityDetail = document.getElementById("stat-liquidity-confidence-detail");
+
     if (liquidityBadge) {
         liquidityBadge.textContent = liquidityConfidence.display;
         liquidityBadge.className = "badge badge-score " + liquidityConfidence.cssClass;
@@ -1449,10 +1566,28 @@ function updateStatsAndChart() {
         liquidityBadge.removeAttribute("title");
     }
     if (liquidityDetail) liquidityDetail.textContent = liquidityConfidence.detail;
-    const priceScatter = selectedRows.filter(r => r.date_ms !== null && r.price_num !== null).map(row => ({x: row.date_ms, y: row.price_num, url: row.url, title: row.title, status: row.listing_status, condition: row.condition_text, platform: row.platform}));
+
+    sourceRows.forEach(function(row) {
+        const dealElement = document.getElementById("deal-score-" + row.row_id);
+        if (dealElement) dealElement.textContent = dealScoreDisplay(row, marketValueResult.value);
+    });
+
+    const priceScatter = selectedRows
+        .filter(r => r.date_ms !== null && r.price_num !== null)
+        .map(row => ({
+            x: row.date_ms,
+            y: row.price_num,
+            url: row.url,
+            title: row.title,
+            status: row.listing_status,
+            condition: row.condition_text,
+            platform: row.platform
+        }));
+
     chart.data.datasets[0].data = priceScatter;
     chart.data.datasets[1].data = calculateSmoothedPriceLine(selectedRows);
     chart.update();
+
     if (hasOriginalMsrp && msrpChart) {
         msrpChart.data.datasets[0].data = selectedRows
             .filter(r => r.date_ms !== null && r.price_num !== null)
@@ -1466,11 +1601,21 @@ function updateStatsAndChart() {
                 condition: row.condition_text,
                 platform: row.platform
             }));
+
         msrpChart.data.datasets[1].data = calculateSmoothedRetentionLine(selectedRows);
         msrpChart.update();
     }
 }
-function setAllCheckboxes(checked) { document.querySelectorAll(".row-toggle").forEach(cb => cb.checked = checked); updateStatsAndChart(); }
+
+function setAllCheckboxes(checked) {
+    document.querySelectorAll(".row-toggle").forEach(function(cb) {
+        const checkboxSource = String(cb.getAttribute("data-source") || "other");
+        if (currentMarketplaceSource === "both" || checkboxSource === currentMarketplaceSource) {
+            cb.checked = checked;
+        }
+    });
+    updateStatsAndChart();
+}
 const chart = new Chart(document.getElementById("chart"), {
     type: "scatter",
     data: {
@@ -1637,7 +1782,7 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
-updateStatsAndChart();
+setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>
 </body>

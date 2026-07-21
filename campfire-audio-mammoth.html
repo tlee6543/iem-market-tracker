@@ -1,6 +1,6 @@
 
 <html>
-<head><title>Dunu DaVinci - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
+<head><title>Campfire Audio Mammoth - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
 body { font-family: Arial; margin: 40px; background: #f7f7f7; color: #111; }
 table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
 .main-table .iem-col { width: 28%; max-width: 320px; }
@@ -183,8 +183,8 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>Dunu DaVinci</h1>
-<p><a href="brand-dunu.html">Dunu</a></p>
+<h1>Campfire Audio Mammoth</h1>
+<p><a href="brand-campfire-audio.html">Campfire Audio</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -197,9 +197,9 @@ td.status-reason { overflow: hidden; }
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$300</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2024</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">2DD/4BA</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
 
@@ -207,9 +207,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 19/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 8/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 343d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 19/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 8/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 343d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (19/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 343d ago.</span></div>
-    
-    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -230,8 +228,7 @@ td.status-reason { overflow: hidden; }
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
-            <canvas id="msrpChart"></canvas>
+            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
             
         </div>
     </div>
@@ -240,42 +237,26 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="reddit" class="listing-row excluded">
-<td></td>
-<td>2026-07-10</td>
-<td></td>
+<tr id="row-0" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<td>2026-07-20</td>
+<td>$250</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8497_json=403:len189908</td>
-<td></td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
 <td>0</td>
-<td>reddit_rss</td>
-<td>Dangerous-Concept-0</td>
+<td>headfi</td>
+<td>Khareef1278</td>
 <td>0</td>
 <td>0</td>
 <td><span id="deal-score-0">N/A</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1usrf75/wts_uscon_h_paypal_gs_dunu_davinci_w_xenns/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-1" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="reddit" checked></td>
-<td>2025-08-12</td>
-<td>$200</td>
-<td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
-<td></td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>Traxaber</td>
-<td>0</td>
-<td>0</td>
-<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1mnx2jr/wts_usnj_h_a_bunch_of_iems_blessing_3_hype_4/#item-4" target="_blank">source</a></td>
+<td><a href="https://www.head-fi.org/classifieds/campfire-audio-mammoth.112556/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Dunu Davinci", "url": "https://old.reddit.com/r/AVexchange/comments/1usrf75/wts_uscon_h_paypal_gs_dunu_davinci_w_xenns/#item-1", "price_num": null, "date_ms": 1783698419000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8497_json=403:len189908", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Dunu Davinci", "url": "https://old.reddit.com/r/AVexchange/comments/1mnx2jr/wts_usnj_h_a_bunch_of_iems_blessing_3_hype_4/#item-4", "price_num": 200.0, "date_ms": 1754966617000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears"}];
-const originalMsrpUsd = 300.0;
+const allRows = [{"row_id": 0, "title": "Campfire Audio Mammoth Listing ID: 112556 For Sale 250.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere Listed by: Khareef1278 (17) Listed: 2026-07-20", "url": "https://www.head-fi.org/classifieds/campfire-audio-mammoth.112556/", "price_num": 250.0, "date_ms": 1784505600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
 

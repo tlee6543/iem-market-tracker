@@ -59,6 +59,11 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 .filter-btn { padding: 9px 12px; border: 1px solid #ccc; background: #fff; border-radius: 999px; cursor: pointer; }
 .filter-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-toggle { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+.source-toggle-label { font-size: 13px; color: #555; font-weight: bold; margin-right: 2px; }
+.source-btn { padding: 9px 14px; border: 1px solid #bbb; background: #fff; border-radius: 999px; cursor: pointer; font-weight: bold; }
+.source-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-hidden { display: none; }
 .badge { display: inline-block; padding: 3px 8px; border-radius: 999px; border: 1px solid #ccc; background: #fafafa; font-size: 12px; white-space: nowrap; }
 .badge-high { background: #ecfdf3; border-color: #b7e4c7; }
 .badge-medium { background: #fff8e1; border-color: #ead88a; }
@@ -177,9 +182,18 @@ td.status-reason { overflow: hidden; }
         </div>
     </div>
     
-<p><a href="index.html">← Back</a></p>
+<p><a id="back-link" href="index.html">← Back</a></p>
 <h1>Elysian Annihilator pre-2026</h1>
 <p><a href="brand-elysian.html">Elysian</a></p>
+<div class="card">
+    <div class="source-toggle" aria-label="Marketplace source">
+        <span class="source-toggle-label">Marketplace:</span>
+        <button class="source-btn active" data-source="both" onclick="setMarketplaceSource('both')">Both</button>
+        <button class="source-btn" data-source="reddit" onclick="setMarketplaceSource('reddit')">Reddit</button>
+        <button class="source-btn" data-source="headfi" onclick="setMarketplaceSource('headfi')">Head-Fi</button>
+    </div>
+    <p class="small">The selected marketplace filters the listing table, charts, market value, sample counts, and confidence score.</p>
+</div>
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
@@ -201,12 +215,12 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>80</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">80</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 60+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
-    <div class="controls"><button onclick="setAllCheckboxes(true)">Select all priced rows</button><button onclick="setAllCheckboxes(false)">Clear all</button></div>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
         <div class="chart-panel">
@@ -226,8 +240,8 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" checked></td>
+<tr id="row-0" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
 <td>2026-06-07</td>
 <td>$1,995</td>
 <td><span class="pill">closed</span></td>
@@ -238,12 +252,12 @@ td.status-reason { overflow: hidden; }
 <td>dwong</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (12.0% below market)</td>
+<td><span id="deal-score-0">Closed: Good Deal (12.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-%E2%80%93-very-good-condition.110362/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" ></td>
+<tr id="row-1" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" ></td>
 <td>2026-06-02</td>
 <td>$2,350</td>
 <td><span class="pill">active</span></td>
@@ -254,12 +268,12 @@ td.status-reason { overflow: hidden; }
 <td>MikePortnoy</td>
 <td>0</td>
 <td>0</td>
-<td>Fair (3.7% above market)</td>
+<td><span id="deal-score-1">Fair (3.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023.110054/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
+<tr id="row-2" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" checked></td>
 <td>2026-04-26</td>
 <td>$2,450</td>
 <td><span class="pill">closed</span></td>
@@ -270,12 +284,12 @@ td.status-reason { overflow: hidden; }
 <td>bradyc100</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (8.1% above market)</td>
+<td><span id="deal-score-2">Closed: Fair (8.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.107995/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" ></td>
+<tr id="row-3" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="headfi" ></td>
 <td>2026-04-12</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
@@ -286,11 +300,11 @@ td.status-reason { overflow: hidden; }
 <td>Satcher</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (10.3% above market)</td>
+<td><span id="deal-score-3">Closed: High (10.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-effect-audio-fusion-1-4-4mm-balanced-cable.107208/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-4" class="excluded">
+<tr id="row-4" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2026-03-27</td>
 <td></td>
@@ -302,12 +316,12 @@ td.status-reason { overflow: hidden; }
 <td>zkmd</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-4">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023.106218/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-5" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="5" checked></td>
+<tr id="row-5" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="headfi" checked></td>
 <td>2026-03-14</td>
 <td>$2,200</td>
 <td><span class="pill">closed</span></td>
@@ -318,12 +332,12 @@ td.status-reason { overflow: hidden; }
 <td>drewbadour</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (3.0% below market)</td>
+<td><span id="deal-score-5">Closed: Fair (3.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023.105410/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-6" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="6" checked></td>
+<tr id="row-6" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="headfi" checked></td>
 <td>2026-03-10</td>
 <td>$3,000</td>
 <td><span class="pill">closed</span></td>
@@ -334,12 +348,12 @@ td.status-reason { overflow: hidden; }
 <td>SilverLodestar</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (32.3% above market)</td>
+<td><span id="deal-score-6">Closed: Overpriced (32.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021.105195/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-7" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="7" checked></td>
+<tr id="row-7" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="7" data-source="headfi" checked></td>
 <td>2026-02-27</td>
 <td>$2,180</td>
 <td><span class="pill">closed</span></td>
@@ -350,12 +364,12 @@ td.status-reason { overflow: hidden; }
 <td>torqiet</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (3.8% below market)</td>
+<td><span id="deal-score-7">Closed: Fair (3.8% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-reserved.104514/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-8" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="8" checked></td>
+<tr id="row-8" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="8" data-source="headfi" checked></td>
 <td>2026-02-16</td>
 <td>$2,200</td>
 <td><span class="pill">closed</span></td>
@@ -366,12 +380,12 @@ td.status-reason { overflow: hidden; }
 <td>KL9PZ</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (3.0% below market)</td>
+<td><span id="deal-score-8">Closed: Fair (3.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium.103949/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-9" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="9" checked></td>
+<tr id="row-9" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="9" data-source="headfi" checked></td>
 <td>2026-01-05</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
@@ -382,12 +396,12 @@ td.status-reason { overflow: hidden; }
 <td>DenverFi</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (11.8% below market)</td>
+<td><span id="deal-score-9">Closed: Good Deal (11.8% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023.101432/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-10" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="10" checked></td>
+<tr id="row-10" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="10" data-source="headfi" checked></td>
 <td>2025-09-15</td>
 <td>$2,200</td>
 <td><span class="pill">closed</span></td>
@@ -398,12 +412,12 @@ td.status-reason { overflow: hidden; }
 <td>RedKismet</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (3.0% below market)</td>
+<td><span id="deal-score-10">Closed: Fair (3.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sold-elysian-annihilator-2023-gold-faceplates.95121/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-11" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="11" checked></td>
+<tr id="row-11" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="11" data-source="headfi" checked></td>
 <td>2025-07-27</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
@@ -414,12 +428,12 @@ td.status-reason { overflow: hidden; }
 <td>luvandp3ace</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.4% below market)</td>
+<td><span id="deal-score-11">Closed: Fair (7.4% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-acoustics-annihilator-titanium.92403/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-12" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="12" checked></td>
+<tr id="row-12" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="12" data-source="headfi" checked></td>
 <td>2025-06-24</td>
 <td>$2,200</td>
 <td><span class="pill">closed</span></td>
@@ -430,12 +444,12 @@ td.status-reason { overflow: hidden; }
 <td>Drago20Love</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (3.0% below market)</td>
+<td><span id="deal-score-12">Closed: Fair (3.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pending-elysian-annihilator-2023.90620/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-13" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="13" checked></td>
+<tr id="row-13" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="13" data-source="headfi" checked></td>
 <td>2025-06-10</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
@@ -446,11 +460,11 @@ td.status-reason { overflow: hidden; }
 <td>Scott2578</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (11.8% below market)</td>
+<td><span id="deal-score-13">Closed: Good Deal (11.8% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-audio-annihilator-23-titanium.89878/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-14" class="excluded">
+<tr id="row-14" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2025-05-23</td>
 <td></td>
@@ -462,12 +476,12 @@ td.status-reason { overflow: hidden; }
 <td>Noobzilla</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-14">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.88875/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-15" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="15" checked></td>
+<tr id="row-15" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="15" data-source="headfi" checked></td>
 <td>2025-05-10</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
@@ -478,12 +492,12 @@ td.status-reason { overflow: hidden; }
 <td>crush</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (14.0% below market)</td>
+<td><span id="deal-score-15">Closed: Good Deal (14.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium-faceplate.88067/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-16" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="16" checked></td>
+<tr id="row-16" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="16" data-source="headfi" checked></td>
 <td>2025-04-23</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -494,12 +508,12 @@ td.status-reason { overflow: hidden; }
 <td>Yodamanjaro</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (16.2% below market)</td>
+<td><span id="deal-score-16">Closed: Good Deal (16.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-23-ti.87088/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-17" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="17" checked></td>
+<tr id="row-17" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="17" data-source="headfi" checked></td>
 <td>2025-04-23</td>
 <td>$3,200</td>
 <td><span class="pill">closed</span></td>
@@ -510,12 +524,12 @@ td.status-reason { overflow: hidden; }
 <td>tjzurlaaa</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (41.2% above market)</td>
+<td><span id="deal-score-17">Closed: Overpriced (41.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021.87092/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-18" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="18" checked></td>
+<tr id="row-18" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="18" data-source="headfi" checked></td>
 <td>2025-04-17</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -526,12 +540,12 @@ td.status-reason { overflow: hidden; }
 <td>jaker782</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (16.2% below market)</td>
+<td><span id="deal-score-18">Closed: Good Deal (16.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.86755/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-19" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="19" checked></td>
+<tr id="row-19" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="19" data-source="headfi" checked></td>
 <td>2025-04-17</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
@@ -542,12 +556,12 @@ td.status-reason { overflow: hidden; }
 <td>acaldejon</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (14.0% below market)</td>
+<td><span id="deal-score-19">Closed: Good Deal (14.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold.86793/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-20" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="20" checked></td>
+<tr id="row-20" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="20" data-source="headfi" checked></td>
 <td>2025-04-13</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
@@ -558,12 +572,12 @@ td.status-reason { overflow: hidden; }
 <td>BJPromo</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (11.8% below market)</td>
+<td><span id="deal-score-20">Closed: Good Deal (11.8% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-23-stainless-steel.86533/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-21" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="21" checked></td>
+<tr id="row-21" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="21" data-source="headfi" checked></td>
 <td>2025-03-31</td>
 <td>$2,899</td>
 <td><span class="pill">closed</span></td>
@@ -574,12 +588,12 @@ td.status-reason { overflow: hidden; }
 <td>LimitlessE</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (27.9% above market)</td>
+<td><span id="deal-score-21">Closed: Overpriced (27.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021-rare-price-drop.85842/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-22" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="22" checked></td>
+<tr id="row-22" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="22" data-source="headfi" checked></td>
 <td>2025-03-27</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
@@ -590,12 +604,12 @@ td.status-reason { overflow: hidden; }
 <td>shaunbr15</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (11.8% below market)</td>
+<td><span id="deal-score-22">Closed: Good Deal (11.8% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-23-ti.85646/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-23" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="23" checked></td>
+<tr id="row-23" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="23" data-source="headfi" checked></td>
 <td>2025-01-30</td>
 <td>$2,400</td>
 <td><span class="pill">closed</span></td>
@@ -606,12 +620,12 @@ td.status-reason { overflow: hidden; }
 <td>rblack77</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (5.9% above market)</td>
+<td><span id="deal-score-23">Closed: Fair (5.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/annihilator-2023.82480/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-24" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="24" checked></td>
+<tr id="row-24" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="24" data-source="headfi" checked></td>
 <td>2024-12-10</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -622,12 +636,12 @@ td.status-reason { overflow: hidden; }
 <td>acaldejon</td>
 <td>0</td>
 <td>1</td>
-<td>Closed: Good Deal (16.2% below market)</td>
+<td><span id="deal-score-24">Closed: Good Deal (16.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.79588/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-25" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="25" checked></td>
+<tr id="row-25" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="25" data-source="headfi" checked></td>
 <td>2024-12-07</td>
 <td>$2,550</td>
 <td><span class="pill">closed</span></td>
@@ -638,12 +652,12 @@ td.status-reason { overflow: hidden; }
 <td>cradon</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (12.5% above market)</td>
+<td><span id="deal-score-25">Closed: High (12.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-23-spin-brushed-titanium-version.79408/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-26" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="26" checked></td>
+<tr id="row-26" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="26" data-source="headfi" checked></td>
 <td>2024-11-20</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -654,12 +668,12 @@ td.status-reason { overflow: hidden; }
 <td>SaloonWrecker</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (16.2% below market)</td>
+<td><span id="deal-score-26">Closed: Good Deal (16.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/annihilator-23.78475/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-27" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="27" checked></td>
+<tr id="row-27" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="27" data-source="headfi" checked></td>
 <td>2024-11-12</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
@@ -670,12 +684,12 @@ td.status-reason { overflow: hidden; }
 <td>Zeno26</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Great Deal (20.6% below market)</td>
+<td><span id="deal-score-27">Closed: Great Deal (20.6% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold-edition.78033/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-28" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="28" checked></td>
+<tr id="row-28" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="28" data-source="headfi" checked></td>
 <td>2024-11-07</td>
 <td>$1,825</td>
 <td><span class="pill">closed</span></td>
@@ -686,12 +700,12 @@ td.status-reason { overflow: hidden; }
 <td>apongsasin</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (19.5% below market)</td>
+<td><span id="deal-score-28">Closed: Good Deal (19.5% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold-og-owner.77732/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-29" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="29" checked></td>
+<tr id="row-29" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="29" data-source="headfi" checked></td>
 <td>2024-11-07</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -702,12 +716,12 @@ td.status-reason { overflow: hidden; }
 <td>KuroKitsu</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (16.2% below market)</td>
+<td><span id="deal-score-29">Closed: Good Deal (16.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pd-elysian-annihilator-23-ti.77743/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-30" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="30" checked></td>
+<tr id="row-30" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="30" data-source="headfi" checked></td>
 <td>2024-11-02</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
@@ -718,12 +732,12 @@ td.status-reason { overflow: hidden; }
 <td>Homrsimson</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (14.0% below market)</td>
+<td><span id="deal-score-30">Closed: Good Deal (14.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold-optional-leonidas-2-cable-upgrade.77448/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-31" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="31" ></td>
+<tr id="row-31" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="31" data-source="headfi" ></td>
 <td>2024-10-31</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
@@ -734,12 +748,12 @@ td.status-reason { overflow: hidden; }
 <td>SaloonWrecker</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: High (10.3% above market)</td>
+<td><span id="deal-score-31">Closed: High (10.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-23.77327/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-32" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="32" checked></td>
+<tr id="row-32" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="32" data-source="headfi" checked></td>
 <td>2024-10-26</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
@@ -750,11 +764,11 @@ td.status-reason { overflow: hidden; }
 <td>Echo42987</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Great Deal (20.6% below market)</td>
+<td><span id="deal-score-32">Closed: Great Deal (20.6% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-titanium-4-4mm.77089/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-33" class="excluded">
+<tr id="row-33" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2024-10-23</td>
 <td></td>
@@ -766,11 +780,11 @@ td.status-reason { overflow: hidden; }
 <td>latte06</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-33">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/lpd-elysian-annihilator-2023-gold.76898/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-34" class="excluded">
+<tr id="row-34" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2024-10-16</td>
 <td></td>
@@ -782,12 +796,12 @@ td.status-reason { overflow: hidden; }
 <td>tjzurlaaa</td>
 <td>1</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-34">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/annihilator-2021.76516/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-35" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="35" checked></td>
+<tr id="row-35" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="35" data-source="headfi" checked></td>
 <td>2024-10-11</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -798,12 +812,12 @@ td.status-reason { overflow: hidden; }
 <td>WarHead75</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (16.2% below market)</td>
+<td><span id="deal-score-35">Closed: Good Deal (16.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold.76272/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-36" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="36" ></td>
+<tr id="row-36" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="36" data-source="headfi" ></td>
 <td>2024-10-01</td>
 <td>$2,600</td>
 <td><span class="pill">closed</span></td>
@@ -814,12 +828,12 @@ td.status-reason { overflow: hidden; }
 <td>acaldejon</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: High (14.7% above market)</td>
+<td><span id="deal-score-36">Closed: High (14.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021.75685/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-37" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="37" checked></td>
+<tr id="row-37" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="37" data-source="headfi" checked></td>
 <td>2024-09-27</td>
 <td>$2,025</td>
 <td><span class="pill">closed</span></td>
@@ -830,12 +844,12 @@ td.status-reason { overflow: hidden; }
 <td>Noobzilla</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Good Deal (10.7% below market)</td>
+<td><span id="deal-score-37">Closed: Good Deal (10.7% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti-titanium.75434/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-38" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="38" checked></td>
+<tr id="row-38" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="38" data-source="headfi" checked></td>
 <td>2024-09-14</td>
 <td>$2,200</td>
 <td><span class="pill">closed</span></td>
@@ -846,12 +860,12 @@ td.status-reason { overflow: hidden; }
 <td>goldwerger</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (3.0% below market)</td>
+<td><span id="deal-score-38">Closed: Fair (3.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium-like-new.74817/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-39" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="39" checked></td>
+<tr id="row-39" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="39" data-source="headfi" checked></td>
 <td>2024-09-11</td>
 <td>$2,300</td>
 <td><span class="pill">closed</span></td>
@@ -862,11 +876,11 @@ td.status-reason { overflow: hidden; }
 <td>domi</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.5% above market)</td>
+<td><span id="deal-score-39">Closed: Fair (1.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium-version.74697/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-40" class="excluded">
+<tr id="row-40" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2024-09-10</td>
 <td></td>
@@ -878,12 +892,12 @@ td.status-reason { overflow: hidden; }
 <td>Taka0302</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-40">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2023-titanium-edition.74649/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-41" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="41" checked></td>
+<tr id="row-41" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="41" data-source="headfi" checked></td>
 <td>2024-09-08</td>
 <td>$2,300</td>
 <td><span class="pill">closed</span></td>
@@ -894,12 +908,12 @@ td.status-reason { overflow: hidden; }
 <td>unfitstew</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.5% above market)</td>
+<td><span id="deal-score-41">Closed: Fair (1.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023.74497/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-42" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="42" checked></td>
+<tr id="row-42" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="42" data-source="headfi" checked></td>
 <td>2024-09-06</td>
 <td>$2,300</td>
 <td><span class="pill">closed</span></td>
@@ -910,12 +924,12 @@ td.status-reason { overflow: hidden; }
 <td>jaker782</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Fair (1.5% above market)</td>
+<td><span id="deal-score-42">Closed: Fair (1.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.74387/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-43" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="43" checked></td>
+<tr id="row-43" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="43" data-source="headfi" checked></td>
 <td>2024-08-22</td>
 <td>$2,399</td>
 <td><span class="pill">closed</span></td>
@@ -926,12 +940,12 @@ td.status-reason { overflow: hidden; }
 <td>fejnomit</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (5.8% above market)</td>
+<td><span id="deal-score-43">Closed: Fair (5.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2023-ti.73570/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-44" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="44" checked></td>
+<tr id="row-44" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="44" data-source="headfi" checked></td>
 <td>2024-08-19</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -942,12 +956,12 @@ td.status-reason { overflow: hidden; }
 <td>freeryder05</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (16.2% below market)</td>
+<td><span id="deal-score-44">Closed: Good Deal (16.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/final-price-drop-elysian-annihilator-2023.73412/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-45" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="45" checked></td>
+<tr id="row-45" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="45" data-source="headfi" checked></td>
 <td>2024-08-18</td>
 <td>$2,350</td>
 <td><span class="pill">closed</span></td>
@@ -958,12 +972,12 @@ td.status-reason { overflow: hidden; }
 <td>smirks_audio</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (3.7% above market)</td>
+<td><span id="deal-score-45">Closed: Fair (3.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/annihilator-2023-ti.73328/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-46" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="46" checked></td>
+<tr id="row-46" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="46" data-source="headfi" checked></td>
 <td>2024-08-11</td>
 <td>$1,990</td>
 <td><span class="pill">closed</span></td>
@@ -974,12 +988,12 @@ td.status-reason { overflow: hidden; }
 <td>Mcleenx</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (12.2% below market)</td>
+<td><span id="deal-score-46">Closed: Good Deal (12.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/on-sale-elysian-annihilator-titanium-2023.72994/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-47" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="47" ></td>
+<tr id="row-47" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="47" data-source="headfi" ></td>
 <td>2024-08-09</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
@@ -990,12 +1004,12 @@ td.status-reason { overflow: hidden; }
 <td>vladzakhar</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.4% below market)</td>
+<td><span id="deal-score-47">Closed: Fair (7.4% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pd-elysian-annihilator-2023-gold-with-effect-audio-eros-s-cable.72855/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-48" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="48" checked></td>
+<tr id="row-48" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="48" data-source="headfi" checked></td>
 <td>2024-08-03</td>
 <td>$2,450</td>
 <td><span class="pill">closed</span></td>
@@ -1006,12 +1020,12 @@ td.status-reason { overflow: hidden; }
 <td>musingclouds</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (8.1% above market)</td>
+<td><span id="deal-score-48">Closed: Fair (8.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/gold-plated-elysian-annihilator-2023.72455/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-49" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="49" checked></td>
+<tr id="row-49" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="49" data-source="headfi" checked></td>
 <td>2024-07-29</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
@@ -1022,11 +1036,11 @@ td.status-reason { overflow: hidden; }
 <td>Yifang</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (7.4% below market)</td>
+<td><span id="deal-score-49">Closed: Fair (7.4% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold.72188/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-50" class="excluded">
+<tr id="row-50" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2024-07-18</td>
 <td></td>
@@ -1038,11 +1052,11 @@ td.status-reason { overflow: hidden; }
 <td>awesomenatorrad</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-50">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023.71616/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-51" class="excluded">
+<tr id="row-51" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2024-07-01</td>
 <td></td>
@@ -1054,11 +1068,11 @@ td.status-reason { overflow: hidden; }
 <td>lycos</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-51">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023.70715/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-52" class="excluded">
+<tr id="row-52" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2024-07-01</td>
 <td></td>
@@ -1070,12 +1084,12 @@ td.status-reason { overflow: hidden; }
 <td>Lenrynguyen</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-52">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023.70746/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-53" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="53" checked></td>
+<tr id="row-53" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="53" data-source="headfi" checked></td>
 <td>2024-06-30</td>
 <td>$2,400</td>
 <td><span class="pill">closed</span></td>
@@ -1086,12 +1100,12 @@ td.status-reason { overflow: hidden; }
 <td>Buckeyedentite</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (5.9% above market)</td>
+<td><span id="deal-score-53">Closed: Fair (5.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023.70659/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-54" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="54" checked></td>
+<tr id="row-54" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="54" data-source="headfi" checked></td>
 <td>2024-06-29</td>
 <td>$2,600</td>
 <td><span class="pill">closed</span></td>
@@ -1102,12 +1116,12 @@ td.status-reason { overflow: hidden; }
 <td>Kang</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.7% above market)</td>
+<td><span id="deal-score-54">Closed: High (14.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pd-elysian-annihilator-2023-titanium.70601/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-55" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="55" checked></td>
+<tr id="row-55" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="55" data-source="headfi" checked></td>
 <td>2024-06-27</td>
 <td>$2,300</td>
 <td><span class="pill">closed</span></td>
@@ -1118,12 +1132,12 @@ td.status-reason { overflow: hidden; }
 <td>fiascogarcia</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.5% above market)</td>
+<td><span id="deal-score-55">Closed: Fair (1.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023.70526/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-56" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="56" checked></td>
+<tr id="row-56" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="56" data-source="headfi" checked></td>
 <td>2024-06-03</td>
 <td>$2,600</td>
 <td><span class="pill">closed</span></td>
@@ -1134,12 +1148,12 @@ td.status-reason { overflow: hidden; }
 <td>RazorItoh</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.7% above market)</td>
+<td><span id="deal-score-56">Closed: High (14.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021.69143/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-57" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="57" ></td>
+<tr id="row-57" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="57" data-source="headfi" ></td>
 <td>2024-05-17</td>
 <td>$2,650</td>
 <td><span class="pill">closed</span></td>
@@ -1150,12 +1164,12 @@ td.status-reason { overflow: hidden; }
 <td>RazorItoh</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: High (16.9% above market)</td>
+<td><span id="deal-score-57">Closed: High (16.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium.68161/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-58" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="58" checked></td>
+<tr id="row-58" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="58" data-source="headfi" checked></td>
 <td>2024-05-14</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
@@ -1166,12 +1180,12 @@ td.status-reason { overflow: hidden; }
 <td>Navy</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (10.3% above market)</td>
+<td><span id="deal-score-58">Closed: High (10.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/price-drop-elysian-acoustic-labs-annihilator-2023.67952/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-59" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="59" checked></td>
+<tr id="row-59" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="59" data-source="headfi" checked></td>
 <td>2024-05-14</td>
 <td>$2,400</td>
 <td><span class="pill">closed</span></td>
@@ -1182,12 +1196,12 @@ td.status-reason { overflow: hidden; }
 <td>SilverLodestar</td>
 <td>1</td>
 <td>1</td>
-<td>Closed: Fair (5.9% above market)</td>
+<td><span id="deal-score-59">Closed: Fair (5.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pending-elysian-annihilator-2023-stainless-steel-version-updated-pics.67979/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-60" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="60" checked></td>
+<tr id="row-60" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="60" data-source="headfi" checked></td>
 <td>2024-05-13</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
@@ -1198,12 +1212,12 @@ td.status-reason { overflow: hidden; }
 <td>Aetherhole</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (19.1% above market)</td>
+<td><span id="deal-score-60">Closed: High (19.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-acoustics-annihilator-2023-titanium-ti.67939/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-61" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="61" checked></td>
+<tr id="row-61" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="61" data-source="headfi" checked></td>
 <td>2024-05-09</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
@@ -1214,11 +1228,11 @@ td.status-reason { overflow: hidden; }
 <td>Yarbles</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (10.3% above market)</td>
+<td><span id="deal-score-61">Closed: High (10.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021.67669/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-62" class="excluded">
+<tr id="row-62" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2024-04-29</td>
 <td></td>
@@ -1230,12 +1244,12 @@ td.status-reason { overflow: hidden; }
 <td>peripheralsdealer</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-62">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/cayin-n8ii-for-annihilator-2023.67038/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-63" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="63" checked></td>
+<tr id="row-63" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="63" data-source="headfi" checked></td>
 <td>2024-04-29</td>
 <td>$2,650</td>
 <td><span class="pill">closed</span></td>
@@ -1246,12 +1260,12 @@ td.status-reason { overflow: hidden; }
 <td>btwine</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (16.9% above market)</td>
+<td><span id="deal-score-63">Closed: High (16.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-23-gold-edition.67067/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-64" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="64" checked></td>
+<tr id="row-64" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="64" data-source="headfi" checked></td>
 <td>2024-04-21</td>
 <td>$1,400</td>
 <td><span class="pill">closed</span></td>
@@ -1262,12 +1276,12 @@ td.status-reason { overflow: hidden; }
 <td>hitanshujoshi</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Great Deal (38.2% below market)</td>
+<td><span id="deal-score-64">Closed: Great Deal (38.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/cash-trade-elysian-annihilator-fir-audio-rn6.66613/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-65" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="65" checked></td>
+<tr id="row-65" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="65" data-source="headfi" checked></td>
 <td>2024-04-17</td>
 <td>$2,650</td>
 <td><span class="pill">closed</span></td>
@@ -1278,12 +1292,12 @@ td.status-reason { overflow: hidden; }
 <td>PassionForMusic</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (16.9% above market)</td>
+<td><span id="deal-score-65">Closed: High (16.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-labs-annihilator-2023-titanium.66377/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-66" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="66" checked></td>
+<tr id="row-66" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="66" data-source="headfi" checked></td>
 <td>2024-04-11</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
@@ -1294,12 +1308,12 @@ td.status-reason { overflow: hidden; }
 <td>AxLvR</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (10.3% above market)</td>
+<td><span id="deal-score-66">Closed: High (10.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/final-pd-elysian-annihilator-ti-23-s-n-100.65963/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-67" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="67" ></td>
+<tr id="row-67" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="67" data-source="headfi" ></td>
 <td>2024-04-06</td>
 <td>$2,750</td>
 <td><span class="pill">closed</span></td>
@@ -1310,11 +1324,11 @@ td.status-reason { overflow: hidden; }
 <td>RazorItoh</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: High (21.3% above market)</td>
+<td><span id="deal-score-67">Closed: High (21.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-titanium-2023.65684/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-68" class="excluded">
+<tr id="row-68" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2024-04-05</td>
 <td></td>
@@ -1326,12 +1340,12 @@ td.status-reason { overflow: hidden; }
 <td>SteveK27</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-68">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023.65636/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-69" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="69" checked></td>
+<tr id="row-69" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="69" data-source="headfi" checked></td>
 <td>2024-04-04</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
@@ -1342,12 +1356,12 @@ td.status-reason { overflow: hidden; }
 <td>Nephorsis</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (19.1% above market)</td>
+<td><span id="deal-score-69">Closed: High (19.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold.65625/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-70" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="70" checked></td>
+<tr id="row-70" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="70" data-source="headfi" checked></td>
 <td>2024-03-30</td>
 <td>$2,600</td>
 <td><span class="pill">closed</span></td>
@@ -1358,12 +1372,12 @@ td.status-reason { overflow: hidden; }
 <td>Neweymatt</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.7% above market)</td>
+<td><span id="deal-score-70">Closed: High (14.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023.65310/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-71" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="71" checked></td>
+<tr id="row-71" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="71" data-source="headfi" checked></td>
 <td>2024-03-16</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
@@ -1374,11 +1388,11 @@ td.status-reason { overflow: hidden; }
 <td>metaljem77</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (19.1% above market)</td>
+<td><span id="deal-score-71">Closed: High (19.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023.64441/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-72" class="excluded">
+<tr id="row-72" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2024-02-23</td>
 <td></td>
@@ -1390,12 +1404,12 @@ td.status-reason { overflow: hidden; }
 <td>dhc0329</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-72">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-labs-annihilator-2023.63150/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-73" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="73" checked></td>
+<tr id="row-73" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="73" data-source="headfi" checked></td>
 <td>2024-02-22</td>
 <td>$2,800</td>
 <td><span class="pill">closed</span></td>
@@ -1406,12 +1420,12 @@ td.status-reason { overflow: hidden; }
 <td>KevinS2020</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (23.5% above market)</td>
+<td><span id="deal-score-73">Closed: High (23.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-%E2%80%9823-in-excellent-condition.63099/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-74" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="74" ></td>
+<tr id="row-74" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="74" data-source="headfi" ></td>
 <td>2024-02-01</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
@@ -1422,12 +1436,12 @@ td.status-reason { overflow: hidden; }
 <td>PassionForMusic</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: High (19.1% above market)</td>
+<td><span id="deal-score-74">Closed: High (19.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-labs-annihilator-2023.61840/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-75" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="75" ></td>
+<tr id="row-75" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="75" data-source="headfi" ></td>
 <td>2024-01-19</td>
 <td>$3,000</td>
 <td><span class="pill">closed</span></td>
@@ -1438,12 +1452,12 @@ td.status-reason { overflow: hidden; }
 <td>btwine</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (32.3% above market)</td>
+<td><span id="deal-score-75">Closed: Overpriced (32.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-23.61036/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-76" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="76" checked></td>
+<tr id="row-76" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="76" data-source="headfi" checked></td>
 <td>2023-12-14</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
@@ -1454,12 +1468,12 @@ td.status-reason { overflow: hidden; }
 <td>Hifihedgehog</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (10.3% above market)</td>
+<td><span id="deal-score-76">Closed: High (10.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sold-usa-mi-h-elysian-annihilator-2021-w-paypal-g-s.59117/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-77" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="77" checked></td>
+<tr id="row-77" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="77" data-source="headfi" checked></td>
 <td>2023-12-06</td>
 <td>$2,800</td>
 <td><span class="pill">closed</span></td>
@@ -1470,12 +1484,12 @@ td.status-reason { overflow: hidden; }
 <td>Regrets415</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (23.5% above market)</td>
+<td><span id="deal-score-77">Closed: High (23.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-ti-2023.58693/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-78" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="78" checked></td>
+<tr id="row-78" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="78" data-source="headfi" checked></td>
 <td>2023-11-27</td>
 <td>$2,800</td>
 <td><span class="pill">closed</span></td>
@@ -1486,12 +1500,12 @@ td.status-reason { overflow: hidden; }
 <td>Damz87</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (23.5% above market)</td>
+<td><span id="deal-score-78">Closed: High (23.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2023.58222/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-79" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="79" checked></td>
+<tr id="row-79" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="79" data-source="headfi" checked></td>
 <td>2023-09-17</td>
 <td>$2,650</td>
 <td><span class="pill">closed</span></td>
@@ -1502,11 +1516,11 @@ td.status-reason { overflow: hidden; }
 <td>Ojisan</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (16.9% above market)</td>
+<td><span id="deal-score-79">Closed: High (16.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2023-stainless-steel-version-with-kumitate-lab-p-ear-2-pin-adaptor.54534/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-80" class="excluded">
+<tr id="row-80" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2023-08-29</td>
 <td></td>
@@ -1518,12 +1532,12 @@ td.status-reason { overflow: hidden; }
 <td>tjzurlaaa</td>
 <td>1</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-80">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-for-traillii.53413/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-81" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="81" checked></td>
+<tr id="row-81" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="81" data-source="headfi" checked></td>
 <td>2023-08-17</td>
 <td>$2,750</td>
 <td><span class="pill">closed</span></td>
@@ -1534,12 +1548,12 @@ td.status-reason { overflow: hidden; }
 <td>freeryder05</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: High (21.3% above market)</td>
+<td><span id="deal-score-81">Closed: High (21.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sale-pending-2021-elysian-annihilator.52783/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-82" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="82" checked></td>
+<tr id="row-82" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="82" data-source="headfi" checked></td>
 <td>2023-08-07</td>
 <td>$2,800</td>
 <td><span class="pill">closed</span></td>
@@ -1550,12 +1564,12 @@ td.status-reason { overflow: hidden; }
 <td>Natesdailies</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (23.5% above market)</td>
+<td><span id="deal-score-82">Closed: High (23.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/annihilator-21.52241/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-83" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="83" checked></td>
+<tr id="row-83" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="83" data-source="headfi" checked></td>
 <td>2023-06-14</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
@@ -1566,12 +1580,12 @@ td.status-reason { overflow: hidden; }
 <td>ranfan</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (19.1% above market)</td>
+<td><span id="deal-score-83">Closed: High (19.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021.49271/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-84" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="84" checked></td>
+<tr id="row-84" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="84" data-source="headfi" checked></td>
 <td>2023-05-24</td>
 <td>$2,900</td>
 <td><span class="pill">closed</span></td>
@@ -1582,12 +1596,12 @@ td.status-reason { overflow: hidden; }
 <td>Levanter</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (27.9% above market)</td>
+<td><span id="deal-score-84">Closed: Overpriced (27.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2022.48280/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-85" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="85" checked></td>
+<tr id="row-85" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="85" data-source="headfi" checked></td>
 <td>2023-03-11</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
@@ -1598,12 +1612,12 @@ td.status-reason { overflow: hidden; }
 <td>Amit</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (19.1% above market)</td>
+<td><span id="deal-score-85">Closed: High (19.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021-universal.43439/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-86" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="86" checked></td>
+<tr id="row-86" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="86" data-source="headfi" checked></td>
 <td>2023-02-25</td>
 <td>$2,900</td>
 <td><span class="pill">closed</span></td>
@@ -1614,12 +1628,12 @@ td.status-reason { overflow: hidden; }
 <td>Damz87</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (27.9% above market)</td>
+<td><span id="deal-score-86">Closed: Overpriced (27.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2021.42355/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-87" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="87" checked></td>
+<tr id="row-87" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="87" data-source="headfi" checked></td>
 <td>2022-12-10</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
@@ -1630,12 +1644,12 @@ td.status-reason { overflow: hidden; }
 <td>Rockwell75</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (19.1% above market)</td>
+<td><span id="deal-score-87">Closed: High (19.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021-universal.37680/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-88" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="88" checked></td>
+<tr id="row-88" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="88" data-source="headfi" checked></td>
 <td>2022-11-30</td>
 <td>$1,750</td>
 <td><span class="pill">closed</span></td>
@@ -1646,12 +1660,12 @@ td.status-reason { overflow: hidden; }
 <td>evo</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Great Deal (22.8% below market)</td>
+<td><span id="deal-score-88">Closed: Great Deal (22.8% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021-ciem.37116/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-89" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="89" checked></td>
+<tr id="row-89" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="89" data-source="headfi" checked></td>
 <td>2022-11-09</td>
 <td>$2,750</td>
 <td><span class="pill">closed</span></td>
@@ -1662,12 +1676,12 @@ td.status-reason { overflow: hidden; }
 <td>KevinS2020</td>
 <td>1</td>
 <td>1</td>
-<td>Closed: High (21.3% above market)</td>
+<td><span id="deal-score-89">Closed: High (21.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-og-in-excellent-condition.35989/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-90" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="90" checked></td>
+<tr id="row-90" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="90" data-source="headfi" checked></td>
 <td>2022-10-25</td>
 <td>$2,800</td>
 <td><span class="pill">closed</span></td>
@@ -1678,11 +1692,11 @@ td.status-reason { overflow: hidden; }
 <td>tma6</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (23.5% above market)</td>
+<td><span id="deal-score-90">Closed: High (23.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021-mint.35170/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-91" class="excluded">
+<tr id="row-91" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2022-10-06</td>
 <td></td>
@@ -1694,12 +1708,12 @@ td.status-reason { overflow: hidden; }
 <td>Navy</td>
 <td>1</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-91">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2022.34057/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-92" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="92" checked></td>
+<tr id="row-92" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="92" data-source="headfi" checked></td>
 <td>2022-01-23</td>
 <td>$2,800</td>
 <td><span class="pill">closed</span></td>
@@ -1710,11 +1724,11 @@ td.status-reason { overflow: hidden; }
 <td>bden59</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (23.5% above market)</td>
+<td><span id="deal-score-92">Closed: High (23.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021-uiem.18735/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-93" class="excluded">
+<tr id="row-93" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td></td>
 <td></td>
@@ -1726,11 +1740,11 @@ td.status-reason { overflow: hidden; }
 <td>unknown</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-93">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/envenir-ascensions-4-4mm-p-ear-great-for-dio-hex-annihilator.94387/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-94" class="excluded">
+<tr id="row-94" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td></td>
 <td></td>
@@ -1742,11 +1756,11 @@ td.status-reason { overflow: hidden; }
 <td>unknown</td>
 <td>1</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-94">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sold-elysian-annihilator-2023-titanium-version.72467/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-95" class="excluded">
+<tr id="row-95" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td></td>
 <td></td>
@@ -1758,11 +1772,11 @@ td.status-reason { overflow: hidden; }
 <td>unknown</td>
 <td>1</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-95">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/2023-elysian-annihilator-titanium.66555/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-96" class="excluded">
+<tr id="row-96" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td></td>
 <td></td>
@@ -1774,22 +1788,99 @@ td.status-reason { overflow: hidden; }
 <td>unknown</td>
 <td>1</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-96">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/brand-new-nicehck-aceorpheus-pentaconnear-elysian-annihilator-others-cable.58559/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Elysian Annihilator 2023 \u2013 Very Good Condition", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-%E2%80%93-very-good-condition.110362/", "price_num": 1995.0, "date_ms": 1780790400000, "listing_status": "closed", "condition_text": "good condition, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 1, "title": "Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.110054/", "price_num": 2350.0, "date_ms": 1780358400000, "listing_status": "active", "condition_text": "like new, excellent, good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_status_unclear_left_unchanged | active_status_checker_verified_or_left_active | active_status_checker_headfi_live_check_skipped"}, {"row_id": 2, "title": "Sold: Elysian Annihilator 2023 Ti", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.107995/", "price_num": 2450.0, "date_ms": 1777161600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Elysian Annihilator 2023 + Effect Audio Fusion 1 4.4mm balanced cable", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-effect-audio-fusion-1-4-4mm-balanced-cable.107208/", "price_num": 2500.0, "date_ms": 1775952000000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.106218/", "price_num": null, "date_ms": 1774569600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.105410/", "price_num": 2200.0, "date_ms": 1773446400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: Elysian Annihilator 2021", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.105195/", "price_num": 3000.0, "date_ms": 1773100800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Elysian Annihilator 2023 [Reserved]", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-reserved.104514/", "price_num": 2180.0, "date_ms": 1772150400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Closed: Elysian Annihilator 2023 Titanium", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium.103949/", "price_num": 2200.0, "date_ms": 1771200000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.101432/", "price_num": 2000.0, "date_ms": 1767571200000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: (Sold) Elysian Annihilator 2023 (gold faceplates)", "url": "https://www.head-fi.org/classifieds/sold-elysian-annihilator-2023-gold-faceplates.95121/", "price_num": 2200.0, "date_ms": 1757894400000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Elysian Acoustics - Annihilator Titanium", "url": "https://www.head-fi.org/classifieds/elysian-acoustics-annihilator-titanium.92403/", "price_num": 2100.0, "date_ms": 1753574400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Traded: [Pending] Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/pending-elysian-annihilator-2023.90620/", "price_num": 2200.0, "date_ms": 1750723200000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Closed: Elysian Audio Annihilator 23 Titanium", "url": "https://www.head-fi.org/classifieds/elysian-audio-annihilator-23-titanium.89878/", "price_num": 2000.0, "date_ms": 1749513600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Closed: Elysian Annihilator 2023 ti", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.88875/", "price_num": null, "date_ms": 1747958400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Elysian Annihilator 2023 Titanium Faceplate", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium-faceplate.88067/", "price_num": 1950.0, "date_ms": 1746835200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Elysian Annihilator 23 Ti", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-23-ti.87088/", "price_num": 1900.0, "date_ms": 1745366400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Closed: Elysian Annihilator 2021", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.87092/", "price_num": 3200.0, "date_ms": 1745366400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: Elysian Annihilator 2023 Ti", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.86755/", "price_num": 1900.0, "date_ms": 1744848000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Sold: Elysian Annihilator 2023 Gold", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold.86793/", "price_num": 1950.0, "date_ms": 1744848000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Elysian Annihilator 23 (Stainless Steel)", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-23-stainless-steel.86533/", "price_num": 2000.0, "date_ms": 1744502400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Closed: Elysian Annihilator 2021 RARE (Price Drop)", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-rare-price-drop.85842/", "price_num": 2899.0, "date_ms": 1743379200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: Elysian annihilator 23 Ti", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-23-ti.85646/", "price_num": 2000.0, "date_ms": 1743033600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Traded: Annihilator 2023", "url": "https://www.head-fi.org/classifieds/annihilator-2023.82480/", "price_num": 2400.0, "date_ms": 1738195200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Sold: Elysian Annihilator 2023 Ti", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.79588/", "price_num": 1900.0, "date_ms": 1733788800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: Elysian Annihilator 23 Spin Brushed Titanium Version", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-23-spin-brushed-titanium-version.79408/", "price_num": 2550.0, "date_ms": 1733529600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: Annihilator 23", "url": "https://www.head-fi.org/classifieds/annihilator-23.78475/", "price_num": 1900.0, "date_ms": 1732060800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Closed: Elysian Annihilator 2023 Gold Edition", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold-edition.78033/", "price_num": 1800.0, "date_ms": 1731369600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Sold: Elysian Annihilator 2023 Gold - OG owner", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold-og-owner.77732/", "price_num": 1825.0, "date_ms": 1730937600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Closed: [PD]Elysian Annihilator 23 Ti", "url": "https://www.head-fi.org/classifieds/pd-elysian-annihilator-23-ti.77743/", "price_num": 1900.0, "date_ms": 1730937600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: Elysian Annihilator 2023 gold (optional leonidas 2 cable upgrade)", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold-optional-leonidas-2-cable-upgrade.77448/", "price_num": 1950.0, "date_ms": 1730505600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Closed: Elysian Annihilator 23", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-23.77327/", "price_num": 2500.0, "date_ms": 1730332800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 32, "title": "Sold: Elysian Annihilator Titanium 4.4mm", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-titanium-4-4mm.77089/", "price_num": 1800.0, "date_ms": 1729900800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 33, "title": "Sold: [LPD] Elysian Annihilator 2023 Gold", "url": "https://www.head-fi.org/classifieds/lpd-elysian-annihilator-2023-gold.76898/", "price_num": null, "date_ms": 1729641600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 34, "title": "Sold: Annihilator 2021", "url": "https://www.head-fi.org/classifieds/annihilator-2021.76516/", "price_num": null, "date_ms": 1729036800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 35, "title": "Sold: Elysian Annihilator 2023 Gold", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold.76272/", "price_num": 1900.0, "date_ms": 1728604800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 36, "title": "Sold: Elysian Annihilator 2021", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.75685/", "price_num": 2600.0, "date_ms": 1727740800000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 37, "title": "Sold: Elysian Annihilator 2023 Ti titanium", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti-titanium.75434/", "price_num": 2025.0, "date_ms": 1727395200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 38, "title": "Sold: Elysian Annihilator 2023 Titanium *LIKE NEW*", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium-like-new.74817/", "price_num": 2200.0, "date_ms": 1726272000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 39, "title": "Sold: Elysian Annihilator 2023 Titanium version", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium-version.74697/", "price_num": 2300.0, "date_ms": 1726012800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 40, "title": "Closed: Elysian Acoustic Labs Annihilator 2023 Titanium edition", "url": "https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2023-titanium-edition.74649/", "price_num": null, "date_ms": 1725926400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 41, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.74497/", "price_num": 2300.0, "date_ms": 1725753600000, "listing_status": "closed", "condition_text": "like new, excellent, good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 42, "title": "Traded: Elysian Annihilator 2023 Ti", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.74387/", "price_num": 2300.0, "date_ms": 1725580800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 43, "title": "Sold: Elysian Acoustic Labs Annihilator 2023 Ti", "url": "https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2023-ti.73570/", "price_num": 2399.0, "date_ms": 1724284800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 44, "title": "Sold: FINAL PRICE DROP: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/final-price-drop-elysian-annihilator-2023.73412/", "price_num": 1900.0, "date_ms": 1724025600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 45, "title": "Sold: Annihilator 2023 Ti", "url": "https://www.head-fi.org/classifieds/annihilator-2023-ti.73328/", "price_num": 2350.0, "date_ms": 1723939200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 46, "title": "Sold: [ON SALE] ELYSIAN ANNIHILATOR TITANIUM [2023]", "url": "https://www.head-fi.org/classifieds/on-sale-elysian-annihilator-titanium-2023.72994/", "price_num": 1990.0, "date_ms": 1723334400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 47, "title": "Sold: (PD) Elysian Annihilator 2023 Gold with Effect Audio Eros S Cable", "url": "https://www.head-fi.org/classifieds/pd-elysian-annihilator-2023-gold-with-effect-audio-eros-s-cable.72855/", "price_num": 2100.0, "date_ms": 1723161600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 48, "title": "Closed: Gold Plated Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/gold-plated-elysian-annihilator-2023.72455/", "price_num": 2450.0, "date_ms": 1722643200000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 49, "title": "Sold: Elysian Annihilator 2023 Gold", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold.72188/", "price_num": 2100.0, "date_ms": 1722211200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 50, "title": "Traded: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.71616/", "price_num": null, "date_ms": 1721260800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 51, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.70715/", "price_num": null, "date_ms": 1719792000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 52, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.70746/", "price_num": null, "date_ms": 1719792000000, "listing_status": "closed", "condition_text": "like new, excellent, fair", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 53, "title": "Traded: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.70659/", "price_num": 2400.0, "date_ms": 1719705600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 54, "title": "Closed: [PD] Elysian Annihilator 2023 Titanium", "url": "https://www.head-fi.org/classifieds/pd-elysian-annihilator-2023-titanium.70601/", "price_num": 2600.0, "date_ms": 1719619200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 55, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.70526/", "price_num": 2300.0, "date_ms": 1719446400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 56, "title": "Traded: Elysian Annihilator 2021", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.69143/", "price_num": 2600.0, "date_ms": 1717372800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 57, "title": "Sold: Elysian Annihilator 2023 Titanium", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium.68161/", "price_num": 2650.0, "date_ms": 1715904000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 58, "title": "Sold: [Price Drop] Elysian Acoustic Labs Annihilator 2023", "url": "https://www.head-fi.org/classifieds/price-drop-elysian-acoustic-labs-annihilator-2023.67952/", "price_num": 2500.0, "date_ms": 1715644800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 59, "title": "Sold: [PENDING] Elysian Annihilator 2023 Stainless Steel Version [Updated Pics]", "url": "https://www.head-fi.org/classifieds/pending-elysian-annihilator-2023-stainless-steel-version-updated-pics.67979/", "price_num": 2400.0, "date_ms": 1715644800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 60, "title": "Sold: Elysian Acoustics Annihilator 2023 Titanium / Ti", "url": "https://www.head-fi.org/classifieds/elysian-acoustics-annihilator-2023-titanium-ti.67939/", "price_num": 2700.0, "date_ms": 1715558400000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 61, "title": "Sold: Elysian Annihilator 2021", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.67669/", "price_num": 2500.0, "date_ms": 1715212800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 62, "title": "Closed: Cayin N8ii for Annihilator 2023", "url": "https://www.head-fi.org/classifieds/cayin-n8ii-for-annihilator-2023.67038/", "price_num": null, "date_ms": 1714348800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 63, "title": "Sold: Elysian Annihilator 23, Gold Edition", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-23-gold-edition.67067/", "price_num": 2650.0, "date_ms": 1714348800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 64, "title": "Closed: CASH + TRADE (Elysian Annihilator / Fir Audio Rn6)", "url": "https://www.head-fi.org/classifieds/cash-trade-elysian-annihilator-fir-audio-rn6.66613/", "price_num": 1400.0, "date_ms": 1713657600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 65, "title": "Sold: Elysian Labs Annihilator 2023 Titanium", "url": "https://www.head-fi.org/classifieds/elysian-labs-annihilator-2023-titanium.66377/", "price_num": 2650.0, "date_ms": 1713312000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 66, "title": "Sold: FINAL PD: ELYSIAN ANNIHILATOR Ti 23 S/N. 100", "url": "https://www.head-fi.org/classifieds/final-pd-elysian-annihilator-ti-23-s-n-100.65963/", "price_num": 2500.0, "date_ms": 1712793600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 67, "title": "Sold: Elysian Annihilator Titanium 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-titanium-2023.65684/", "price_num": 2750.0, "date_ms": 1712361600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 68, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.65636/", "price_num": null, "date_ms": 1712275200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 69, "title": "Closed: Elysian Annihilator 2023 (Gold)", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold.65625/", "price_num": 2700.0, "date_ms": 1712188800000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 70, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.65310/", "price_num": 2600.0, "date_ms": 1711756800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 71, "title": "Closed: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.64441/", "price_num": 2700.0, "date_ms": 1710547200000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 72, "title": "Sold: Elysian Labs Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-labs-annihilator-2023.63150/", "price_num": null, "date_ms": 1708646400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 73, "title": "Sold: Elysian Annihilator \u201823 in Excellent Condition", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-%E2%80%9823-in-excellent-condition.63099/", "price_num": 2800.0, "date_ms": 1708560000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 74, "title": "Sold: Elysian Labs Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-labs-annihilator-2023.61840/", "price_num": 2700.0, "date_ms": 1706745600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 75, "title": "Traded: Elysian Annihilator 23", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-23.61036/", "price_num": 3000.0, "date_ms": 1705622400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 76, "title": "Sold: [SOLD] [USA-MI] [H] Elysian Annihilator 2021 [W] PayPal G&S", "url": "https://www.head-fi.org/classifieds/sold-usa-mi-h-elysian-annihilator-2021-w-paypal-g-s.59117/", "price_num": 2500.0, "date_ms": 1702512000000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 77, "title": "Sold: Elysian Annihilator Ti 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-ti-2023.58693/", "price_num": 2800.0, "date_ms": 1701820800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 78, "title": "Sold: Elysian Acoustic Labs Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2023.58222/", "price_num": 2800.0, "date_ms": 1701043200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 79, "title": "Sold: Elysian Annihilator 2023 Stainless Steel Version with Kumitate Lab p-ear 2-pin adaptor", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-stainless-steel-version-with-kumitate-lab-p-ear-2-pin-adaptor.54534/", "price_num": 2650.0, "date_ms": 1694908800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 80, "title": "Closed: Elysian annihilator for traillii", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-for-traillii.53413/", "price_num": null, "date_ms": 1693267200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 81, "title": "Sold: SALE PENDING 2021 Elysian Annihilator", "url": "https://www.head-fi.org/classifieds/sale-pending-2021-elysian-annihilator.52783/", "price_num": 2750.0, "date_ms": 1692230400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 82, "title": "Sold: Annihilator 21", "url": "https://www.head-fi.org/classifieds/annihilator-21.52241/", "price_num": 2800.0, "date_ms": 1691366400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 83, "title": "Sold: Elysian Annihilator 2021", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.49271/", "price_num": 2700.0, "date_ms": 1686700800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 84, "title": "Sold: Elysian Acoustic Labs Annihilator 2022", "url": "https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2022.48280/", "price_num": 2900.0, "date_ms": 1684886400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 85, "title": "Closed: Elysian Annihilator 2021 (Universal)", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-universal.43439/", "price_num": 2700.0, "date_ms": 1678492800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 86, "title": "Sold: Elysian Acoustic Labs Annihilator 2021", "url": "https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2021.42355/", "price_num": 2900.0, "date_ms": 1677283200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 87, "title": "Sold: Elysian Annihilator 2021 Universal", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-universal.37680/", "price_num": 2700.0, "date_ms": 1670630400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 88, "title": "Sold: Elysian Annihilator (2021) CIEM", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-ciem.37116/", "price_num": 1750.0, "date_ms": 1669766400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 89, "title": "Sold: Elysian Annihilator (OG) in Excellent Condition", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-og-in-excellent-condition.35989/", "price_num": 2750.0, "date_ms": 1667952000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 90, "title": "Sold: Elysian Annihilator 2021 (Mint)", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-mint.35170/", "price_num": 2800.0, "date_ms": 1666656000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 91, "title": "Sold: Elysian Annihilator (2022)", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2022.34057/", "price_num": null, "date_ms": 1665014400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 92, "title": "Sold: Elysian Annihilator 2021 UIEM", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-uiem.18735/", "price_num": 2800.0, "date_ms": 1642896000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 93, "title": "Closed: Envenir Ascensions 4.4mm p ear ( great for dio hex annihilator )", "url": "https://www.head-fi.org/classifieds/envenir-ascensions-4-4mm-p-ear-great-for-dio-hex-annihilator.94387/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 94, "title": "Sold: [SOLD] Elysian Annihilator 2023 Titanium Version", "url": "https://www.head-fi.org/classifieds/sold-elysian-annihilator-2023-titanium-version.72467/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 95, "title": "Sold: 2023 Elysian Annihilator Titanium", "url": "https://www.head-fi.org/classifieds/2023-elysian-annihilator-titanium.66555/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 96, "title": "Sold: BRAND NEW - NiceHCK AceOrpheus PentaconnEar (Elysian Annihilator + others) cable", "url": "https://www.head-fi.org/classifieds/brand-new-nicehck-aceorpheus-pentaconnear-elysian-annihilator-others-cable.58559/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Elysian Annihilator 2023 \u2013 Very Good Condition", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-%E2%80%93-very-good-condition.110362/", "price_num": 1995.0, "date_ms": 1780790400000, "listing_status": "closed", "condition_text": "good condition, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 1, "title": "Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.110054/", "price_num": 2350.0, "date_ms": 1780358400000, "listing_status": "active", "condition_text": "like new, excellent, good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_status_unclear_left_unchanged | active_status_checker_verified_or_left_active | active_status_checker_headfi_live_check_skipped"}, {"row_id": 2, "title": "Sold: Elysian Annihilator 2023 Ti", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.107995/", "price_num": 2450.0, "date_ms": 1777161600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Elysian Annihilator 2023 + Effect Audio Fusion 1 4.4mm balanced cable", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-effect-audio-fusion-1-4-4mm-balanced-cable.107208/", "price_num": 2500.0, "date_ms": 1775952000000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.106218/", "price_num": null, "date_ms": 1774569600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.105410/", "price_num": 2200.0, "date_ms": 1773446400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: Elysian Annihilator 2021", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.105195/", "price_num": 3000.0, "date_ms": 1773100800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Elysian Annihilator 2023 [Reserved]", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-reserved.104514/", "price_num": 2180.0, "date_ms": 1772150400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Closed: Elysian Annihilator 2023 Titanium", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium.103949/", "price_num": 2200.0, "date_ms": 1771200000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.101432/", "price_num": 2000.0, "date_ms": 1767571200000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: (Sold) Elysian Annihilator 2023 (gold faceplates)", "url": "https://www.head-fi.org/classifieds/sold-elysian-annihilator-2023-gold-faceplates.95121/", "price_num": 2200.0, "date_ms": 1757894400000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Elysian Acoustics - Annihilator Titanium", "url": "https://www.head-fi.org/classifieds/elysian-acoustics-annihilator-titanium.92403/", "price_num": 2100.0, "date_ms": 1753574400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Traded: [Pending] Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/pending-elysian-annihilator-2023.90620/", "price_num": 2200.0, "date_ms": 1750723200000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Closed: Elysian Audio Annihilator 23 Titanium", "url": "https://www.head-fi.org/classifieds/elysian-audio-annihilator-23-titanium.89878/", "price_num": 2000.0, "date_ms": 1749513600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Closed: Elysian Annihilator 2023 ti", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.88875/", "price_num": null, "date_ms": 1747958400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Elysian Annihilator 2023 Titanium Faceplate", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium-faceplate.88067/", "price_num": 1950.0, "date_ms": 1746835200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Elysian Annihilator 23 Ti", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-23-ti.87088/", "price_num": 1900.0, "date_ms": 1745366400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Closed: Elysian Annihilator 2021", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.87092/", "price_num": 3200.0, "date_ms": 1745366400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: Elysian Annihilator 2023 Ti", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.86755/", "price_num": 1900.0, "date_ms": 1744848000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Sold: Elysian Annihilator 2023 Gold", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold.86793/", "price_num": 1950.0, "date_ms": 1744848000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Elysian Annihilator 23 (Stainless Steel)", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-23-stainless-steel.86533/", "price_num": 2000.0, "date_ms": 1744502400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Closed: Elysian Annihilator 2021 RARE (Price Drop)", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-rare-price-drop.85842/", "price_num": 2899.0, "date_ms": 1743379200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: Elysian annihilator 23 Ti", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-23-ti.85646/", "price_num": 2000.0, "date_ms": 1743033600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Traded: Annihilator 2023", "url": "https://www.head-fi.org/classifieds/annihilator-2023.82480/", "price_num": 2400.0, "date_ms": 1738195200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Sold: Elysian Annihilator 2023 Ti", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.79588/", "price_num": 1900.0, "date_ms": 1733788800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: Elysian Annihilator 23 Spin Brushed Titanium Version", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-23-spin-brushed-titanium-version.79408/", "price_num": 2550.0, "date_ms": 1733529600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: Annihilator 23", "url": "https://www.head-fi.org/classifieds/annihilator-23.78475/", "price_num": 1900.0, "date_ms": 1732060800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Closed: Elysian Annihilator 2023 Gold Edition", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold-edition.78033/", "price_num": 1800.0, "date_ms": 1731369600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Sold: Elysian Annihilator 2023 Gold - OG owner", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold-og-owner.77732/", "price_num": 1825.0, "date_ms": 1730937600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Closed: [PD]Elysian Annihilator 23 Ti", "url": "https://www.head-fi.org/classifieds/pd-elysian-annihilator-23-ti.77743/", "price_num": 1900.0, "date_ms": 1730937600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: Elysian Annihilator 2023 gold (optional leonidas 2 cable upgrade)", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold-optional-leonidas-2-cable-upgrade.77448/", "price_num": 1950.0, "date_ms": 1730505600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Closed: Elysian Annihilator 23", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-23.77327/", "price_num": 2500.0, "date_ms": 1730332800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 32, "title": "Sold: Elysian Annihilator Titanium 4.4mm", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-titanium-4-4mm.77089/", "price_num": 1800.0, "date_ms": 1729900800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 33, "title": "Sold: [LPD] Elysian Annihilator 2023 Gold", "url": "https://www.head-fi.org/classifieds/lpd-elysian-annihilator-2023-gold.76898/", "price_num": null, "date_ms": 1729641600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 34, "title": "Sold: Annihilator 2021", "url": "https://www.head-fi.org/classifieds/annihilator-2021.76516/", "price_num": null, "date_ms": 1729036800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 35, "title": "Sold: Elysian Annihilator 2023 Gold", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold.76272/", "price_num": 1900.0, "date_ms": 1728604800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 36, "title": "Sold: Elysian Annihilator 2021", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.75685/", "price_num": 2600.0, "date_ms": 1727740800000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 37, "title": "Sold: Elysian Annihilator 2023 Ti titanium", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti-titanium.75434/", "price_num": 2025.0, "date_ms": 1727395200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 38, "title": "Sold: Elysian Annihilator 2023 Titanium *LIKE NEW*", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium-like-new.74817/", "price_num": 2200.0, "date_ms": 1726272000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 39, "title": "Sold: Elysian Annihilator 2023 Titanium version", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium-version.74697/", "price_num": 2300.0, "date_ms": 1726012800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 40, "title": "Closed: Elysian Acoustic Labs Annihilator 2023 Titanium edition", "url": "https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2023-titanium-edition.74649/", "price_num": null, "date_ms": 1725926400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 41, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.74497/", "price_num": 2300.0, "date_ms": 1725753600000, "listing_status": "closed", "condition_text": "like new, excellent, good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 42, "title": "Traded: Elysian Annihilator 2023 Ti", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-ti.74387/", "price_num": 2300.0, "date_ms": 1725580800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 43, "title": "Sold: Elysian Acoustic Labs Annihilator 2023 Ti", "url": "https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2023-ti.73570/", "price_num": 2399.0, "date_ms": 1724284800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 44, "title": "Sold: FINAL PRICE DROP: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/final-price-drop-elysian-annihilator-2023.73412/", "price_num": 1900.0, "date_ms": 1724025600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 45, "title": "Sold: Annihilator 2023 Ti", "url": "https://www.head-fi.org/classifieds/annihilator-2023-ti.73328/", "price_num": 2350.0, "date_ms": 1723939200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 46, "title": "Sold: [ON SALE] ELYSIAN ANNIHILATOR TITANIUM [2023]", "url": "https://www.head-fi.org/classifieds/on-sale-elysian-annihilator-titanium-2023.72994/", "price_num": 1990.0, "date_ms": 1723334400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 47, "title": "Sold: (PD) Elysian Annihilator 2023 Gold with Effect Audio Eros S Cable", "url": "https://www.head-fi.org/classifieds/pd-elysian-annihilator-2023-gold-with-effect-audio-eros-s-cable.72855/", "price_num": 2100.0, "date_ms": 1723161600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 48, "title": "Closed: Gold Plated Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/gold-plated-elysian-annihilator-2023.72455/", "price_num": 2450.0, "date_ms": 1722643200000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 49, "title": "Sold: Elysian Annihilator 2023 Gold", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold.72188/", "price_num": 2100.0, "date_ms": 1722211200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 50, "title": "Traded: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.71616/", "price_num": null, "date_ms": 1721260800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 51, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.70715/", "price_num": null, "date_ms": 1719792000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 52, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.70746/", "price_num": null, "date_ms": 1719792000000, "listing_status": "closed", "condition_text": "like new, excellent, fair", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 53, "title": "Traded: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.70659/", "price_num": 2400.0, "date_ms": 1719705600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 54, "title": "Closed: [PD] Elysian Annihilator 2023 Titanium", "url": "https://www.head-fi.org/classifieds/pd-elysian-annihilator-2023-titanium.70601/", "price_num": 2600.0, "date_ms": 1719619200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 55, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.70526/", "price_num": 2300.0, "date_ms": 1719446400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 56, "title": "Traded: Elysian Annihilator 2021", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.69143/", "price_num": 2600.0, "date_ms": 1717372800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 57, "title": "Sold: Elysian Annihilator 2023 Titanium", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-titanium.68161/", "price_num": 2650.0, "date_ms": 1715904000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 58, "title": "Sold: [Price Drop] Elysian Acoustic Labs Annihilator 2023", "url": "https://www.head-fi.org/classifieds/price-drop-elysian-acoustic-labs-annihilator-2023.67952/", "price_num": 2500.0, "date_ms": 1715644800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 59, "title": "Sold: [PENDING] Elysian Annihilator 2023 Stainless Steel Version [Updated Pics]", "url": "https://www.head-fi.org/classifieds/pending-elysian-annihilator-2023-stainless-steel-version-updated-pics.67979/", "price_num": 2400.0, "date_ms": 1715644800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 60, "title": "Sold: Elysian Acoustics Annihilator 2023 Titanium / Ti", "url": "https://www.head-fi.org/classifieds/elysian-acoustics-annihilator-2023-titanium-ti.67939/", "price_num": 2700.0, "date_ms": 1715558400000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 61, "title": "Sold: Elysian Annihilator 2021", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.67669/", "price_num": 2500.0, "date_ms": 1715212800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 62, "title": "Closed: Cayin N8ii for Annihilator 2023", "url": "https://www.head-fi.org/classifieds/cayin-n8ii-for-annihilator-2023.67038/", "price_num": null, "date_ms": 1714348800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 63, "title": "Sold: Elysian Annihilator 23, Gold Edition", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-23-gold-edition.67067/", "price_num": 2650.0, "date_ms": 1714348800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 64, "title": "Closed: CASH + TRADE (Elysian Annihilator / Fir Audio Rn6)", "url": "https://www.head-fi.org/classifieds/cash-trade-elysian-annihilator-fir-audio-rn6.66613/", "price_num": 1400.0, "date_ms": 1713657600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 65, "title": "Sold: Elysian Labs Annihilator 2023 Titanium", "url": "https://www.head-fi.org/classifieds/elysian-labs-annihilator-2023-titanium.66377/", "price_num": 2650.0, "date_ms": 1713312000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 66, "title": "Sold: FINAL PD: ELYSIAN ANNIHILATOR Ti 23 S/N. 100", "url": "https://www.head-fi.org/classifieds/final-pd-elysian-annihilator-ti-23-s-n-100.65963/", "price_num": 2500.0, "date_ms": 1712793600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 67, "title": "Sold: Elysian Annihilator Titanium 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-titanium-2023.65684/", "price_num": 2750.0, "date_ms": 1712361600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 68, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.65636/", "price_num": null, "date_ms": 1712275200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 69, "title": "Closed: Elysian Annihilator 2023 (Gold)", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-gold.65625/", "price_num": 2700.0, "date_ms": 1712188800000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 70, "title": "Sold: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.65310/", "price_num": 2600.0, "date_ms": 1711756800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 71, "title": "Closed: Elysian Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023.64441/", "price_num": 2700.0, "date_ms": 1710547200000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 72, "title": "Sold: Elysian Labs Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-labs-annihilator-2023.63150/", "price_num": null, "date_ms": 1708646400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 73, "title": "Sold: Elysian Annihilator \u201823 in Excellent Condition", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-%E2%80%9823-in-excellent-condition.63099/", "price_num": 2800.0, "date_ms": 1708560000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 74, "title": "Sold: Elysian Labs Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-labs-annihilator-2023.61840/", "price_num": 2700.0, "date_ms": 1706745600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 75, "title": "Traded: Elysian Annihilator 23", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-23.61036/", "price_num": 3000.0, "date_ms": 1705622400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 76, "title": "Sold: [SOLD] [USA-MI] [H] Elysian Annihilator 2021 [W] PayPal G&S", "url": "https://www.head-fi.org/classifieds/sold-usa-mi-h-elysian-annihilator-2021-w-paypal-g-s.59117/", "price_num": 2500.0, "date_ms": 1702512000000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 77, "title": "Sold: Elysian Annihilator Ti 2023", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-ti-2023.58693/", "price_num": 2800.0, "date_ms": 1701820800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 78, "title": "Sold: Elysian Acoustic Labs Annihilator 2023", "url": "https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2023.58222/", "price_num": 2800.0, "date_ms": 1701043200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 79, "title": "Sold: Elysian Annihilator 2023 Stainless Steel Version with Kumitate Lab p-ear 2-pin adaptor", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2023-stainless-steel-version-with-kumitate-lab-p-ear-2-pin-adaptor.54534/", "price_num": 2650.0, "date_ms": 1694908800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 80, "title": "Closed: Elysian annihilator for traillii", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-for-traillii.53413/", "price_num": null, "date_ms": 1693267200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 81, "title": "Sold: SALE PENDING 2021 Elysian Annihilator", "url": "https://www.head-fi.org/classifieds/sale-pending-2021-elysian-annihilator.52783/", "price_num": 2750.0, "date_ms": 1692230400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 82, "title": "Sold: Annihilator 21", "url": "https://www.head-fi.org/classifieds/annihilator-21.52241/", "price_num": 2800.0, "date_ms": 1691366400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 83, "title": "Sold: Elysian Annihilator 2021", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.49271/", "price_num": 2700.0, "date_ms": 1686700800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 84, "title": "Sold: Elysian Acoustic Labs Annihilator 2022", "url": "https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2022.48280/", "price_num": 2900.0, "date_ms": 1684886400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 85, "title": "Closed: Elysian Annihilator 2021 (Universal)", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-universal.43439/", "price_num": 2700.0, "date_ms": 1678492800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 86, "title": "Sold: Elysian Acoustic Labs Annihilator 2021", "url": "https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2021.42355/", "price_num": 2900.0, "date_ms": 1677283200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 87, "title": "Sold: Elysian Annihilator 2021 Universal", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-universal.37680/", "price_num": 2700.0, "date_ms": 1670630400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 88, "title": "Sold: Elysian Annihilator (2021) CIEM", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-ciem.37116/", "price_num": 1750.0, "date_ms": 1669766400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 89, "title": "Sold: Elysian Annihilator (OG) in Excellent Condition", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-og-in-excellent-condition.35989/", "price_num": 2750.0, "date_ms": 1667952000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 90, "title": "Sold: Elysian Annihilator 2021 (Mint)", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-mint.35170/", "price_num": 2800.0, "date_ms": 1666656000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 91, "title": "Sold: Elysian Annihilator (2022)", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2022.34057/", "price_num": null, "date_ms": 1665014400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 92, "title": "Sold: Elysian Annihilator 2021 UIEM", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-uiem.18735/", "price_num": 2800.0, "date_ms": 1642896000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 93, "title": "Closed: Envenir Ascensions 4.4mm p ear ( great for dio hex annihilator )", "url": "https://www.head-fi.org/classifieds/envenir-ascensions-4-4mm-p-ear-great-for-dio-hex-annihilator.94387/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 94, "title": "Sold: [SOLD] Elysian Annihilator 2023 Titanium Version", "url": "https://www.head-fi.org/classifieds/sold-elysian-annihilator-2023-titanium-version.72467/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 95, "title": "Sold: 2023 Elysian Annihilator Titanium", "url": "https://www.head-fi.org/classifieds/2023-elysian-annihilator-titanium.66555/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 96, "title": "Sold: BRAND NEW - NiceHCK AceOrpheus PentaconnEar (Elysian Annihilator + others) cable", "url": "https://www.head-fi.org/classifieds/brand-new-nicehck-aceorpheus-pentaconnear-elysian-annihilator-others-cable.58559/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 3000.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
+let currentMarketplaceSource = "both";
+
+function normalizeMarketplaceSource(platform) {
+    const text = String(platform || "").toLowerCase().trim();
+    if (["reddit", "reddit_rss", "avexchange", "r/avexchange"].includes(text)) return "reddit";
+    if (["headfi", "head-fi", "head-fi classifieds"].includes(text)) return "headfi";
+    if (["manual", "manual_csv", "manual input"].includes(text)) return "manual";
+    return "other";
+}
+function sourceMatches(row) {
+    return currentMarketplaceSource === "both" || row.source_key === currentMarketplaceSource;
+}
+function getSourceRows() {
+    return allRows.filter(sourceMatches);
+}
+function safeLocalStorageGet(key) {
+    try { return window.localStorage.getItem(key); } catch (error) { return null; }
+}
+function safeLocalStorageSet(key, value) {
+    try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function getInitialMarketplaceSource() {
+    const params = new URLSearchParams(window.location.search);
+    const querySource = String(params.get("source") || "").toLowerCase();
+    if (["both", "reddit", "headfi"].includes(querySource)) return querySource;
+
+    const storedSource = String(safeLocalStorageGet("iemMarketplaceSource") || "").toLowerCase();
+    if (["both", "reddit", "headfi"].includes(storedSource)) return storedSource;
+
+    return "both";
+}
+function updateCurrentPageSourceQuery(source) {
+    try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("source", source);
+        window.history.replaceState({}, "", url);
+    } catch (error) {}
+}
+function setMarketplaceSource(source) {
+    if (!["both", "reddit", "headfi"].includes(source)) source = "both";
+    currentMarketplaceSource = source;
+    safeLocalStorageSet("iemMarketplaceSource", source);
+    updateCurrentPageSourceQuery(source);
+
+    document.querySelectorAll(".source-btn").forEach(function(button) {
+        button.classList.toggle("active", button.getAttribute("data-source") === source);
+    });
+
+    allRows.forEach(function(row) {
+        const tableRow = document.getElementById("row-" + row.row_id);
+        if (tableRow) tableRow.classList.toggle("source-hidden", !sourceMatches(row));
+    });
+
+    const backLink = document.getElementById("back-link");
+    if (backLink) backLink.href = "index.html?source=" + encodeURIComponent(source);
+
+    updateStatsAndChart();
+}
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
 function moneyRound(value) { return money(value); }
 function dateLabel(value) { if (value === null || value === undefined || Number.isNaN(value)) return ""; return new Date(value).toLocaleDateString(); }
 function pct(value) { if (value === null || value === undefined || Number.isNaN(value)) return "N/A"; return Number(value).toLocaleString(undefined, {maximumFractionDigits: 1}) + "%"; }
 function median(values) { if (!values.length) return null; const sorted = [...values].sort((a,b)=>a-b); const mid = Math.floor(sorted.length/2); return sorted.length % 2 === 0 ? (sorted[mid-1] + sorted[mid]) / 2 : sorted[mid]; }
 function average(values) { if (!values.length) return null; return values.reduce((a,b)=>a+b, 0) / values.length; }
-const staleUnsoldMarketDays = 60;
+function dealScoreDisplay(row, marketValue) {
+    const price = Number(row.price_num);
+    const market = Number(marketValue);
+    if (!Number.isFinite(price) || price <= 0 || !Number.isFinite(market) || market <= 0) return "N/A";
+
+    const deltaPct = ((price - market) / market) * 100;
+    let label = "Fair";
+    if (deltaPct <= -20) label = "Great Deal";
+    else if (deltaPct <= -10) label = "Good Deal";
+    else if (deltaPct <= 10) label = "Fair";
+    else if (deltaPct <= 25) label = "High";
+    else label = "Overpriced";
+
+    const direction = deltaPct < 0 ? "below" : "above";
+    const detail = Math.abs(deltaPct).toFixed(1) + "% " + direction + " market";
+    return String(row.listing_status || "").toLowerCase() === "closed"
+        ? "Closed: " + label + " (" + detail + ")"
+        : label + " (" + detail + ")";
+}
+const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
@@ -1811,9 +1902,11 @@ function isStaleUnsoldCeilingRow(row) {
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
     const statusComment = String(row.status_comment || "").toLowerCase().trim();
     const staleMarker = status === "stale" || status === "stale_unsold" || closedReason.startsWith("stale_unsold") || closedReason === "stale_active_timeout" || statusComment.includes("stale unsold") || statusComment.includes("lister never updated");
-    if (staleMarker) return true;
-
     const ageDays = rowAgeDays(row);
+    // Older checker runs may already have written a stale marker using a
+    // shorter timeout. Do not use it as a ceiling until the current 180d
+    // threshold is reached. Preserve explicit stale rows with no usable date.
+    if (staleMarker) return ageDays === null || ageDays >= staleUnsoldMarketDays;
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
@@ -2038,13 +2131,27 @@ function calculateLiquidityConfidenceFromRows(rows) {
 }
 function getSelectedRows() {
     const selectedIds = new Set();
+
     document.querySelectorAll(".row-toggle").forEach(function(cb) {
         const rowId = Number(cb.dataset.rowId);
-        if (cb.checked) { selectedIds.add(rowId); document.getElementById("row-" + rowId).className = "included"; }
-        else { document.getElementById("row-" + rowId).className = "excluded"; }
+        const tableRow = document.getElementById("row-" + rowId);
+
+        if (cb.checked) selectedIds.add(rowId);
+
+        if (tableRow) {
+            tableRow.classList.toggle("included", cb.checked);
+            tableRow.classList.toggle("excluded", !cb.checked);
+        }
     });
-    return allRows.filter(row => selectedIds.has(row.row_id) && row.price_num !== null);
+
+    return allRows.filter(function(row) {
+        return sourceMatches(row) &&
+            selectedIds.has(row.row_id) &&
+            row.price_num !== null &&
+            !Number.isNaN(row.price_num);
+    });
 }
+
 function getSmoothingConfig(sampleCount) {
     // More samples can support a wider smoothing window and a denser curve.
     // Thin datasets stay close to the actual points.
@@ -2169,30 +2276,40 @@ function calculateSmoothedRetentionLine(rows) {
 }
 
 function updateStatsAndChart() {
+    const sourceRows = getSourceRows();
     const selectedRows = getSelectedRows();
     const prices = selectedRows.map(r => r.price_num).filter(v => v !== null && !Number.isNaN(v));
-    const marketValueResult = calculateMarketValueFromRows(selectedRows, allRows);
+    const marketValueResult = calculateMarketValueFromRows(selectedRows, sourceRows);
+
     document.getElementById("stat-market-value").textContent = money(marketValueResult.value);
     document.getElementById("stat-market-basis").textContent = marketValueResult.basis;
+    document.getElementById("stat-total-priced-rows").textContent = sourceRows.filter(
+        row => row.price_num !== null && !Number.isNaN(row.price_num)
+    ).length;
+
     if (hasOriginalMsrp && document.getElementById("stat-market-vs-msrp")) {
         if (marketValueResult.value !== null && !Number.isNaN(marketValueResult.value)) {
             const mvRetention = (marketValueResult.value / originalMsrpUsd) * 100;
             const mvDelta = mvRetention - 100;
             const direction = mvDelta >= 0 ? "above" : "below";
             document.getElementById("stat-market-vs-msrp").textContent = pct(mvRetention) + " of MSRP";
-            document.getElementById("stat-market-vs-msrp-detail").textContent = Math.abs(mvDelta).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction;
+            document.getElementById("stat-market-vs-msrp-detail").textContent =
+                Math.abs(mvDelta).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction;
         } else {
             document.getElementById("stat-market-vs-msrp").textContent = "N/A";
             document.getElementById("stat-market-vs-msrp-detail").textContent = "";
         }
     }
+
     document.getElementById("stat-average").textContent = money(average(prices));
     document.getElementById("stat-low").textContent = money(prices.length ? Math.min(...prices) : null);
     document.getElementById("stat-high").textContent = money(prices.length ? Math.max(...prices) : null);
     document.getElementById("stat-samples").textContent = prices.length;
+
     const liquidityConfidence = calculateLiquidityConfidenceFromRows(selectedRows);
     const liquidityBadge = document.getElementById("stat-liquidity-confidence");
     const liquidityDetail = document.getElementById("stat-liquidity-confidence-detail");
+
     if (liquidityBadge) {
         liquidityBadge.textContent = liquidityConfidence.display;
         liquidityBadge.className = "badge badge-score " + liquidityConfidence.cssClass;
@@ -2201,10 +2318,28 @@ function updateStatsAndChart() {
         liquidityBadge.removeAttribute("title");
     }
     if (liquidityDetail) liquidityDetail.textContent = liquidityConfidence.detail;
-    const priceScatter = selectedRows.filter(r => r.date_ms !== null && r.price_num !== null).map(row => ({x: row.date_ms, y: row.price_num, url: row.url, title: row.title, status: row.listing_status, condition: row.condition_text, platform: row.platform}));
+
+    sourceRows.forEach(function(row) {
+        const dealElement = document.getElementById("deal-score-" + row.row_id);
+        if (dealElement) dealElement.textContent = dealScoreDisplay(row, marketValueResult.value);
+    });
+
+    const priceScatter = selectedRows
+        .filter(r => r.date_ms !== null && r.price_num !== null)
+        .map(row => ({
+            x: row.date_ms,
+            y: row.price_num,
+            url: row.url,
+            title: row.title,
+            status: row.listing_status,
+            condition: row.condition_text,
+            platform: row.platform
+        }));
+
     chart.data.datasets[0].data = priceScatter;
     chart.data.datasets[1].data = calculateSmoothedPriceLine(selectedRows);
     chart.update();
+
     if (hasOriginalMsrp && msrpChart) {
         msrpChart.data.datasets[0].data = selectedRows
             .filter(r => r.date_ms !== null && r.price_num !== null)
@@ -2218,11 +2353,21 @@ function updateStatsAndChart() {
                 condition: row.condition_text,
                 platform: row.platform
             }));
+
         msrpChart.data.datasets[1].data = calculateSmoothedRetentionLine(selectedRows);
         msrpChart.update();
     }
 }
-function setAllCheckboxes(checked) { document.querySelectorAll(".row-toggle").forEach(cb => cb.checked = checked); updateStatsAndChart(); }
+
+function setAllCheckboxes(checked) {
+    document.querySelectorAll(".row-toggle").forEach(function(cb) {
+        const checkboxSource = String(cb.getAttribute("data-source") || "other");
+        if (currentMarketplaceSource === "both" || checkboxSource === currentMarketplaceSource) {
+            cb.checked = checked;
+        }
+    });
+    updateStatsAndChart();
+}
 const chart = new Chart(document.getElementById("chart"), {
     type: "scatter",
     data: {
@@ -2389,7 +2534,7 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
-updateStatsAndChart();
+setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>
 </body>

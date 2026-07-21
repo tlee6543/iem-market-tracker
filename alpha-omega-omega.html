@@ -59,6 +59,11 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 .filter-btn { padding: 9px 12px; border: 1px solid #ccc; background: #fff; border-radius: 999px; cursor: pointer; }
 .filter-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-toggle { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+.source-toggle-label { font-size: 13px; color: #555; font-weight: bold; margin-right: 2px; }
+.source-btn { padding: 9px 14px; border: 1px solid #bbb; background: #fff; border-radius: 999px; cursor: pointer; font-weight: bold; }
+.source-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-hidden { display: none; }
 .badge { display: inline-block; padding: 3px 8px; border-radius: 999px; border: 1px solid #ccc; background: #fafafa; font-size: 12px; white-space: nowrap; }
 .badge-high { background: #ecfdf3; border-color: #b7e4c7; }
 .badge-medium { background: #fff8e1; border-color: #ead88a; }
@@ -177,9 +182,18 @@ td.status-reason { overflow: hidden; }
         </div>
     </div>
     
-<p><a href="index.html">← Back</a></p>
+<p><a id="back-link" href="index.html">← Back</a></p>
 <h1>Alpha&Omega Omega</h1>
 <p><a href="brand-alpha-omega.html">Alpha&Omega</a></p>
+<div class="card">
+    <div class="source-toggle" aria-label="Marketplace source">
+        <span class="source-toggle-label">Marketplace:</span>
+        <button class="source-btn active" data-source="both" onclick="setMarketplaceSource('both')">Both</button>
+        <button class="source-btn" data-source="reddit" onclick="setMarketplaceSource('reddit')">Reddit</button>
+        <button class="source-btn" data-source="headfi" onclick="setMarketplaceSource('headfi')">Head-Fi</button>
+    </div>
+    <p class="small">The selected marketplace filters the listing table, charts, market value, sample counts, and confidence score.</p>
+</div>
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
@@ -201,12 +215,12 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>31</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">31</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 60+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
-    <div class="controls"><button onclick="setAllCheckboxes(true)">Select all priced rows</button><button onclick="setAllCheckboxes(false)">Clear all</button></div>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
         <div class="chart-panel">
@@ -226,8 +240,8 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<tr id="row-0" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
 <td>2026-07-08</td>
 <td>$1,800</td>
 <td><span class="pill">active</span></td>
@@ -238,12 +252,12 @@ td.status-reason { overflow: hidden; }
 <td>UnknownOperator</td>
 <td>1</td>
 <td>0</td>
-<td>High (18.0% above market)</td>
+<td><span id="deal-score-0">High (18.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega-iem-new-in-sealed-box-alpha-omega.111888/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2026-06-26</td>
 <td>$1,450</td>
 <td><span class="pill">closed</span></td>
@@ -254,12 +268,12 @@ td.status-reason { overflow: hidden; }
 <td>Mllump</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (4.9% below market)</td>
+<td><span id="deal-score-1">Closed: Fair (4.9% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.111307/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" ></td>
+<tr id="row-2" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" ></td>
 <td>2026-06-09</td>
 <td>$1,450</td>
 <td><span class="pill">active</span></td>
@@ -270,12 +284,12 @@ td.status-reason { overflow: hidden; }
 <td>Cactar65</td>
 <td>0</td>
 <td>0</td>
-<td>Fair (4.9% below market)</td>
+<td><span id="deal-score-2">Fair (4.9% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omegas.110473/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" checked></td>
+<tr id="row-3" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="headfi" checked></td>
 <td>2026-05-29</td>
 <td>$1,600</td>
 <td><span class="pill">closed</span></td>
@@ -286,12 +300,12 @@ td.status-reason { overflow: hidden; }
 <td>crush</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (4.9% above market)</td>
+<td><span id="deal-score-3">Closed: Fair (4.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.109859/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-4" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="4" checked></td>
+<tr id="row-4" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="headfi" checked></td>
 <td>2026-05-27</td>
 <td>$1,525</td>
 <td><span class="pill">closed</span></td>
@@ -302,12 +316,12 @@ td.status-reason { overflow: hidden; }
 <td>rblack77</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (0.0% above market)</td>
+<td><span id="deal-score-4">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.109729/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-5" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="5" checked></td>
+<tr id="row-5" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="headfi" checked></td>
 <td>2026-04-14</td>
 <td>$1,700</td>
 <td><span class="pill">closed</span></td>
@@ -318,12 +332,12 @@ td.status-reason { overflow: hidden; }
 <td>ekman321</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (11.5% above market)</td>
+<td><span id="deal-score-5">Closed: High (11.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.107353/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-6" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="6" checked></td>
+<tr id="row-6" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="headfi" checked></td>
 <td>2026-04-13</td>
 <td>$1,699</td>
 <td><span class="pill">closed</span></td>
@@ -334,12 +348,12 @@ td.status-reason { overflow: hidden; }
 <td>mindhooked</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (11.4% above market)</td>
+<td><span id="deal-score-6">Closed: High (11.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/mint-in-box-alpha-omega-omega.107293/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-7" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="7" checked></td>
+<tr id="row-7" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="7" data-source="headfi" checked></td>
 <td>2026-04-01</td>
 <td>$1,750</td>
 <td><span class="pill">closed</span></td>
@@ -350,12 +364,12 @@ td.status-reason { overflow: hidden; }
 <td>jaker782</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.8% above market)</td>
+<td><span id="deal-score-7">Closed: High (14.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.106545/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-8" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="8" checked></td>
+<tr id="row-8" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="8" data-source="headfi" checked></td>
 <td>2026-03-30</td>
 <td>$2,450</td>
 <td><span class="pill">closed</span></td>
@@ -366,12 +380,12 @@ td.status-reason { overflow: hidden; }
 <td>torqiet</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (60.7% above market)</td>
+<td><span id="deal-score-8">Closed: Overpriced (60.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/package-alpha-omega-omega-bgvp-solomon.106412/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-9" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="9" checked></td>
+<tr id="row-9" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="9" data-source="headfi" checked></td>
 <td>2026-03-22</td>
 <td>$1,700</td>
 <td><span class="pill">closed</span></td>
@@ -382,12 +396,12 @@ td.status-reason { overflow: hidden; }
 <td>Fantanest</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (11.5% above market)</td>
+<td><span id="deal-score-9">Closed: High (11.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.105918/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-10" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="10" checked></td>
+<tr id="row-10" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="10" data-source="headfi" checked></td>
 <td>2026-03-15</td>
 <td>$1,650</td>
 <td><span class="pill">closed</span></td>
@@ -398,12 +412,12 @@ td.status-reason { overflow: hidden; }
 <td>Petergunn</td>
 <td>0</td>
 <td>1</td>
-<td>Closed: Fair (8.2% above market)</td>
+<td><span id="deal-score-10">Closed: Fair (8.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.105443/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-11" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="11" ></td>
+<tr id="row-11" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="11" data-source="headfi" ></td>
 <td>2026-03-15</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -414,12 +428,12 @@ td.status-reason { overflow: hidden; }
 <td>Petergunn</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: High (24.6% above market)</td>
+<td><span id="deal-score-11">Closed: High (24.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.105449/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-12" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="12" checked></td>
+<tr id="row-12" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="12" data-source="headfi" checked></td>
 <td>2026-02-06</td>
 <td>$1,750</td>
 <td><span class="pill">closed</span></td>
@@ -430,12 +444,12 @@ td.status-reason { overflow: hidden; }
 <td>borinio</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.8% above market)</td>
+<td><span id="deal-score-12">Closed: High (14.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/wts-alpha-omega-omega.103287/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-13" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="13" checked></td>
+<tr id="row-13" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="13" data-source="headfi" checked></td>
 <td>2026-02-05</td>
 <td>$1,750</td>
 <td><span class="pill">closed</span></td>
@@ -446,12 +460,12 @@ td.status-reason { overflow: hidden; }
 <td>apagumila</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (14.8% above market)</td>
+<td><span id="deal-score-13">Closed: High (14.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pd-alpha-omega-omega.103235/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-14" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="14" checked></td>
+<tr id="row-14" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="14" data-source="headfi" checked></td>
 <td>2026-01-23</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -462,12 +476,12 @@ td.status-reason { overflow: hidden; }
 <td>Mllump</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (24.6% above market)</td>
+<td><span id="deal-score-14">Closed: High (24.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.102516/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-15" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="15" checked></td>
+<tr id="row-15" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="15" data-source="headfi" checked></td>
 <td>2026-01-14</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -478,12 +492,12 @@ td.status-reason { overflow: hidden; }
 <td>jmo04</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (24.6% above market)</td>
+<td><span id="deal-score-15">Closed: High (24.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sold-alpha-omega-omega.101967/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-16" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="16" checked></td>
+<tr id="row-16" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="16" data-source="headfi" checked></td>
 <td>2026-01-08</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
@@ -494,12 +508,12 @@ td.status-reason { overflow: hidden; }
 <td>rustydabear</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (18.0% above market)</td>
+<td><span id="deal-score-16">Closed: High (18.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/traded-alpha-omega-omega-excellent-condition.101607/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-17" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="17" ></td>
+<tr id="row-17" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="17" data-source="headfi" ></td>
 <td>2025-12-26</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
@@ -510,12 +524,12 @@ td.status-reason { overflow: hidden; }
 <td>Mllump</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (27.9% above market)</td>
+<td><span id="deal-score-17">Closed: Overpriced (27.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.100819/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-18" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="18" checked></td>
+<tr id="row-18" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="18" data-source="headfi" checked></td>
 <td>2025-12-03</td>
 <td>$1,850</td>
 <td><span class="pill">closed</span></td>
@@ -526,12 +540,12 @@ td.status-reason { overflow: hidden; }
 <td>vladzakhar</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (21.3% above market)</td>
+<td><span id="deal-score-18">Closed: High (21.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega-mint.99566/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-19" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="19" checked></td>
+<tr id="row-19" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="19" data-source="headfi" checked></td>
 <td>2025-11-13</td>
 <td>$1,850</td>
 <td><span class="pill">closed</span></td>
@@ -542,12 +556,12 @@ td.status-reason { overflow: hidden; }
 <td>jaker782</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: High (21.3% above market)</td>
+<td><span id="deal-score-19">Closed: High (21.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.98429/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-20" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="20" checked></td>
+<tr id="row-20" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="20" data-source="headfi" checked></td>
 <td>2025-11-13</td>
 <td>$1,850</td>
 <td><span class="pill">closed</span></td>
@@ -558,12 +572,12 @@ td.status-reason { overflow: hidden; }
 <td>musiclover2932</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (21.3% above market)</td>
+<td><span id="deal-score-20">Closed: High (21.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega-iem.98435/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-21" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="21" checked></td>
+<tr id="row-21" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="21" data-source="headfi" checked></td>
 <td>2025-09-26</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -574,12 +588,12 @@ td.status-reason { overflow: hidden; }
 <td>Dandelion777</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (24.6% above market)</td>
+<td><span id="deal-score-21">Closed: High (24.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.95731/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-22" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="22" checked></td>
+<tr id="row-22" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="22" data-source="headfi" checked></td>
 <td>2025-07-18</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -590,12 +604,12 @@ td.status-reason { overflow: hidden; }
 <td>BRH0</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (24.6% above market)</td>
+<td><span id="deal-score-22">Closed: High (24.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega-%F0%9F%94%A5.91882/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-23" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="23" ></td>
+<tr id="row-23" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="23" data-source="headfi" ></td>
 <td>2025-07-16</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
@@ -606,12 +620,12 @@ td.status-reason { overflow: hidden; }
 <td>BRH0</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (37.7% above market)</td>
+<td><span id="deal-score-23">Closed: Overpriced (37.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.91790/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-24" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="24" ></td>
+<tr id="row-24" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="24" data-source="headfi" ></td>
 <td>2025-05-29</td>
 <td>$0</td>
 <td><span class="pill">closed</span></td>
@@ -622,12 +636,12 @@ td.status-reason { overflow: hidden; }
 <td>zxcero</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Great Deal (100.0% below market)</td>
+<td><span id="deal-score-24">Closed: Great Deal (100.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.89185/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-25" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="25" checked></td>
+<tr id="row-25" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="25" data-source="headfi" checked></td>
 <td>2025-04-08</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
@@ -638,12 +652,12 @@ td.status-reason { overflow: hidden; }
 <td>UnknownOperator</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (18.0% above market)</td>
+<td><span id="deal-score-25">Closed: High (18.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega-iem-mint-perfect-like-new-complete-set.86289/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-26" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="26" checked></td>
+<tr id="row-26" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="26" data-source="headfi" checked></td>
 <td>2025-04-01</td>
 <td>$1,950</td>
 <td><span class="pill">closed</span></td>
@@ -654,12 +668,12 @@ td.status-reason { overflow: hidden; }
 <td>jaker782</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (27.9% above market)</td>
+<td><span id="deal-score-26">Closed: Overpriced (27.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.85947/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-27" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="27" checked></td>
+<tr id="row-27" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="27" data-source="headfi" checked></td>
 <td>2025-03-14</td>
 <td>$2,000</td>
 <td><span class="pill">closed</span></td>
@@ -670,12 +684,12 @@ td.status-reason { overflow: hidden; }
 <td>shaunbr15</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (31.1% above market)</td>
+<td><span id="deal-score-27">Closed: Overpriced (31.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.84867/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-28" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="28" checked></td>
+<tr id="row-28" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="28" data-source="headfi" checked></td>
 <td>2025-03-04</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
@@ -686,11 +700,11 @@ td.status-reason { overflow: hidden; }
 <td>Dandelion777</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: High (24.6% above market)</td>
+<td><span id="deal-score-28">Closed: High (24.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.84297/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-29" class="excluded">
+<tr id="row-29" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2025-03-01</td>
 <td></td>
@@ -702,12 +716,12 @@ td.status-reason { overflow: hidden; }
 <td>zlayde</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-29">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.84125/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-30" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="30" checked></td>
+<tr id="row-30" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="30" data-source="headfi" checked></td>
 <td>2025-02-14</td>
 <td>$1,999</td>
 <td><span class="pill">closed</span></td>
@@ -718,12 +732,12 @@ td.status-reason { overflow: hidden; }
 <td>fejnomit</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (31.1% above market)</td>
+<td><span id="deal-score-30">Closed: Overpriced (31.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.83311/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-31" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="31" checked></td>
+<tr id="row-31" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="31" data-source="headfi" checked></td>
 <td>2025-02-14</td>
 <td>$2,050</td>
 <td><span class="pill">closed</span></td>
@@ -734,11 +748,11 @@ td.status-reason { overflow: hidden; }
 <td>VisalEziomi</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (34.4% above market)</td>
+<td><span id="deal-score-31">Closed: Overpriced (34.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.83309/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-32" class="excluded">
+<tr id="row-32" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2025-02-10</td>
 <td></td>
@@ -750,22 +764,99 @@ td.status-reason { overflow: hidden; }
 <td>JTiizii</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-32">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.83079/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Alpha Omega Omega IEM NEW in SEALED box. Alpha & Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega-iem-new-in-sealed-box-alpha-omega.111888/", "price_num": 1800.0, "date_ms": 1783468800000, "listing_status": "active", "condition_text": "new in box", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | headfi_extension_status_checker_verified_or_left_active | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "Alpha & Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.111307/", "price_num": 1450.0, "date_ms": 1782432000000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 2, "title": "Alpha Omega Omega's", "url": "https://www.head-fi.org/classifieds/alpha-omega-omegas.110473/", "price_num": 1450.0, "date_ms": 1780963200000, "listing_status": "active", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 3, "title": "Sold: Alpha Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.109859/", "price_num": 1600.0, "date_ms": 1780012800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Alpha Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.109729/", "price_num": 1525.0, "date_ms": 1779840000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_confirmed_sold_from_headfi_page"}, {"row_id": 5, "title": "Traded: Alpha Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.107353/", "price_num": 1700.0, "date_ms": 1776124800000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Traded: MINT IN BOX Alpha & Omega Omega", "url": "https://www.head-fi.org/classifieds/mint-in-box-alpha-omega-omega.107293/", "price_num": 1699.0, "date_ms": 1776038400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Alpha & Omega - Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.106545/", "price_num": 1750.0, "date_ms": 1775001600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Package - Alpha Omega Omega + BGVP Solomon", "url": "https://www.head-fi.org/classifieds/package-alpha-omega-omega-bgvp-solomon.106412/", "price_num": 2450.0, "date_ms": 1774828800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Alpha & Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.105918/", "price_num": 1700.0, "date_ms": 1774137600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Closed: Alpha Omega, Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.105443/", "price_num": 1650.0, "date_ms": 1773532800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Closed: Alpha Omega, Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.105449/", "price_num": 1900.0, "date_ms": 1773532800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 12, "title": "Traded: WTS Alpha Omega Omega", "url": "https://www.head-fi.org/classifieds/wts-alpha-omega-omega.103287/", "price_num": 1750.0, "date_ms": 1770336000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: [PD] Alpha&Omega Omega", "url": "https://www.head-fi.org/classifieds/pd-alpha-omega-omega.103235/", "price_num": 1750.0, "date_ms": 1770249600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: Alpha&Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.102516/", "price_num": 1900.0, "date_ms": 1769126400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Closed: SOLD: Alpha&Omega Omega", "url": "https://www.head-fi.org/classifieds/sold-alpha-omega-omega.101967/", "price_num": 1900.0, "date_ms": 1768348800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Closed: Traded- Alpha Omega Omega- Excellent Condition.", "url": "https://www.head-fi.org/classifieds/traded-alpha-omega-omega-excellent-condition.101607/", "price_num": 1800.0, "date_ms": 1767830400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Alpha&Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.100819/", "price_num": 1950.0, "date_ms": 1766707200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 18, "title": "Sold: Alpha&Omega Omega mint", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega-mint.99566/", "price_num": 1850.0, "date_ms": 1764720000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Traded: Alpha & Omega - Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.98429/", "price_num": 1850.0, "date_ms": 1762992000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Alpha Omega Omega IEM", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega-iem.98435/", "price_num": 1850.0, "date_ms": 1762992000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Alpha & Omega - Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.95731/", "price_num": 1900.0, "date_ms": 1758844800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: Alpha & Omega Omega \ud83d\udd25", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega-%F0%9F%94%A5.91882/", "price_num": 1900.0, "date_ms": 1752796800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Closed: Alpha & Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.91790/", "price_num": 2100.0, "date_ms": 1752624000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 24, "title": "Sold: Alpha Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.89185/", "price_num": 0.0, "date_ms": 1748476800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: Alpha Omega Omega IEM MINT PERFECT Like New Complete Set", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega-iem-mint-perfect-like-new-complete-set.86289/", "price_num": 1800.0, "date_ms": 1744070400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: Alpha & Omega - Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.85947/", "price_num": 1950.0, "date_ms": 1743465600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Sold: Alpha&Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.84867/", "price_num": 2000.0, "date_ms": 1741910400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Sold: Alpha & Omega - Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.84297/", "price_num": 1900.0, "date_ms": 1741046400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Traded: Alpha Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.84125/", "price_num": null, "date_ms": 1740787200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 30, "title": "Sold: Alpha&Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.83311/", "price_num": 1999.0, "date_ms": 1739491200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Closed: Alpha omega OMEGA", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.83309/", "price_num": 2050.0, "date_ms": 1739491200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 32, "title": "Sold: Alpha Omega: Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.83079/", "price_num": null, "date_ms": 1739145600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Alpha Omega Omega IEM NEW in SEALED box. Alpha & Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega-iem-new-in-sealed-box-alpha-omega.111888/", "price_num": 1800.0, "date_ms": 1783468800000, "listing_status": "active", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | headfi_extension_status_checker_verified_or_left_active | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "Alpha & Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.111307/", "price_num": 1450.0, "date_ms": 1782432000000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 2, "title": "Alpha Omega Omega's", "url": "https://www.head-fi.org/classifieds/alpha-omega-omegas.110473/", "price_num": 1450.0, "date_ms": 1780963200000, "listing_status": "active", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 3, "title": "Sold: Alpha Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.109859/", "price_num": 1600.0, "date_ms": 1780012800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Alpha Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.109729/", "price_num": 1525.0, "date_ms": 1779840000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_confirmed_sold_from_headfi_page"}, {"row_id": 5, "title": "Traded: Alpha Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.107353/", "price_num": 1700.0, "date_ms": 1776124800000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Traded: MINT IN BOX Alpha & Omega Omega", "url": "https://www.head-fi.org/classifieds/mint-in-box-alpha-omega-omega.107293/", "price_num": 1699.0, "date_ms": 1776038400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Alpha & Omega - Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.106545/", "price_num": 1750.0, "date_ms": 1775001600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Package - Alpha Omega Omega + BGVP Solomon", "url": "https://www.head-fi.org/classifieds/package-alpha-omega-omega-bgvp-solomon.106412/", "price_num": 2450.0, "date_ms": 1774828800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Alpha & Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.105918/", "price_num": 1700.0, "date_ms": 1774137600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Closed: Alpha Omega, Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.105443/", "price_num": 1650.0, "date_ms": 1773532800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Closed: Alpha Omega, Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.105449/", "price_num": 1900.0, "date_ms": 1773532800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 12, "title": "Traded: WTS Alpha Omega Omega", "url": "https://www.head-fi.org/classifieds/wts-alpha-omega-omega.103287/", "price_num": 1750.0, "date_ms": 1770336000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: [PD] Alpha&Omega Omega", "url": "https://www.head-fi.org/classifieds/pd-alpha-omega-omega.103235/", "price_num": 1750.0, "date_ms": 1770249600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: Alpha&Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.102516/", "price_num": 1900.0, "date_ms": 1769126400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Closed: SOLD: Alpha&Omega Omega", "url": "https://www.head-fi.org/classifieds/sold-alpha-omega-omega.101967/", "price_num": 1900.0, "date_ms": 1768348800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Closed: Traded- Alpha Omega Omega- Excellent Condition.", "url": "https://www.head-fi.org/classifieds/traded-alpha-omega-omega-excellent-condition.101607/", "price_num": 1800.0, "date_ms": 1767830400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Alpha&Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.100819/", "price_num": 1950.0, "date_ms": 1766707200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 18, "title": "Sold: Alpha&Omega Omega mint", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega-mint.99566/", "price_num": 1850.0, "date_ms": 1764720000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Traded: Alpha & Omega - Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.98429/", "price_num": 1850.0, "date_ms": 1762992000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Alpha Omega Omega IEM", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega-iem.98435/", "price_num": 1850.0, "date_ms": 1762992000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Alpha & Omega - Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.95731/", "price_num": 1900.0, "date_ms": 1758844800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: Alpha & Omega Omega \ud83d\udd25", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega-%F0%9F%94%A5.91882/", "price_num": 1900.0, "date_ms": 1752796800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Closed: Alpha & Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.91790/", "price_num": 2100.0, "date_ms": 1752624000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 24, "title": "Sold: Alpha Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.89185/", "price_num": 0.0, "date_ms": 1748476800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: Alpha Omega Omega IEM MINT PERFECT Like New Complete Set", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega-iem-mint-perfect-like-new-complete-set.86289/", "price_num": 1800.0, "date_ms": 1744070400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: Alpha & Omega - Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.85947/", "price_num": 1950.0, "date_ms": 1743465600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Sold: Alpha&Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.84867/", "price_num": 2000.0, "date_ms": 1741910400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Sold: Alpha & Omega - Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.84297/", "price_num": 1900.0, "date_ms": 1741046400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Traded: Alpha Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.84125/", "price_num": null, "date_ms": 1740787200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 30, "title": "Sold: Alpha&Omega Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.83311/", "price_num": 1999.0, "date_ms": 1739491200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Closed: Alpha omega OMEGA", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.83309/", "price_num": 2050.0, "date_ms": 1739491200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 32, "title": "Sold: Alpha Omega: Omega", "url": "https://www.head-fi.org/classifieds/alpha-omega-omega.83079/", "price_num": null, "date_ms": 1739145600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 2700.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
+let currentMarketplaceSource = "both";
+
+function normalizeMarketplaceSource(platform) {
+    const text = String(platform || "").toLowerCase().trim();
+    if (["reddit", "reddit_rss", "avexchange", "r/avexchange"].includes(text)) return "reddit";
+    if (["headfi", "head-fi", "head-fi classifieds"].includes(text)) return "headfi";
+    if (["manual", "manual_csv", "manual input"].includes(text)) return "manual";
+    return "other";
+}
+function sourceMatches(row) {
+    return currentMarketplaceSource === "both" || row.source_key === currentMarketplaceSource;
+}
+function getSourceRows() {
+    return allRows.filter(sourceMatches);
+}
+function safeLocalStorageGet(key) {
+    try { return window.localStorage.getItem(key); } catch (error) { return null; }
+}
+function safeLocalStorageSet(key, value) {
+    try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function getInitialMarketplaceSource() {
+    const params = new URLSearchParams(window.location.search);
+    const querySource = String(params.get("source") || "").toLowerCase();
+    if (["both", "reddit", "headfi"].includes(querySource)) return querySource;
+
+    const storedSource = String(safeLocalStorageGet("iemMarketplaceSource") || "").toLowerCase();
+    if (["both", "reddit", "headfi"].includes(storedSource)) return storedSource;
+
+    return "both";
+}
+function updateCurrentPageSourceQuery(source) {
+    try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("source", source);
+        window.history.replaceState({}, "", url);
+    } catch (error) {}
+}
+function setMarketplaceSource(source) {
+    if (!["both", "reddit", "headfi"].includes(source)) source = "both";
+    currentMarketplaceSource = source;
+    safeLocalStorageSet("iemMarketplaceSource", source);
+    updateCurrentPageSourceQuery(source);
+
+    document.querySelectorAll(".source-btn").forEach(function(button) {
+        button.classList.toggle("active", button.getAttribute("data-source") === source);
+    });
+
+    allRows.forEach(function(row) {
+        const tableRow = document.getElementById("row-" + row.row_id);
+        if (tableRow) tableRow.classList.toggle("source-hidden", !sourceMatches(row));
+    });
+
+    const backLink = document.getElementById("back-link");
+    if (backLink) backLink.href = "index.html?source=" + encodeURIComponent(source);
+
+    updateStatsAndChart();
+}
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
 function moneyRound(value) { return money(value); }
 function dateLabel(value) { if (value === null || value === undefined || Number.isNaN(value)) return ""; return new Date(value).toLocaleDateString(); }
 function pct(value) { if (value === null || value === undefined || Number.isNaN(value)) return "N/A"; return Number(value).toLocaleString(undefined, {maximumFractionDigits: 1}) + "%"; }
 function median(values) { if (!values.length) return null; const sorted = [...values].sort((a,b)=>a-b); const mid = Math.floor(sorted.length/2); return sorted.length % 2 === 0 ? (sorted[mid-1] + sorted[mid]) / 2 : sorted[mid]; }
 function average(values) { if (!values.length) return null; return values.reduce((a,b)=>a+b, 0) / values.length; }
-const staleUnsoldMarketDays = 60;
+function dealScoreDisplay(row, marketValue) {
+    const price = Number(row.price_num);
+    const market = Number(marketValue);
+    if (!Number.isFinite(price) || price <= 0 || !Number.isFinite(market) || market <= 0) return "N/A";
+
+    const deltaPct = ((price - market) / market) * 100;
+    let label = "Fair";
+    if (deltaPct <= -20) label = "Great Deal";
+    else if (deltaPct <= -10) label = "Good Deal";
+    else if (deltaPct <= 10) label = "Fair";
+    else if (deltaPct <= 25) label = "High";
+    else label = "Overpriced";
+
+    const direction = deltaPct < 0 ? "below" : "above";
+    const detail = Math.abs(deltaPct).toFixed(1) + "% " + direction + " market";
+    return String(row.listing_status || "").toLowerCase() === "closed"
+        ? "Closed: " + label + " (" + detail + ")"
+        : label + " (" + detail + ")";
+}
+const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
@@ -787,9 +878,11 @@ function isStaleUnsoldCeilingRow(row) {
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
     const statusComment = String(row.status_comment || "").toLowerCase().trim();
     const staleMarker = status === "stale" || status === "stale_unsold" || closedReason.startsWith("stale_unsold") || closedReason === "stale_active_timeout" || statusComment.includes("stale unsold") || statusComment.includes("lister never updated");
-    if (staleMarker) return true;
-
     const ageDays = rowAgeDays(row);
+    // Older checker runs may already have written a stale marker using a
+    // shorter timeout. Do not use it as a ceiling until the current 180d
+    // threshold is reached. Preserve explicit stale rows with no usable date.
+    if (staleMarker) return ageDays === null || ageDays >= staleUnsoldMarketDays;
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
@@ -1014,13 +1107,27 @@ function calculateLiquidityConfidenceFromRows(rows) {
 }
 function getSelectedRows() {
     const selectedIds = new Set();
+
     document.querySelectorAll(".row-toggle").forEach(function(cb) {
         const rowId = Number(cb.dataset.rowId);
-        if (cb.checked) { selectedIds.add(rowId); document.getElementById("row-" + rowId).className = "included"; }
-        else { document.getElementById("row-" + rowId).className = "excluded"; }
+        const tableRow = document.getElementById("row-" + rowId);
+
+        if (cb.checked) selectedIds.add(rowId);
+
+        if (tableRow) {
+            tableRow.classList.toggle("included", cb.checked);
+            tableRow.classList.toggle("excluded", !cb.checked);
+        }
     });
-    return allRows.filter(row => selectedIds.has(row.row_id) && row.price_num !== null);
+
+    return allRows.filter(function(row) {
+        return sourceMatches(row) &&
+            selectedIds.has(row.row_id) &&
+            row.price_num !== null &&
+            !Number.isNaN(row.price_num);
+    });
 }
+
 function getSmoothingConfig(sampleCount) {
     // More samples can support a wider smoothing window and a denser curve.
     // Thin datasets stay close to the actual points.
@@ -1145,30 +1252,40 @@ function calculateSmoothedRetentionLine(rows) {
 }
 
 function updateStatsAndChart() {
+    const sourceRows = getSourceRows();
     const selectedRows = getSelectedRows();
     const prices = selectedRows.map(r => r.price_num).filter(v => v !== null && !Number.isNaN(v));
-    const marketValueResult = calculateMarketValueFromRows(selectedRows, allRows);
+    const marketValueResult = calculateMarketValueFromRows(selectedRows, sourceRows);
+
     document.getElementById("stat-market-value").textContent = money(marketValueResult.value);
     document.getElementById("stat-market-basis").textContent = marketValueResult.basis;
+    document.getElementById("stat-total-priced-rows").textContent = sourceRows.filter(
+        row => row.price_num !== null && !Number.isNaN(row.price_num)
+    ).length;
+
     if (hasOriginalMsrp && document.getElementById("stat-market-vs-msrp")) {
         if (marketValueResult.value !== null && !Number.isNaN(marketValueResult.value)) {
             const mvRetention = (marketValueResult.value / originalMsrpUsd) * 100;
             const mvDelta = mvRetention - 100;
             const direction = mvDelta >= 0 ? "above" : "below";
             document.getElementById("stat-market-vs-msrp").textContent = pct(mvRetention) + " of MSRP";
-            document.getElementById("stat-market-vs-msrp-detail").textContent = Math.abs(mvDelta).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction;
+            document.getElementById("stat-market-vs-msrp-detail").textContent =
+                Math.abs(mvDelta).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction;
         } else {
             document.getElementById("stat-market-vs-msrp").textContent = "N/A";
             document.getElementById("stat-market-vs-msrp-detail").textContent = "";
         }
     }
+
     document.getElementById("stat-average").textContent = money(average(prices));
     document.getElementById("stat-low").textContent = money(prices.length ? Math.min(...prices) : null);
     document.getElementById("stat-high").textContent = money(prices.length ? Math.max(...prices) : null);
     document.getElementById("stat-samples").textContent = prices.length;
+
     const liquidityConfidence = calculateLiquidityConfidenceFromRows(selectedRows);
     const liquidityBadge = document.getElementById("stat-liquidity-confidence");
     const liquidityDetail = document.getElementById("stat-liquidity-confidence-detail");
+
     if (liquidityBadge) {
         liquidityBadge.textContent = liquidityConfidence.display;
         liquidityBadge.className = "badge badge-score " + liquidityConfidence.cssClass;
@@ -1177,10 +1294,28 @@ function updateStatsAndChart() {
         liquidityBadge.removeAttribute("title");
     }
     if (liquidityDetail) liquidityDetail.textContent = liquidityConfidence.detail;
-    const priceScatter = selectedRows.filter(r => r.date_ms !== null && r.price_num !== null).map(row => ({x: row.date_ms, y: row.price_num, url: row.url, title: row.title, status: row.listing_status, condition: row.condition_text, platform: row.platform}));
+
+    sourceRows.forEach(function(row) {
+        const dealElement = document.getElementById("deal-score-" + row.row_id);
+        if (dealElement) dealElement.textContent = dealScoreDisplay(row, marketValueResult.value);
+    });
+
+    const priceScatter = selectedRows
+        .filter(r => r.date_ms !== null && r.price_num !== null)
+        .map(row => ({
+            x: row.date_ms,
+            y: row.price_num,
+            url: row.url,
+            title: row.title,
+            status: row.listing_status,
+            condition: row.condition_text,
+            platform: row.platform
+        }));
+
     chart.data.datasets[0].data = priceScatter;
     chart.data.datasets[1].data = calculateSmoothedPriceLine(selectedRows);
     chart.update();
+
     if (hasOriginalMsrp && msrpChart) {
         msrpChart.data.datasets[0].data = selectedRows
             .filter(r => r.date_ms !== null && r.price_num !== null)
@@ -1194,11 +1329,21 @@ function updateStatsAndChart() {
                 condition: row.condition_text,
                 platform: row.platform
             }));
+
         msrpChart.data.datasets[1].data = calculateSmoothedRetentionLine(selectedRows);
         msrpChart.update();
     }
 }
-function setAllCheckboxes(checked) { document.querySelectorAll(".row-toggle").forEach(cb => cb.checked = checked); updateStatsAndChart(); }
+
+function setAllCheckboxes(checked) {
+    document.querySelectorAll(".row-toggle").forEach(function(cb) {
+        const checkboxSource = String(cb.getAttribute("data-source") || "other");
+        if (currentMarketplaceSource === "both" || checkboxSource === currentMarketplaceSource) {
+            cb.checked = checked;
+        }
+    });
+    updateStatsAndChart();
+}
 const chart = new Chart(document.getElementById("chart"), {
     type: "scatter",
     data: {
@@ -1365,7 +1510,7 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
-updateStatsAndChart();
+setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>
 </body>

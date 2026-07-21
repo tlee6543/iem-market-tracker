@@ -59,6 +59,11 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 .filter-btn { padding: 9px 12px; border: 1px solid #ccc; background: #fff; border-radius: 999px; cursor: pointer; }
 .filter-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-toggle { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+.source-toggle-label { font-size: 13px; color: #555; font-weight: bold; margin-right: 2px; }
+.source-btn { padding: 9px 14px; border: 1px solid #bbb; background: #fff; border-radius: 999px; cursor: pointer; font-weight: bold; }
+.source-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-hidden { display: none; }
 .badge { display: inline-block; padding: 3px 8px; border-radius: 999px; border: 1px solid #ccc; background: #fafafa; font-size: 12px; white-space: nowrap; }
 .badge-high { background: #ecfdf3; border-color: #b7e4c7; }
 .badge-medium { background: #fff8e1; border-color: #ead88a; }
@@ -177,9 +182,18 @@ td.status-reason { overflow: hidden; }
         </div>
     </div>
     
-<p><a href="index.html">← Back</a></p>
+<p><a id="back-link" href="index.html">← Back</a></p>
 <h1>Campfire Andromeda 2020</h1>
 <p><a href="brand-campfire-audio.html">Campfire Audio</a></p>
+<div class="card">
+    <div class="source-toggle" aria-label="Marketplace source">
+        <span class="source-toggle-label">Marketplace:</span>
+        <button class="source-btn active" data-source="both" onclick="setMarketplaceSource('both')">Both</button>
+        <button class="source-btn" data-source="reddit" onclick="setMarketplaceSource('reddit')">Reddit</button>
+        <button class="source-btn" data-source="headfi" onclick="setMarketplaceSource('headfi')">Head-Fi</button>
+    </div>
+    <p class="small">The selected marketplace filters the listing table, charts, market value, sample counts, and confidence score.</p>
+</div>
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
@@ -201,12 +215,12 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span>38</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">38</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 60+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
-    <div class="controls"><button onclick="setAllCheckboxes(true)">Select all priced rows</button><button onclick="setAllCheckboxes(false)">Clear all</button></div>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
         <div class="chart-panel">
@@ -226,8 +240,8 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" ></td>
+<tr id="row-0" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
 <td>2026-06-18</td>
 <td>$625</td>
 <td><span class="pill">closed</span></td>
@@ -238,12 +252,12 @@ td.status-reason { overflow: hidden; }
 <td>MidgetAsianGuy</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (2.7% below market)</td>
+<td><span id="deal-score-0">Closed: Fair (2.7% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1u9dgi4/wts_usany_h_campfire_audio_andromeda_2020_time/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" checked></td>
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2026-03-11</td>
 <td>$700</td>
 <td><span class="pill">closed</span></td>
@@ -254,12 +268,12 @@ td.status-reason { overflow: hidden; }
 <td>upsguys88</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (9.0% above market)</td>
+<td><span id="deal-score-1">Closed: Fair (9.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-mint.105237/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" checked></td>
+<tr id="row-2" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" checked></td>
 <td>2025-11-22</td>
 <td>$550</td>
 <td><span class="pill">closed</span></td>
@@ -270,12 +284,12 @@ td.status-reason { overflow: hidden; }
 <td>Pabsu</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (14.4% below market)</td>
+<td><span id="deal-score-2">Closed: Good Deal (14.4% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.98930/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" checked></td>
+<tr id="row-3" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="headfi" checked></td>
 <td>2025-06-13</td>
 <td>$500</td>
 <td><span class="pill">closed</span></td>
@@ -286,12 +300,12 @@ td.status-reason { overflow: hidden; }
 <td>Neweymatt</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Great Deal (22.2% below market)</td>
+<td><span id="deal-score-3">Closed: Great Deal (22.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020.90044/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-4" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="4" checked></td>
+<tr id="row-4" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="headfi" checked></td>
 <td>2025-01-03</td>
 <td>$550</td>
 <td><span class="pill">closed</span></td>
@@ -302,11 +316,11 @@ td.status-reason { overflow: hidden; }
 <td>Rlin987</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (14.4% below market)</td>
+<td><span id="deal-score-4">Closed: Good Deal (14.4% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pending-campfire-andromeda-2020.80841/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-5" class="excluded">
+<tr id="row-5" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2024-08-12</td>
 <td></td>
@@ -318,12 +332,12 @@ td.status-reason { overflow: hidden; }
 <td>upsguys88</td>
 <td>1</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-5">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/ic-sealed-campfire-audio-andromeda-2020.73038/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-6" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="6" checked></td>
+<tr id="row-6" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="headfi" checked></td>
 <td>2024-01-29</td>
 <td>$699</td>
 <td><span class="pill">closed</span></td>
@@ -334,12 +348,12 @@ td.status-reason { overflow: hidden; }
 <td>NewEve</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (8.8% above market)</td>
+<td><span id="deal-score-6">Closed: Fair (8.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.61609/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-7" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="7" ></td>
+<tr id="row-7" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="7" data-source="headfi" ></td>
 <td>2024-01-22</td>
 <td>$500</td>
 <td><span class="pill">closed</span></td>
@@ -350,12 +364,12 @@ td.status-reason { overflow: hidden; }
 <td>elementze</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Great Deal (22.2% below market)</td>
+<td><span id="deal-score-7">Closed: Great Deal (22.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-w-time-stream-cable.61198/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-8" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="8" checked></td>
+<tr id="row-8" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="8" data-source="headfi" checked></td>
 <td>2024-01-11</td>
 <td>$525</td>
 <td><span class="pill">closed</span></td>
@@ -366,12 +380,12 @@ td.status-reason { overflow: hidden; }
 <td>Lucikun</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (18.3% below market)</td>
+<td><span id="deal-score-8">Closed: Good Deal (18.3% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sold-campfire-audio-andromeda-2020.60609/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-9" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="9" ></td>
+<tr id="row-9" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="9" data-source="headfi" ></td>
 <td>2023-10-19</td>
 <td>$625</td>
 <td><span class="pill">closed</span></td>
@@ -382,12 +396,12 @@ td.status-reason { overflow: hidden; }
 <td>firefighter9</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (2.7% below market)</td>
+<td><span id="deal-score-9">Closed: Fair (2.7% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020-with-cables.56249/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-10" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="10" checked></td>
+<tr id="row-10" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="10" data-source="headfi" checked></td>
 <td>2023-09-12</td>
 <td>$625</td>
 <td><span class="pill">closed</span></td>
@@ -398,12 +412,12 @@ td.status-reason { overflow: hidden; }
 <td>gc335</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (2.7% below market)</td>
+<td><span id="deal-score-10">Closed: Fair (2.7% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-last-chance.54190/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-11" class="excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="11" ></td>
+<tr id="row-11" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="11" data-source="headfi" ></td>
 <td>2023-06-26</td>
 <td>$550</td>
 <td><span class="pill">closed</span></td>
@@ -414,12 +428,12 @@ td.status-reason { overflow: hidden; }
 <td>Tchoupitoulas</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (14.4% below market)</td>
+<td><span id="deal-score-11">Closed: Good Deal (14.4% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-iems-with-upgrade-cable.49953/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-12" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="12" checked></td>
+<tr id="row-12" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="12" data-source="headfi" checked></td>
 <td>2023-05-22</td>
 <td>$720</td>
 <td><span class="pill">closed</span></td>
@@ -430,12 +444,12 @@ td.status-reason { overflow: hidden; }
 <td>Nativo</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (12.1% above market)</td>
+<td><span id="deal-score-12">Closed: High (12.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020.48188/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-13" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="13" checked></td>
+<tr id="row-13" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="13" data-source="headfi" checked></td>
 <td>2023-05-20</td>
 <td>$590</td>
 <td><span class="pill">closed</span></td>
@@ -446,12 +460,12 @@ td.status-reason { overflow: hidden; }
 <td>chowy</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (8.2% below market)</td>
+<td><span id="deal-score-13">Closed: Fair (8.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020.47996/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-14" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="14" checked></td>
+<tr id="row-14" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="14" data-source="headfi" checked></td>
 <td>2023-05-14</td>
 <td>$650</td>
 <td><span class="pill">closed</span></td>
@@ -462,11 +476,11 @@ td.status-reason { overflow: hidden; }
 <td>Maxx134</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.2% above market)</td>
+<td><span id="deal-score-14">Closed: Fair (1.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020.47691/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-15" class="excluded">
+<tr id="row-15" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2023-02-27</td>
 <td></td>
@@ -478,12 +492,12 @@ td.status-reason { overflow: hidden; }
 <td>zlayde</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-15">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020.42559/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-16" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="16" checked></td>
+<tr id="row-16" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="16" data-source="headfi" checked></td>
 <td>2023-01-20</td>
 <td>$575</td>
 <td><span class="pill">closed</span></td>
@@ -494,12 +508,12 @@ td.status-reason { overflow: hidden; }
 <td>ciscokid96</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Good Deal (10.5% below market)</td>
+<td><span id="deal-score-16">Closed: Good Deal (10.5% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020.40093/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-17" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="17" checked></td>
+<tr id="row-17" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="17" data-source="headfi" checked></td>
 <td>2022-12-27</td>
 <td>$650</td>
 <td><span class="pill">closed</span></td>
@@ -510,12 +524,12 @@ td.status-reason { overflow: hidden; }
 <td>yellowbirdfly</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.2% above market)</td>
+<td><span id="deal-score-17">Closed: Fair (1.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020.38552/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-18" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="18" checked></td>
+<tr id="row-18" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="18" data-source="headfi" checked></td>
 <td>2022-11-09</td>
 <td>$770</td>
 <td><span class="pill">closed</span></td>
@@ -526,12 +540,12 @@ td.status-reason { overflow: hidden; }
 <td>inventionlws</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (19.9% above market)</td>
+<td><span id="deal-score-18">Closed: High (19.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020-lightly-used.36004/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-19" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="19" checked></td>
+<tr id="row-19" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="19" data-source="headfi" checked></td>
 <td>2022-08-06</td>
 <td>$580</td>
 <td><span class="pill">closed</span></td>
@@ -542,12 +556,12 @@ td.status-reason { overflow: hidden; }
 <td>Bosk</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (9.7% below market)</td>
+<td><span id="deal-score-19">Closed: Fair (9.7% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020.30617/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-20" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="20" checked></td>
+<tr id="row-20" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="20" data-source="headfi" checked></td>
 <td>2022-07-19</td>
 <td>$650</td>
 <td><span class="pill">closed</span></td>
@@ -558,12 +572,12 @@ td.status-reason { overflow: hidden; }
 <td>whistlebug23</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (1.2% above market)</td>
+<td><span id="deal-score-20">Closed: Fair (1.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.29648/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-21" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="21" checked></td>
+<tr id="row-21" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="21" data-source="headfi" checked></td>
 <td>2022-04-28</td>
 <td>$800</td>
 <td><span class="pill">closed</span></td>
@@ -574,12 +588,12 @@ td.status-reason { overflow: hidden; }
 <td>bonsilityp</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (24.5% above market)</td>
+<td><span id="deal-score-21">Closed: High (24.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.24783/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-22" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="22" checked></td>
+<tr id="row-22" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="22" data-source="headfi" checked></td>
 <td>2022-03-26</td>
 <td>$700</td>
 <td><span class="pill">closed</span></td>
@@ -590,12 +604,12 @@ td.status-reason { overflow: hidden; }
 <td>Damz87</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (9.0% above market)</td>
+<td><span id="deal-score-22">Closed: Fair (9.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.22790/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-23" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="23" checked></td>
+<tr id="row-23" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="23" data-source="headfi" checked></td>
 <td>2022-03-12</td>
 <td>$675</td>
 <td><span class="pill">closed</span></td>
@@ -606,12 +620,12 @@ td.status-reason { overflow: hidden; }
 <td>jisukim</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (5.1% above market)</td>
+<td><span id="deal-score-23">Closed: Fair (5.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020.21869/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-24" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="24" checked></td>
+<tr id="row-24" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="24" data-source="headfi" checked></td>
 <td>2022-02-02</td>
 <td>$720</td>
 <td><span class="pill">closed</span></td>
@@ -622,12 +636,12 @@ td.status-reason { overflow: hidden; }
 <td>SGarfinkle</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (12.1% above market)</td>
+<td><span id="deal-score-24">Closed: High (12.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/price-drop-campfire-andromeda-2020.19432/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-25" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="25" checked></td>
+<tr id="row-25" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="25" data-source="headfi" checked></td>
 <td>2022-02-01</td>
 <td>$675</td>
 <td><span class="pill">closed</span></td>
@@ -638,12 +652,12 @@ td.status-reason { overflow: hidden; }
 <td>gc335</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Fair (5.1% above market)</td>
+<td><span id="deal-score-25">Closed: Fair (5.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.19338/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-26" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="26" checked></td>
+<tr id="row-26" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="26" data-source="headfi" checked></td>
 <td>2022-01-31</td>
 <td>$785</td>
 <td><span class="pill">closed</span></td>
@@ -654,12 +668,12 @@ td.status-reason { overflow: hidden; }
 <td>Mllump</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (22.2% above market)</td>
+<td><span id="deal-score-26">Closed: High (22.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-open-box.19286/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-27" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="27" checked></td>
+<tr id="row-27" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="27" data-source="headfi" checked></td>
 <td>2022-01-21</td>
 <td>$800</td>
 <td><span class="pill">closed</span></td>
@@ -670,12 +684,12 @@ td.status-reason { overflow: hidden; }
 <td>rosiedog</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (24.5% above market)</td>
+<td><span id="deal-score-27">Closed: High (24.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.18579/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-28" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="28" checked></td>
+<tr id="row-28" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="28" data-source="headfi" checked></td>
 <td>2022-01-20</td>
 <td>$615</td>
 <td><span class="pill">closed</span></td>
@@ -686,12 +700,12 @@ td.status-reason { overflow: hidden; }
 <td>loplop</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (4.3% below market)</td>
+<td><span id="deal-score-28">Closed: Fair (4.3% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020-like-new.18498/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-29" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="29" checked></td>
+<tr id="row-29" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="29" data-source="headfi" checked></td>
 <td>2022-01-15</td>
 <td>$725</td>
 <td><span class="pill">closed</span></td>
@@ -702,12 +716,12 @@ td.status-reason { overflow: hidden; }
 <td>kdestremps28</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (12.9% above market)</td>
+<td><span id="deal-score-29">Closed: High (12.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.18170/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-30" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="30" checked></td>
+<tr id="row-30" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="30" data-source="headfi" checked></td>
 <td>2021-10-11</td>
 <td>$780</td>
 <td><span class="pill">closed</span></td>
@@ -718,12 +732,12 @@ td.status-reason { overflow: hidden; }
 <td>kvzrock</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (21.4% above market)</td>
+<td><span id="deal-score-30">Closed: High (21.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020.12711/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-31" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="31" checked></td>
+<tr id="row-31" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="31" data-source="headfi" checked></td>
 <td>2021-09-28</td>
 <td>$725</td>
 <td><span class="pill">closed</span></td>
@@ -734,12 +748,12 @@ td.status-reason { overflow: hidden; }
 <td>Chiu</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (12.9% above market)</td>
+<td><span id="deal-score-31">Closed: High (12.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020.11971/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-32" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="32" checked></td>
+<tr id="row-32" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="32" data-source="headfi" checked></td>
 <td>2021-09-10</td>
 <td>$725</td>
 <td><span class="pill">closed</span></td>
@@ -750,12 +764,12 @@ td.status-reason { overflow: hidden; }
 <td>Precogvision</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (12.9% above market)</td>
+<td><span id="deal-score-32">Closed: High (12.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-2020.10929/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-33" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="33" checked></td>
+<tr id="row-33" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="33" data-source="headfi" checked></td>
 <td>2021-08-31</td>
 <td>$625</td>
 <td><span class="pill">closed</span></td>
@@ -766,12 +780,12 @@ td.status-reason { overflow: hidden; }
 <td>mysticstryk</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (2.7% below market)</td>
+<td><span id="deal-score-33">Closed: Fair (2.7% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/fs-ca-andromeda-v3-2019.10414/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-34" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="34" checked></td>
+<tr id="row-34" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="34" data-source="headfi" checked></td>
 <td>2021-08-30</td>
 <td>$825</td>
 <td><span class="pill">closed</span></td>
@@ -782,12 +796,12 @@ td.status-reason { overflow: hidden; }
 <td>floydfan33</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (28.4% above market)</td>
+<td><span id="deal-score-34">Closed: Overpriced (28.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-near-mint-all-packaging.10335/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-35" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="35" checked></td>
+<tr id="row-35" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="35" data-source="headfi" checked></td>
 <td>2021-08-05</td>
 <td>$825</td>
 <td><span class="pill">closed</span></td>
@@ -798,12 +812,12 @@ td.status-reason { overflow: hidden; }
 <td>Damz87</td>
 <td>1</td>
 <td>0</td>
-<td>Closed: Overpriced (28.4% above market)</td>
+<td><span id="deal-score-35">Closed: Overpriced (28.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.8863/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-36" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="36" checked></td>
+<tr id="row-36" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="36" data-source="headfi" checked></td>
 <td>2021-05-19</td>
 <td>$845</td>
 <td><span class="pill">closed</span></td>
@@ -814,12 +828,12 @@ td.status-reason { overflow: hidden; }
 <td>Audio-In</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (31.5% above market)</td>
+<td><span id="deal-score-36">Closed: Overpriced (31.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sold-campfire-andromeda-2020-845-or-trade-for-um-mest-mki.4867/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-37" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="37" checked></td>
+<tr id="row-37" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="37" data-source="headfi" checked></td>
 <td>2021-05-06</td>
 <td>$750</td>
 <td><span class="pill">closed</span></td>
@@ -830,12 +844,12 @@ td.status-reason { overflow: hidden; }
 <td>DetoNatioNFocusFizz</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: High (16.7% above market)</td>
+<td><span id="deal-score-37">Closed: High (16.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/andromeda-2020.3989/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-38" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="38" checked></td>
+<tr id="row-38" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="38" data-source="headfi" checked></td>
 <td>2021-04-29</td>
 <td>$600</td>
 <td><span class="pill">closed</span></td>
@@ -846,12 +860,12 @@ td.status-reason { overflow: hidden; }
 <td>sweetsourpork</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Fair (6.6% below market)</td>
+<td><span id="deal-score-38">Closed: Fair (6.6% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sale-pending-campfire-andromeda-v3-2019.3601/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-39" class="included">
-<td><input type="checkbox" class="row-toggle" data-row-id="39" checked></td>
+<tr id="row-39" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="39" data-source="headfi" checked></td>
 <td>2021-04-20</td>
 <td>$900</td>
 <td><span class="pill">closed</span></td>
@@ -862,11 +876,11 @@ td.status-reason { overflow: hidden; }
 <td>imackler</td>
 <td>0</td>
 <td>0</td>
-<td>Closed: Overpriced (40.1% above market)</td>
+<td><span id="deal-score-39">Closed: Overpriced (40.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.3032/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-40" class="excluded">
+<tr id="row-40" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td></td>
 <td></td>
@@ -878,22 +892,99 @@ td.status-reason { overflow: hidden; }
 <td>unknown</td>
 <td>0</td>
 <td>0</td>
-<td>N/A</td>
+<td><span id="deal-score-40">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-andromeda-v3-price-drop.6551/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Campfire Audio Andromeda 2020, Time Stream - Ultra 4.4mm", "url": "https://old.reddit.com/r/AVexchange/comments/1u9dgi4/wts_usany_h_campfire_audio_andromeda_2020_time/#item-1", "price_num": 625.0, "date_ms": 1781805546000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | auto_bundle_excluded | no_price_unchecked"}, {"row_id": 1, "title": "Sold: Campfire Audio Andromeda 2020 mint", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-mint.105237/", "price_num": 700.0, "date_ms": 1773187200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.98930/", "price_num": 550.0, "date_ms": 1763769600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.90044/", "price_num": 500.0, "date_ms": 1749772800000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: [Pending] Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/pending-campfire-andromeda-2020.80841/", "price_num": 550.0, "date_ms": 1735862400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Closed: IC: Sealed Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/ic-sealed-campfire-audio-andromeda-2020.73038/", "price_num": null, "date_ms": 1723420800000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 6, "title": "Sold: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.61609/", "price_num": 699.0, "date_ms": 1706486400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Campfire Audio Andromeda 2020 w/ Time Stream Cable", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-w-time-stream-cable.61198/", "price_num": 500.0, "date_ms": 1705881600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: [SOLD] Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/sold-campfire-audio-andromeda-2020.60609/", "price_num": 525.0, "date_ms": 1704931200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Closed: Campfire Andromeda 2020 with cables", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020-with-cables.56249/", "price_num": 625.0, "date_ms": 1697673600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Closed: Campfire Audio Andromeda 2020 (Last chance...)", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-last-chance.54190/", "price_num": 625.0, "date_ms": 1694476800000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Campfire Audio Andromeda 2020 IEMs with upgrade cable", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-iems-with-upgrade-cable.49953/", "price_num": 550.0, "date_ms": 1687737600000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Closed: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.48188/", "price_num": 720.0, "date_ms": 1684713600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.47996/", "price_num": 590.0, "date_ms": 1684540800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.47691/", "price_num": 650.0, "date_ms": 1684022400000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.42559/", "price_num": null, "date_ms": 1677456000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.40093/", "price_num": 575.0, "date_ms": 1674172800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.38552/", "price_num": 650.0, "date_ms": 1672099200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Closed: Campfire Andromeda 2020 lightly used", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020-lightly-used.36004/", "price_num": 770.0, "date_ms": 1667952000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Sold: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.30617/", "price_num": 580.0, "date_ms": 1659744000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.29648/", "price_num": 650.0, "date_ms": 1658188800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.24783/", "price_num": 800.0, "date_ms": 1651104000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.22790/", "price_num": 700.0, "date_ms": 1648252800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Closed: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.21869/", "price_num": 675.0, "date_ms": 1647043200000, "listing_status": "closed", "condition_text": "great condition, b-stock", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Sold: Price Drop: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/price-drop-campfire-andromeda-2020.19432/", "price_num": 720.0, "date_ms": 1643760000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.19338/", "price_num": 675.0, "date_ms": 1643673600000, "listing_status": "closed", "condition_text": "like new, excellent, used, open box", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: Campfire Audio Andromeda 2020 - Open Box", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-open-box.19286/", "price_num": 785.0, "date_ms": 1643587200000, "listing_status": "closed", "condition_text": "like new, excellent, open box", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Closed: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.18579/", "price_num": 800.0, "date_ms": 1642723200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Sold: Campfire Andromeda 2020 Like New", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020-like-new.18498/", "price_num": 615.0, "date_ms": 1642636800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Closed: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.18170/", "price_num": 725.0, "date_ms": 1642204800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Closed: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.12711/", "price_num": 780.0, "date_ms": 1633910400000, "listing_status": "closed", "condition_text": "like new, excellent, b-stock", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Closed: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.11971/", "price_num": 725.0, "date_ms": 1632787200000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 32, "title": "Closed: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.10929/", "price_num": 725.0, "date_ms": 1631232000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 33, "title": "Sold: FS: CA Andromeda v3 (2019)", "url": "https://www.head-fi.org/classifieds/fs-ca-andromeda-v3-2019.10414/", "price_num": 625.0, "date_ms": 1630368000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 34, "title": "Closed: CAMPFIRE AUDIO ANDROMEDA 2020. Near Mint All Packaging", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-near-mint-all-packaging.10335/", "price_num": 825.0, "date_ms": 1630281600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 35, "title": "Closed: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.8863/", "price_num": 825.0, "date_ms": 1628121600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 36, "title": "Sold: Sold! Campfire Andromeda 2020 -$845 or trade for UM Mest MKI", "url": "https://www.head-fi.org/classifieds/sold-campfire-andromeda-2020-845-or-trade-for-um-mest-mki.4867/", "price_num": 845.0, "date_ms": 1621382400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 37, "title": "Sold: Andromeda 2020", "url": "https://www.head-fi.org/classifieds/andromeda-2020.3989/", "price_num": 750.0, "date_ms": 1620259200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 38, "title": "Closed: Sale Pending - Campfire Andromeda v3 (2019)", "url": "https://www.head-fi.org/classifieds/sale-pending-campfire-andromeda-v3-2019.3601/", "price_num": 600.0, "date_ms": 1619654400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 39, "title": "Sold: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.3032/", "price_num": 900.0, "date_ms": 1618876800000, "listing_status": "closed", "condition_text": "like new, excellent, used, b-stock", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 40, "title": "Closed: Campfire Andromeda v3 Price Drop!!", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-v3-price-drop.6551/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Campfire Audio Andromeda 2020, Time Stream - Ultra 4.4mm", "url": "https://old.reddit.com/r/AVexchange/comments/1u9dgi4/wts_usany_h_campfire_audio_andromeda_2020_time/#item-1", "price_num": 625.0, "date_ms": 1781805546000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | auto_bundle_excluded | no_price_unchecked"}, {"row_id": 1, "title": "Sold: Campfire Audio Andromeda 2020 mint", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-mint.105237/", "price_num": 700.0, "date_ms": 1773187200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.98930/", "price_num": 550.0, "date_ms": 1763769600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.90044/", "price_num": 500.0, "date_ms": 1749772800000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: [Pending] Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/pending-campfire-andromeda-2020.80841/", "price_num": 550.0, "date_ms": 1735862400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Closed: IC: Sealed Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/ic-sealed-campfire-audio-andromeda-2020.73038/", "price_num": null, "date_ms": 1723420800000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 6, "title": "Sold: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.61609/", "price_num": 699.0, "date_ms": 1706486400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Campfire Audio Andromeda 2020 w/ Time Stream Cable", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-w-time-stream-cable.61198/", "price_num": 500.0, "date_ms": 1705881600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: [SOLD] Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/sold-campfire-audio-andromeda-2020.60609/", "price_num": 525.0, "date_ms": 1704931200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Closed: Campfire Andromeda 2020 with cables", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020-with-cables.56249/", "price_num": 625.0, "date_ms": 1697673600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Closed: Campfire Audio Andromeda 2020 (Last chance...)", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-last-chance.54190/", "price_num": 625.0, "date_ms": 1694476800000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Campfire Audio Andromeda 2020 IEMs with upgrade cable", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-iems-with-upgrade-cable.49953/", "price_num": 550.0, "date_ms": 1687737600000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Closed: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.48188/", "price_num": 720.0, "date_ms": 1684713600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.47996/", "price_num": 590.0, "date_ms": 1684540800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.47691/", "price_num": 650.0, "date_ms": 1684022400000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.42559/", "price_num": null, "date_ms": 1677456000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.40093/", "price_num": 575.0, "date_ms": 1674172800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.38552/", "price_num": 650.0, "date_ms": 1672099200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Closed: Campfire Andromeda 2020 lightly used", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020-lightly-used.36004/", "price_num": 770.0, "date_ms": 1667952000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Sold: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.30617/", "price_num": 580.0, "date_ms": 1659744000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.29648/", "price_num": 650.0, "date_ms": 1658188800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.24783/", "price_num": 800.0, "date_ms": 1651104000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.22790/", "price_num": 700.0, "date_ms": 1648252800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Closed: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.21869/", "price_num": 675.0, "date_ms": 1647043200000, "listing_status": "closed", "condition_text": "great condition, b-stock", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Sold: Price Drop: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/price-drop-campfire-andromeda-2020.19432/", "price_num": 720.0, "date_ms": 1643760000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.19338/", "price_num": 675.0, "date_ms": 1643673600000, "listing_status": "closed", "condition_text": "like new, excellent, used, open box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: Campfire Audio Andromeda 2020 - Open Box", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-open-box.19286/", "price_num": 785.0, "date_ms": 1643587200000, "listing_status": "closed", "condition_text": "like new, excellent, open box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Closed: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.18579/", "price_num": 800.0, "date_ms": 1642723200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Sold: Campfire Andromeda 2020 Like New", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020-like-new.18498/", "price_num": 615.0, "date_ms": 1642636800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Closed: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.18170/", "price_num": 725.0, "date_ms": 1642204800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Closed: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.12711/", "price_num": 780.0, "date_ms": 1633910400000, "listing_status": "closed", "condition_text": "like new, excellent, b-stock", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Closed: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.11971/", "price_num": 725.0, "date_ms": 1632787200000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 32, "title": "Closed: Campfire Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-2020.10929/", "price_num": 725.0, "date_ms": 1631232000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 33, "title": "Sold: FS: CA Andromeda v3 (2019)", "url": "https://www.head-fi.org/classifieds/fs-ca-andromeda-v3-2019.10414/", "price_num": 625.0, "date_ms": 1630368000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 34, "title": "Closed: CAMPFIRE AUDIO ANDROMEDA 2020. Near Mint All Packaging", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020-near-mint-all-packaging.10335/", "price_num": 825.0, "date_ms": 1630281600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 35, "title": "Closed: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.8863/", "price_num": 825.0, "date_ms": 1628121600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 36, "title": "Sold: Sold! Campfire Andromeda 2020 -$845 or trade for UM Mest MKI", "url": "https://www.head-fi.org/classifieds/sold-campfire-andromeda-2020-845-or-trade-for-um-mest-mki.4867/", "price_num": 845.0, "date_ms": 1621382400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 37, "title": "Sold: Andromeda 2020", "url": "https://www.head-fi.org/classifieds/andromeda-2020.3989/", "price_num": 750.0, "date_ms": 1620259200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 38, "title": "Closed: Sale Pending - Campfire Andromeda v3 (2019)", "url": "https://www.head-fi.org/classifieds/sale-pending-campfire-andromeda-v3-2019.3601/", "price_num": 600.0, "date_ms": 1619654400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 39, "title": "Sold: Campfire Audio Andromeda 2020", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-2020.3032/", "price_num": 900.0, "date_ms": 1618876800000, "listing_status": "closed", "condition_text": "like new, excellent, used, b-stock", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 40, "title": "Closed: Campfire Andromeda v3 Price Drop!!", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-v3-price-drop.6551/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 1100.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
+let currentMarketplaceSource = "both";
+
+function normalizeMarketplaceSource(platform) {
+    const text = String(platform || "").toLowerCase().trim();
+    if (["reddit", "reddit_rss", "avexchange", "r/avexchange"].includes(text)) return "reddit";
+    if (["headfi", "head-fi", "head-fi classifieds"].includes(text)) return "headfi";
+    if (["manual", "manual_csv", "manual input"].includes(text)) return "manual";
+    return "other";
+}
+function sourceMatches(row) {
+    return currentMarketplaceSource === "both" || row.source_key === currentMarketplaceSource;
+}
+function getSourceRows() {
+    return allRows.filter(sourceMatches);
+}
+function safeLocalStorageGet(key) {
+    try { return window.localStorage.getItem(key); } catch (error) { return null; }
+}
+function safeLocalStorageSet(key, value) {
+    try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function getInitialMarketplaceSource() {
+    const params = new URLSearchParams(window.location.search);
+    const querySource = String(params.get("source") || "").toLowerCase();
+    if (["both", "reddit", "headfi"].includes(querySource)) return querySource;
+
+    const storedSource = String(safeLocalStorageGet("iemMarketplaceSource") || "").toLowerCase();
+    if (["both", "reddit", "headfi"].includes(storedSource)) return storedSource;
+
+    return "both";
+}
+function updateCurrentPageSourceQuery(source) {
+    try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("source", source);
+        window.history.replaceState({}, "", url);
+    } catch (error) {}
+}
+function setMarketplaceSource(source) {
+    if (!["both", "reddit", "headfi"].includes(source)) source = "both";
+    currentMarketplaceSource = source;
+    safeLocalStorageSet("iemMarketplaceSource", source);
+    updateCurrentPageSourceQuery(source);
+
+    document.querySelectorAll(".source-btn").forEach(function(button) {
+        button.classList.toggle("active", button.getAttribute("data-source") === source);
+    });
+
+    allRows.forEach(function(row) {
+        const tableRow = document.getElementById("row-" + row.row_id);
+        if (tableRow) tableRow.classList.toggle("source-hidden", !sourceMatches(row));
+    });
+
+    const backLink = document.getElementById("back-link");
+    if (backLink) backLink.href = "index.html?source=" + encodeURIComponent(source);
+
+    updateStatsAndChart();
+}
 function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
 function moneyRound(value) { return money(value); }
 function dateLabel(value) { if (value === null || value === undefined || Number.isNaN(value)) return ""; return new Date(value).toLocaleDateString(); }
 function pct(value) { if (value === null || value === undefined || Number.isNaN(value)) return "N/A"; return Number(value).toLocaleString(undefined, {maximumFractionDigits: 1}) + "%"; }
 function median(values) { if (!values.length) return null; const sorted = [...values].sort((a,b)=>a-b); const mid = Math.floor(sorted.length/2); return sorted.length % 2 === 0 ? (sorted[mid-1] + sorted[mid]) / 2 : sorted[mid]; }
 function average(values) { if (!values.length) return null; return values.reduce((a,b)=>a+b, 0) / values.length; }
-const staleUnsoldMarketDays = 60;
+function dealScoreDisplay(row, marketValue) {
+    const price = Number(row.price_num);
+    const market = Number(marketValue);
+    if (!Number.isFinite(price) || price <= 0 || !Number.isFinite(market) || market <= 0) return "N/A";
+
+    const deltaPct = ((price - market) / market) * 100;
+    let label = "Fair";
+    if (deltaPct <= -20) label = "Great Deal";
+    else if (deltaPct <= -10) label = "Good Deal";
+    else if (deltaPct <= 10) label = "Fair";
+    else if (deltaPct <= 25) label = "High";
+    else label = "Overpriced";
+
+    const direction = deltaPct < 0 ? "below" : "above";
+    const detail = Math.abs(deltaPct).toFixed(1) + "% " + direction + " market";
+    return String(row.listing_status || "").toLowerCase() === "closed"
+        ? "Closed: " + label + " (" + detail + ")"
+        : label + " (" + detail + ")";
+}
+const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
@@ -915,9 +1006,11 @@ function isStaleUnsoldCeilingRow(row) {
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
     const statusComment = String(row.status_comment || "").toLowerCase().trim();
     const staleMarker = status === "stale" || status === "stale_unsold" || closedReason.startsWith("stale_unsold") || closedReason === "stale_active_timeout" || statusComment.includes("stale unsold") || statusComment.includes("lister never updated");
-    if (staleMarker) return true;
-
     const ageDays = rowAgeDays(row);
+    // Older checker runs may already have written a stale marker using a
+    // shorter timeout. Do not use it as a ceiling until the current 180d
+    // threshold is reached. Preserve explicit stale rows with no usable date.
+    if (staleMarker) return ageDays === null || ageDays >= staleUnsoldMarketDays;
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
@@ -1142,13 +1235,27 @@ function calculateLiquidityConfidenceFromRows(rows) {
 }
 function getSelectedRows() {
     const selectedIds = new Set();
+
     document.querySelectorAll(".row-toggle").forEach(function(cb) {
         const rowId = Number(cb.dataset.rowId);
-        if (cb.checked) { selectedIds.add(rowId); document.getElementById("row-" + rowId).className = "included"; }
-        else { document.getElementById("row-" + rowId).className = "excluded"; }
+        const tableRow = document.getElementById("row-" + rowId);
+
+        if (cb.checked) selectedIds.add(rowId);
+
+        if (tableRow) {
+            tableRow.classList.toggle("included", cb.checked);
+            tableRow.classList.toggle("excluded", !cb.checked);
+        }
     });
-    return allRows.filter(row => selectedIds.has(row.row_id) && row.price_num !== null);
+
+    return allRows.filter(function(row) {
+        return sourceMatches(row) &&
+            selectedIds.has(row.row_id) &&
+            row.price_num !== null &&
+            !Number.isNaN(row.price_num);
+    });
 }
+
 function getSmoothingConfig(sampleCount) {
     // More samples can support a wider smoothing window and a denser curve.
     // Thin datasets stay close to the actual points.
@@ -1273,30 +1380,40 @@ function calculateSmoothedRetentionLine(rows) {
 }
 
 function updateStatsAndChart() {
+    const sourceRows = getSourceRows();
     const selectedRows = getSelectedRows();
     const prices = selectedRows.map(r => r.price_num).filter(v => v !== null && !Number.isNaN(v));
-    const marketValueResult = calculateMarketValueFromRows(selectedRows, allRows);
+    const marketValueResult = calculateMarketValueFromRows(selectedRows, sourceRows);
+
     document.getElementById("stat-market-value").textContent = money(marketValueResult.value);
     document.getElementById("stat-market-basis").textContent = marketValueResult.basis;
+    document.getElementById("stat-total-priced-rows").textContent = sourceRows.filter(
+        row => row.price_num !== null && !Number.isNaN(row.price_num)
+    ).length;
+
     if (hasOriginalMsrp && document.getElementById("stat-market-vs-msrp")) {
         if (marketValueResult.value !== null && !Number.isNaN(marketValueResult.value)) {
             const mvRetention = (marketValueResult.value / originalMsrpUsd) * 100;
             const mvDelta = mvRetention - 100;
             const direction = mvDelta >= 0 ? "above" : "below";
             document.getElementById("stat-market-vs-msrp").textContent = pct(mvRetention) + " of MSRP";
-            document.getElementById("stat-market-vs-msrp-detail").textContent = Math.abs(mvDelta).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction;
+            document.getElementById("stat-market-vs-msrp-detail").textContent =
+                Math.abs(mvDelta).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction;
         } else {
             document.getElementById("stat-market-vs-msrp").textContent = "N/A";
             document.getElementById("stat-market-vs-msrp-detail").textContent = "";
         }
     }
+
     document.getElementById("stat-average").textContent = money(average(prices));
     document.getElementById("stat-low").textContent = money(prices.length ? Math.min(...prices) : null);
     document.getElementById("stat-high").textContent = money(prices.length ? Math.max(...prices) : null);
     document.getElementById("stat-samples").textContent = prices.length;
+
     const liquidityConfidence = calculateLiquidityConfidenceFromRows(selectedRows);
     const liquidityBadge = document.getElementById("stat-liquidity-confidence");
     const liquidityDetail = document.getElementById("stat-liquidity-confidence-detail");
+
     if (liquidityBadge) {
         liquidityBadge.textContent = liquidityConfidence.display;
         liquidityBadge.className = "badge badge-score " + liquidityConfidence.cssClass;
@@ -1305,10 +1422,28 @@ function updateStatsAndChart() {
         liquidityBadge.removeAttribute("title");
     }
     if (liquidityDetail) liquidityDetail.textContent = liquidityConfidence.detail;
-    const priceScatter = selectedRows.filter(r => r.date_ms !== null && r.price_num !== null).map(row => ({x: row.date_ms, y: row.price_num, url: row.url, title: row.title, status: row.listing_status, condition: row.condition_text, platform: row.platform}));
+
+    sourceRows.forEach(function(row) {
+        const dealElement = document.getElementById("deal-score-" + row.row_id);
+        if (dealElement) dealElement.textContent = dealScoreDisplay(row, marketValueResult.value);
+    });
+
+    const priceScatter = selectedRows
+        .filter(r => r.date_ms !== null && r.price_num !== null)
+        .map(row => ({
+            x: row.date_ms,
+            y: row.price_num,
+            url: row.url,
+            title: row.title,
+            status: row.listing_status,
+            condition: row.condition_text,
+            platform: row.platform
+        }));
+
     chart.data.datasets[0].data = priceScatter;
     chart.data.datasets[1].data = calculateSmoothedPriceLine(selectedRows);
     chart.update();
+
     if (hasOriginalMsrp && msrpChart) {
         msrpChart.data.datasets[0].data = selectedRows
             .filter(r => r.date_ms !== null && r.price_num !== null)
@@ -1322,11 +1457,21 @@ function updateStatsAndChart() {
                 condition: row.condition_text,
                 platform: row.platform
             }));
+
         msrpChart.data.datasets[1].data = calculateSmoothedRetentionLine(selectedRows);
         msrpChart.update();
     }
 }
-function setAllCheckboxes(checked) { document.querySelectorAll(".row-toggle").forEach(cb => cb.checked = checked); updateStatsAndChart(); }
+
+function setAllCheckboxes(checked) {
+    document.querySelectorAll(".row-toggle").forEach(function(cb) {
+        const checkboxSource = String(cb.getAttribute("data-source") || "other");
+        if (currentMarketplaceSource === "both" || checkboxSource === currentMarketplaceSource) {
+            cb.checked = checked;
+        }
+    });
+    updateStatsAndChart();
+}
 const chart = new Chart(document.getElementById("chart"), {
     type: "scatter",
     data: {
@@ -1493,7 +1638,7 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
-updateStatsAndChart();
+setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>
 </body>

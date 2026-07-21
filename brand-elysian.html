@@ -59,6 +59,11 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 .filter-btn { padding: 9px 12px; border: 1px solid #ccc; background: #fff; border-radius: 999px; cursor: pointer; }
 .filter-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-toggle { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+.source-toggle-label { font-size: 13px; color: #555; font-weight: bold; margin-right: 2px; }
+.source-btn { padding: 9px 14px; border: 1px solid #bbb; background: #fff; border-radius: 999px; cursor: pointer; font-weight: bold; }
+.source-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-hidden { display: none; }
 .badge { display: inline-block; padding: 3px 8px; border-radius: 999px; border: 1px solid #ccc; background: #fafafa; font-size: 12px; white-space: nowrap; }
 .badge-high { background: #ecfdf3; border-color: #b7e4c7; }
 .badge-medium { background: #fff8e1; border-color: #ead88a; }
@@ -212,7 +217,7 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="iem-col"><a href="elysian-diva.html">Elysian Diva</a></td>
-    <td title="recency-weighted 365d closed sales, 12 samples, 90d half-life; stale unsold ask ceiling: 2 ask(s) ≥60d, median ask $1,451.5, 5% discount did not cap">$939.58</td>
+    <td title="recency-weighted 365d closed sales, 12 samples, 90d half-life; stale unsold ask ceiling: 2 ask(s) ≥180d, median ask $1,451.5, 5% discount did not cap">$939.58</td>
     <td>$1,092.69</td>
     <td>$760</td>
     <td>$1,450</td>
