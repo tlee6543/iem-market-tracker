@@ -213,7 +213,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -237,8 +237,24 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
+<tr id="row-0" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<td>2026-07-21</td>
+<td>$2,000</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>gwompki</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">Fair (4.8% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/unique-melody-multiverse-mentor.112621/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2026-06-19</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
@@ -249,11 +265,11 @@ td.status-reason { overflow: hidden; }
 <td>rustydabear</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/um-multiverse-mentor-blue.110929/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="headfi" class="listing-row excluded">
+<tr id="row-2" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2023-10-21</td>
 <td></td>
@@ -265,13 +281,13 @@ td.status-reason { overflow: hidden; }
 <td>kimdm</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">N/A</span></td>
+<td><span id="deal-score-2">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/noble-prestige-viking-ragnar-ke-elysian-acoustic-labs-x-or-oriolus-traillii-multiverse-mentor.56335/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "UM Multiverse Mentor (blue)", "url": "https://www.head-fi.org/classifieds/um-multiverse-mentor-blue.110929/", "price_num": 2100.0, "date_ms": 1781827200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 1, "title": "Sold: Noble Prestige Viking Ragnar KE(Elysian Acoustic Labs X or Oriolus Traillii,Multiverse Mentor)", "url": "https://www.head-fi.org/classifieds/noble-prestige-viking-ragnar-ke-elysian-acoustic-labs-x-or-oriolus-traillii-multiverse-mentor.56335/", "price_num": null, "date_ms": 1697846400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Unique Melody Multiverse Mentor", "url": "https://www.head-fi.org/classifieds/unique-melody-multiverse-mentor.112621/", "price_num": 2000.0, "date_ms": 1784592000000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 1, "title": "UM Multiverse Mentor (blue)", "url": "https://www.head-fi.org/classifieds/um-multiverse-mentor-blue.110929/", "price_num": 2100.0, "date_ms": 1781827200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 2, "title": "Sold: Noble Prestige Viking Ragnar KE(Elysian Acoustic Labs X or Oriolus Traillii,Multiverse Mentor)", "url": "https://www.head-fi.org/classifieds/noble-prestige-viking-ragnar-ke-elysian-acoustic-labs-x-or-oriolus-traillii-multiverse-mentor.56335/", "price_num": null, "date_ms": 1697846400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
