@@ -213,7 +213,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">3</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">4</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -255,6 +255,22 @@ td.status-reason { overflow: hidden; }
 
 <tr id="row-1" data-source="headfi" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" ></td>
+<td>2026-07-22</td>
+<td>$300</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>Khareef1278</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-1">Overpriced (233.3% above market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/campfire-audio-saber-1.112676/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-2" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" ></td>
 <td>2026-05-19</td>
 <td>$69</td>
 <td><span class="pill">stale</span></td>
@@ -265,12 +281,12 @@ td.status-reason { overflow: hidden; }
 <td>salman91</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Great Deal (23.3% below market)</span></td>
+<td><span id="deal-score-2">Great Deal (23.3% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/rikubuds-saber-3.109315/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="reddit" checked></td>
+<tr id="row-3" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="reddit" checked></td>
 <td>2025-09-11</td>
 <td>$90</td>
 <td><span class="pill">closed</span></td>
@@ -281,13 +297,13 @@ td.status-reason { overflow: hidden; }
 <td>Daemonxar</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-3">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1ndysgw/wts_usawa_h_focal_azurys_hifiman_edition_xs/#item-19" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Campfire Audio Saber # 1", "url": "https://old.reddit.com/r/AVexchange/comments/1v3uo0z/wtsuskyhcampfire_audio_saber_1_w_paypal_gs_obo/#item-1", "price_num": 300.0, "date_ms": 1784757722000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len301474_page=200:len303312_json=200:len303497", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked"}, {"row_id": 1, "title": "RikuBuds Saber 3 Listing ID: 109315 For Sale 69.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere I used it for only several hours. Listed by: salman91 (1) Listed: 2026-05-19 Last edited: 2026-07-10", "url": "https://www.head-fi.org/classifieds/rikubuds-saber-3.109315/", "price_num": 69.0, "date_ms": 1779148800000, "listing_status": "stale", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "visible_card_collect_with_price_title_match_v6 | active_status_checker_headfi_live_check_skipped | active_status_checker_stale_unsold_60d_lister_never_updated"}, {"row_id": 2, "title": "Hiby R3 Saber Pro DAP", "url": "https://old.reddit.com/r/AVexchange/comments/1ndysgw/wts_usawa_h_focal_azurys_hifiman_edition_xs/#item-19", "price_num": 90.0, "date_ms": 1757562421000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears"}];
+const allRows = [{"row_id": 0, "title": "Campfire Audio Saber # 1", "url": "https://old.reddit.com/r/AVexchange/comments/1v3uo0z/wtsuskyhcampfire_audio_saber_1_w_paypal_gs_obo/#item-1", "price_num": 300.0, "date_ms": 1784757722000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len301474_page=200:len303312_json=200:len303497", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked"}, {"row_id": 1, "title": "Campfire Audio Saber # 1", "url": "https://www.head-fi.org/classifieds/campfire-audio-saber-1.112676/", "price_num": 300.0, "date_ms": 1784678400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 2, "title": "RikuBuds Saber 3 Listing ID: 109315 For Sale 69.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere I used it for only several hours. Listed by: salman91 (1) Listed: 2026-05-19 Last edited: 2026-07-10", "url": "https://www.head-fi.org/classifieds/rikubuds-saber-3.109315/", "price_num": 69.0, "date_ms": 1779148800000, "listing_status": "stale", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "visible_card_collect_with_price_title_match_v6 | active_status_checker_headfi_live_check_skipped | active_status_checker_stale_unsold_60d_lister_never_updated"}, {"row_id": 3, "title": "Hiby R3 Saber Pro DAP", "url": "https://old.reddit.com/r/AVexchange/comments/1ndysgw/wts_usawa_h_focal_azurys_hifiman_edition_xs/#item-19", "price_num": 90.0, "date_ms": 1757562421000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
