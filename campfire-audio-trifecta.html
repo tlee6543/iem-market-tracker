@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>Campfire Audio Trifecta</h1>
+<div class="iem-title-row">
+    <h1>Campfire Audio Trifecta</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-campfire-audio.html">Campfire Audio</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -215,11 +232,11 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">4</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">3</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -273,9 +290,9 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr id="row-2" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="reddit" ></td>
+<td></td>
 <td>2026-05-27</td>
-<td>$150</td>
+<td></td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason">confirmed sold from source check</td>
 <td>only used once since it came with trifecta crimson</td>
@@ -284,7 +301,7 @@ td.status-reason { overflow: hidden; }
 <td>xegwagon</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">Closed: Great Deal (91.0% below market)</span></td>
+<td><span id="deal-score-2">N/A</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1tp2871/wtsdxbaeh_64audio_nio_ak_sp2000_onyx_black/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -306,7 +323,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Campfire Audio Trifecta", "url": "https://old.reddit.com/r/AVexchange/comments/1v1bova/wtsuscahcampfire_audio_trifecta_w_pp_ff/#item-1", "price_num": 180.0, "date_ms": 1784522822000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len300358_page=200:len300301_json=200:len303395", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Campfire Audio Trifecta Astral Plane IEM", "url": "https://old.reddit.com/r/AVexchange/comments/1tzw97o/wts_usany_h_campfire_audio_trifecta_astral_plane/#item-1", "price_num": 1650.0, "date_ms": 1780888597000, "listing_status": "closed", "condition_text": "ca trifecta", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_transaction_trigger_and_confirmation | comments_checked_rss_and_html | confirmed_priced_nonbundle_included"}, {"row_id": 2, "title": "64Audio Nio, A&K SP2000 Onyx Black, Campfire Audio Trifecta Amber Radiance, Vision Ears EXT Stock Cable 2.5mm", "url": "https://old.reddit.com/r/AVexchange/comments/1tp2871/wtsdxbaeh_64audio_nio_ak_sp2000_onyx_black/#item-1", "price_num": 150.0, "date_ms": 1779879826000, "listing_status": "closed", "condition_text": "only used once since it came with trifecta crimson", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=campfire | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 3, "title": "Closed: Campfire Audio Trifecta Astral Plane Edition", "url": "https://www.head-fi.org/classifieds/campfire-audio-trifecta-astral-plane-edition.84197/", "price_num": 1750.0, "date_ms": 1740873600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Campfire Audio Trifecta", "raw_text": "Hard decision to let go of this pair of Trifectas in Chrome Sky. I'll price it at $1,80O PP FF.\nI'm looking to thin the herd and this is what I've decided to let go of.\nAbsolute V shaped goodness - the triple DD drivers for bass is something to behold.\nI'd say you have to like Campfire's approach to upper mids/lower treble, but the highs are done really well if you like CFA's house sound.\nComes in full retail package but was purchased as like-new from CFAs Marketplace. I'm not the original owner but this set is in excellent shape and tbh, I haven't listened to them frequently (only have 2 ears \ud83d\ude01).\nFedEx 2 day shipping to the US included.\nComment before chat!\nThanks,\nEK\nsubmitted by /u/ekman321\n[link] [comments]", "seller_username": "ekman321", "url": "https://old.reddit.com/r/AVexchange/comments/1v1bova/wtsuscahcampfire_audio_trifecta_w_pp_ff/#item-1", "price_num": 180.0, "date_ms": 1784522822000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len300358_page=200:len300301_json=200:len303395", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Campfire Audio Trifecta Astral Plane IEM", "raw_text": "Offered is a mint condition CA Trifecta, Astral Plane colorway. Please see pics for more details. All accessories included. The only flaw is the wooden box needs a bit of repair on one corner. This is exactly how i received it from a fellow avexchanger.\nI need to raise funds for another purchase so sorry I cannot take a trade on this one! Feel free to contact me with any questions. $1650 shipped - Paypal F&F preferred.\nMy apologies i have my HF username on the timestamp and i don't know how to replace that image so i'm posting another one here with my reddit username: https://imgur.com/a/Ok29kWf\nsubmitted by /u/nhtfan\n[link] [comments]", "seller_username": "nhtfan", "url": "https://old.reddit.com/r/AVexchange/comments/1tzw97o/wts_usany_h_campfire_audio_trifecta_astral_plane/#item-1", "price_num": 1650.0, "date_ms": 1780888597000, "listing_status": "closed", "condition_text": "ca trifecta", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_transaction_trigger_and_confirmation | comments_checked_rss_and_html | confirmed_priced_nonbundle_included"}, {"row_id": 2, "title": "64Audio Nio, A&K SP2000 Onyx Black, Campfire Audio Trifecta Amber Radiance, Vision Ears EXT Stock Cable 2.5mm", "raw_text": "Hi all, I'm thinning down my collection and saving up for bigger IEMs, so I'm selling the following\nCampfire Trifecta Amber Radiance: 4.4mm stock cable available, missing outer packaging and 2 of the 3 timestream metal cables (2.5mm, 3.5mm). Has every other accessories and the iems are in near new without strachtes. Will be including a pleather case in compensation for the lack of outer packaging, what you see is what you'll get.\nPrice: $1,550 (I do have time stream- silver cable from Campfire in 3.5mm termination if you want that included, it's in perfect condition only used once since it came with trifecta crimson, will be an additional $150 on top of $1,550 to bundle in)\n64 Audio Nio: Missing Mx module and outer packaging. All other accessories included, stock cable is brand new. IEM has normal usage light scratches on the metal rim. Sounds perfect and generally in great shape.\nPrice: $830\nON HOLD- A&K SP2000: Wooden outer box included, as well as two cases(both kind of lightly damaged due to normal wear and tear). Charging cable included. Machine itself is in great condition, all ports are functioning fine, battery is in good shape. Light scratches on screen, no chip damages to the body. Can throw in DD dongles (4.4->2.5mm) for $10 extra\nPrice: $920\nVision Ears EXT Stock Cable in 2.5mm: 28AWG 8Wire SPC Stock cable in 0.78+2.5mm termination. Near new condition, barely used, can be bundled with any of the larger items for a little bit lowered price.\nPrice: $150\nPrice is firm. Ships worldwide from UAE via its national post. Paypal G&S, I will bear the fee, you will need to bear the shipping cost, should be around 50-80USD with Tracking, usually arrives in 10 days max depending on where you are at.\nEdit: SP2000 on hold\nsubmitted by /u/xegwagon\n[link] [comments]", "seller_username": "xegwagon", "url": "https://old.reddit.com/r/AVexchange/comments/1tp2871/wtsdxbaeh_64audio_nio_ak_sp2000_onyx_black/#item-1", "price_num": null, "date_ms": 1779879826000, "listing_status": "closed", "condition_text": "only used once since it came with trifecta crimson", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=campfire | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes | bad_parse_trade_cash_difference"}, {"row_id": 3, "title": "Closed: Campfire Audio Trifecta Astral Plane Edition", "raw_text": "For Sale / Trade Closed: Campfire Audio Trifecta Astral Plane Edition Price 1750.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America ...All, For sale/trade: Campfire Audio Trifecta \u2013 in excellent/like new condition. Comes with 3 cables, box, and ear tips. For Trade: 1. Fir Audio Xenon 6 (excellent condition) 2. Fatfreq Grand maestro (excellent condition) Will prefer a trade over sale, straight swap/open to add a bit cash... shonkhochil Listing Mar 2, 2025 Comments: 2 Category: In-Ear Monitors", "seller_username": "shonkhochil", "url": "https://www.head-fi.org/classifieds/campfire-audio-trifecta-astral-plane-edition.84197/", "price_num": 1750.0, "date_ms": 1740873600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 3375.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -329,6 +346,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -394,6 +455,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -401,14 +464,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -422,18 +492,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -445,13 +525,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -466,7 +547,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -511,7 +592,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -522,7 +603,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -530,11 +611,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1046,6 +1127,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>Empire Ears Legend X</h1>
+<div class="iem-title-row">
+    <h1>Empire Ears Legend X</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-empire-ears.html">Empire Ears</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -219,7 +236,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -610,7 +627,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Empire Ears Legend X", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.112403/", "price_num": 800.0, "date_ms": 1784332800000, "listing_status": "active", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | active_status_checker_status_unclear_left_unchanged"}, {"row_id": 1, "title": "Closed: Empire Ears Legend X", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.106680/", "price_num": 770.0, "date_ms": 1775174400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Traded: Empire Ears LEGEND X", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.103339/", "price_num": 750.0, "date_ms": 1770422400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Traded: Empire Ears Legend X", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.102570/", "price_num": 800.0, "date_ms": 1769212800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Closed: Empire Ears Legend X (please read)", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-please-read.99080/", "price_num": 750.0, "date_ms": 1763942400000, "listing_status": "closed", "condition_text": "fair", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Closed: Empire Ears Legend X", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.98980/", "price_num": 890.0, "date_ms": 1763856000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Empire Ears Legend X", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.91213/", "price_num": 900.0, "date_ms": 1751673600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Empire Ears Legend X with PWAudio \"Vanquish\" Saladin+ (8 wire) with 4.4 mm Pentaconn connector", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-with-pwaudio-vanquish-saladin-8-wire-with-4-4-mm-pentaconn-connector.89797/", "price_num": 1000.0, "date_ms": 1749340800000, "listing_status": "closed", "condition_text": "good condition, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Empire Ears Legend X", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.84110/", "price_num": 850.0, "date_ms": 1740787200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Closed: Empire Ears Legend X Universal Earphone IEM 2.5mm Effect Audio Cable", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-universal-earphone-iem-2-5mm-effect-audio-cable.78828/", "price_num": 849.0, "date_ms": 1732579200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Closed: Empire Ears Legend X Universal IEM with 2.5mm Eletech Raphael Cable", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-universal-iem-with-2-5mm-eletech-raphael-cable.77294/", "price_num": 700.0, "date_ms": 1730332800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Empire Ears Legend X", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.75914/", "price_num": 750.0, "date_ms": 1728086400000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Empire Ears Legend X (2.5mm)", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-2-5mm.75291/", "price_num": 699.0, "date_ms": 1727136000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Empire Ears Legend X", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.69237/", "price_num": 875.0, "date_ms": 1717545600000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: Empire Ears Legend X", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.61176/", "price_num": 860.0, "date_ms": 1705881600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Empire Ears Legend X", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.59981/", "price_num": 755.0, "date_ms": 1704067200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Empire Ears - Legend X", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.59372/", "price_num": 799.0, "date_ms": 1702944000000, "listing_status": "closed", "condition_text": "like new, excellent, fair, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Empire Ears Legend X CIEMS", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-ciems.58710/", "price_num": 500.0, "date_ms": 1701820800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: Empire Ears Legend X", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.58445/", "price_num": 900.0, "date_ms": 1701388800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Closed: Empire Ears Legend X and other goodies", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-and-other-goodies.56527/", "price_num": 880.0, "date_ms": 1698105600000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Empire Ears Legend X - Plus Bonus Goods **Price Drop**", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-plus-bonus-goods-price-drop.49629/", "price_num": 949.0, "date_ms": 1687219200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Closed: Empire Ears Legend X for 64 Audio U12t", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-for-64-audio-u12t.14098/", "price_num": null, "date_ms": 1636074765000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect"}, {"row_id": 22, "title": "Closed: Empire Ears Legend X CIEMS", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-ciems.58709/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Empire Ears Legend X", "raw_text": "Empire Ears Legend X\nListing ID: 112403\nFor Sale / Trade 800.00 USD\nCondition Good\nNegotiability Or Best Offer\nShips To Anywhere\nOne of my favorite sets. Light and comfortable, yet so powerful. The gold-plating on the original Effect Audio Ares cable termination is chipping off (pictured), but other than that this set is in great condition. Includes original cable...\nListed by: MisterSlaw (28)\nListed: 2026-07-18\nPrev\n1\n2\n3\n4\n5\n\u2026\n1216\nNext\nHome\nClassifieds\nHeadphones For Sale / Trade\nEnglish (US)\nContact us\nTerms and rules\nPrivacy policy\nHelp\nHome\nRSS\nCommunity platform by XenForo\u00ae \u00a9 2010-2026 XenForo Ltd. | Media embeds via s9e/MediaSites", "seller_username": "MisterSlaw", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.112403/", "price_num": 800.0, "date_ms": 1784332800000, "listing_status": "active", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | active_status_checker_status_unclear_left_unchanged"}, {"row_id": 1, "title": "Closed: Empire Ears Legend X", "raw_text": "For Sale / Trade Closed: Empire Ears Legend X Price 770.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America In like new condition with original packaging and cable (Effect Audio Ares 2), no tips. This is one of the best TOTL iems I've tested. Incredibly resolving with amazing bass response, and the best $2k iem l've heard. I saw this show up in a few top iems lists from reviewers (Crinacle... MJSable Listing Apr 3, 2026 Comments: 6 Category: In-Ear Monitors", "seller_username": "MJSable", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.106680/", "price_num": 770.0, "date_ms": 1775174400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Traded: Empire Ears LEGEND X", "raw_text": "For Sale Traded: Empire Ears LEGEND X Price 750.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America The Legend X is indeed a legend iem .. Great Bass set and these are in excellent condition. I am the second owner of this. Sale price set to preserve my investment these retail at $2300 so you can already call it a steal at the price. Includes overnight FedEx and PP fees .. I would be interested... BDalton Listing Feb 7, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "BDalton", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.103339/", "price_num": 750.0, "date_ms": 1770422400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Traded: Empire Ears Legend X", "raw_text": "For Sale Traded: Empire Ears Legend X Price 800.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America First off, I know this is just north of what excellent sets of this renowned IEM have gone for, but consider this: I just received them back (1/23/26) from EE for some repairs and refresh -- both sockets replaced, bass driver re-seated, both shells completely re-lacquered (not a scratch/mark)... Mllump Listing Jan 24, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "Mllump", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.102570/", "price_num": 800.0, "date_ms": 1769212800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Closed: Empire Ears Legend X (please read)", "raw_text": "For Sale Closed: Empire Ears Legend X (please read) Price 750.00 USD Condition Fair Negotiability Or best offer Ships to United States of America ...including stock case and cable (3.5mm). There are lacquer defects on both shells. Only cosmetic (see pics). It's $45/shell to have Empire Ears re-lacquer them. They're fantastic to work with and you get them back quickly from Georgia. I can send you the form from EE to make it easier. No trades. Mllump Listing Nov 24, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Mllump", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-please-read.99080/", "price_num": 750.0, "date_ms": 1763942400000, "listing_status": "closed", "condition_text": "fair", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Closed: Empire Ears Legend X", "raw_text": "For Sale Closed: Empire Ears Legend X Price 890.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Empire Ears Legend X in like new condition, with all original packaging. With original ear tips and cable in new unused condition. Amazing iems. I became an Empire Ears fan with the Odin. But I wanted a slightly bassier sound signature, and these were exactly what I was looking for. Moving to... MJSable Listing Nov 23, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "MJSable", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.98980/", "price_num": 890.0, "date_ms": 1763856000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Empire Ears Legend X", "raw_text": "For Sale Closed: Empire Ears Legend X Price 900.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere EE Legend X Bought new in September 2023, 3.5mm cable & metal box. Located in Australia, can ship worldwide. Yifang Listing Jul 5, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Yifang", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.91213/", "price_num": 900.0, "date_ms": 1751673600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Empire Ears Legend X with PWAudio \"Vanquish\" Saladin+ (8 wire) with 4.4 mm Pentaconn connector", "raw_text": "For Sale Sold: Empire Ears Legend X with PWAudio \"Vanquish\" Saladin+ (8 wire) with 4.4 mm Pentaconn connector Price 1000.00 USD Condition Good Negotiability Or best offer Ships to Anywhere For Sale: used Empire Ears Legend X (universal) with PWAudio \"Vanquish\" Saladin+ (8 wire) cable with 4.4 mm Pentaconn connector. https://www.pwaudio.com.hk/vanquish-series Set Price in 2018: USD 3,300.- fully functional, in very good condition. with original transport case worldwide shipping... hensi Listing Jun 8, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "hensi", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-with-pwaudio-vanquish-saladin-8-wire-with-4-4-mm-pentaconn-connector.89797/", "price_num": 1000.0, "date_ms": 1749340800000, "listing_status": "closed", "condition_text": "good condition, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Empire Ears Legend X", "raw_text": "For Sale Sold: Empire Ears Legend X Price 850.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Putting for sale this excellent set. I love the sound, but unfortunately I own too many IEMs/Headphones and I need to pay medical bills. The set comes with all original packaging and accessories as pictured. I think I also have a larger outer box as well. Comes with original Effect Audio Ares... AlexxxAA85 Listing Mar 1, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "AlexxxAA85", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.84110/", "price_num": 850.0, "date_ms": 1740787200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Closed: Empire Ears Legend X Universal Earphone IEM 2.5mm Effect Audio Cable", "raw_text": "For Sale Closed: Empire Ears Legend X Universal Earphone IEM 2.5mm Effect Audio Cable Price 849.99 USD Condition Good Negotiability Or best offer Ships to North America They have been meticulously cared for and still sound like they did the first time I unpacked them. Some scratches here and there under specific light/angles ,but nothing that affects the sound. This auction comes with a 2.5mm Effect Audio Ares cable, all original eartips and a couple extra... tmaxx123 Listing Nov 26, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "tmaxx123", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-universal-earphone-iem-2-5mm-effect-audio-cable.78828/", "price_num": 849.0, "date_ms": 1732579200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Closed: Empire Ears Legend X Universal IEM with 2.5mm Eletech Raphael Cable", "raw_text": "For Sale Closed: Empire Ears Legend X Universal IEM with 2.5mm Eletech Raphael Cable Price 700.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America IEM's are in near perfect condition - selling because they are rarely used. I am including the 2.5mm ELETECH RAPHAEL ($530 MSRP). This is a much higher quality cable than the original and pairs quite nicely with the Legend X. If having the original box that came with the Legend X is important... Cmills33 Listing Oct 31, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Cmills33", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-universal-iem-with-2-5mm-eletech-raphael-cable.77294/", "price_num": 700.0, "date_ms": 1730332800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Empire Ears Legend X", "raw_text": "For Sale Sold: Empire Ears Legend X Price 750.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America EE Legend X for your consideration. In great condition. I tried to show what they look like, but they're difficult to photograph. Comes with 2.5mm balanced cable and original box. No tips, however. I always kept them in the protective sleeve when not in use, and they weren't in use that... AudioDwebe Listing Oct 5, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "AudioDwebe", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.75914/", "price_num": 750.0, "date_ms": 1728086400000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Empire Ears Legend X (2.5mm)", "raw_text": "For Sale Sold: Empire Ears Legend X (2.5mm) Price 699.00 USD Condition Good Negotiability Or best offer Ships to North America SOLD!!! Drue Listing Sep 24, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "Drue", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-2-5mm.75291/", "price_num": 699.0, "date_ms": 1727136000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Empire Ears Legend X", "raw_text": "For Sale Sold: Empire Ears Legend X Price 875.00 USD Condition Good Negotiability Or best offer Ships to North America I am selling my barely used Empire Ears Legend X iems. I have original box, original case, tips, original 3.5mm cable. Love these items but I need to get rid of some things to fix some issues with my house that have come up. I will include free shipping. Thanks Scott Scott2578 Listing Jun 5, 2024 Comments: 3 Category: In-Ear Monitors", "seller_username": "Scott2578", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.69237/", "price_num": 875.0, "date_ms": 1717545600000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: Empire Ears Legend X", "raw_text": "For Sale Sold: Empire Ears Legend X Price 860.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Hey guys. I have never gotten as much use out of these as I had hoped. I want to invest more into my other hobbies so I decided to let these bassy bois go. They're in fantastic condition as a result. I don't have the original box or cable, just what's pictured here. Let me know if you have any... Malevolint Listing Jan 22, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Malevolint", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.61176/", "price_num": 860.0, "date_ms": 1705881600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Empire Ears Legend X", "raw_text": "For Sale Sold: Empire Ears Legend X Price 755.00 USD Condition Good Negotiability Or best offer Ships to North America Selling my Empire Legends X. These are well regard Iem with bass in spades. Very great sound but I am selling to fund other purchases. If you have any questions feel free to ask. I will ship within CONUS and my price includes paypal fees. Have a great day tink97 Listing Jan 1, 2024 Comments: 2 Category: In-Ear Monitors", "seller_username": "tink97", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.59981/", "price_num": 755.0, "date_ms": 1704067200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Empire Ears - Legend X", "raw_text": "For Sale Sold: Empire Ears - Legend X Price 799.99 USD Condition Excellent/Like new Negotiability Firm Ships to North America Hello! I am selling my LNIB Empire Ears Legend X. I got these several years ago from Empire Ears. I have used them here and there since (maybe two to three times a month while laying in bed). I am selling them as I simply do not use them and its fairly large chunk of money just sitting there... payj Listing Dec 19, 2023 Comments: 3 Category: In-Ear Monitors", "seller_username": "payj", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.59372/", "price_num": 799.0, "date_ms": 1702944000000, "listing_status": "closed", "condition_text": "like new, excellent, fair, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Empire Ears Legend X CIEMS", "raw_text": "For Sale Sold: Empire Ears Legend X CIEMS Price 500.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere ...is eating all my funds. these are my last audiophile items left. They might fit, or you could get them reshelled. The shell is called continuum, they look incredible in the light. I paid $2300 for them last year from empire ears. Doesn't come with a cable. paypal personal only. thanks for... lowtwo Listing Dec 6, 2023 Comments: 2 Category: In-Ear Monitors", "seller_username": "lowtwo", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-ciems.58710/", "price_num": 500.0, "date_ms": 1701820800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: Empire Ears Legend X", "raw_text": "For Sale Sold: Empire Ears Legend X Price 900.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America ...I will add photos from my phone shortly! (if there's an issue with editing my post, I can always DM photos) Cable has been repaired by Empire Ears after the right termination came unsoldered (has been known to happen with their Ares style cables unfortunately) Payment method via PayPal... OhmsClaw Listing Dec 1, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "OhmsClaw", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x.58445/", "price_num": 900.0, "date_ms": 1701388800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Closed: Empire Ears Legend X and other goodies", "raw_text": "For Sale Closed: Empire Ears Legend X and other goodies Price 880.00 USD Condition Good Negotiability Firm Ships to Anywhere I am selling my barely used Empire Ears Legend X iems. I do not have the original box, but I do have the original case, aftermarket case, tips, original 3.5mm cable, aftermarket cable and a portable amplifier. No trades. Free shipping. Scott2578 Listing Oct 24, 2023 Comments: 7 Category: In-Ear Monitors", "seller_username": "Scott2578", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-and-other-goodies.56527/", "price_num": 880.0, "date_ms": 1698105600000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Empire Ears Legend X - Plus Bonus Goods **Price Drop**", "raw_text": "For Sale Sold: Empire Ears Legend X - Plus Bonus Goods **Price Drop** Price 949.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Hello, I am selling my Empire Ears Legend X. I am the only owner. I bought them new almost a year ago from Headphones dot com. The original Box or materials is not included. Everything that is pictured you will receive. They are in excellent condition and well taken care of I would guess... bigjg Listing Jun 20, 2023 Comments: 3 Category: In-Ear Monitors", "seller_username": "bigjg", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-plus-bonus-goods-price-drop.49629/", "price_num": 949.0, "date_ms": 1687219200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Closed: Empire Ears Legend X for 64 Audio U12t", "raw_text": "For Trade Closed: Empire Ears Legend X for 64 Audio U12t Price 0.00 USD Condition Good Negotiability Firm Ships to North America Have a black EELX, looking to trade for a U12t damadaka Listing Nov 4, 2021 Comments: 0 Category: In-Ear Monitors", "seller_username": "damadaka", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-for-64-audio-u12t.14098/", "price_num": null, "date_ms": 1636074765000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect"}, {"row_id": 22, "title": "Closed: Empire Ears Legend X CIEMS", "raw_text": "For Sale Closed: Empire Ears Legend X CIEMS", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/empire-ears-legend-x-ciems.58709/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 2300.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -633,6 +650,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -698,6 +759,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -705,14 +768,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -726,18 +796,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -749,13 +829,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -770,7 +851,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -815,7 +896,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -826,7 +907,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -834,11 +915,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1350,6 +1431,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

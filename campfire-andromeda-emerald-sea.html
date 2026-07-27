@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>Campfire Andromeda Emerald Sea</h1>
+<div class="iem-title-row">
+    <h1>Campfire Andromeda Emerald Sea</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-campfire-audio.html">Campfire Audio</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -219,7 +236,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -418,7 +435,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Sold: Campfire Audio Andromeda Emerald Sea", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-emerald-sea.108010/", "price_num": 560.0, "date_ms": 1777161600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Closed: Campfire Audio - Andromeda Emerald Sea", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-emerald-sea.101264/", "price_num": 1100.0, "date_ms": 1767398400000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Closed: Campfire Andromeda Emerald Sea with stand", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-emerald-sea-with-stand.100305/", "price_num": 1000.0, "date_ms": 1765756800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Campfire Audio Andromeda Emerald Sea", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-emerald-sea.100013/", "price_num": 650.0, "date_ms": 1765324800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: [sold] Campfire Audio Andromeda Emerald Sea (ES)", "url": "https://www.head-fi.org/classifieds/sold-campfire-audio-andromeda-emerald-sea-es.92513/", "price_num": 600.0, "date_ms": 1753747200000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: S/N 17 Campfire Audio Andromeda Emerald Sea", "url": "https://www.head-fi.org/classifieds/s-n-17-campfire-audio-andromeda-emerald-sea.83811/", "price_num": 745.0, "date_ms": 1740268800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: Campfire Andromeda Emerald Sea", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-emerald-sea.80424/", "price_num": 650.0, "date_ms": 1735171200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Campfire Andromeda Emerald Sea", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-emerald-sea.72054/", "price_num": 850.0, "date_ms": 1721952000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Campfire Audio Andromeda Emerald Sea", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-emerald-sea.68123/", "price_num": 600.0, "date_ms": 1715904000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Campfire Andromeda Emerald Sea", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-emerald-sea.63751/", "price_num": 879.0, "date_ms": 1709510400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Campfire Andromeda Emerald Sea 2023 edition", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-emerald-sea-2023-edition.59102/", "price_num": 1025.0, "date_ms": 1702512000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Sold: Campfire Audio Andromeda Emerald Sea", "raw_text": "For Sale Sold: Campfire Audio Andromeda Emerald Sea Price 560.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere First owner, bought it from Audio 46 3 years ago. Lightly used. Monitors and all accessories in near mint condition. Free US shipping. vladzakhar Listing Apr 26, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "vladzakhar", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-emerald-sea.108010/", "price_num": 560.0, "date_ms": 1777161600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Closed: Campfire Audio - Andromeda Emerald Sea", "raw_text": "For Sale Closed: Campfire Audio - Andromeda Emerald Sea Price 1100.00 USD Condition New in box Negotiability Or best offer Ships to North America Listed for sale is a brand new sealed box of Andromeda's (Emerald Sea) edition that was purchased directly from Campfire Audio. I bought these awhile back thinking I'd have the proper DAC and time to listen to them - but ended up never opening the box. I'll throw in two packs of the trading... RainofSorrow Listing Jan 3, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "RainofSorrow", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-emerald-sea.101264/", "price_num": 1100.0, "date_ms": 1767398400000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Closed: Campfire Andromeda Emerald Sea with stand", "raw_text": "For Sale Closed: Campfire Andromeda Emerald Sea with stand Price 1000.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Campfire andromeda emerald sea with stand. In fantastic condition. Comes with cables, wallet, pouch and extra bonus green cable wallet with extra cables. Also includes new tips. Everything shown. lefty748 Listing Dec 15, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "lefty748", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-emerald-sea-with-stand.100305/", "price_num": 1000.0, "date_ms": 1765756800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Campfire Audio Andromeda Emerald Sea", "raw_text": "For Sale Sold: Campfire Audio Andromeda Emerald Sea Price 650.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere These are in mint condition and comes with all original accessories. This is a beautiful sounding IEM with a nice warm sound signature. Only reason I\u2019m selling is because I recently got the Clara and need to recoup funds. Pics coming soon. Message me with any questions! papptona Listing Dec 10, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "papptona", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-emerald-sea.100013/", "price_num": 650.0, "date_ms": 1765324800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: [sold] Campfire Audio Andromeda Emerald Sea (ES)", "raw_text": "For Sale / Trade Sold: [sold] Campfire Audio Andromeda Emerald Sea (ES) Price 600.00 USD Condition Good Negotiability Firm Ships to Anywhere IEMs in good condition only with minor marks on shells. Some eartips are missing, as well as 4.4 cable was lost. The other accessories are included (first photo). I don't like pressure buildup, so I'm selling these. I'll consider trading for Alien Brain or other vented CA IEMs. galushsen Listing Jul 29, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "galushsen", "url": "https://www.head-fi.org/classifieds/sold-campfire-audio-andromeda-emerald-sea-es.92513/", "price_num": 600.0, "date_ms": 1753747200000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: S/N 17 Campfire Audio Andromeda Emerald Sea", "raw_text": "For Sale Sold: S/N 17 Campfire Audio Andromeda Emerald Sea Price 745.00 USD Condition Good Negotiability Or best offer Ships to North America Campfire Audio Andromeda Emerald Sea \u2013 Complete Set with Premium Accessories Experience breathtaking sound with the Campfire Audio Andromeda Emerald Sea, a world-class in-ear monitor (IEM) that delivers an incredibly detailed, spacious, and immersive listening experience. This set comes complete... fisherc6 Listing Feb 23, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "fisherc6", "url": "https://www.head-fi.org/classifieds/s-n-17-campfire-audio-andromeda-emerald-sea.83811/", "price_num": 745.0, "date_ms": 1740268800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: Campfire Andromeda Emerald Sea", "raw_text": "For Sale Sold: Campfire Andromeda Emerald Sea Price 650.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Price includes shipping and paypal worldwide! Absolutely as new condition, the ear tips are all unused as I had put my own Final E tips on, has three separate mmcx cables, 4.4mm, 3.5mm, 2.5mm, leather carrying case and all accessories mint in box. T.R.A.N.C.E. Listing Dec 26, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "T.R.A.N.C.E.", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-emerald-sea.80424/", "price_num": 650.0, "date_ms": 1735171200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Campfire Andromeda Emerald Sea", "raw_text": "For Sale Sold: Campfire Andromeda Emerald Sea Price 850.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Hi all - Selling my Campfire Andromeda - Emerald Sea. Condition is excellent, includes original box, 3 cables, and fabric case for cables. Selling as I'm downsizing my audio collection. Shipping included (only to Continental US). No trades. galileaux Listing Jul 26, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "galileaux", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-emerald-sea.72054/", "price_num": 850.0, "date_ms": 1721952000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Campfire Audio Andromeda Emerald Sea", "raw_text": "For Sale Sold: Campfire Audio Andromeda Emerald Sea Price 600.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Got theses as a Christmas gift to myself and I just am not comfortable taking them out of the house knowing how much they're worth. I have too many options at home already and prefer full-size anyways. Maybe used about 10 hours tops. Mostly kept in the box, ear tips are unopened even. Includes... amilo Listing May 17, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "amilo", "url": "https://www.head-fi.org/classifieds/campfire-audio-andromeda-emerald-sea.68123/", "price_num": 600.0, "date_ms": 1715904000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Campfire Andromeda Emerald Sea", "raw_text": "For Sale Sold: Campfire Andromeda Emerald Sea Price 879.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America MINT CONDITION, lightly used. im second owner only put approximately less than 30 hours , 2023 version. Original box and accessories all included Price including shipping in US, Need cash only so NO TRADE. briantrinh86 Listing Mar 4, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "briantrinh86", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-emerald-sea.63751/", "price_num": 879.0, "date_ms": 1709510400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Campfire Andromeda Emerald Sea 2023 edition", "raw_text": "For Sale Sold: Campfire Andromeda Emerald Sea 2023 edition Price 1025.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America $1025 total includes insured ship and PP They sound,look and fit great.Just to much $$$ tied up in all this stuff.Looking for sale only no trades.Condition is as stated with all original included bits in original box.Tips are not used since I prefer JVC for all my iems. I have plenty of... fbgfbg Listing Dec 14, 2023 Comments: 2 Category: In-Ear Monitors", "seller_username": "fbgfbg", "url": "https://www.head-fi.org/classifieds/campfire-andromeda-emerald-sea-2023-edition.59102/", "price_num": 1025.0, "date_ms": 1702512000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 1400.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -441,6 +458,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -506,6 +567,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -513,14 +576,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -534,18 +604,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -557,13 +637,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -578,7 +659,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -623,7 +704,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -634,7 +715,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -642,11 +723,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1158,6 +1239,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

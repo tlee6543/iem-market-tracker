@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>FIR Audio Krypton 5</h1>
+<div class="iem-title-row">
+    <h1>FIR Audio Krypton 5</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-fir-audio.html">FIR Audio</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -219,7 +236,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -482,7 +499,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Sold: Fir Audio Krypton 5 (KR5)", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-kr5.104882/", "price_num": 1350.0, "date_ms": 1772668800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Traded: [PD] FiR Audio Krypton 5 (Kr5)", "url": "https://www.head-fi.org/classifieds/pd-fir-audio-krypton-5-kr5.76271/", "price_num": 1400.0, "date_ms": 1728604800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: Fir Audio Krypton 5 (Kr5)", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-kr5.71667/", "price_num": 1425.0, "date_ms": 1721347200000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Fir Audio Krypton 5", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5.69745/", "price_num": 1400.0, "date_ms": 1718236800000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Closed: Fir Audio Krypton 5", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5.66096/", "price_num": null, "date_ms": 1712966400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 5, "title": "Closed: Fir Audio Krypton 5 - Brand New Quick Sale", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-brand-new-quick-sale.65598/", "price_num": 1900.0, "date_ms": 1712188800000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Traded: Fir Audio Krypton 5", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5.65377/", "price_num": null, "date_ms": 1711843200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 7, "title": "Closed: SOLD. Fir Audio Krypton 5 PD", "url": "https://www.head-fi.org/classifieds/sold-fir-audio-krypton-5-pd.64774/", "price_num": 1600.0, "date_ms": 1710979200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Closed: Fir Audio Krypton 5", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5.59554/", "price_num": null, "date_ms": 1703376000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Fir Audio Krypton 5 (Kr5)", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-kr5.58858/", "price_num": 1450.0, "date_ms": 1702080000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: FIR Audio Krypton 5 (Lightly Used)", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-lightly-used.52162/", "price_num": 1600.0, "date_ms": 1691280000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Quick sale - Fir Audio Krypton 5 (Kr5)", "url": "https://www.head-fi.org/classifieds/quick-sale-fir-audio-krypton-5-kr5.46607/", "price_num": 1780.0, "date_ms": 1682467200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Closed: Fir Audio Krypton 5 KR5", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-kr5.42501/", "price_num": 1900.0, "date_ms": 1677369600000, "listing_status": "closed", "condition_text": "like new, excellent, fair, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Closed: Fir Audio Krypton 5 ( KR5 )", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-kr5.41446/", "price_num": 1800.0, "date_ms": 1675987200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Closed: FiR Audio Krypton 5/KR5", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-kr5.57703/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Sold: Fir Audio Krypton 5 (KR5)", "raw_text": "For Sale Sold: Fir Audio Krypton 5 (KR5) Price 1350.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America For sale is a favorite set of mine. The technology in this is part of the reason why i got into IEM's. Bass is impressive. very Impactful, but not overbearing. the Mids are clear, and there is great separation between the highs, mids, and the lows. The qualities that really stood out to me... YakAttack99 Listing Mar 5, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "YakAttack99", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-kr5.104882/", "price_num": 1350.0, "date_ms": 1772668800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Traded: [PD] FiR Audio Krypton 5 (Kr5)", "raw_text": "For Sale / Trade Traded: [PD] FiR Audio Krypton 5 (Kr5) Price 1400.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Listing a set of FiR Kr5 universals in excellent condition. Includes original packaging and accessories as well as shipping to North America. I've converted to customs for the FiR Frontier Series (Ne4, Xe6, Rn6), so selling my universals. a_screaming Listing Oct 11, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "a_screaming", "url": "https://www.head-fi.org/classifieds/pd-fir-audio-krypton-5-kr5.76271/", "price_num": 1400.0, "date_ms": 1728604800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: Fir Audio Krypton 5 (Kr5)", "raw_text": "For Sale Sold: Fir Audio Krypton 5 (Kr5) Price 1425.00 USD Condition Good Negotiability Firm Ships to EuropeNorth America Selling in great condition, the 5 driver (4BA + 1 DD) from Fir Frontier series, Kr5 is known for its astonishing kinetic bass and stage. It's is known to be the most balanced set of the 3 iems in Frontier launch series. Comes with box and all accessories. Cable terminates in 4.4 Shipping is... harshkamboj Listing Jul 19, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-kr5.71667/", "price_num": 1425.0, "date_ms": 1721347200000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Fir Audio Krypton 5", "raw_text": "For Sale Sold: Fir Audio Krypton 5 Price 1400.00 USD Condition Good Negotiability Or best offer Ships to United States of America Fir Krypton 5 for sale. I am the second owner. Includes all accessories including all 3 atom modules plus included is the optional red module. I have moved to CIEM and will include all unused tips I have accumulated over time. I let someone borrow these to demo and he damaged the outer... pippen99 Listing Jun 13, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "pippen99", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5.69745/", "price_num": 1400.0, "date_ms": 1718236800000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Closed: Fir Audio Krypton 5", "raw_text": "For Trade Closed: Fir Audio Krypton 5 Price 1.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America I got these from this listing and they are just not for me https://www.head-fi.org/classifieds/fir-audio-krypton-5.65377/. If you have a trade in mind let me know benjifx19 Listing Apr 13, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "benjifx19", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5.66096/", "price_num": null, "date_ms": 1712966400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 5, "title": "Closed: Fir Audio Krypton 5 - Brand New Quick Sale", "raw_text": "For Sale Closed: Fir Audio Krypton 5 - Brand New Quick Sale Price 1900.00 USD Condition New in box Negotiability Or best offer Ships to Anywhere Brand new unopened box. MSRP 2999 USD. Please check classified feedbacks. Please PM for negotiations. Thomastb Listing Apr 4, 2024 Comments: 2 Category: In-Ear Monitors", "seller_username": "Thomastb", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-brand-new-quick-sale.65598/", "price_num": 1900.0, "date_ms": 1712188800000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Traded: Fir Audio Krypton 5", "raw_text": "For Sale / Trade Traded: Fir Audio Krypton 5 Price 1.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Fir Audio KR5 for sale or trade. Would prefer trade. This is the best IEM I have owned. The bass is amazing with an astonishing high end. Unfortunately the design that results in such wonderful sound does not fit my type of use. I need a more isolating design than the Kinetic Bass design... pippen99 Listing Mar 31, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "pippen99", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5.65377/", "price_num": null, "date_ms": 1711843200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 7, "title": "Closed: SOLD. Fir Audio Krypton 5 PD", "raw_text": "For Sale Closed: SOLD. Fir Audio Krypton 5 PD Price 0.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Great set of KR5 for sale. Downsizing to 4 main iem: raven, evo, traillili and jewel. So others are going. These are gorgeous and sound incredible. Nice bass, good detail and a big holographic stage. This comes with all 4 filters , and all accessories. $1600 shipped and paypaled. rhester Listing Mar 21, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "rhester", "url": "https://www.head-fi.org/classifieds/sold-fir-audio-krypton-5-pd.64774/", "price_num": 1600.0, "date_ms": 1710979200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Closed: Fir Audio Krypton 5", "raw_text": "For Trade Closed: Fir Audio Krypton 5 Price 0.01 USD Condition Excellent/Like new Negotiability Firm Ships to EuropeNorth America Looking to trade a recently acquired Krypton 5 with other iems or iem cables. Particularly looking for 64a Volur or Oriolus Monacha but not limited to only these iems. Can add cash accordingly. This is in mint condition and comes with an additional red atom module, as shown in the pictures. harshkamboj Listing Dec 24, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5.59554/", "price_num": null, "date_ms": 1703376000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Fir Audio Krypton 5 (Kr5)", "raw_text": "For Sale Sold: Fir Audio Krypton 5 (Kr5) Price 1450.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Fir KR5 UIEM. Original owner, Bought new from Musicteck. Function, cosmetics- Like new No blemishes in the unit Accessoirs complete including ear tips. (Originally not included but I will include 64 ears true fidelity foam tips). Stock Fir Scorpion cable terminated in 4.4mm Downsizing gears... main character Listing Dec 9, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "character", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-kr5.58858/", "price_num": 1450.0, "date_ms": 1702080000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: FIR Audio Krypton 5 (Lightly Used)", "raw_text": "For Sale Sold: FIR Audio Krypton 5 (Lightly Used) Price 1600.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling a like-new KR5 bought in end-March 2023 from the Project Perfection store in Singapore. I bought it when I was in Singapore for Canjam. The set has less than 20 hours on it. Reason for selling is that I have way too many IEMs and want to sell a bunch and recoup some cash. No trades... Sajid Amit Listing Aug 6, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "Amit", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-lightly-used.52162/", "price_num": 1600.0, "date_ms": 1691280000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Quick sale - Fir Audio Krypton 5 (Kr5)", "raw_text": "For Sale Sold: Quick sale - Fir Audio Krypton 5 (Kr5) Price 1780.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America For sale a mint condition (like new - no scratch whatsoever) FIR Audio Krypton 5 with all unused accessories. Shipping and PayPal fees included. Please contact me for more pictures or if you have any question. Albert705 Listing Apr 26, 2023 Comments: 2 Category: In-Ear Monitors", "seller_username": "Albert705", "url": "https://www.head-fi.org/classifieds/quick-sale-fir-audio-krypton-5-kr5.46607/", "price_num": 1780.0, "date_ms": 1682467200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Closed: Fir Audio Krypton 5 KR5", "raw_text": "For Sale Closed: Fir Audio Krypton 5 KR5 Price 1900.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Used for less than a month. all accessories are included. retails at 3k usd to this is a great price to get them for a fairly new set. The best IEMS I have ever owned, unfortunately have to let them go for now, will definitely re-purchase them when i get the chance again, hoping to find a new... KaiAudio Listing Feb 26, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "KaiAudio", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-kr5.42501/", "price_num": 1900.0, "date_ms": 1677369600000, "listing_status": "closed", "condition_text": "like new, excellent, fair, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Closed: Fir Audio Krypton 5 ( KR5 )", "raw_text": "For Sale / Trade Closed: Fir Audio Krypton 5 ( KR5 ) Price 1800.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America This Fir Audio KR5 was used for no more than one hour. It is brand new. None of the tips were used. The cable us not used either. All material is in place and in UNUSED condition. These IEMs go for $3,000 so this is an absolute steal. It's the best bass I've ever heard on an IEM and highly... zlayde Listing Feb 10, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "zlayde", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-kr5.41446/", "price_num": 1800.0, "date_ms": 1675987200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Closed: FiR Audio Krypton 5/KR5", "raw_text": "For Sale Closed: FiR Audio Krypton 5/KR5", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/fir-audio-krypton-5-kr5.57703/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 3000.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -505,6 +522,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -570,6 +631,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -577,14 +640,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -598,18 +668,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -621,13 +701,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -642,7 +723,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -687,7 +768,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -698,7 +779,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -706,11 +787,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1222,6 +1303,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

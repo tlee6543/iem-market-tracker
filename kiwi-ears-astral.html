@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>Kiwi Ears Astral</h1>
+<div class="iem-title-row">
+    <h1>Kiwi Ears Astral</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-kiwi-ears.html">Kiwi Ears</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -219,7 +236,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -418,7 +435,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Kiwi Ears Astral", "url": "https://old.reddit.com/r/AVexchange/comments/1v5o9pr/wtsustxhkiwi_ears_astral_w_paypal/#item-1", "price_num": 190.0, "date_ms": 1784927627000, "listing_status": "active", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8488_json=403:len189908", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Kiwi Ears Astral", "url": "https://old.reddit.com/r/AVexchange/comments/1v23g8u/wtsusaca_h_kiwi_ears_astral_ddhifi_x_moondrop/#item-1", "price_num": 185.0, "date_ms": 1784595100000, "listing_status": "closed", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | reddit_item_line_strikethrough_sold | comments_checked_rss_and_html | confirmed_priced_nonbundle_included"}, {"row_id": 2, "title": "Kiwi Ears Astral", "url": "https://old.reddit.com/r/AVexchange/comments/1v23eer/wts_uspa_h_kiwi_ears_astral_w_paypal_local/#item-1", "price_num": 200.0, "date_ms": 1784594963000, "listing_status": "active", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len303296_page=200:len303241_json=200:len303969", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 3, "title": "Kiwi Ears Astral IEM", "url": "https://old.reddit.com/r/AVexchange/comments/1uxdw1z/wtsusmdh_kiwi_ears_astral_iem_wpaypal_ff/#item-1", "price_num": 185.0, "date_ms": 1784139221000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 4, "title": "Kiwi Ears Astral", "url": "https://old.reddit.com/r/AVexchange/comments/1uwig5t/wts_uspa_h_kiwi_ears_astral_w_paypal_local/#item-1", "price_num": 210.0, "date_ms": 1784056751000, "listing_status": "active", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len303294_page=200:len303283_json=200:len300479", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Kiwi Ears Astral", "url": "https://old.reddit.com/r/AVexchange/comments/1uupmfi/wtsusaca_h_kiwi_ears_astral_ddhifi_x_moondrop/#item-1", "price_num": 200.0, "date_ms": 1783885898000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len300334_page=200:len300369_json=200:len300510", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 6, "title": "Kiwi Ears Astral", "url": "https://old.reddit.com/r/AVexchange/comments/1ubytfg/wts_usamd_h_kiwi_ears_astral_w_paypal_200/#item-1", "price_num": 200.0, "date_ms": 1782069948000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 7, "title": "Kiwi Ears Astral", "url": "https://old.reddit.com/r/AVexchange/comments/1tluqfa/wtsusacah_topping_dx5_ii_sennheiser_hd490_pro/#item-4", "price_num": 200.0, "date_ms": 1779576822000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=top pro"}, {"row_id": 8, "title": "New Kiwi Ears Astral]", "url": "https://old.reddit.com/r/AVexchange/comments/1s1y8ht/wtsusalh_new_kiwi_ears_astral_w_paypal/#item-1", "price_num": null, "date_ms": 1774310677000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=kiwiears | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 9, "title": "Kiwi Ears Astral IEM", "url": "https://old.reddit.com/r/AVexchange/comments/1oglgqs/wts_usal_h_kiwi_ears_astral_iem_w_paypal/#item-1", "price_num": null, "date_ms": 1761487509000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=kiwiears | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 10, "title": "Unopened Kiwi Ears Astral", "url": "https://old.reddit.com/r/AVexchange/comments/1ly9m9g/wtsustxh_unopened_kiwi_ears_astral_w_240_paypal/#item-1", "price_num": 240.0, "date_ms": 1752350431000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | no_price_unchecked | reddit_search_rss_query=kiwiears"}];
+const allRows = [{"row_id": 0, "title": "Kiwi Ears Astral", "raw_text": "Great IEMs but too big for my ears, used for a few months. Will come with original carrying case, medium size tips, cable with 3.5mm attachment and a set of wide bore tips that fit them nicely. No swaps here yet but plenty on r/mousemarket and r/hardwareswap\nNo Trades\nLooking for $190 shipped via PayPal\nsubmitted by /u/bopstv\n[link] [comments]", "seller_username": "bopstv", "url": "https://old.reddit.com/r/AVexchange/comments/1v5o9pr/wtsustxhkiwi_ears_astral_w_paypal/#item-1", "price_num": 190.0, "date_ms": 1784927627000, "listing_status": "active", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8488_json=403:len189908", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Kiwi Ears Astral", "raw_text": "__STRIKE_START__ Kiwi Ears Astral - $185 shipped US __STRIKE_END__ SOLD\n__STRIKE_START__ Blue color. Includes all original accessories (case, tips, balanced adapter), no packaging. Excellent condition, purchased brand new in October 2025. __STRIKE_END__", "seller_username": "Flowkeh", "url": "https://old.reddit.com/r/AVexchange/comments/1v23g8u/wtsusaca_h_kiwi_ears_astral_ddhifi_x_moondrop/#item-1", "price_num": 185.0, "date_ms": 1784595100000, "listing_status": "closed", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | reddit_item_line_strikethrough_sold | comments_checked_rss_and_html | confirmed_priced_nonbundle_included"}, {"row_id": 2, "title": "Kiwi Ears Astral", "raw_text": "Kiwi Ears Astral - Purchased brand new at the beginning of May. Have maybe 10-12 hours of use on them. Still look new, sound decent! Wound up purchased the Top Pro about a month after getting these and now these barely get used.\nIncludes everything received as when new. IEMs, case, cable with tips, eartips, screens, original box and all documentation.\nLooking to get $200 PayPal G&S Shipped to the continental US. Discount for local pickup.\nsubmitted by /u/Caterham7\n[link] [comments]", "seller_username": "Caterham7", "url": "https://old.reddit.com/r/AVexchange/comments/1v23eer/wts_uspa_h_kiwi_ears_astral_w_paypal_local/#item-1", "price_num": 200.0, "date_ms": 1784594963000, "listing_status": "active", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len303296_page=200:len303241_json=200:len303969", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 3, "title": "Kiwi Ears Astral IEM", "raw_text": "$185 shipped OBO\nFor sale is a few month old pair of Kiwi Ears Astral IEMs.\nI do not have the box nor the 4.4mm switchable connector anymore, just the 3.5mm. They are priced accordingly\nI have three sets of tips I will include -\nTwo stock (blue), one spin-fit (green)\nThanks for looking!\nsubmitted by /u/BFree_productions\n[link] [comments]", "seller_username": "BFree_productions", "url": "https://old.reddit.com/r/AVexchange/comments/1uxdw1z/wtsusmdh_kiwi_ears_astral_iem_wpaypal_ff/#item-1", "price_num": 185.0, "date_ms": 1784139221000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 4, "title": "Kiwi Ears Astral", "raw_text": "Kiwi Ears Astral - Purchased brand new at the beginning of May. Have maybe 10-12 hours of use on them. Still look new, sound decent! Wound up purchased the Top Pro about a month after getting these and now these barely get used.\nIncludes everything received as when new. IEMs, case, cable with tips, eartips, screens, original box and all documentation.\nLooking to get $210 PayPal G&S Shipped to the continental US. Discount for local pickup.\nsubmitted by /u/Caterham7\n[link] [comments]", "seller_username": "Caterham7", "url": "https://old.reddit.com/r/AVexchange/comments/1uwig5t/wts_uspa_h_kiwi_ears_astral_w_paypal_local/#item-1", "price_num": 210.0, "date_ms": 1784056751000, "listing_status": "active", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len303294_page=200:len303283_json=200:len300479", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Kiwi Ears Astral", "raw_text": "Kiwi Ears Astral - $200 shipped US\nBlue color. Includes all original accessories (case, tips, balanced adapter), no packaging. Excellent condition, purchased brand new in October 2025.", "seller_username": "Flowkeh", "url": "https://old.reddit.com/r/AVexchange/comments/1uupmfi/wtsusaca_h_kiwi_ears_astral_ddhifi_x_moondrop/#item-1", "price_num": 200.0, "date_ms": 1783885898000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len300334_page=200:len300369_json=200:len300510", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 6, "title": "Kiwi Ears Astral", "raw_text": "Up for sale are my Kiwi Ears Astral\nAmazing condition, comes with everything when you buy them new\nNot looking for trades\n$200 via PayPal\nsubmitted by /u/GonegetSMOKED\n[link] [comments]", "seller_username": "GonegetSMOKED", "url": "https://old.reddit.com/r/AVexchange/comments/1ubytfg/wts_usamd_h_kiwi_ears_astral_w_paypal_200/#item-1", "price_num": 200.0, "date_ms": 1782069948000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 7, "title": "Kiwi Ears Astral", "raw_text": "SOLD Kiwi Ears Astral - $200.00", "seller_username": "Imaginary-Dog9886", "url": "https://old.reddit.com/r/AVexchange/comments/1tluqfa/wtsusacah_topping_dx5_ii_sennheiser_hd490_pro/#item-4", "price_num": 200.0, "date_ms": 1779576822000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=top pro"}, {"row_id": 8, "title": "New Kiwi Ears Astral]", "raw_text": "Brand new Kiwi Ears Astral set for sale! These never left the box. Bought them with the intention of my son swapping to IEM for gaming but he decided to stay headphones. Looking for 225$ USD CONUS Only OBO.\nsubmitted by /u/Coop1082\n[link] [comments]", "seller_username": "Coop1082", "url": "https://old.reddit.com/r/AVexchange/comments/1s1y8ht/wtsusalh_new_kiwi_ears_astral_w_paypal/#item-1", "price_num": null, "date_ms": 1774310677000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=kiwiears | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 9, "title": "Kiwi Ears Astral IEM", "raw_text": "I have a set of Kiwi Ears Astral that are BNIB. I ordered them looking to replace a set of Raptgo Hook-X that I have but I ended up not moving on from the Raptgo. They have never been out of the box. Looking for 250$ USD shipped CONUS only OBO. Thanks guys.\nsubmitted by /u/Coop1082\n[link] [comments]", "seller_username": "Coop1082", "url": "https://old.reddit.com/r/AVexchange/comments/1oglgqs/wts_usal_h_kiwi_ears_astral_iem_w_paypal/#item-1", "price_num": null, "date_ms": 1761487509000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=kiwiears | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 10, "title": "Unopened Kiwi Ears Astral", "raw_text": "Unopened. Got it as a gift but no time for it.\n$240 net including shipping.\nsubmitted by /u/abemusedman\n[link] [comments]", "seller_username": "abemusedman", "url": "https://old.reddit.com/r/AVexchange/comments/1ly9m9g/wtsustxh_unopened_kiwi_ears_astral_w_240_paypal/#item-1", "price_num": 240.0, "date_ms": 1752350431000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | no_price_unchecked | reddit_search_rss_query=kiwiears"}];
 const originalMsrpUsd = 300.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -441,6 +458,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -506,6 +567,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -513,14 +576,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -534,18 +604,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -557,13 +637,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -578,7 +659,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -623,7 +704,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -634,7 +715,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -642,11 +723,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1158,6 +1239,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

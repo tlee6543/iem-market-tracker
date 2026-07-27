@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>Etymotic ER2XR</h1>
+<div class="iem-title-row">
+    <h1>Etymotic ER2XR</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-etymotic.html">Etymotic</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -217,7 +234,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -351,7 +368,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Etymotic ER2XR : https://imgur.com/a/MvXVbs4 .", "url": "https://old.reddit.com/r/AVexchange/comments/1qlacb2/wts_usaca_h_etymotic_er2xr_ikko_obsidian_oh10/#item-1", "price_num": 45.0, "date_ms": 1769220704000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=etymotic"}, {"row_id": 1, "title": "Etymotic ER2XR with Comply P-Series Tips", "url": "https://old.reddit.com/r/AVexchange/comments/1pfdjak/wtsusacah_etymotic_er2xr_with_comply_pseries_tips/#item-1", "price_num": 90.0, "date_ms": 1764986881000, "listing_status": "closed", "condition_text": "good condition", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=etymotic | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 2, "title": "Etymotic ER2XR", "url": "https://old.reddit.com/r/AVexchange/comments/1ocpwms/wtsusokhheadphones_and_iemswpaypal/#item-6", "price_num": 50.0, "date_ms": 1761082734000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=etymotic"}, {"row_id": 3, "title": "Sold: Etymotic ER2XR", "url": "https://www.head-fi.org/classifieds/etymotic-er2xr.88187/", "price_num": 69.0, "date_ms": 1747008000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Etymotic ER2XR", "url": "https://www.head-fi.org/classifieds/etymotic-er2xr.64037/", "price_num": 49.0, "date_ms": 1709942400000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Etymotic Er2xr", "url": "https://www.head-fi.org/classifieds/etymotic-er2xr.58672/", "price_num": 60.0, "date_ms": 1701734400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: Etymotic ER2XR Headphones", "url": "https://www.head-fi.org/classifieds/etymotic-er2xr-headphones.49236/", "price_num": 60.0, "date_ms": 1686614400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Etymotic ER2XR : https://imgur.com/a/MvXVbs4 .", "raw_text": "Etymotic ER2XR : https://imgur.com/a/MvXVbs4 . $45 shipped, or $40 for local . Great at sound isolation. EDIT: SOLD.", "seller_username": "HXjiB33G", "url": "https://old.reddit.com/r/AVexchange/comments/1qlacb2/wts_usaca_h_etymotic_er2xr_ikko_obsidian_oh10/#item-1", "price_num": 45.0, "date_ms": 1769220704000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=etymotic"}, {"row_id": 1, "title": "Etymotic ER2XR with Comply P-Series Tips", "raw_text": "In good condition, I just don't really use them. Has original packaging, all original eartips and 1 pair replacement filters + tool. Shirt clip and storage pouch are not included (I lost them).\nComply tips are medium sized and include 2 unused pairs of tips.\nWhen shipping I'll repack the Comply tips in the ER2XR box and discard its packaging. If you want the original Comply packaging I can do $80 plus shipping.\nWill only ship withing the continental US.\nI have 1 confirmed trade on r/shave_bazaar and 1 confirmed trade on r/mechmarket . Check my post history for details.\nsubmitted by /u/wusarhu\n[link] [comments]", "seller_username": "wusarhu", "url": "https://old.reddit.com/r/AVexchange/comments/1pfdjak/wtsusacah_etymotic_er2xr_with_comply_pseries_tips/#item-1", "price_num": 90.0, "date_ms": 1764986881000, "listing_status": "closed", "condition_text": "good condition", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=etymotic | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 2, "title": "Etymotic ER2XR", "raw_text": "Etymotic ER2XR $50 SOLD Like new condition, included box and all original accessories. Tips have been sanitized.\nFiio BTR11 SOLD Comes free with any purchase. First come first serve.\nPrices include COTUS shipping. I would prefer to use F&F, but G&S works too. As for trades, I\u2019d be interested in trading either the Etymotics or the Grados for a pair of brand new 6x0 pads. I\u2019d also consider trading the 650s, just lmk what you have.\nThanks for looking!\nsubmitted by /u/throwaway1842955\n[link] [comments]", "seller_username": "throwaway1842955", "url": "https://old.reddit.com/r/AVexchange/comments/1ocpwms/wtsusokhheadphones_and_iemswpaypal/#item-6", "price_num": 50.0, "date_ms": 1761082734000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=etymotic"}, {"row_id": 3, "title": "Sold: Etymotic ER2XR", "raw_text": "For Sale Sold: Etymotic ER2XR Price 69.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Bought them out of curiosity last year and it isn't for me. The sound quality is excellent though, I really enjoyed the tuning but the ear canal insertion isn't for my ears. Tested for less than an hour and it's been in my closet for months. Comes with original box and everything. I will ship... jb2unique Listing May 12, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "jb2unique", "url": "https://www.head-fi.org/classifieds/etymotic-er2xr.88187/", "price_num": 69.0, "date_ms": 1747008000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Etymotic ER2XR", "raw_text": "For Sale Sold: Etymotic ER2XR Price 49.00 USD Condition Good Negotiability Firm Ships to United States of America The reference and excellent Etymotic ER2XR. These come in original packaging, with the pictured items such as the cleaning tools and instruction manual. They are in excellent condition as pictured. The outer box has slight wear and some tape on it, so although the iems are very fresh, I... DenverW Listing Mar 9, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "DenverW", "url": "https://www.head-fi.org/classifieds/etymotic-er2xr.64037/", "price_num": 49.0, "date_ms": 1709942400000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Etymotic Er2xr", "raw_text": "For Sale Sold: Etymotic Er2xr Price 60.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America For sale today is a like new pair of Er2xr with all the original packaging and accessories. Comes with stock 3.5mm cables and an official 2.5mm balanced cable. Such a workhorse of an iem. Use these for audiobooks,podcasts and light music for almost a year. Cessnas172 Listing Dec 5, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "Cessnas172", "url": "https://www.head-fi.org/classifieds/etymotic-er2xr.58672/", "price_num": 60.0, "date_ms": 1701734400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: Etymotic ER2XR Headphones", "raw_text": "For Sale Sold: Etymotic ER2XR Headphones Price 60.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America These are fantastic sounding headphones. Clear without any harshness. I switched to over the ear headphones. Like new. Price includes PayPal fees and UPS ground shipping. I will include a set of comply foam tips (washed and cleaned), all of the original stock tips, and case. davidvanderbilt Listing Jun 13, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "davidvanderbilt", "url": "https://www.head-fi.org/classifieds/etymotic-er2xr-headphones.49236/", "price_num": 60.0, "date_ms": 1686614400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -374,6 +391,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -439,6 +500,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -446,14 +509,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -467,18 +537,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -490,13 +570,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -511,7 +592,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -556,7 +637,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -567,7 +648,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -575,11 +656,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1091,6 +1172,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

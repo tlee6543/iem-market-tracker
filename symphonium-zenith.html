@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>Symphonium Zenith</h1>
+<div class="iem-title-row">
+    <h1>Symphonium Zenith</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-symphonium.html">Symphonium</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -219,7 +236,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -402,7 +419,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Symphonium Zenith", "url": "https://old.reddit.com/r/AVexchange/comments/1v479ni/wtsusca_hsymphonium_zenith_w_paypal/#item-1", "price_num": 1600.0, "date_ms": 1784793375000, "listing_status": "active", "condition_text": "with og box and accessories", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len303173_page=200:len300255_json=403:len189908", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Symphonium Zenith", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.112124/", "price_num": 1575.0, "date_ms": 1783900800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 2, "title": "Symphonium Zenith", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.110994/", "price_num": 1650.0, "date_ms": 1781913600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 3, "title": "Symphonium Zenith", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.110951/", "price_num": 1625.0, "date_ms": 1781827200000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_verified_or_left_active | active_status_checker_status_unclear_left_unchanged | active_status_checker_headfi_live_check_skipped"}, {"row_id": 4, "title": "Sold: Symphonium Zenith [W] Prisma Lux/Lumen", "url": "https://www.head-fi.org/classifieds/symphonium-zenith-w-prisma-lux-lumen.110722/", "price_num": 1700.0, "date_ms": 1781481600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "current_listing_collect_usd_only_clean_v4"}, {"row_id": 5, "title": "Sold: Symphonium Zenith - Mint/8W Cable", "url": "https://www.head-fi.org/classifieds/symphonium-zenith-mint-8w-cable.110251/", "price_num": 1700.0, "date_ms": 1780617600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "current_listing_collect_usd_only_clean_v4"}, {"row_id": 6, "title": "Hello I\u2019m looking to sell my like-new Symphonium Zenith for", "url": "https://old.reddit.com/r/AVexchange/comments/1tw9sz8/wts_usail_h_symphonium_zenith_w_8w_dark_matter/#item-1", "price_num": 1700.0, "date_ms": 1780538165000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 7, "title": "Closed: Symphonium Zenith w/ Dark Matter 8W Cable", "url": "https://www.head-fi.org/classifieds/symphonium-zenith-w-dark-matter-8w-cable.110022/", "price_num": 1450.0, "date_ms": 1780272000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 8, "title": "Closed: Symphonium Zenith", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.109678/", "price_num": 1650.0, "date_ms": 1779753600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "current_listing_collect_usd_only_clean_v4"}, {"row_id": 9, "title": "Sold: Symphonium Zenith", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.108829/", "price_num": 1700.0, "date_ms": 1778457600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}];
+const allRows = [{"row_id": 0, "title": "Symphonium Zenith", "raw_text": "Wts symphonium zeniths in good condition with og box and accessories\nShipping included for conus intl pays ship\n1600$ obo\nsubmitted by /u/SnooOpinions8623\n[link] [comments]", "seller_username": "SnooOpinions8623", "url": "https://old.reddit.com/r/AVexchange/comments/1v479ni/wtsusca_hsymphonium_zenith_w_paypal/#item-1", "price_num": 1600.0, "date_ms": 1784793375000, "listing_status": "active", "condition_text": "with og box and accessories", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len303173_page=200:len300255_json=403:len189908", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Symphonium Zenith", "raw_text": "Symphonium Zenith\nListing ID: 112124\nFor Sale 1,575.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To United States Of America\nSelling my like new Symphonium Zenith. Pristine condition and excellent channel matching (measured to confirm). Box and tips and all accessories included. Cable is Litmus 4W.\nListed by: drewbadour (16)\nListed: 2026-07-13\nLast edited: 2026-07-13\nSOLD", "seller_username": "drewbadour", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.112124/", "price_num": 1575.0, "date_ms": 1783900800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 2, "title": "Symphonium Zenith", "raw_text": "Symphonium Zenith\nListing ID: 110994\nFor Sale 1,650.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To United States Of America\nPristine and complete stock (no upgrade cable). Beautifully tuned. No trades. Reason for sale is financial. Please review my feedback. I'll cover any fees and shipping. Verified address and feedback expected.\nListed by: Mllump (142)\nListed: 2026-06-20\nSOLD", "seller_username": "Mllump", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.110994/", "price_num": 1650.0, "date_ms": 1781913600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 3, "title": "Symphonium Zenith", "raw_text": "Symphonium Zenith\nListing ID: 110951\nFor Sale 1,625.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To AnywhereNorth AmericaUnited States Of America\nPerfect condition; full box and accessories. Included stock cable is 4.4mm. Price is net to me. Free shipping within USA; international $25-50 extra.\nListed by: Rolu (82)\nListed: 2026-06-19\nLast edited: 2026-06-22", "seller_username": "Rolu", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.110951/", "price_num": 1625.0, "date_ms": 1781827200000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_verified_or_left_active | active_status_checker_status_unclear_left_unchanged | active_status_checker_headfi_live_check_skipped"}, {"row_id": 4, "title": "Sold: Symphonium Zenith [W] Prisma Lux/Lumen", "raw_text": "Sold: Symphonium Zenith [W] Prisma Lux/Lumen Home Classifieds Headphones For Sale / Trade In-Ear Monitors Watch \u2022\u2022\u2022 Listing ID: 110722 Views: 154 1,700.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Symphonium Zenith SN#10 These sound amazing but unfortunately will have to part ways because of fitment issues, despite tip rolling. It has less than 5 hours of use and is in excellent like new condition with no signs of cosmetic wear or damage. Original box and accessories included. Accessories: Metal carrying puck, 2 sets of stock tips SML (Divinus Velvet Wide Bore and Azla Sednaearfit Origin), Mesh cloth IEM carrying pouch, Mesh cloth ear tips pouch, Sticker, Symphonium microfiber, IEM cleaning brush, and 2w cable. Looking for $1700 PayPal net to me. Will ship out within 24 hours of sale. Open to trades for Prisma Lux/Lumen and potentially others higher/lower I have 10+ trades on r/AvExchange and 20+ on r/MouseMarket. Can provide more proof and timestamps if necessary. Listed by: FreeUzi (0) Listed: 2026-06-15 Last edited: 2026-06-15 IMG_3252.jpeg 3.6 MB \u00b7 Views: 0 There are no comments to display.", "seller_username": "FreeUzi", "url": "https://www.head-fi.org/classifieds/symphonium-zenith-w-prisma-lux-lumen.110722/", "price_num": 1700.0, "date_ms": 1781481600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "current_listing_collect_usd_only_clean_v4"}, {"row_id": 5, "title": "Sold: Symphonium Zenith - Mint/8W Cable", "raw_text": "Sold: Symphonium Zenith - Mint/8W Cable Home Classifieds Headphones For Sale / Trade In-Ear Monitors Watch \u2022\u2022\u2022 Listing ID: 110251 Views: 226 1,700.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America This set of Symphonium Zenith are in mint condition as they\u2019ve been minimally used. They include all original packaging and all original accessories. As seen in the main photo this is serial number 3. They are the new flagship set from Symphonium and have received a number of stellar reviews. Selling this due to upgrading. This also includes the Dark Matter 8W upgrade cable. I offer next business day mail out with shipping cost included in the price. Thanks for your interest! Listed by: Markmurd (79) Listed: 2026-06-05 IMG_4790.jpeg 3.2 MB \u00b7 Views: 0 IMG_4792.jpeg 198.7 KB \u00b7 Views: 0 IMG_4793.jpeg 180.9 KB \u00b7 Views: 0 IMG_4791.jpeg 186.2 KB \u00b7 Views: 0 There are no comments to display.", "seller_username": "Markmurd", "url": "https://www.head-fi.org/classifieds/symphonium-zenith-mint-8w-cable.110251/", "price_num": 1700.0, "date_ms": 1780617600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "current_listing_collect_usd_only_clean_v4"}, {"row_id": 6, "title": "Hello I\u2019m looking to sell my like-new Symphonium Zenith for", "raw_text": "Hello I\u2019m looking to sell my like-new Symphonium Zenith for $1700 net to me. All original packaging and accessories are included as shown in the images. Sad to let this go but I can confirm it is a legendary set. Included is the 8W Dark Matter cable which is valued at $500 and its Serial Number is #2.\nPlease comment before pm.\nEdit: forgot to change state to California but local to Los Angeles area at the moment.\nsubmitted by /u/ddllee19\n[link] [comments]", "seller_username": "ddllee19", "url": "https://old.reddit.com/r/AVexchange/comments/1tw9sz8/wts_usail_h_symphonium_zenith_w_8w_dark_matter/#item-1", "price_num": 1700.0, "date_ms": 1780538165000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 7, "title": "Closed: Symphonium Zenith w/ Dark Matter 8W Cable", "raw_text": "Home Forums Head Gear Articles Sponsors Classifieds Log in Register Search New listings New comments Search listings Closed: Symphonium Zenith w/ Dark Matter 8W Cable Home Classifieds Headphones For Sale / Trade In-Ear Monitors Listing ID: 110022 Views: 137 1,450.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Hi, selling off my mint Symphonium Zenith Launch Edition w/ the Dark Matter 8W upgrade cable which is the $2399 package. Comes with all accessories, box in perfectly mint condition. PP fees and shipping on me. Will ship to CONUS only. Thanks. Listed by: Adnan Firoze (109) Listed: 2026-06-01 008.jpg 1.2 MB \u00b7 Views: 0 001.jpg 1.1 MB \u00b7 Views: 0 002.jpg 2.5 MB \u00b7 Views: 0 003.jpg 1.3 MB \u00b7 Views: 0 004.jpg 1.8 MB \u00b7 Views: 0 005.jpg 2 MB \u00b7 Views: 0 006.jpg 1.2 MB \u00b7 Views: 0 007.jpg 1.3 MB \u00b7 Views: 0 009.jpg 913.1 KB \u00b7 Views: 0 010.jpg 1 MB \u00b7 Views: 0 Adnan Firoze 100+ Head-Fier Adnan Firoze Today at 6:44 PM Keeping it for now. Sounds too good. Maybe soon. Reactions: LegitJoe87, DenverFi and shaunbr15 shaunbr15 Head-Fier shaunbr15 Today at 6:49 PM Agree. I really like Zenith Reactions: LegitJoe87 musiland 100+ Head-Fier musiland 43 minutes ago What a great set! System: TEAC CD3000, Holo Audio Spring3 + Bliss KTE IEMs: Final A4000 Headphones: Meze Elite Tungsten, Hifiman Susvara, Hedd D1, Nan-7, HD490Pro Reactions: LegitJoe87 Home Classifieds Headphones For Sale / Trade In-Ear Monitors English (US) Contact us Terms and rules Privacy policy Help Home RSS Community platform by XenForo\u00ae \u00a9 2010-2026 XenForo Ltd. | Media embeds via s9e/MediaSites This site uses cookies to help personalise content, tailor your experience and to keep you logged in if you register. By continuing to use this site, you are consenting to our use of cookies.", "seller_username": "Adnan Firoze", "url": "https://www.head-fi.org/classifieds/symphonium-zenith-w-dark-matter-8w-cable.110022/", "price_num": 1450.0, "date_ms": 1780272000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 8, "title": "Closed: Symphonium Zenith", "raw_text": "Closed: Symphonium Zenith Home Classifieds Headphones For Sale / Trade In-Ear Monitors Watch \u2022\u2022\u2022 Listing ID: 109678 Views: 1023 1,650.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Up for sale is my Symphonium Zenith with stock 2W cable and full box / accessories. Condition is like new with no visible scratches or scuffs. PayPal G&S only. I can split PayPal fees (2.25% for each party) and tracked and insured shipping. Feel free to ask any questions via DM. No trades please and thanks for looking! Listed by: mancur (4) Listed: 2026-05-26 IMG_3296.jpeg 167.3 KB \u00b7 Views: 0 IMG_3297.jpeg 74.9 KB \u00b7 Views: 0 IMG_3299.jpeg 81.4 KB \u00b7 Views: 0 CB7FB8KgYh24E 500+ Head-Fier CB7FB8KgYh24E Jun 3, 2026 Did PP up their fee? Isnt it 3% total? Like Report Reactions: Takeda`1537 and apagumila apagumila 100+ Head-Fier apagumila Jun 3, 2026 CB7FB8KgYh24E said: Did PP up their fee? Isnt it 3% total? Yup G&S is 2.99%. 4.5% is for international transfers. My personal IEM ranking list IEMs: Aful Dawn-X, Meze Astru, Oriolus Szalayi, Flipears Aisha Electri, Softears RSV MK2, Softears Volume S Headphones: Viking Audioforge Draupnir (soon), SJY Zeph, SJY Horizon Closed Carbon Sources: Luxsin X8, JDS Labs Element IV, Fiio BTR17 Spoiler: Past IEMs Owned and Tested Like Report Reactions: CB7FB8KgYh24E drewbadour 100+ Head-Fier drewbadour Jun 8, 2026 @shaunbr15 audionotions.com | Ranking Lists Headphones: Heddphone D1 IEMs: Lumen, Trio, Onyx, MMK4 Like Report Reactions: shaunbr15", "seller_username": "mancur", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.109678/", "price_num": 1650.0, "date_ms": 1779753600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "current_listing_collect_usd_only_clean_v4"}, {"row_id": 9, "title": "Sold: Symphonium Zenith", "raw_text": "Home Forums Head Gear Articles Sponsors Classifieds Log in Register Search New listings New comments Search listings Sold: Symphonium Zenith Home Classifieds Headphones For Sale / Trade In-Ear Monitors Listing ID: 108829 Views: 198 1,700.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling Symphonium Zenith in excellent condition. Only selling to upgrade, as I love this iem. Serial number 3, comes with the upgraded dark matter 8w cable. Will post pics soon, price net to me. Shipping included Listed by: shaunbr15 (65) Listed: 2026-05-11 There are no comments to display. Home Classifieds Headphones For Sale / Trade In-Ear Monitors English (US) Contact us Terms and rules Privacy policy Help Home RSS Community platform by XenForo\u00ae \u00a9 2010-2026 XenForo Ltd. | Media embeds via s9e/MediaSites This site uses cookies to help personalise content, tailor your experience and to keep you logged in if you register. By continuing to use this site, you are consenting to our use of cookies.", "seller_username": "shaunbr15", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.108829/", "price_num": 1700.0, "date_ms": 1778457600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}];
 const originalMsrpUsd = 1800.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -425,6 +442,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -490,6 +551,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -497,14 +560,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -518,18 +588,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -541,13 +621,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -562,7 +643,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -607,7 +688,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -618,7 +699,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -626,11 +707,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1142,6 +1223,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

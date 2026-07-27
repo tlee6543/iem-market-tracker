@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>qdc Anole V14</h1>
+<div class="iem-title-row">
+    <h1>qdc Anole V14</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-qdc.html">qdc</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -219,7 +236,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -450,7 +467,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "QDC Anole V14", "url": "https://old.reddit.com/r/AVexchange/comments/1tnm1zf/wtsusaohh_qdc_anole_v14_w_paypal_trades/#item-1", "price_num": 900.0, "date_ms": 1779743481000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=qdc anole | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 1, "title": "Closed: QDC Anole V14", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.109085/", "price_num": 875.0, "date_ms": 1778889600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: QDC Anole V14 Universal IEM", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-universal-iem.100320/", "price_num": 1500.0, "date_ms": 1765843200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Closed: qdc Anole V14", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.86584/", "price_num": 900.0, "date_ms": 1744588800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: QDC Anole V14", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.63682/", "price_num": 1350.0, "date_ms": 1709424000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: QDC Anole V14", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.58363/", "price_num": null, "date_ms": 1701302400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 6, "title": "Closed: QDC ANOLE V14", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.55379/", "price_num": 1900.0, "date_ms": 1696291200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: qdc Anole V14 - Mint", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-mint.35068/", "price_num": 2738.0, "date_ms": 1666483200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_high_outlier_70pct_above_median_median_1500.0_cutoff_2550.0"}, {"row_id": 8, "title": "Closed: QDC Anole V14", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.17198/", "price_num": 1750.0, "date_ms": 1640822400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: *PRICE DROP* qdc Anole V14", "url": "https://www.head-fi.org/classifieds/price-drop-qdc-anole-v14.8803/", "price_num": null, "date_ms": 1627948800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 10, "title": "Sold: qdc Universal Anole V14 In-Ear Monitors LIKE NEW\udbff\udc25\udbff\udc12\udbff\udc02\udbff\udc0b\udbff\udc07 IN BOX", "url": "https://www.head-fi.org/classifieds/qdc-universal-anole-v14-in-ear-monitors-like-new%F4%8F%B0%A5%F4%8F%B0%92%F4%8F%B0%82%F4%8F%B0%8B%F4%8F%B0%87-in-box.7592/", "price_num": 2199.0, "date_ms": 1626048000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: qdc Anole V14 Cable w/Interchangeable Connectors", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-cable-w-interchangeable-connectors.12713/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 12, "title": "Sold: qdc Anole V14 Cable w/Interchangeable Connectors", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-cable-w-interchangeable-connectors.6191/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "QDC Anole V14", "raw_text": "Looking to continue trying new things, they're in good cosmetic and functional shape but lack any accessories besides a Tripowin QDC 4.4mm cable and unknown 3.5mm QDC cable.\nInterested in energetic sets like Dunu Glacier, Symphonium Crimson, Forte Ears Mefisto, AME Igris, or in Madoo/Acoustune sets. Or $900 shipped CONUS F&F Traded\nsubmitted by /u/emperorlitus\n[link] [comments]", "seller_username": "emperorlitus", "url": "https://old.reddit.com/r/AVexchange/comments/1tnm1zf/wtsusaohh_qdc_anole_v14_w_paypal_trades/#item-1", "price_num": 900.0, "date_ms": 1779743481000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=qdc anole | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 1, "title": "Closed: QDC Anole V14", "raw_text": "For Sale Closed: QDC Anole V14 Price 875.00 USD Condition Good Negotiability Or best offer Ships to Anywhere Looking to recoup funds from a recent purchase, they're in good cosmetic and perfect functional shape but lack any accessories besides a Tripowin QDC 4.4mm cable and unknown 3.5mm QDC cable. emperorlitus Listing May 16, 2026 Comments: 2 Category: In-Ear Monitors", "seller_username": "emperorlitus", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.109085/", "price_num": 875.0, "date_ms": 1778889600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: QDC Anole V14 Universal IEM", "raw_text": "For Sale Sold: QDC Anole V14 Universal IEM Price 1500.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Up for sale is a QDC Anole V14 Universal IEM in as-new condition with under 30 hours of use. It\u2019s in excellent cosmetic shape and works perfectly. Includes: Original box, packaging, and all accessories - see photos attached. Shipping: Free shipping within the continental US Worldwide... Herzog Listing Dec 16, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Herzog", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-universal-iem.100320/", "price_num": 1500.0, "date_ms": 1765843200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Closed: qdc Anole V14", "raw_text": "For Sale Closed: qdc Anole V14 Price 900.00 USD Condition Good Negotiability Or best offer Ships to Anywhere Selling a qdc Anole V14. Comes with the following: - IEMs - Cable with 4.4mm termination (does not come with the 3.5mm or 2.5mm interchangeable jacks) - Case - Eartips - Cleaning tool - airplane adaptor - 6.35mm adaptor - Box (damaged. Please refer to photos) The IEM\u2019s themselves are in... Damz87 Listing Apr 14, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "Damz87", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.86584/", "price_num": 900.0, "date_ms": 1744588800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: QDC Anole V14", "raw_text": "For Sale Sold: QDC Anole V14 Price 1350.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America This set was purchased in Japan on my trip to E earphone, best sounding one to me out of all of the ones I've demo'd and couldnt resist in the purchase. It doesn't come with box because space was limited in my luggage. Price includes shipping CONUS, thanks for looking. Also willing to trade for... Tsunzo Listing Mar 3, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "Tsunzo", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.63682/", "price_num": 1350.0, "date_ms": 1709424000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: QDC Anole V14", "raw_text": "For Sale / Trade Sold: QDC Anole V14 Price 0.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America I have a mint condition QDC Anole V14. It is in mint condition and comes with a three 4.4mm cables along with the cable that came with it (which has interchangeable 2.5, 3.5 & 4.4mm connectors). It comes with all accessories and packaging and the tips have never been used. Willing to trade for... zlayde Listing Nov 30, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "zlayde", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.58363/", "price_num": null, "date_ms": 1701302400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 6, "title": "Closed: QDC ANOLE V14", "raw_text": "For Sale Closed: QDC ANOLE V14 Price 1900.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America ANOLE V14 daijobudes Listing Oct 3, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "daijobudes", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.55379/", "price_num": 1900.0, "date_ms": 1696291200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: qdc Anole V14 - Mint", "raw_text": "For Sale Sold: qdc Anole V14 - Mint Price 0.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Hi guys, Up for sale today is a mint qdc Anole V14 ($2,738). I am the original owner and purchased it from Musicteck in April, 2021 (receipt to be supplied to the buyer). Everything is included other than the stock cable. I\u2019ve priced the V14 at less than half price for two reasons: the absent... jwbrent Listing Oct 23, 2022 Comments: 2 Category: In-Ear Monitors", "seller_username": "jwbrent", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-mint.35068/", "price_num": 2738.0, "date_ms": 1666483200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_high_outlier_70pct_above_median_median_1500.0_cutoff_2550.0"}, {"row_id": 8, "title": "Closed: QDC Anole V14", "raw_text": "For Sale Closed: QDC Anole V14 Price 1750.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America just cycling out IEMs to try more! PcChip Listing Dec 30, 2021 Comments: 4 Category: In-Ear Monitors", "seller_username": "PcChip", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.17198/", "price_num": 1750.0, "date_ms": 1640822400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: *PRICE DROP* qdc Anole V14", "raw_text": "For Sale Sold: *PRICE DROP* qdc Anole V14 Price 0.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling a mint condition pair of QDC Anole V14 IEM's. All packaging and accessories included and in pristine condition. Bought brand new from Musicteck in June 2021 and they've been used for approximately 5 hours. Fantastic IEM's that I'd love to keep, but I need to downsize my collection :)... Damz87 Listing Aug 3, 2021 Comments: 2 Category: In-Ear Monitors", "seller_username": "Damz87", "url": "https://www.head-fi.org/classifieds/price-drop-qdc-anole-v14.8803/", "price_num": null, "date_ms": 1627948800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 10, "title": "Sold: qdc Universal Anole V14 In-Ear Monitors LIKE NEW\udbff\udc25\udbff\udc12\udbff\udc02\udbff\udc0b\udbff\udc07 IN BOX", "raw_text": "For Sale Sold: qdc Universal Anole V14 In-Ear Monitors LIKE NEW\udbff\udc25\udbff\udc12\udbff\udc02\udbff\udc0b\udbff\udc07 IN BOX Price 2199.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere qdc Universal Anole V14 In-Ear Monitors LIKE NEW\udbff\udc25\udbff\udc12\udbff\udc02\udbff\udc0b\udbff\udc07 \udbff\udc34\udbff\udc35\udbff\udc20\udbff\udc04\udbff\udc03\udbff\udc24(SEE ACTUAL PHOTOS). Just purchased June 2021 from Musicteck in the U.S. then decided to downsize my IEM collection and upgrade my desktop setup. Must sell. These TOTL IEMs really are beautiful visually and sonically. The glittery... rcoleman1 Listing Jul 12, 2021 Comments: 0 Category: In-Ear Monitors", "seller_username": "rcoleman1", "url": "https://www.head-fi.org/classifieds/qdc-universal-anole-v14-in-ear-monitors-like-new%F4%8F%B0%A5%F4%8F%B0%92%F4%8F%B0%82%F4%8F%B0%8B%F4%8F%B0%87-in-box.7592/", "price_num": 2199.0, "date_ms": 1626048000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: qdc Anole V14 Cable w/Interchangeable Connectors", "raw_text": "For Sale Sold: qdc Anole V14 Cable w/Interchangeable Connectors", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-cable-w-interchangeable-connectors.12713/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 12, "title": "Sold: qdc Anole V14 Cable w/Interchangeable Connectors", "raw_text": "For Sale Sold: qdc Anole V14 Cable w/Interchangeable Connectors", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-cable-w-interchangeable-connectors.6191/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 3000.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -473,6 +490,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -538,6 +599,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -545,14 +608,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -566,18 +636,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -589,13 +669,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -610,7 +691,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -655,7 +736,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -666,7 +747,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -674,11 +755,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1190,6 +1271,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

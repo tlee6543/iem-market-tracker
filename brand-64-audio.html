@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -245,19 +256,19 @@ td.status-reason { overflow: hidden; }
 <tr>
     <td class="iem-col"><a href="64-audio-tia-trio.html">64 Audio Tia Trio</a></td>
     <td title="recency-weighted 365d closed sales, 4 samples, 90d half-life">$1,011.65</td>
-    <td>$1,188.18</td>
+    <td>$1,185.47</td>
     <td>$890</td>
     <td>$1,450</td>
-    <td>33</td>
+    <td>32</td>
 </tr>
 
 <tr>
     <td class="iem-col"><a href="64-audio-u12t.html">64 Audio U12t</a></td>
     <td title="recency-weighted 365d closed sales, 12 samples, 90d half-life">$933.14</td>
-    <td>$1,175.72</td>
+    <td>$1,174.68</td>
     <td>$600</td>
     <td>$1,777</td>
-    <td>72</td>
+    <td>71</td>
 </tr>
 
 <tr>
@@ -281,10 +292,10 @@ td.status-reason { overflow: hidden; }
 <tr>
     <td class="iem-col"><a href="64-audio-u4s.html">64 Audio U4s</a></td>
     <td title="90d closed-sale avg, 4 samples">$707.5</td>
-    <td>$740.37</td>
+    <td>$743.03</td>
     <td>$500</td>
     <td>$950</td>
-    <td>35</td>
+    <td>34</td>
 </tr>
 
 <tr>

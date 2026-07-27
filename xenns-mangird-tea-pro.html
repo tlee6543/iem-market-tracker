@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>XENNS Mangird Tea Pro</h1>
+<div class="iem-title-row">
+    <h1>XENNS Mangird Tea Pro</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-xenns.html">XENNS</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -219,7 +236,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -578,7 +595,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Xenns Mangird Tea Pro", "url": "https://old.reddit.com/r/AVexchange/comments/1uxn8vo/wtsusamih_xenns_mangird_tea_pro_w_250_paypal/#item-1", "price_num": 250.0, "date_ms": 1784161110000, "listing_status": "active", "condition_text": "great condition", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len298432_page=200:len300358_json=200:len127507", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Xenns Tea Pro +", "url": "https://old.reddit.com/r/AVexchange/comments/1ugrlul/wtt_usca_h_xenns_tea_pro_paypal_w_hisenior_mega7/#item-1", "price_num": null, "date_ms": 1782530610000, "listing_status": "active", "condition_text": "xenns tea pro plus box and accessories and i", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len303318_page=200:len303305_json=200:len300587", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 2, "title": "Xenns Mangird Tea Pro - Used Like New. Comes with all accessories", "url": "https://old.reddit.com/r/AVexchange/comments/1ufjz9y/wts_usamd_h_airpods_max_sony_mdrmv1_xenns_tea_pro/#item-3", "price_num": 250.0, "date_ms": 1782415724000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len303329_page=200:len303360_json=200:len307021", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 3, "title": "Xenns Tea Pro", "url": "https://old.reddit.com/r/AVexchange/comments/1ubg4i4/wts_usamd_h_xenns_tea_pro_w_250_paypal/#item-1", "price_num": null, "date_ms": 1782014641000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 4, "title": "XENNS Mangird Tea PRO", "url": "https://old.reddit.com/r/AVexchange/comments/1ua8a4y/wtsusmahxenns_mangird_tea_prow_paypal_venmo_zelle/#item-1", "price_num": 250.0, "date_ms": 1781890303000, "listing_status": "closed", "condition_text": "comes with all original packing and modular cable", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 5, "title": "XENNS Mangird Tea PRO", "url": "https://www.head-fi.org/classifieds/xenns-mangird-tea-pro.110924/", "price_num": 250.0, "date_ms": 1781827200000, "listing_status": "active", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_verified_or_left_active | active_status_checker_status_unclear_left_unchanged | active_status_checker_headfi_live_check_skipped"}, {"row_id": 6, "title": "Xenns Mangird Tea Pro", "url": "https://old.reddit.com/r/AVexchange/comments/1tluqfa/wtsusacah_topping_dx5_ii_sennheiser_hd490_pro/#item-5", "price_num": 275.0, "date_ms": 1779576822000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=top pro"}, {"row_id": 7, "title": "XENNS Mangird Tea Pro . Nearly new about 2 hours of use.", "url": "https://old.reddit.com/r/AVexchange/comments/1tdxrui/wtsusmd_h_bgvp_dma_dunu_242_xenns_mangird_tea_pro/#item-3", "price_num": 275.0, "date_ms": 1778854763000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=xenns"}, {"row_id": 8, "title": "Xenns Tea Pro", "url": "https://old.reddit.com/r/AVexchange/comments/1t3eacv/wts_usgah_xenns_tea_pro_7hz_timesless_ils_hiby/#item-1", "price_num": 255.0, "date_ms": 1777892254000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=xenns"}, {"row_id": 9, "title": "Xenns Mangird Tea Pro (with OpenHeart Cable & Original Box)", "url": "https://old.reddit.com/r/AVexchange/comments/1t2ru4j/wts_usany_h_xenns_mangird_tea_pro_with_openheart/#item-1", "price_num": 245.0, "date_ms": 1777829565000, "listing_status": "closed", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=xenns | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 10, "title": "Xenns Tea Pro, 7hz Timesless lls, Hiby Yacht 10, & Soundpeats H3", "url": "https://old.reddit.com/r/AVexchange/comments/1t1ouw7/wts_usgah_xenns_tea_pro_7hz_timesless_lls_hiby/#item-1", "price_num": null, "date_ms": 1777725761000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=xenns | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 11, "title": "Xenns Tea Pro", "url": "https://old.reddit.com/r/AVexchange/comments/1t0ecwk/wts_usgah_xenns_tea_pro_7hz_timesless_lls_hiby/#item-1", "price_num": 270.0, "date_ms": 1777596489000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=xenns | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 12, "title": "Xenns Mangird Tea PRO (NOZZLE FILTERS ARRIVED) + Huge Tip Bundle (Dunu S&S, Divinus)", "url": "https://old.reddit.com/r/AVexchange/comments/1sy9pxg/wts_usaapo_h_xenns_mangird_tea_pro_nozzle_filters/#item-1", "price_num": null, "date_ms": 1777400589000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_transaction_trigger_and_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | no_price_unchecked | reddit_search_rss_query=xenns"}, {"row_id": 13, "title": "Xenns Tea Pro (BNIB)", "url": "https://old.reddit.com/r/AVexchange/comments/1suwpno/wts_usaca_h_xenns_tea_pro_bnib_w_280_obo_shipped/#item-1", "price_num": 275.0, "date_ms": 1777075916000, "listing_status": "closed", "condition_text": "brand new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=top pro"}, {"row_id": 14, "title": "Xenns Tea Pro", "url": "https://old.reddit.com/r/AVexchange/comments/1suf0vg/wts_usanm_h_xenns_tea_pro_w_paypal/#item-1", "price_num": 250.0, "date_ms": 1777035498000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=xenns"}, {"row_id": 15, "title": "Softears Volume S, Xenns Mangird Tea Pro, Crinear Daybreak", "url": "https://old.reddit.com/r/AVexchange/comments/1su2dnw/wtsusatn_hsoftears_volume_s_xenns_mangird_tea_pro/#item-1", "price_num": 200.0, "date_ms": 1776996245000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=crinear"}, {"row_id": 16, "title": "Sold: Xenns Mangird Tea Pro", "url": "https://www.head-fi.org/classifieds/xenns-mangird-tea-pro.99972/", "price_num": 220.0, "date_ms": 1765238400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: [Sold] Xenns Mangird Tea Pro", "url": "https://www.head-fi.org/classifieds/sold-xenns-mangird-tea-pro.98057/", "price_num": null, "date_ms": 1762387200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 18, "title": "Sold: Xenns Mangird Tea Pro Mint", "url": "https://www.head-fi.org/classifieds/xenns-mangird-tea-pro-mint.97789/", "price_num": null, "date_ms": 1762041600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 19, "title": "Sold: XENNS Mangird Tea Pro", "url": "https://www.head-fi.org/classifieds/xenns-mangird-tea-pro.97460/", "price_num": 165.0, "date_ms": 1761436800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Xenns Tea Pro IEMs $200 SHIPPED ConUS ONLY", "url": "https://www.head-fi.org/classifieds/xenns-tea-pro-iems-200-shipped-conus-only.96577/", "price_num": 200.0, "date_ms": 1760140800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Xenns Mangird Tea Pro", "raw_text": "[ https://imgur.com/a/6PYr9RJ\\\\](https://imgur.com/a/6PYr9RJ\\)\nHave had for a a little over a year and are in great condition. CONUS only.\nsubmitted by /u/UncleZShar\n[link] [comments]", "seller_username": "UncleZShar", "url": "https://old.reddit.com/r/AVexchange/comments/1uxn8vo/wtsusamih_xenns_mangird_tea_pro_w_250_paypal/#item-1", "price_num": 250.0, "date_ms": 1784161110000, "listing_status": "active", "condition_text": "great condition", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len298432_page=200:len300358_json=200:len127507", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Xenns Tea Pro +", "raw_text": "I know this might be a stretch, but I have a mint condition Xenns Tea Pro plus box and accessories and I'm looking to trade it for a Hisenior Mega7. And as expected I'm willing to throw in extra $ via PayPal/Venmo to offset the price difference. Let me know if you're interested in working out a deal!\nsubmitted by /u/mitchyslick_lbc\n[link] [comments]", "seller_username": "mitchyslick_lbc", "url": "https://old.reddit.com/r/AVexchange/comments/1ugrlul/wtt_usca_h_xenns_tea_pro_paypal_w_hisenior_mega7/#item-1", "price_num": null, "date_ms": 1782530610000, "listing_status": "active", "condition_text": "xenns tea pro plus box and accessories and i", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len303318_page=200:len303305_json=200:len300587", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 2, "title": "Xenns Mangird Tea Pro - Used Like New. Comes with all accessories", "raw_text": "Xenns Mangird Tea Pro - Used, Like New. Comes with all accessories - $250", "seller_username": "6en10", "url": "https://old.reddit.com/r/AVexchange/comments/1ufjz9y/wts_usamd_h_airpods_max_sony_mdrmv1_xenns_tea_pro/#item-3", "price_num": 250.0, "date_ms": 1782415724000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len303329_page=200:len303360_json=200:len307021", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 3, "title": "Xenns Tea Pro", "raw_text": "Up for sale is my Xenns Tea Pro\nComes with everything you get when you buy it new\nNot looking for trades\nCan ship out Sunday morning (East Coast)\nsubmitted by /u/GonegetSMOKED\n[link] [comments]", "seller_username": "GonegetSMOKED", "url": "https://old.reddit.com/r/AVexchange/comments/1ubg4i4/wts_usamd_h_xenns_tea_pro_w_250_paypal/#item-1", "price_num": null, "date_ms": 1782014641000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 4, "title": "XENNS Mangird Tea PRO", "raw_text": "$250 F+F\n$275 G+S\nGreat condition\nComes with all Original packing and modular cable\nFast Shipping\nhttps://preview.redd.it/z6nyg49jy98h1.jpg?width=1864&format=pjpg&auto=webp&s=e6ee07992617df03d4c4e48e54035e4e2d7432d0\nhttps://preview.redd.it/636xeaxky98h1.jpg?width=4096&format=pjpg&auto=webp&s=cec67d5495509788d8a851116c5c628c6374e5c3\nhttps://preview.redd.it/f3f2rbxky98h1.jpg?width=4096&format=pjpg&auto=webp&s=0bc1157621f19918dea96d3bab02ed4642b51e93\nhttps://preview.redd.it/xehunalmy98h1.jpg?width=1864&format=pjpg&auto=webp&s=0dbf75754c71bb61f12608566fb9f2ed5a0decb4\nsubmitted by /u/rjley18\n[link] [comments]", "seller_username": "rjley18", "url": "https://old.reddit.com/r/AVexchange/comments/1ua8a4y/wtsusmahxenns_mangird_tea_prow_paypal_venmo_zelle/#item-1", "price_num": 250.0, "date_ms": 1781890303000, "listing_status": "closed", "condition_text": "comes with all original packing and modular cable", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 5, "title": "XENNS Mangird Tea PRO", "raw_text": "XENNS Mangird Tea PRO\nListing ID: 110924\nFor Sale 250.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To United States Of America\n$250 F+F $275 G+S Great condition Comes with all Original packing and modular cable Fast Shipping\nListed by: Bob Ley (41)\nListed: 2026-06-19\nLast edited: 2026-06-22", "seller_username": "Bob", "url": "https://www.head-fi.org/classifieds/xenns-mangird-tea-pro.110924/", "price_num": 250.0, "date_ms": 1781827200000, "listing_status": "active", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_verified_or_left_active | active_status_checker_status_unclear_left_unchanged | active_status_checker_headfi_live_check_skipped"}, {"row_id": 6, "title": "Xenns Mangird Tea Pro", "raw_text": "SOLD Xenns Mangird Tea Pro - $275.00", "seller_username": "Imaginary-Dog9886", "url": "https://old.reddit.com/r/AVexchange/comments/1tluqfa/wtsusacah_topping_dx5_ii_sennheiser_hd490_pro/#item-5", "price_num": 275.0, "date_ms": 1779576822000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=top pro"}, {"row_id": 7, "title": "XENNS Mangird Tea Pro . Nearly new about 2 hours of use.", "raw_text": "XENNS Mangird Tea Pro . Nearly new, about 2 hours of use. $275 SOLD\nPrices includes US domestic shipping. I will ship the day after receiving payment via USPS First Class with tracking (add $10 for 2-day Priority). I will send internationally but we will need to discuss shipping rates.\nsubmitted by /u/Akabander\n[link] [comments]", "seller_username": "Akabander", "url": "https://old.reddit.com/r/AVexchange/comments/1tdxrui/wtsusmd_h_bgvp_dma_dunu_242_xenns_mangird_tea_pro/#item-3", "price_num": 275.0, "date_ms": 1778854763000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=xenns"}, {"row_id": 8, "title": "Xenns Tea Pro", "raw_text": "Xenns Tea Pro - $255", "seller_username": "DonTeca35", "url": "https://old.reddit.com/r/AVexchange/comments/1t3eacv/wts_usgah_xenns_tea_pro_7hz_timesless_ils_hiby/#item-1", "price_num": 255.0, "date_ms": 1777892254000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=xenns"}, {"row_id": 9, "title": "Xenns Mangird Tea Pro (with OpenHeart Cable & Original Box)", "raw_text": "https://imgur.com/a/5JZzuyI\nHi everyone,\nLooking to sell my Xenns Mangird Tea Pro to fund a recent upgrade. These have been meticulously cared for and sound absolutely incredible\u2014they are easily some of the most \"musical\" and smooth IEMs I've owned.\nCondition: Excellent. No scratches on the resin shells. Includes:\nXenns Mangird Tea Pro IEMs\nOriginal Box and packaging\nOpenHeart 3.5mm 4-strand cable (Original cable had issues and was replaced with this high-quality aftermarket option).\nOriginal carrying case and assorted tips.\nPrice: $245 Shipped via USPS (CONUS).\nPrice includes PayPal Goods & Services fees. Please comment before sending a PM. Not looking for trades at this time as I've already \"pulled the trigger\" on their successor!\nhttps://imgur.com/a/5JZzuyI\nsubmitted by /u/BernabethWarners\n[link] [comments]", "seller_username": "BernabethWarners", "url": "https://old.reddit.com/r/AVexchange/comments/1t2ru4j/wts_usany_h_xenns_mangird_tea_pro_with_openheart/#item-1", "price_num": 245.0, "date_ms": 1777829565000, "listing_status": "closed", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=xenns | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 10, "title": "Xenns Tea Pro, 7hz Timesless lls, Hiby Yacht 10, & Soundpeats H3", "raw_text": "submitted by /u/DonTeca35\n[link] [comments]", "seller_username": "DonTeca35", "url": "https://old.reddit.com/r/AVexchange/comments/1t1ouw7/wts_usgah_xenns_tea_pro_7hz_timesless_lls_hiby/#item-1", "price_num": null, "date_ms": 1777725761000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=xenns | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 11, "title": "Xenns Tea Pro", "raw_text": "Xenns Tea Pro - $270", "seller_username": "DonTeca35", "url": "https://old.reddit.com/r/AVexchange/comments/1t0ecwk/wts_usgah_xenns_tea_pro_7hz_timesless_lls_hiby/#item-1", "price_num": 270.0, "date_ms": 1777596489000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=xenns | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 12, "title": "Xenns Mangird Tea PRO (NOZZLE FILTERS ARRIVED) + Huge Tip Bundle (Dunu S&S, Divinus)", "raw_text": "I have the replacement nozzles on hand now to ship along the items and tips.\nsubmitted by /u/hammertime2197\n[link] [comments]", "seller_username": "hammertime2197", "url": "https://old.reddit.com/r/AVexchange/comments/1sy9pxg/wts_usaapo_h_xenns_mangird_tea_pro_nozzle_filters/#item-1", "price_num": null, "date_ms": 1777400589000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_transaction_trigger_and_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | no_price_unchecked | reddit_search_rss_query=xenns"}, {"row_id": 13, "title": "Xenns Tea Pro (BNIB)", "raw_text": "Selling a brand new, sealed Xenns Tea Pro. Decided to keep the Top Pro instead, so this one is up for sale.\nCondition: Brand new, factory sealed\nPrice: $275 shipped OBO (CONUS) using PayPal G&S. Not interested in any trades.\nWill ship with tracking and signature confirmation.\nPlease comment before PM.\n\"Sold to u/Moosty_ \"\nsubmitted by /u/karprive\n[link] [comments]", "seller_username": "karprive", "url": "https://old.reddit.com/r/AVexchange/comments/1suwpno/wts_usaca_h_xenns_tea_pro_bnib_w_280_obo_shipped/#item-1", "price_num": 275.0, "date_ms": 1777075916000, "listing_status": "closed", "condition_text": "brand new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=top pro"}, {"row_id": 14, "title": "Xenns Tea Pro", "raw_text": "Xenns Tea Pro \u2014 $250\nIncludes: eartips, cable, and case. Eartips:\nSoftEars UC Silicone \u2014 $15 Full set of S/M/L\nRadius Deep Mount Clear \u2014 $15 Full set of SS/S/M/L\nShipping & Terms:\nPrices include shipping for the CONUS through PayPal G&S. No trades. Please leave a comment before PMing. Items come from a smoke and pet free home.\nThanks for looking! Feel free to ask any questions!\nsubmitted by /u/StolenServiceAnimal\n[link] [comments]", "seller_username": "StolenServiceAnimal", "url": "https://old.reddit.com/r/AVexchange/comments/1suf0vg/wts_usanm_h_xenns_tea_pro_w_paypal/#item-1", "price_num": 250.0, "date_ms": 1777035498000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=xenns"}, {"row_id": 15, "title": "Softears Volume S, Xenns Mangird Tea Pro, Crinear Daybreak", "raw_text": "Timestamp: https://imgur.com/a/ICUsmFY\nSoftears Volume S: ~~$200~~ sold\nXenns Mangird Tea Pro: ~~$220~~ sold\nCrinear Daybreak: ~~$70~~ sold\nPayPal or Zelle.\nsubmitted by /u/theblackdawnr3\n[link] [comments]", "seller_username": "theblackdawnr3", "url": "https://old.reddit.com/r/AVexchange/comments/1su2dnw/wtsusatn_hsoftears_volume_s_xenns_mangird_tea_pro/#item-1", "price_num": 200.0, "date_ms": 1776996245000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=crinear"}, {"row_id": 16, "title": "Sold: Xenns Mangird Tea Pro", "raw_text": "For Sale Sold: Xenns Mangird Tea Pro Price 220.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America For sale is a Xenns Mangird (\"mangrid\") Tea Pro. All accessories included. Price is net to me and includes Paypal G&S and shipping. If in Canada, give me your address and it's likely an extra $10 shipping. DenverFi Listing Dec 9, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "DenverFi", "url": "https://www.head-fi.org/classifieds/xenns-mangird-tea-pro.99972/", "price_num": 220.0, "date_ms": 1765238400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: [Sold] Xenns Mangird Tea Pro", "raw_text": "For Sale Sold: [Sold] Xenns Mangird Tea Pro Price 1.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America ** More images have been uploaded to the listing. Selling my set of like new Xenns Tea pro. This IEM needs no introduction, and the sound quality is IMO well above its original retail. I'm the original owner, and it has seen only very light use. All accessories and packaging included, and tips... cn11 Listing Nov 6, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "cn11", "url": "https://www.head-fi.org/classifieds/sold-xenns-mangird-tea-pro.98057/", "price_num": null, "date_ms": 1762387200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 18, "title": "Sold: Xenns Mangird Tea Pro Mint", "raw_text": "For Sale Sold: Xenns Mangird Tea Pro Mint Price 1.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling a perfect set of Xenns Mangird Tea Pro. Accessories unused. This set has a terrific reputation and imo it lives up to it and perhaps then some. High level build quality with a nice little presentation. Very satisfying low end. Quite the pleasing tonality from top to bottom. Quick... vikinguy Listing Nov 2, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "vikinguy", "url": "https://www.head-fi.org/classifieds/xenns-mangird-tea-pro-mint.97789/", "price_num": null, "date_ms": 1762041600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 19, "title": "Sold: XENNS Mangird Tea Pro", "raw_text": "For Sale Sold: XENNS Mangird Tea Pro Price 165.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America I like em but don\u2019t love em. They sound great yet they quite scratch that audio itch for me. Comes with stock 4.4mm cable, assorted tips, and original case. Free shipping in the states and pp fees are on me. trojan2900 Listing Oct 26, 2025 Comments: 4 Category: In-Ear Monitors", "seller_username": "trojan2900", "url": "https://www.head-fi.org/classifieds/xenns-mangird-tea-pro.97460/", "price_num": 165.0, "date_ms": 1761436800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Xenns Tea Pro IEMs $200 SHIPPED ConUS ONLY", "raw_text": "For Sale Sold: Xenns Tea Pro IEMs $200 SHIPPED ConUS ONLY Price 200.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Unloading the majority of my IEM and headphone collection. Don't really listen to headphones much nowadays, mostly just speakers since I live alone now. For Sale, Xenns Tea Pro. Great and very pretty IEMs. One of my favorite sets! $200 shipped Continental US ONLY asgiov Listing Oct 11, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "asgiov", "url": "https://www.head-fi.org/classifieds/xenns-tea-pro-iems-200-shipped-conus-only.96577/", "price_num": 200.0, "date_ms": 1760140800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 360.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -601,6 +618,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -666,6 +727,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -673,14 +736,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -694,18 +764,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -717,13 +797,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -738,7 +819,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -783,7 +864,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -794,7 +875,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -802,11 +883,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1318,6 +1399,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>Vision Ears EXT MKII</h1>
+<div class="iem-title-row">
+    <h1>Vision Ears EXT MKII</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-vision-ears.html">Vision Ears</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -219,7 +236,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -252,7 +269,7 @@ td.status-reason { overflow: hidden; }
 <td>Popovskyi</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Closed: Overpriced (27.4% above market)</span></td>
+<td><span id="deal-score-0">Closed: Fair (1.8% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pd-vision-ears-ext-mkii-limited-edition.105905/" target="_blank">source</a></td>
 </tr>
 
@@ -268,7 +285,7 @@ td.status-reason { overflow: hidden; }
 <td>Pabsu</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Closed: Fair (5.3% above market)</span></td>
+<td><span id="deal-score-1">Closed: Good Deal (18.9% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pd-vision-ears-ext-mkii.100871/" target="_blank">source</a></td>
 </tr>
 
@@ -284,7 +301,7 @@ td.status-reason { overflow: hidden; }
 <td>Mllump</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">Closed: High (19.1% above market)</span></td>
+<td><span id="deal-score-2">Closed: Fair (8.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext-mkii.97367/" target="_blank">source</a></td>
 </tr>
 
@@ -300,7 +317,7 @@ td.status-reason { overflow: hidden; }
 <td>Mllump</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-3">Closed: High (19.1% above market)</span></td>
+<td><span id="deal-score-3">Closed: Fair (8.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext-mkii.97257/" target="_blank">source</a></td>
 </tr>
 
@@ -316,7 +333,7 @@ td.status-reason { overflow: hidden; }
 <td>moosophocles</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-4">Closed: Overpriced (49.6% above market)</span></td>
+<td><span id="deal-score-4">Closed: High (15.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext-mkii.96621/" target="_blank">source</a></td>
 </tr>
 
@@ -354,7 +371,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Sold: [PD] Vision Ears EXT MKII Limited Edition", "url": "https://www.head-fi.org/classifieds/pd-vision-ears-ext-mkii-limited-edition.105905/", "price_num": 2300.0, "date_ms": 1774137600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "[PD] Vision Ears EXT MKII", "url": "https://www.head-fi.org/classifieds/pd-vision-ears-ext-mkii.100871/", "price_num": 1900.0, "date_ms": 1766793600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "visible_card_collect_with_price_title_match_v6 | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 2, "title": "Traded: Vision Ears EXT MkII", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.97367/", "price_num": 2150.0, "date_ms": 1761350400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Closed: Vision Ears EXT MKII", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.97257/", "price_num": 2150.0, "date_ms": 1761091200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 4, "title": "Traded: Vision Ears EXT MKII", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.96621/", "price_num": 2700.0, "date_ms": 1760140800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Vision Ears EXT MK2 (Gray) *mint*", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mk2-gray-mint.95332/", "price_num": null, "date_ms": 1758240000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 6, "title": "Traded: Vision Ears EXT MK2 (Gray) *MINT*", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mk2-gray-mint.92468/", "price_num": null, "date_ms": 1753660800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}];
+const allRows = [{"row_id": 0, "title": "Sold: [PD] Vision Ears EXT MKII Limited Edition", "raw_text": "For Sale Sold: [PD] Vision Ears EXT MKII Limited Edition Price 2300.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere It\u2019s never easy to write something like this\u2026 Up for sale is my Vision Ears EXT MKII Limited Edition, a truly exceptional set that has been nothing short of breathtaking in my entire hobby. These IEMs represent a rare balance between top-tier technical performance and deep, emotional musicality... Oleh Popovskyi Listing Mar 22, 2026 Comments: 4 Category: In-Ear Monitors", "seller_username": "Popovskyi", "url": "https://www.head-fi.org/classifieds/pd-vision-ears-ext-mkii-limited-edition.105905/", "price_num": 2300.0, "date_ms": 1774137600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "[PD] Vision Ears EXT MKII", "raw_text": "For Sale [PD] Vision Ears EXT MKII Price 1900.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Hello folks up for sale is my ext mkii in excellent condition it's the gray color great iem for almost every genre sad to let it go but I have too many iems Asking for $1900 PayPal and shipping fees included thanks for looking and happy holidays! Pabsu Listing Dec 27, 2025 Comments: 3 Category: In-Ear Monitors", "seller_username": "Pabsu", "url": "https://www.head-fi.org/classifieds/pd-vision-ears-ext-mkii.100871/", "price_num": 1900.0, "date_ms": 1766793600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "visible_card_collect_with_price_title_match_v6 | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 2, "title": "Traded: Vision Ears EXT MkII", "raw_text": "For Sale Traded: Vision Ears EXT MkII Price 2150.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America In perfect condition with everything included, including outer shipping box from Vision Ears. Receipt from Audio46 included. Mllump Listing Oct 25, 2025 Comments: 2 Category: In-Ear Monitors", "seller_username": "Mllump", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.97367/", "price_num": 2150.0, "date_ms": 1761350400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Closed: Vision Ears EXT MKII", "raw_text": "For Sale Closed: Vision Ears EXT MKII Price 2150.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America In perfect condition with everything included, including outer shipping box from Vision Ears. Receipt from Audio46 included. Need cash. No trades, unless you have something around $1k and can add $1k. Mllump Listing Oct 22, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Mllump", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.97257/", "price_num": 2150.0, "date_ms": 1761091200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 4, "title": "Traded: Vision Ears EXT MKII", "raw_text": "For Sale Traded: Vision Ears EXT MKII Price 2700.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling a pair of Vision Ears EXT MKII IEMs. These have less than an hour of listening time and are thus in immaculate condition. All original packaging and accessories including case, cable, and eartips, except that I have soemhow misplaced the medium-size Sedna Fit eartips that came with... moosophocles Listing Oct 11, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "moosophocles", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.96621/", "price_num": 2700.0, "date_ms": 1760140800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Vision Ears EXT MK2 (Gray) *mint*", "raw_text": "For Sale / Trade Sold: Vision Ears EXT MK2 (Gray) *mint* Price 0.01 USD Condition Excellent/Like new Negotiability Or best offer Ships to AnywhereUnited States of America ...thread. It's truly special and unique. It's an incredibly analog-type of sound that is deeply satisfying. No BAs. I'm a huge fan of Vision Ears and this is one of their best. Everything is in pristine shape. Nothing in the box was used. I tried the cable briefly. The IEMs themselves work... zlayde Listing Sep 19, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "zlayde", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mk2-gray-mint.95332/", "price_num": null, "date_ms": 1758240000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 6, "title": "Traded: Vision Ears EXT MK2 (Gray) *MINT*", "raw_text": "For Sale / Trade Traded: Vision Ears EXT MK2 (Gray) *MINT* Price 0.01 USD Condition Excellent/Like new Negotiability Firm Ships to AnywhereUnited States of America ...thread. It's truly special and unique. It's an incredibly analog-type of sound that is deeply satisfying. No BAs. I'm a huge fan of Vision Ears and this is one of their best. Everything is in pristine shape. Nothing in the box was used. I tried the cable briefly. The IEMs themselves work... zlayde Listing Jul 28, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "zlayde", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mk2-gray-mint.92468/", "price_num": null, "date_ms": 1753660800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}];
 const originalMsrpUsd = 3400.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -377,6 +394,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -442,6 +503,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -449,14 +512,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -470,18 +540,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -493,13 +573,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -514,7 +595,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -559,7 +640,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -570,7 +651,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -578,11 +659,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1094,6 +1175,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

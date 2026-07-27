@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>64 Audio U6t</h1>
+<div class="iem-title-row">
+    <h1>64 Audio U6t</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-64-audio.html">64 Audio</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -219,7 +236,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -626,7 +643,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Closed: 64 Audio U6T and m15, m20, m26 modules", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-and-m15-m20-m26-modules.102580/", "price_num": 650.0, "date_ms": 1769299200000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Sold: MINT 64 AUDIO U6T", "url": "https://www.head-fi.org/classifieds/mint-64-audio-u6t.86170/", "price_num": 500.0, "date_ms": 1743897600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Closed: PRICE DROP! 64 Audio U6T", "url": "https://www.head-fi.org/classifieds/price-drop-64-audio-u6t.86081/", "price_num": 500.0, "date_ms": 1743724800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "Sold: 64 Audio U6T", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.81113/", "price_num": 575.0, "date_ms": 1736121600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: 64 Audio U6T", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.74916/", "price_num": 625.0, "date_ms": 1726444800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: 64 Audio U6T", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.70180/", "price_num": 550.0, "date_ms": 1718928000000, "listing_status": "closed", "condition_text": "good condition, b-stock", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: 64 Audio U6t", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.68954/", "price_num": 650.0, "date_ms": 1717113600000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: 64 Audio U6t", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.48353/", "price_num": 799.0, "date_ms": 1685059200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: 64 Audio U6t", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.40628/", "price_num": 690.0, "date_ms": 1674864000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: 64 Audio U6t (b-stock, used, in 'good' condition)", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-b-stock-used-in-good-condition.38845/", "price_num": 560.0, "date_ms": 1672444800000, "listing_status": "closed", "condition_text": "used, b-stock", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Closed: 64 Audio U6T", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.32098/", "price_num": 850.0, "date_ms": 1661904000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Closed: Mint 64 Audio U6T", "url": "https://www.head-fi.org/classifieds/mint-64-audio-u6t.31715/", "price_num": 925.0, "date_ms": 1661385600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Closed: 64 Audio U6t (b-stock)", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-b-stock.31174/", "price_num": 775.0, "date_ms": 1660521600000, "listing_status": "closed", "condition_text": "good condition, b-stock", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: 64 Audio U6t w/FiR Audio Atom Modules (13db/17db)", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-w-fir-audio-atom-modules-13db-17db.29337/", "price_num": 750.0, "date_ms": 1657756800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Closed: 64 Audio U6t w/FiR Audio Atom Modules (13db/17db)", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-w-fir-audio-atom-modules-13db-17db.29058/", "price_num": 750.0, "date_ms": 1657411200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 15, "title": "Closed: 64 Audio U6t w/FiR Audio Atom Modules (13db/17db)", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-w-fir-audio-atom-modules-13db-17db.28965/", "price_num": 850.0, "date_ms": 1657324800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 16, "title": "Closed: 64 Audio U6t w/FiR Audio Atom Modules (13db/17db)", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-w-fir-audio-atom-modules-13db-17db.28902/", "price_num": 900.0, "date_ms": 1657238400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 17, "title": "Closed: 64 Audio U6t w/FiR Audio Modules (13/17db)", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-w-fir-audio-modules-13-17db.28825/", "price_num": 975.0, "date_ms": 1657152000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 18, "title": "Sold: 64 Audio U6t", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.28394/", "price_num": 750.0, "date_ms": 1656547200000, "listing_status": "closed", "condition_text": "like new, excellent, b-stock", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Closed: 64 Audio U6t In-Ear Monitors", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-in-ear-monitors.24727/", "price_num": 875.0, "date_ms": 1651104000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 20, "title": "Sold: 64 Audio U6T Like New [Price Drop]", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-like-new-price-drop.19591/", "price_num": 850.0, "date_ms": 1643932800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Closed: 64 Audio U6t", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.19141/", "price_num": 899.0, "date_ms": 1643414400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Closed: SOLD: 64 Audio U6t", "url": "https://www.head-fi.org/classifieds/sold-64-audio-u6t.11312/", "price_num": 850.0, "date_ms": 1631664000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Closed: Chord Hugo 2 / 64 Audio U6T / CMA Master 12", "url": "https://www.head-fi.org/classifieds/chord-hugo-2-64-audio-u6t-cma-master-12.26450/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Closed: 64 Audio U6T and m15, m20, m26 modules", "raw_text": "For Sale / Trade Closed: 64 Audio U6T and m15, m20, m26 modules Price 650.00 USD Condition Good Negotiability Or best offer Ships to North America I'm selling my 64audio U6T. It's a fantastic IEM with a warm, detailed, and smooth signature with excellent timbre and technicalities. I think it's one of the top IEMs that I've heard, but at this point my collection has grown too large and I need to let some of the things go. Included is... NookIsACrook Listing Jan 25, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "NookIsACrook", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-and-m15-m20-m26-modules.102580/", "price_num": 650.0, "date_ms": 1769299200000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Sold: MINT 64 AUDIO U6T", "raw_text": "For Sale Sold: MINT 64 AUDIO U6T Price 500.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America I am the original owner. Purchased new 8 months ago. Comes with original leather case, filters, original 64 cable. I'm a professional musician and of course, audiophile, and I mainly used my other IEMs, so these have seen almost no use at all. NO TRADES. PayPal preferred. Thanks! Godisopen777 Listing Apr 6, 2025 Comments: 2 Category: In-Ear Monitors", "seller_username": "Godisopen777", "url": "https://www.head-fi.org/classifieds/mint-64-audio-u6t.86170/", "price_num": 500.0, "date_ms": 1743897600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Closed: PRICE DROP! 64 Audio U6T", "raw_text": "For Sale Closed: PRICE DROP! 64 Audio U6T Price 500.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Original owner. Purchased new 8 months ago. Comes with original leather case, filters, original 64 cable. I'm a professional musician and of course, audiophile, and these have been babied. Godisopen777 Listing Apr 4, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Godisopen777", "url": "https://www.head-fi.org/classifieds/price-drop-64-audio-u6t.86081/", "price_num": 500.0, "date_ms": 1743724800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "Sold: 64 Audio U6T", "raw_text": "For Sale Sold: 64 Audio U6T Price 575.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Purchased from another Head-fier in June 2024. Details - Sounds great and is in excellent condition. - Comes with original packaging and accessories. Shipping and Fees - Shipping and PayPal fees included in the listing price. Fraser Street Listing Jan 6, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Street", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.81113/", "price_num": 575.0, "date_ms": 1736121600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: 64 Audio U6T", "raw_text": "For Sale Sold: 64 Audio U6T Price 625.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Reduced Price Line New, pristine conditions In Box, with all original accesories No trades this time, thanks lramirez1959 Listing Sep 16, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "lramirez1959", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.74916/", "price_num": 625.0, "date_ms": 1726444800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: 64 Audio U6T", "raw_text": "For Sale Sold: 64 Audio U6T Price 550.00 USD Condition Good Negotiability Firm Ships to Anywhere Hey everyone! This is a B-Stock U6T which I am the original owner of and purchase last year. Only selling this as it turns out I am heading back to school and don't use this as much now that I own IEM's such as the Odin. Just looking to thin the herd. Id say its in Pretty good condition. There... jmo04 Listing Jun 21, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "jmo04", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.70180/", "price_num": 550.0, "date_ms": 1718928000000, "listing_status": "closed", "condition_text": "good condition, b-stock", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: 64 Audio U6t", "raw_text": "For Sale Sold: 64 Audio U6t Price 650.00 USD Condition Good Negotiability Firm Ships to Anywhere It is with some reluctance that I am listing this excellent 64 Audio U6t for sale. I bought this on a bit of a whim, and loved it so much I decided to upgrade to a custom A12t. I kept this around for a while longer than I expected as it\u2019s such a great every-day-carry IEM. It is so easy-going... Neweymatt Listing May 31, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Neweymatt", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.68954/", "price_num": 650.0, "date_ms": 1717113600000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: 64 Audio U6t", "raw_text": "For Sale Sold: 64 Audio U6t Price 799.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to EuropeNorth America Like new / Excellent condition Reason for selling: moving on Comes with: All original box and papers + Fir Audio Module \u201c-\u201c, black, sits in-between M15 and MX module Selling for: USD $ 899 799, priority shipping from Switzerland included Shipping: Tracked / Declared at the full value, not... NewEve Listing May 26, 2023 Comments: 2 Category: In-Ear Monitors", "seller_username": "NewEve", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.48353/", "price_num": 799.0, "date_ms": 1685059200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: 64 Audio U6t", "raw_text": "For Sale Sold: 64 Audio U6t Price 690.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America ...in the pictures. These IEM's are excellent and the tuning is perfect in my opinion. Lasted me a great while until I saved up to get to the U12t which I prefer but there are people that prefer the U6t. Both live up to their respective reputations. I also enjoyed U6t more than CFA andro 2020's. oldsweatyman Listing Jan 28, 2023 Comments: 7 Category: DAC/Amps", "seller_username": "oldsweatyman", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.40628/", "price_num": 690.0, "date_ms": 1674864000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: 64 Audio U6t (b-stock, used, in 'good' condition)", "raw_text": "For Sale Sold: 64 Audio U6t (b-stock, used, in 'good' condition) Price 560.00 USD Condition Good Negotiability Firm Ships to United States of America 64 Audio U6t universal-fit in-ear monitors (b-stock, used, in \u2018good\u2019 condition) I have a lightly used set of 64 Audio U6t b-stock universal-fit in-ear monitors for sale. A total of 8 hours of listening has been done. The U6t was purchased, new (b-stock), from 64 Audio, as of March 2022. I am... Livingformusic Listing Dec 31, 2022 Comments: 2 Category: In-Ear Monitors", "seller_username": "Livingformusic", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-b-stock-used-in-good-condition.38845/", "price_num": 560.0, "date_ms": 1672444800000, "listing_status": "closed", "condition_text": "used, b-stock", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Closed: 64 Audio U6T", "raw_text": "For Sale / Trade Closed: 64 Audio U6T Price 850.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Timestamp/pictures: https://imgur.com/a/PLX3Z8E For sale is: 64 Audio U6T - $850 including PayPal fees and shipping. I have a U6T in great condition. I am the second owner, though the first owner didn't use it very much before I picked it up. I really like the sound, but I've found myself... Gromu Listing Aug 31, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "Gromu", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.32098/", "price_num": 850.0, "date_ms": 1661904000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Closed: Mint 64 Audio U6T", "raw_text": "For Sale Closed: Mint 64 Audio U6T Price 925.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Hello All, Up for sale is a pair of 64 Audio U6ts in mint shape. The retail price is $1,299. https://www.64audio.com/collections/universal-iems/products/u6t All accessories are included, including the original box, ear tips, Apex filters, ear brush, sticker, and package. For questions PM... TheRH Listing Aug 25, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "TheRH", "url": "https://www.head-fi.org/classifieds/mint-64-audio-u6t.31715/", "price_num": 925.0, "date_ms": 1661385600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Closed: 64 Audio U6t (b-stock)", "raw_text": "For Sale Closed: 64 Audio U6t (b-stock) Price 775.00 USD Condition Good Negotiability Or best offer Ships to United States of America Selling a set of 64 Audio U6t purchased in February of 2022. I recently bought a set of U12t so decided to sell. In good condition with some minor scuffs on the decal(visible in photo). Price includes shipping and PayPal. kundica Listing Aug 15, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "kundica", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-b-stock.31174/", "price_num": 775.0, "date_ms": 1660521600000, "listing_status": "closed", "condition_text": "good condition, b-stock", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: 64 Audio U6t w/FiR Audio Atom Modules (13db/17db)", "raw_text": "For Sale Sold: 64 Audio U6t w/FiR Audio Atom Modules (13db/17db) Price 750.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America I'm moving to a custom IEM (JH Sharona) and selling these. Purchased just over a month ago and in excellent condition. I purchased the FiR modules separately to offer a wider range of isolation options. The modules are included but I appear to have misplaced/lost the cleaning brush and clip... PHLHarmonic Listing Jul 14, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "PHLHarmonic", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-w-fir-audio-atom-modules-13db-17db.29337/", "price_num": 750.0, "date_ms": 1657756800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Closed: 64 Audio U6t w/FiR Audio Atom Modules (13db/17db)", "raw_text": "For Sale Closed: 64 Audio U6t w/FiR Audio Atom Modules (13db/17db) Price 750.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America I'm moving to a custom IEM and selling these. Purchased just over a month ago and in excellent condition. I purchased the FiR modules separately to offer a wider range of isolation options. The modules are included but I appear to have misplaced/lost the cleaning brush and clip, but both are... PHLHarmonic Listing Jul 10, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "PHLHarmonic", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-w-fir-audio-atom-modules-13db-17db.29058/", "price_num": 750.0, "date_ms": 1657411200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 15, "title": "Closed: 64 Audio U6t w/FiR Audio Atom Modules (13db/17db)", "raw_text": "For Sale Closed: 64 Audio U6t w/FiR Audio Atom Modules (13db/17db) Price 850.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America I'm moving to a custom IEM and selling these. Purchased just over a month ago and in excellent condition. I purchased the FiR modules separately to offer a wider range of isolation options. The modules are included but I appear to have misplaced/lost the cleaning brush and clip, but both are... PHLHarmonic Listing Jul 9, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "PHLHarmonic", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-w-fir-audio-atom-modules-13db-17db.28965/", "price_num": 850.0, "date_ms": 1657324800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 16, "title": "Closed: 64 Audio U6t w/FiR Audio Atom Modules (13db/17db)", "raw_text": "For Sale Closed: 64 Audio U6t w/FiR Audio Atom Modules (13db/17db) Price 900.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Moving to a custom IEM and selling these. Purchased just over a month ago and in excellent condition. I purchased the FiR modules separately to offer a wider range of isolation options. The modules are included but I appear to have misplaced/lost the cleaning brush and clip, but both are... PHLHarmonic Listing Jul 8, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "PHLHarmonic", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-w-fir-audio-atom-modules-13db-17db.28902/", "price_num": 900.0, "date_ms": 1657238400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 17, "title": "Closed: 64 Audio U6t w/FiR Audio Modules (13/17db)", "raw_text": "For Sale Closed: 64 Audio U6t w/FiR Audio Modules (13/17db) Price 975.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Moving to a custom IEM and selling these. Purchased just over a month ago and in excellent condition. I purchased the FiR modules separately to offer a wider range of options. The modules are included but I appear to have misplaced or lost the cleaning brush and clip, but both are fortunately... PHLHarmonic Listing Jul 7, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "PHLHarmonic", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-w-fir-audio-modules-13-17db.28825/", "price_num": 975.0, "date_ms": 1657152000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 18, "title": "Sold: 64 Audio U6t", "raw_text": "For Sale Sold: 64 Audio U6t Price 750.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Like new / Excellent condition (B-Stock), come with a second, new, 64 Audio cable in silver and posted the best picture could of a little ding Reason for selling: leaving the hobby Comes with: All original box and papers Selling for: USD $ 750 + Shipping Shipping: Worldwide, tracked /... NewEve Listing Jun 30, 2022 Comments: 2 Category: In-Ear Monitors", "seller_username": "NewEve", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.28394/", "price_num": 750.0, "date_ms": 1656547200000, "listing_status": "closed", "condition_text": "like new, excellent, b-stock", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Closed: 64 Audio U6t In-Ear Monitors", "raw_text": "For Sale Closed: 64 Audio U6t In-Ear Monitors Price 875.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Hello all, for sale is a mint pair of 64 Audio U6t In-Ear Monitors less than three months old. The retail price is $1,300. I used an iBasso DX240 to drive these. Please send me a PM\u2014Upper 48 only if you have any questions. No Trades. TheRH Listing Apr 28, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "TheRH", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-in-ear-monitors.24727/", "price_num": 875.0, "date_ms": 1651104000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 20, "title": "Sold: 64 Audio U6T Like New [Price Drop]", "raw_text": "For Sale Sold: 64 Audio U6T Like New [Price Drop] Price 850.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling my U6Ts in flawless condition. I\u2019m the original owner and purchased them brand new only a month ago, receipt provided. All original accessories included, including case, tips, APEX modules, stock cable etc. Have just decided dynamic drivers suit me better. Worldwide shipping included... alchemical Listing Feb 4, 2022 Comments: 3 Category: In-Ear Monitors", "seller_username": "alchemical", "url": "https://www.head-fi.org/classifieds/64-audio-u6t-like-new-price-drop.19591/", "price_num": 850.0, "date_ms": 1643932800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Closed: 64 Audio U6t", "raw_text": "For Sale Closed: 64 Audio U6t Price 899.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America *** CLOSED, I ended up selling my U12t and decided to keep these. *** 64 Audio U6T in excellent condition and working great. These are amazing IEMs and in my opinion a great upgrade over the Blessing 2. Really balanced FR with great dynamics and they are super comfortable. I decided to upgrade... QuasiSpecies Listing Jan 29, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "QuasiSpecies", "url": "https://www.head-fi.org/classifieds/64-audio-u6t.19141/", "price_num": 899.0, "date_ms": 1643414400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Closed: SOLD: 64 Audio U6t", "raw_text": "For Sale Closed: SOLD: 64 Audio U6t Price 850.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Hi all. Looking to sell a 64 Audio U6T in excellent condition. It was originally purchased at the end of July and has about 30-40 hours of total usage and zero wear. I am the second owner, as I bought it a few weeks ago from @Titienne. I decided to upgrade to a different IEM, so it's no longer... Acuno Listing Sep 15, 2021 Comments: 1 Category: In-Ear Monitors", "seller_username": "Acuno", "url": "https://www.head-fi.org/classifieds/sold-64-audio-u6t.11312/", "price_num": 850.0, "date_ms": 1631664000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Closed: Chord Hugo 2 / 64 Audio U6T / CMA Master 12", "raw_text": "For Trade Closed: Chord Hugo 2 / 64 Audio U6T / CMA Master 12", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/chord-hugo-2-64-audio-u6t-cma-master-12.26450/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 1300.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -649,6 +666,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -714,6 +775,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -721,14 +784,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -742,18 +812,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -765,13 +845,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -786,7 +867,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -831,7 +912,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -842,7 +923,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -850,11 +931,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1366,6 +1447,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

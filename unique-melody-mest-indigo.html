@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>Unique Melody MEST Indigo</h1>
+<div class="iem-title-row">
+    <h1>Unique Melody MEST Indigo</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-unique-melody.html">Unique Melody</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -217,7 +234,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -249,7 +266,7 @@ td.status-reason { overflow: hidden; }
 <td>Buckeyedentite</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Closed: Fair (5.3% above market)</span></td>
+<td><span id="deal-score-0">Closed: Fair (2.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-indigo.95787/" target="_blank">source</a></td>
 </tr>
 
@@ -281,7 +298,7 @@ td.status-reason { overflow: hidden; }
 <td>timeslip</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">Closed: Good Deal (13.5% below market)</span></td>
+<td><span id="deal-score-2">Closed: Good Deal (16.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-indigo.81851/" target="_blank">source</a></td>
 </tr>
 
@@ -297,7 +314,7 @@ td.status-reason { overflow: hidden; }
 <td>RazorItoh</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-3">Closed: Good Deal (17.3% below market)</span></td>
+<td><span id="deal-score-3">Closed: Good Deal (19.6% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-indigo-4-4.70478/" target="_blank">source</a></td>
 </tr>
 
@@ -313,7 +330,7 @@ td.status-reason { overflow: hidden; }
 <td>Giraku</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-4">Closed: Fair (6.0% below market)</span></td>
+<td><span id="deal-score-4">Closed: Fair (8.7% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/ultimate-melody-um-mest-indigo-4-4mm-mint-condition.67155/" target="_blank">source</a></td>
 </tr>
 
@@ -329,7 +346,7 @@ td.status-reason { overflow: hidden; }
 <td>sjssusma</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-5">Closed: Great Deal (26.7% below market)</span></td>
+<td><span id="deal-score-5">Closed: Great Deal (28.7% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-indigo.65373/" target="_blank">source</a></td>
 </tr>
 
@@ -345,7 +362,7 @@ td.status-reason { overflow: hidden; }
 <td>Razor911LoL</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-6">Closed: Fair (5.3% above market)</span></td>
+<td><span id="deal-score-6">Closed: Fair (2.3% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1bccvh2/wtsusacah_unique_melody_mest_indigo_44mm_x200_w/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -361,7 +378,7 @@ td.status-reason { overflow: hidden; }
 <td>RazorItoh</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-7">Closed: Fair (5.3% above market)</span></td>
+<td><span id="deal-score-7">Closed: Fair (2.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-indigo.64123/" target="_blank">source</a></td>
 </tr>
 
@@ -377,7 +394,7 @@ td.status-reason { overflow: hidden; }
 <td>-HaVoC-Tzu-</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-8">Closed: Fair (5.3% above market)</span></td>
+<td><span id="deal-score-8">Closed: Fair (2.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-indigo-4-4mm.63743/" target="_blank">source</a></td>
 </tr>
 
@@ -393,7 +410,7 @@ td.status-reason { overflow: hidden; }
 <td>Badlands</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-9">Closed: Fair (2.3% below market)</span></td>
+<td><span id="deal-score-9">Closed: Fair (5.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/price-drop-unique-melody-mest-indigo-4-4.52640/" target="_blank">source</a></td>
 </tr>
 
@@ -409,7 +426,7 @@ td.status-reason { overflow: hidden; }
 <td>forbiddenbeat</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-10">Closed: Fair (1.5% above market)</span></td>
+<td><span id="deal-score-10">Closed: Fair (1.3% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-indigo-2-5mm.51925/" target="_blank">source</a></td>
 </tr>
 
@@ -425,7 +442,7 @@ td.status-reason { overflow: hidden; }
 <td>newyou</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-11">Closed: Fair (9.8% below market)</span></td>
+<td><span id="deal-score-11">Closed: Good Deal (12.3% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-indigo.49504/" target="_blank">source</a></td>
 </tr>
 
@@ -441,7 +458,7 @@ td.status-reason { overflow: hidden; }
 <td>kumar402</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-12">Closed: Fair (7.1% above market)</span></td>
+<td><span id="deal-score-12">Closed: Fair (4.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/um-mest-indigo.47778/" target="_blank">source</a></td>
 </tr>
 
@@ -457,7 +474,7 @@ td.status-reason { overflow: hidden; }
 <td>harshkamboj</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-13">Closed: High (22.6% above market)</span></td>
+<td><span id="deal-score-13">Closed: High (19.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/um-mest-indigo.43859/" target="_blank">source</a></td>
 </tr>
 
@@ -473,7 +490,7 @@ td.status-reason { overflow: hidden; }
 <td>Silverlinings</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-14">Closed: High (24.1% above market)</span></td>
+<td><span id="deal-score-14">Closed: High (20.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/um-mest-indigo.41138/" target="_blank">source</a></td>
 </tr>
 
@@ -489,7 +506,7 @@ td.status-reason { overflow: hidden; }
 <td>Giraku</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-15">Closed: Overpriced (39.1% above market)</span></td>
+<td><span id="deal-score-15">Closed: Overpriced (35.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/ultimate-melody-mest-indigo.40416/" target="_blank">source</a></td>
 </tr>
 
@@ -521,7 +538,7 @@ td.status-reason { overflow: hidden; }
 <td>SteveK27</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-17">Closed: High (20.3% above market)</span></td>
+<td><span id="deal-score-17">Closed: High (16.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-indigo.39308/" target="_blank">source</a></td>
 </tr>
 
@@ -537,7 +554,7 @@ td.status-reason { overflow: hidden; }
 <td>Damz87</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-18">Closed: High (20.3% above market)</span></td>
+<td><span id="deal-score-18">Closed: High (16.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-indigo.38284/" target="_blank">source</a></td>
 </tr>
 
@@ -553,7 +570,7 @@ td.status-reason { overflow: hidden; }
 <td>vikinguy</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-19">Closed: High (24.1% above market)</span></td>
+<td><span id="deal-score-19">Closed: High (20.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-indigo.37417/" target="_blank">source</a></td>
 </tr>
 
@@ -569,7 +586,7 @@ td.status-reason { overflow: hidden; }
 <td>Maxx134</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-20">Closed: High (24.1% above market)</span></td>
+<td><span id="deal-score-20">Closed: High (20.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-indigo.37074/" target="_blank">source</a></td>
 </tr>
 
@@ -585,7 +602,7 @@ td.status-reason { overflow: hidden; }
 <td>klyzon</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-21">Closed: High (12.8% above market)</span></td>
+<td><span id="deal-score-21">Closed: Fair (9.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/um-mest-indigo.35745/" target="_blank">source</a></td>
 </tr>
 
@@ -601,7 +618,7 @@ td.status-reason { overflow: hidden; }
 <td>velcrothrash</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-22">Closed: High (20.3% above market)</span></td>
+<td><span id="deal-score-22">Closed: High (16.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sold-unique-melody-mest-indigo.34262/" target="_blank">source</a></td>
 </tr>
 
@@ -617,7 +634,7 @@ td.status-reason { overflow: hidden; }
 <td>wazzupi</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-23">Closed: Overpriced (31.6% above market)</span></td>
+<td><span id="deal-score-23">Closed: Overpriced (27.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/um-mest-indigo.33944/" target="_blank">source</a></td>
 </tr>
 
@@ -633,7 +650,7 @@ td.status-reason { overflow: hidden; }
 <td>Chronos</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-24">Closed: Overpriced (41.0% above market)</span></td>
+<td><span id="deal-score-24">Closed: Overpriced (37.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/um-mest-indigo-4-4-mm-like-new.32658/" target="_blank">source</a></td>
 </tr>
 
@@ -649,7 +666,7 @@ td.status-reason { overflow: hidden; }
 <td>nick2x</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-25">Closed: High (20.3% above market)</span></td>
+<td><span id="deal-score-25">Closed: High (16.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-indigo.32247/" target="_blank">source</a></td>
 </tr>
 
@@ -681,7 +698,7 @@ td.status-reason { overflow: hidden; }
 <td>DavidLovesIEMs</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-27">Closed: High (24.1% above market)</span></td>
+<td><span id="deal-score-27">Closed: High (20.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/price-drop-mint-unique-melody-mest-indigo.31568/" target="_blank">source</a></td>
 </tr>
 
@@ -697,7 +714,7 @@ td.status-reason { overflow: hidden; }
 <td>jwilliamhurst</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-28">Closed: Overpriced (39.1% above market)</span></td>
+<td><span id="deal-score-28">Closed: Overpriced (35.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/um-mest-indigo-4-4.31390/" target="_blank">source</a></td>
 </tr>
 
@@ -713,7 +730,7 @@ td.status-reason { overflow: hidden; }
 <td>fejnomit</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-29">Closed: Overpriced (42.8% above market)</span></td>
+<td><span id="deal-score-29">Closed: Overpriced (38.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pending-um-mest-indigo-4-4mm-w-accessory-package.30651/" target="_blank">source</a></td>
 </tr>
 
@@ -729,7 +746,7 @@ td.status-reason { overflow: hidden; }
 <td>gazzy644</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-30">Closed: Overpriced (27.8% above market)</span></td>
+<td><span id="deal-score-30">Closed: High (24.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/um-mest-indigo.28702/" target="_blank">source</a></td>
 </tr>
 
@@ -751,7 +768,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Sold: Unique Melody Mest Indigo", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.95787/", "price_num": 1400.0, "date_ms": 1758931200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Sold: Unique Melody Mest Indigo", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.84713/", "price_num": null, "date_ms": 1741651200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 2, "title": "Sold: Unique Melody Mest Indigo", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.81851/", "price_num": 1150.0, "date_ms": 1737244800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Unique Melody Mest Indigo 4.4", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo-4-4.70478/", "price_num": 1100.0, "date_ms": 1719360000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Ultimate Melody (UM) Mest Indigo 4.4mm Mint Condition", "url": "https://www.head-fi.org/classifieds/ultimate-melody-um-mest-indigo-4-4mm-mint-condition.67155/", "price_num": 1250.0, "date_ms": 1714521600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Closed: Unique Melody Mest Indigo", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.65373/", "price_num": 975.0, "date_ms": 1711843200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Unique Melody Mest Indigo 4.4mm x/200", "url": "https://old.reddit.com/r/AVexchange/comments/1bccvh2/wtsusacah_unique_melody_mest_indigo_44mm_x200_w/#item-1", "price_num": 1400.0, "date_ms": 1710187700000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=qdc anole | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 7, "title": "Traded: Unique Melody Mest Indigo", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.64123/", "price_num": 1400.0, "date_ms": 1710115200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 8, "title": "Closed: Unique Melody Mest Indigo 4.4mm", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo-4-4mm.63743/", "price_num": 1400.0, "date_ms": 1709510400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: PRICE DROP! Unique Melody MEST Indigo 4.4", "url": "https://www.head-fi.org/classifieds/price-drop-unique-melody-mest-indigo-4-4.52640/", "price_num": 1300.0, "date_ms": 1691971200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Closed: Unique Melody MEST Indigo 2.5mm", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo-2-5mm.51925/", "price_num": 1350.0, "date_ms": 1690848000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Unique Melody MEST Indigo", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.49504/", "price_num": 1200.0, "date_ms": 1687046400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: UM MEST Indigo", "url": "https://www.head-fi.org/classifieds/um-mest-indigo.47778/", "price_num": 1425.0, "date_ms": 1684108800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: UM Mest Indigo", "url": "https://www.head-fi.org/classifieds/um-mest-indigo.43859/", "price_num": 1630.0, "date_ms": 1679011200000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: UM Mest Indigo", "url": "https://www.head-fi.org/classifieds/um-mest-indigo.41138/", "price_num": 1650.0, "date_ms": 1675555200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Closed: Ultimate Melody Mest Indigo", "url": "https://www.head-fi.org/classifieds/ultimate-melody-mest-indigo.40416/", "price_num": 1850.0, "date_ms": 1674604800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Closed: SOLD: UM MEST Indigo", "url": "https://www.head-fi.org/classifieds/sold-um-mest-indigo.39827/", "price_num": null, "date_ms": 1673827200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Unique Melody MEST Indigo", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.39308/", "price_num": 1600.0, "date_ms": 1673136000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: Unique Melody MEST Indigo", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.38284/", "price_num": 1600.0, "date_ms": 1671580800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Sold: Unique Melody MEST Indigo", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.37417/", "price_num": 1650.0, "date_ms": 1670198400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Unique Melody MEST Indigo", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.37074/", "price_num": 1650.0, "date_ms": 1669680000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Closed: UM MEST Indigo", "url": "https://www.head-fi.org/classifieds/um-mest-indigo.35745/", "price_num": 1500.0, "date_ms": 1667606400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: [SOLD] Unique Melody MEST Indigo", "url": "https://www.head-fi.org/classifieds/sold-unique-melody-mest-indigo.34262/", "price_num": 1600.0, "date_ms": 1665273600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Sold: UM Mest Indigo", "url": "https://www.head-fi.org/classifieds/um-mest-indigo.33944/", "price_num": 1750.0, "date_ms": 1664755200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Sold: UM MEST Indigo 4.4 mm like new!", "url": "https://www.head-fi.org/classifieds/um-mest-indigo-4-4-mm-like-new.32658/", "price_num": 1875.0, "date_ms": 1662768000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: Unique Melody Mest Indigo", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.32247/", "price_num": 1600.0, "date_ms": 1662076800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: Unique Melody UM Mest Indigo", "url": "https://www.head-fi.org/classifieds/unique-melody-um-mest-indigo.31706/", "price_num": null, "date_ms": 1661299200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 27, "title": "Closed: (Price Drop) Mint Unique Melody Mest Indigo", "url": "https://www.head-fi.org/classifieds/price-drop-mint-unique-melody-mest-indigo.31568/", "price_num": 1650.0, "date_ms": 1661126400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Sold: UM MEST INDIGO 4.4", "url": "https://www.head-fi.org/classifieds/um-mest-indigo-4-4.31390/", "price_num": 1850.0, "date_ms": 1660867200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Sold: PENDING: UM MEST Indigo 4.4mm w/ Accessory Package", "url": "https://www.head-fi.org/classifieds/pending-um-mest-indigo-4-4mm-w-accessory-package.30651/", "price_num": 1899.0, "date_ms": 1659830400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: UM MEST Indigo", "url": "https://www.head-fi.org/classifieds/um-mest-indigo.28702/", "price_num": 1700.0, "date_ms": 1656979200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Sold: Unique Melody UM Mest Indigo", "url": "https://www.head-fi.org/classifieds/unique-melody-um-mest-indigo.26847/", "price_num": null, "date_ms": 1654128000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}];
+const allRows = [{"row_id": 0, "title": "Sold: Unique Melody Mest Indigo", "raw_text": "For Sale / Trade Sold: Unique Melody Mest Indigo Price 1400.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Excellent condition. I\u2019m the original owner. Purchased from MusicTeck. Comes with everything. Buckeyedentite Listing Sep 27, 2025 Comments: 2 Category: In-Ear Monitors", "seller_username": "Buckeyedentite", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.95787/", "price_num": 1400.0, "date_ms": 1758931200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Sold: Unique Melody Mest Indigo", "raw_text": "For Sale Sold: Unique Melody Mest Indigo Price 0.01 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Limited edition Mest which boasts 2 more EST drivers than the Mest mk3. This set is a fantastic all rounder but it unfortunately does fit me as well as I woud like. I have smaller than average ear canals so this likely is not going to be a problem for many. Price includes shipping to the CONUS. bradyc100 Listing Mar 11, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "bradyc100", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.84713/", "price_num": null, "date_ms": 1741651200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 2, "title": "Sold: Unique Melody Mest Indigo", "raw_text": "For Sale Sold: Unique Melody Mest Indigo Price 1150.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Comes with the original box and accessories. The condition is like-new with no scratches on the iem. Pricing includes paypal fees and S&H in CONUS. If international, please reach out for price difference. timeslip Listing Jan 19, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "timeslip", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.81851/", "price_num": 1150.0, "date_ms": 1737244800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Unique Melody Mest Indigo 4.4", "raw_text": "For Sale / Trade Sold: Unique Melody Mest Indigo 4.4 Price 1100.00 USD Condition Excellent/Like new Negotiability Firm Ships to North AmericaUnited States of America Got an excellent condition pair of Indigos with OG all. For trades either iems or electronics like a handheld PC or something. Maybe a pair of apple headphones too. RazorItoh Listing Jun 26, 2024 Comments: 4 Category: In-Ear Monitors", "seller_username": "RazorItoh", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo-4-4.70478/", "price_num": 1100.0, "date_ms": 1719360000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Ultimate Melody (UM) Mest Indigo 4.4mm Mint Condition", "raw_text": "For Sale Sold: Ultimate Melody (UM) Mest Indigo 4.4mm Mint Condition Price 1250.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America I\u2019m selling UM Mest Indigo with 4.4mm cable in mint condition. It comes with all the accessories in the original packaging. Price includes USPS Priority shipping within CONUS. No trading, please. Giraku Listing May 1, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Giraku", "url": "https://www.head-fi.org/classifieds/ultimate-melody-um-mest-indigo-4-4mm-mint-condition.67155/", "price_num": 1250.0, "date_ms": 1714521600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Closed: Unique Melody Mest Indigo", "raw_text": "For Sale Closed: Unique Melody Mest Indigo Price 975.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling my unique melody mest indigo I am the second owner have kept them in excellent condition. Original Cable included is terminated to 4.4mm connector. Does include original packaging and includes tips. Looking to get $975 PayPal. Let me know if you have any questions. sjssusma Listing Mar 31, 2024 Comments: 9 Category: In-Ear Monitors", "seller_username": "sjssusma", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.65373/", "price_num": 975.0, "date_ms": 1711843200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Unique Melody Mest Indigo 4.4mm x/200", "raw_text": "Asking $1400 shipped North America.\nAll the tips are unused. The cable is 4.4 terminated turning a bit green near the top. Would trade for iems in a similar price point +/- cash.\nAnole VX QDC Gemini Anole V14 Penon Impact\nEtc etc lmk what you have.\nsubmitted by /u/Razor911LoL\n[link] [comments]", "seller_username": "Razor911LoL", "url": "https://old.reddit.com/r/AVexchange/comments/1bccvh2/wtsusacah_unique_melody_mest_indigo_44mm_x200_w/#item-1", "price_num": 1400.0, "date_ms": 1710187700000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=qdc anole | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 7, "title": "Traded: Unique Melody Mest Indigo", "raw_text": "For Sale / Trade Traded: Unique Melody Mest Indigo Price 1400.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Only thing wrong with them is the cable is oxidizing a bit near the top. Looking to sell or trade for equal value 2pin iems. Anole VX Penon impact etc. RazorItoh Listing Mar 11, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "RazorItoh", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.64123/", "price_num": 1400.0, "date_ms": 1710115200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 8, "title": "Closed: Unique Melody Mest Indigo 4.4mm", "raw_text": "For Sale Closed: Unique Melody Mest Indigo 4.4mm Price 1400.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America UM Melody Mest Indigo Big fan of these IEMs -HaVoC-Tzu- Listing Mar 4, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "-HaVoC-Tzu-", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo-4-4mm.63743/", "price_num": 1400.0, "date_ms": 1709510400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: PRICE DROP! Unique Melody MEST Indigo 4.4", "raw_text": "For Sale Sold: PRICE DROP! Unique Melody MEST Indigo 4.4 Price 1300.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America This is difficult but selling my Indigos as I\u2019m hoping to invest in a new IEM. I purchased them from MusicTeck in February 2022. Took great care of them in a non smoking home. I did use the larger AZLA eartips but all the other accessories are still intact. I have previously sold on HeadFi... Badlands Listing Aug 14, 2023 Comments: 3 Category: In-Ear Monitors", "seller_username": "Badlands", "url": "https://www.head-fi.org/classifieds/price-drop-unique-melody-mest-indigo-4-4.52640/", "price_num": 1300.0, "date_ms": 1691971200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Closed: Unique Melody MEST Indigo 2.5mm", "raw_text": "For Sale Closed: Unique Melody MEST Indigo 2.5mm Price 1350.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Selling my lightly-used MEST Indigos. Purchased new from MusicTeck. I absolutely love these, and they are probably the most dynamic and expansive IEMs I own. Selling because I have a few customs I also enjoy and I have too many IEMs. Includes all original accessories and the box. Not... forbiddenbeat Listing Aug 1, 2023 Comments: 4 Category: In-Ear Monitors", "seller_username": "forbiddenbeat", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo-2-5mm.51925/", "price_num": 1350.0, "date_ms": 1690848000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Unique Melody MEST Indigo", "raw_text": "For Sale / Trade Sold: Unique Melody MEST Indigo Price 1200.00 USD Condition Good Negotiability Or best offer Ships to Anywhere Selling my beloved Indigo, bought originally July 2022 Comes with: The IEMs themselves 4.4mm cable Pouch Nozzle filters Authenticity card with serial number I no longer have the original box sorry. Meaning things like ear tips are missing. Can ship anywhere, I live in New Zealand newyou Listing Jun 18, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "newyou", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.49504/", "price_num": 1200.0, "date_ms": 1687046400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: UM MEST Indigo", "raw_text": "For Sale Sold: UM MEST Indigo Price 1425.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Hi, I have a UM Mest Indigo that I\u2019m looking to offload. It is a fantastic end game IEM for many. Is among top ranked IEM and has limited availability. I mostly listen to speakers or ZMF and hence IEM gets limited use and this is too good an IEM to be unused. I will put the pics later today... kumar402 Listing May 15, 2023 Comments: 3 Category: In-Ear Monitors", "seller_username": "kumar402", "url": "https://www.head-fi.org/classifieds/um-mest-indigo.47778/", "price_num": 1425.0, "date_ms": 1684108800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: UM Mest Indigo", "raw_text": "For Sale / Trade Sold: UM Mest Indigo Price 1630.00 USD Condition Good Negotiability Firm Ships to Anywhere Selling in good condition, the limited edition Mest Indigo (200 sets made) which is a quad driver iem. I've owned this iem two times because it's one of the best priced iem among the big guns to compare with. This comes with all accessories except eartips. The cable is 4.4 PWA Copper M3 which... harshkamboj Listing Mar 17, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/um-mest-indigo.43859/", "price_num": 1630.0, "date_ms": 1679011200000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: UM Mest Indigo", "raw_text": "For Sale / Trade Sold: UM Mest Indigo Price 1650.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Up for sale are my UM Mest Indigos. Not sure these need any introduction around here. All accessories are included except the small UM silicone tips which were used. They are perfect condition and sound great. Now that I am in this rabbit hole of iem\u2019s I realized that my preferences are for a... Silverlinings Listing Feb 5, 2023 Comments: 2 Category: In-Ear Monitors", "seller_username": "Silverlinings", "url": "https://www.head-fi.org/classifieds/um-mest-indigo.41138/", "price_num": 1650.0, "date_ms": 1675555200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Closed: Ultimate Melody Mest Indigo", "raw_text": "For Sale Closed: Ultimate Melody Mest Indigo Price 1850.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America I decided to sell Ultimate Melody Mest Indigo in a near mint condition. It comes with all the accessories (except for some ear tips) in the original packaging. Price: US$1850 shipped within CONUS via USPS Priority No trading, please. Giraku Listing Jan 25, 2023 Comments: 4 Category: In-Ear Monitors", "seller_username": "Giraku", "url": "https://www.head-fi.org/classifieds/ultimate-melody-mest-indigo.40416/", "price_num": 1850.0, "date_ms": 1674604800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Closed: SOLD: UM MEST Indigo", "raw_text": "For Sale Closed: SOLD: UM MEST Indigo Price 0.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling my UM Mest Indigo with original package & accessories. I'm the single owner bought from US dealer. Price includes shipping + paypal fees. PM for any question. jeet4u06 Listing Jan 16, 2023 Comments: 3 Category: DAPs", "seller_username": "jeet4u06", "url": "https://www.head-fi.org/classifieds/sold-um-mest-indigo.39827/", "price_num": null, "date_ms": 1673827200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Unique Melody MEST Indigo", "raw_text": "For Sale Sold: Unique Melody MEST Indigo Price 1600.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling my UM MEST Indigo! Shipping worldwide through EMS (express mail service) from South Korea - this is the standard international shipping service here in South Korea. Please let me know if you have any questions and I'll try my best to respond back quickly \ud83d\ude0a SteveK27 Listing Jan 8, 2023 Comments: 4 Category: In-Ear Monitors", "seller_username": "SteveK27", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.39308/", "price_num": 1600.0, "date_ms": 1673136000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: Unique Melody MEST Indigo", "raw_text": "For Sale Sold: Unique Melody MEST Indigo Price 1600.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Regretfully selling my set of UM MEST Indigo IEM\u2019s. They\u2019re in mint condition and come with everything like new. Eartips/accessories all unused. Price includes worldwide shipping (shipping from Australia) Damz87 Listing Dec 21, 2022 Comments: 2 Category: In-Ear Monitors", "seller_username": "Damz87", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.38284/", "price_num": 1600.0, "date_ms": 1671580800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Sold: Unique Melody MEST Indigo", "raw_text": "For Sale / Trade Sold: Unique Melody MEST Indigo Price 1650.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Putting these back up. Headphone hunting! Selling my Indigo. Excellent condition. Wonderful stock cable terminated to 4.4. Box, carrying case and paperwork. PayPal friends and family is very much appreciated. Priority Shipping to the USA included in price. International shipping id be happy... vikinguy Listing Dec 5, 2022 Comments: 3 Category: In-Ear Monitors", "seller_username": "vikinguy", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.37417/", "price_num": 1650.0, "date_ms": 1670198400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Unique Melody MEST Indigo", "raw_text": "For Sale Sold: Unique Melody MEST Indigo Price 1650.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Hello, up for sale is a beautiful, mint, and like new Unique Melody MEST Indigo, considered one of best for money of top-teir IEMs, as it has all the desired driver traits of DD/BA/EE, plus bone conduction which gives more life and realism to sound, which many now realize is a desired advantage... Maxx134 Listing Nov 29, 2022 Comments: 2 Category: In-Ear Monitors", "seller_username": "Maxx134", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.37074/", "price_num": 1650.0, "date_ms": 1669680000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Closed: UM MEST Indigo", "raw_text": "For Sale Closed: UM MEST Indigo Price 1500.00 USD Condition Good Negotiability Or best offer Ships to Anywhere As pictured, I'm the second owner. Selling to recoup some funds after and insane month. Comes with full box set and accessories. PS. Dog is not included klyzon Listing Nov 5, 2022 Comments: 8 Category: In-Ear Monitors", "seller_username": "klyzon", "url": "https://www.head-fi.org/classifieds/um-mest-indigo.35745/", "price_num": 1500.0, "date_ms": 1667606400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: [SOLD] Unique Melody MEST Indigo", "raw_text": "For Sale Sold: [SOLD] Unique Melody MEST Indigo Price 1600.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America I really hate to let these go but it's time to recoup some funds. Sounds amazing and looks flawless. One of my all-time faves. I'm the second owner, purchased here on head-fi in June 2022. As pictured. Ships to CONUS, PayPal fees included. Not interested in trades. velcrothrash Listing Oct 9, 2022 Comments: 1 Category: In-Ear Monitors", "seller_username": "velcrothrash", "url": "https://www.head-fi.org/classifieds/sold-unique-melody-mest-indigo.34262/", "price_num": 1600.0, "date_ms": 1665273600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Sold: UM Mest Indigo", "raw_text": "For Sale Sold: UM Mest Indigo Price 1750.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America I'm selling due to recent medical procedure, I wish I could keep as it complements my other iem. I purchased from musicteck a few months ago(August). Asking $1750 shipped/PP. Comes with original packaging and accessories. If you don't mind FF I can lower price. Dm for inquiry. wazzupi Listing Oct 3, 2022 Comments: 1 Category: In-Ear Monitors", "seller_username": "wazzupi", "url": "https://www.head-fi.org/classifieds/um-mest-indigo.33944/", "price_num": 1750.0, "date_ms": 1664755200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Sold: UM MEST Indigo 4.4 mm like new!", "raw_text": "For Sale / Trade Sold: UM MEST Indigo 4.4 mm like new! Price 1875.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling like new UM MEST Indigo in the 4.4 mm version. This is the most beautiful IEM I\u2019ve owned and it\u2019s condition reflects that. The only blemish is on the leather case, not the IEM itself. Comes with original box and all accessories. Only trades I would be interested in are Aroma Jewel... Chronos Listing Sep 10, 2022 Comments: 6 Category: In-Ear Monitors", "seller_username": "Chronos", "url": "https://www.head-fi.org/classifieds/um-mest-indigo-4-4-mm-like-new.32658/", "price_num": 1875.0, "date_ms": 1662768000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: Unique Melody Mest Indigo", "raw_text": "For Sale Sold: Unique Melody Mest Indigo Price 1600.00 USD Condition Good Negotiability Firm Ships to North America Selling a pair of UM Mest Indigo in good functioning and cosmetic condition. I am the second owner and they come with all original accesories and packaging. The cable is terminated with the 2.5mm trrs connector. Shipping is included. Thank you for the interest nick2x Listing Sep 2, 2022 Comments: 2 Category: In-Ear Monitors", "seller_username": "nick2x", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-indigo.32247/", "price_num": 1600.0, "date_ms": 1662076800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: Unique Melody UM Mest Indigo", "raw_text": "For Sale Sold: Unique Melody UM Mest Indigo Price 0.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Selling UM MEST Indigo universal iem. Limited 200 sets. 4 Electrostatic Drivers+1 DD+4 BA+1 Dual Sides Bone Conduction Driver 5-way crossover 22awg OCC Copper stock cable with 4.4mm plug 9/10 condition. Comes with all accessories. Information: https://hifigo.com/products/um-mest-indigo... oemerson Listing Aug 24, 2022 Comments: 3 Category: In-Ear Monitors", "seller_username": "oemerson", "url": "https://www.head-fi.org/classifieds/unique-melody-um-mest-indigo.31706/", "price_num": null, "date_ms": 1661299200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 27, "title": "Closed: (Price Drop) Mint Unique Melody Mest Indigo", "raw_text": "For Sale Closed: (Price Drop) Mint Unique Melody Mest Indigo Price 1650.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America One of the best I've ever heard. Serious inquiries only. Price includes shipping, fees, and insurance. Includes all accessories excluding tips. 4.4 termination. Only trade interest is 64 Audio Trio or Soft Ears RSV. DavidLovesIEMs Listing Aug 22, 2022 Comments: 6 Category: In-Ear Monitors", "seller_username": "DavidLovesIEMs", "url": "https://www.head-fi.org/classifieds/price-drop-mint-unique-melody-mest-indigo.31568/", "price_num": 1650.0, "date_ms": 1661126400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Sold: UM MEST INDIGO 4.4", "raw_text": "For Sale / Trade Sold: UM MEST INDIGO 4.4 Price 1850.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Second owner of the amazing imaging INDIGO! A wonderful iem. I have my eye on something else so I need to sell this or possible trade. Looking for FiR Xenon 6, 64Audio forte noir, Jewel, Traillii, Mason FS, etc. plus cash from me. Pics to follow. Thank you Payment via F&F preferred. Includes... jwilliamhurst Listing Aug 19, 2022 Comments: 1 Category: In-Ear Monitors", "seller_username": "jwilliamhurst", "url": "https://www.head-fi.org/classifieds/um-mest-indigo-4-4.31390/", "price_num": 1850.0, "date_ms": 1660867200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Sold: PENDING: UM MEST Indigo 4.4mm w/ Accessory Package", "raw_text": "For Sale Sold: PENDING: UM MEST Indigo 4.4mm w/ Accessory Package Price 1899.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere For sale are my beloved UM Mest Indigos with the 4.4mm cable. Included in the sale is the original Accessory Package for first buyers with unused fiber cloth and keychain, as well as two sets of unused silicon tips. The foam tips are not included as they were used. Instead I have included a nice... fejnomit Listing Aug 7, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "fejnomit", "url": "https://www.head-fi.org/classifieds/pending-um-mest-indigo-4-4mm-w-accessory-package.30651/", "price_num": 1899.0, "date_ms": 1659830400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: UM MEST Indigo", "raw_text": "For Sale Sold: UM MEST Indigo Price 1700.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Looking to sell my UM Indigo. I'm the original owner (purchased from Musicteck). It will come in the original box and all of the original accessories. The cable is 2.5mm. Let me know if you have any questions. gazzy644 Listing Jul 5, 2022 Comments: 1 Category: In-Ear Monitors", "seller_username": "gazzy644", "url": "https://www.head-fi.org/classifieds/um-mest-indigo.28702/", "price_num": 1700.0, "date_ms": 1656979200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Sold: Unique Melody UM Mest Indigo", "raw_text": "For Sale Sold: Unique Melody UM Mest Indigo Price 0.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Selling UM MEST Indigo universal iem. Limited 200 sets. 4 Electrostatic Drivers+1 DD+4 BA+1 Dual Sides Bone Conduction Driver 5-way crossover 22awg OCC Copper stock cable 9.5/10 condition. Comes with all accessories. Information: https://hifigo.com/products/um-mest-indigo Review... oemerson Listing Jun 2, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "oemerson", "url": "https://www.head-fi.org/classifieds/unique-melody-um-mest-indigo.26847/", "price_num": null, "date_ms": 1654128000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -774,6 +791,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -839,6 +900,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -846,14 +909,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -867,18 +937,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -890,13 +970,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -911,7 +992,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -956,7 +1037,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -967,7 +1048,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -975,11 +1056,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1491,6 +1572,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

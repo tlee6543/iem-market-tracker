@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>Canpur Silver Flash</h1>
+<div class="iem-title-row">
+    <h1>Canpur Silver Flash</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-canpur.html">Canpur</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -219,7 +236,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -610,7 +627,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Canpur Silver Flash", "url": "https://old.reddit.com/r/AVexchange/comments/1uuhh7u/wts_usme_h_onix_alpha_xl1_canpur_silver_flash/#item-2", "price_num": 110.0, "date_ms": 1783867659000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8500_json=403:len189908", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Canpur Silver Flash Listing ID: 111890 For Sale 100.00 USD Condition Good Negotiability Firm Ships To North America Second owner. Accessories not used. Great and comfortable, just rarely used. Listed by: ascortjkk (3) Listed: 2026-07-08", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.111890/", "price_num": 100.0, "date_ms": 1783468800000, "listing_status": "active", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "visible_card_collect_with_price_title_match_v6 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 2, "title": "Canpur Silver Flash", "url": "https://old.reddit.com/r/AVexchange/comments/1ulzipi/wtsusacah_sony_mdrmv1_fiio_ft1_softears_volume_s/#item-4", "price_num": 110.0, "date_ms": 1783038865000, "listing_status": "closed", "condition_text": "price shipped", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_reddit_page_sold_to_comment"}, {"row_id": 3, "title": "Canpur Silver Flash", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.111608/", "price_num": 80.0, "date_ms": 1782950400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 4, "title": "Canpur Silver Flash", "url": "https://old.reddit.com/r/AVexchange/comments/1uk2hjk/wtsusnych_canpur_silver_flash_w_paypal/#item-1", "price_num": 100.0, "date_ms": 1782855554000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 5, "title": "Canpur Silver Flash", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.111340/", "price_num": 110.0, "date_ms": 1782518400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 6, "title": "Canpur Silver Flash and Noble DDHiFi TC44Pro", "url": "https://old.reddit.com/r/AVexchange/comments/1ugccd4/wtsusnyc_h_canpur_silver_flash_and_noble_ddhifi/#item-1", "price_num": null, "date_ms": 1782492850000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len301412_page=200:len300435_json=200:len304112", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 7, "title": "Canpur Silver Flash", "url": "https://old.reddit.com/r/AVexchange/comments/1ueelzl/wtsusnyc_h_canpur_silver_flash_eletech_cartone/#item-1", "price_num": 110.0, "date_ms": 1782310227000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_sold_to_comment | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 8, "title": "Closed: Canpur Silver Flash", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.108261/", "price_num": 110.0, "date_ms": 1777507200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Canpur Silver Flash", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.108122/", "price_num": 110.0, "date_ms": 1777248000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Canpur silver flash +", "url": "https://old.reddit.com/r/AVexchange/comments/1svup4g/wtt_usaca_h_canpur_silver_flash_paypal_w_dunu/#item-1", "price_num": null, "date_ms": 1777169211000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | auto_bundle_excluded | no_price_unchecked | reddit_search_rss_query=thieaudio monarch"}, {"row_id": 11, "title": "Sold: Canpur Silver Flash CX3-02", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash-cx3-02.107869/", "price_num": 100.0, "date_ms": 1776902400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Canpur silver flash (PENDING)", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash-pending.107602/", "price_num": 100.0, "date_ms": 1776556800000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Canpur Silver Flash", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.107273/", "price_num": 115.0, "date_ms": 1776038400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Hifiman RE2000 Pro Silver for Canpur Silver Flash", "url": "https://www.head-fi.org/classifieds/hifiman-re2000-pro-silver-for-canpur-silver-flash.107014/", "price_num": null, "date_ms": 1775692800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "visible_card_collect_no_price_title_match_v6 | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 15, "title": "Sold: Canpur Silver Flash IEMs", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash-iems.107045/", "price_num": 100.0, "date_ms": 1775692800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Canpur Silver Flash", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.106972/", "price_num": 135.0, "date_ms": 1775606400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Canpur Silver Flash", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.106667/", "price_num": 115.0, "date_ms": 1775174400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: *** GIVEAWAY*** Happy Easter / Good Friday / Passover / etc. **** - Canpur Silver Flash - Single Dynamic IEM with DAC", "url": "https://www.head-fi.org/classifieds/giveaway-happy-easter-good-friday-passover-etc-canpur-silver-flash-single-dynamic-iem-with-dac.106673/", "price_num": null, "date_ms": 1775174400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 19, "title": "Sold: Canpur Silver Flash", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.106216/", "price_num": 115.0, "date_ms": 1774569600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Canpur Silver Flash", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.106130/", "price_num": 120.0, "date_ms": 1774396800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Canpur Silver Flash", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.104786/", "price_num": 100.0, "date_ms": 1772496000000, "listing_status": "closed", "condition_text": "like new, excellent, open box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Closed: Canpur Silver Flash", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.103572/", "price_num": 90.0, "date_ms": 1770768000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Canpur Silver Flash", "raw_text": "Canpur Silver Flash- $110", "seller_username": "Hyakunin_No_Shi", "url": "https://old.reddit.com/r/AVexchange/comments/1uuhh7u/wts_usme_h_onix_alpha_xl1_canpur_silver_flash/#item-2", "price_num": 110.0, "date_ms": 1783867659000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8500_json=403:len189908", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Canpur Silver Flash Listing ID: 111890 For Sale 100.00 USD Condition Good Negotiability Firm Ships To North America Second owner. Accessories not used. Great and comfortable, just rarely used. Listed by: ascortjkk (3) Listed: 2026-07-08", "raw_text": "Canpur Silver Flash Listing ID: 111890 For Sale 100.00 USD Condition Good Negotiability Firm Ships To North America Second owner. Accessories not used. Great and comfortable, just rarely used. Listed by: ascortjkk (3) Listed: 2026-07-08", "seller_username": "ascortjkk", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.111890/", "price_num": 100.0, "date_ms": 1783468800000, "listing_status": "active", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "visible_card_collect_with_price_title_match_v6 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 2, "title": "Canpur Silver Flash", "raw_text": "Canpur Silver Flash $110\nITEMS CONDITION PRICE SHIPPED(+10% G&S) Sony MDR-MV1 First owner. Bought a couple months ago. Lightly used. Preferred the D1. $300 Fiio FT1 Bought here. Everything included. $110 Softears Volume S First owner. Barely used. Accessories untouched. $220 Canpur Silver Flash Purchased here. Barely used. Accessories untouched $110 BW PX8 S2 Purchased in HeadFi. Perfect condition. Only purchased to compare with QC Ultra 2 and HDB 630 $650 __STRIKE_START__ Bose QC Ultra 2 __STRIKE_END__ __STRIKE_START__ Purchased brand new. Only purchased to compare with PX8S2 and HDB 630. __STRIKE_END__ $ __STRIKE_START__ 330 __STRIKE_END__ SOLD Pics+Timestamp", "seller_username": "Content-Disaster-511", "url": "https://old.reddit.com/r/AVexchange/comments/1ulzipi/wtsusacah_sony_mdrmv1_fiio_ft1_softears_volume_s/#item-4", "price_num": 110.0, "date_ms": 1783038865000, "listing_status": "closed", "condition_text": "price shipped", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_reddit_page_sold_to_comment"}, {"row_id": 3, "title": "Canpur Silver Flash", "raw_text": "Canpur Silver Flash\nListing ID: 111608\nFor Sale 80.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To North America\nLike new Canpur Silver Flash. Used for just a few weeks. I have two so parting with one. Wonderful single DD. Ships as new with all accessories. Ships for free to USA\nListed by: jwilliamhurst (130)\nListed: 2026-07-02\nSOLD", "seller_username": "jwilliamhurst", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.111608/", "price_num": 80.0, "date_ms": 1782950400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 4, "title": "Canpur Silver Flash", "raw_text": "Hey everyone - selling a lightly used Canpur silver flash with all original accessories and box.\n$100 - PayPal F&F Shipped\nsubmitted by /u/Feldy7888\n[link] [comments]", "seller_username": "Feldy7888", "url": "https://old.reddit.com/r/AVexchange/comments/1uk2hjk/wtsusnych_canpur_silver_flash_w_paypal/#item-1", "price_num": 100.0, "date_ms": 1782855554000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 5, "title": "Canpur Silver Flash", "raw_text": "Canpur Silver Flash\nListing ID: 111340\nFor Sale 110.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To United States Of America\nSelling my like new Silver Flag, Includes original accessories as seen on the picture. Fees and Shipping to CONUS is included.\nListed by: whammy (33)\nListed: 2026-06-27", "seller_username": "whammy", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.111340/", "price_num": 110.0, "date_ms": 1782518400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 6, "title": "Canpur Silver Flash and Noble DDHiFi TC44Pro", "raw_text": "submitted by /u/Feldy7888\n[link] [comments]", "seller_username": "Feldy7888", "url": "https://old.reddit.com/r/AVexchange/comments/1ugccd4/wtsusnyc_h_canpur_silver_flash_and_noble_ddhifi/#item-1", "price_num": null, "date_ms": 1782492850000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len301412_page=200:len300435_json=200:len304112", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 7, "title": "Canpur Silver Flash", "raw_text": "Canpur Silver Flash: $110", "seller_username": "Feldy7888", "url": "https://old.reddit.com/r/AVexchange/comments/1ueelzl/wtsusnyc_h_canpur_silver_flash_eletech_cartone/#item-1", "price_num": 110.0, "date_ms": 1782310227000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_sold_to_comment | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 8, "title": "Closed: Canpur Silver Flash", "raw_text": "For Sale Closed: Canpur Silver Flash Price 110.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America I may regret this later but I am letting this one move on. All the accessories are there. Price include shipping and paypal. hew Listing Apr 30, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "hew", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.108261/", "price_num": 110.0, "date_ms": 1777507200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Canpur Silver Flash", "raw_text": "For Sale Sold: Canpur Silver Flash Price 110.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Just exceptional. Had to listen. Didn't touch any accessories, including cable. I will say, my PW Audio Sonorous gave great weight to them. Not an ounce of treble harshness with that combo. I'm selling that too. Thx for looking. Mllump Listing Apr 27, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "Mllump", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.108122/", "price_num": 110.0, "date_ms": 1777248000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Canpur silver flash +", "raw_text": "Second owner of the silver flash. Bought them here and put around 40 hours on them. Missing large ear tips and one of pins is bent on the cable (I received it that way). I used a different cable and they work perfectly. I do have a extra trn black cable if you really need one.\nList of iems im looking for: S08, softears rsv mk1/mk2, thieaudio monarch mk2, dunu kima raven, mega5/7, tsmr armor\nsubmitted by /u/Antoniogoesham\n[link] [comments]", "seller_username": "Antoniogoesham", "url": "https://old.reddit.com/r/AVexchange/comments/1svup4g/wtt_usaca_h_canpur_silver_flash_paypal_w_dunu/#item-1", "price_num": null, "date_ms": 1777169211000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | auto_bundle_excluded | no_price_unchecked | reddit_search_rss_query=thieaudio monarch"}, {"row_id": 11, "title": "Sold: Canpur Silver Flash CX3-02", "raw_text": "For Sale Sold: Canpur Silver Flash CX3-02 Price 100.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Excellent condition, purchased from MusicTeck directly. Comes as pictured with original packaging and accessories. Shipping/PP included to CONUS only. Thanks for looking! Gdrock33 Listing Apr 23, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "Gdrock33", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash-cx3-02.107869/", "price_num": 100.0, "date_ms": 1776902400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Canpur silver flash (PENDING)", "raw_text": "For Sale Sold: Canpur silver flash (PENDING) Price 100.00 USD Condition Good Negotiability Firm Ships to United States of America For sale is my canpur silver flash. Excellent iem but just thinning my collection. If interested let me know. My price includes shipping within conus and PayPal fees. tink97 Listing Apr 19, 2026 Comments: 1 Category: In-Ear Monitors", "seller_username": "tink97", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash-pending.107602/", "price_num": 100.0, "date_ms": 1776556800000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Canpur Silver Flash", "raw_text": "For Sale Sold: Canpur Silver Flash Price 115.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Catch and release. Still in like new condition with all original accessories included. UnderwaterB0i Listing Apr 13, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "UnderwaterB0i", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.107273/", "price_num": 115.0, "date_ms": 1776038400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Hifiman RE2000 Pro Silver for Canpur Silver Flash", "raw_text": "For Trade Hifiman RE2000 Pro Silver for Canpur Silver Flash Price 0.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Want to trade an almost mint condition Hifiman RE2000 Pro Silver for Canpur Silver Flash. Ace Bee Listing Apr 9, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "Bee", "url": "https://www.head-fi.org/classifieds/hifiman-re2000-pro-silver-for-canpur-silver-flash.107014/", "price_num": null, "date_ms": 1775692800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "visible_card_collect_no_price_title_match_v6 | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 15, "title": "Sold: Canpur Silver Flash IEMs", "raw_text": "For Sale Sold: Canpur Silver Flash IEMs Price 100.00 USD Condition Good Negotiability Or best offer Ships to United States of America Great pair of IEMs, just downsizing my collection due to some life circumstances. They\u2019re in wonderful condition but since I\u2019m the 2nd owner, I\u2019m listing them as good. Great single DD set, very comfortable. No trades. Includes original packaging & accessories. $100 G&S, I\u2019ll cover shipping &... MillionAntz Listing Apr 9, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "MillionAntz", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash-iems.107045/", "price_num": 100.0, "date_ms": 1775692800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Canpur Silver Flash", "raw_text": "For Sale Sold: Canpur Silver Flash Price 135.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America For sale is a very gently used Canpur Silver Flash. I've worn them less than 10 hours. Everything I read about them is true but unfortunately they just don't fit my ears very well. Price includes PayPal G&S and shipping to CONUSA. Thanks. bozodidthedub Listing Apr 8, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "bozodidthedub", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.106972/", "price_num": 135.0, "date_ms": 1775606400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Canpur Silver Flash", "raw_text": "For Sale Sold: Canpur Silver Flash Price 115.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Up for sale is my *MINT* Canpur Silver Flash. All stock accessories are in the box and not used. FF & I will pay for shipping within the USA please. subguy812 Listing Apr 3, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "subguy812", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.106667/", "price_num": 115.0, "date_ms": 1775174400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: *** GIVEAWAY*** Happy Easter / Good Friday / Passover / etc. **** - Canpur Silver Flash - Single Dynamic IEM with DAC", "raw_text": "Free To Good Home Sold: *** GIVEAWAY*** Happy Easter / Good Friday / Passover / etc. **** - Canpur Silver Flash - Single Dynamic IEM with DAC Price 1.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America ...so stay tuned and HAPPY LISTENING :) Kind regards, Matt ------------------ \ud83d\udc07*** GIVEAWAY*** Happy Easter / Good Friday / Passover / - Canpur Silver Flash - Single Dynamic IEM with DAC \ud83d\udc07 I'm back with an AWESOME ONE this go round... Sold out everywhere I could see at the time I'm posting... shorelifenc Listing Apr 3, 2026 Comments: 44 Category: In-Ear Monitors", "seller_username": "shorelifenc", "url": "https://www.head-fi.org/classifieds/giveaway-happy-easter-good-friday-passover-etc-canpur-silver-flash-single-dynamic-iem-with-dac.106673/", "price_num": null, "date_ms": 1775174400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 19, "title": "Sold: Canpur Silver Flash", "raw_text": "For Sale Sold: Canpur Silver Flash Price 115.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Up for sale is the Canpur Silver Flash, it's in excellent condition and it comes with all packaging and accessories except for 1 pair of medium ear tips. Price includes fees and shipping within CONUS. KL9PZ Listing Mar 27, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "KL9PZ", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.106216/", "price_num": 115.0, "date_ms": 1774569600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Canpur Silver Flash", "raw_text": "For Sale Sold: Canpur Silver Flash Price 120.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Week old. These sound incredible but my dumbo ears aren\u2019t allowing a great seal. Comes with everything. Shipping on me. Thanks! vikinguy Listing Mar 25, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "vikinguy", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.106130/", "price_num": 120.0, "date_ms": 1774396800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Canpur Silver Flash", "raw_text": "For Sale Sold: Canpur Silver Flash Price 100.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Open box. Free shipping within the continental US. PayPal G&S / F&F or Venmo only. Thanks. ToobinTobes Listing Mar 3, 2026 Comments: 1 Category: In-Ear Monitors", "seller_username": "ToobinTobes", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.104786/", "price_num": 100.0, "date_ms": 1772496000000, "listing_status": "closed", "condition_text": "like new, excellent, open box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Closed: Canpur Silver Flash", "raw_text": "For Sale Closed: Canpur Silver Flash Price 90.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Brand new mint Canpur Silver Flash purchased directly from MusicTeck. I was mostly curious about these but don\u2019t really have a use for them. Less than 30 minutes of use total. Comes with all original packaging/accessories. Looking for $90 net to me, my price includes shipping CONUS. Feel free... AntiqueMusician Listing Feb 11, 2026 Comments: 1 Category: In-Ear Monitors", "seller_username": "AntiqueMusician", "url": "https://www.head-fi.org/classifieds/canpur-silver-flash.103572/", "price_num": 90.0, "date_ms": 1770768000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 130.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -633,6 +650,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -698,6 +759,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -705,14 +768,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -726,18 +796,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -749,13 +829,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -770,7 +851,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -815,7 +896,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -826,7 +907,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -834,11 +915,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1350,6 +1431,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

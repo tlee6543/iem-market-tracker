@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>FatFreq Scarlet Mini</h1>
+<div class="iem-title-row">
+    <h1>FatFreq Scarlet Mini</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-fatfreq.html">FatFreq</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -219,7 +236,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -530,7 +547,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "* PENDING * LIKE NEW FatFreq Scarlet Mini w/ upgrade red cable [2-pin, 4.4mm w/ modular termination]", "url": "https://www.head-fi.org/classifieds/pending-like-new-fatfreq-scarlet-mini-w-upgrade-red-cable-2-pin-4-4mm-w-modular-termination.112155/", "price_num": 550.0, "date_ms": 1783900800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "Sold: Fatfreq Scarlet Mini w/ upgrade cable", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini-w-upgrade-cable.108662/", "price_num": 500.0, "date_ms": 1778112000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Closed: FatFreq Scarlet Mini", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini.107616/", "price_num": 400.0, "date_ms": 1776556800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Fatfreq Scarlet Mini", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini.99737/", "price_num": 425.0, "date_ms": 1764892800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: FatFreq Scarlet Mini + upgrade cable + case options", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini-upgrade-cable-case-options.97165/", "price_num": 450.0, "date_ms": 1761004800000, "listing_status": "closed", "condition_text": "excellent, great condition, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: (PD) Fatfreq Scarlet Mini + Upgrade Cable", "url": "https://www.head-fi.org/classifieds/pd-fatfreq-scarlet-mini-upgrade-cable.90427/", "price_num": null, "date_ms": 1750464000000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Price Drop FatFreq Scarlet Mini w/ Silver Upgrade Cable", "url": "https://www.head-fi.org/classifieds/price-drop-fatfreq-scarlet-mini-w-silver-upgrade-cable.88466/", "price_num": 475.0, "date_ms": 1747353600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Price Drop: FatFreq Scarlet Mini w/ upgrade cable", "url": "https://www.head-fi.org/classifieds/price-drop-fatfreq-scarlet-mini-w-upgrade-cable.88282/", "price_num": 500.0, "date_ms": 1747094400000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Closed: Fatfreq Scarlet Mini", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini.80005/", "price_num": null, "date_ms": 1734480000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 9, "title": "Sold: FATFreq Scarlet Mini w/Regular cable", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini-w-regular-cable.71490/", "price_num": 425.0, "date_ms": 1721001600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: FATfreq Scarlet Mini", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini.68367/", "price_num": 800.0, "date_ms": 1716249600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 11, "title": "Closed: Fatfreq Scarlet Mini", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini.67061/", "price_num": 680.0, "date_ms": 1714348800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Price Drop: Fatfreq Scarlet Mini", "url": "https://www.head-fi.org/classifieds/price-drop-fatfreq-scarlet-mini.66530/", "price_num": 575.0, "date_ms": 1713571200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Closed: Fatfreq Scarlet Mini w/ Upgraded Silver Red Cable", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini-w-upgraded-silver-red-cable.63378/", "price_num": 700.0, "date_ms": 1708992000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: FatFreq Scarlet Mini w/ Upgraded Cable", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini-w-upgraded-cable.63055/", "price_num": 650.0, "date_ms": 1708473600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: FatFreq Scarlet Mini", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini.62110/", "price_num": 695.0, "date_ms": 1707091200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Fatfreq scarlet mini with upgraded cable", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini-with-upgraded-cable.59550/", "price_num": 695.0, "date_ms": 1703289600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Fatfreq Scarlet Mini w/ Red Silver Upgrade Cable Version (retails $799)", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini-w-red-silver-upgrade-cable-version-retails-799.110012/", "price_num": 499.0, "date_ms": null, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "* PENDING * LIKE NEW FatFreq Scarlet Mini w/ upgrade red cable [2-pin, 4.4mm w/ modular termination]", "raw_text": "* PENDING * LIKE NEW FatFreq Scarlet Mini w/ upgrade red cable [2-pin, 4.4mm w/ modular termination]\nListing ID: 112155\nFor Sale 550.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To United States Of America\nUp for sale is a set of LIKE-NEW FatFreq Scarlet Mini with upgrade silver red cable (MSRP $827) For more info about this item, please see here. Never dropped. Never handled by smokers. Pets are not allowed in the listening room. No...\nListed by: piscesyy (13)\nListed: 2026-07-13\nLast edited: 2026-07-15", "seller_username": "piscesyy", "url": "https://www.head-fi.org/classifieds/pending-like-new-fatfreq-scarlet-mini-w-upgrade-red-cable-2-pin-4-4mm-w-modular-termination.112155/", "price_num": 550.0, "date_ms": 1783900800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "Sold: Fatfreq Scarlet Mini w/ upgrade cable", "raw_text": "For Sale / Trade Sold: Fatfreq Scarlet Mini w/ upgrade cable Price 500.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America I have a pair of scarlet minis that I purchased 2 years ago at CanJam. Included is the IEMs, base cable, upgrade modular cable, all connectors, and the tips which I never used. I am looking for 500 since this includes the upgrade cable but I am open to offers and trades, if it is something I... matt11380 Listing May 7, 2026 Comments: 1 Category: In-Ear Monitors", "seller_username": "matt11380", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini-w-upgrade-cable.108662/", "price_num": 500.0, "date_ms": 1778112000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Closed: FatFreq Scarlet Mini", "raw_text": "For Sale Closed: FatFreq Scarlet Mini Price 400.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America $400 Shipped OBO - Great condition, first owner, hasn't seen much use as it's a bit too much bass for me. Comes with everything pictured HappyMachine Listing Apr 19, 2026 Comments: 2 Category: In-Ear Monitors", "seller_username": "HappyMachine", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini.107616/", "price_num": 400.0, "date_ms": 1776556800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Fatfreq Scarlet Mini", "raw_text": "For Sale Sold: Fatfreq Scarlet Mini Price 425.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Letting go of my Scarlet Mini\u2014lightly used and in great shape. Just trimming down the collection a bit. Included: Scarlet Mini IEM Upgraded cable with 3.5mm, 4.4mm and 2.5mm plugs Fatbox case Brand-new TRI Clarion tips 3pack of M Price covers USPS shipping + PayPal fees, Happy to answer any... Furiousipaduser Listing Dec 5, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Furiousipaduser", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini.99737/", "price_num": 425.0, "date_ms": 1764892800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: FatFreq Scarlet Mini + upgrade cable + case options", "raw_text": "For Sale Sold: FatFreq Scarlet Mini + upgrade cable + case options Price 450.00 USD Condition Good Negotiability Or best offer Ships to United States of America FatFreq Scarlet Mini for sale! Smoke-free, pet-free home. Well-cared for and used for very limited hours at my desk. The units themselves are in great condition. No original box or cable, but I will instead include the cable from the IO Volare (retail $73 + int'l shipping), which is an excellent... azli03 Listing Oct 21, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "azli03", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini-upgrade-cable-case-options.97165/", "price_num": 450.0, "date_ms": 1761004800000, "listing_status": "closed", "condition_text": "excellent, great condition, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: (PD) Fatfreq Scarlet Mini + Upgrade Cable", "raw_text": "For Sale / Trade Sold: (PD) Fatfreq Scarlet Mini + Upgrade Cable Price 0.00 USD Condition Good Negotiability Or best offer Ships to Anywhere Selling Scarlet Mini + Upgraded Silver Red cable. Great Condition. Beautiful Red Color IEM. Peak basshead as it has copious amounts of bass. This is for the one who loves bass. Scales well with more power. Trying on Desktop Amp unlocks better vocals, treble while retaining plenty of bass. Only... zxcero Listing Jun 21, 2025 Comments: 2 Category: In-Ear Monitors", "seller_username": "zxcero", "url": "https://www.head-fi.org/classifieds/pd-fatfreq-scarlet-mini-upgrade-cable.90427/", "price_num": null, "date_ms": 1750464000000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Price Drop FatFreq Scarlet Mini w/ Silver Upgrade Cable", "raw_text": "For Sale / Trade Closed: Price Drop FatFreq Scarlet Mini w/ Silver Upgrade Cable Price 475.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Price drop to I am the original owner - no cosmetic flaws or issues. Comes with accessories and original case. Love the set, but looking to try another basshead set. To that point, would be open to trading for HBB Punch, with a +/- on cash. Also please note: the silver upgrade cable \"L\" and \"R\"... Rand55 Listing May 16, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "Rand55", "url": "https://www.head-fi.org/classifieds/price-drop-fatfreq-scarlet-mini-w-silver-upgrade-cable.88466/", "price_num": 475.0, "date_ms": 1747353600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Price Drop: FatFreq Scarlet Mini w/ upgrade cable", "raw_text": "For Sale / Trade Sold: Price Drop: FatFreq Scarlet Mini w/ upgrade cable Price 500.00 USD Condition Good Negotiability Firm Ships to United States of America For sale are some scarlet minis in great condition. Willing to trade for a similarly valued set of IEMs. I probably have the tips in their original baggie around but not 100%. I have some other wide bore options. These have ~10 hours of use. Price includes PayPal fees and shipping to CONUS. DenverFi Listing May 13, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "DenverFi", "url": "https://www.head-fi.org/classifieds/price-drop-fatfreq-scarlet-mini-w-upgrade-cable.88282/", "price_num": 500.0, "date_ms": 1747094400000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Closed: Fatfreq Scarlet Mini", "raw_text": "For Sale / Trade Closed: Fatfreq Scarlet Mini Price 1.00 USD Condition Excellent/Like new Negotiability Firm Ships to North AmericaOceania SOLD LOCALLY IN AUSTRALIA Hey guys, For the bass heads, these cannons are your end game at a super affordable price. I really enjoyed them but realised as someone that is primarily looking for a one and done IEM, that these will have to go. If you have extra IEMS and LOVE BASS, these are it... dweee Listing Dec 18, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "dweee", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini.80005/", "price_num": null, "date_ms": 1734480000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 9, "title": "Sold: FATFreq Scarlet Mini w/Regular cable", "raw_text": "For Sale Sold: FATFreq Scarlet Mini w/Regular cable Price 425.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Bought a few weeks ago. Used once and comes with everything like new. 425 covers PayPal fees and shipping in the continental US only please. Thanks! LoverOfStax Listing Jul 15, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "LoverOfStax", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini-w-regular-cable.71490/", "price_num": 425.0, "date_ms": 1721001600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: FATfreq Scarlet Mini", "raw_text": "For Sale Sold: FATfreq Scarlet Mini Price 0.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling a pristine condition Fatfreq Scarlet Mini. All accessories as shown in photos below. Price includes DHL international shipping. This is the version with the upgrade silver red cable which retails for $800. Sajid Amit Listing May 21, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "Amit", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini.68367/", "price_num": 800.0, "date_ms": 1716249600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 11, "title": "Closed: Fatfreq Scarlet Mini", "raw_text": "For Sale Closed: Fatfreq Scarlet Mini Price 680.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Basically brand new Scarlet Minis used for a couple hours. Not my cup of tea, so here we are. QC checks out no oddities that I can hear. Includes Red cable & some free extras they gave me as well. $680 incl. fees and CONUS shipping. Will ship same day USPS Priority. Trae Listing Apr 29, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Trae", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini.67061/", "price_num": 680.0, "date_ms": 1714348800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Price Drop: Fatfreq Scarlet Mini", "raw_text": "For Sale Sold: Price Drop: Fatfreq Scarlet Mini Price 575.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling my spare pair of Fatfreq Scarlet Minis one of my friends got me a pair for my birthday so I am just selling the one I bought before. They have been taken good care of looking for $640 $620(Shipping is included for US). Also willing to sell with just default cable for $520. Sitilac Listing Apr 20, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Sitilac", "url": "https://www.head-fi.org/classifieds/price-drop-fatfreq-scarlet-mini.66530/", "price_num": 575.0, "date_ms": 1713571200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Closed: Fatfreq Scarlet Mini w/ Upgraded Silver Red Cable", "raw_text": "For Sale Closed: Fatfreq Scarlet Mini w/ Upgraded Silver Red Cable Price 700.00 USD Condition Excellent/Like new Negotiability Firm Ships to EuropeNorth America Selling the latest Fatfreq upgrade of the Maestro Mini, Scarlet Mini is the ultimate bass cannon with no bleeds in the mids. This can probably be the best iem for a lot of music lovers under $1000USD. It has all sound qualities upgraded compared to the Maestro Mini. This comes with the original... harshkamboj Listing Feb 27, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini-w-upgraded-silver-red-cable.63378/", "price_num": 700.0, "date_ms": 1708992000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: FatFreq Scarlet Mini w/ Upgraded Cable", "raw_text": "For Sale Sold: FatFreq Scarlet Mini w/ Upgraded Cable Price 650.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Looking to sell my Scarlet Minis. I received them a little over the month ago and they are excellent! Unfortunately, I keep myself to one pair of iems and I prefer my U4S as an all-rounder so these need to go. Only put about 15 hours on them total. I'll try to get some pictures up tonight... Farrellc Listing Feb 21, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Farrellc", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini-w-upgraded-cable.63055/", "price_num": 650.0, "date_ms": 1708473600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: FatFreq Scarlet Mini", "raw_text": "For Sale Sold: FatFreq Scarlet Mini Price 695.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Like new Scarlet with complete stock packaging including the red upgrade cable with switchable terminations. I let them burn in a good long while so they probably have 50 hours on them. They never left my house and are as minty as minty can be. If the pictures look familiar, it\u2019s because... Tybot Listing Feb 5, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Tybot", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini.62110/", "price_num": 695.0, "date_ms": 1707091200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Fatfreq scarlet mini with upgraded cable", "raw_text": "For Sale Sold: Fatfreq scarlet mini with upgraded cable Price 695.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America I have just received this pair in the mail after a 2 months wait. I oringinal wanted to cancel the order but they told me it was already in process so it couldn't be canceled. Here's a set you can pick up and skip the wait. I've only tried it for 10 minutes, they are practically new. It comes... Tsunzo Listing Dec 23, 2023 Comments: 2 Category: In-Ear Monitors", "seller_username": "Tsunzo", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini-with-upgraded-cable.59550/", "price_num": 695.0, "date_ms": 1703289600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Fatfreq Scarlet Mini w/ Red Silver Upgrade Cable Version (retails $799)", "raw_text": "For Sale Sold: Fatfreq Scarlet Mini w/ Red Silver Upgrade Cable Version (retails $799) Price 499.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America ...this is crazy bass with excellent resolution. But my library just does not token this kind of deep bass. https://bloomaudio.com/products/fatfreq-scarlet-mini?variant=40810970316875 Purchased brand new last week w/ the Red Silver Cable bundle (retails $799) from Bloom Audio. I still have... Adnan Firoze Listing Monday at 3:03 PM Comments: 0 Category: In-Ear Monitors", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/fatfreq-scarlet-mini-w-red-silver-upgrade-cable-version-retails-799.110012/", "price_num": 499.0, "date_ms": null, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 800.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -553,6 +570,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -618,6 +679,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -625,14 +688,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -646,18 +716,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -669,13 +749,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -690,7 +771,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -735,7 +816,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -746,7 +827,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -754,11 +835,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1270,6 +1351,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

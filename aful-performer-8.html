@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>Aful Performer 8</h1>
+<div class="iem-title-row">
+    <h1>Aful Performer 8</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-aful.html">Aful</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -219,7 +236,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -514,7 +531,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Closed: AFUL Performer 8", "url": "https://www.head-fi.org/classifieds/aful-performer-8.103567/", "price_num": 180.0, "date_ms": 1770768000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Sold: Aful Performer 8", "url": "https://www.head-fi.org/classifieds/aful-performer-8.89374/", "price_num": 239.0, "date_ms": 1748736000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Closed: AFUL Performer 8", "url": "https://www.head-fi.org/classifieds/aful-performer-8.82956/", "price_num": 250.0, "date_ms": 1738886400000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Aful Performer 8", "url": "https://www.head-fi.org/classifieds/aful-performer-8.82219/", "price_num": 200.0, "date_ms": 1737763200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: AFUL Performer 8", "url": "https://www.head-fi.org/classifieds/aful-performer-8.77337/", "price_num": 195.0, "date_ms": 1730332800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Closed: AFUL Performer 8 IEM , 8 1DD + 7BA Driver In-Ear Monitors , MINT P8!", "url": "https://www.head-fi.org/classifieds/aful-performer-8-iem-8-1dd-7ba-driver-in-ear-monitors-mint-p8.76741/", "price_num": 275.0, "date_ms": 1729382400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Aful Performer 8 IEMs", "url": "https://www.head-fi.org/classifieds/aful-performer-8-iems.72837/", "price_num": 300.0, "date_ms": 1723075200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Aful Performer 8", "url": "https://www.head-fi.org/classifieds/aful-performer-8.69819/", "price_num": 260.0, "date_ms": 1718409600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Closed: SOLD AFUL Performer 8 extras", "url": "https://www.head-fi.org/classifieds/sold-aful-performer-8-extras.66256/", "price_num": 300.0, "date_ms": 1713139200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Aful Performer 8", "url": "https://www.head-fi.org/classifieds/aful-performer-8.64697/", "price_num": 270.0, "date_ms": 1710892800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: AFUL Performer 8", "url": "https://www.head-fi.org/classifieds/aful-performer-8.60865/", "price_num": 235.0, "date_ms": 1705363200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Aful Performer 8", "url": "https://www.head-fi.org/classifieds/aful-performer-8.58794/", "price_num": 285.0, "date_ms": 1701993600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Aful Performer 8, BQEYZ Autumn, Ivipq Conch v12", "url": "https://www.head-fi.org/classifieds/aful-performer-8-bqeyz-autumn-ivipq-conch-v12.56290/", "price_num": null, "date_ms": 1697760000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 13, "title": "Closed: Aful Performer 8", "url": "https://www.head-fi.org/classifieds/aful-performer-8.54835/", "price_num": 310.0, "date_ms": 1695427200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: SOLD: Aful Performer 8 **Price Reduced", "url": "https://www.head-fi.org/classifieds/sold-aful-performer-8-price-reduced.53493/", "price_num": 275.0, "date_ms": 1693353600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Traded: Aful Performer 8", "url": "https://www.head-fi.org/classifieds/aful-performer-8.50143/", "price_num": 340.0, "date_ms": 1688083200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Closed: WTT: Aur Audio Aurora for Aful Performer 8", "url": "https://www.head-fi.org/classifieds/wtt-aur-audio-aurora-for-aful-performer-8.49703/", "price_num": 125.0, "date_ms": 1687305600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Closed: AFUL Performer 8", "raw_text": "For Sale Closed: AFUL Performer 8 Price 180.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere For sale are the AFUL Performer 8 IEMs. One of my favorite IEMs, but I'm upgrading to the 8S so these have to go. Excellent condition, works perfectly. Comes with box and all accessories. Ships worldwide from Singapore. Shipping fee to most countries should be relatively affordable (<25USD)... yellowbirdfly Listing Feb 11, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "yellowbirdfly", "url": "https://www.head-fi.org/classifieds/aful-performer-8.103567/", "price_num": 180.0, "date_ms": 1770768000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Sold: Aful Performer 8", "raw_text": "For Sale Sold: Aful Performer 8 Price 239.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Aful Performer 8, like new condition. Comes with original box and accessories. Fees and shipping in the US included in price. Willing to ship overseas but would cost extra. Please let me know if you have any questions. Rooster81 Listing Jun 1, 2025 Comments: 3 Category: In-Ear Monitors", "seller_username": "Rooster81", "url": "https://www.head-fi.org/classifieds/aful-performer-8.89374/", "price_num": 239.0, "date_ms": 1748736000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Closed: AFUL Performer 8", "raw_text": "For Sale Closed: AFUL Performer 8 Price 250.00 USD Condition Good Negotiability Firm Ships to United States of America ...as much anymore. In good condition, no noticeable scratches or markings. It does not include the original leather case but comes with a metal AFUL puck case. includes original cable (3.5mm) Includes all original tips except for any S sizes. price does not include shipping or G+S fees. DM for... Chaotic Listing Feb 7, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Chaotic", "url": "https://www.head-fi.org/classifieds/aful-performer-8.82956/", "price_num": 250.0, "date_ms": 1738886400000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Aful Performer 8", "raw_text": "For Sale Sold: Aful Performer 8 Price 200.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America In excellent condition. Comes with original accessories and packaging. Price includes standard shipping CONUS. Audio-In Listing Jan 25, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "Audio-In", "url": "https://www.head-fi.org/classifieds/aful-performer-8.82219/", "price_num": 200.0, "date_ms": 1737763200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: AFUL Performer 8", "raw_text": "For Sale Sold: AFUL Performer 8 Price 195.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Original owner with about 100 hours on them, just getting burned in. Comes with original box and case, 4.4mm cable, and original tips. Selling because I have too many IEM\u2019s and only 2 ears. These sound great but I have a couple of others I like better. Free shipping in the states and pp fees... trojan2900 Listing Oct 31, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "trojan2900", "url": "https://www.head-fi.org/classifieds/aful-performer-8.77337/", "price_num": 195.0, "date_ms": 1730332800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Closed: AFUL Performer 8 IEM , 8 1DD + 7BA Driver In-Ear Monitors , MINT P8!", "raw_text": "For Sale Closed: AFUL Performer 8 IEM , 8 1DD + 7BA Driver In-Ear Monitors , MINT P8! Price 275.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America It\u2019s hard to let this IEM go as it is currently my only one and was my end game set... Try as I might, I have come to the unfortunate conclusion that I cannot wear IEMs comfortably anymore. It is a gem of an IEM for sure, just slightly colored but mostly faithful leaning towards a studio level... RBRIII Listing Oct 20, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "RBRIII", "url": "https://www.head-fi.org/classifieds/aful-performer-8-iem-8-1dd-7ba-driver-in-ear-monitors-mint-p8.76741/", "price_num": 275.0, "date_ms": 1729382400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Aful Performer 8 IEMs", "raw_text": "For Sale Closed: Aful Performer 8 IEMs Price 300.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Just bought an Abyss 1266 Phi TC so I am offloading a bunch of my gear that I just don\u2019t use. Excellent/like new condition. Wonderful sounding IEMs. No trades please, PayPal preferred. Thank you for viewing this! MillionAntz Listing Aug 8, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "MillionAntz", "url": "https://www.head-fi.org/classifieds/aful-performer-8-iems.72837/", "price_num": 300.0, "date_ms": 1723075200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Aful Performer 8", "raw_text": "For Sale / Trade Sold: Aful Performer 8 Price 260.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Price includes PayPal fees and USPS Priority shipping to anywhere in the US! I don't ship internationally, so please don't respond if you'd want this item shipped outside the US. Catch and release for this set of IEMs, They're in excellent condition and I personally used them for less than 5... GiveYouFire Listing Jun 15, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "GiveYouFire", "url": "https://www.head-fi.org/classifieds/aful-performer-8.69819/", "price_num": 260.0, "date_ms": 1718409600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Closed: SOLD AFUL Performer 8 extras", "raw_text": "For Sale Closed: SOLD AFUL Performer 8 extras Price 300.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Sold somewhere else 4/15/24 These are 2 months old. I haven't used them as much as I thought I would. Price includes: -Stock 4.4 cable & tip kit -Tripowin modular cable -The other tips were only worn for a few minutes to check fit. The CP100 are unused. The DUNU kit is size S,M,L US shipping... jclyle Listing Apr 15, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "jclyle", "url": "https://www.head-fi.org/classifieds/sold-aful-performer-8-extras.66256/", "price_num": 300.0, "date_ms": 1713139200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Aful Performer 8", "raw_text": "For Sale Sold: Aful Performer 8 Price 270.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Aful Performer 8: Purchased from Aliexpress towards the end of last year. intended to use it as my daily driver, but I'm just not picking it up enough to justify keeping it. Comes with everything originally included, cable, box, tips, etc.. SOLD Zeno26 Listing Mar 20, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Zeno26", "url": "https://www.head-fi.org/classifieds/aful-performer-8.64697/", "price_num": 270.0, "date_ms": 1710892800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: AFUL Performer 8", "raw_text": "For Sale Sold: AFUL Performer 8 Price 235.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Stellar condition. They sound great, but I have better and I\u2019m paring down my collection. Comes with original case, cable and tips. No box. Free shipping in the states and pp fees are on me. trojan2900 Listing Jan 16, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "trojan2900", "url": "https://www.head-fi.org/classifieds/aful-performer-8.60865/", "price_num": 235.0, "date_ms": 1705363200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Aful Performer 8", "raw_text": "For Sale Sold: Aful Performer 8 Price 285.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Aful Performer 8 in excellent condition. Barely used because I have two pairs. I got these for my wife to use on stage, but she ended up using Performer 5's instead. Comes with everything. Price includes shipping CONUS. Audio-In Listing Dec 8, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "Audio-In", "url": "https://www.head-fi.org/classifieds/aful-performer-8.58794/", "price_num": 285.0, "date_ms": 1701993600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Aful Performer 8, BQEYZ Autumn, Ivipq Conch v12", "raw_text": "For Sale / Trade Sold: Aful Performer 8, BQEYZ Autumn, Ivipq Conch v12 Price 1.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Hey! Thanks for looking at my listing! Here are details: Aful Performer 8: everything included in box. 315$ lvipq Conch V12:115$ everything included. BQEYZ Autumn:85$ only iems and magnetic tunings included I ALSO HAVE A ATTICUS FOR TRADE, SEE PREVIOUS LISTING IF INTERESTED lems I'm... User650 Listing Oct 20, 2023 Comments: 3 Category: In-Ear Monitors", "seller_username": "User650", "url": "https://www.head-fi.org/classifieds/aful-performer-8-bqeyz-autumn-ivipq-conch-v12.56290/", "price_num": null, "date_ms": 1697760000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 13, "title": "Closed: Aful Performer 8", "raw_text": "For Sale Closed: Aful Performer 8 Price 310.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Was struggling to decide if I should keep this set, since I really like how vocal and instrumental performances sound on it, but I just recently acquired the QDC Gemini, which shares a similar sound signature, and I ended up preferring the Gemini. Comes with all original contents and packaging... Zeno26 Listing Sep 23, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "Zeno26", "url": "https://www.head-fi.org/classifieds/aful-performer-8.54835/", "price_num": 310.0, "date_ms": 1695427200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: SOLD: Aful Performer 8 **Price Reduced", "raw_text": "For Sale Sold: SOLD: Aful Performer 8 **Price Reduced Price 275.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Mint Performer 8 for sale. Going to try the Kiwi Quintet now with these proceeds. All accesories and original packaging. szore Listing Aug 30, 2023 Comments: 3 Category: In-Ear Monitors", "seller_username": "szore", "url": "https://www.head-fi.org/classifieds/sold-aful-performer-8-price-reduced.53493/", "price_num": 275.0, "date_ms": 1693353600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Traded: Aful Performer 8", "raw_text": "For Sale / Trade Traded: Aful Performer 8 Price 340.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Looking to trade my mint condition Performer 8. Looking to trade for Mangrid Tea 2. Bought new from HifiGo in early/middle of June. Only listened to for around 2 hours. Did not use any tips or the cable as well. So all accessories are not used. Comes with all original packaging. Thanks,Chris ctjacks336 Listing Jun 30, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "ctjacks336", "url": "https://www.head-fi.org/classifieds/aful-performer-8.50143/", "price_num": 340.0, "date_ms": 1688083200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Closed: WTT: Aur Audio Aurora for Aful Performer 8", "raw_text": "For Trade Closed: WTT: Aur Audio Aurora for Aful Performer 8 Price 0.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Want to trade my just received Aur Aurora, for a set of Performer 8 (+ around $125 to me). PM me if this sounds like something you want to do! cn11 Listing Jun 21, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "cn11", "url": "https://www.head-fi.org/classifieds/wtt-aur-audio-aurora-for-aful-performer-8.49703/", "price_num": 125.0, "date_ms": 1687305600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 370.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -537,6 +554,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -602,6 +663,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -609,14 +672,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -630,18 +700,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -653,13 +733,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -674,7 +755,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -719,7 +800,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -730,7 +811,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -738,11 +819,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1254,6 +1335,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

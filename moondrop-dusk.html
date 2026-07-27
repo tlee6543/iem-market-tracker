@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>Moondrop Dusk</h1>
+<div class="iem-title-row">
+    <h1>Moondrop Dusk</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-moondrop.html">Moondrop</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -217,7 +234,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -335,7 +352,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "moondrop dusk, TGXear serratus, ifi hipdac, schiit magni+modi and more", "url": "https://old.reddit.com/r/AVexchange/comments/1v5co35/wts_usatx_h_moondrop_dusk_tgxear_serratus_ifi/#item-1", "price_num": null, "date_ms": 1784902582000, "listing_status": "unknown", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked"}, {"row_id": 1, "title": "Moondrop x Crinacle DUSK", "url": "https://old.reddit.com/r/AVexchange/comments/1v45668/wts_usaca_h_moondrop_x_crinacle_dusk_w_paypal/#item-1", "price_num": 265.0, "date_ms": 1784786368000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8500_json=403:len189908", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 2, "title": "Moondrop x Crinacle Dusk", "url": "https://old.reddit.com/r/AVexchange/comments/1uxki87/wts_usaca_h_moondrop_x_crinacle_dusk_w_paypal/#item-1", "price_num": 260.0, "date_ms": 1784154350000, "listing_status": "active", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len300336_page=200:len303272_json=200:len303505", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 3, "title": "Moondrop x Crinacle DUSK", "url": "https://old.reddit.com/r/AVexchange/comments/1uj221j/wts_usaca_h_sennheiser_hdb_630_wireless_moondrop/#item-2", "price_num": 290.0, "date_ms": 1782760751000, "listing_status": "closed", "condition_text": "4/5", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v13_item_level_sold_and_strikethrough_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 4, "title": "Closed: Moondrop Dusk", "url": "https://www.head-fi.org/classifieds/moondrop-dusk.82037/", "price_num": 250.0, "date_ms": 1737504000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Closed: Moondrop Dusk Blessing 2 - Shipped", "url": "https://www.head-fi.org/classifieds/moondrop-dusk-blessing-2-shipped.39656/", "price_num": 270.0, "date_ms": 1673568000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "moondrop dusk, TGXear serratus, ifi hipdac, schiit magni+modi and more", "raw_text": "Doing some reduction in my headphones collection, dacs amps etc. All prices are shipped USA only.\n__STRIKE_START__ Moondrop x Crinnacle dusk (dsp cable included). They sound great I just never use them. Second owner, light use. They come with box and papers, tips, usb c and 3.5mm cables, zipper pouch. 250 shipped. __STRIKE_END__ SOLD\nIfi hipdac (1st gen). First owner, light signs of use. Comes with box, papers etc. Great little dac/amp combo, I bought it for the 4.4mm balanced output but no longer need it. 50 shipped. PENDING\n__STRIKE_START__ Schiit audio magni+modi dac amp combo. Second owner, light use comes with power adapter and rca cables. Great little stack, no use for it though. 75 shipped. __STRIKE_END__ SOLD\nHiBy fc4 usb c dongle. Has 3.5mm and 4.4mm balanced output. First owner, comes with c to c cable. No box 40 shipped.\n__STRIKE_START__ TGXear serratus. Terminated in 4.4mm balanced connector. Second owner, comes with zipper pouch and foams. Limited use. These sound fantastic and are almost end game level for flat earbuds. 100 shipped. __STRIKE_END__ SOLD\n__STRIKE_START__ Koss kph40 first owner light use. Wasn\u2019t my jam. No box. 20 shipped or 10 with another purchase. __STRIKE_END__ SOLD\nRikkubuds lancer. 3.5mm. Second owner, in great shape. Also a fantastic flat head with bass emphasis. Comes with zipper pouch and foams. 50 shipped.\nRandom 3.5mm to 2.5mm headphones cable. Bought these for some old hifimans but never used it. 10 shipped or free with another purchase if still available just ask for it.\nThanks for looking!\nsubmitted by /u/chance_of_grain\n[link] [comments]", "seller_username": "chance_of_grain", "url": "https://old.reddit.com/r/AVexchange/comments/1v5co35/wts_usatx_h_moondrop_dusk_tgxear_serratus_ifi/#item-1", "price_num": null, "date_ms": 1784902582000, "listing_status": "unknown", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked"}, {"row_id": 1, "title": "Moondrop x Crinacle DUSK", "raw_text": "Timestamp: https://imgur.com/a/duskxcrinacle-pWpKWUG\nOriginal owner.\nSelling my Moondrop x Crinacle DUSK. These were purchased new and have seen very little use. They're in excellent cosmetic and working condition.\nIncludes everything that originally came in the box:\n\u2022 DUSK IEMs\n\u2022 USB-C DSP cable\n\u2022 3.5mm cable\n\u2022 Carrying case\n\u2022 All original eartips\n\u2022 Original box and packaging\nLooking for $265 shipped within CONUS via PayPal G&S.\nPlease comment before PM. Thanks!\nsubmitted by /u/taromeister\n[link] [comments]", "seller_username": "taromeister", "url": "https://old.reddit.com/r/AVexchange/comments/1v45668/wts_usaca_h_moondrop_x_crinacle_dusk_w_paypal/#item-1", "price_num": 265.0, "date_ms": 1784786368000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8500_json=403:len189908", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 2, "title": "Moondrop x Crinacle Dusk", "raw_text": "timestamp\nSecond owner of this set. Comes with the original box, cables, carry case, and a new set of small and medium Moondrop spring tips. The previous owner used the medium ones and I used the small ones for a bit. Not my favorite eartip but they are stock so it's what was intended.\nAsking $260 Shipped within the US G&S\nsubmitted by /u/ToushiroHikaru\n[link] [comments]", "seller_username": "ToushiroHikaru", "url": "https://old.reddit.com/r/AVexchange/comments/1uxki87/wts_usaca_h_moondrop_x_crinacle_dusk_w_paypal/#item-1", "price_num": 260.0, "date_ms": 1784154350000, "listing_status": "active", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len300336_page=200:len303272_json=200:len303505", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 3, "title": "Moondrop x Crinacle DUSK", "raw_text": "Moondrop x Crinacle DUSK Price: $290 shipped (CONUS)\nExcellent condition 4/5\nMy main IEMs for both gaming and music\nCan tune extremely well and have been a joy to use\nIncludes everything that originally came in the box\nOriginal ear tips that came with iem's are unused\nPayment / Shipping\nPayPal G&S\nPrices include shipping within the continental US\nFeel free to PM with any questions or for additional photos.\nThanks for looking!\nsubmitted by /u/Koufiii\n[link] [comments]", "seller_username": "Koufiii", "url": "https://old.reddit.com/r/AVexchange/comments/1uj221j/wts_usaca_h_sennheiser_hdb_630_wireless_moondrop/#item-2", "price_num": 290.0, "date_ms": 1782760751000, "listing_status": "closed", "condition_text": "4/5", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v13_item_level_sold_and_strikethrough_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 4, "title": "Closed: Moondrop Dusk", "raw_text": "For Sale Closed: Moondrop Dusk Price 250.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Bought just a couple weeks ago off Amazon, then bought a variations off a good deal last week. Comes with everything stock. KyleWithAK Listing Jan 22, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "KyleWithAK", "url": "https://www.head-fi.org/classifieds/moondrop-dusk.82037/", "price_num": 250.0, "date_ms": 1737504000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Closed: Moondrop Dusk Blessing 2 - Shipped", "raw_text": "For Sale Closed: Moondrop Dusk Blessing 2 - Shipped Price 270.00 USD Condition Good Negotiability Firm Ships to United States of America No box. Second owner (as far as I know.) Comes with case - no foam insert; 6 pairs of tips; cable; airline adapter; 6x filters and tweezers (for application). Price includes US shipping via USPS. Photos imackler Listing Jan 13, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "imackler", "url": "https://www.head-fi.org/classifieds/moondrop-dusk-blessing-2-shipped.39656/", "price_num": 270.0, "date_ms": 1673568000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -358,6 +375,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -423,6 +484,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -430,14 +493,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -451,18 +521,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -474,13 +554,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -495,7 +576,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -540,7 +621,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -551,7 +632,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -559,11 +640,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1075,6 +1156,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

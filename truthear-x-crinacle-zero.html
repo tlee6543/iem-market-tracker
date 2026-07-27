@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>Truthear x Crinacle Zero</h1>
+<div class="iem-title-row">
+    <h1>Truthear x Crinacle Zero</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-truthear.html">Truthear</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -217,7 +234,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -591,7 +608,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Truthear Zero Red", "url": "https://old.reddit.com/r/AVexchange/comments/1upcfnt/wts_usapa_h_truthear_zero_red_w_30_paypal/#item-1", "price_num": 30.0, "date_ms": 1783376969000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 1, "title": "\u25cf Truthear Zero Red - No box or stock accessories. Comes with XINHS H04 4.4mm cable.", "url": "https://old.reddit.com/r/AVexchange/comments/1ufcs8k/wtsuscah_iems_and_cables_w_paypalvenmo/#item-3", "price_num": 20.0, "date_ms": 1782400245000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len100898_json=403:len189908", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | auto_bundle_excluded"}, {"row_id": 2, "title": "Truthear Zero Red - 3.5mm cable", "url": "https://old.reddit.com/r/AVexchange/comments/1uaf14v/wtsusasch_kiwi_ears_punch_thieaudio_hype4/#item-7", "price_num": 45.0, "date_ms": 1781906366000, "listing_status": "unknown", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked"}, {"row_id": 3, "title": "Truthear Zero:BLUE 2", "url": "https://old.reddit.com/r/AVexchange/comments/1s2uzmv/wts_usawa_h_focal_azurys_hadenys_hifiman_edition/#item-14", "price_num": 40.0, "date_ms": 1774396815000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=truthears"}, {"row_id": 4, "title": "Truthear Zero:RED", "url": "https://old.reddit.com/r/AVexchange/comments/1s2uzmv/wts_usawa_h_focal_azurys_hadenys_hifiman_edition/#item-13", "price_num": 40.0, "date_ms": 1774396815000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=truthears | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Sold: (Pending Sale) Truthear Zero Blue Original", "url": "https://www.head-fi.org/classifieds/pending-sale-truthear-zero-blue-original.101137/", "price_num": 28.0, "date_ms": 1767225600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: PRICE DROP - 3 IEM lot: Truthear Zero Red; TinHifi T3 Plus; Artti R3 + HiBy FC3 DAC!", "url": "https://www.head-fi.org/classifieds/price-drop-3-iem-lot-truthear-zero-red-tinhifi-t3-plus-artti-r3-hiby-fc3-dac.94911/", "price_num": 90.0, "date_ms": 1757635200000, "listing_status": "closed", "condition_text": "like new, excellent, used, open box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_high_outlier_70pct_above_median_median_40.0_cutoff_68.0"}, {"row_id": 7, "title": "Truthear Zero:BLUE 2", "url": "https://old.reddit.com/r/AVexchange/comments/1ndysgw/wts_usawa_h_focal_azurys_hifiman_edition_xs/#item-16", "price_num": 50.0, "date_ms": 1757562421000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears"}, {"row_id": 8, "title": "Truthear Zero:RED", "url": "https://old.reddit.com/r/AVexchange/comments/1ndysgw/wts_usawa_h_focal_azurys_hifiman_edition_xs/#item-15", "price_num": 50.0, "date_ms": 1757562421000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 9, "title": "Truthear Zero Red", "url": "https://old.reddit.com/r/AVexchange/comments/1n6wnfo/wts_usnj_h_a_bunch_of_iems_timeless_ae_heyday_s12/#item-9", "price_num": 40.0, "date_ms": 1756849628000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears"}, {"row_id": 10, "title": "Closed: Truthear x Crinacle ZERO", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero.84923/", "price_num": 30.0, "date_ms": 1741996800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Truthear Zero Red, Salnotes Zero 2, KZ PR2", "url": "https://www.head-fi.org/classifieds/truthear-zero-red-salnotes-zero-2-kz-pr2.76266/", "price_num": 40.0, "date_ms": 1728604800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Closed: IEM sale - Simgot EA500 | KZ x HBB PR2 | Truthear x crinacle Zero | TRN MT1", "url": "https://www.head-fi.org/classifieds/iem-sale-simgot-ea500-kz-x-hbb-pr2-truthear-x-crinacle-zero-trn-mt1.64944/", "price_num": 57.0, "date_ms": 1711238400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: TRUTHEAR x Crinacle Zero", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero.64268/", "price_num": 29.0, "date_ms": 1710288000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: TRUTHEAR x Crinacle Zero Earphone Dual Dynamic Drivers in-Ear Earphone with 0.78 2Pin Cable Earbuds", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero-earphone-dual-dynamic-drivers-in-ear-earphone-with-0-78-2pin-cable-earbuds.63102/", "price_num": 30.0, "date_ms": 1708560000000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: TRUTHEAR x Crinacle Zero Earphone Dual Dynamic Drivers in-Ear Earphone with 0.78 2Pin Cable Earbuds (Zero)", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero-earphone-dual-dynamic-drivers-in-ear-earphone-with-0-78-2pin-cable-earbuds-zero.60117/", "price_num": 30.0, "date_ms": 1704326400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Truthear X Crinacle Zero", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero.52730/", "price_num": 35.0, "date_ms": 1692144000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Truthear X Crinacle Zero", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero.52592/", "price_num": 25.0, "date_ms": 1691971200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 18, "title": "Sold: Truthear Zero", "url": "https://www.head-fi.org/classifieds/truthear-zero.52366/", "price_num": 38.0, "date_ms": 1691625600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Traded: Truthear Zero IEMs, BLON BL03, Smabat ST-10", "url": "https://www.head-fi.org/classifieds/truthear-zero-iems-blon-bl03-smabat-st-10.41451/", "price_num": 65.0, "date_ms": 1675987200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Closed: Truthear Zero", "url": "https://www.head-fi.org/classifieds/truthear-zero.32254/", "price_num": 35.0, "date_ms": 1662163200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Truthear x Crinacle Zero [SOLD]", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero-sold.30765/", "price_num": 40.0, "date_ms": 1660003200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Truthear Zero Red", "raw_text": "Selling my Truthear Zero Red. They work normally and weren't used for a long time, so I\u2019d rather pass them on to someone else to enjoy.\nIncluded:\nWorking Truthear Zero Red set\nAll original accessories except insert card and foam tips\nExtra right unit with a chipped/broken nozzle. Included as-is as a free spare, not part of the working set\nCable ear hooks are slightly warped as they have been sitting in the pouch unused for months. I also have a few unused spare tips that I'd be willing to throw in for free.\nAsking $30 shipped PayPal, CONUS.\nsubmitted by /u/blr__\n[link] [comments]", "seller_username": "blr__", "url": "https://old.reddit.com/r/AVexchange/comments/1upcfnt/wts_usapa_h_truthear_zero_red_w_30_paypal/#item-1", "price_num": 30.0, "date_ms": 1783376969000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 1, "title": "\u25cf Truthear Zero Red - No box or stock accessories. Comes with XINHS H04 4.4mm cable.", "raw_text": "\u25cf Truthear Zero Red - No box or stock accessories. Comes with XINHS H04 4.4mm cable. $20. SOLD", "seller_username": "thaslaya", "url": "https://old.reddit.com/r/AVexchange/comments/1ufcs8k/wtsuscah_iems_and_cables_w_paypalvenmo/#item-3", "price_num": 20.0, "date_ms": 1782400245000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len100898_json=403:len189908", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | auto_bundle_excluded"}, {"row_id": 2, "title": "Truthear Zero Red - 3.5mm cable", "raw_text": "Truthear Zero Red - 3.5mm cable $45\n10mm DD / 7.8mm DD includes impedance adapter *sale pending*", "seller_username": "Guns_n_gains", "url": "https://old.reddit.com/r/AVexchange/comments/1uaf14v/wtsusasch_kiwi_ears_punch_thieaudio_hype4/#item-7", "price_num": 45.0, "date_ms": 1781906366000, "listing_status": "unknown", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked"}, {"row_id": 3, "title": "Truthear Zero:BLUE 2", "raw_text": "Truthear Zero:BLUE 2 , $40, box and accessories (minus the tips I used). Like new; less than 30 hours of use. Customized dry case for an extra $5 (just to cover extra shipping).\nCCA CRA. I'll throw these in with any other purchase if you want them.\nDACs/Amps:", "seller_username": "Daemonxar", "url": "https://old.reddit.com/r/AVexchange/comments/1s2uzmv/wts_usawa_h_focal_azurys_hadenys_hifiman_edition/#item-14", "price_num": 40.0, "date_ms": 1774396815000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=truthears"}, {"row_id": 4, "title": "Truthear Zero:RED", "raw_text": "Truthear Zero:RED , $40, box and accessories (minus the tips I used). Like new; less than 30 hours of use. Customized dry case for an extra $5 (just to cover extra shipping).", "seller_username": "Daemonxar", "url": "https://old.reddit.com/r/AVexchange/comments/1s2uzmv/wts_usawa_h_focal_azurys_hadenys_hifiman_edition/#item-13", "price_num": 40.0, "date_ms": 1774396815000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=truthears | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Sold: (Pending Sale) Truthear Zero Blue Original", "raw_text": "For Sale Sold: (Pending Sale) Truthear Zero Blue Original Price 28.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Like New condition. Used only once or twice. Comes with original cable and case. Missing eartips. I'll cover fees and shipping to conus. Makiro Listing Jan 1, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "Makiro", "url": "https://www.head-fi.org/classifieds/pending-sale-truthear-zero-blue-original.101137/", "price_num": 28.0, "date_ms": 1767225600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: PRICE DROP - 3 IEM lot: Truthear Zero Red; TinHifi T3 Plus; Artti R3 + HiBy FC3 DAC!", "raw_text": "For Sale Closed: PRICE DROP - 3 IEM lot: Truthear Zero Red; TinHifi T3 Plus; Artti R3 + HiBy FC3 DAC! Price 90.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America 3 IEMs, sold as set/lot. Zero Red - All original equipment and accessories included,: all sealed original ear tips; mesh filters; cable and optional impedance adapter (to tune for increased bass). Open box, tested, just like new! Tin T3 Plus, and Artti R3 Very lightly used. Perfect cosmetic... ErikEars Listing Sep 12, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "ErikEars", "url": "https://www.head-fi.org/classifieds/price-drop-3-iem-lot-truthear-zero-red-tinhifi-t3-plus-artti-r3-hiby-fc3-dac.94911/", "price_num": 90.0, "date_ms": 1757635200000, "listing_status": "closed", "condition_text": "like new, excellent, used, open box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_high_outlier_70pct_above_median_median_40.0_cutoff_68.0"}, {"row_id": 7, "title": "Truthear Zero:BLUE 2", "raw_text": "Truthear Zero:BLUE 2 , $50, box and accessories (minus the tips I used). Like new; less than 30 hours of use. Customized dry case for an extra $5 (just to cover extra shipping).", "seller_username": "Daemonxar", "url": "https://old.reddit.com/r/AVexchange/comments/1ndysgw/wts_usawa_h_focal_azurys_hifiman_edition_xs/#item-16", "price_num": 50.0, "date_ms": 1757562421000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears"}, {"row_id": 8, "title": "Truthear Zero:RED", "raw_text": "Truthear Zero:RED , $50, box and accessories (minus the tips I used). Like new; less than 30 hours of use. Customized dry case for an extra $5 (just to cover extra shipping).", "seller_username": "Daemonxar", "url": "https://old.reddit.com/r/AVexchange/comments/1ndysgw/wts_usawa_h_focal_azurys_hifiman_edition_xs/#item-15", "price_num": 50.0, "date_ms": 1757562421000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 9, "title": "Truthear Zero Red", "raw_text": "Truthear Zero Red - $40 SOLD", "seller_username": "Traxaber", "url": "https://old.reddit.com/r/AVexchange/comments/1n6wnfo/wts_usnj_h_a_bunch_of_iems_timeless_ae_heyday_s12/#item-9", "price_num": 40.0, "date_ms": 1756849628000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears"}, {"row_id": 10, "title": "Closed: Truthear x Crinacle ZERO", "raw_text": "For Sale Closed: Truthear x Crinacle ZERO Price 30.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling my Truthear x Crinacle ZERO IEMs with original packaging and accessories. They are in excellent condition and have been used for under 30 minutes. Price includes shipping to CONUS. Four Kneez Listing Mar 15, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Kneez", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero.84923/", "price_num": 30.0, "date_ms": 1741996800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Truthear Zero Red, Salnotes Zero 2, KZ PR2", "raw_text": "For Sale Sold: Truthear Zero Red, Salnotes Zero 2, KZ PR2 Price 40.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Sold to @mere11di Selling a bundle. Everything is complete and in great condition. Zero 2 is brand new sealed in plastic wrap. Take off $10 if you don't want this one. Price includes CONUS shipping. msing539 Listing Oct 11, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "msing539", "url": "https://www.head-fi.org/classifieds/truthear-zero-red-salnotes-zero-2-kz-pr2.76266/", "price_num": 40.0, "date_ms": 1728604800000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Closed: IEM sale - Simgot EA500 | KZ x HBB PR2 | Truthear x crinacle Zero | TRN MT1", "raw_text": "For Sale Closed: IEM sale - Simgot EA500 | KZ x HBB PR2 | Truthear x crinacle Zero | TRN MT1 Price 1.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America ...PayPal Goods and Services fee and shipping to CONUS. These iems were used for 2 hours max and includes original box and accessories. SOLD Simgot EA500 Price: $57 Album : https://imgur.com/a/KUbmY7v TRN MT1 Price: $10 Album : https://imgur.com/a/wJVpSLu KZ x HBB PR2 Price: $30 Album ... Jawsq Listing Mar 24, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "Jawsq", "url": "https://www.head-fi.org/classifieds/iem-sale-simgot-ea500-kz-x-hbb-pr2-truthear-x-crinacle-zero-trn-mt1.64944/", "price_num": 57.0, "date_ms": 1711238400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: TRUTHEAR x Crinacle Zero", "raw_text": "For Sale Sold: TRUTHEAR x Crinacle Zero Price 29.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America These sound insanely good for the price, but I do have better, so these can go. Comes with its box, carry pouch and original tips. Free shipping in the states and pp fees are on me. trojan2900 Listing Mar 13, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "trojan2900", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero.64268/", "price_num": 29.0, "date_ms": 1710288000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: TRUTHEAR x Crinacle Zero Earphone Dual Dynamic Drivers in-Ear Earphone with 0.78 2Pin Cable Earbuds", "raw_text": "For Sale Sold: TRUTHEAR x Crinacle Zero Earphone Dual Dynamic Drivers in-Ear Earphone with 0.78 2Pin Cable Earbuds Price 30.00 USD Condition Good Negotiability Or best offer Ships to United States of America ** Sold ** Selling a used pair of ZERO IEMs. Includes, everything except for a few tips that were used by prior owner. Asking $30 shipped USA. No trades please. qua2k Listing Feb 22, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "qua2k", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero-earphone-dual-dynamic-drivers-in-ear-earphone-with-0-78-2pin-cable-earbuds.63102/", "price_num": 30.0, "date_ms": 1708560000000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: TRUTHEAR x Crinacle Zero Earphone Dual Dynamic Drivers in-Ear Earphone with 0.78 2Pin Cable Earbuds (Zero)", "raw_text": "For Sale Sold: TRUTHEAR x Crinacle Zero Earphone Dual Dynamic Drivers in-Ear Earphone with 0.78 2Pin Cable Earbuds (Zero) Price 30.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America ...IEMs. They match the HARMAN target, which is desirable for many. I'm selling these: https://www.audiosciencereview.com/...ds/truthear-x-crinacle-zero-iem-review.37380/ https://www.amazon.com/TRUTHEAR-Cri...d=1704677433&sprefix=truthear+,aps,283&sr=8-2 50$ on Amazon I bought these new... tameral Listing Jan 4, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "tameral", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero-earphone-dual-dynamic-drivers-in-ear-earphone-with-0-78-2pin-cable-earbuds-zero.60117/", "price_num": 30.0, "date_ms": 1704326400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Truthear X Crinacle Zero", "raw_text": "For Sale Sold: Truthear X Crinacle Zero Price 35.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America For Sale is a original TRUTHEAR X Crinacle Zero. In boxed, all items included, rarely used, basically like new. Seeking $35 dollars shipped Pay via Paypal intoitreviews Listing Aug 16, 2023 Comments: 4 Category: In-Ear Monitors", "seller_username": "intoitreviews", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero.52730/", "price_num": 35.0, "date_ms": 1692144000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Truthear X Crinacle Zero", "raw_text": "For Sale Sold: Truthear X Crinacle Zero Price 25.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Crinacle X Truthear Zero Original included all items in box, excellent condition 25 dollars + ship or best offer buyer pays any fees incurred thanks! intoitreviews Listing Aug 14, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "intoitreviews", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero.52592/", "price_num": 25.0, "date_ms": 1691971200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 18, "title": "Sold: Truthear Zero", "raw_text": "For Sale Sold: Truthear Zero Price 38.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Truthear x Crinacle Zero in excellent condition. Rarely used them. Comes with all accessories but no box (thrown away when moving). All eartips are brandnew and neverused as I used my own. To sweeten the deal, I\u2019ll throw in brand-new Moondrop spring tips in medium and large. Those tips are the... inventionlws Listing Aug 10, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "inventionlws", "url": "https://www.head-fi.org/classifieds/truthear-zero.52366/", "price_num": 38.0, "date_ms": 1691625600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Traded: Truthear Zero IEMs, BLON BL03, Smabat ST-10", "raw_text": "For Sale / Trade Traded: Truthear Zero IEMs, BLON BL03, Smabat ST-10 Price 65.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Listing created for trade feedback. msing539 Listing Feb 10, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "msing539", "url": "https://www.head-fi.org/classifieds/truthear-zero-iems-blon-bl03-smabat-st-10.41451/", "price_num": 65.0, "date_ms": 1675987200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Closed: Truthear Zero", "raw_text": "For Sale Closed: Truthear Zero Price 35.00 USD Condition As-is/Parts Negotiability Firm Ships to United States of America They are very new less than 1 week old, but come without the stainless steel nozzle dust filter (one is missing out of box, I took out the other for symmetry). Dust filters may have minimal impact on sound due to rather large holes, unlike dampers. Risk is blockage of the tiny bass sound tube... inventionlws Listing Sep 3, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "inventionlws", "url": "https://www.head-fi.org/classifieds/truthear-zero.32254/", "price_num": 35.0, "date_ms": 1662163200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Truthear x Crinacle Zero [SOLD]", "raw_text": "For Sale Sold: Truthear x Crinacle Zero [SOLD] Price 40.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America - Original owner - In like-new condition - Only used once - All original eartips are new and unused - Includes all original accessories and packaging - Price includes CONUS shipping and PayPal fee - FYI, this IEM has large-bore nozzles, and if you have had fit issues with other IEMs with... XERO1 Listing Aug 9, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "XERO1", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero-sold.30765/", "price_num": 40.0, "date_ms": 1660003200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -614,6 +631,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -679,6 +740,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -686,14 +749,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -707,18 +777,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -730,13 +810,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -751,7 +832,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -796,7 +877,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -807,7 +888,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -815,11 +896,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1331,6 +1412,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

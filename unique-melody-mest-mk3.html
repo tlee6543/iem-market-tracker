@@ -158,7 +158,18 @@ td.status-reason { overflow: hidden; }
     border-color: transparent transparent #111 transparent;
     z-index: 10000;
 }
-@media (max-width: 760px) { .sponsor-shell { grid-template-columns: 1fr; } }
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+}
 
 </style></head>
 <body>
@@ -183,7 +194,13 @@ td.status-reason { overflow: hidden; }
     </div>
     
 <p><a id="back-link" href="index.html">← Back</a></p>
-<h1>Unique Melody MEST MK3</h1>
+<div class="iem-title-row">
+    <h1>Unique Melody MEST MK3</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
 <p><a href="brand-unique-melody.html">Unique Melody</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -219,7 +236,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
-    <p class="muted">Checked rows are included in chart and closed-sale metrics. Active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
     <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
     <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
     <div class="chart-scroll">
@@ -418,7 +435,7 @@ td.status-reason { overflow: hidden; }
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "*PRICE DROP REPOST* Unique Melody MEST MK3 Red", "url": "https://old.reddit.com/r/AVexchange/comments/1tp2k3z/wtsusavah_price_drop_repost_unique_melody_mest/#item-1", "price_num": 790.0, "date_ms": 1779880811000, "listing_status": "closed", "condition_text": "and sound as they should", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=campfire"}, {"row_id": 1, "title": "Unique Melody Mest MK3 CF Red", "url": "https://old.reddit.com/r/AVexchange/comments/1t9rj8j/wtsusavah_unique_melody_mest_mk3_cf_red_w_paypal/#item-1", "price_num": 820.0, "date_ms": 1778470088000, "listing_status": "closed", "condition_text": "and no audible issues", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=campfire | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Sold: Unique Melody Mest MK3", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mk3.101691/", "price_num": 650.0, "date_ms": 1767916800000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: UM Mest Mk3 blue", "url": "https://www.head-fi.org/classifieds/um-mest-mk3-blue.101363/", "price_num": 750.0, "date_ms": 1767484800000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Closed: (PD) UM Mest Mk3 (Mkiii) - full set, like new.", "url": "https://www.head-fi.org/classifieds/pd-um-mest-mk3-mkiii-full-set-like-new.90953/", "price_num": 1120.0, "date_ms": 1751328000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: UM mest mk3", "url": "https://www.head-fi.org/classifieds/um-mest-mk3.80580/", "price_num": 999.0, "date_ms": 1735430400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Unique Melody MEST MK3 (CF Blue)", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mk3-cf-blue.78050/", "price_num": 1000.0, "date_ms": 1731369600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Closed: UM Mest Mk3 w/ extra", "url": "https://www.head-fi.org/classifieds/um-mest-mk3-w-extra.67973/", "price_num": 1100.0, "date_ms": 1715644800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Unique Melody MEST MK3 Price Drop!", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mk3-price-drop.51739/", "price_num": 1425.0, "date_ms": 1690502400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: UM Mest Mk3 Carbon Fiber (Blue)", "url": "https://www.head-fi.org/classifieds/um-mest-mk3-carbon-fiber-blue.50131/", "price_num": 1400.0, "date_ms": 1687996800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: PD: PW Audio 4.4mm 26 AWG cable of Unique Melody Mest Mk3", "url": "https://www.head-fi.org/classifieds/pd-pw-audio-4-4mm-26-awg-cable-of-unique-melody-mest-mk3.77713/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "*PRICE DROP REPOST* Unique Melody MEST MK3 Red", "raw_text": "Timestamp: https://imgur.com/a/cfWfgJC\nHello all!\nTrying to fund other purchases so listing these beauties for sale. The best IEM I've ever had so far.\nIn excellent cosmetic condition and sound as they should. Comes with all original packaging and accessories except the stock cable (which many hated) and S/M size of the \"petal\" eartips. I'm the second owner and no included tips were worn by me. Smoke free home.\nAsking $820 $790 shipped CONUS or trade your IEM of similar value!\n-Brands of interest:\nUnique Melody\nThieaudio\n64 Audio\nCampfire\nSymphonium\n-Models of interest (* denotes I'd add cash on top):\nUM Maven 2 Crescent\nUM Mest Jet Black*\nThieaudio Valhalla*, Monarch MKIV*\nCampfire Andromeda variants*\nThese are just preferences, offer me any IEM! The worst I can say is no thank you :) Thanks for looking.\nsubmitted by /u/baycop99\n[link] [comments]", "seller_username": "baycop99", "url": "https://old.reddit.com/r/AVexchange/comments/1tp2k3z/wtsusavah_price_drop_repost_unique_melody_mest/#item-1", "price_num": 790.0, "date_ms": 1779880811000, "listing_status": "closed", "condition_text": "and sound as they should", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=campfire"}, {"row_id": 1, "title": "Unique Melody Mest MK3 CF Red", "raw_text": "Timestamp: https://imgur.com/a/cfWfgJC\nHello all!\nContinuing my fun habit of finding new IEMs to try and figuring out what truly works for me. Today the offer is the Mest MK3 CF: a lush, warmish all-rounder that can be worn and listened to for hours. On top of that, it's an imaging and soundstage beast. I am the second owner and it was purchased from this subreddit ~6 months ago.\nIn excellent cosmetic condition and no audible issues. Comes with all original packaging. All accessories included except the stock cable (which many hated) and S/M size of the \"petal\" eartips. No included tips were worn by me. Smoke free home.\nAsking $820 shipped CONUS , or preferably, trade your IEM of similar value!\n-Brands of interest:\nUnique Melody\nThieaudio\n64 Audio\nCampfire\nSymphonium\n-Models of interest (* denotes I'd add cash on top):\nUM Maven 2 Crescent\nUM Mest Jet Black*\nThieaudio Valhalla*, Monarch MKIV*\nCampfire Andromeda variants*\nSennheiser IE900 (possibly, still thinking ab it)\nAgain, these are just preferences, offer me any IEM! Maybe a cheaper IEM with cash! The worst I can say is no thank you :) Thanks for looking!!\nsubmitted by /u/baycop99\n[link] [comments]", "seller_username": "baycop99", "url": "https://old.reddit.com/r/AVexchange/comments/1t9rj8j/wtsusavah_unique_melody_mest_mk3_cf_red_w_paypal/#item-1", "price_num": 820.0, "date_ms": 1778470088000, "listing_status": "closed", "condition_text": "and no audible issues", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=campfire | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Sold: Unique Melody Mest MK3", "raw_text": "For Sale Sold: Unique Melody Mest MK3 Price 650.00 USD Condition Good Negotiability Firm Ships to North America Catch and release for me. Comes with: - IEMs in great condition - after market cable (how I got them) - Carry puck - cleaning cloths - original box - original clear tips timestamps : https://imgur.com/a/BtmDXau LegitimateCupcake513 Listing Jan 9, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "LegitimateCupcake513", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mk3.101691/", "price_num": 650.0, "date_ms": 1767916800000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: UM Mest Mk3 blue", "raw_text": "For Sale Sold: UM Mest Mk3 blue Price 750.00 USD Condition Good Negotiability Or best offer Ships to United States of America Pairing down my IEM collections so my UM Mest Mk3 is up for sale. Included are: - IEMs in great condition - after market cable (how I got them) - Carry puck - cleaning cloths - original box - original clear tips Asking for $770 shipped to Continental USA using PayPal G&S musiclover2932 Listing Jan 4, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "musiclover2932", "url": "https://www.head-fi.org/classifieds/um-mest-mk3-blue.101363/", "price_num": 750.0, "date_ms": 1767484800000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Closed: (PD) UM Mest Mk3 (Mkiii) - full set, like new.", "raw_text": "For Sale Closed: (PD) UM Mest Mk3 (Mkiii) - full set, like new. Price 1120.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling my like new Mest mk3. Full set. Unused tips and 4.4mm cable. damascato Listing Jul 1, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "damascato", "url": "https://www.head-fi.org/classifieds/pd-um-mest-mk3-mkiii-full-set-like-new.90953/", "price_num": 1120.0, "date_ms": 1751328000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: UM mest mk3", "raw_text": "For Sale Sold: UM mest mk3 Price 999.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Mint condition mest mk3 with all accessories except stock tips and warranty card(It will not affect the after-sales service). Cable was replaced by um to newer version stock cable. Including domestic shipping. For destinations outside the United States, shipping is available, but you will need... AudioSep Listing Dec 29, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "AudioSep", "url": "https://www.head-fi.org/classifieds/um-mest-mk3.80580/", "price_num": 999.0, "date_ms": 1735430400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Unique Melody MEST MK3 (CF Blue)", "raw_text": "For Sale / Trade Closed: Unique Melody MEST MK3 (CF Blue) Price 1000.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere ************** EDIT: SOLD on a local Aus forum. Still interested in the fatfreq models though! ************** Hey guys, Up for sale is a UM Mest MK3 that I purchased recently from another member here on head-fi. These are absolutely beautiful to listen to and the tuning is fantastic... dweee Listing Nov 12, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "dweee", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mk3-cf-blue.78050/", "price_num": 1000.0, "date_ms": 1731369600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Closed: UM Mest Mk3 w/ extra", "raw_text": "For Sale Closed: UM Mest Mk3 w/ extra Price 1100.00 USD Condition Excellent/Like new Negotiability Firm Ships to EuropeNorth America Selling in mint condition, the latest Mest, the mk3 is a true upgrade to the renowned mk2. Mk3 stands out for its mids and smooth treble. The shells are beautiful and the fit is extremely comfortable. This is the non cable version as the stock cable is one of the worst cables ever made to... harshkamboj Listing May 14, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/um-mest-mk3-w-extra.67973/", "price_num": 1100.0, "date_ms": 1715644800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Unique Melody MEST MK3 Price Drop!", "raw_text": "For Sale / Trade Sold: Unique Melody MEST MK3 Price Drop! Price 1425.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere I\u2019m going to put my Unique Melody MEST MK3 up for sale. I\u2019ll be buying them again but you know how it is\u2026.I\u2019ve gone a bit nuts lately. Haha. This is the full set with the stock cable. Absolutely mint condition with less than 5 hours on them. For all intents and purposes it\u2019s new in box. Tips... vikinguy Listing Jul 28, 2023 Comments: 5 Category: In-Ear Monitors", "seller_username": "vikinguy", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mk3-price-drop.51739/", "price_num": 1425.0, "date_ms": 1690502400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: UM Mest Mk3 Carbon Fiber (Blue)", "raw_text": "For Sale Sold: UM Mest Mk3 Carbon Fiber (Blue) Price 1400.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America **FINAL PRICE REDUCTION** Quick catch and release. Opened once and used less than 2 hours. Decided to go in a different direction. Shipping to CONUS included. Read my feedback and buy with confidence. PM me if you have any questions. buenahora Listing Jun 29, 2023 Comments: 4 Category: In-Ear Monitors", "seller_username": "buenahora", "url": "https://www.head-fi.org/classifieds/um-mest-mk3-carbon-fiber-blue.50131/", "price_num": 1400.0, "date_ms": 1687996800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: PD: PW Audio 4.4mm 26 AWG cable of Unique Melody Mest Mk3", "raw_text": "For Sale Sold: PD: PW Audio 4.4mm 26 AWG cable of Unique Melody Mest Mk3", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/pd-pw-audio-4-4mm-26-awg-cable-of-unique-melody-mest-mk3.77713/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 1900.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -441,6 +458,50 @@ function safeLocalStorageGet(key) {
 }
 function safeLocalStorageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
 }
 function getInitialMarketplaceSource() {
     const params = new URLSearchParams(window.location.search);
@@ -506,6 +567,8 @@ function dealScoreDisplay(row, marketValue) {
 }
 const staleUnsoldMarketDays = 180;
 const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
 function rowAgeDays(row) {
     if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
     const dayMs = 24 * 60 * 60 * 1000;
@@ -513,14 +576,21 @@ function rowAgeDays(row) {
 }
 function rowHasManualExclusionMarker(row) {
     const notes = String(row.notes || "").toLowerCase();
-    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier"];
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
     return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
 }
 function isStaleUnsoldCeilingRow(row) {
     if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
     if (Number(row.is_bundle || 0) === 1) return false;
     if (Number(row.is_possible_duplicate || 0) === 1) return false;
     if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
 
     const status = String(row.listing_status || "").toLowerCase().trim();
     const closedReason = String(row.closed_reason || "").toLowerCase().trim();
@@ -534,18 +604,28 @@ function isStaleUnsoldCeilingRow(row) {
     if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
     return ["active", "unknown", ""].includes(status);
 }
-function applyStaleUnsoldCeiling(baseResult, candidateRows) {
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
     const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
     const stalePrices = ceilingRows
         .map(row => Number(row.price_num))
         .filter(value => !Number.isNaN(value) && value > 0);
 
-    if (!stalePrices.length) return baseResult;
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
 
     const medianStaleAsk = median(stalePrices);
     const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
     const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
-    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
 
     if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
         return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
@@ -557,13 +637,14 @@ function applyStaleUnsoldCeiling(baseResult, candidateRows) {
 
     return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
 }
+
 function calculateMarketValueFromRows(rows, allCandidateRows) {
     const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
     let baseResult;
 
     if (!pricedRows.length) {
         baseResult = {value: null, basis: "no selected closed-sale samples"};
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     const now = Date.now();
@@ -578,7 +659,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: average(recent90.map(r => r.price_num)),
             basis: "90d closed-sale avg, " + recent90.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 2. Recency-weighted fallback when recent data is sparse.
@@ -623,7 +704,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: weightTotal ? weightedTotal / weightTotal : null,
             basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     // 3. Fallback when dates are missing or only one sample exists.
@@ -634,7 +715,7 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: median(prices),
             basis: "all-time closed-sale median, " + prices.length + " samples"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     if (prices.length === 1) {
@@ -642,11 +723,11 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
             value: prices[0],
             basis: "single clean closed-sale sample"
         };
-        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
     }
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
-    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows);
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
 }
 
 function normalizePlatformForScore(platform) {
@@ -1158,6 +1239,8 @@ const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
     }
 }) : null;
 document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>
