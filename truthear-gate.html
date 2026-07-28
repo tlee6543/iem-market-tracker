@@ -1,6 +1,6 @@
 
 <html>
-<head><title>Oriolus Isabellae - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
+<head><title>Truthear Gate - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
 body { font-family: Arial; margin: 40px; background: #f7f7f7; color: #111; }
 table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
 .main-table .iem-col { width: 28%; max-width: 320px; }
@@ -195,13 +195,13 @@ td.status-reason { overflow: hidden; }
     
 <p><a id="back-link" href="index.html">← Back</a></p>
 <div class="iem-title-row">
-    <h1>Oriolus Isabellae</h1>
+    <h1>Truthear Gate</h1>
     <div class="grab-link-wrap">
         <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-oriolus.html">Oriolus</a></p>
+<p><a href="brand-truthear.html">Truthear</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -224,7 +224,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 14/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 1491d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 14/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 1491d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (14/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 1491d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -254,25 +254,57 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
-<td>2022-06-28</td>
-<td>$1,385</td>
+<tr id="row-0" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
+<td>2026-06-30</td>
+<td>$110</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">confirmed sold from source check</td>
+<td></td>
+<td>1</td>
+<td>reddit_rss</td>
+<td>vuldera</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">N/A</span></td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1uk5kyr/wts_uspa_h_iem_bundle_truthear_hexa_simgot_ew300/#item-1" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="reddit" class="listing-row excluded">
+<td></td>
+<td>2025-07-12</td>
+<td></td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">lister never updated</td>
+<td></td>
+<td>1</td>
+<td>reddit_rss</td>
+<td>lypseshig</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-1">N/A</span></td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1lydrwg/wts_uspa_h_meze_alba_iems_w_all_accesories/#item-1" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-2" data-source="headfi" class="listing-row excluded">
+<td></td>
+<td>2025-01-21</td>
+<td></td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
-<td>like new, excellent, used</td>
+<td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
-<td>SilverLodestar</td>
+<td>intoitreviews</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Closed: Fair (0.0% above market)</span></td>
-<td><a href="https://www.head-fi.org/classifieds/sold-64-audio-u12t-three-apex-module-revision-and-oriolus-isabellae.28296/" target="_blank">source</a></td>
+<td><span id="deal-score-2">N/A</span></td>
+<td><a href="https://www.head-fi.org/classifieds/7hz-zero-nicehck-eb2s-tanchjim-ola-sonic-memory-sm1-lite-truthear-gate-ccz-dc10-pro-others.81943/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Closed: SOLD: 64 Audio U12T (three Apex module revision) and Oriolus Isabellae", "raw_text": "Home Forums Head Gear Articles Sponsors Classifieds Log in Register Search New listings New comments Search listings Closed: SOLD: 64 Audio U12T (three Apex module revision) and Oriolus Isabellae Home Classifieds Headphones For Sale / Trade In-Ear Monitors Listing ID: 28296 Views: 1060 1,385.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Hey all, Today, I\u2019m regrettably looking to sell my trusted U12T and Isabellae in order to fund another IEM purchase. The U12T is the newer version with the 3 Apex modules (m15, m20, mX), new leather case, and the newer packing. I bought these from Headphones.com last year and have babied them ever since. The metal bodies don\u2019t have a scratch on them. I\u2019d like to say all original accessories are included, but I can\u2019t find the eartips for the life of me. I will search more extensively when I get home. Other than the eartips, everything else is included. The Isabellae was purchased from another user last year, but I haven\u2019t used them very much. They\u2019re in excellent condition and come with the original box and accessories. I\u2019d like to get $1385 shipped for the U12T and $350 shipped for the Isabellae, but I\u2019m open to offers. Thanks for looking! Timestamps: https://imgur.com/a/2kHzmAH Listed by: SilverLodestar (22) Listed: 2022-06-28 Last edited: 2022-08-15 1CD53FC8-9737-4D1A-A23B-15F0A4D3367A.jpeg 1.6 MB \u00b7 Views: 0 2B1F2AD8-45F8-40AB-B81E-D0E0FE394CCF.jpeg 1.9 MB \u00b7 Views: 0 820A40E6-450C-4DFE-AE7A-79D1F063F474.jpeg 1.9 MB \u00b7 Views: 0 29895439-319A-45D4-94B2-CAFB1DF4BE68.jpeg 1.7 MB \u00b7 Views: 0 35881935-7201-413C-A2DD-A034EBC31889.jpeg 1,019.9 KB \u00b7 Views: 0 36440E9E-CE05-4EE1-8ADF-61EC9FA69100.jpeg 1.3 MB \u00b7 Views: 0 5838A01E-5343-4BD4-A51A-D3C65513D6A9.jpeg 1.9 MB \u00b7 Views: 0 F958A5B5-92D3-4505-B4F9-DF1EC37EB27F.jpeg 2.5 MB \u00b7 Views: 0 1B405F3F-9E41-4FA2-B3D6-B8450D175075.jpeg 2 MB \u00b7 Views: 0 9549BFFA-F603-4D89-8813-FFC7D113D25E.jpeg 1.7 MB \u00b7 Views: 0 There are no comments to display. Home Classifieds Headphones For Sale / Trade In-Ear Monitors English (US) Contact us Terms and rules Privacy policy Help Home RSS Community platform by XenForo\u00ae \u00a9 2010-2026 XenForo Ltd. | Media embeds via s9e/MediaSites", "seller_username": "SilverLodestar", "url": "https://www.head-fi.org/classifieds/sold-64-audio-u12t-three-apex-module-revision-and-oriolus-isabellae.28296/", "price_num": 1385.0, "date_ms": 1656374400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}];
+const allRows = [{"row_id": 0, "title": "IEM Bundle: Truthear Hexa, Simgot EW300, Truthear Gate", "raw_text": "Selling these three popular IEMs together as a complete bundle. Great starter pack!\nPrice: $110 OBO Shipped (Includes PayPal G&S fees and tracking)\n*Open to reasonable offers!*\nCondition & Notes:\nCleaning: Everything was cleaned with 70% alcohol and Q-tips, then dried completely before packing.\nIncluded: All original boxes, sleeves, cables, cases, and all original ear tips are included.\nTruthear Hexa: Shells are clean. The stock black cable has one small section with a slightly loose braid weave. It is purely cosmetic and works perfectly.\nSimgot EW300: Matte-polished metal shells have slight signs of use. Includes the extra tuning nozzles, filters, and gaskets in their original bags.\nTruthear Gate: White version. Clear shells are clean. Includes the bag of 7 pairs of stock tips.\nPhotos: https://imgur.com/a/iem-bundle-package-aOE62Jt\nPlease comment on this post before sending a PM. Thanks!\nsubmitted by /u/vuldera\n[link] [comments]", "seller_username": "vuldera", "url": "https://old.reddit.com/r/AVexchange/comments/1uk5kyr/wts_uspa_h_iem_bundle_truthear_hexa_simgot_ew300/#item-1", "price_num": 110.0, "date_ms": 1782863174000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 1, "title": "Meze Alba Iems w/ all accesories, upgraded truthear gate cable + bonus eartips", "raw_text": "perfectly functional iem with one very small paint chip shown on second image, 2nd batch/updated batch\nsubmitted by /u/lypseshig\n[link] [comments]", "seller_username": "lypseshig", "url": "https://old.reddit.com/r/AVexchange/comments/1lydrwg/wts_uspa_h_meze_alba_iems_w_all_accesories/#item-1", "price_num": null, "date_ms": 1752361672000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 2, "title": "Sold: 7hz Zero, Nicehck EB2S, Tanchjim Ola, Sonic memory sm1 lite, Truthear Gate, CCZ DC10 Pro, others...", "raw_text": "For Sale / Trade Sold: 7hz Zero, Nicehck EB2S, Tanchjim Ola, Sonic memory sm1 lite, Truthear Gate, CCZ DC10 Pro, others... Price 15.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America FS a bunch of iems. Already boxed up. Must buy whole lot. Letting this go basically shipping and PayPal fees, so they don't go to waste. intoitreviews Listing Jan 21, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "intoitreviews", "url": "https://www.head-fi.org/classifieds/7hz-zero-nicehck-eb2s-tanchjim-ola-sonic-memory-sm1-lite-truthear-gate-ccz-dc10-pro-others.81943/", "price_num": null, "date_ms": 1737417600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
