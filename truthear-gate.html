@@ -1,6 +1,6 @@
 
 <html>
-<head><title>Moondrop Aria - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
+<head><title>Truthear Gate - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
 body { font-family: Arial; margin: 40px; background: #f7f7f7; color: #111; }
 table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
 .main-table .iem-col { width: 28%; max-width: 320px; }
@@ -195,13 +195,13 @@ td.status-reason { overflow: hidden; }
     
 <p><a id="back-link" href="index.html">← Back</a></p>
 <div class="iem-title-row">
-    <h1>Moondrop Aria</h1>
+    <h1>Truthear Gate</h1>
     <div class="grab-link-wrap">
         <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-moondrop.html">Moondrop</a></p>
+<p><a href="brand-truthear.html">Truthear</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -224,13 +224,13 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 37/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 8/30, recent sample depth 4/15, source diversity 5/10, price consistency 7/10. Current inputs: 3 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 182d ago, 1 source type(s), price CV 0.15." aria-label="Liquidity/confidence score: 37/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 8/30, recent sample depth 4/15, source diversity 5/10, price consistency 7/10. Current inputs: 3 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 182d ago, 1 source type(s), price CV 0.15." tabindex="0">Low (37/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">3 included sample(s), latest 182d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">5</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -254,89 +254,57 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" checked></td>
-<td>2026-01-27</td>
-<td>$35</td>
+<tr id="row-0" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
+<td>2026-06-30</td>
+<td>$110</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">confirmed sold from source check</td>
 <td></td>
-<td>0</td>
+<td>1</td>
 <td>reddit_rss</td>
-<td>logwagon</td>
+<td>vuldera</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Closed: Good Deal (10.6% below market)</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1qooqjr/wts_usasc_h_audio_cleanout_he6se_v2_wiim_mini/#item-1" target="_blank">source</a></td>
+<td><span id="deal-score-0">N/A</span></td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1uk5kyr/wts_uspa_h_iem_bundle_truthear_hexa_simgot_ew300/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" ></td>
-<td>2025-12-14</td>
-<td>$207</td>
-<td><span class="pill">stale</span></td>
-<td class="status-reason">stale unsold after 60d; not counted as a sale</td>
-<td>mint, like new, excellent</td>
-<td>0</td>
-<td>headfi</td>
-<td>hbcke</td>
-<td>0</td>
-<td>0</td>
-<td><span id="deal-score-1">Overpriced (428.6% above market)</span></td>
-<td><a href="https://www.head-fi.org/classifieds/moondrop-aria-elven-maiden.100231/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-2" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="reddit" checked></td>
-<td>2025-09-16</td>
-<td>$50</td>
-<td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
-<td>used</td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>Keldrew</td>
-<td>0</td>
-<td>0</td>
-<td><span id="deal-score-2">Closed: Overpriced (27.7% above market)</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1nispw3/wts_uspa_h_sennheiser_ie600_moondrop_blessing_3/#item-2" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-3" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="reddit" checked></td>
-<td>2025-09-01</td>
-<td>$40</td>
-<td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<tr id="row-1" data-source="reddit" class="listing-row excluded">
 <td></td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>IndianaBones991</td>
-<td>0</td>
-<td>0</td>
-<td><span id="deal-score-3">Closed: Fair (2.1% above market)</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1n5xxc2/wtsusatxh_truthear_crinacle_zero_red_moondrop/#item-2" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-4" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="reddit" ></td>
-<td>2025-04-27</td>
-<td>$80</td>
+<td>2025-07-12</td>
+<td></td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason">lister never updated</td>
 <td></td>
-<td>0</td>
+<td>1</td>
 <td>reddit_rss</td>
-<td>DNewWin</td>
+<td>lypseshig</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-4">Closed: Overpriced (104.3% above market)</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1k9bwx8/wtsuswvh_sennheiser_hd800s_hd600_marble_hd599/#item-6" target="_blank">source</a></td>
+<td><span id="deal-score-1">N/A</span></td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1lydrwg/wts_uspa_h_meze_alba_iems_w_all_accesories/#item-1" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-2" data-source="headfi" class="listing-row excluded">
+<td></td>
+<td>2025-01-21</td>
+<td></td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>intoitreviews</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-2">N/A</span></td>
+<td><a href="https://www.head-fi.org/classifieds/7hz-zero-nicehck-eb2s-tanchjim-ola-sonic-memory-sm1-lite-truthear-gate-ccz-dc10-pro-others.81943/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Moondrop Aria OG", "raw_text": "Sold Moondrop Aria OG - $35 shipped | Timestamps\nNo box or tips, original cable. Slight paint chipping on left shell, otherwise functional, includes small leather carrying pouch.\nSold Moondrop Chu OG - $15 shipped | Timestamps\nIncludes box and set of medium spring tips", "seller_username": "logwagon", "url": "https://old.reddit.com/r/AVexchange/comments/1qooqjr/wts_usasc_h_audio_cleanout_he6se_v2_wiim_mini/#item-1", "price_num": 35.0, "date_ms": 1769543989000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=moondrop aria"}, {"row_id": 1, "title": "Moondrop Aria Elven Maiden", "raw_text": "Moondrop Aria Elven Maiden\nListing ID: 100231\nFor Sale 207.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To AnywhereEurope\nI am selling excellent condition Moondrop Aria Elven Maiden edition. It is in mint condition. I am selling on ebay. https://www.ebay.com/itm/168377632726\nListed by: hbcke (8)\nListed: 2025-12-14\nLast edited: 2026-07-08", "seller_username": "hbcke", "url": "https://www.head-fi.org/classifieds/moondrop-aria-elven-maiden.100231/", "price_num": 207.0, "date_ms": 1765670400000, "listing_status": "stale", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_stale_unsold_60d_lister_never_updated"}, {"row_id": 2, "title": "Moondrop Aria 1", "raw_text": "Moondrop Aria 1: $50 it has barely been used and is next to brand new. It comes with both the original cable and case, but again I do not have extra tips other than what it has on currently which I believe are small/medium sized tips. (IMAGE 2)", "seller_username": "Keldrew", "url": "https://old.reddit.com/r/AVexchange/comments/1nispw3/wts_uspa_h_sennheiser_ie600_moondrop_blessing_3/#item-2", "price_num": 50.0, "date_ms": 1758054306000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=moondrop aria"}, {"row_id": 3, "title": "Moondrop Aria mki", "raw_text": "Moondrop Aria mki: $40 Shipped, comes with Tripowin Zonie cable and original case, NO original packaging.\nTake them both for 75$ Shipped!\nI'm interested in trades as well for iems in the same price bracket.\nPM below on this post before sending a chat. Cheers!\nsubmitted by /u/IndianaBones991\n[link] [comments]", "seller_username": "IndianaBones991", "url": "https://old.reddit.com/r/AVexchange/comments/1n5xxc2/wtsusatxh_truthear_crinacle_zero_red_moondrop/#item-2", "price_num": 40.0, "date_ms": 1756754175000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=moondrop aria"}, {"row_id": 4, "title": "Moondrop Aria Elven Maiden Hatsune Miku", "raw_text": "Moondrop Aria Elven Maiden Hatsune Miku: $80. A limited run of the famous moondrop aria, with a Hatsune Miku colorway. I bought this new, opened to look at and test but ended up not using it after that since I always use my OG aria.", "seller_username": "DNewWin", "url": "https://old.reddit.com/r/AVexchange/comments/1k9bwx8/wtsuswvh_sennheiser_hd800s_hd600_marble_hd599/#item-6", "price_num": 80.0, "date_ms": 1745781272000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=moondrop aria | active_status_checker_stale_timeout_30d_lister_never_updated"}];
+const allRows = [{"row_id": 0, "title": "IEM Bundle: Truthear Hexa, Simgot EW300, Truthear Gate", "raw_text": "Selling these three popular IEMs together as a complete bundle. Great starter pack!\nPrice: $110 OBO Shipped (Includes PayPal G&S fees and tracking)\n*Open to reasonable offers!*\nCondition & Notes:\nCleaning: Everything was cleaned with 70% alcohol and Q-tips, then dried completely before packing.\nIncluded: All original boxes, sleeves, cables, cases, and all original ear tips are included.\nTruthear Hexa: Shells are clean. The stock black cable has one small section with a slightly loose braid weave. It is purely cosmetic and works perfectly.\nSimgot EW300: Matte-polished metal shells have slight signs of use. Includes the extra tuning nozzles, filters, and gaskets in their original bags.\nTruthear Gate: White version. Clear shells are clean. Includes the bag of 7 pairs of stock tips.\nPhotos: https://imgur.com/a/iem-bundle-package-aOE62Jt\nPlease comment on this post before sending a PM. Thanks!\nsubmitted by /u/vuldera\n[link] [comments]", "seller_username": "vuldera", "url": "https://old.reddit.com/r/AVexchange/comments/1uk5kyr/wts_uspa_h_iem_bundle_truthear_hexa_simgot_ew300/#item-1", "price_num": 110.0, "date_ms": 1782863174000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 1, "title": "Meze Alba Iems w/ all accesories, upgraded truthear gate cable + bonus eartips", "raw_text": "perfectly functional iem with one very small paint chip shown on second image, 2nd batch/updated batch\nsubmitted by /u/lypseshig\n[link] [comments]", "seller_username": "lypseshig", "url": "https://old.reddit.com/r/AVexchange/comments/1lydrwg/wts_uspa_h_meze_alba_iems_w_all_accesories/#item-1", "price_num": null, "date_ms": 1752361672000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 2, "title": "Sold: 7hz Zero, Nicehck EB2S, Tanchjim Ola, Sonic memory sm1 lite, Truthear Gate, CCZ DC10 Pro, others...", "raw_text": "For Sale / Trade Sold: 7hz Zero, Nicehck EB2S, Tanchjim Ola, Sonic memory sm1 lite, Truthear Gate, CCZ DC10 Pro, others... Price 15.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America FS a bunch of iems. Already boxed up. Must buy whole lot. Letting this go basically shipping and PayPal fees, so they don't go to waste. intoitreviews Listing Jan 21, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "intoitreviews", "url": "https://www.head-fi.org/classifieds/7hz-zero-nicehck-eb2s-tanchjim-ola-sonic-memory-sm1-lite-truthear-gate-ccz-dc10-pro-others.81943/", "price_num": null, "date_ms": 1737417600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
