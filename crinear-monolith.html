@@ -1,6 +1,6 @@
 
 <html>
-<head><title>Campfire Audio Atlas - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
+<head><title>CrinEar Monolith - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
 body { font-family: Arial; margin: 40px; background: #f7f7f7; color: #111; }
 table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
 .main-table .iem-col { width: 28%; max-width: 320px; }
@@ -195,13 +195,13 @@ td.status-reason { overflow: hidden; }
     
 <p><a id="back-link" href="index.html">← Back</a></p>
 <div class="iem-title-row">
-    <h1>Campfire Audio Atlas</h1>
+    <h1>CrinEar Monolith</h1>
     <div class="grab-link-wrap">
         <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-campfire-audio.html">Campfire Audio</a></p>
+<p><a href="brand-crinear.html">CrinEar</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -214,9 +214,9 @@ td.status-reason { overflow: hidden; }
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$400</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2026</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">2DD</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
 
@@ -224,13 +224,15 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 48/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 85d ago, 1 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 48/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 85d ago, 1 source type(s), two samples; limited volatility read." tabindex="0">Medium (48/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 85d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">4</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -245,7 +247,8 @@ td.status-reason { overflow: hidden; }
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -256,72 +259,40 @@ td.status-reason { overflow: hidden; }
 
 <tr id="row-0" data-source="reddit" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
-<td>2026-07-27</td>
-<td>$110</td>
+<td>2026-07-26</td>
+<td>$370</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8501_json=403:len189908</td>
-<td></td>
-<td>0</td>
+<td class="status-reason"></td>
+<td>like new</td>
+<td>1</td>
 <td>reddit_rss</td>
-<td>headphones_lover_123</td>
+<td>JUICEe36</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Great Deal (70.7% below market)</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1v84p5r/wtsukrukrh_vadimych_gs_xlr_cable_atlas_element/#item-4" target="_blank">source</a></td>
+<td><span id="deal-score-0">N/A</span></td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1v741up/wts_usami_h_crinear_monolith_w_paypal_local_cash/#item-1" target="_blank">source</a></td>
 </tr>
 
 <tr id="row-1" data-source="reddit" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="reddit" ></td>
-<td>2026-07-15</td>
-<td>$110</td>
+<td>2026-07-20</td>
+<td>$400</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8501_json=403:len189908</td>
+<td class="status-reason"></td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
-<td>headphones_lover_123</td>
-<td>1</td>
-<td>0</td>
-<td><span id="deal-score-1">Great Deal (70.7% below market)</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1ux99fd/wtsukrukrh_vadimych_gs_xlr_cable_atlas_element/#item-4" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-2" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="reddit" checked></td>
-<td>2026-05-06</td>
-<td>$200</td>
-<td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
-<td>fair condition</td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>Bwardrop</td>
+<td>Single_Device_7897</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">Closed: Great Deal (46.7% below market)</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1t5q30h/wtsusacah_campfire_atlas_and_polaris_2_w_paypal/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-3" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="reddit" checked></td>
-<td>2025-10-03</td>
-<td>$1,299</td>
-<td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
-<td>used</td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>ekman321</td>
-<td>0</td>
-<td>0</td>
-<td><span id="deal-score-3">Closed: Overpriced (246.0% above market)</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1nwrf1v/wts_usaca_h_midfi_and_og_goodness_elysian_pilgrim/#item-1" target="_blank">source</a></td>
+<td><span id="deal-score-1">N/A</span></td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1v16hc1/wts_usava_h_crinear_monolithw_venmo_paypal_cash/#item-1" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Atlas Element quadstar Interconnect cables rca to XLR ( foto 5 )", "raw_text": "Atlas Element quadstar Interconnect cables rca to XLR ( foto 5 ) - 110$\nCosmetically and technically 10/10\nLength 2 meters.\nSound quality is beyond praise, the cable really PLAYS!\nI switched to a higher level of cables from Audioquest, so I put these up for sale.\nThe sale is not in a hurry, if I don't sell it, I will put it in my second system, because the sound these cables produce is great for me!", "seller_username": "headphones_lover_123", "url": "https://old.reddit.com/r/AVexchange/comments/1v84p5r/wtsukrukrh_vadimych_gs_xlr_cable_atlas_element/#item-4", "price_num": 110.0, "date_ms": 1785168353000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8501_json=403:len189908", "notes": "reddit_rss_parser_v16_trade_cash_difference_guard | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Atlas Element quadstar Interconnect cables rca to XLR ( foto 5 )", "raw_text": "Atlas Element quadstar Interconnect cables rca to XLR ( foto 5 ) - 110$\nCosmetically and technically 10/10\nLength 2 meters.\nSound quality is beyond praise, the cable really PLAYS!\nI switched to a higher level of cables from Audioquest, so I put these up for sale.\nThe sale is not in a hurry, if I don't sell it, I will put it in my second system, because the sound these cables produce is great for me!", "seller_username": "headphones_lover_123", "url": "https://old.reddit.com/r/AVexchange/comments/1ux99fd/wtsukrukrh_vadimych_gs_xlr_cable_atlas_element/#item-4", "price_num": 110.0, "date_ms": 1784129635000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8501_json=403:len189908", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Campfire Atlas and Polaris 2", "raw_text": "I finally found my endgame iem setup and am looking to sell my Campfire Atlas and Polaris 2.\nAtlas SOLD comes with original cable, case and box. They are in fair condition. Cable and case look like new. There is a pouch with smaller tips. I will include your choice of a new pair of symbio W or Velvet tips with purchase. These have great bass but still have great mids and treble. A very good single dynamic driver iem. Asking $200\nPolaris 2 SOLD comes with an older Campfire pure silver 3.5mm litz cable and a newish Campfire chromatic timestream in somewhat matching blue balanced 4.4. Includes box and blue mesh case that came with the cable. I don't have the OG case for this set. I will include your choice of symbio W or Velvet tips with purchase. These are a super fun set tuned for deep slammy bass with really good treble. Not a mid focused tuning for sure. These are fantastic with EDM and pop music. They are also great for gaming. Asking $180\nPictures\nPrices include priority shipping via USPS. I'll cover PayPal fees via G&S. Not looking for trades right now. Please comment before PM and thanks for looking. Feel free to hit me up with any questions.\nsubmitted by /u/Bwardrop\n[link] [comments]", "seller_username": "Bwardrop", "url": "https://old.reddit.com/r/AVexchange/comments/1t5q30h/wtsusacah_campfire_atlas_and_polaris_2_w_paypal/#item-1", "price_num": 200.0, "date_ms": 1778101980000, "listing_status": "closed", "condition_text": "fair condition", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=campfire"}, {"row_id": 3, "title": "| Campfire Atlas | Someone is going to be very happy with these. MSRP", "raw_text": "| Campfire Atlas | Someone is going to be very happy with these. MSRP $1299 in 2018 and was a CA flagship. Single DD set with bass for days, nice mids and a forward treble presentation. Comes with box, case, IEMs, cable and unused tips. Catch and release, I have far too many CA sets at the moment.| $225 PP F&F | SOLD\n| Simgot EA1000 Fermat | Comes with case, IEMs, original cable, unused tips (M. S), all nozzle options. Gorgeous build quality. Didn't think I'd be letting these go but the Z06 surprised the hell out of me.| $140 PP F&F | SOLD elsewhere\n| Shure se425 | Received in a trade. No retail box but includes case, IEMs, cable and a bunch of unused tips (silicone, foam). This is a way back set (2013/14) that was reviewed well. More of an actual musician's monitor, still sounds fantastic imo.| $80 PP F&F | GIFTED to a fellow Redditor\nIf you need more photos, please ask. Please drop a comment before chat and I will respond.\nEK\nsubmitted by /u/ekman321\n[link] [comments]", "seller_username": "ekman321", "url": "https://old.reddit.com/r/AVexchange/comments/1nwrf1v/wts_usaca_h_midfi_and_og_goodness_elysian_pilgrim/#item-1", "price_num": 1299.0, "date_ms": 1759472125000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=symphonium helios"}];
-const originalMsrpUsd = null;
+const allRows = [{"row_id": 0, "title": "Crinear Monolith", "raw_text": "reposting due to incorrect price\nSelling my Project Monolith in like new condition. Used only a couple hours with the large wide bore short tips.\nComes with all accessories and packaging minus the wide large short bore tips i used. Never used the cable and was kept within the case.\nAsking: $380 Shipped / $370 Local Cash\nComment before chatting and let me know if any questions\nsubmitted by /u/JUICEe36\n[link] [comments]", "seller_username": "JUICEe36", "url": "https://old.reddit.com/r/AVexchange/comments/1v741up/wts_usami_h_crinear_monolith_w_paypal_local_cash/#item-1", "price_num": 370.0, "date_ms": 1785072836000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "CRINEAR MONOLITH", "raw_text": "submitted by /u/Single_Device_7897\n[link] [comments]", "seller_username": "Single_Device_7897", "url": "https://old.reddit.com/r/AVexchange/comments/1v16hc1/wts_usava_h_crinear_monolithw_venmo_paypal_cash/#item-1", "price_num": 400.0, "date_ms": 1784507234000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked"}];
+const originalMsrpUsd = 400.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
 
