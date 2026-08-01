@@ -22,6 +22,92 @@ a:hover { text-decoration: underline; }
 .support-tool-link:hover { color: #fff; text-decoration: none; }
 .site-footer { margin-top: 34px; padding-top: 16px; border-top: 1px solid #ddd; font-size: 14px; color: #555; }
 .site-footer a { font-weight: bold; color: #0066cc; }
+.site-footer-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.site-footer-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.footer-separator { color: #aaa; }
+.creator-credit { display: inline-flex; align-items: center; gap: 4px; }
+.creator-popover { display: inline-block; position: relative; }
+.creator-popover summary {
+    display: inline;
+    list-style: none;
+    cursor: pointer;
+    color: #0066cc;
+    font-weight: bold;
+}
+.creator-popover summary::-webkit-details-marker { display: none; }
+.creator-popover summary:hover { text-decoration: underline; }
+.creator-popover-panel {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 10px);
+    width: min(310px, calc(100vw - 48px));
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 14px;
+    color: #333;
+    line-height: 1.4;
+    box-shadow: 0 10px 28px rgba(0,0,0,.18);
+    z-index: 1200;
+}
+.creator-popover-panel::after {
+    content: "";
+    position: absolute;
+    right: 18px;
+    bottom: -7px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    transform: rotate(45deg);
+}
+.creator-popover-panel p { margin: 5px 0 12px; font-size: 13px; color: #666; }
+.creator-popover-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.creator-popover-actions a {
+    display: inline-block;
+    border: 1px solid #bbb;
+    border-radius: 999px;
+    padding: 7px 10px;
+    font-size: 12px;
+    text-decoration: none;
+}
+.creator-popover-actions a:hover { background: #f3f3f3; text-decoration: none; }
+.creator-popover-actions .creator-youtube-link { background: #111; border-color: #111; color: #fff; }
+.creator-popover-actions .creator-youtube-link:hover { background: #333; color: #fff; }
+
+.about-hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+.about-hero h1 { margin: 4px 0 8px; }
+.about-lead { max-width: 760px; margin: 0; color: #555; font-size: 16px; line-height: 1.55; }
+.about-youtube-cta {
+    display: inline-block;
+    flex: 0 0 auto;
+    background: #111;
+    color: #fff;
+    border: 1px solid #111;
+    border-radius: 999px;
+    padding: 10px 14px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.about-youtube-cta:hover { color: #fff; background: #333; text-decoration: none; }
+.about-sections { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.about-section { margin-bottom: 0; }
+.about-section h2 { margin-top: 0; }
+.about-section p { margin: 0 0 14px; color: #444; line-height: 1.65; max-width: 920px; }
+.about-section p:last-child { margin-bottom: 0; }
+.about-ranking-section { border-left: 4px solid #111; }
 .stats { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
 .stat { background: white; border: 1px solid #ddd; padding: 16px; min-width: 150px; }
 .excluded { background: #f3f3f3; color: #666; }
@@ -298,6 +384,11 @@ score backgrounds cannot be lost to broader table/cell styling.
     .score-distribution-popover { display: inline-block; margin: 0; }
     .score-distribution-panel { left: 0; right: auto; width: min(430px, calc(100vw - 32px)); }
     .score-distribution-panel::before { left: 20px; right: auto; }
+    .site-footer-row { align-items: flex-start; }
+    .creator-popover-panel { left: 0; right: auto; }
+    .creator-popover-panel::after { left: 18px; right: auto; }
+    .about-hero { display: block; }
+    .about-youtube-cta { margin-top: 16px; white-space: normal; }
 }
 
 </style></head>
@@ -4339,6 +4430,30 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
-<div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>
+
+    <footer class="site-footer">
+        <div class="site-footer-row">
+            <div class="site-footer-links">
+                <a href="about.html">About this site</a>
+                <span class="footer-separator" aria-hidden="true">•</span>
+                <span>Independent IEM market data and rankings</span>
+            </div>
+            <span class="creator-credit">
+                Developed by
+                <details class="creator-popover">
+                    <summary aria-label="Open Precogvision links">Precogvision</summary>
+                    <div class="creator-popover-panel">
+                        <strong>Theo Lee / Precogvision</strong>
+                        <p>Independent audio reviews, IEM analysis, and data-driven market research.</p>
+                        <div class="creator-popover-actions">
+                            <a class="creator-youtube-link" href="https://www.youtube.com/@Precogvision" target="_blank" rel="noopener">Visit YouTube</a>
+                            <a href="about.html">About the site</a>
+                        </div>
+                    </div>
+                </details>
+            </span>
+        </div>
+    </footer>
+    
 </body>
 </html>
