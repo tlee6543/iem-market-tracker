@@ -1,9 +1,6 @@
 
 <html>
-<head>
-    <title>Precogvision's IEMs Rankings</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
+<head><title>Precogvision IEM Rankings</title><style>
 body { font-family: Arial; margin: 40px; background: #f7f7f7; color: #111; }
 table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
 .main-table .iem-col { width: 28%; max-width: 320px; }
@@ -187,16 +184,8 @@ td.status-reason { overflow: hidden; }
 .score-chip { display: inline-block; min-width: 38px; text-align: center; border: 1px solid #ccc; border-radius: 999px; padding: 4px 8px; background: #fafafa; }
 .tracker-match { font-size: 11px; color: #666; display: block; margin-top: 4px; font-weight: normal; }
 .rankings-empty { display: none; }
-.rankings-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 390px); gap: 20px; align-items: start; margin-bottom: 20px; }
-.rankings-hero-copy h1 { margin: 0 0 12px 0; }
-.score-distribution-card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 14px 16px; box-sizing: border-box; }
-.score-distribution-card h2 { margin: 0; font-size: 16px; }
-.score-distribution-card canvas { width: 100% !important; height: 165px !important; margin-top: 8px; }
-.distribution-stats { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; font-size: 12px; color: #555; }
-.distribution-stats b { color: #111; }
 @media (max-width: 900px) {
     .rankings-controls { grid-template-columns: 1fr; }
-    .rankings-hero { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
     .sponsor-shell { grid-template-columns: 1fr; }
@@ -204,8 +193,7 @@ td.status-reason { overflow: hidden; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
 }
 
-</style>
-</head>
+</style></head>
 <body>
 
     <div class="site-topbar">
@@ -234,26 +222,16 @@ td.status-reason { overflow: hidden; }
         </div>
     </div>
     
-<div class="rankings-hero">
-    <div class="rankings-hero-copy">
-        <h1>Precogvision's IEMs Rankings</h1>
-        <div class="card notice-card">
-            <p class="small">
-                Tracker links and market values appear where the ranking name can be matched confidently to the IEM Market Tracker.
-                Rankings are subjective evaluations; market values are separate secondary-market estimates.
-            </p>
-        </div>
-    </div>
-    <aside class="score-distribution-card" aria-label="Final score distribution">
-        <h2>Final Score Distribution</h2>
-        <div class="small">Histogram of all scored IEMs with a fitted normal curve.</div>
-        <canvas id="scoreDistributionChart"></canvas>
-        <div class="distribution-stats">
-            <span>Mean <b id="distributionMean">—</b></span>
-            <span>Median <b id="distributionMedian">—</b></span>
-            <span>Std. dev. <b id="distributionStd">—</b></span>
-        </div>
-    </aside>
+<h1>Precogvision IEM Rankings</h1>
+<div class="card notice-card">
+    <p class="muted">
+        This table is generated from the published ranking spreadsheet. The spreadsheet's legacy Rank column is ignored:
+        every scored row, including recent staging entries, is included and ordered by <b>Final Score</b>.
+    </p>
+    <p class="small">
+        Tracker links and market values appear where the ranking name can be matched confidently to the IEM Market Tracker.
+        Rankings are subjective evaluations; market values are separate secondary-market estimates.
+    </p>
 </div>
 <div class="metric-row">
     <div class="metric-card"><div class="product-label">Scored IEMs</div><div class="metric-value">404</div></div>
@@ -11631,96 +11609,8 @@ td.status-reason { overflow: hidden; }
 </table>
 </div>
 <div id="rankingsEmpty" class="card rankings-empty"><p class="muted">No rankings match the current filters.</p></div>
-<p class="small">Data refreshed from the published Google Sheet during the 2026-08-01 19:34 UTC site build.</p>
+<p class="small">Data refreshed from the published Google Sheet during the 2026-08-01 19:44 UTC site build. The legacy spreadsheet Rank column is not used anywhere on this page.</p>
 <script>
-const scoreDistributionValues = [9.1, 8.9, 8.7, 8.7, 8.7, 8.7, 8.6, 8.3, 8.2, 8.2, 8.2, 8.1, 8.1, 8.0, 8.0, 7.8, 7.7, 7.7, 7.7, 7.6, 7.6, 7.5, 7.5, 7.4, 7.4, 7.4, 7.4, 7.4, 7.3, 7.3, 7.3, 7.3, 7.3, 7.2, 7.2, 7.2, 7.2, 7.2, 7.1, 7.1, 7.1, 7.1, 7.1, 7.0, 7.0, 7.0, 7.0, 7.0, 6.9, 6.9, 6.9, 6.9, 6.9, 6.9, 6.9, 6.9, 6.8, 6.7, 6.65, 6.6, 6.6, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.45, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.2, 6.2, 6.2, 6.2, 6.2, 6.2, 6.2, 6.2, 6.2, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.8, 5.8, 5.8, 5.8, 5.8, 5.7, 5.7, 5.7, 5.7, 5.7, 5.6, 5.6, 5.6, 5.6, 5.55, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.4, 5.4, 5.4, 5.4, 5.4, 5.4, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.15, 5.15, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.05, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 4.9, 4.9, 4.9, 4.9, 4.9, 4.8, 4.8, 4.8, 4.8, 4.8, 4.8, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.1, 4.1, 4.1, 4.1, 4.1, 4.1, 4.1, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 3.9, 3.9, 3.9, 3.9, 3.9, 3.8, 3.7, 3.7, 3.6, 3.6, 3.6, 3.6, 3.6, 3.6, 3.5, 3.5, 3.4, 3.4, 3.4, 3.4, 3.4, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 2.9, 2.9, 2.9, 2.9, 2.9, 2.8, 2.7, 2.7, 2.7, 2.6, 2.6, 2.6, 2.6, 2.6, 2.6, 2.6, 2.4, 2.4, 2.2, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 1.9, 1.2, 1.2];
-
-function distributionMean(values) {
-    return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
-}
-function distributionMedian(values) {
-    if (!values.length) return null;
-    const sorted = [...values].sort((a, b) => a - b);
-    const middle = Math.floor(sorted.length / 2);
-    return sorted.length % 2 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2;
-}
-function distributionStd(values, mean) {
-    if (!values.length || mean === null) return null;
-    const variance = values.reduce((sum, value) => sum + Math.pow(value - mean, 2), 0) / values.length;
-    return Math.sqrt(variance);
-}
-function renderScoreDistribution() {
-    const values = scoreDistributionValues.map(Number).filter(value => Number.isFinite(value));
-    const canvas = document.getElementById("scoreDistributionChart");
-    if (!canvas || !values.length || typeof Chart === "undefined") return;
-
-    const binWidth = 0.5;
-    const minimum = Math.floor(Math.min(...values) / binWidth) * binWidth;
-    const maximum = Math.ceil(Math.max(...values) / binWidth) * binWidth;
-    const binCount = Math.max(1, Math.round((maximum - minimum) / binWidth));
-    const counts = Array(binCount).fill(0);
-    const centers = [];
-    const labels = [];
-
-    for (let index = 0; index < binCount; index += 1) {
-        const lower = minimum + index * binWidth;
-        const upper = lower + binWidth;
-        centers.push(lower + binWidth / 2);
-        labels.push(lower.toFixed(1) + "–" + upper.toFixed(1));
-    }
-
-    values.forEach(function(value) {
-        let index = Math.floor((value - minimum) / binWidth);
-        if (index >= binCount) index = binCount - 1;
-        if (index < 0) index = 0;
-        counts[index] += 1;
-    });
-
-    const mean = distributionMean(values);
-    const median = distributionMedian(values);
-    const std = distributionStd(values, mean);
-    const normalCounts = centers.map(function(center) {
-        if (!std || std <= 0) return 0;
-        const density = Math.exp(-0.5 * Math.pow((center - mean) / std, 2)) / (std * Math.sqrt(2 * Math.PI));
-        return density * values.length * binWidth;
-    });
-
-    document.getElementById("distributionMean").textContent = mean.toFixed(2);
-    document.getElementById("distributionMedian").textContent = median.toFixed(2);
-    document.getElementById("distributionStd").textContent = std.toFixed(2);
-
-    new Chart(canvas, {
-        type: "bar",
-        data: {
-            labels: labels,
-            datasets: [
-                { label: "IEM count", data: counts, borderWidth: 1 },
-                { label: "Normal curve", data: normalCounts, type: "line", pointRadius: 0, pointHitRadius: 8, borderWidth: 2, tension: 0.3 }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            interaction: { mode: "index", intersect: false },
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            if (context.datasetIndex === 0) return context.raw + " IEM(s)";
-                            return "Fitted curve: " + Number(context.raw).toFixed(1);
-                        }
-                    }
-                }
-            },
-            scales: {
-                x: { grid: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 7, font: { size: 10 } } },
-                y: { beginAtZero: true, ticks: { precision: 0, font: { size: 10 } }, title: { display: true, text: "Count", font: { size: 10 } } }
-            }
-        }
-    });
-}
-
 function normalizeRankingText(value) {
     return String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
 }
@@ -11776,7 +11666,6 @@ function updateRankings() {
     const element = document.getElementById(id);
     element.addEventListener(id === "rankingSearch" ? "input" : "change", updateRankings);
 });
-renderScoreDistribution();
 updateRankings();
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>
