@@ -1,6 +1,9 @@
 
 <html>
-<head><title>Precogvision IEM Rankings</title><style>
+<head>
+    <title>Precogvision's IEMs Rankings</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
 body { font-family: Arial; margin: 40px; background: #f7f7f7; color: #111; }
 table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
 .main-table .iem-col { width: 28%; max-width: 320px; }
@@ -184,6 +187,53 @@ td.status-reason { overflow: hidden; }
 .score-chip { display: inline-block; min-width: 38px; text-align: center; border: 1px solid #ccc; border-radius: 999px; padding: 4px 8px; background: #fafafa; }
 .tracker-match { font-size: 11px; color: #666; display: block; margin-top: 4px; font-weight: normal; }
 .rankings-empty { display: none; }
+.rankings-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.rankings-title-row h1 { margin: 0; }
+.score-distribution-popover { position: relative; margin-left: auto; z-index: 40; }
+.score-distribution-trigger { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.score-distribution-trigger:hover, .score-distribution-trigger:focus { background: #f3f3f3; }
+.score-distribution-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 9px);
+    width: min(430px, calc(100vw - 48px));
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px 16px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity .14s ease, transform .14s ease, visibility .14s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+.score-distribution-popover:hover .score-distribution-panel,
+.score-distribution-popover:focus-within .score-distribution-panel,
+.score-distribution-popover.is-open .score-distribution-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.score-distribution-panel::before {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: -7px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    transform: rotate(45deg);
+}
+.score-distribution-panel h2 { margin: 0; font-size: 16px; }
+.score-distribution-panel canvas { width: 100% !important; height: 180px !important; margin-top: 8px; }
+.distribution-stats { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; font-size: 12px; color: #555; }
+.distribution-stats b { color: #111; }
 @media (max-width: 900px) {
     .rankings-controls { grid-template-columns: 1fr; }
 }
@@ -191,9 +241,14 @@ td.status-reason { overflow: hidden; }
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .rankings-title-row { display: block; }
+    .score-distribution-popover { display: inline-block; margin: 12px 0 0 0; }
+    .score-distribution-panel { left: 0; right: auto; width: min(430px, calc(100vw - 32px)); }
+    .score-distribution-panel::before { left: 20px; right: auto; }
 }
 
-</style></head>
+</style>
+</head>
 <body>
 
     <div class="site-topbar">
@@ -222,12 +277,26 @@ td.status-reason { overflow: hidden; }
         </div>
     </div>
     
-<h1>Precogvision IEM Rankings</h1>
+<!-- rankings-build: popup-match-v3 -->
+<div class="rankings-title-row">
+    <h1>Precogvision's IEMs Rankings</h1>
+    <div id="scoreDistributionPopover" class="score-distribution-popover">
+        <button id="scoreDistributionTrigger" class="score-distribution-trigger" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="scoreDistributionPanel">
+            Final Score Distribution
+        </button>
+        <aside id="scoreDistributionPanel" class="score-distribution-panel" aria-label="Final score distribution">
+            <h2>Final Score Distribution</h2>
+            <div class="small">Histogram of all scored IEMs with a fitted normal curve.</div>
+            <canvas id="scoreDistributionChart"></canvas>
+            <div class="distribution-stats">
+                <span>Mean <b id="distributionMean">—</b></span>
+                <span>Median <b id="distributionMedian">—</b></span>
+                <span>Std. dev. <b id="distributionStd">—</b></span>
+            </div>
+        </aside>
+    </div>
+</div>
 <div class="card notice-card">
-    <p class="muted">
-        This table is generated from the published ranking spreadsheet. The spreadsheet's legacy Rank column is ignored:
-        every scored row, including recent staging entries, is included and ordered by <b>Final Score</b>.
-    </p>
     <p class="small">
         Tracker links and market values appear where the ranking name can be matched confidently to the IEM Market Tracker.
         Rankings are subjective evaluations; market values are separate secondary-market estimates.
@@ -235,7 +304,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="metric-row">
     <div class="metric-card"><div class="product-label">Scored IEMs</div><div class="metric-value">404</div></div>
-    <div class="metric-card"><div class="product-label">Tracker Matches</div><div class="metric-value">304</div><div class="small">100 unmatched</div></div>
+    <div class="metric-card"><div class="product-label">Tracker Matches</div><div class="metric-value">324</div><div class="small">80 unmatched</div></div>
     <div class="metric-card"><div class="product-label">Highest Score</div><div class="metric-value">9.1</div><div class="small">Subtonic Storm</div></div>
 </div>
 <div class="card">
@@ -462,15 +531,15 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="Symphonium Audio Zenith 4BA Exceptional musicality and unfettered driver efficiency. Loaner unit"
+    data-search="Symphonium Audio Zenith Symphonium Zenith Symphonium 4BA Exceptional musicality and unfettered driver efficiency. Loaner unit"
     data-score="8.6"
     data-iem="Symphonium Audio Zenith"
     data-price="1800.0"
-    data-market="">
+    data-market="1662.5">
     <td class="score-cell"><span class="score-chip">8.6</span></td>
     <td class="iem-ranking-name">
-        Symphonium Audio Zenith
-        
+        <a href="symphonium-zenith.html">Symphonium Audio Zenith</a>
+        <span class="tracker-match">Tracker: Symphonium Zenith</span>
     </td>
     <td class="subscore-cell">8.7</td>
     <td class="subscore-cell">9.0</td>
@@ -483,8 +552,8 @@ td.status-reason { overflow: hidden; }
     <td>8.5</td>
     <td class="setup-cell">4BA</td>
     <td class="nowrap">$1,800</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="symphonium-zenith.html">$1,662.5</a></td>
+    <td><span class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 83/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 26/35, recency 27/30, recent sample depth 15/15, source diversity 5/10, price consistency 10/10. Current inputs: 6 included priced sample(s), 6 in the last 90 days, 6 in the last 180 days, latest sample 19d ago, 1 source type(s), price CV 0.03." aria-label="Liquidity/confidence score: 83/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 26/35, recency 27/30, recent sample depth 15/15, source diversity 5/10, price consistency 10/10. Current inputs: 6 included priced sample(s), 6 in the last 90 days, 6 in the last 180 days, latest sample 19d ago, 1 source type(s), price CV 0.03." tabindex="0">High</span></td>
     <td class="comments-cell">Exceptional musicality and unfettered driver efficiency.</td>
     <td class="based-on-cell">Loaner unit</td>
 </tr>
@@ -1240,7 +1309,7 @@ td.status-reason { overflow: hidden; }
     <td class="setup-cell">1DD/8BA/4EST/1BC</td>
     <td class="nowrap">$1,300</td>
     <td class="nowrap"><a href="aful-dawn-x.html">$857.75</a></td>
-    <td><span class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 87/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 22/30, recent sample depth 12/15, source diversity 8/10, price consistency 10/10. Current inputs: 17 included priced sample(s), 2 in the last 90 days, 8 in the last 180 days, latest sample 63d ago, 2 source type(s), price CV 0.04." aria-label="Liquidity/confidence score: 87/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 22/30, recent sample depth 12/15, source diversity 8/10, price consistency 10/10. Current inputs: 17 included priced sample(s), 2 in the last 90 days, 8 in the last 180 days, latest sample 63d ago, 2 source type(s), price CV 0.04." tabindex="0">High</span></td>
+    <td><span class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 87/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 22/30, recent sample depth 12/15, source diversity 8/10, price consistency 10/10. Current inputs: 17 included priced sample(s), 2 in the last 90 days, 8 in the last 180 days, latest sample 64d ago, 2 source type(s), price CV 0.04." aria-label="Liquidity/confidence score: 87/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 22/30, recent sample depth 12/15, source diversity 8/10, price consistency 10/10. Current inputs: 17 included priced sample(s), 2 in the last 90 days, 8 in the last 180 days, latest sample 64d ago, 2 source type(s), price CV 0.04." tabindex="0">High</span></td>
     <td class="comments-cell">Great tuning and rendition of colored sound overall. Has some issues with dynamics in the midrange/treble for louder listening.</td>
     <td class="based-on-cell">Loaner unit</td>
 </tr>
@@ -1330,15 +1399,15 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="YU9 Audio Que 1DD/3BA Exceptional tuning and treble refinement; sets the benchmark at $400. Loaner"
+    data-search="YU9 Audio Que YU9 Que YU9 1DD/3BA Exceptional tuning and treble refinement; sets the benchmark at $400. Loaner"
     data-score="7.2"
     data-iem="YU9 Audio Que"
     data-price="400.0"
-    data-market="">
+    data-market="374.17">
     <td class="score-cell"><span class="score-chip">7.2</span></td>
     <td class="iem-ranking-name">
-        YU9 Audio Que
-        
+        <a href="yu9-que.html">YU9 Audio Que</a>
+        <span class="tracker-match">Tracker: YU9 Que</span>
     </td>
     <td class="subscore-cell">7.7</td>
     <td class="subscore-cell">7.0</td>
@@ -1351,8 +1420,8 @@ td.status-reason { overflow: hidden; }
     <td>7.0</td>
     <td class="setup-cell">1DD/3BA</td>
     <td class="nowrap">$400</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="yu9-que.html">$374.17</a></td>
+    <td><span class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 98/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 15/15, source diversity 8/10, price consistency 10/10. Current inputs: 16 included priced sample(s), 6 in the last 90 days, 9 in the last 180 days, latest sample 13d ago, 2 source type(s), price CV 0.11." aria-label="Liquidity/confidence score: 98/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 15/15, source diversity 8/10, price consistency 10/10. Current inputs: 16 included priced sample(s), 6 in the last 90 days, 9 in the last 180 days, latest sample 13d ago, 2 source type(s), price CV 0.11." tabindex="0">High</span></td>
     <td class="comments-cell">Exceptional tuning and treble refinement; sets the benchmark at $400.</td>
     <td class="based-on-cell">Loaner</td>
 </tr>
@@ -1750,15 +1819,15 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="Symphonium Audio Meteor 4BA A fun U-shape through and through, at the expense of some detail. Fantastic bass and upper-treble extension. Review unit"
+    data-search="Symphonium Audio Meteor Symphonium Meteor Symphonium 4BA A fun U-shape through and through, at the expense of some detail. Fantastic bass and upper-treble extension. Review unit"
     data-score="6.9"
     data-iem="Symphonium Audio Meteor"
     data-price="600.0"
-    data-market="">
+    data-market="341.29">
     <td class="score-cell"><span class="score-chip">6.9</span></td>
     <td class="iem-ranking-name">
-        Symphonium Audio Meteor
-        
+        <a href="symphonium-meteor.html">Symphonium Audio Meteor</a>
+        <span class="tracker-match">Tracker: Symphonium Meteor</span>
     </td>
     <td class="subscore-cell">7.0</td>
     <td class="subscore-cell">8.0</td>
@@ -1771,8 +1840,8 @@ td.status-reason { overflow: hidden; }
     <td>7.0</td>
     <td class="setup-cell">4BA</td>
     <td class="nowrap">$600</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="symphonium-meteor.html">$341.29</a></td>
+    <td><span class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 51/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 8/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 60d ago, 2 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 51/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 8/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 60d ago, 2 source type(s), two samples; limited volatility read." tabindex="0">Medium</span></td>
     <td class="comments-cell">A fun U-shape through and through, at the expense of some detail. Fantastic bass and upper-treble extension.</td>
     <td class="based-on-cell">Review unit</td>
 </tr>
@@ -1862,7 +1931,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="64 Audio A3t (Demo) 3BA A barebones U12t that mantains the quintessential 64 Audio house sound. Demo"
+    data-search="64 Audio A3t (Demo) 64 Audio A3t 64 Audio 3BA A barebones U12t that mantains the quintessential 64 Audio house sound. Demo"
     data-score="6.8"
     data-iem="64 Audio A3t (Demo)"
     data-price=""
@@ -1870,7 +1939,7 @@ td.status-reason { overflow: hidden; }
     <td class="score-cell"><span class="score-chip">6.8</span></td>
     <td class="iem-ranking-name">
         64 Audio A3t (Demo)
-        
+        <span class="tracker-match">Tracker: 64 Audio A3t</span>
     </td>
     <td class="subscore-cell">7.3</td>
     <td class="subscore-cell">6.0</td>
@@ -1946,15 +2015,15 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="Moondrop B2: Dusk 1DD/4BA Terrific tonal balance and bass shelf, but with slightly gritty treble and poor bass texturing. Super*Review&#39;s unit"
+    data-search="Moondrop B2: Dusk Moondrop Dusk Moondrop 1DD/4BA Terrific tonal balance and bass shelf, but with slightly gritty treble and poor bass texturing. Super*Review&#39;s unit"
     data-score="6.6"
     data-iem="Moondrop B2: Dusk"
     data-price="330.0"
-    data-market="">
+    data-market="285.2">
     <td class="score-cell"><span class="score-chip">6.6</span></td>
     <td class="iem-ranking-name">
-        Moondrop B2: Dusk
-        
+        <a href="moondrop-dusk.html">Moondrop B2: Dusk</a>
+        <span class="tracker-match">Tracker: Moondrop Dusk</span>
     </td>
     <td class="subscore-cell">6.7</td>
     <td class="subscore-cell">6.0</td>
@@ -1967,8 +2036,8 @@ td.status-reason { overflow: hidden; }
     <td>7.0</td>
     <td class="setup-cell">1DD/4BA</td>
     <td class="nowrap">$330</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="moondrop-dusk.html">$285.2</a></td>
+    <td><span class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 61/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 22/30, recent sample depth 8/15, source diversity 8/10, price consistency 10/10. Current inputs: 3 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 33d ago, 2 source type(s), price CV 0.06." aria-label="Liquidity/confidence score: 61/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 22/30, recent sample depth 8/15, source diversity 8/10, price consistency 10/10. Current inputs: 3 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 33d ago, 2 source type(s), price CV 0.06." tabindex="0">Medium</span></td>
     <td class="comments-cell">Terrific tonal balance and bass shelf, but with slightly gritty treble and poor bass texturing.</td>
     <td class="based-on-cell">Super*Review's unit</td>
 </tr>
@@ -2086,15 +2155,15 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="HiSenior Mega5 EST (Revised) Very bouncy bass but midrange sounds sucked out and has some oddity. Original sounds more coherent even if less exciting/detailed."
+    data-search="HiSenior Mega5 EST (Revised) HiSenior Mega 5 EST HiSenior Very bouncy bass but midrange sounds sucked out and has some oddity. Original sounds more coherent even if less exciting/detailed."
     data-score="6.5"
     data-iem="HiSenior Mega5 EST (Revised)"
     data-price=""
-    data-market="">
+    data-market="202.24">
     <td class="score-cell"><span class="score-chip">6.5</span></td>
     <td class="iem-ranking-name">
-        HiSenior Mega5 EST (Revised)
-        
+        <a href="hisenior-mega-5-est.html">HiSenior Mega5 EST (Revised)</a>
+        <span class="tracker-match">Tracker: HiSenior Mega 5 EST</span>
     </td>
     <td class="subscore-cell">6.7</td>
     <td class="subscore-cell">7.0</td>
@@ -2107,8 +2176,8 @@ td.status-reason { overflow: hidden; }
     <td>6.0</td>
     <td class="setup-cell">—</td>
     <td class="nowrap">—</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="hisenior-mega-5-est.html">$202.24</a></td>
+    <td><span class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 53/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 2 in the last 180 days, latest sample 23d ago, 1 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 53/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 2 in the last 180 days, latest sample 23d ago, 1 source type(s), two samples; limited volatility read." tabindex="0">Medium</span></td>
     <td class="comments-cell">Very bouncy bass but midrange sounds sucked out and has some oddity. Original sounds more coherent even if less exciting/detailed.</td>
     <td class="based-on-cell">—</td>
 </tr>
@@ -2506,15 +2575,15 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="DUNU SA6 MKII 6BA A warmer rendition of the original SA6, best considered a side-grade than a true upgrade."
+    data-search="DUNU SA6 MKII Dunu SA6 MK2 Dunu 6BA A warmer rendition of the original SA6, best considered a side-grade than a true upgrade."
     data-score="6.3"
     data-iem="DUNU SA6 MKII"
     data-price="580.0"
-    data-market="">
+    data-market="232.14">
     <td class="score-cell"><span class="score-chip">6.3</span></td>
     <td class="iem-ranking-name">
-        DUNU SA6 MKII
-        
+        <a href="dunu-sa6-mk2.html">DUNU SA6 MKII</a>
+        <span class="tracker-match">Tracker: Dunu SA6 MK2</span>
     </td>
     <td class="subscore-cell">6.7</td>
     <td class="subscore-cell">6.0</td>
@@ -2527,8 +2596,8 @@ td.status-reason { overflow: hidden; }
     <td>6.5</td>
     <td class="setup-cell">6BA</td>
     <td class="nowrap">$580</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="dunu-sa6-mk2.html">$232.14</a></td>
+    <td><span class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 66/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 15/30, recent sample depth 4/15, source diversity 5/10, price consistency 7/10. Current inputs: 16 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 96d ago, 1 source type(s), price CV 0.20." aria-label="Liquidity/confidence score: 66/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 15/30, recent sample depth 4/15, source diversity 5/10, price consistency 7/10. Current inputs: 16 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 96d ago, 1 source type(s), price CV 0.20." tabindex="0">Medium</span></td>
     <td class="comments-cell">A warmer rendition of the original SA6, best considered a side-grade than a true upgrade.</td>
     <td class="based-on-cell">—</td>
 </tr>
@@ -3094,7 +3163,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="Fearless x Crinacle Dawn 6BA/2EST Excellent, pleasing tuning only held back by a lack of technicalities. Crinacle&#39;s unit"
+    data-search="Fearless x Crinacle Dawn Fearless Audio Crinacle Dawn Fearless Audio 6BA/2EST Excellent, pleasing tuning only held back by a lack of technicalities. Crinacle&#39;s unit"
     data-score="6.1"
     data-iem="Fearless x Crinacle Dawn"
     data-price="1400.0"
@@ -3102,7 +3171,7 @@ td.status-reason { overflow: hidden; }
     <td class="score-cell"><span class="score-chip">6.1</span></td>
     <td class="iem-ranking-name">
         Fearless x Crinacle Dawn
-        
+        <span class="tracker-match">Tracker: Fearless Audio Crinacle Dawn</span>
     </td>
     <td class="subscore-cell">6.7</td>
     <td class="subscore-cell">6.0</td>
@@ -3122,15 +3191,15 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="FiR Radon 6 Probably the most palatable FiR IEM, colored presentation with spicy mid and upper-treble. Schezade unit"
+    data-search="FiR Radon 6 FIR Audio Radon 6 FIR Audio Probably the most palatable FiR IEM, colored presentation with spicy mid and upper-treble. Schezade unit"
     data-score="6.1"
     data-iem="FiR Radon 6"
     data-price=""
-    data-market="">
+    data-market="1920.39">
     <td class="score-cell"><span class="score-chip">6.1</span></td>
     <td class="iem-ranking-name">
-        FiR Radon 6
-        
+        <a href="fir-audio-radon-6.html">FiR Radon 6</a>
+        <span class="tracker-match">Tracker: FIR Audio Radon 6</span>
     </td>
     <td class="subscore-cell">6.0</td>
     <td class="subscore-cell">6.0</td>
@@ -3143,8 +3212,8 @@ td.status-reason { overflow: hidden; }
     <td>6.0</td>
     <td class="setup-cell">—</td>
     <td class="nowrap">—</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="fir-audio-radon-6.html">$1,920.39</a></td>
+    <td><span class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 77/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 7/10. Current inputs: 35 included priced sample(s), 1 in the last 90 days, 3 in the last 180 days, latest sample 86d ago, 1 source type(s), price CV 0.18." aria-label="Liquidity/confidence score: 77/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 7/10. Current inputs: 35 included priced sample(s), 1 in the last 90 days, 3 in the last 180 days, latest sample 86d ago, 1 source type(s), price CV 0.18." tabindex="0">High</span></td>
     <td class="comments-cell">Probably the most palatable FiR IEM, colored presentation with spicy mid and upper-treble.</td>
     <td class="based-on-cell">Schezade unit</td>
 </tr>
@@ -3486,7 +3555,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="Hidition NT6 Pro Hidition&#39;s take on a V-shaped signature and one executed pretty well at that. Slightly too much lower-treble begets drier sound. Schezade unit"
+    data-search="Hidition NT6 Pro Hidition NT6 Hidition Hidition&#39;s take on a V-shaped signature and one executed pretty well at that. Slightly too much lower-treble begets drier sound. Schezade unit"
     data-score="6.0"
     data-iem="Hidition NT6 Pro"
     data-price=""
@@ -3494,7 +3563,7 @@ td.status-reason { overflow: hidden; }
     <td class="score-cell"><span class="score-chip">6.0</span></td>
     <td class="iem-ranking-name">
         Hidition NT6 Pro
-        
+        <span class="tracker-match">Tracker: Hidition NT6</span>
     </td>
     <td class="subscore-cell">6.0</td>
     <td class="subscore-cell">6.0</td>
@@ -3626,15 +3695,15 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="Moondrop May DSP 1DD/1Planar Competent Harman tuning + very convenient USB-C integration. Loaner unit"
+    data-search="Moondrop May DSP Moondrop May Moondrop 1DD/1Planar Competent Harman tuning + very convenient USB-C integration. Loaner unit"
     data-score="6.0"
     data-iem="Moondrop May DSP"
     data-price="75.0"
-    data-market="">
+    data-market="40.0">
     <td class="score-cell"><span class="score-chip">6.0</span></td>
     <td class="iem-ranking-name">
-        Moondrop May DSP
-        
+        <a href="moondrop-may.html">Moondrop May DSP</a>
+        <span class="tracker-match">Tracker: Moondrop May</span>
     </td>
     <td class="subscore-cell">6.0</td>
     <td class="subscore-cell">6.0</td>
@@ -3647,22 +3716,22 @@ td.status-reason { overflow: hidden; }
     <td>6.0</td>
     <td class="setup-cell">1DD/1Planar</td>
     <td class="nowrap">$75</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="moondrop-may.html">$40</a></td>
+    <td><span class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 48/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 37d ago, 1 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 48/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 37d ago, 1 source type(s), two samples; limited volatility read." tabindex="0">Medium</span></td>
     <td class="comments-cell">Competent Harman tuning + very convenient USB-C integration.</td>
     <td class="based-on-cell">Loaner unit</td>
 </tr>
 
 <tr class="ranking-row"
-    data-search="Thieaudio Monarch 1DD/6BA/2EST Not particularly coherent, but an attention grabber with solid, surface-level detail. headphones.com unit"
+    data-search="Thieaudio Monarch ThieAudio Monarch MKI ThieAudio 1DD/6BA/2EST Not particularly coherent, but an attention grabber with solid, surface-level detail. headphones.com unit"
     data-score="6.0"
     data-iem="Thieaudio Monarch"
     data-price="730.0"
-    data-market="">
+    data-market="343.67">
     <td class="score-cell"><span class="score-chip">6.0</span></td>
     <td class="iem-ranking-name">
-        Thieaudio Monarch
-        
+        <a href="thieaudio-monarch-mki.html">Thieaudio Monarch</a>
+        <span class="tracker-match">Tracker: ThieAudio Monarch MKI</span>
     </td>
     <td class="subscore-cell">6.0</td>
     <td class="subscore-cell">5.0</td>
@@ -3675,8 +3744,8 @@ td.status-reason { overflow: hidden; }
     <td>6.0</td>
     <td class="setup-cell">1DD/6BA/2EST</td>
     <td class="nowrap">$730</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="thieaudio-monarch-mki.html">$343.67</a></td>
+    <td><span class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 85/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 8/15, source diversity 5/10, price consistency 7/10. Current inputs: 14 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 3d ago, 1 source type(s), price CV 0.19." aria-label="Liquidity/confidence score: 85/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 8/15, source diversity 5/10, price consistency 7/10. Current inputs: 14 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 3d ago, 1 source type(s), price CV 0.19." tabindex="0">High</span></td>
     <td class="comments-cell">Not particularly coherent, but an attention grabber with solid, surface-level detail.</td>
     <td class="based-on-cell">headphones.com unit</td>
 </tr>
@@ -4382,15 +4451,15 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="Campfire Solaris OG 1DD/3BA Holographic imaging and some of the worst DD bass that I&#39;ve heard. headphones.com unit"
+    data-search="Campfire Solaris OG Campfire Audio Solaris OG Campfire Audio 1DD/3BA Holographic imaging and some of the worst DD bass that I&#39;ve heard. headphones.com unit"
     data-score="5.6"
     data-iem="Campfire Solaris OG"
     data-price=""
-    data-market="">
+    data-market="850.0">
     <td class="score-cell"><span class="score-chip">5.6</span></td>
     <td class="iem-ranking-name">
-        Campfire Solaris OG
-        
+        <a href="campfire-audio-solaris-og.html">Campfire Solaris OG</a>
+        <span class="tracker-match">Tracker: Campfire Audio Solaris OG</span>
     </td>
     <td class="subscore-cell">5.3</td>
     <td class="subscore-cell">4.0</td>
@@ -4403,8 +4472,8 @@ td.status-reason { overflow: hidden; }
     <td>5.0</td>
     <td class="setup-cell">1DD/3BA</td>
     <td class="nowrap">Discontinued</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="campfire-audio-solaris-og.html">$850</a></td>
+    <td><span class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 14/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 1946d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 14/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 1946d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low</span></td>
     <td class="comments-cell">Holographic imaging and some of the worst DD bass that I've heard.</td>
     <td class="based-on-cell">headphones.com unit</td>
 </tr>
@@ -4802,7 +4871,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="Prisma Azul 2BA Excellent treble extension; almost too much. Could use work in the imaging department. Super*Review&#39;s unit"
+    data-search="Prisma Azul Prisma Audio Azul Prisma Audio 2BA Excellent treble extension; almost too much. Could use work in the imaging department. Super*Review&#39;s unit"
     data-score="5.4"
     data-iem="Prisma Azul"
     data-price="300.0"
@@ -4810,7 +4879,7 @@ td.status-reason { overflow: hidden; }
     <td class="score-cell"><span class="score-chip">5.4</span></td>
     <td class="iem-ranking-name">
         Prisma Azul
-        
+        <span class="tracker-match">Tracker: Prisma Audio Azul</span>
     </td>
     <td class="subscore-cell">5.7</td>
     <td class="subscore-cell">5.0</td>
@@ -5194,7 +5263,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="A&amp;K x CFA Pathfinder 2DD/3BA Odd colorations that aren&#39;t awful, but that don&#39;t exactly culminate for the better. Headphones.com unit"
+    data-search="A&amp;K x CFA Pathfinder Astell&amp;Kern x CFA Pathfinder Astell&amp;Kern 2DD/3BA Odd colorations that aren&#39;t awful, but that don&#39;t exactly culminate for the better. Headphones.com unit"
     data-score="5.2"
     data-iem="A&amp;K x CFA Pathfinder"
     data-price="1900.0"
@@ -5202,7 +5271,7 @@ td.status-reason { overflow: hidden; }
     <td class="score-cell"><span class="score-chip">5.2</span></td>
     <td class="iem-ranking-name">
         A&K x CFA Pathfinder
-        
+        <span class="tracker-match">Tracker: Astell&Kern x CFA Pathfinder</span>
     </td>
     <td class="subscore-cell">5.0</td>
     <td class="subscore-cell">5.0</td>
@@ -5922,7 +5991,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="Moondrop Armature Art 12 12BA Mid bass, mid mids, mid-treble, not-so-mid price. Loaner unit"
+    data-search="Moondrop Armature Art 12 Moondrop Armature 12 Moondrop 12BA Mid bass, mid mids, mid-treble, not-so-mid price. Loaner unit"
     data-score="5.1"
     data-iem="Moondrop Armature Art 12"
     data-price="800.0"
@@ -5930,7 +5999,7 @@ td.status-reason { overflow: hidden; }
     <td class="score-cell"><span class="score-chip">5.1</span></td>
     <td class="iem-ranking-name">
         Moondrop Armature Art 12
-        
+        <span class="tracker-match">Tracker: Moondrop Armature 12</span>
     </td>
     <td class="subscore-cell">5.3</td>
     <td class="subscore-cell">5.0</td>
@@ -6209,7 +6278,7 @@ td.status-reason { overflow: hidden; }
     data-market="">
     <td class="score-cell"><span class="score-chip">5.0</span></td>
     <td class="iem-ranking-name">
-        DUNU Titan S
+        <a href="dunu-titan-s.html">DUNU Titan S</a>
         <span class="tracker-match">Tracker: Dunu Titan S</span>
     </td>
     <td class="subscore-cell">5.3</td>
@@ -6223,8 +6292,8 @@ td.status-reason { overflow: hidden; }
     <td>5.0</td>
     <td class="setup-cell">1DD</td>
     <td class="nowrap">$79</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="dunu-titan-s.html">N/A</a></td>
+    <td><span class="badge badge-score badge-low" data-tooltip="" aria-label="" tabindex="0">N/A</span></td>
     <td class="comments-cell">Good Harman-ish tonality with reasonably decent technical chops - an easy recommendation.</td>
     <td class="based-on-cell">Review unit</td>
 </tr>
@@ -6286,7 +6355,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="Fearless S8Z 8BA A more aggressive S8P with even more grit/BA artifacting in the treble. headphones.com unit"
+    data-search="Fearless S8Z Fearless Audio S8Z Fearless Audio 8BA A more aggressive S8P with even more grit/BA artifacting in the treble. headphones.com unit"
     data-score="5.0"
     data-iem="Fearless S8Z"
     data-price="589.0"
@@ -6294,7 +6363,7 @@ td.status-reason { overflow: hidden; }
     <td class="score-cell"><span class="score-chip">5.0</span></td>
     <td class="iem-ranking-name">
         Fearless S8Z
-        
+        <span class="tracker-match">Tracker: Fearless Audio S8Z</span>
     </td>
     <td class="subscore-cell">4.7</td>
     <td class="subscore-cell">5.0</td>
@@ -6930,15 +6999,15 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="Campfire Atlas 1DD Easily the best CA DD IEM with insane amounts of bass and just enough treble to balance it. headphones.com unit"
+    data-search="Campfire Atlas Campfire Audio Atlas Campfire Audio 1DD Easily the best CA DD IEM with insane amounts of bass and just enough treble to balance it. headphones.com unit"
     data-score="4.7"
     data-iem="Campfire Atlas"
     data-price=""
-    data-market="">
+    data-market="375.48">
     <td class="score-cell"><span class="score-chip">4.7</span></td>
     <td class="iem-ranking-name">
-        Campfire Atlas
-        
+        <a href="campfire-audio-atlas.html">Campfire Atlas</a>
+        <span class="tracker-match">Tracker: Campfire Audio Atlas</span>
     </td>
     <td class="subscore-cell">5.3</td>
     <td class="subscore-cell">6.0</td>
@@ -6951,8 +7020,8 @@ td.status-reason { overflow: hidden; }
     <td>4.0</td>
     <td class="setup-cell">1DD</td>
     <td class="nowrap">Discontinued</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="campfire-audio-atlas.html">$375.48</a></td>
+    <td><span class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 48/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 86d ago, 1 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 48/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 86d ago, 1 source type(s), two samples; limited volatility read." tabindex="0">Medium</span></td>
     <td class="comments-cell">Easily the best CA DD IEM with insane amounts of bass and just enough treble to balance it.</td>
     <td class="based-on-cell">headphones.com unit</td>
 </tr>
@@ -7721,7 +7790,7 @@ td.status-reason { overflow: hidden; }
     data-market="">
     <td class="score-cell"><span class="score-chip">4.3</span></td>
     <td class="iem-ranking-name">
-        Moondrop Illustrious
+        <a href="moondrop-illustrious.html">Moondrop Illustrious</a>
         
     </td>
     <td class="subscore-cell">4.3</td>
@@ -7735,8 +7804,8 @@ td.status-reason { overflow: hidden; }
     <td>4.0</td>
     <td class="setup-cell">1DD</td>
     <td class="nowrap">$900</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="moondrop-illustrious.html">N/A</a></td>
+    <td><span class="badge badge-score badge-low" data-tooltip="" aria-label="" tabindex="0">N/A</span></td>
     <td class="comments-cell">Sounds like it has metallic timbre. Percussino compression around 5kHz due to lack of treble extension and generally bad tuning.</td>
     <td class="based-on-cell">Super*Review's unit</td>
 </tr>
@@ -9457,7 +9526,7 @@ td.status-reason { overflow: hidden; }
     data-market="">
     <td class="score-cell"><span class="score-chip">3.3</span></td>
     <td class="iem-ranking-name">
-        Sennheiser IE 300
+        <a href="sennheiser-ie300.html">Sennheiser IE 300</a>
         <span class="tracker-match">Tracker: Sennheiser IE300</span>
     </td>
     <td class="subscore-cell">3.0</td>
@@ -9471,8 +9540,8 @@ td.status-reason { overflow: hidden; }
     <td>3.0</td>
     <td class="setup-cell">1DD</td>
     <td class="nowrap">$300</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="sennheiser-ie300.html">N/A</a></td>
+    <td><span class="badge badge-score badge-low" data-tooltip="" aria-label="" tabindex="0">N/A</span></td>
     <td class="comments-cell">Slightly sibilant upper-midrange and generally tin can-y treble.</td>
     <td class="based-on-cell">Super*Review's unit</td>
 </tr>
@@ -11102,15 +11171,15 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="Campfire Vega 2020 1DD Bloated bass and general congestion issues. Headphones.com unit"
+    data-search="Campfire Vega 2020 Campfire Audio Vega 2020 Campfire Audio 1DD Bloated bass and general congestion issues. Headphones.com unit"
     data-score="2.1"
     data-iem="Campfire Vega 2020"
     data-price="900.0"
-    data-market="">
+    data-market="279.0">
     <td class="score-cell"><span class="score-chip">2.1</span></td>
     <td class="iem-ranking-name">
-        Campfire Vega 2020
-        
+        <a href="campfire-audio-vega-2020.html">Campfire Vega 2020</a>
+        <span class="tracker-match">Tracker: Campfire Audio Vega 2020</span>
     </td>
     <td class="subscore-cell">2.0</td>
     <td class="subscore-cell">2.0</td>
@@ -11123,8 +11192,8 @@ td.status-reason { overflow: hidden; }
     <td>2.0</td>
     <td class="setup-cell">1DD</td>
     <td class="nowrap">$900</td>
-    <td class="nowrap">N/A</td>
-    <td>N/A</td>
+    <td class="nowrap"><a href="campfire-audio-vega-2020.html">$279</a></td>
+    <td><span class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 14/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 839d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 14/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 839d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low</span></td>
     <td class="comments-cell">Bloated bass and general congestion issues.</td>
     <td class="based-on-cell">Headphones.com unit</td>
 </tr>
@@ -11242,7 +11311,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr class="ranking-row"
-    data-search="Campfire Dorado 2020 1DD/1BA Slightly more resolving than the Vega 2020 from the midrange and up, but even more piercing. Headphones.com unit"
+    data-search="Campfire Dorado 2020 Campfire Audio Dorado 2020 Campfire Audio 1DD/1BA Slightly more resolving than the Vega 2020 from the midrange and up, but even more piercing. Headphones.com unit"
     data-score="2.0"
     data-iem="Campfire Dorado 2020"
     data-price="1100.0"
@@ -11250,7 +11319,7 @@ td.status-reason { overflow: hidden; }
     <td class="score-cell"><span class="score-chip">2.0</span></td>
     <td class="iem-ranking-name">
         Campfire Dorado 2020
-        
+        <span class="tracker-match">Tracker: Campfire Audio Dorado 2020</span>
     </td>
     <td class="subscore-cell">1.7</td>
     <td class="subscore-cell">2.0</td>
@@ -11609,8 +11678,123 @@ td.status-reason { overflow: hidden; }
 </table>
 </div>
 <div id="rankingsEmpty" class="card rankings-empty"><p class="muted">No rankings match the current filters.</p></div>
-<p class="small">Data refreshed from the published Google Sheet during the 2026-08-01 19:44 UTC site build. The legacy spreadsheet Rank column is not used anywhere on this page.</p>
+<p class="small">Data refreshed from the published Google Sheet during the 2026-08-01 19:51 UTC site build.</p>
 <script>
+const scoreDistributionValues = [9.1, 8.9, 8.7, 8.7, 8.7, 8.7, 8.6, 8.3, 8.2, 8.2, 8.2, 8.1, 8.1, 8.0, 8.0, 7.8, 7.7, 7.7, 7.7, 7.6, 7.6, 7.5, 7.5, 7.4, 7.4, 7.4, 7.4, 7.4, 7.3, 7.3, 7.3, 7.3, 7.3, 7.2, 7.2, 7.2, 7.2, 7.2, 7.1, 7.1, 7.1, 7.1, 7.1, 7.0, 7.0, 7.0, 7.0, 7.0, 6.9, 6.9, 6.9, 6.9, 6.9, 6.9, 6.9, 6.9, 6.8, 6.7, 6.65, 6.6, 6.6, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.45, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.2, 6.2, 6.2, 6.2, 6.2, 6.2, 6.2, 6.2, 6.2, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.8, 5.8, 5.8, 5.8, 5.8, 5.7, 5.7, 5.7, 5.7, 5.7, 5.6, 5.6, 5.6, 5.6, 5.55, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.4, 5.4, 5.4, 5.4, 5.4, 5.4, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.15, 5.15, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.05, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 4.9, 4.9, 4.9, 4.9, 4.9, 4.8, 4.8, 4.8, 4.8, 4.8, 4.8, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.1, 4.1, 4.1, 4.1, 4.1, 4.1, 4.1, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 3.9, 3.9, 3.9, 3.9, 3.9, 3.8, 3.7, 3.7, 3.6, 3.6, 3.6, 3.6, 3.6, 3.6, 3.5, 3.5, 3.4, 3.4, 3.4, 3.4, 3.4, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 2.9, 2.9, 2.9, 2.9, 2.9, 2.8, 2.7, 2.7, 2.7, 2.6, 2.6, 2.6, 2.6, 2.6, 2.6, 2.6, 2.4, 2.4, 2.2, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 1.9, 1.2, 1.2];
+
+function setupScoreDistributionPopover() {
+    const wrapper = document.getElementById("scoreDistributionPopover");
+    const trigger = document.getElementById("scoreDistributionTrigger");
+    if (!wrapper || !trigger) return;
+
+    trigger.addEventListener("click", function(event) {
+        event.stopPropagation();
+        const open = wrapper.classList.toggle("is-open");
+        trigger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    document.addEventListener("click", function(event) {
+        if (!wrapper.contains(event.target)) {
+            wrapper.classList.remove("is-open");
+            trigger.setAttribute("aria-expanded", "false");
+        }
+    });
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            wrapper.classList.remove("is-open");
+            trigger.setAttribute("aria-expanded", "false");
+            trigger.focus();
+        }
+    });
+}
+
+function distributionMean(values) {
+    return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
+}
+function distributionMedian(values) {
+    if (!values.length) return null;
+    const sorted = [...values].sort((a, b) => a - b);
+    const middle = Math.floor(sorted.length / 2);
+    return sorted.length % 2 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2;
+}
+function distributionStd(values, mean) {
+    if (!values.length || mean === null) return null;
+    const variance = values.reduce((sum, value) => sum + Math.pow(value - mean, 2), 0) / values.length;
+    return Math.sqrt(variance);
+}
+function renderScoreDistribution() {
+    const values = scoreDistributionValues.map(Number).filter(value => Number.isFinite(value));
+    const canvas = document.getElementById("scoreDistributionChart");
+    if (!canvas || !values.length || typeof Chart === "undefined") return;
+
+    const binWidth = 0.5;
+    const minimum = Math.floor(Math.min(...values) / binWidth) * binWidth;
+    const maximum = Math.ceil(Math.max(...values) / binWidth) * binWidth;
+    const binCount = Math.max(1, Math.round((maximum - minimum) / binWidth));
+    const counts = Array(binCount).fill(0);
+    const centers = [];
+    const labels = [];
+
+    for (let index = 0; index < binCount; index += 1) {
+        const lower = minimum + index * binWidth;
+        const upper = lower + binWidth;
+        centers.push(lower + binWidth / 2);
+        labels.push(lower.toFixed(1) + "–" + upper.toFixed(1));
+    }
+
+    values.forEach(function(value) {
+        let index = Math.floor((value - minimum) / binWidth);
+        if (index >= binCount) index = binCount - 1;
+        if (index < 0) index = 0;
+        counts[index] += 1;
+    });
+
+    const mean = distributionMean(values);
+    const median = distributionMedian(values);
+    const std = distributionStd(values, mean);
+    const normalCounts = centers.map(function(center) {
+        if (!std || std <= 0) return 0;
+        const density = Math.exp(-0.5 * Math.pow((center - mean) / std, 2)) / (std * Math.sqrt(2 * Math.PI));
+        return density * values.length * binWidth;
+    });
+
+    document.getElementById("distributionMean").textContent = mean.toFixed(2);
+    document.getElementById("distributionMedian").textContent = median.toFixed(2);
+    document.getElementById("distributionStd").textContent = std.toFixed(2);
+
+    new Chart(canvas, {
+        type: "bar",
+        data: {
+            labels: labels,
+            datasets: [
+                { label: "IEM count", data: counts, borderWidth: 1 },
+                { label: "Normal curve", data: normalCounts, type: "line", pointRadius: 0, pointHitRadius: 8, borderWidth: 2, tension: 0.3 }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: "index", intersect: false },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            if (context.datasetIndex === 0) return context.raw + " IEM(s)";
+                            return "Fitted curve: " + Number(context.raw).toFixed(1);
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: { grid: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 7, font: { size: 10 } } },
+                y: { beginAtZero: true, ticks: { precision: 0, font: { size: 10 } }, title: { display: true, text: "Count", font: { size: 10 } } }
+            }
+        }
+    });
+}
+
 function normalizeRankingText(value) {
     return String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
 }
@@ -11666,6 +11850,8 @@ function updateRankings() {
     const element = document.getElementById(id);
     element.addEventListener(id === "rankingSearch" ? "input" : "change", updateRankings);
 });
+setupScoreDistributionPopover();
+renderScoreDistribution();
 updateRankings();
 </script>
 <div class="site-footer">Developed by <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a></div>

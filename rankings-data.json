@@ -127,7 +127,7 @@
   },
   {
     "iem": "Symphonium Audio Zenith",
-    "canonical_name": "",
+    "canonical_name": "Symphonium Zenith",
     "final_score": 8.6,
     "tonality": "8.7",
     "bass": "9.0",
@@ -142,9 +142,9 @@
     "price": "$1,800",
     "comments": "Exceptional musicality and unfettered driver efficiency.",
     "based_on": "Loaner unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "symphonium-zenith",
+    "market_value": 1662.5,
+    "market_confidence": "High"
   },
   {
     "iem": "7th Acoustics Asteria",
@@ -778,7 +778,7 @@
   },
   {
     "iem": "YU9 Audio Que",
-    "canonical_name": "",
+    "canonical_name": "YU9 Que",
     "final_score": 7.2,
     "tonality": "7.7",
     "bass": "7.0",
@@ -793,9 +793,9 @@
     "price": "$400",
     "comments": "Exceptional tuning and treble refinement; sets the benchmark at $400.",
     "based_on": "Loaner",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "yu9-que",
+    "market_value": 374.17,
+    "market_confidence": "High"
   },
   {
     "iem": "64 Audio Nio",
@@ -1093,7 +1093,7 @@
   },
   {
     "iem": "Symphonium Audio Meteor",
-    "canonical_name": "",
+    "canonical_name": "Symphonium Meteor",
     "final_score": 6.9,
     "tonality": "7.0",
     "bass": "8.0",
@@ -1108,9 +1108,9 @@
     "price": "$600",
     "comments": "A fun U-shape through and through, at the expense of some detail. Fantastic bass and upper-treble extension.",
     "based_on": "Review unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "symphonium-meteor",
+    "market_value": 341.29,
+    "market_confidence": "Medium"
   },
   {
     "iem": "Vision Ears VE7",
@@ -1177,7 +1177,7 @@
   },
   {
     "iem": "64 Audio A3t (Demo)",
-    "canonical_name": "",
+    "canonical_name": "64 Audio A3t",
     "final_score": 6.8,
     "tonality": "7.3",
     "bass": "6.0",
@@ -1240,7 +1240,7 @@
   },
   {
     "iem": "Moondrop B2: Dusk",
-    "canonical_name": "",
+    "canonical_name": "Moondrop Dusk",
     "final_score": 6.6,
     "tonality": "6.7",
     "bass": "6.0",
@@ -1255,9 +1255,9 @@
     "price": "$330",
     "comments": "Terrific tonal balance and bass shelf, but with slightly gritty treble and poor bass texturing.",
     "based_on": "Super*Review's unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "moondrop-dusk",
+    "market_value": 285.2,
+    "market_confidence": "Medium"
   },
   {
     "iem": "Sennheiser IE600",
@@ -1345,7 +1345,7 @@
   },
   {
     "iem": "HiSenior Mega5 EST (Revised)",
-    "canonical_name": "",
+    "canonical_name": "HiSenior Mega 5 EST",
     "final_score": 6.5,
     "tonality": "6.7",
     "bass": "7.0",
@@ -1360,9 +1360,9 @@
     "price": "—",
     "comments": "Very bouncy bass but midrange sounds sucked out and has some oddity. Original sounds more coherent even if less exciting/detailed.",
     "based_on": "—",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "hisenior-mega-5-est",
+    "market_value": 202.24,
+    "market_confidence": "Medium"
   },
   {
     "iem": "Softears RSV",
@@ -1660,7 +1660,7 @@
   },
   {
     "iem": "DUNU SA6 MKII",
-    "canonical_name": "",
+    "canonical_name": "Dunu SA6 MK2",
     "final_score": 6.3,
     "tonality": "6.7",
     "bass": "6.0",
@@ -1675,9 +1675,9 @@
     "price": "$580",
     "comments": "A warmer rendition of the original SA6, best considered a side-grade than a true upgrade.",
     "based_on": "—",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "dunu-sa6-mk2",
+    "market_value": 232.14,
+    "market_confidence": "Medium"
   },
   {
     "iem": "DUNU Zen Pro",
@@ -2101,7 +2101,7 @@
   },
   {
     "iem": "Fearless x Crinacle Dawn",
-    "canonical_name": "",
+    "canonical_name": "Fearless Audio Crinacle Dawn",
     "final_score": 6.1,
     "tonality": "6.7",
     "bass": "6.0",
@@ -2122,7 +2122,7 @@
   },
   {
     "iem": "FiR Radon 6",
-    "canonical_name": "",
+    "canonical_name": "FIR Audio Radon 6",
     "final_score": 6.1,
     "tonality": "6.0",
     "bass": "6.0",
@@ -2137,9 +2137,9 @@
     "price": "—",
     "comments": "Probably the most palatable FiR IEM, colored presentation with spicy mid and upper-treble.",
     "based_on": "Schezade unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "fir-audio-radon-6",
+    "market_value": 1920.39,
+    "market_confidence": "High"
   },
   {
     "iem": "GS Audio SE11",
@@ -2395,7 +2395,7 @@
   },
   {
     "iem": "Hidition NT6 Pro",
-    "canonical_name": "",
+    "canonical_name": "Hidition NT6",
     "final_score": 6.0,
     "tonality": "6.0",
     "bass": "6.0",
@@ -2500,7 +2500,7 @@
   },
   {
     "iem": "Moondrop May DSP",
-    "canonical_name": "",
+    "canonical_name": "Moondrop May",
     "final_score": 6.0,
     "tonality": "6.0",
     "bass": "6.0",
@@ -2515,13 +2515,13 @@
     "price": "$75",
     "comments": "Competent Harman tuning + very convenient USB-C integration.",
     "based_on": "Loaner unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "moondrop-may",
+    "market_value": 40.0,
+    "market_confidence": "Medium"
   },
   {
     "iem": "Thieaudio Monarch",
-    "canonical_name": "",
+    "canonical_name": "ThieAudio Monarch MKI",
     "final_score": 6.0,
     "tonality": "6.0",
     "bass": "5.0",
@@ -2536,9 +2536,9 @@
     "price": "$730",
     "comments": "Not particularly coherent, but an attention grabber with solid, surface-level detail.",
     "based_on": "headphones.com unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "thieaudio-monarch-mki",
+    "market_value": 343.67,
+    "market_confidence": "High"
   },
   {
     "iem": "Unique Melody MEXT",
@@ -3067,7 +3067,7 @@
   },
   {
     "iem": "Campfire Solaris OG",
-    "canonical_name": "",
+    "canonical_name": "Campfire Audio Solaris OG",
     "final_score": 5.6,
     "tonality": "5.3",
     "bass": "4.0",
@@ -3082,9 +3082,9 @@
     "price": "Discontinued",
     "comments": "Holographic imaging and some of the worst DD bass that I've heard.",
     "based_on": "headphones.com unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "campfire-audio-solaris-og",
+    "market_value": 850.0,
+    "market_confidence": "Low"
   },
   {
     "iem": "FAudio Dark Sky",
@@ -3382,7 +3382,7 @@
   },
   {
     "iem": "Prisma Azul",
-    "canonical_name": "",
+    "canonical_name": "Prisma Audio Azul",
     "final_score": 5.4,
     "tonality": "5.7",
     "bass": "5.0",
@@ -3676,7 +3676,7 @@
   },
   {
     "iem": "A&K x CFA Pathfinder",
-    "canonical_name": "",
+    "canonical_name": "Astell&Kern x CFA Pathfinder",
     "final_score": 5.2,
     "tonality": "5.0",
     "bass": "5.0",
@@ -4222,7 +4222,7 @@
   },
   {
     "iem": "Moondrop Armature Art 12",
-    "canonical_name": "",
+    "canonical_name": "Moondrop Armature 12",
     "final_score": 5.1,
     "tonality": "5.3",
     "bass": "5.0",
@@ -4447,7 +4447,7 @@
     "price": "$79",
     "comments": "Good Harman-ish tonality with reasonably decent technical chops - an easy recommendation.",
     "based_on": "Review unit",
-    "tracker_slug": "",
+    "tracker_slug": "dunu-titan-s",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -4495,7 +4495,7 @@
   },
   {
     "iem": "Fearless S8Z",
-    "canonical_name": "",
+    "canonical_name": "Fearless Audio S8Z",
     "final_score": 5.0,
     "tonality": "4.7",
     "bass": "5.0",
@@ -4978,7 +4978,7 @@
   },
   {
     "iem": "Campfire Atlas",
-    "canonical_name": "",
+    "canonical_name": "Campfire Audio Atlas",
     "final_score": 4.7,
     "tonality": "5.3",
     "bass": "6.0",
@@ -4993,9 +4993,9 @@
     "price": "Discontinued",
     "comments": "Easily the best CA DD IEM with insane amounts of bass and just enough treble to balance it.",
     "based_on": "headphones.com unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "campfire-audio-atlas",
+    "market_value": 375.48,
+    "market_confidence": "Medium"
   },
   {
     "iem": "DUNU Talos",
@@ -5581,7 +5581,7 @@
     "price": "$900",
     "comments": "Sounds like it has metallic timbre. Percussino compression around 5kHz due to lack of treble extension and generally bad tuning.",
     "based_on": "Super*Review's unit",
-    "tracker_slug": "",
+    "tracker_slug": "moondrop-illustrious",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -6883,7 +6883,7 @@
     "price": "$300",
     "comments": "Slightly sibilant upper-midrange and generally tin can-y treble.",
     "based_on": "Super*Review's unit",
-    "tracker_slug": "",
+    "tracker_slug": "sennheiser-ie300",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -8107,7 +8107,7 @@
   },
   {
     "iem": "Campfire Vega 2020",
-    "canonical_name": "",
+    "canonical_name": "Campfire Audio Vega 2020",
     "final_score": 2.1,
     "tonality": "2.0",
     "bass": "2.0",
@@ -8122,9 +8122,9 @@
     "price": "$900",
     "comments": "Bloated bass and general congestion issues.",
     "based_on": "Headphones.com unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "campfire-audio-vega-2020",
+    "market_value": 279.0,
+    "market_confidence": "Low"
   },
   {
     "iem": "JVC FX7 Gumy",
@@ -8212,7 +8212,7 @@
   },
   {
     "iem": "Campfire Dorado 2020",
-    "canonical_name": "",
+    "canonical_name": "Campfire Audio Dorado 2020",
     "final_score": 2.0,
     "tonality": "1.7",
     "bass": "2.0",

@@ -184,6 +184,53 @@ td.status-reason { overflow: hidden; }
 .score-chip { display: inline-block; min-width: 38px; text-align: center; border: 1px solid #ccc; border-radius: 999px; padding: 4px 8px; background: #fafafa; }
 .tracker-match { font-size: 11px; color: #666; display: block; margin-top: 4px; font-weight: normal; }
 .rankings-empty { display: none; }
+.rankings-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.rankings-title-row h1 { margin: 0; }
+.score-distribution-popover { position: relative; margin-left: auto; z-index: 40; }
+.score-distribution-trigger { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.score-distribution-trigger:hover, .score-distribution-trigger:focus { background: #f3f3f3; }
+.score-distribution-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 9px);
+    width: min(430px, calc(100vw - 48px));
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px 16px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity .14s ease, transform .14s ease, visibility .14s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+.score-distribution-popover:hover .score-distribution-panel,
+.score-distribution-popover:focus-within .score-distribution-panel,
+.score-distribution-popover.is-open .score-distribution-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.score-distribution-panel::before {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: -7px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    transform: rotate(45deg);
+}
+.score-distribution-panel h2 { margin: 0; font-size: 16px; }
+.score-distribution-panel canvas { width: 100% !important; height: 180px !important; margin-top: 8px; }
+.distribution-stats { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; font-size: 12px; color: #555; }
+.distribution-stats b { color: #111; }
 @media (max-width: 900px) {
     .rankings-controls { grid-template-columns: 1fr; }
 }
@@ -191,6 +238,10 @@ td.status-reason { overflow: hidden; }
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .rankings-title-row { display: block; }
+    .score-distribution-popover { display: inline-block; margin: 12px 0 0 0; }
+    .score-distribution-panel { left: 0; right: auto; width: min(430px, calc(100vw - 32px)); }
+    .score-distribution-panel::before { left: 20px; right: auto; }
 }
 
 </style></head>
@@ -253,7 +304,7 @@ td.status-reason { overflow: hidden; }
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 87/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 22/30, recent sample depth 12/15, source diversity 8/10, price consistency 10/10. Current inputs: 17 included priced sample(s), 2 in the last 90 days, 8 in the last 180 days, latest sample 63d ago, 2 source type(s), price CV 0.04." aria-label="Liquidity/confidence score: 87/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 22/30, recent sample depth 12/15, source diversity 8/10, price consistency 10/10. Current inputs: 17 included priced sample(s), 2 in the last 90 days, 8 in the last 180 days, latest sample 63d ago, 2 source type(s), price CV 0.04." tabindex="0">High (87/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">17 included sample(s), latest 63d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 87/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 22/30, recent sample depth 12/15, source diversity 8/10, price consistency 10/10. Current inputs: 17 included priced sample(s), 2 in the last 90 days, 8 in the last 180 days, latest sample 64d ago, 2 source type(s), price CV 0.04." aria-label="Liquidity/confidence score: 87/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 22/30, recent sample depth 12/15, source diversity 8/10, price consistency 10/10. Current inputs: 17 included priced sample(s), 2 in the last 90 days, 8 in the last 180 days, latest sample 64d ago, 2 source type(s), price CV 0.04." tabindex="0">High (87/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">17 included sample(s), latest 64d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
