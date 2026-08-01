@@ -206,7 +206,41 @@ score backgrounds cannot be lost to broader table/cell styling.
 .rankings-empty { display: none; }
 .rankings-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
 .rankings-title-row h1 { margin: 0; }
-.score-distribution-popover { position: relative; margin-left: auto; z-index: 40; }
+.rankings-title-actions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; flex-wrap: wrap; margin-left: auto; }
+.demoed-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #bbb;
+    background: #fff;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+}
+.demoed-toggle:hover { background: #f3f3f3; }
+.demoed-toggle input { margin: 0; transform: scale(1.05); }
+.demoed-toggle-count {
+    display: inline-block;
+    min-width: 18px;
+    padding: 1px 6px;
+    border-radius: 999px;
+    background: #eee;
+    color: #444;
+    font-size: 11px;
+    text-align: center;
+}
+.rankings-table td.score-cell.score-demoed {
+    background-color: #eeeeee !important;
+    color: #444 !important;
+    font-size: 12px;
+    letter-spacing: .01em;
+}
+.demoed-entry-note { display: block; margin-top: 3px; font-size: 11px; color: #666; font-weight: normal; }
+.score-distribution-popover { position: relative; z-index: 40; }
 .score-distribution-trigger { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
 .score-distribution-trigger:hover, .score-distribution-trigger:focus { background: #f3f3f3; }
 .score-distribution-panel {
@@ -259,7 +293,9 @@ score backgrounds cannot be lost to broader table/cell styling.
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
     .rankings-title-row { display: block; }
-    .score-distribution-popover { display: inline-block; margin: 12px 0 0 0; }
+    .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
+    .demoed-toggle { white-space: normal; }
+    .score-distribution-popover { display: inline-block; margin: 0; }
     .score-distribution-panel { left: 0; right: auto; width: min(430px, calc(100vw - 32px)); }
     .score-distribution-panel::before { left: 20px; right: auto; }
 }

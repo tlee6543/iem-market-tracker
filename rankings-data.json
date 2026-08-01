@@ -1,5 +1,6 @@
 [
   {
+    "entry_type": "ranked",
     "iem": "Subtonic Storm",
     "canonical_name": "Subtonic Storm",
     "final_score": 9.1,
@@ -21,6 +22,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Mysticraft Hex",
     "canonical_name": "Mysticraft Hex",
     "final_score": 8.9,
@@ -42,6 +44,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Brise Audio Fugaku",
     "canonical_name": "Brise Audio Fugaku",
     "final_score": 8.7,
@@ -63,6 +66,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Elysian Annihilator 2021",
     "canonical_name": "Elysian Annihilator pre-2026",
     "final_score": 8.7,
@@ -84,6 +88,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Elysian Annihilator 2023",
     "canonical_name": "Elysian Annihilator pre-2026",
     "final_score": 8.7,
@@ -105,6 +110,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Mysticraft Tet",
     "canonical_name": "Mysticraft Tet",
     "final_score": 8.7,
@@ -126,6 +132,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Symphonium Audio Zenith",
     "canonical_name": "Symphonium Zenith",
     "final_score": 8.6,
@@ -147,6 +154,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "7th Acoustics Asteria",
     "canonical_name": "7th Acoustics Asteria",
     "final_score": 8.3,
@@ -168,6 +176,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio U12t",
     "canonical_name": "64 Audio U12t",
     "final_score": 8.2,
@@ -189,6 +198,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Hercules Audio Moses",
     "canonical_name": "Hercules Audio Moses",
     "final_score": 8.2,
@@ -210,6 +220,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Valhalla",
     "canonical_name": "ThieAudio Valhalla",
     "final_score": 8.2,
@@ -231,6 +242,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio Tia Trio",
     "canonical_name": "64 Audio Tia Trio",
     "final_score": 8.1,
@@ -252,6 +264,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Symphonium Europa",
     "canonical_name": "",
     "final_score": 8.1,
@@ -273,6 +286,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Elysian X",
     "canonical_name": "",
     "final_score": 8.0,
@@ -294,6 +308,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Symphonium Audio Crimson",
     "canonical_name": "Symphonium Crimson",
     "final_score": 8.0,
@@ -315,6 +330,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Elysian Diva",
     "canonical_name": "Elysian Diva",
     "final_score": 7.8,
@@ -336,6 +352,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio U4s",
     "canonical_name": "64 Audio U4s",
     "final_score": 7.7,
@@ -357,6 +374,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Symphonium Helios",
     "canonical_name": "Symphonium Helios",
     "final_score": 7.7,
@@ -378,6 +396,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Monarch MKIV",
     "canonical_name": "ThieAudio Monarch MKIV",
     "final_score": 7.7,
@@ -399,6 +418,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Empire Ears Odin",
     "canonical_name": "Empire Ears Odin",
     "final_score": 7.6,
@@ -420,6 +440,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Empire Ears Raven",
     "canonical_name": "Empire Ears Raven",
     "final_score": 7.6,
@@ -441,6 +462,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Softears Karma",
     "canonical_name": "",
     "final_score": 7.5,
@@ -462,6 +484,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sony IER-Z1R",
     "canonical_name": "Sony IER-Z1R",
     "final_score": 7.5,
@@ -483,6 +506,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Effect Audio x Elysian Gaea",
     "canonical_name": "Effect Audio x Elysian Acoustic Labs Gaea",
     "final_score": 7.4,
@@ -504,6 +528,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sony IER-M9",
     "canonical_name": "Sony IER-M9",
     "final_score": 7.4,
@@ -525,6 +550,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Symphonium Helios SE",
     "canonical_name": "Symphonium Helios SE",
     "final_score": 7.4,
@@ -546,6 +572,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "UM MEST Jet Black",
     "canonical_name": "Unique Melody MEST Jet Black",
     "final_score": 7.4,
@@ -567,6 +594,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Vision Ears EXT",
     "canonical_name": "Vision Ears EXT",
     "final_score": 7.4,
@@ -588,6 +616,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "7th Acoustics Supernova",
     "canonical_name": "7th Acoustics Supernova",
     "final_score": 7.3,
@@ -609,6 +638,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Empire Ears EVO",
     "canonical_name": "Empire Ears EVO",
     "final_score": 7.3,
@@ -630,6 +660,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Mysticraft Myth",
     "canonical_name": "Mysticraft Myth",
     "final_score": 7.3,
@@ -651,6 +682,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Prisma Audio Lumen",
     "canonical_name": "Prisma Audio Lumen",
     "final_score": 7.3,
@@ -672,6 +704,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Monarch MKIII",
     "canonical_name": "ThieAudio Monarch MKIII",
     "final_score": 7.3,
@@ -693,6 +726,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Aful Dawn-X",
     "canonical_name": "Aful Dawn-X",
     "final_score": 7.2,
@@ -714,6 +748,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "DUNU Glacier",
     "canonical_name": "Dunu Glacier",
     "final_score": 7.2,
@@ -735,6 +770,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Empire Ears Legend X SE",
     "canonical_name": "Empire Ears Legend X SE",
     "final_score": 7.2,
@@ -756,6 +792,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Unique Melody MEST",
     "canonical_name": "Unique Melody MEST",
     "final_score": 7.2,
@@ -777,6 +814,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "YU9 Audio Que",
     "canonical_name": "YU9 Que",
     "final_score": 7.2,
@@ -798,6 +836,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio Nio",
     "canonical_name": "64 Audio Nio",
     "final_score": 7.1,
@@ -819,6 +858,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio U6t",
     "canonical_name": "64 Audio U6t",
     "final_score": 7.1,
@@ -840,6 +880,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Audeze LCDi4 (w/ Cipher)",
     "canonical_name": "",
     "final_score": 7.1,
@@ -861,6 +902,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop S8",
     "canonical_name": "Moondrop S8",
     "final_score": 7.1,
@@ -882,6 +924,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Unique Melody MEST MK2",
     "canonical_name": "Unique Melody MEST MK2",
     "final_score": 7.1,
@@ -903,6 +946,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Hidition Violet",
     "canonical_name": "Hidition Violet",
     "final_score": 7.0,
@@ -924,6 +968,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Variations",
     "canonical_name": "Moondrop Variations",
     "final_score": 7.0,
@@ -945,6 +990,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Oriolus Traillii",
     "canonical_name": "",
     "final_score": 7.0,
@@ -966,6 +1012,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sennheiser IE900",
     "canonical_name": "Sennheiser IE900",
     "final_score": 7.0,
@@ -987,6 +1034,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Thieaudio Monarch MKII",
     "canonical_name": "ThieAudio Monarch MKII",
     "final_score": 7.0,
@@ -1008,6 +1056,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio Solo",
     "canonical_name": "64 Audio Solo",
     "final_score": 6.9,
@@ -1029,6 +1078,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Campfire Andromeda 2020",
     "canonical_name": "Campfire Andromeda 2020",
     "final_score": 6.9,
@@ -1050,6 +1100,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Hyla Sarda",
     "canonical_name": "Hyla Sarda",
     "final_score": 6.9,
@@ -1071,6 +1122,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Dark Saber",
     "canonical_name": "Moondrop Dark Saber",
     "final_score": 6.9,
@@ -1092,6 +1144,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Symphonium Audio Meteor",
     "canonical_name": "Symphonium Meteor",
     "final_score": 6.9,
@@ -1113,6 +1166,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Vision Ears VE7",
     "canonical_name": "Vision Ears VE7",
     "final_score": 6.9,
@@ -1134,6 +1188,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Xenns Top Pro",
     "canonical_name": "XENNS Mangird Top Pro",
     "final_score": 6.9,
@@ -1155,6 +1210,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "qdc Anole VX",
     "canonical_name": "qdc Anole VX",
     "final_score": 6.9,
@@ -1176,6 +1232,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio A3t (Demo)",
     "canonical_name": "64 Audio A3t",
     "final_score": 6.8,
@@ -1197,6 +1254,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "DUNU SA6 Ultra",
     "canonical_name": "Dunu SA6 Ultra",
     "final_score": 6.7,
@@ -1218,6 +1276,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Hype 4",
     "canonical_name": "ThieAudio Hype 4",
     "final_score": 6.65,
@@ -1239,6 +1298,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop B2: Dusk",
     "canonical_name": "Moondrop Dusk",
     "final_score": 6.6,
@@ -1260,6 +1320,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sennheiser IE600",
     "canonical_name": "Sennheiser IE600",
     "final_score": 6.6,
@@ -1281,6 +1342,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio U18S",
     "canonical_name": "64 Audio U18s",
     "final_score": 6.5,
@@ -1302,6 +1364,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Binary Acoustics EP321 MEMS",
     "canonical_name": "Binary Acoustics EP321 MEMS",
     "final_score": 6.5,
@@ -1323,6 +1386,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Dunu SA6",
     "canonical_name": "Dunu SA6",
     "final_score": 6.5,
@@ -1344,6 +1408,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "HiSenior Mega5 EST (Revised)",
     "canonical_name": "HiSenior Mega 5 EST",
     "final_score": 6.5,
@@ -1365,6 +1430,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Softears RSV",
     "canonical_name": "Softears RSV",
     "final_score": 6.5,
@@ -1386,6 +1452,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sony XBA-N3",
     "canonical_name": "Sony XBA-N3",
     "final_score": 6.5,
@@ -1407,6 +1474,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "qdc Anole V14",
     "canonical_name": "qdc Anole V14",
     "final_score": 6.5,
@@ -1428,6 +1496,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tanchjim Origin",
     "canonical_name": "Tanchjim Origin",
     "final_score": 6.45,
@@ -1449,6 +1518,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio Duo",
     "canonical_name": "64 Audio Duo",
     "final_score": 6.4,
@@ -1470,6 +1540,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio Fourte Blanc",
     "canonical_name": "64 Audio Fourte Blanc",
     "final_score": 6.4,
@@ -1491,6 +1562,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio Tia Fourte",
     "canonical_name": "64 Audio Tia Fourte",
     "final_score": 6.4,
@@ -1512,6 +1584,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fiio FX17",
     "canonical_name": "",
     "final_score": 6.4,
@@ -1533,6 +1606,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "LETSHUOER EJ07M",
     "canonical_name": "Letshuoer EJ07M",
     "final_score": 6.4,
@@ -1554,6 +1628,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Shuoer EJ07M Kinda Lava",
     "canonical_name": "Letshuoer EJ07M Kinda Lava",
     "final_score": 6.4,
@@ -1575,6 +1650,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Softears RS10",
     "canonical_name": "Softears RS10",
     "final_score": 6.4,
@@ -1596,6 +1672,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Softears RSV MKII",
     "canonical_name": "Softears RSV MKII",
     "final_score": 6.4,
@@ -1617,6 +1694,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Symphonium Triton",
     "canonical_name": "Symphonium Triton",
     "final_score": 6.4,
@@ -1638,6 +1716,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Custom Art FIBAE 7U",
     "canonical_name": "Custom Art FIBAE 7U",
     "final_score": 6.3,
@@ -1659,6 +1738,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "DUNU SA6 MKII",
     "canonical_name": "Dunu SA6 MK2",
     "final_score": 6.3,
@@ -1680,6 +1760,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "DUNU Zen Pro",
     "canonical_name": "Dunu Zen Pro",
     "final_score": 6.3,
@@ -1701,6 +1782,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Dusk (no DSP)",
     "canonical_name": "",
     "final_score": 6.3,
@@ -1722,6 +1804,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Noble Audio Viking Ragnar",
     "canonical_name": "Noble Audio Viking Ragnar",
     "final_score": 6.3,
@@ -1743,6 +1826,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "SoftEars Volume S",
     "canonical_name": "Softears Volume S",
     "final_score": 6.3,
@@ -1764,6 +1848,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Softears Turii",
     "canonical_name": "Softears Turii",
     "final_score": 6.3,
@@ -1785,6 +1870,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Oracle MKIII",
     "canonical_name": "",
     "final_score": 6.3,
@@ -1806,6 +1892,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Vision Ears Erlkonig",
     "canonical_name": "Vision Ears Erlkonig",
     "final_score": 6.3,
@@ -1827,6 +1914,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio A4s",
     "canonical_name": "64 Audio A4s",
     "final_score": 6.2,
@@ -1848,6 +1936,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Empire Ears Legend X",
     "canonical_name": "Empire Ears Legend X",
     "final_score": 6.2,
@@ -1869,6 +1958,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "FatFreq Maestro Mini",
     "canonical_name": "FatFreq Maestro Mini",
     "final_score": 6.2,
@@ -1890,6 +1980,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "LETSHUOER Cadenza 12",
     "canonical_name": "Letshuoer Cadenza 12",
     "final_score": 6.2,
@@ -1911,6 +2002,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Lime Ears Anima",
     "canonical_name": "",
     "final_score": 6.2,
@@ -1932,6 +2024,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Blessing 3",
     "canonical_name": "Moondrop Blessing 3",
     "final_score": 6.2,
@@ -1953,6 +2046,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Dusk 2 (w/ DSP)",
     "canonical_name": "",
     "final_score": 6.2,
@@ -1974,6 +2068,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Orchestra MKII",
     "canonical_name": "",
     "final_score": 6.2,
@@ -1995,6 +2090,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio V16 Divinity",
     "canonical_name": "ThieAudio V16 Divinity",
     "final_score": 6.2,
@@ -2016,6 +2112,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Audio Hekili",
     "canonical_name": "Audio Hekili",
     "final_score": 6.1,
@@ -2037,6 +2134,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Craft Ears Aurum",
     "canonical_name": "CraftEars Aurum",
     "final_score": 6.1,
@@ -2058,6 +2156,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "CrinEars Reference",
     "canonical_name": "CrinEar Reference",
     "final_score": 6.1,
@@ -2079,6 +2178,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "DUNU DK-3001 BD",
     "canonical_name": "Dunu DK-3001 BD",
     "final_score": 6.1,
@@ -2100,6 +2200,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fearless x Crinacle Dawn",
     "canonical_name": "Fearless Audio Crinacle Dawn",
     "final_score": 6.1,
@@ -2121,6 +2222,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "FiR Radon 6",
     "canonical_name": "FIR Audio Radon 6",
     "final_score": 6.1,
@@ -2142,6 +2244,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "GS Audio SE11",
     "canonical_name": "GS Audio SE11",
     "final_score": 6.1,
@@ -2163,6 +2266,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Ice Lab Prismatica",
     "canonical_name": "Ice Lab Prismatica",
     "final_score": 6.1,
@@ -2184,6 +2288,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Mangird Xenns Top",
     "canonical_name": "",
     "final_score": 6.1,
@@ -2205,6 +2310,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tanchjim Oxygen",
     "canonical_name": "Tanchjim Oxygen",
     "final_score": 6.1,
@@ -2226,6 +2332,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Hype 2",
     "canonical_name": "ThieAudio Hype 2",
     "final_score": 6.1,
@@ -2247,6 +2354,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Prestige",
     "canonical_name": "ThieAudio Prestige",
     "final_score": 6.1,
@@ -2268,6 +2376,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "iSine 20 (w/ Cipher cable)",
     "canonical_name": "",
     "final_score": 6.1,
@@ -2289,6 +2398,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio A3t",
     "canonical_name": "64 Audio A3t",
     "final_score": 6.0,
@@ -2310,6 +2420,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Binary Acoustics Chopin",
     "canonical_name": "",
     "final_score": 6.0,
@@ -2331,6 +2442,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "DUNU Vulkan",
     "canonical_name": "Dunu Vulkan",
     "final_score": 6.0,
@@ -2352,6 +2464,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Empire Ears Valkyrie",
     "canonical_name": "",
     "final_score": 6.0,
@@ -2373,6 +2486,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Empire Ears Valkyrie MK.II",
     "canonical_name": "Empire Ears Valkyrie MK.II",
     "final_score": 6.0,
@@ -2394,6 +2508,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Hidition NT6 Pro",
     "canonical_name": "Hidition NT6",
     "final_score": 6.0,
@@ -2415,6 +2530,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Hidition Waltz",
     "canonical_name": "Hidition Waltz",
     "final_score": 6.0,
@@ -2436,6 +2552,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Juzear Defiant",
     "canonical_name": "Juzear Defiant",
     "final_score": 6.0,
@@ -2457,6 +2574,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Lime Ears Terra",
     "canonical_name": "Lime Ears Terra",
     "final_score": 6.0,
@@ -2478,6 +2596,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop B2",
     "canonical_name": "",
     "final_score": 6.0,
@@ -2499,6 +2618,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop May DSP",
     "canonical_name": "Moondrop May",
     "final_score": 6.0,
@@ -2520,6 +2640,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Thieaudio Monarch",
     "canonical_name": "ThieAudio Monarch MKI",
     "final_score": 6.0,
@@ -2541,6 +2662,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Unique Melody MEXT",
     "canonical_name": "Unique Melody MEXT",
     "final_score": 6.0,
@@ -2562,6 +2684,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Vision Ears VE8",
     "canonical_name": "Vision Ears VE8",
     "final_score": 6.0,
@@ -2583,6 +2706,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Campfire Andromeda 2019",
     "canonical_name": "Campfire Andromeda pre-2020",
     "final_score": 5.9,
@@ -2604,6 +2728,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Hidition Viento-B Universal",
     "canonical_name": "",
     "final_score": 5.9,
@@ -2625,6 +2750,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Jomo Audio Trinity Brass",
     "canonical_name": "",
     "final_score": 5.9,
@@ -2646,6 +2772,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Juzear Defiant Gamerfidelity",
     "canonical_name": "",
     "final_score": 5.9,
@@ -2667,6 +2794,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Kiwi Ears Orchestra",
     "canonical_name": "Kiwi Ears Orchestra",
     "final_score": 5.9,
@@ -2688,6 +2816,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sennheiser IE200",
     "canonical_name": "Sennheiser IE200",
     "final_score": 5.9,
@@ -2709,6 +2838,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Shure KSE1500",
     "canonical_name": "",
     "final_score": 5.9,
@@ -2730,6 +2860,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tanchjim Hana 2021 ⭑",
     "canonical_name": "Tanchjim Hana 2021",
     "final_score": 5.9,
@@ -2751,6 +2882,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Elixir",
     "canonical_name": "ThieAudio Elixir",
     "final_score": 5.9,
@@ -2772,6 +2904,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Excalibur",
     "canonical_name": "ThieAudio Excalibur",
     "final_score": 5.9,
@@ -2793,6 +2926,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Thieaudio Clairvoyance",
     "canonical_name": "ThieAudio Clairvoyance",
     "final_score": 5.9,
@@ -2814,6 +2948,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Vision Ears Elysium",
     "canonical_name": "Vision Ears Elysium",
     "final_score": 5.9,
@@ -2835,6 +2970,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "7Hz Timeless",
     "canonical_name": "7Hz Timeless",
     "final_score": 5.8,
@@ -2856,6 +2992,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "DUNU Falcon Pro (Experimental)",
     "canonical_name": "Dunu Falcon Pro Experimental",
     "final_score": 5.8,
@@ -2877,6 +3014,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Kato",
     "canonical_name": "Moondrop Kato",
     "final_score": 5.8,
@@ -2898,6 +3036,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Raptgo Hook X",
     "canonical_name": "Raptgo Hook X",
     "final_score": 5.8,
@@ -2919,6 +3058,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Shuoer S12",
     "canonical_name": "Letshuoer S12",
     "final_score": 5.8,
@@ -2940,6 +3080,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Aful Performer 8S",
     "canonical_name": "Aful Performer 8S",
     "final_score": 5.7,
@@ -2961,6 +3102,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Etymotic ER2XR",
     "canonical_name": "Etymotic ER2XR",
     "final_score": 5.7,
@@ -2982,6 +3124,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "HiSenior Mega7",
     "canonical_name": "HiSenior Mega 7",
     "final_score": 5.7,
@@ -3003,6 +3146,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Juzear Harrier",
     "canonical_name": "Juzear Harrier",
     "final_score": 5.7,
@@ -3024,6 +3168,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "NiceHCK Rockies",
     "canonical_name": "",
     "final_score": 5.7,
@@ -3045,6 +3190,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Audio Lokahi",
     "canonical_name": "Audio Lokahi",
     "final_score": 5.6,
@@ -3066,6 +3212,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Campfire Solaris OG",
     "canonical_name": "Campfire Audio Solaris OG",
     "final_score": 5.6,
@@ -3087,6 +3234,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "FAudio Dark Sky",
     "canonical_name": "FAudio Dark Sky",
     "final_score": 5.6,
@@ -3108,6 +3256,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Simgot Supermix 4",
     "canonical_name": "Simgot Supermix 4",
     "final_score": 5.6,
@@ -3129,6 +3278,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "Xenns Mangird Tea 2",
     "canonical_name": "XENNS Mangird Tea 2",
     "final_score": 5.55,
@@ -3150,6 +3300,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Binary Acoustics 1900",
     "canonical_name": "",
     "final_score": 5.5,
@@ -3171,6 +3322,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Empire Ears ESR MK.II",
     "canonical_name": "Empire Ears ESR MK.II",
     "final_score": 5.5,
@@ -3192,6 +3344,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Empire Ears Hero",
     "canonical_name": "Empire Ears Hero",
     "final_score": 5.5,
@@ -3213,6 +3366,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fearless Audio S8P",
     "canonical_name": "",
     "final_score": 5.5,
@@ -3234,6 +3388,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Skorea Agate",
     "canonical_name": "",
     "final_score": 5.5,
@@ -3255,6 +3410,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sony MDR-EX800ST",
     "canonical_name": "Sony MDR-EX800ST",
     "final_score": 5.5,
@@ -3276,6 +3432,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Oracle",
     "canonical_name": "ThieAudio Oracle",
     "final_score": 5.5,
@@ -3297,6 +3454,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Voyager 14",
     "canonical_name": "ThieAudio Voyager 14",
     "final_score": 5.5,
@@ -3318,6 +3476,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "EPZ P40",
     "canonical_name": "EPZ P40",
     "final_score": 5.4,
@@ -3339,6 +3498,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Kinera Nanna 2.0",
     "canonical_name": "Kinera Nanna 2.0",
     "final_score": 5.4,
@@ -3360,6 +3520,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Solis",
     "canonical_name": "Moondrop Solis",
     "final_score": 5.4,
@@ -3381,6 +3542,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Prisma Azul",
     "canonical_name": "Prisma Audio Azul",
     "final_score": 5.4,
@@ -3402,6 +3564,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "SeeAudio Bravery",
     "canonical_name": "SeeAudio Bravery",
     "final_score": 5.4,
@@ -3423,6 +3586,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sony MDR-EX1000 (no filter)",
     "canonical_name": "Sony MDR-EX1000",
     "final_score": 5.4,
@@ -3444,6 +3608,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio A3e (Demo)",
     "canonical_name": "",
     "final_score": 5.3,
@@ -3465,6 +3630,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Astell&Kern ZERO1",
     "canonical_name": "Astell&Kern ZERO1",
     "final_score": 5.3,
@@ -3486,6 +3652,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Audeze Euclid",
     "canonical_name": "Audeze Euclid",
     "final_score": 5.3,
@@ -3507,6 +3674,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Aya Audio Siren",
     "canonical_name": "Aya Audio Siren",
     "final_score": 5.3,
@@ -3528,6 +3696,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "DUNU DN142",
     "canonical_name": "Dunu DN142",
     "final_score": 5.3,
@@ -3549,6 +3718,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Etymotic ER4XR",
     "canonical_name": "Etymotic ER4XR",
     "final_score": 5.3,
@@ -3570,6 +3740,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Etymotic EVO",
     "canonical_name": "Etymotic EVO",
     "final_score": 5.3,
@@ -3591,6 +3762,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fiio FH7S",
     "canonical_name": "FiiO FH7S",
     "final_score": 5.3,
@@ -3612,6 +3784,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Noble Audio Ronin",
     "canonical_name": "",
     "final_score": 5.3,
@@ -3633,6 +3806,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tanchjim Soda",
     "canonical_name": "Tanchjim Soda",
     "final_score": 5.3,
@@ -3654,6 +3828,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Truthears Hexa",
     "canonical_name": "Truthear Hexa",
     "final_score": 5.3,
@@ -3675,6 +3850,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "A&K x CFA Pathfinder",
     "canonical_name": "Astell&Kern x CFA Pathfinder",
     "final_score": 5.2,
@@ -3696,6 +3872,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "DUNU Falcon Pro",
     "canonical_name": "Dunu Falcon Pro",
     "final_score": 5.2,
@@ -3717,6 +3894,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Drop x JVC HA-FDX1",
     "canonical_name": "",
     "final_score": 5.2,
@@ -3738,6 +3916,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "EPZ P50",
     "canonical_name": "",
     "final_score": 5.2,
@@ -3759,6 +3938,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Etymotic ER2SE",
     "canonical_name": "Etymotic ER2SE",
     "final_score": 5.2,
@@ -3780,6 +3960,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Final x Dita Shichiku.Kangen",
     "canonical_name": "Final Audio x Dita Shichiku.Kangen",
     "final_score": 5.2,
@@ -3801,6 +3982,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "MiM Dark Magician",
     "canonical_name": "MiM Dark Magician",
     "final_score": 5.2,
@@ -3822,6 +4004,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Aria",
     "canonical_name": "Moondrop Aria",
     "final_score": 5.2,
@@ -3843,6 +4026,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop KXXS",
     "canonical_name": "Moondrop KXXS",
     "final_score": 5.2,
@@ -3864,6 +4048,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop KXXX",
     "canonical_name": "Moondrop KXXX",
     "final_score": 5.2,
@@ -3885,6 +4070,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Starfield",
     "canonical_name": "Moondrop Starfield",
     "final_score": 5.2,
@@ -3906,6 +4092,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "OpenAudio Mercury",
     "canonical_name": "OpenAudio Mercury",
     "final_score": 5.2,
@@ -3927,6 +4114,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Shuoer EJ07",
     "canonical_name": "Letshuoer EJ07",
     "final_score": 5.2,
@@ -3948,6 +4136,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "SoftEars Edge",
     "canonical_name": "Softears Edge",
     "final_score": 5.2,
@@ -3969,6 +4158,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tanchjim Prism",
     "canonical_name": "Tanchjim Prism",
     "final_score": 5.2,
@@ -3990,6 +4180,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tansio Mirai Spark",
     "canonical_name": "Tansio Mirai Spark",
     "final_score": 5.2,
@@ -4011,6 +4202,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tansio Mirai Zodiac",
     "canonical_name": "Tansio Mirai Zodiac",
     "final_score": 5.2,
@@ -4032,6 +4224,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Oracle MKII",
     "canonical_name": "ThieAudio Oracle MKII",
     "final_score": 5.2,
@@ -4053,6 +4246,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tripowin x HBB Olina",
     "canonical_name": "Tripowin Olina",
     "final_score": 5.2,
@@ -4074,6 +4268,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Dunu EST112",
     "canonical_name": "Dunu EST112",
     "final_score": 5.15,
@@ -4095,6 +4290,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Hidition NT6",
     "canonical_name": "Hidition NT6",
     "final_score": 5.15,
@@ -4116,6 +4312,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio Aspire 3",
     "canonical_name": "64 Audio Aspire 3",
     "final_score": 5.1,
@@ -4137,6 +4334,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Aful Performer 5",
     "canonical_name": "Aful Performer 5",
     "final_score": 5.1,
@@ -4158,6 +4356,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Campfire Solaris 2020",
     "canonical_name": "",
     "final_score": 5.1,
@@ -4179,6 +4378,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Ikko OH10",
     "canonical_name": "Ikko OH10",
     "final_score": 5.1,
@@ -4200,6 +4400,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "KZ PR1 Pro",
     "canonical_name": "KZ PR1 Pro",
     "final_score": 5.1,
@@ -4221,6 +4422,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Armature Art 12",
     "canonical_name": "Moondrop Armature 12",
     "final_score": 5.1,
@@ -4242,6 +4444,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "SeeAudio x Crinacle Midnight",
     "canonical_name": "",
     "final_score": 5.1,
@@ -4263,6 +4466,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tanchjim Darling",
     "canonical_name": "Tanchjim Darling",
     "final_score": 5.1,
@@ -4284,6 +4488,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Hype 4 MKII",
     "canonical_name": "ThieAudio Hype 4 MKII",
     "final_score": 5.1,
@@ -4305,6 +4510,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Legacy 9",
     "canonical_name": "",
     "final_score": 5.1,
@@ -4326,6 +4532,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tin Audio P1 Max",
     "canonical_name": "TinHiFi P1 Max",
     "final_score": 5.1,
@@ -4347,6 +4554,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "7Hz Salnotes Dioko",
     "canonical_name": "",
     "final_score": 5.05,
@@ -4368,6 +4576,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio Aspire 1",
     "canonical_name": "64 Audio Aspire 1",
     "final_score": 5.0,
@@ -4389,6 +4598,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Apple Airpods Pro 2",
     "canonical_name": "",
     "final_score": 5.0,
@@ -4410,6 +4620,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "BGVP DM8",
     "canonical_name": "BGVP DM8",
     "final_score": 5.0,
@@ -4431,6 +4642,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "DUNU Titan S",
     "canonical_name": "Dunu Titan S",
     "final_score": 5.0,
@@ -4452,6 +4664,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Dunu DK-3001 Pro",
     "canonical_name": "",
     "final_score": 5.0,
@@ -4473,6 +4686,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Dunu Luna",
     "canonical_name": "",
     "final_score": 5.0,
@@ -4494,6 +4708,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fearless S8Z",
     "canonical_name": "Fearless Audio S8Z",
     "final_score": 5.0,
@@ -4515,6 +4730,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fiio FH5",
     "canonical_name": "FiiO FH5",
     "final_score": 5.0,
@@ -4536,6 +4752,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fiio FH7",
     "canonical_name": "FiiO FH7",
     "final_score": 5.0,
@@ -4557,6 +4774,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fiio FH9",
     "canonical_name": "",
     "final_score": 5.0,
@@ -4578,6 +4796,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Final Audio B3",
     "canonical_name": "Final Audio B3",
     "final_score": 5.0,
@@ -4599,6 +4818,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Hidition NT8",
     "canonical_name": "",
     "final_score": 5.0,
@@ -4620,6 +4840,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Lime Ears Pneuma",
     "canonical_name": "",
     "final_score": 5.0,
@@ -4641,6 +4862,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Kadenz",
     "canonical_name": "Moondrop Kadenz",
     "final_score": 5.0,
@@ -4662,6 +4884,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Solis 2",
     "canonical_name": "Moondrop Solis 2",
     "final_score": 5.0,
@@ -4683,6 +4906,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Softears Studio 4",
     "canonical_name": "Softears Studio 4",
     "final_score": 5.0,
@@ -4704,6 +4928,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tansio Mirai Land",
     "canonical_name": "Tansio Mirai Land",
     "final_score": 5.0,
@@ -4725,6 +4950,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Vision Ears VE6",
     "canonical_name": "",
     "final_score": 5.0,
@@ -4746,6 +4972,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Dunu DK-2001",
     "canonical_name": "",
     "final_score": 4.9,
@@ -4767,6 +4994,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Blessing OG",
     "canonical_name": "",
     "final_score": 4.9,
@@ -4788,6 +5016,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "ROSESESA CJ20",
     "canonical_name": "Rose Technics CJ20",
     "final_score": 4.9,
@@ -4809,6 +5038,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "SoftEars Volume",
     "canonical_name": "Softears Volume",
     "final_score": 4.9,
@@ -4830,6 +5060,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tangzu Waner SG 2 Red Lion",
     "canonical_name": "Tangzu Waner SG 2 Red Lion",
     "final_score": 4.9,
@@ -4851,6 +5082,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio U18T",
     "canonical_name": "64 Audio U18t",
     "final_score": 4.8,
@@ -4872,6 +5104,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Empire Ears Zeus XIV",
     "canonical_name": "Empire Ears Zeus XIV",
     "final_score": 4.8,
@@ -4893,6 +5126,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Aria Snow",
     "canonical_name": "Moondrop Aria Snow",
     "final_score": 4.8,
@@ -4914,6 +5148,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Samsung Galaxy Buds",
     "canonical_name": "Samsung Galaxy Buds",
     "final_score": 4.8,
@@ -4935,6 +5170,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "SoftEars Cerberus",
     "canonical_name": "Softears Cerberus",
     "final_score": 4.8,
@@ -4956,6 +5192,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "TinHifi T4",
     "canonical_name": "TinHiFi T4",
     "final_score": 4.8,
@@ -4977,6 +5214,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Campfire Atlas",
     "canonical_name": "Campfire Audio Atlas",
     "final_score": 4.7,
@@ -4998,6 +5236,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "DUNU Talos",
     "canonical_name": "Dunu Talos",
     "final_score": 4.7,
@@ -5019,6 +5258,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "LETSHUOER x Gizaudio Galileo",
     "canonical_name": "Letshuoer x Gizaudio Galileo",
     "final_score": 4.7,
@@ -5040,6 +5280,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Sparks",
     "canonical_name": "Moondrop Sparks",
     "final_score": 4.7,
@@ -5061,6 +5302,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Samsung Galaxy Buds Pro",
     "canonical_name": "Samsung Galaxy Buds Pro",
     "final_score": 4.7,
@@ -5082,6 +5324,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Yu9 U556",
     "canonical_name": "YU9 U556",
     "final_score": 4.7,
@@ -5103,6 +5346,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Campfire Holocene",
     "canonical_name": "Campfire Audio Holocene",
     "final_score": 4.6,
@@ -5124,6 +5368,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Stellaris",
     "canonical_name": "Moondrop Stellaris",
     "final_score": 4.6,
@@ -5145,6 +5390,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Noble Audio Fokus Rex",
     "canonical_name": "Noble Audio Fokus Rex",
     "final_score": 4.6,
@@ -5166,6 +5412,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Noble Audio K10 Encore",
     "canonical_name": "",
     "final_score": 4.6,
@@ -5187,6 +5434,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "SeeAudio Yume",
     "canonical_name": "SeeAudio Yume",
     "final_score": 4.6,
@@ -5208,6 +5456,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Thieaudio Legacy 4",
     "canonical_name": "ThieAudio Legacy 4",
     "final_score": 4.6,
@@ -5229,6 +5478,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Truthear x Crinacle Zero",
     "canonical_name": "Truthear x Crinacle Zero",
     "final_score": 4.6,
@@ -5250,6 +5500,7 @@
     "market_confidence": "High"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio Aspire 2",
     "canonical_name": "64 Audio Aspire 2",
     "final_score": 4.5,
@@ -5271,6 +5522,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "CCA CRA+",
     "canonical_name": "CCA CRA",
     "final_score": 4.5,
@@ -5292,6 +5544,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Etymotic ER3XR",
     "canonical_name": "",
     "final_score": 4.5,
@@ -5313,6 +5566,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Illumination",
     "canonical_name": "Moondrop Illumination",
     "final_score": 4.5,
@@ -5334,6 +5588,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Jiu",
     "canonical_name": "",
     "final_score": 4.5,
@@ -5355,6 +5610,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sennheiser IE800S",
     "canonical_name": "",
     "final_score": 4.5,
@@ -5376,6 +5632,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "7Hz Zero",
     "canonical_name": "7Hz Zero",
     "final_score": 4.4,
@@ -5397,6 +5654,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Bose QuietComfort Buds",
     "canonical_name": "",
     "final_score": 4.4,
@@ -5418,6 +5676,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Dunu Zen",
     "canonical_name": "Dunu Zen",
     "final_score": 4.4,
@@ -5439,6 +5698,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fiio FD5",
     "canonical_name": "FiiO FD5",
     "final_score": 4.4,
@@ -5460,6 +5720,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Ikko Opal OH2",
     "canonical_name": "Ikko Opal OH2",
     "final_score": 4.4,
@@ -5481,6 +5742,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Skorea Agate Lite",
     "canonical_name": "",
     "final_score": 4.4,
@@ -5502,6 +5764,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Apple AirPods Pro",
     "canonical_name": "Apple AirPods Pro",
     "final_score": 4.3,
@@ -5523,6 +5786,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Kefine Klean SV",
     "canonical_name": "Kefine Klean SV",
     "final_score": 4.3,
@@ -5544,6 +5808,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Mangird Tea",
     "canonical_name": "XENNS Mangird Tea",
     "final_score": 4.3,
@@ -5565,6 +5830,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Illustrious",
     "canonical_name": "Moondrop Illustrious",
     "final_score": 4.3,
@@ -5586,6 +5852,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Kanas Pro",
     "canonical_name": "Moondrop Kanas Pro",
     "final_score": 4.3,
@@ -5607,6 +5874,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Oriolus Isabellae",
     "canonical_name": "Oriolus Isabellae",
     "final_score": 4.3,
@@ -5628,6 +5896,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Samsung Galaxy Buds+",
     "canonical_name": "Samsung Galaxy Buds",
     "final_score": 4.3,
@@ -5649,6 +5918,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sony MH750",
     "canonical_name": "Sony MH750",
     "final_score": 4.3,
@@ -5670,6 +5940,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sony MH755",
     "canonical_name": "Sony MH755",
     "final_score": 4.3,
@@ -5691,6 +5962,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tanchjim Ola",
     "canonical_name": "Tanchjim Ola",
     "final_score": 4.3,
@@ -5712,6 +5984,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Truthears Hola",
     "canonical_name": "Truthear Hola",
     "final_score": 4.3,
@@ -5733,6 +6006,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Unique Meldody 3DT",
     "canonical_name": "Unique Melody 3DT",
     "final_score": 4.3,
@@ -5754,6 +6028,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "YanYin Aladdin",
     "canonical_name": "YanYin Aladdin",
     "final_score": 4.3,
@@ -5775,6 +6050,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "BQEYZ Autumn",
     "canonical_name": "BQEYZ Autumn",
     "final_score": 4.2,
@@ -5796,6 +6072,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "CCA CRA",
     "canonical_name": "CCA CRA",
     "final_score": 4.2,
@@ -5817,6 +6094,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Campfire Ara",
     "canonical_name": "Campfire Audio Ara",
     "final_score": 4.2,
@@ -5838,6 +6116,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Final Audio E500",
     "canonical_name": "Final Audio E500",
     "final_score": 4.2,
@@ -5859,6 +6138,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "LETSHUOER D13",
     "canonical_name": "Letshuoer D13",
     "final_score": 4.2,
@@ -5880,6 +6160,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tanchjim Tanya",
     "canonical_name": "Tanchjim Tanya",
     "final_score": 4.2,
@@ -5901,6 +6182,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Truthear Gate",
     "canonical_name": "Truthear Gate",
     "final_score": 4.2,
@@ -5922,6 +6204,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Unique Melody MEST Mini",
     "canonical_name": "Unique Melody MEST Mini",
     "final_score": 4.2,
@@ -5943,6 +6226,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "7Hz Eternal",
     "canonical_name": "7Hz Eternal",
     "final_score": 4.1,
@@ -5964,6 +6248,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "DUNU Titan X",
     "canonical_name": "Dunu Titan X",
     "final_score": 4.1,
@@ -5985,6 +6270,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Final Audio A8000",
     "canonical_name": "",
     "final_score": 4.1,
@@ -6006,6 +6292,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Kbear Diamond",
     "canonical_name": "KBear Diamond",
     "final_score": 4.1,
@@ -6027,6 +6314,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sony WF-1000XM4",
     "canonical_name": "Sony WF1000XM4",
     "final_score": 4.1,
@@ -6048,6 +6336,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tanchjim Echo",
     "canonical_name": "",
     "final_score": 4.1,
@@ -6069,6 +6358,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Vision Ears 3.2",
     "canonical_name": "",
     "final_score": 4.1,
@@ -6090,6 +6380,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "7th Acoustics Proxima",
     "canonical_name": "7th Acoustics Proxima",
     "final_score": 4.0,
@@ -6111,6 +6402,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Blon BL03",
     "canonical_name": "Blon BL03",
     "final_score": 4.0,
@@ -6132,6 +6424,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Canal Works CW-U77",
     "canonical_name": "",
     "final_score": 4.0,
@@ -6153,6 +6446,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Colorfly Quintet",
     "canonical_name": "Colorfly Quintet",
     "final_score": 4.0,
@@ -6174,6 +6468,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Chu",
     "canonical_name": "Moondrop Chu",
     "final_score": 4.0,
@@ -6195,6 +6490,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop SSP",
     "canonical_name": "Moondrop SSP",
     "final_score": 4.0,
@@ -6216,6 +6512,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Shanling ME800",
     "canonical_name": "Shanling ME800",
     "final_score": 4.0,
@@ -6237,6 +6534,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "ThieAudio Legacy 5",
     "canonical_name": "ThieAudio Legacy 5",
     "final_score": 4.0,
@@ -6258,6 +6556,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tripowin x HBB Mele",
     "canonical_name": "Tripowin HBB Mele",
     "final_score": 4.0,
@@ -6279,6 +6578,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Vision Ears EVE20",
     "canonical_name": "",
     "final_score": 4.0,
@@ -6300,6 +6600,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "qdc Superior EX",
     "canonical_name": "qdc Superior EX",
     "final_score": 4.0,
@@ -6321,6 +6622,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Intime Sora",
     "canonical_name": "Intime Sora",
     "final_score": 3.9,
@@ -6342,6 +6644,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "KZ Zex Pro",
     "canonical_name": "KZ ZEX Pro",
     "final_score": 3.9,
@@ -6363,6 +6666,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Simphonio VR1",
     "canonical_name": "Simphonio VR1",
     "final_score": 3.9,
@@ -6384,6 +6688,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tanchjim Hana",
     "canonical_name": "Tanchjim Hana",
     "final_score": 3.9,
@@ -6405,6 +6710,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tripowin Lea",
     "canonical_name": "Tripowin Lea",
     "final_score": 3.9,
@@ -6426,6 +6732,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "KZ EDX Ultra",
     "canonical_name": "KZ EDX Ultra",
     "final_score": 3.8,
@@ -6447,6 +6754,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Effect Audio Axiom",
     "canonical_name": "Effect Audio Axiom",
     "final_score": 3.7,
@@ -6468,6 +6776,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fiio x Crinacle FHE Eclipse",
     "canonical_name": "",
     "final_score": 3.7,
@@ -6489,6 +6798,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Audiosense DT200",
     "canonical_name": "",
     "final_score": 3.6,
@@ -6510,6 +6820,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Empire Ears Bravado MK.II",
     "canonical_name": "Empire Ears Bravado MK.II",
     "final_score": 3.6,
@@ -6531,6 +6842,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fiio FX15",
     "canonical_name": "FiiO FX15",
     "final_score": 3.6,
@@ -6552,6 +6864,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop SSR",
     "canonical_name": "Moondrop SSR",
     "final_score": 3.6,
@@ -6573,6 +6886,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Noble Audio Sultan",
     "canonical_name": "Noble Audio Sultan",
     "final_score": 3.6,
@@ -6594,6 +6908,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tanchjim Zero",
     "canonical_name": "Tanchjim Zero",
     "final_score": 3.6,
@@ -6615,6 +6930,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Kinera iDun 2.0",
     "canonical_name": "Kinera iDun 2.0",
     "final_score": 3.5,
@@ -6636,6 +6952,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "NF Audio NA2+",
     "canonical_name": "NF Audio NA2+",
     "final_score": 3.5,
@@ -6657,6 +6974,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Drop + Grell TWS1X",
     "canonical_name": "",
     "final_score": 3.4,
@@ -6678,6 +6996,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "EarFun Free Pro 2",
     "canonical_name": "",
     "final_score": 3.4,
@@ -6699,6 +7018,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Earfun Oluv Edition",
     "canonical_name": "Earfun Oluv Edition",
     "final_score": 3.4,
@@ -6720,6 +7040,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Kinera Norn",
     "canonical_name": "Kinera Norn",
     "final_score": 3.4,
@@ -6741,6 +7062,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Skorea Taaffete",
     "canonical_name": "",
     "final_score": 3.4,
@@ -6762,6 +7084,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "AKG Phone Buds",
     "canonical_name": "",
     "final_score": 3.3,
@@ -6783,6 +7106,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "EarSonics Stark",
     "canonical_name": "",
     "final_score": 3.3,
@@ -6804,6 +7128,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Final Audio A4000",
     "canonical_name": "Final Audio A4000",
     "final_score": 3.3,
@@ -6825,6 +7150,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "JVC FWX1",
     "canonical_name": "Drop JVC FWX1",
     "final_score": 3.3,
@@ -6846,6 +7172,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Spaceship",
     "canonical_name": "Moondrop Spaceship",
     "final_score": 3.3,
@@ -6867,6 +7194,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sennheiser IE 300",
     "canonical_name": "Sennheiser IE300",
     "final_score": 3.3,
@@ -6888,6 +7216,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Shanling ME700 Lite",
     "canonical_name": "Shanling ME700 Lite",
     "final_score": 3.3,
@@ -6909,6 +7238,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sony MDR-EX15",
     "canonical_name": "Sony MDR-EX15",
     "final_score": 3.3,
@@ -6930,6 +7260,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "TinHifi T2",
     "canonical_name": "TinHiFi T2",
     "final_score": 3.3,
@@ -6951,6 +7282,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "iBasso IT01X",
     "canonical_name": "iBasso IT01X",
     "final_score": 3.3,
@@ -6972,6 +7304,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "64 Audio A2e (Demo)",
     "canonical_name": "",
     "final_score": 3.2,
@@ -6993,6 +7326,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "AudioSense T800",
     "canonical_name": "AudioSense T800",
     "final_score": 3.2,
@@ -7014,6 +7348,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fearless Audio Shangri-La",
     "canonical_name": "Fearless Audio Shangri-La",
     "final_score": 3.2,
@@ -7035,6 +7370,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "HZSound Heart Mirror",
     "canonical_name": "HZSound Heart Mirror",
     "final_score": 3.2,
@@ -7056,6 +7392,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "KZ EDX Pro",
     "canonical_name": "KZ EDX Pro",
     "final_score": 3.2,
@@ -7077,6 +7414,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Skorea Donian (switches off)",
     "canonical_name": "",
     "final_score": 3.2,
@@ -7098,6 +7436,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "SoftEars Studio 2",
     "canonical_name": "Softears Studio 2",
     "final_score": 3.2,
@@ -7119,6 +7458,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Thieaudio Legacy 3",
     "canonical_name": "",
     "final_score": 3.2,
@@ -7140,6 +7480,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "CCA CSN",
     "canonical_name": "CCA CSN",
     "final_score": 3.1,
@@ -7161,6 +7502,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Cayin Fantasy",
     "canonical_name": "Cayin Fantasy",
     "final_score": 3.1,
@@ -7182,6 +7524,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "JH Audio Layla Aion",
     "canonical_name": "JH Audio Layla Aion",
     "final_score": 3.1,
@@ -7203,6 +7546,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Moondrop Quarks",
     "canonical_name": "Moondrop Quarks",
     "final_score": 3.1,
@@ -7224,6 +7568,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Thieaudio Legacy 2",
     "canonical_name": "ThieAudio Legacy 2 (L2)",
     "final_score": 3.1,
@@ -7245,6 +7590,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Westone W30",
     "canonical_name": "",
     "final_score": 3.1,
@@ -7266,6 +7612,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "CCZ Plume",
     "canonical_name": "CCZ Plume",
     "final_score": 3.0,
@@ -7287,6 +7634,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Custom Art FIBAE Black",
     "canonical_name": "Custom Art FIBAE Black",
     "final_score": 3.0,
@@ -7308,6 +7656,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fearless Audio Provence",
     "canonical_name": "Fearless Audio Provence",
     "final_score": 3.0,
@@ -7329,6 +7678,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fiio FD3",
     "canonical_name": "FiiO FD3",
     "final_score": 3.0,
@@ -7350,6 +7700,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fiio FH3",
     "canonical_name": "FiiO FH3",
     "final_score": 3.0,
@@ -7371,6 +7722,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fiio FH5S",
     "canonical_name": "FiiO FH5S",
     "final_score": 3.0,
@@ -7392,6 +7744,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "GS Audio GD3C",
     "canonical_name": "GS Audio GD3C",
     "final_score": 3.0,
@@ -7413,6 +7766,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Geek Wold 10 (blocked vent)",
     "canonical_name": "",
     "final_score": 3.0,
@@ -7434,6 +7788,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "KZ DQ6",
     "canonical_name": "KZ DQ6",
     "final_score": 3.0,
@@ -7455,6 +7810,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "KZ Zex",
     "canonical_name": "KZ ZEX",
     "final_score": 3.0,
@@ -7476,6 +7832,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Kinera Freya",
     "canonical_name": "",
     "final_score": 3.0,
@@ -7497,6 +7854,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Periodic Audio Be",
     "canonical_name": "",
     "final_score": 3.0,
@@ -7518,6 +7876,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Sennheiser Momentum TWS 2.0",
     "canonical_name": "",
     "final_score": 3.0,
@@ -7539,6 +7898,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Thieaudio Voyager 3",
     "canonical_name": "",
     "final_score": 3.0,
@@ -7560,6 +7920,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "TinHifi P2",
     "canonical_name": "TinHiFi P2",
     "final_score": 3.0,
@@ -7581,6 +7942,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "TinHifi T2 Evo",
     "canonical_name": "TinHiFi T2 Evo",
     "final_score": 3.0,
@@ -7602,6 +7964,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "TinHifi T5",
     "canonical_name": "TinHiFi T5",
     "final_score": 3.0,
@@ -7623,6 +7986,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Tripowin TC01",
     "canonical_name": "Tripowin TC01",
     "final_score": 3.0,
@@ -7644,6 +8008,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "qdc Uranus",
     "canonical_name": "qdc Uranus",
     "final_score": 3.0,
@@ -7665,6 +8030,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fearless Audio Barcelona",
     "canonical_name": "Fearless Audio Barcelona",
     "final_score": 2.9,
@@ -7686,6 +8052,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "KBear Neon",
     "canonical_name": "KBear Neon",
     "final_score": 2.9,
@@ -7707,6 +8074,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "KZ ZAS",
     "canonical_name": "KZ ZAS",
     "final_score": 2.9,
@@ -7728,6 +8096,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Nicehck TopGuy",
     "canonical_name": "NiceHCK Topguy",
     "final_score": 2.9,
@@ -7749,6 +8118,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Westone W40",
     "canonical_name": "",
     "final_score": 2.9,
@@ -7770,6 +8140,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Audiosense AQ7",
     "canonical_name": "",
     "final_score": 2.8,
@@ -7791,6 +8162,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Empire Ears Wraith",
     "canonical_name": "",
     "final_score": 2.7,
@@ -7812,6 +8184,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Final Audio EVA",
     "canonical_name": "",
     "final_score": 2.7,
@@ -7833,6 +8206,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Jaybirds Vista",
     "canonical_name": "Jaybird Vista",
     "final_score": 2.7,
@@ -7854,6 +8228,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Blon A8 Prometheus",
     "canonical_name": "Blon A8 Prometheus",
     "final_score": 2.6,
@@ -7875,6 +8250,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Campfire Audio Saber",
     "canonical_name": "Campfire Audio Saber",
     "final_score": 2.6,
@@ -7896,6 +8272,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Hiby Crystal6",
     "canonical_name": "Hiby Crystal6",
     "final_score": 2.6,
@@ -7917,6 +8294,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Ikko Gems OH1S",
     "canonical_name": "Ikko Gems OH1s",
     "final_score": 2.6,
@@ -7938,6 +8316,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "MMR Thummim",
     "canonical_name": "Metal Magic Research Thummim",
     "final_score": 2.6,
@@ -7959,6 +8338,7 @@
     "market_confidence": "Medium"
   },
   {
+    "entry_type": "ranked",
     "iem": "Rhapsodio Master",
     "canonical_name": "",
     "final_score": 2.6,
@@ -7980,6 +8360,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "TinHifi T3",
     "canonical_name": "",
     "final_score": 2.6,
@@ -8001,6 +8382,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "BGVP NS9",
     "canonical_name": "BGVP NS9",
     "final_score": 2.4,
@@ -8022,6 +8404,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Fearless Audio Tequila",
     "canonical_name": "Fearless Audio Tequila",
     "final_score": 2.4,
@@ -8043,6 +8426,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Noble Audio X",
     "canonical_name": "Noble Audio x Drop Noble X",
     "final_score": 2.2,
@@ -8064,6 +8448,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Campfire Honeydew",
     "canonical_name": "Campfire Audio Honeydew",
     "final_score": 2.1,
@@ -8085,6 +8470,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Campfire Satsuma",
     "canonical_name": "Campfire Audio Satsuma",
     "final_score": 2.1,
@@ -8106,6 +8492,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Campfire Vega 2020",
     "canonical_name": "Campfire Audio Vega 2020",
     "final_score": 2.1,
@@ -8127,6 +8514,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "JVC FX7 Gumy",
     "canonical_name": "JVC FX7 Gumy",
     "final_score": 2.1,
@@ -8148,6 +8536,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "KZ AST",
     "canonical_name": "KZ AST",
     "final_score": 2.1,
@@ -8169,6 +8558,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "MMR Homunculus",
     "canonical_name": "Metal Magic Research Homunculus",
     "final_score": 2.1,
@@ -8190,6 +8580,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Shuoer Tape Pro",
     "canonical_name": "Letshuoer Tape Pro",
     "final_score": 2.1,
@@ -8211,6 +8602,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Campfire Dorado 2020",
     "canonical_name": "Campfire Audio Dorado 2020",
     "final_score": 2.0,
@@ -8232,6 +8624,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Campfire Mammoth",
     "canonical_name": "Campfire Audio Mammoth",
     "final_score": 2.0,
@@ -8253,6 +8646,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Dunu SA3",
     "canonical_name": "",
     "final_score": 2.0,
@@ -8274,6 +8668,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "FLC 8P",
     "canonical_name": "FLC Technology 8P",
     "final_score": 2.0,
@@ -8295,6 +8690,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "HiFiMAN Bolt",
     "canonical_name": "Hifiman Bolt",
     "final_score": 2.0,
@@ -8316,6 +8712,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "KZ ZS10 Pro",
     "canonical_name": "KZ ZS10 Pro",
     "final_score": 2.0,
@@ -8337,6 +8734,7 @@
     "market_confidence": "Low"
   },
   {
+    "entry_type": "ranked",
     "iem": "Nothing Ear 2",
     "canonical_name": "",
     "final_score": 2.0,
@@ -8358,6 +8756,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Rhapsodio Zombie MK. II",
     "canonical_name": "Rhapsodio Zombie MK.II",
     "final_score": 2.0,
@@ -8379,6 +8778,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Shozy Black Hole Mini",
     "canonical_name": "",
     "final_score": 2.0,
@@ -8400,6 +8800,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "VSonic GR07",
     "canonical_name": "",
     "final_score": 2.0,
@@ -8421,6 +8822,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Shure SE215",
     "canonical_name": "",
     "final_score": 1.9,
@@ -8442,6 +8844,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "Periodic Audio Ti",
     "canonical_name": "",
     "final_score": 1.2,
@@ -8463,6 +8866,7 @@
     "market_confidence": "N/A"
   },
   {
+    "entry_type": "ranked",
     "iem": "oBravo Cupid",
     "canonical_name": "oBravo Cupid",
     "final_score": 1.2,
@@ -8482,5 +8886,4779 @@
     "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "7Hz Legato",
+    "canonical_name": "7Hz Legato",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Bassy and dark due to odd scoops in the upper-midrange and mid-treble.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "7Hz Salnotes Zero 2",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Very well tuned just falls short in terms of resolution. Satisfying mid-bass presence.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Acoustune HS2000MX",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "ADV Sound M5TWS",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds similar to Airpods Pro but with less resolution. Easy on the ears but quite smoothed over and dark.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "ADV Sound Turbo",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "V-shaped with more of an emphasis on technical performance; however, tonality doesn't seem quite right.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Aful Cantor",
+    "canonical_name": "Aful Cantor",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6.5",
+    "setup": "—",
+    "price": "—",
+    "comments": "A bit too bright sounding in the lower-treble (and brittle treble overall) which sounds odd compared to smoother lower-mids and bouncy sub-bass.",
+    "based_on": "Brief demo",
+    "tracker_slug": "aful-cantor",
+    "market_value": 497.84,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Aful Explorer",
+    "canonical_name": "Aful Explorer",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Smooth sounding but lack of treble extension leads to low-level detail and poor dynamics.",
+    "based_on": "Brief demo",
+    "tracker_slug": "aful-explorer",
+    "market_value": 75.82,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Aful Magic One",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Pleasantly tuned and inoffensive; however, sounds smoothed over due to 2kHz pinna and lack of treble extension.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Alpha Omega Fulgrim",
+    "canonical_name": "Alpha&Omega Fulgrim",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "alpha-omega-fulgrim",
+    "market_value": 4520.96,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Alpha Omega Omega",
+    "canonical_name": "Alpha&Omega Omega",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Good resolution and technicalities but tonality seems a bit poor: sucked lower-midrange and odd pinna gain, treble seems incoherent.",
+    "based_on": "Brief demo",
+    "tracker_slug": "alpha-omega-omega",
+    "market_value": 1525.0,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "AME Mousa",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Big sound with less great execution. Warm and colored but not quite in the right ways.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Aroma Audio Jewel",
+    "canonical_name": "Aroma Audio Jewel",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sucked out upper-midrange and lower-treble kills definition. Bass is poor. Needs work.",
+    "based_on": "Brief demo",
+    "tracker_slug": "aroma-audio-jewel",
+    "market_value": 2171.59,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Aroma Audio Wei Fan",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "U-shaped with extra mid-bass. Strong focus on upper-treble leads to feathery tactilty, but quite dynamic sounding and detailed.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Astell & Kern Novus",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "8",
+    "setup": "—",
+    "price": "—",
+    "comments": "Colored and unconventionally tuned, in a good way, with top-tier technical performance.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Astrotec Phoenix",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Generic V-shaped tuning and generally weak technicalities.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Aur Audio Alita",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Smoothed over and inoffensive, lacking in treble extension like the Neon Pro.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Aur Audio Aure",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "W-shaped tuning. Controlled bass boost, solid treble extension, exciting listen overall.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Aur Audio Neon Pro",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds like a knock-off Anole VX. Farty BA bass and lack of treble extension.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Aya Trident",
+    "canonical_name": "Aya Audio Trident",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Beyerdynamic Xelento",
+    "canonical_name": "Beyerdynamic Xelento",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Excellent bass response, just falls slightly short in control. Could use more treble extension.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "BGVP Wukong",
+    "canonical_name": "BGVP Wukong",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Campfire Andromeda 10",
+    "canonical_name": "Campfire Andromeda 10",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "campfire-andromeda-10",
+    "market_value": 1066.55,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Campfire Audio Alien Brain",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5.5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Campfire Audio Andro Emerald Sea",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Much more bloated and warm than the 2020 model, sounds too relaxed and loses its excellent tonality.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Campfire Audio Astrolith",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Very weird listen, lots of mid-bass and sucked-out midrange, but treble is well-extended and vibrant. Acquired taste but worth a listen.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Campfire Audio Bonnerville",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Still muffled sounding with odd mid-treble peak, but more palatable than the Cascara and Ponderosa.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Campfire Audio Cascara",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Very mid-bassy, upper-mids are recessed, and rolls off of 10kHz.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Campfire Audio Clara",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Most normal sounding Campfire IEM yet. Neutral with sub-bass boost, very pleasant on the ears but missing some mid-treble for resolution/edge.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Campfire Audio Moon Rover",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds like Andromeda 2020 with more treble extension, and everything is fine up until the mid-treble where there's a huge peak.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Campfire Audio Ponderosa",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "2",
+    "setup": "—",
+    "price": "—",
+    "comments": "More muffled sounding than the Cascara and with even less treble energy (this perception possibly just owing to more bass).",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Campfire Audio Solaris Stellar Horizon",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Decent, seems like a small improvement over the Solaris 2020.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Campfire Audio Supermoon",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Heavily V-shaped while hanging onto tonal balance by a thread.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Campfire Audio Trifecta",
+    "canonical_name": "Campfire Audio Trifecta",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Literally sounds like balls.",
+    "based_on": "Brief demo",
+    "tracker_slug": "campfire-audio-trifecta",
+    "market_value": 1664.39,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Campfire Chimera",
+    "canonical_name": "Campfire Audio Chimera",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5.5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Very wacky sounding midrange, BC smears the bass as well. Treble is decent and so are techs, though.",
+    "based_on": "Brief demo",
+    "tracker_slug": "campfire-audio-chimera",
+    "market_value": null,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Canpur 54E",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Canpur 622",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "—",
+    "setup": "—",
+    "price": "—",
+    "comments": "Pleasant midrange but can't remember much else about this one.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Canpur CP622B",
+    "canonical_name": "Canpur CP622B",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "canpur-cp622b",
+    "market_value": 1927.74,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Canpur CP622B Titanium",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Canpur CP74E",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Canpur CP752B",
+    "canonical_name": "Canpur CP752B",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "canpur-cp752b",
+    "market_value": 3787.5,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Canpur Mona Lisa",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Canpur Silver Flash",
+    "canonical_name": "Canpur Silver Flash",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5.5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "canpur-silver-flash",
+    "market_value": 96.67,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Canpure 74E",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Forward, midrange-focused sound. A bit fatiguging but reminds me of a 7A Supernova with more clarity.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "CFA Fathom",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds like Andromeda 2020 put on some serious weight.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Clariar i640",
+    "canonical_name": "Clariar i640",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Something of a chameleon, difficult to pin down this IEM's signature.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Craft Ears Argentium",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Wonky.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Craft Ears CE2",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Mediocre.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Craft Ears CE4",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Warmer than the CE6 and more pleasing tonally as a result. Slightly less technical.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Craft Ears CE6",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Very lean reference signature. Timbre is quite dry accordingly.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Craft Ears Cuprim",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Wonky.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Crinacle Daybreak",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5.5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Treble has some unnatural peaking past 10kHz that lends to a Focal-esque, metallic tinge.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Crinacle META",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Very safe sounding overall albeit competently tuned.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Custom Art FIBAE 5",
+    "canonical_name": "Custom Art FIBAE 5",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Exciting and grand sounding with some tonal quirks.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Dita Perpetua",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Impressive imaging for a single-DD and an interesting tonality that harkens to the CRA with smoother treble.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "DUNU DaVinci",
+    "canonical_name": "Dunu DaVinci",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Satisfying sub-bass thump with good tuning fundamentals moving upwards.",
+    "based_on": "Brief demo",
+    "tracker_slug": "dunu-davinci",
+    "market_value": 200.0,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "DUNU SA6EST",
+    "canonical_name": "Dunu SA6EST",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Technical sounding and clearly shooting for a more 'musical' focus, but treble is oddly peaky and juxtaposed weirdly to pinna rising at ~600Hz.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Elysian Annihlator 2026",
+    "canonical_name": "Elysian Annihilator 2026",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "elysian-annihilator-2026",
+    "market_value": 2750.0,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Elysian Apostle",
+    "canonical_name": "Elysian Apostle 2026",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "8",
+    "setup": "—",
+    "price": "—",
+    "comments": "Reminds me of if Elysian tuned more towards 64 Audio's sound while maintaing upper-mids. Colored sound done correctly with great technicalities.",
+    "based_on": "Brief demo",
+    "tracker_slug": "elysian-apostle-2026",
+    "market_value": 1342.13,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Elysian Apostle 2026",
+    "canonical_name": "Elysian Apostle 2026",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "8",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "elysian-apostle-2026",
+    "market_value": 1342.13,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Elysian Pilgrim (Production)",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Technical sounding but treble seems somewhat metallic and less balanced than pre-production unit.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Elysian Pilgrim (Proto)",
+    "canonical_name": "Elysian Pilgrim",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "Great detail pick-up and solid tuning at the expense of being somewhat strident.",
+    "based_on": "Brief demo",
+    "tracker_slug": "elysian-pilgrim",
+    "market_value": 275.0,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Empire Ears Odin MKII",
+    "canonical_name": "Empire Ears Odin MKII",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "empire-ears-odin-mkii",
+    "market_value": 3097.41,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Empire Ears Odyssey",
+    "canonical_name": "Empire Ears Odyssey",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "Generally reminiscent of the Empire Ears EVO with a more relaxed upper-midrange and more extended upper-treble.",
+    "based_on": "Brief demo",
+    "tracker_slug": "empire-ears-odyssey",
+    "market_value": 1611.84,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Empire Ears Triton",
+    "canonical_name": "Empire Ears Triton",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Conventionally L-shaped IEM with relaxed midrange and treble. Could use some more upper-treble to boost resolution.",
+    "based_on": "Brief demo",
+    "tracker_slug": "empire-ears-triton",
+    "market_value": 1068.48,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Faith Audio U1000",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "FatFreq Grand Maestro",
+    "canonical_name": "FatFreq Grand Maestro",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Extremely heavy - but controlled - bass shelf with neutral midrange and treble.",
+    "based_on": "Brief demo",
+    "tracker_slug": "fatfreq-grand-maestro",
+    "market_value": 1568.7,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "FatFreq Hayabusa",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "See FatFreq Sakura, but with more upper-midrange and upper-treble.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "FatFreq Maestro SE",
+    "canonical_name": "FatFreq Maestro SE",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6.5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Grand Maestro with an even more controlled sub-bass boost for more of a sub-woofer characteristic.",
+    "based_on": "Brief demo",
+    "tracker_slug": "fatfreq-maestro-se",
+    "market_value": 924.36,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "FatFreq Sakura",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Pleasant neutral-warm tonality with lack of air over 10kHz.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "FatFreq Tsuru",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Fiio FA19",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Treble sounds sibilant and overall tuning is quite off-putting.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "FiR Audio Krypton 5",
+    "canonical_name": "FIR Audio Krypton 5",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "See Neon 4 but even worse b/c lack of pinna and upper-mids.",
+    "based_on": "Brief demo",
+    "tracker_slug": "fir-audio-krypton-5",
+    "market_value": 1416.42,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "FiR Audio Neon 4",
+    "canonical_name": "FIR Audio Neon 4",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Can't tell what Kinetic bass tech is doing. Blunted and low-level detailing.",
+    "based_on": "Brief demo",
+    "tracker_slug": "fir-audio-neon-4",
+    "market_value": 532.02,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "FiR Audio Xenon 6",
+    "canonical_name": "FIR Audio Xenon 6",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Good detail, but frequency response is contentious.",
+    "based_on": "Brief demo",
+    "tracker_slug": "fir-audio-xenon-6",
+    "market_value": 2003.9,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Fitear TG335",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "2",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "FlipEars Artha",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Very wonky tuning, especially in the transition between upper-midrange and lower-treble.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "FlipEars Aurora",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Tuned a little more conventionally than the Artha but still has its share of quirks.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Flipears Zurq",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "U-shaped with some extra mid-bass. Coherency could use work between the bass and upper-treble, but pretty fun.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "ForteEars Macbeth",
+    "canonical_name": "Forte Ears Macbeth",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Thin and glassy sounding upper-midrange and excessive amounts of upper-treble. Clarity focused with poor execution.",
+    "based_on": "Brief demo",
+    "tracker_slug": "forte-ears-macbeth",
+    "market_value": null,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Geekfly Superfly 16",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Hercules Audio Noah",
+    "canonical_name": "Hercules Audio Noah",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "hercules-audio-noah",
+    "market_value": 319.41,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Hyla TE-5B",
+    "canonical_name": "Hyla TE-5B",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "The Hyla house sound (good amounts of bass and upper-mids) but less refined.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Hyla TE-5T",
+    "canonical_name": "Hyla TE-5T",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Horribly shouty and bright.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "I/O Volare",
+    "canonical_name": "I/O Audio Volare",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds warm and relatively pleasant, a bit QDC inspired. EST implementation rolls off and could use more texturing overall.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "InEar Pro Mission X",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "A more V-shaped PP8.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "InEar Prophile P8",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "Excellent, slightly warm-reference tonality with very strong separation despite average staging.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "JH Audio 16v2",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Mediocre.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "JH Audio Jolene",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Noticeably brigher and more forward than JH's other models on the lower bass settings. Still meh.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "JH Audio Lola",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Male vocalists sound like they're singing into a box and I'm behind them.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "JH Audio Roxanne",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Mediocre.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Jomo Audio GT600",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "V-shaped tuning that needs work in the execution. Lower-midrange is too sucked out.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Jomo Boxster",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Mediocre.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Jomo Cappucino",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Mediocre.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Jomo Spyder",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Aggressive warm V-shape with decent technicalities.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Justears 41T",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "JVC HA-FW10000",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "DD with a more analytical sound signature.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Kiwi Ears Cadenza",
+    "canonical_name": "Kiwi Ears Cadenza",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "—",
+    "setup": "—",
+    "price": "—",
+    "comments": "can't remember what I heard",
+    "based_on": "Brief demo",
+    "tracker_slug": "kiwi-ears-cadenza",
+    "market_value": 33.52,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Kiwi Ears Quartet",
+    "canonical_name": "Kiwi Ears Quartet",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "—",
+    "setup": "—",
+    "price": "—",
+    "comments": "can't remember what I heard",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Kiwi Ears Quintet",
+    "canonical_name": "Kiwi Ears Quintet",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "—",
+    "setup": "—",
+    "price": "—",
+    "comments": "can't remember what I heard",
+    "based_on": "Brief demo",
+    "tracker_slug": "kiwi-ears-quintet",
+    "market_value": 123.8,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Kiwi Ears Singolo",
+    "canonical_name": "Kiwi Ears x Crinacle Singolo",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Treble sounds a bit metallic and scrape-y. Midrange has some uncanniness to it.",
+    "based_on": "Brief demo",
+    "tracker_slug": "kiwi-ears-x-crinacle-singolo",
+    "market_value": 269.0,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Kiwiears Astral",
+    "canonical_name": "Kiwi Ears Astral",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "New meta style tuning that's a little more forward than the KE4. More depth to sound but also more fatiguing.",
+    "based_on": "Brief demo",
+    "tracker_slug": "kiwi-ears-astral",
+    "market_value": 192.5,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Kiwiears Belle",
+    "canonical_name": "Kiwi Ears Belle",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Nice warm set with a hint of scratch in the treble.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "KiwiEars Cadenza",
+    "canonical_name": "Kiwi Ears Cadenza",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "kiwi-ears-cadenza",
+    "market_value": 33.52,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Kiwiears Cadenza II",
+    "canonical_name": "Kiwi Ears Cadenza",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "kiwi-ears-cadenza",
+    "market_value": 33.52,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Kiwiears Chorus",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Darker and softer sounding in the treble vs. the Belle. A little less sub-bass lift.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Kiwiears Halycon",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "KiwiEars Orchestra Lite",
+    "canonical_name": "Kiwi Ears Orchestra Lite",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Safe neutral warm tuning lacking the excitement to take it to the next level. Typical BA bass and weightless transients.",
+    "based_on": "Brief demo",
+    "tracker_slug": "kiwi-ears-orchestra-lite",
+    "market_value": 131.61,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Kumitate Labs Lakh",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Very 'Japanese' like tuning with mid-bass and upper-midrange focus. Not my thing, but has its audience.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Kumitate Labs REF",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Extremely harsh sounding due to lower-treble.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "KZ Ling Long",
+    "canonical_name": "KZ LingLong",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "—",
+    "setup": "—",
+    "price": "—",
+    "comments": "can't remember what I heard",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "LETSHOUER Cadenza 4",
+    "canonical_name": "Letshuoer Cadenza 4",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds decent overall but could use some refinement.",
+    "based_on": "Brief demo",
+    "tracker_slug": "letshuoer-cadenza-4",
+    "market_value": 147.56,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "LETSHUOER Cadenza 4",
+    "canonical_name": "Letshuoer Cadenza 4",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5.5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Well-balanced overall, just doesn't really have a hook to it and perhaps a tad lean sounding.",
+    "based_on": "Brief demo",
+    "tracker_slug": "letshuoer-cadenza-4",
+    "market_value": 147.56,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "LETSHUOER DZ4",
+    "canonical_name": "Letshuoer S15",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "DD IEM with a technical focus due to an extra dash of upper-midrange presence and less bass than most single DDs.",
+    "based_on": "Brief demo",
+    "tracker_slug": "letshuoer-s15",
+    "market_value": 73.96,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "LETSHUOER Ember",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5.5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "LETSHUOER Sonota",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5.5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Lime Ears Aether",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Thin, reference sound with a slight lack of trebel extension and average imaging.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Melodic Artification Alter Ego",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "Well-tuned set that straddles the line between neutral with bass boost and desirable colorations.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Melodic Artification Eternitum",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Meze Advar",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Can be somewhat strident at 3-5kHz and the mid-treble (warm V-shape) but reasonably decent otherwise.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Meze Rai Penta",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Generic hybrid. Midrange generally sounds off and treble lacks extension.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Moondrop Aria 2",
+    "canonical_name": "Moondrop Aria II",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "—",
+    "setup": "—",
+    "price": "—",
+    "comments": "can't remember what I heard",
+    "based_on": "Brief demo",
+    "tracker_slug": "moondrop-aria-ii",
+    "market_value": 61.75,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Moondrop Chu 2",
+    "canonical_name": "Moondrop Chu 2",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "—",
+    "setup": "—",
+    "price": "—",
+    "comments": "can't remember what I heard",
+    "based_on": "Brief demo",
+    "tracker_slug": "moondrop-chu-2",
+    "market_value": 25.0,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Moondrop Droplet",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "DD-like bass response with gritty, harsh upper-midrange and treble.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Moondrop LAN",
+    "canonical_name": "Moondrop LAN",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Forward lower-treble and somewhat harsh sounding.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Moondrop Pavane",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "2",
+    "setup": "—",
+    "price": "—",
+    "comments": "No bass, awful mids, awful treble. Hard to believe this exists at $400+.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Moondrop Rays",
+    "canonical_name": "Moondrop Rays",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "—",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "moondrop-rays",
+    "market_value": 50.0,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Moondrop Starfield II",
+    "canonical_name": "Moondrop Starfield II",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "—",
+    "setup": "—",
+    "price": "—",
+    "comments": "can't remember what I heard",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Mystic Audio HEX",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "8",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "NG Audio Metis",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Night Oblivion Butastur",
+    "canonical_name": "Night Oblivion Butastur",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Lots of forwardness and resolution, bass is surprisingly weak. Pretty decent set for a quick listen but can be fatiguing.",
+    "based_on": "Brief demo",
+    "tracker_slug": "night-oblivion-butastur",
+    "market_value": null,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Nightjar Duality (Proto)",
+    "canonical_name": "Nightjar Duality",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "—",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "nightjar-duality",
+    "market_value": 3300.0,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Noble Audio Jade",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds like your average DD, bassy and dark.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Noble Audio Kadence",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Noticeably brighter than the Jade, good amoutns of clarity but with some peakiness in the mid-treble.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Noble Audio Khan",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Solid tonal balance and technicalities. Piezo tweeter sounds too distinct.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Noble Audio Kronos",
+    "canonical_name": "Noble Audio Kronos",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "noble-audio-kronos",
+    "market_value": 3000.0,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Noble Audio Kublia Khan",
+    "canonical_name": "Noble Audio Kublai Khan",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Somewhat wonky tonality, but expansive staging and solid detail.",
+    "based_on": "Brief demo",
+    "tracker_slug": "noble-audio-kublai-khan",
+    "market_value": 1525.0,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Noble Audio Onyx",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Unabashedly colored to the point of which it hampers resolution; pretty easy on the ears, though.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Noble Audio Spartacus",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "Well-tuned, warm and colored with some sparkle in the lower-to-mid treble. Very pleasant and bass is not bad at all.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Noble Audio Viking",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Dry and intense with an abundance of upper-mids and lower-treble.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Noble Audio XII",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds like your average DD, bassy and dark.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Noble Audio XM1",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Noble Audio Zephyr",
+    "canonical_name": "Noble Audio Zephyr",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "No extension over 10kHz. Dark and muddied.",
+    "based_on": "Brief demo",
+    "tracker_slug": "noble-audio-zephyr",
+    "market_value": null,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Nostalgia Audio Camelot",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds very odd like the Teserract. Pinna gain is totally non-existent, although the treble on this sounds better.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Nostalgia Audio N12",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Farty bass and rolled-off treble, upper-midrange is pulled back. Just very lo-res sounding.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Nostalgia Audio Teserract",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Boxy around 1.5kHz, thick lower midrange with bass bleed; treble is 5kHz focused. Just very odd sounding.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "oBravo Ra-Cu",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "1",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Oriolus Mellianus",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Dry and aggressive due to an abudance of mid-bass and hump from 1-3kHz. Excellent sense of clarity.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Oriolus Szalayi",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Extremely bass heavy to the point of which it affects timbre in the lower-midrange negatively.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Penon Rival",
+    "canonical_name": "Penon Rival",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6.5",
+    "setup": "—",
+    "price": "—",
+    "comments": "A bit QDC-esque with the tuning but with more aggressive pinna rise and better bass. Treble a little too scooped in the mid-treble.",
+    "based_on": "Brief demo",
+    "tracker_slug": "penon-rival",
+    "market_value": null,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "PMG Audio APX ME",
+    "canonical_name": "PMG Audio APX ME",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "pmg-audio-apx-me",
+    "market_value": null,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "PMG Audio APX SE",
+    "canonical_name": "PMG Audio APX SE",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Clarity focused sound with elevated 1-3kHz region and excessive treble energy. Fatiguing to hear.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Prisma Audio Lux",
+    "canonical_name": "Prisma Audio Lux",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Punch Audio Martilo",
+    "canonical_name": "Punch Audio Martilo",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5.5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "punch-audio-martilo",
+    "market_value": 165.0,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "QDC 4 Pro",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "QDC 8 Pro",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "qdc 8SE",
+    "canonical_name": "qdc 8SE",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Fairly safe tuning but lacks a lot of technicalities.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "qdc 8SL/8CL",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Well-rounded set overall; however, feels like it's lacking in character and like it's always on full-tilt.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "qdc 8SS",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Competent all-rounder that makes few mistakes outside of the poor timbre. 6kHz recession facilitates louder listening.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "qdc Anole V6",
+    "canonical_name": "qdc Anole V6",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "Fantastic tonality - sounds like an SA6 with better treble extension. Just very well-rounded overall.",
+    "based_on": "Brief demo",
+    "tracker_slug": "qdc-anole-v6",
+    "market_value": 617.76,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "QDC Crave",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "qdc Emperor",
+    "canonical_name": "Qdc Emperor",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Solid resolution but tuning has issues.",
+    "based_on": "Brief demo",
+    "tracker_slug": "qdc-emperor",
+    "market_value": 2045.41,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "qdc Folk",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds like a BA IEM that was released pre-2020 but it's a hybrid.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "qdc Gemini",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Neutral warm tuning but sounds oddly clinical, perhaps due to hollow sub-bass.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "QDC King",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "qdc Tiger",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Stereotypical \"BA\" timbre with some added wispiness over 10kHz. Nice enough tonality otherwise.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "qdc White Tiger",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Generally tuned OK, but EST implementation could use work and sounds metallic like the Anole V14.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Questyle NHB12",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Boomy and smoothed over, very congested sounding.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Rossi Wing First Light",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Midrange sounds hollow and weird. Treble is heavily lower-treble oriented and peaky.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "SeeAudio Anou",
+    "canonical_name": "SeeAudio Anou",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Upper-midrange is wince inducing.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "SeeAudio Miu",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Very Harman tonal balance with good treble extension; however, lacking in appropriate technical performance for projected $500 MSRP.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "SeeAudio Neko",
+    "canonical_name": "SeeAudio Neko",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds like all the other SeeAudio IEMs lol, save money and buy the Bravery if you like this sound",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "SeeAudio Neko JP",
+    "canonical_name": "SeeAudio Neko JP",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Somewhat odd sounding but nothing really inoffensive and certainly more warm and exciting than some of SeeAudio's other IEMs.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "SeeAudio Yume Ultra",
+    "canonical_name": "SeeAudio Yume Ultra",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Improved bass and treble extension over original Yume but still sounds very boring and compressed.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Shuoer Soloist 2",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "This became the S12.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Shure SE846 Gen 2",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Neutral warm/dark. Very relaxed listen that definitely needs more 10kHz+ energy.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Simphonio P-Zero",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Skorea Procycon",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "—",
+    "setup": "—",
+    "price": "—",
+    "comments": "Channel imbalance, so I don't remember.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Softears Engima",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds like the RSV with a DD and more bass focus. Treble seems whispy around 15kHz.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Softears SE6 Live",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Softears Twilight",
+    "canonical_name": "Softears Twilight",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Decently tuned single-DD IEM with a more technical focus.",
+    "based_on": "Brief demo",
+    "tracker_slug": "softears-twilight",
+    "market_value": 533.33,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Sony IER-M7",
+    "canonical_name": "Sony IER-M7",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds like the IER-M9 just with less treble extension.",
+    "based_on": "Brief demo",
+    "tracker_slug": "sony-ier-m7",
+    "market_value": 225.0,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Sony JustEar XJE-MH2",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "2",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds like a typical BA IEM with farty bass and rolled-off highs.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Symphonium Titan",
+    "canonical_name": "Symphonium Titan",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "symphonium-titan",
+    "market_value": 550.0,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Tanchjim Kara",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Compressed and screechy sounding in the lower treble. Generally harsh timbre.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Tangzu Xue Tao",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "ThieAudio Origin",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "ThieAudio Prestige LTD",
+    "canonical_name": "ThieAudio Prestige LTD",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "thieaudio-prestige-ltd",
+    "market_value": 827.5,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Traillii Ti",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "Well executed tuning with good detail pick-up. Falls short in dynamics and imaging performance due to lackluster treble response.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Traillii Ultra",
+    "canonical_name": "Oriolus Traillii Ultra IEM System",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "oriolus-traillii-ultra-iem-system",
+    "market_value": null,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "TRI Starlight",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "2",
+    "setup": "—",
+    "price": "—",
+    "comments": "Literally painful to hear. Ridiculous amounts of upper-treble.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "TruthEars Pure",
+    "canonical_name": "Truthear Pure",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Very boring and dark albeit safe.",
+    "based_on": "Brief demo",
+    "tracker_slug": "truthear-pure",
+    "market_value": 66.49,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "UE Live",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Oddly tuned hybrid with dry bass and feathery treble response due to an upper-treble focus.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "UE Premiere",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "While tuning is always subjective preference, you don’t need to nearly pay three grand to hear an IEM that sounds this bad.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "UE Reference Remastered",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Unorthodox, but well-done tuning with a vocal focus. Treble has excellent extension and is reminiscent of the tia driver implementations.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "UE11 Pro",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Thick lower mids, almost no pinna compensation, and rolled-off treble. Generally way too boomy.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "UE18+ Pro",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Similar issues to UE11 Pro.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Unique Melody FuSang",
+    "canonical_name": "Unique Melody FuSang",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Andromeda-esque sound signature without the technicalities to back it up.",
+    "based_on": "Brief demo",
+    "tracker_slug": "unique-melody-fusang",
+    "market_value": null,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Unique Melody MEST Indigo",
+    "canonical_name": "Unique Melody MEST Indigo",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "Basically a more bass-heavy MEST MKII with some slight setbacks in treble extension.",
+    "based_on": "Brief demo",
+    "tracker_slug": "unique-melody-mest-indigo",
+    "market_value": 1368.4,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Unique Melody MEST MKIII",
+    "canonical_name": "Unique Melody MEST MK3",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "Basically sounds very similar to the Indigo version.",
+    "based_on": "Brief demo",
+    "tracker_slug": "unique-melody-mest-mk3",
+    "market_value": 769.73,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Unique Melody Multiverse Mentor",
+    "canonical_name": "Unique Melody Multiverse Mentor",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "A departure from UM's house sound for a more conventional, upper-midrange heavy presentation and strong clarity.",
+    "based_on": "Brief demo",
+    "tracker_slug": "unique-melody-multiverse-mentor",
+    "market_value": 2100.0,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Unique Melody Pentara",
+    "canonical_name": "Unique Melody Pentara",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "unique-melody-pentara",
+    "market_value": null,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Unique Melody Red Halo",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Rolled-off on both ends for a thick, mid-centric sound and poor detailing.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Unique Melody V44",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Excellent imaging with UM's unique flavor of sound; however, tuning is polarizing. Heard on bass boosted setting.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "VE Meister",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Unapologetically V-shaped; exciting on first listen but the flaws become apparent the longer you listen.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Venture Electronics Grand Duke",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "2",
+    "setup": "—",
+    "price": "—",
+    "comments": "Awful driver crinkling and bass boosted to high hell. Totally muddy with no upper-mids or air.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Vision Ears Aura",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Vision Ears EXT MKII",
+    "canonical_name": "Vision Ears EXT MKII",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Ridiculously bright, sounds the same as the EXT MKI except with even more upper-treble.",
+    "based_on": "Brief demo",
+    "tracker_slug": "vision-ears-ext-mkii",
+    "market_value": 2341.62,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Vision Ears Phonix",
+    "canonical_name": "Vision Ears Phonix",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "Essentially an Erlkonig on Setting 3 with more treble extension.",
+    "based_on": "Brief demo",
+    "tracker_slug": "vision-ears-phonix",
+    "market_value": 1937.94,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Vision Ears VE10",
+    "canonical_name": "Vision Ears VE10",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "Sounds like a VE8 with a DD jammed into the mix. Treble sounds pretty decent on second listen, retune?",
+    "based_on": "Brief demo",
+    "tracker_slug": "vision-ears-ve10",
+    "market_value": 1557.26,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Volk Audio Etoile",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "VOLK Audio Stella",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "6",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Westone Pro X20",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Mediocre.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Westone W80",
+    "canonical_name": "",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Mediocre.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Xenns Tea Pro",
+    "canonical_name": "XENNS Mangird Tea Pro",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "Very pleasant tuning with thumpy bass albeit lacking wow factor in techs.",
+    "based_on": "Brief demo",
+    "tracker_slug": "xenns-mangird-tea-pro",
+    "market_value": 268.33,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Xenns Tea Pro SE",
+    "canonical_name": "XENNS Mangird Tea Pro SE",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "7",
+    "setup": "—",
+    "price": "—",
+    "comments": "",
+    "based_on": "Brief demo",
+    "tracker_slug": "xenns-mangird-tea-pro-se",
+    "market_value": 330.52,
+    "market_confidence": "Medium"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Ziigaat Horzon",
+    "canonical_name": "Ziigaat Horizon",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5.5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Decent tuning but too airy past 15kHz leads to some timbre weightlessness and masking detail.",
+    "based_on": "Brief demo",
+    "tracker_slug": "ziigaat-horizon",
+    "market_value": 237.01,
+    "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Ziigaat Odyssey 2",
+    "canonical_name": "Ziigaat x Hangout Odyssey 2",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5.5",
+    "setup": "—",
+    "price": "—",
+    "comments": "A bit too gritty and aggressive for my preferences. Bass has better focus/weight than Horizon though and big sound.",
+    "based_on": "Brief demo",
+    "tracker_slug": "ziigaat-x-hangout-odyssey-2",
+    "market_value": 151.67,
+    "market_confidence": "Medium"
   }
 ]
