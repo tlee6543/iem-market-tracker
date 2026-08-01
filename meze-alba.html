@@ -14,7 +14,10 @@ a:hover { text-decoration: underline; }
 .small { font-size: 13px; color: #666; }
 .top-credit { background: white; border: 1px solid #ddd; padding: 10px 14px; margin-bottom: 20px; font-size: 14px; color: #555; }
 .top-credit a { font-weight: bold; color: #0066cc; }
-.site-topbar { display: flex; justify-content: flex-end; align-items: center; gap: 12px; margin-bottom: 12px; }
+.site-topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.site-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.site-nav a { display: inline-block; padding: 7px 10px; border-radius: 6px; color: #333; font-weight: bold; }
+.site-nav a:hover { background: #eee; text-decoration: none; }
 .support-tool-link { display: inline-block; background: #111; color: #fff; border: 1px solid #111; border-radius: 999px; padding: 9px 14px; font-size: 14px; font-weight: bold; }
 .support-tool-link:hover { color: #fff; text-decoration: none; }
 .site-footer { margin-top: 34px; padding-top: 16px; border-top: 1px solid #ddd; font-size: 14px; color: #555; }
@@ -165,6 +168,25 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.table-scroll { width: 100%; overflow-x: auto; border: 1px solid #ddd; background: #fff; }
+.rankings-table { min-width: 1750px; border: 0; }
+.rankings-table th { position: sticky; top: 0; z-index: 2; white-space: nowrap; }
+.rankings-table td { vertical-align: middle; }
+.rankings-table .score-cell { font-size: 16px; font-weight: bold; text-align: center; white-space: nowrap; }
+.rankings-table .subscore-cell { text-align: center; white-space: nowrap; }
+.rankings-table .iem-ranking-name { min-width: 220px; font-weight: bold; }
+.rankings-table .comments-cell { min-width: 320px; max-width: 520px; line-height: 1.35; }
+.rankings-table .setup-cell { min-width: 170px; }
+.rankings-table .based-on-cell { min-width: 150px; }
+.rankings-controls { display: grid; grid-template-columns: minmax(240px, 1fr) repeat(2, minmax(160px, 220px)); gap: 10px; align-items: end; }
+.rankings-control label { display: block; font-size: 12px; color: #666; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .03em; }
+.rankings-control input, .rankings-control select { width: 100%; box-sizing: border-box; padding: 11px; border: 1px solid #ccc; border-radius: 6px; background: #fff; font-size: 14px; }
+.score-chip { display: inline-block; min-width: 38px; text-align: center; border: 1px solid #ccc; border-radius: 999px; padding: 4px 8px; background: #fafafa; }
+.tracker-match { font-size: 11px; color: #666; display: block; margin-top: 4px; font-weight: normal; }
+.rankings-empty { display: none; }
+@media (max-width: 900px) {
+    .rankings-controls { grid-template-columns: 1fr; }
+}
 @media (max-width: 760px) {
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
@@ -175,6 +197,13 @@ td.status-reason { overflow: hidden; }
 <body>
 
     <div class="site-topbar">
+        <nav class="site-nav" aria-label="Site navigation">
+            <a href="index.html">Market Tracker</a>
+            <a href="rankings.html">Rankings</a>
+            <a href="value-kings.html">Value Kings</a>
+            <a href="recent-listings.html">Recent Listings</a>
+            <a href="compare.html">Compare</a>
+        </nav>
         <a class="support-tool-link" href="https://www.patreon.com/c/precogvision/membership" target="_blank" rel="noopener">Support the tracker + get shouted out</a>
     </div>
     
@@ -230,7 +259,7 @@ td.status-reason { overflow: hidden; }
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">15</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">16</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -254,8 +283,24 @@ td.status-reason { overflow: hidden; }
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
+<tr id="row-0" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<td>2026-07-31</td>
+<td>$130</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason"></td>
+<td>mint, like new, excellent</td>
+<td>1</td>
+<td>headfi</td>
+<td>Audiophile03</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">Overpriced (30.0% above market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/meze-alba-with-extras.113174/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2026-07-12</td>
 <td>$100</td>
 <td><span class="pill">closed</span></td>
@@ -266,12 +311,12 @@ td.status-reason { overflow: hidden; }
 <td>stormwrx</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/meze-alba.112057/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="reddit" checked></td>
+<tr id="row-2" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="reddit" checked></td>
 <td>2026-07-10</td>
 <td>$100</td>
 <td><span class="pill">closed</span></td>
@@ -282,12 +327,12 @@ td.status-reason { overflow: hidden; }
 <td>cozmozmoz</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-2">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1usn8ia/wts_usoh_h_meze_alba_iem_all_accessories/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" ></td>
+<tr id="row-3" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="headfi" ></td>
 <td>2026-06-28</td>
 <td>$125</td>
 <td><span class="pill">active</span></td>
@@ -298,11 +343,11 @@ td.status-reason { overflow: hidden; }
 <td>whammy</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">High (25.0% above market)</span></td>
+<td><span id="deal-score-3">High (25.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/meze-alba.111387/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" data-source="reddit" class="listing-row excluded">
+<tr id="row-4" data-source="reddit" class="listing-row excluded">
 <td></td>
 <td>2026-06-01</td>
 <td></td>
@@ -314,12 +359,12 @@ td.status-reason { overflow: hidden; }
 <td>Spyronight</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-3">N/A</span></td>
+<td><span id="deal-score-4">N/A</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1tu9r7m/wts_usafl_h_meze_alba_mint_w_90/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-4" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="reddit" checked></td>
+<tr id="row-5" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="reddit" checked></td>
 <td>2026-05-29</td>
 <td>$100</td>
 <td><span class="pill">closed</span></td>
@@ -330,12 +375,12 @@ td.status-reason { overflow: hidden; }
 <td>squirrelpox</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-4">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-5">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1tr7wec/wtsusasc_h_focal_elex_audeze_lcd2_schiit_gungnir/#item-7" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-5" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="reddit" ></td>
+<tr id="row-6" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="reddit" ></td>
 <td>2026-04-09</td>
 <td>$99</td>
 <td><span class="pill">closed</span></td>
@@ -346,12 +391,12 @@ td.status-reason { overflow: hidden; }
 <td>Burnt_Luck</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-5">Closed: Fair (1.0% below market)</span></td>
+<td><span id="deal-score-6">Closed: Fair (1.0% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1sh6g5a/wts_usca_h_audeze_lcds20_ziigaat_arete_dunu/#item-4" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-6" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="reddit" ></td>
+<tr id="row-7" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="7" data-source="reddit" ></td>
 <td>2026-03-12</td>
 <td>$65</td>
 <td><span class="pill">closed</span></td>
@@ -362,12 +407,12 @@ td.status-reason { overflow: hidden; }
 <td>rushers6</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-6">Closed: Great Deal (35.0% below market)</span></td>
+<td><span id="deal-score-7">Closed: Great Deal (35.0% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1rrzquo/wtsusailh_meze_alba_iem_w_65_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-7" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="7" data-source="reddit" ></td>
+<tr id="row-8" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="8" data-source="reddit" ></td>
 <td>2026-02-17</td>
 <td>$110</td>
 <td><span class="pill">closed</span></td>
@@ -378,12 +423,12 @@ td.status-reason { overflow: hidden; }
 <td>happymancry</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-7">Closed: Fair (10.0% above market)</span></td>
+<td><span id="deal-score-8">Closed: Fair (10.0% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1r6t76n/wtsusatxh_meze_alba_iem_w_paypal_gs/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-8" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="8" data-source="reddit" ></td>
+<tr id="row-9" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="9" data-source="reddit" ></td>
 <td>2026-02-14</td>
 <td>$90</td>
 <td><span class="pill">closed</span></td>
@@ -394,11 +439,11 @@ td.status-reason { overflow: hidden; }
 <td>Masazax</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-8">Closed: Good Deal (10.0% below market)</span></td>
+<td><span id="deal-score-9">Closed: Good Deal (10.0% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1r4c8n7/wts_usct_h_hdb_630_meze_alba_akg_k361_w_paypal_or/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-9" data-source="reddit" class="listing-row excluded">
+<tr id="row-10" data-source="reddit" class="listing-row excluded">
 <td></td>
 <td>2026-01-29</td>
 <td></td>
@@ -410,11 +455,11 @@ td.status-reason { overflow: hidden; }
 <td>Masazax</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-9">N/A</span></td>
+<td><span id="deal-score-10">N/A</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1qpw0a3/wtsusacthmeze_albawpaypal_or_ie200/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-10" data-source="reddit" class="listing-row excluded">
+<tr id="row-11" data-source="reddit" class="listing-row excluded">
 <td></td>
 <td>2025-10-19</td>
 <td></td>
@@ -426,11 +471,11 @@ td.status-reason { overflow: hidden; }
 <td>Vipla_rry7</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-10">N/A</span></td>
+<td><span id="deal-score-11">N/A</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1oaphpi/wtsusatx_h_meze_alba_w_paypal_90/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-11" data-source="reddit" class="listing-row excluded">
+<tr id="row-12" data-source="reddit" class="listing-row excluded">
 <td></td>
 <td>2025-10-18</td>
 <td></td>
@@ -442,12 +487,12 @@ td.status-reason { overflow: hidden; }
 <td>Vipla_rry7</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-11">N/A</span></td>
+<td><span id="deal-score-12">N/A</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1oa0pmt/wtsusatx_h_meze_alba_w_paypal_99/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-12" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="12" data-source="reddit" ></td>
+<tr id="row-13" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="13" data-source="reddit" ></td>
 <td>2025-10-16</td>
 <td>$100</td>
 <td><span class="pill">unknown</span></td>
@@ -458,12 +503,12 @@ td.status-reason { overflow: hidden; }
 <td>OakenRage</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-12">Fair (0.0% above market)</span></td>
+<td><span id="deal-score-13">Fair (0.0% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1o8kl60/wtsusamih_apos_gremlin_and_meze_alba_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-13" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="13" data-source="reddit" checked></td>
+<tr id="row-14" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="14" data-source="reddit" checked></td>
 <td>2025-09-09</td>
 <td>$80</td>
 <td><span class="pill">closed</span></td>
@@ -474,12 +519,12 @@ td.status-reason { overflow: hidden; }
 <td>wraithpc</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-13">Closed: Great Deal (20.0% below market)</span></td>
+<td><span id="deal-score-14">Closed: Great Deal (20.0% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1ncotol/wts_usmn_h_letshuoer_s12_pro_kiwi_ears_aether/#item-2" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-14" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="14" data-source="reddit" checked></td>
+<tr id="row-15" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="15" data-source="reddit" checked></td>
 <td>2025-07-21</td>
 <td>$110</td>
 <td><span class="pill">closed</span></td>
@@ -490,11 +535,11 @@ td.status-reason { overflow: hidden; }
 <td>xdominati0nx</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-14">Closed: Fair (10.0% above market)</span></td>
+<td><span id="deal-score-15">Closed: Fair (10.0% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1m55n8o/wts_usmi_h_aful_cantor_nightjar_singularity_dita/#item-5" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-15" data-source="reddit" class="listing-row excluded">
+<tr id="row-16" data-source="reddit" class="listing-row excluded">
 <td></td>
 <td>2025-07-07</td>
 <td></td>
@@ -506,12 +551,12 @@ td.status-reason { overflow: hidden; }
 <td>biezwax</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-15">N/A</span></td>
+<td><span id="deal-score-16">N/A</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1lu9kpp/wts_usca_h_meze_alba_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-16" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="16" data-source="reddit" checked></td>
+<tr id="row-17" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="17" data-source="reddit" checked></td>
 <td>2025-06-18</td>
 <td>$100</td>
 <td><span class="pill">closed</span></td>
@@ -522,12 +567,12 @@ td.status-reason { overflow: hidden; }
 <td>Fuzzy_Luck5550</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-16">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-17">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1lemhix/wtsusorh_meze_advar_meze_alba_w_paypal/#item-2" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-17" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="17" data-source="reddit" checked></td>
+<tr id="row-18" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="18" data-source="reddit" checked></td>
 <td>2025-06-09</td>
 <td>$120</td>
 <td><span class="pill">closed</span></td>
@@ -538,12 +583,12 @@ td.status-reason { overflow: hidden; }
 <td>Crusty_donut</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-17">Closed: High (20.0% above market)</span></td>
+<td><span id="deal-score-18">Closed: High (20.0% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1l74tua/wtsusamdh_onix_alpha_xi1_with_case_moodrop_dusk/#item-2" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-18" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="18" data-source="reddit" checked></td>
+<tr id="row-19" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="19" data-source="reddit" checked></td>
 <td>2025-05-23</td>
 <td>$120</td>
 <td><span class="pill">closed</span></td>
@@ -554,12 +599,12 @@ td.status-reason { overflow: hidden; }
 <td>Different-Photo-4206</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-18">Closed: High (20.0% above market)</span></td>
+<td><span id="deal-score-19">Closed: High (20.0% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1kt7b9v/wtsus_nch_ibasso_dx180_meze_alba_empire_ears/#item-2" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-19" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="19" data-source="reddit" checked></td>
+<tr id="row-20" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="20" data-source="reddit" checked></td>
 <td>2025-05-03</td>
 <td>$80</td>
 <td><span class="pill">closed</span></td>
@@ -570,13 +615,13 @@ td.status-reason { overflow: hidden; }
 <td>DJ_KE1TH</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-19">Closed: Great Deal (20.0% below market)</span></td>
+<td><span id="deal-score-20">Closed: Great Deal (20.0% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1kdxks8/wtsusoh_h_astell_kern_anorma_sr25_mk2_meze_alba/#item-2" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Meze Alba", "raw_text": "Meze Alba\nListing ID: 112057\nFor Sale 100.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To United States Of America\nHi, I am selling my Meze Alba in-ear monitors, which I just purchased new just last month. They are in excellent condition and include the original box and accessories (including the factory USB-C to 3.5mm dongle, which sounds really good). I...\nListed by: stormwrx (38)\nListed: 2026-07-12\nSOLD", "seller_username": "stormwrx", "url": "https://www.head-fi.org/classifieds/meze-alba.112057/", "price_num": 100.0, "date_ms": 1783814400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 1, "title": "Meze Alba IEM (All Accessories & Packaging (Worn Once - Mint)", "raw_text": "submitted by /u/cozmozmoz\n[link] [comments]", "seller_username": "cozmozmoz", "url": "https://old.reddit.com/r/AVexchange/comments/1usn8ia/wts_usoh_h_meze_alba_iem_all_accessories/#item-1", "price_num": 100.0, "date_ms": 1783688929000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 2, "title": "Meze Alba", "raw_text": "Meze Alba\nListing ID: 111387\nFor Sale 125.00 USD\nCondition Fair\nNegotiability Or Best Offer\nShips To United States Of America\nThis is a set of Meze Alba IEM's that I bought from a fellow Head-Fier. These were his wife's daily driver and are a little banged up. However, they perform like new. The cable has a very slight perfume smell. Luckily it's a nice...\nListed by: whammy (33)\nListed: 2026-06-28", "seller_username": "whammy", "url": "https://www.head-fi.org/classifieds/meze-alba.111387/", "price_num": 125.0, "date_ms": 1782604800000, "listing_status": "active", "condition_text": "like new, fair", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 3, "title": "Meze Alba (mint)", "raw_text": "submitted by /u/Spyronight\n[link] [comments]", "seller_username": "Spyronight", "url": "https://old.reddit.com/r/AVexchange/comments/1tu9r7m/wts_usafl_h_meze_alba_mint_w_90/#item-1", "price_num": null, "date_ms": 1780356960000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=meze alba | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 4, "title": "Meze alba", "raw_text": "Meze alba - $100\nAll prices are f&f and include shipping to conus, add 3% for g&s.\nsubmitted by /u/squirrelpox\n[link] [comments]", "seller_username": "squirrelpox", "url": "https://old.reddit.com/r/AVexchange/comments/1tr7wec/wtsusasc_h_focal_elex_audeze_lcd2_schiit_gungnir/#item-7", "price_num": 100.0, "date_ms": 1780073301000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=meze alba | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 5, "title": "Meze Alba : Light use comes with stock cable/accessories including usb c dongle.", "raw_text": "Meze Alba : Light use, comes with stock cable/accessories including usb c dongle. $99 Shipped SOLD", "seller_username": "Burnt_Luck", "url": "https://old.reddit.com/r/AVexchange/comments/1sh6g5a/wts_usca_h_audeze_lcds20_ziigaat_arete_dunu/#item-4", "price_num": 99.0, "date_ms": 1775778747000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=meze alba"}, {"row_id": 6, "title": "Meze Alba IEM", "raw_text": "Looking to sell my Meze Albas since I don't use iems anymore.\nIn good condition and will come with eartips,carrying case, original box, iem and cable. I don't have the dongle so I've priced these a bit lower at $65 shipped paypal invoice.\nsubmitted by /u/rushers6\n[link] [comments]", "seller_username": "rushers6", "url": "https://old.reddit.com/r/AVexchange/comments/1rrzquo/wtsusailh_meze_alba_iem_w_65_paypal/#item-1", "price_num": 65.0, "date_ms": 1773342036000, "listing_status": "closed", "condition_text": "and will come with eartips", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 7, "title": "Meze Alba IEM", "raw_text": "Selling this beautiful Meze Alba that isn't getting much use these days. I am the original owner (purchased in Aug 2025.) About 40 hours of use. Comes with all the originals - box, carrying case, cable, ear tips, and Meze's proprietary USB-C to 3.5mm dongle DAC. I used the Medium tips which have been cleansed in soap water; but can leave them out if you prefer.\nAsking for $110 shipped via Paypal G&S (discount for F&F or local sale.) Shipping to CONUS only, via USPS. Please comment before PM. Thanks!\nsubmitted by /u/happymancry\n[link] [comments]", "seller_username": "happymancry", "url": "https://old.reddit.com/r/AVexchange/comments/1r6t76n/wtsusatxh_meze_alba_iem_w_paypal_gs/#item-1", "price_num": 110.0, "date_ms": 1771293739000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 8, "title": "The Meze Alba's are well used. I'm selling because I recently upgraded to the Volume S. Asking Asking", "raw_text": "The Meze Alba's are well used. I'm selling because I recently upgraded to the Volume S. Asking Asking $90 shipped F&F or plus 3% G&S. I am also interested in trading for an ie200.\nThe k361 I have had for a long time, I recently just switched out the old pads that were falling apart to new mesh pads that improved the sound a lot. Asking $60 shipped F&F or plus 3% G&S.\nsubmitted by /u/Masazax\n[link] [comments]", "seller_username": "Masazax", "url": "https://old.reddit.com/r/AVexchange/comments/1r4c8n7/wts_usct_h_hdb_630_meze_alba_akg_k361_w_paypal_or/#item-1", "price_num": 90.0, "date_ms": 1771046802000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 9, "title": "Meze Alba", "raw_text": "Used for couple of months and has signs of wear (chips on the paint). I really love the sound, especially how full the bass region is. However the ear hooks don\u2019t fit my ear very well.\ncomes with all boxes and accessories plus the dongle and an extra 4.4mm cable.\nPrice is 100$ shipped or I am willing to trade for a sennheiser ie200 preferably with an aftermarket cable.\nsubmitted by /u/Masazax\n[link] [comments]", "seller_username": "Masazax", "url": "https://old.reddit.com/r/AVexchange/comments/1qpw0a3/wtsusacthmeze_albawpaypal_or_ie200/#item-1", "price_num": null, "date_ms": 1769653776000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 10, "title": "Meze Alba", "raw_text": "https://imgur.com/a/EiLXMrI\nMeze Alba for sale. In like new condition, used 2 times no scratches, or signs of use etc. All original accessories included. Looking to sell as it would provide more use to someone else and I\u2019m only looking to declutter.\nWill also include free optional apple lightning dongle and a spinfit double flange CP240 eartip https://imgur.com/a/nWrbsiI\nsubmitted by /u/Vipla_rry7\n[link] [comments]", "seller_username": "Vipla_rry7", "url": "https://old.reddit.com/r/AVexchange/comments/1oaphpi/wtsusatx_h_meze_alba_w_paypal_90/#item-1", "price_num": null, "date_ms": 1760880056000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 11, "title": "Meze Alba", "raw_text": "https://imgur.com/a/EiLXMrI\nMeze Alba for sale. In like new condition, used 2 times no scratches, or signs of use etc. All original accessories included. Looking to sell as it would provide more use to someone else and I\u2019m only looking to declutter. Will also include an apple lightning dongle.\nWill include some spinfit double flange CP240 eartip https://imgur.com/a/nWrbsiI\nsubmitted by /u/Vipla_rry7\n[link] [comments]", "seller_username": "Vipla_rry7", "url": "https://old.reddit.com/r/AVexchange/comments/1oa0pmt/wtsusatx_h_meze_alba_w_paypal_99/#item-1", "price_num": null, "date_ms": 1760805973000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 12, "title": "Apos Gremlin and Meze Alba", "raw_text": "Apos Gremlin - I had an issue with my first unit and this is a brand new one they sent. During the month long return exchange process I've had other things come up and need to free up my audio budget. I have plugged in and tested this unit and it works as intended. I will say hats off to Apos, they have excellent customer support. Asking $100\n(PENDING)Meze Alba + USB-C adapter - bought November of 2024 these have maybe 25 hours of use on them if that. I'm not sure why but I've tried at least 20 different IEMs of different prices and sizes and they all seem to irritate my ears. These have no issue whatsoever, no blemishes or dings and they sound fantastic. Including all original items as well as the optional add on Meze USB-C. Asking $115\nPrices include shipping to CONUS, please comment before messaging.\nsubmitted by /u/OakenRage\n[link] [comments]", "seller_username": "OakenRage", "url": "https://old.reddit.com/r/AVexchange/comments/1o8kl60/wtsusamih_apos_gremlin_and_meze_alba_w_paypal/#item-1", "price_num": 100.0, "date_ms": 1760654424000, "listing_status": "unknown", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=meze alba"}, {"row_id": 13, "title": "Meze Alba includes DAC", "raw_text": "Meze Alba, includes DAC $80.00 SOLD", "seller_username": "wraithpc", "url": "https://old.reddit.com/r/AVexchange/comments/1ncotol/wts_usmn_h_letshuoer_s12_pro_kiwi_ears_aether/#item-2", "price_num": 80.0, "date_ms": 1757438019000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=meze alba"}, {"row_id": 14, "title": "Meze Alba - one of my first IEM's original owner with everything included and in excellent condition", "raw_text": "Meze Alba - one of my first IEM's, original owner with everything included and in excellent condition - $110 SOLD\nAll prices are G&S with shipping included. Will do a discount if you buy multiple and if you pay F&F. If any additional photos are needed, just let me know!\nsubmitted by /u/xdominati0nx\n[link] [comments]", "seller_username": "xdominati0nx", "url": "https://old.reddit.com/r/AVexchange/comments/1m55n8o/wts_usmi_h_aful_cantor_nightjar_singularity_dita/#item-5", "price_num": 110.0, "date_ms": 1753060471000, "listing_status": "closed", "condition_text": "-", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=meze alba"}, {"row_id": 15, "title": "Meze Alba", "raw_text": "submitted by /u/biezwax\n[link] [comments]", "seller_username": "biezwax", "url": "https://old.reddit.com/r/AVexchange/comments/1lu9kpp/wts_usca_h_meze_alba_w_paypal/#item-1", "price_num": null, "date_ms": 1751931254000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | no_price_unchecked | reddit_search_rss_query=meze alba"}, {"row_id": 16, "title": "Meze Alba", "raw_text": "Meze Alba: $100 The new kid on the block. Comes with box, carrying case, IEMs, eartips, 3.5mm cable, and USB-C to 3.5mm dongle.\nsubmitted by /u/Fuzzy_Luck5550\n[link] [comments]", "seller_username": "Fuzzy_Luck5550", "url": "https://old.reddit.com/r/AVexchange/comments/1lemhix/wtsusorh_meze_advar_meze_alba_w_paypal/#item-2", "price_num": 100.0, "date_ms": 1750266232000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=meze alba"}, {"row_id": 17, "title": "Meze Alba + DC03pro", "raw_text": "Meze Alba + DC03pro $120\nBoth prices are shipped g&s. Discounts for f&f and local so just send me a message. Thank you!\nThe dusk will come with both DSP and non-dsp cables. I have the dunu lyre on them right now but it won't come with that cable unless you want it for an extra $25.\nsubmitted by /u/Crusty_donut\n[link] [comments]", "seller_username": "Crusty_donut", "url": "https://old.reddit.com/r/AVexchange/comments/1l74tua/wtsusamdh_onix_alpha_xi1_with_case_moodrop_dusk/#item-2", "price_num": 120.0, "date_ms": 1749475734000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=meze alba"}, {"row_id": 18, "title": "Meze Alba", "raw_text": "Meze Alba - $120 - Mint. Only used for 1 hour. Stock accessories unused. Comes with the 3.5 to usb c dongle and upgraded Nicehck 1950 saga 4.4 balanced cable", "seller_username": "Different-Photo-4206", "url": "https://old.reddit.com/r/AVexchange/comments/1kt7b9v/wtsus_nch_ibasso_dx180_meze_alba_empire_ears/#item-2", "price_num": 120.0, "date_ms": 1747963021000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=meze alba"}, {"row_id": 19, "title": "Meze Alba", "raw_text": "Meze Alba: $80 shipped CONUS Sold for asking.\nNo cosmetic defects or scratches on the IEMs. Comes with stock eartips, disinfected. Both cables are included, as well as the USB-C to Aux adapter.", "seller_username": "DJ_KE1TH", "url": "https://old.reddit.com/r/AVexchange/comments/1kdxks8/wtsusoh_h_astell_kern_anorma_sr25_mk2_meze_alba/#item-2", "price_num": 80.0, "date_ms": 1746291463000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=meze alba"}];
+const allRows = [{"row_id": 0, "title": "Meze Alba with Extras", "raw_text": "Meze Alba with Extras\nListing ID: 113174\nFor Sale 130.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To United States Of America\nSelling my mint pair of Meze Alba IEMs. They come with the stock packaging, balanced Meze cable, copper balanced cable, stock ear tips, Dunu SS eartips (all sizes including XL), and a PLUSSOUND Small Leather Storage Case. Asking $130 shipped...\nListed by: Audiophile03 (10)\nListed: 2026-07-31", "seller_username": "Audiophile03", "url": "https://www.head-fi.org/classifieds/meze-alba-with-extras.113174/", "price_num": 130.0, "date_ms": 1785456000000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 1, "title": "Meze Alba", "raw_text": "Meze Alba\nListing ID: 112057\nFor Sale 100.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To United States Of America\nHi, I am selling my Meze Alba in-ear monitors, which I just purchased new just last month. They are in excellent condition and include the original box and accessories (including the factory USB-C to 3.5mm dongle, which sounds really good). I...\nListed by: stormwrx (38)\nListed: 2026-07-12\nSOLD", "seller_username": "stormwrx", "url": "https://www.head-fi.org/classifieds/meze-alba.112057/", "price_num": 100.0, "date_ms": 1783814400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_after_429_rate_limit_this_run", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 2, "title": "Meze Alba IEM (All Accessories & Packaging (Worn Once - Mint)", "raw_text": "submitted by /u/cozmozmoz\n[link] [comments]", "seller_username": "cozmozmoz", "url": "https://old.reddit.com/r/AVexchange/comments/1usn8ia/wts_usoh_h_meze_alba_iem_all_accessories/#item-1", "price_num": 100.0, "date_ms": 1783688929000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 3, "title": "Meze Alba", "raw_text": "Meze Alba\nListing ID: 111387\nFor Sale 125.00 USD\nCondition Fair\nNegotiability Or Best Offer\nShips To United States Of America\nThis is a set of Meze Alba IEM's that I bought from a fellow Head-Fier. These were his wife's daily driver and are a little banged up. However, they perform like new. The cable has a very slight perfume smell. Luckily it's a nice...\nListed by: whammy (33)\nListed: 2026-06-28", "seller_username": "whammy", "url": "https://www.head-fi.org/classifieds/meze-alba.111387/", "price_num": 125.0, "date_ms": 1782604800000, "listing_status": "active", "condition_text": "like new, fair", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 4, "title": "Meze Alba (mint)", "raw_text": "submitted by /u/Spyronight\n[link] [comments]", "seller_username": "Spyronight", "url": "https://old.reddit.com/r/AVexchange/comments/1tu9r7m/wts_usafl_h_meze_alba_mint_w_90/#item-1", "price_num": null, "date_ms": 1780356960000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=meze alba | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 5, "title": "Meze alba", "raw_text": "Meze alba - $100\nAll prices are f&f and include shipping to conus, add 3% for g&s.\nsubmitted by /u/squirrelpox\n[link] [comments]", "seller_username": "squirrelpox", "url": "https://old.reddit.com/r/AVexchange/comments/1tr7wec/wtsusasc_h_focal_elex_audeze_lcd2_schiit_gungnir/#item-7", "price_num": 100.0, "date_ms": 1780073301000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=meze alba | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 6, "title": "Meze Alba : Light use comes with stock cable/accessories including usb c dongle.", "raw_text": "Meze Alba : Light use, comes with stock cable/accessories including usb c dongle. $99 Shipped SOLD", "seller_username": "Burnt_Luck", "url": "https://old.reddit.com/r/AVexchange/comments/1sh6g5a/wts_usca_h_audeze_lcds20_ziigaat_arete_dunu/#item-4", "price_num": 99.0, "date_ms": 1775778747000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=meze alba"}, {"row_id": 7, "title": "Meze Alba IEM", "raw_text": "Looking to sell my Meze Albas since I don't use iems anymore.\nIn good condition and will come with eartips,carrying case, original box, iem and cable. I don't have the dongle so I've priced these a bit lower at $65 shipped paypal invoice.\nsubmitted by /u/rushers6\n[link] [comments]", "seller_username": "rushers6", "url": "https://old.reddit.com/r/AVexchange/comments/1rrzquo/wtsusailh_meze_alba_iem_w_65_paypal/#item-1", "price_num": 65.0, "date_ms": 1773342036000, "listing_status": "closed", "condition_text": "and will come with eartips", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 8, "title": "Meze Alba IEM", "raw_text": "Selling this beautiful Meze Alba that isn't getting much use these days. I am the original owner (purchased in Aug 2025.) About 40 hours of use. Comes with all the originals - box, carrying case, cable, ear tips, and Meze's proprietary USB-C to 3.5mm dongle DAC. I used the Medium tips which have been cleansed in soap water; but can leave them out if you prefer.\nAsking for $110 shipped via Paypal G&S (discount for F&F or local sale.) Shipping to CONUS only, via USPS. Please comment before PM. Thanks!\nsubmitted by /u/happymancry\n[link] [comments]", "seller_username": "happymancry", "url": "https://old.reddit.com/r/AVexchange/comments/1r6t76n/wtsusatxh_meze_alba_iem_w_paypal_gs/#item-1", "price_num": 110.0, "date_ms": 1771293739000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 9, "title": "The Meze Alba's are well used. I'm selling because I recently upgraded to the Volume S. Asking Asking", "raw_text": "The Meze Alba's are well used. I'm selling because I recently upgraded to the Volume S. Asking Asking $90 shipped F&F or plus 3% G&S. I am also interested in trading for an ie200.\nThe k361 I have had for a long time, I recently just switched out the old pads that were falling apart to new mesh pads that improved the sound a lot. Asking $60 shipped F&F or plus 3% G&S.\nsubmitted by /u/Masazax\n[link] [comments]", "seller_username": "Masazax", "url": "https://old.reddit.com/r/AVexchange/comments/1r4c8n7/wts_usct_h_hdb_630_meze_alba_akg_k361_w_paypal_or/#item-1", "price_num": 90.0, "date_ms": 1771046802000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 10, "title": "Meze Alba", "raw_text": "Used for couple of months and has signs of wear (chips on the paint). I really love the sound, especially how full the bass region is. However the ear hooks don\u2019t fit my ear very well.\ncomes with all boxes and accessories plus the dongle and an extra 4.4mm cable.\nPrice is 100$ shipped or I am willing to trade for a sennheiser ie200 preferably with an aftermarket cable.\nsubmitted by /u/Masazax\n[link] [comments]", "seller_username": "Masazax", "url": "https://old.reddit.com/r/AVexchange/comments/1qpw0a3/wtsusacthmeze_albawpaypal_or_ie200/#item-1", "price_num": null, "date_ms": 1769653776000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 11, "title": "Meze Alba", "raw_text": "https://imgur.com/a/EiLXMrI\nMeze Alba for sale. In like new condition, used 2 times no scratches, or signs of use etc. All original accessories included. Looking to sell as it would provide more use to someone else and I\u2019m only looking to declutter.\nWill also include free optional apple lightning dongle and a spinfit double flange CP240 eartip https://imgur.com/a/nWrbsiI\nsubmitted by /u/Vipla_rry7\n[link] [comments]", "seller_username": "Vipla_rry7", "url": "https://old.reddit.com/r/AVexchange/comments/1oaphpi/wtsusatx_h_meze_alba_w_paypal_90/#item-1", "price_num": null, "date_ms": 1760880056000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 12, "title": "Meze Alba", "raw_text": "https://imgur.com/a/EiLXMrI\nMeze Alba for sale. In like new condition, used 2 times no scratches, or signs of use etc. All original accessories included. Looking to sell as it would provide more use to someone else and I\u2019m only looking to declutter. Will also include an apple lightning dongle.\nWill include some spinfit double flange CP240 eartip https://imgur.com/a/nWrbsiI\nsubmitted by /u/Vipla_rry7\n[link] [comments]", "seller_username": "Vipla_rry7", "url": "https://old.reddit.com/r/AVexchange/comments/1oa0pmt/wtsusatx_h_meze_alba_w_paypal_99/#item-1", "price_num": null, "date_ms": 1760805973000, "listing_status": "closed", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 13, "title": "Apos Gremlin and Meze Alba", "raw_text": "Apos Gremlin - I had an issue with my first unit and this is a brand new one they sent. During the month long return exchange process I've had other things come up and need to free up my audio budget. I have plugged in and tested this unit and it works as intended. I will say hats off to Apos, they have excellent customer support. Asking $100\n(PENDING)Meze Alba + USB-C adapter - bought November of 2024 these have maybe 25 hours of use on them if that. I'm not sure why but I've tried at least 20 different IEMs of different prices and sizes and they all seem to irritate my ears. These have no issue whatsoever, no blemishes or dings and they sound fantastic. Including all original items as well as the optional add on Meze USB-C. Asking $115\nPrices include shipping to CONUS, please comment before messaging.\nsubmitted by /u/OakenRage\n[link] [comments]", "seller_username": "OakenRage", "url": "https://old.reddit.com/r/AVexchange/comments/1o8kl60/wtsusamih_apos_gremlin_and_meze_alba_w_paypal/#item-1", "price_num": 100.0, "date_ms": 1760654424000, "listing_status": "unknown", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=meze alba"}, {"row_id": 14, "title": "Meze Alba includes DAC", "raw_text": "Meze Alba, includes DAC $80.00 SOLD", "seller_username": "wraithpc", "url": "https://old.reddit.com/r/AVexchange/comments/1ncotol/wts_usmn_h_letshuoer_s12_pro_kiwi_ears_aether/#item-2", "price_num": 80.0, "date_ms": 1757438019000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=meze alba"}, {"row_id": 15, "title": "Meze Alba - one of my first IEM's original owner with everything included and in excellent condition", "raw_text": "Meze Alba - one of my first IEM's, original owner with everything included and in excellent condition - $110 SOLD\nAll prices are G&S with shipping included. Will do a discount if you buy multiple and if you pay F&F. If any additional photos are needed, just let me know!\nsubmitted by /u/xdominati0nx\n[link] [comments]", "seller_username": "xdominati0nx", "url": "https://old.reddit.com/r/AVexchange/comments/1m55n8o/wts_usmi_h_aful_cantor_nightjar_singularity_dita/#item-5", "price_num": 110.0, "date_ms": 1753060471000, "listing_status": "closed", "condition_text": "-", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=meze alba"}, {"row_id": 16, "title": "Meze Alba", "raw_text": "submitted by /u/biezwax\n[link] [comments]", "seller_username": "biezwax", "url": "https://old.reddit.com/r/AVexchange/comments/1lu9kpp/wts_usca_h_meze_alba_w_paypal/#item-1", "price_num": null, "date_ms": 1751931254000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | no_price_unchecked | reddit_search_rss_query=meze alba"}, {"row_id": 17, "title": "Meze Alba", "raw_text": "Meze Alba: $100 The new kid on the block. Comes with box, carrying case, IEMs, eartips, 3.5mm cable, and USB-C to 3.5mm dongle.\nsubmitted by /u/Fuzzy_Luck5550\n[link] [comments]", "seller_username": "Fuzzy_Luck5550", "url": "https://old.reddit.com/r/AVexchange/comments/1lemhix/wtsusorh_meze_advar_meze_alba_w_paypal/#item-2", "price_num": 100.0, "date_ms": 1750266232000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=meze alba"}, {"row_id": 18, "title": "Meze Alba + DC03pro", "raw_text": "Meze Alba + DC03pro $120\nBoth prices are shipped g&s. Discounts for f&f and local so just send me a message. Thank you!\nThe dusk will come with both DSP and non-dsp cables. I have the dunu lyre on them right now but it won't come with that cable unless you want it for an extra $25.\nsubmitted by /u/Crusty_donut\n[link] [comments]", "seller_username": "Crusty_donut", "url": "https://old.reddit.com/r/AVexchange/comments/1l74tua/wtsusamdh_onix_alpha_xi1_with_case_moodrop_dusk/#item-2", "price_num": 120.0, "date_ms": 1749475734000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=meze alba"}, {"row_id": 19, "title": "Meze Alba", "raw_text": "Meze Alba - $120 - Mint. Only used for 1 hour. Stock accessories unused. Comes with the 3.5 to usb c dongle and upgraded Nicehck 1950 saga 4.4 balanced cable", "seller_username": "Different-Photo-4206", "url": "https://old.reddit.com/r/AVexchange/comments/1kt7b9v/wtsus_nch_ibasso_dx180_meze_alba_empire_ears/#item-2", "price_num": 120.0, "date_ms": 1747963021000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=meze alba"}, {"row_id": 20, "title": "Meze Alba", "raw_text": "Meze Alba: $80 shipped CONUS Sold for asking.\nNo cosmetic defects or scratches on the IEMs. Comes with stock eartips, disinfected. Both cables are included, as well as the USB-C to Aux adapter.", "seller_username": "DJ_KE1TH", "url": "https://old.reddit.com/r/AVexchange/comments/1kdxks8/wtsusoh_h_astell_kern_anorma_sr25_mk2_meze_alba/#item-2", "price_num": 80.0, "date_ms": 1746291463000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=meze alba"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

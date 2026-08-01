@@ -14,7 +14,10 @@ a:hover { text-decoration: underline; }
 .small { font-size: 13px; color: #666; }
 .top-credit { background: white; border: 1px solid #ddd; padding: 10px 14px; margin-bottom: 20px; font-size: 14px; color: #555; }
 .top-credit a { font-weight: bold; color: #0066cc; }
-.site-topbar { display: flex; justify-content: flex-end; align-items: center; gap: 12px; margin-bottom: 12px; }
+.site-topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.site-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.site-nav a { display: inline-block; padding: 7px 10px; border-radius: 6px; color: #333; font-weight: bold; }
+.site-nav a:hover { background: #eee; text-decoration: none; }
 .support-tool-link { display: inline-block; background: #111; color: #fff; border: 1px solid #111; border-radius: 999px; padding: 9px 14px; font-size: 14px; font-weight: bold; }
 .support-tool-link:hover { color: #fff; text-decoration: none; }
 .site-footer { margin-top: 34px; padding-top: 16px; border-top: 1px solid #ddd; font-size: 14px; color: #555; }
@@ -165,6 +168,25 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.table-scroll { width: 100%; overflow-x: auto; border: 1px solid #ddd; background: #fff; }
+.rankings-table { min-width: 1750px; border: 0; }
+.rankings-table th { position: sticky; top: 0; z-index: 2; white-space: nowrap; }
+.rankings-table td { vertical-align: middle; }
+.rankings-table .score-cell { font-size: 16px; font-weight: bold; text-align: center; white-space: nowrap; }
+.rankings-table .subscore-cell { text-align: center; white-space: nowrap; }
+.rankings-table .iem-ranking-name { min-width: 220px; font-weight: bold; }
+.rankings-table .comments-cell { min-width: 320px; max-width: 520px; line-height: 1.35; }
+.rankings-table .setup-cell { min-width: 170px; }
+.rankings-table .based-on-cell { min-width: 150px; }
+.rankings-controls { display: grid; grid-template-columns: minmax(240px, 1fr) repeat(2, minmax(160px, 220px)); gap: 10px; align-items: end; }
+.rankings-control label { display: block; font-size: 12px; color: #666; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .03em; }
+.rankings-control input, .rankings-control select { width: 100%; box-sizing: border-box; padding: 11px; border: 1px solid #ccc; border-radius: 6px; background: #fff; font-size: 14px; }
+.score-chip { display: inline-block; min-width: 38px; text-align: center; border: 1px solid #ccc; border-radius: 999px; padding: 4px 8px; background: #fafafa; }
+.tracker-match { font-size: 11px; color: #666; display: block; margin-top: 4px; font-weight: normal; }
+.rankings-empty { display: none; }
+@media (max-width: 900px) {
+    .rankings-controls { grid-template-columns: 1fr; }
+}
 @media (max-width: 760px) {
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
@@ -175,6 +197,13 @@ td.status-reason { overflow: hidden; }
 <body>
 
     <div class="site-topbar">
+        <nav class="site-nav" aria-label="Site navigation">
+            <a href="index.html">Market Tracker</a>
+            <a href="rankings.html">Rankings</a>
+            <a href="value-kings.html">Value Kings</a>
+            <a href="recent-listings.html">Recent Listings</a>
+            <a href="compare.html">Compare</a>
+        </nav>
         <a class="support-tool-link" href="https://www.patreon.com/c/precogvision/membership" target="_blank" rel="noopener">Support the tracker + get shouted out</a>
     </div>
     
@@ -204,6 +233,22 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
+    <td class="nowrap">2026-08-01</td>
+    <td class="iem-col"><a href="pmg-audio-apx-me.html">PMG Audio APX ME</a></td>
+    <td>PMG Audio</td>
+    <td>$5,399</td>
+    <td>N/A</td>
+    <td><span class="badge badge-stale">N/A</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason"></td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>sanhnguyen97s</td>
+    <td><a href="https://www.head-fi.org/classifieds/pmg-apx-me.113199/" target="_blank">source</a></td>
+</tr>
+
+<tr>
     <td class="nowrap">2026-07-31</td>
     <td class="iem-col"><a href="dunu-talos.html">Dunu Talos</a></td>
     <td>Dunu</td>
@@ -217,6 +262,38 @@ td.status-reason { overflow: hidden; }
     <td>reddit_rss</td>
     <td>calashack</td>
     <td><a href="https://old.reddit.com/r/AVexchange/comments/1vbwglo/wts_usia_h_arctic_cables_talos_v2_mini_xlr_to_xlr/#item-1" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-31</td>
+    <td class="iem-col"><a href="meze-alba.html">Meze Alba</a></td>
+    <td>Meze</td>
+    <td>$130</td>
+    <td>$100</td>
+    <td><span class="badge badge-stale">Overpriced (30.0% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason"></td>
+    <td>No</td>
+    <td>1</td>
+    <td>headfi</td>
+    <td>Audiophile03</td>
+    <td><a href="https://www.head-fi.org/classifieds/meze-alba-with-extras.113174/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-31</td>
+    <td class="iem-col"><a href="thieaudio-monarch-mkii.html">ThieAudio Monarch MKII</a></td>
+    <td>ThieAudio</td>
+    <td>$675</td>
+    <td>$563.96</td>
+    <td><span class="badge badge-stale">High (19.7% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason"></td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>roxj629</td>
+    <td><a href="https://www.head-fi.org/classifieds/thieaudio-monarch-mkii-in-original-package-trades-considered.113176/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -333,22 +410,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-30</td>
-    <td class="iem-col"><a href="prisma-audio-lumen.html">Prisma Audio Lumen</a></td>
-    <td>Prisma Audio</td>
-    <td>$1,450</td>
-    <td>$1,450</td>
-    <td><span class="badge badge-stale">Closed: Fair (0.0% above market)</span></td>
-    <td><span class="pill">closed</span></td>
-    <td class="status-reason"></td>
-    <td>Yes</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>DenverFi</td>
-    <td><a href="https://www.head-fi.org/classifieds/prisma-lumen.113114/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-30</td>
     <td class="iem-col"><a href="mysticraft-myth.html">Mysticraft Myth</a></td>
     <td>Mysticraft</td>
     <td>$950</td>
@@ -361,6 +422,22 @@ td.status-reason { overflow: hidden; }
     <td>headfi</td>
     <td>FreeUzi</td>
     <td><a href="https://www.head-fi.org/classifieds/mysticraft-myth.113083/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-30</td>
+    <td class="iem-col"><a href="prisma-audio-lumen.html">Prisma Audio Lumen</a></td>
+    <td>Prisma Audio</td>
+    <td>$1,450</td>
+    <td>$1,450</td>
+    <td><span class="badge badge-stale">Closed: Fair (0.0% above market)</span></td>
+    <td><span class="pill">closed</span></td>
+    <td class="status-reason"></td>
+    <td>Yes</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>DenverFi</td>
+    <td><a href="https://www.head-fi.org/classifieds/prisma-lumen.113114/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -429,6 +506,86 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-29</td>
+    <td class="iem-col"><a href="sennheiser-ie200.html">Sennheiser IE200</a></td>
+    <td>Sennheiser</td>
+    <td>$90</td>
+    <td>$80</td>
+    <td><span class="badge badge-stale">High (12.5% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8489_json=403:len189908</td>
+    <td>No</td>
+    <td>0</td>
+    <td>reddit_rss</td>
+    <td>R2YourD2</td>
+    <td><a href="https://old.reddit.com/r/AVexchange/comments/1v9mbyu/wts_usahi_h_a_ton_of_iems_w_paypal/#item-4" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-29</td>
+    <td class="iem-col"><a href="thieaudio-oracle.html">ThieAudio Oracle</a></td>
+    <td>ThieAudio</td>
+    <td>$290</td>
+    <td>$410</td>
+    <td><span class="badge badge-deal">Great Deal (29.3% below market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8489_json=403:len189908</td>
+    <td>No</td>
+    <td>1</td>
+    <td>reddit_rss</td>
+    <td>R2YourD2</td>
+    <td><a href="https://old.reddit.com/r/AVexchange/comments/1v9mbyu/wts_usahi_h_a_ton_of_iems_w_paypal/#item-10" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-29</td>
+    <td class="iem-col"><a href="fatfreq-x-hbb-deuce.html">FatFreq x HBB Deuce</a></td>
+    <td>FatFreq</td>
+    <td>$150</td>
+    <td>$179.59</td>
+    <td><span class="badge badge-deal">Good Deal (16.5% below market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8489_json=403:len189908</td>
+    <td>No</td>
+    <td>0</td>
+    <td>reddit_rss</td>
+    <td>R2YourD2</td>
+    <td><a href="https://old.reddit.com/r/AVexchange/comments/1v9mbyu/wts_usahi_h_a_ton_of_iems_w_paypal/#item-9" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-29</td>
+    <td class="iem-col"><a href="moondrop-blessing-2.html">Moondrop Blessing 2</a></td>
+    <td>Moondrop</td>
+    <td>$200</td>
+    <td>$154.9</td>
+    <td><span class="badge badge-stale">Overpriced (29.1% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8489_json=403:len189908</td>
+    <td>No</td>
+    <td>0</td>
+    <td>reddit_rss</td>
+    <td>R2YourD2</td>
+    <td><a href="https://old.reddit.com/r/AVexchange/comments/1v9mbyu/wts_usahi_h_a_ton_of_iems_w_paypal/#item-8" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-29</td>
+    <td class="iem-col"><a href="hercules-audio-noah.html">Hercules Audio Noah</a></td>
+    <td>Hercules Audio</td>
+    <td>$300</td>
+    <td>$319.41</td>
+    <td><span class="badge badge-stale">Fair (6.1% below market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=200:len113807_page=200:len309277_json=200:len309481</td>
+    <td>No</td>
+    <td>0</td>
+    <td>reddit_rss</td>
+    <td>R2YourD2</td>
+    <td><a href="https://old.reddit.com/r/AVexchange/comments/1v9mbyu/wts_usahi_h_a_ton_of_iems_w_paypal/#item-2" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-29</td>
     <td class="iem-col"><a href="softears-volume-s.html">Softears Volume S</a></td>
     <td>Softears</td>
     <td>$200</td>
@@ -461,22 +618,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-29</td>
-    <td class="iem-col"><a href="moondrop-blessing-2.html">Moondrop Blessing 2</a></td>
-    <td>Moondrop</td>
-    <td>$200</td>
-    <td>$154.9</td>
-    <td><span class="badge badge-stale">Overpriced (29.1% above market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8489_json=403:len189908</td>
-    <td>No</td>
-    <td>0</td>
-    <td>reddit_rss</td>
-    <td>R2YourD2</td>
-    <td><a href="https://old.reddit.com/r/AVexchange/comments/1v9mbyu/wts_usahi_h_a_ton_of_iems_w_paypal/#item-8" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-29</td>
     <td class="iem-col"><a href="crinear-reference.html">CrinEar Reference</a></td>
     <td>CrinEar</td>
     <td>$300</td>
@@ -489,70 +630,6 @@ td.status-reason { overflow: hidden; }
     <td>reddit_rss</td>
     <td>R2YourD2</td>
     <td><a href="https://old.reddit.com/r/AVexchange/comments/1v9mbyu/wts_usahi_h_a_ton_of_iems_w_paypal/#item-7" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-29</td>
-    <td class="iem-col"><a href="sennheiser-ie200.html">Sennheiser IE200</a></td>
-    <td>Sennheiser</td>
-    <td>$90</td>
-    <td>$80</td>
-    <td><span class="badge badge-stale">High (12.5% above market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8489_json=403:len189908</td>
-    <td>No</td>
-    <td>0</td>
-    <td>reddit_rss</td>
-    <td>R2YourD2</td>
-    <td><a href="https://old.reddit.com/r/AVexchange/comments/1v9mbyu/wts_usahi_h_a_ton_of_iems_w_paypal/#item-4" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-29</td>
-    <td class="iem-col"><a href="fatfreq-x-hbb-deuce.html">FatFreq x HBB Deuce</a></td>
-    <td>FatFreq</td>
-    <td>$150</td>
-    <td>$179.59</td>
-    <td><span class="badge badge-deal">Good Deal (16.5% below market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8489_json=403:len189908</td>
-    <td>No</td>
-    <td>0</td>
-    <td>reddit_rss</td>
-    <td>R2YourD2</td>
-    <td><a href="https://old.reddit.com/r/AVexchange/comments/1v9mbyu/wts_usahi_h_a_ton_of_iems_w_paypal/#item-9" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-29</td>
-    <td class="iem-col"><a href="thieaudio-oracle.html">ThieAudio Oracle</a></td>
-    <td>ThieAudio</td>
-    <td>$290</td>
-    <td>$410</td>
-    <td><span class="badge badge-deal">Great Deal (29.3% below market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8489_json=403:len189908</td>
-    <td>No</td>
-    <td>1</td>
-    <td>reddit_rss</td>
-    <td>R2YourD2</td>
-    <td><a href="https://old.reddit.com/r/AVexchange/comments/1v9mbyu/wts_usahi_h_a_ton_of_iems_w_paypal/#item-10" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-29</td>
-    <td class="iem-col"><a href="hercules-audio-noah.html">Hercules Audio Noah</a></td>
-    <td>Hercules Audio</td>
-    <td>$300</td>
-    <td>$319.41</td>
-    <td><span class="badge badge-stale">Fair (6.1% below market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=200:len113807_page=200:len309277_json=200:len309481</td>
-    <td>No</td>
-    <td>0</td>
-    <td>reddit_rss</td>
-    <td>R2YourD2</td>
-    <td><a href="https://old.reddit.com/r/AVexchange/comments/1v9mbyu/wts_usahi_h_a_ton_of_iems_w_paypal/#item-2" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -589,22 +666,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-29</td>
-    <td class="iem-col"><a href="softears-enigma.html">Softears Enigma</a></td>
-    <td>Softears</td>
-    <td>$2,000</td>
-    <td>$1,935.05</td>
-    <td><span class="badge badge-stale">Closed: Fair (3.4% above market)</span></td>
-    <td><span class="pill">closed</span></td>
-    <td class="status-reason"></td>
-    <td>Yes</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>ekman321</td>
-    <td><a href="https://www.head-fi.org/classifieds/softears-enigma.113062/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-29</td>
     <td class="iem-col"><a href="thieaudio-monarch-mki.html">ThieAudio Monarch MKI</a></td>
     <td>ThieAudio</td>
     <td>$325</td>
@@ -633,6 +694,22 @@ td.status-reason { overflow: hidden; }
     <td>headfi</td>
     <td>StarlingCurve</td>
     <td><a href="https://www.head-fi.org/classifieds/alpha-omega-omega.113064/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-29</td>
+    <td class="iem-col"><a href="softears-enigma.html">Softears Enigma</a></td>
+    <td>Softears</td>
+    <td>$2,000</td>
+    <td>$1,935.05</td>
+    <td><span class="badge badge-stale">Closed: Fair (3.4% above market)</span></td>
+    <td><span class="pill">closed</span></td>
+    <td class="status-reason"></td>
+    <td>Yes</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>ekman321</td>
+    <td><a href="https://www.head-fi.org/classifieds/softears-enigma.113062/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -909,18 +986,18 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-26</td>
-    <td class="iem-col"><a href="canpur-cp622b.html">Canpur CP622B</a></td>
-    <td>Canpur</td>
-    <td>$2,050</td>
-    <td>$1,927.74</td>
-    <td><span class="badge badge-stale">Closed: Fair (6.3% above market)</span></td>
+    <td class="iem-col"><a href="elysian-annihilator-pre-2026.html">Elysian Annihilator pre-2026</a></td>
+    <td>Elysian</td>
+    <td>$2,500</td>
+    <td>$2,331.12</td>
+    <td><span class="badge badge-stale">Closed: Fair (7.2% above market)</span></td>
     <td><span class="pill">closed</span></td>
     <td class="status-reason"></td>
     <td>Yes</td>
     <td>0</td>
     <td>headfi</td>
-    <td>ahdez91</td>
-    <td><a href="https://www.head-fi.org/classifieds/canpur-cp622b.112836/" target="_blank">source</a></td>
+    <td>shaunbr15</td>
+    <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-26.112862/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -941,22 +1018,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-26</td>
-    <td class="iem-col"><a href="elysian-annihilator-pre-2026.html">Elysian Annihilator pre-2026</a></td>
-    <td>Elysian</td>
-    <td>$2,500</td>
-    <td>$2,331.12</td>
-    <td><span class="badge badge-stale">Closed: Fair (7.2% above market)</span></td>
-    <td><span class="pill">closed</span></td>
-    <td class="status-reason"></td>
-    <td>Yes</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>shaunbr15</td>
-    <td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-26.112862/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-26</td>
     <td class="iem-col"><a href="hercules-audio-noah.html">Hercules Audio Noah</a></td>
     <td>Hercules Audio</td>
     <td>$300</td>
@@ -969,6 +1030,22 @@ td.status-reason { overflow: hidden; }
     <td>headfi</td>
     <td>shaunbr15</td>
     <td><a href="https://www.head-fi.org/classifieds/hercules-noah.112844/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-26</td>
+    <td class="iem-col"><a href="canpur-cp622b.html">Canpur CP622B</a></td>
+    <td>Canpur</td>
+    <td>$2,050</td>
+    <td>$1,927.74</td>
+    <td><span class="badge badge-stale">Closed: Fair (6.3% above market)</span></td>
+    <td><span class="pill">closed</span></td>
+    <td class="status-reason"></td>
+    <td>Yes</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>ahdez91</td>
+    <td><a href="https://www.head-fi.org/classifieds/canpur-cp622b.112836/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -989,18 +1066,18 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-25</td>
-    <td class="iem-col"><a href="64-audio-twelve-ti.html">64 Audio Twelve Ti</a></td>
-    <td>64  Audio</td>
-    <td>$2,400</td>
-    <td>N/A</td>
-    <td><span class="badge badge-stale">N/A</span></td>
+    <td class="iem-col"><a href="unique-melody-mest-fortune.html">Unique Melody MEST Fortune</a></td>
+    <td>Unique Melody MEST Fortune</td>
+    <td>$2,300</td>
+    <td>$2,006.1</td>
+    <td><span class="badge badge-stale">High (14.7% above market)</span></td>
     <td><span class="pill">active</span></td>
     <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
     <td>No</td>
     <td>0</td>
     <td>headfi</td>
     <td>iamgarffi</td>
-    <td><a href="https://www.head-fi.org/classifieds/64-audio-twelve-ti.112804/" target="_blank">source</a></td>
+    <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-fortune-red.112805/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -1021,18 +1098,18 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-25</td>
-    <td class="iem-col"><a href="unique-melody-mest-fortune.html">Unique Melody MEST Fortune</a></td>
-    <td>Unique Melody MEST Fortune</td>
-    <td>$2,300</td>
-    <td>$2,006.1</td>
-    <td><span class="badge badge-stale">High (14.7% above market)</span></td>
+    <td class="iem-col"><a href="64-audio-twelve-ti.html">64 Audio Twelve Ti</a></td>
+    <td>64  Audio</td>
+    <td>$2,400</td>
+    <td>N/A</td>
+    <td><span class="badge badge-stale">N/A</span></td>
     <td><span class="pill">active</span></td>
     <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
     <td>No</td>
     <td>0</td>
     <td>headfi</td>
     <td>iamgarffi</td>
-    <td><a href="https://www.head-fi.org/classifieds/unique-melody-mest-fortune-red.112805/" target="_blank">source</a></td>
+    <td><a href="https://www.head-fi.org/classifieds/64-audio-twelve-ti.112804/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -1197,38 +1274,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-22</td>
-    <td class="iem-col"><a href="alpha-omega-omega.html">Alpha&Omega Omega</a></td>
-    <td>Alpha&Omega</td>
-    <td>$67</td>
-    <td>$1,525</td>
-    <td><span class="badge badge-deal">Great Deal (95.6% below market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>zeek99</td>
-    <td><a href="https://www.head-fi.org/classifieds/arion-trade-for-alpha-omega-omega.112669/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-22</td>
-    <td class="iem-col"><a href="simgot-supermix-4.html">Simgot Supermix 4</a></td>
-    <td>Simgot</td>
-    <td>$90</td>
-    <td>$94.28</td>
-    <td><span class="badge badge-stale">Closed: Fair (4.5% below market)</span></td>
-    <td><span class="pill">closed</span></td>
-    <td class="status-reason"></td>
-    <td>Yes</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>MilitaryHifi</td>
-    <td><a href="https://www.head-fi.org/classifieds/simgot-supermix-4.112668/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-22</td>
     <td class="iem-col"><a href="mysticraft-myth.html">Mysticraft Myth</a></td>
     <td>Mysticraft</td>
     <td>$920</td>
@@ -1245,18 +1290,18 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-22</td>
-    <td class="iem-col"><a href="pmg-audio-apx-me.html">PMG Audio APX ME</a></td>
-    <td>PMG Audio</td>
-    <td>$5,500</td>
-    <td>N/A</td>
-    <td><span class="badge badge-stale">N/A</span></td>
+    <td class="iem-col"><a href="unique-melody-mest-jet-black.html">Unique Melody MEST Jet Black</a></td>
+    <td>Unique Melody</td>
+    <td>$950</td>
+    <td>$922.46</td>
+    <td><span class="badge badge-stale">Fair (3.0% above market)</span></td>
     <td><span class="pill">active</span></td>
     <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
     <td>No</td>
     <td>0</td>
     <td>headfi</td>
-    <td>SoundDoctrine</td>
-    <td><a href="https://www.head-fi.org/classifieds/pmg-apx-me.112641/" target="_blank">source</a></td>
+    <td>Rininja</td>
+    <td><a href="https://www.head-fi.org/classifieds/um-mest-jet-black.112647/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -1277,50 +1322,50 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-22</td>
-    <td class="iem-col"><a href="sennheiser-ie600.html">Sennheiser IE600</a></td>
-    <td>Sennheiser</td>
-    <td>$400</td>
-    <td>$360.22</td>
-    <td><span class="badge badge-stale">High (11.0% above market)</span></td>
+    <td class="iem-col"><a href="pmg-audio-apx-me.html">PMG Audio APX ME</a></td>
+    <td>PMG Audio</td>
+    <td>$5,500</td>
+    <td>N/A</td>
+    <td><span class="badge badge-stale">N/A</span></td>
     <td><span class="pill">active</span></td>
     <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
     <td>No</td>
     <td>0</td>
     <td>headfi</td>
-    <td>ACArduino</td>
-    <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie600.112656/" target="_blank">source</a></td>
+    <td>SoundDoctrine</td>
+    <td><a href="https://www.head-fi.org/classifieds/pmg-apx-me.112641/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-22</td>
+    <td class="iem-col"><a href="alpha-omega-omega.html">Alpha&Omega Omega</a></td>
+    <td>Alpha&Omega</td>
+    <td>$67</td>
+    <td>$1,525</td>
+    <td><span class="badge badge-deal">Great Deal (95.6% below market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>zeek99</td>
+    <td><a href="https://www.head-fi.org/classifieds/arion-trade-for-alpha-omega-omega.112669/" target="_blank">source</a></td>
 </tr>
 
 <tr>
     <td class="nowrap">2026-07-22</td>
     <td class="iem-col"><a href="letshuoer-s15.html">Letshuoer S15</a></td>
     <td>Letshuoer</td>
-    <td>$80</td>
-    <td>$78.18</td>
-    <td><span class="badge badge-stale">Fair (2.3% above market)</span></td>
-    <td><span class="pill">active</span></td>
+    <td>$70</td>
+    <td>$73.96</td>
+    <td><span class="badge badge-stale">Closed: Fair (5.4% below market)</span></td>
+    <td><span class="pill">closed</span></td>
     <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
+    <td>Yes</td>
     <td>0</td>
     <td>headfi</td>
     <td>MilitaryHifi</td>
     <td><a href="https://www.head-fi.org/classifieds/letshuoer-dx1.112667/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-22</td>
-    <td class="iem-col"><a href="letshuoer-s15.html">Letshuoer S15</a></td>
-    <td>Letshuoer</td>
-    <td>$115</td>
-    <td>$78.18</td>
-    <td><span class="badge badge-stale">Overpriced (47.1% above market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>1</td>
-    <td>headfi</td>
-    <td>Rininja</td>
-    <td><a href="https://www.head-fi.org/classifieds/intuaura-view-splendor-ii-3-5mm-version-letshuoer-chimera-cable.112649/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -1341,6 +1386,22 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-22</td>
+    <td class="iem-col"><a href="simgot-supermix-4.html">Simgot Supermix 4</a></td>
+    <td>Simgot</td>
+    <td>$90</td>
+    <td>$94.28</td>
+    <td><span class="badge badge-stale">Closed: Fair (4.5% below market)</span></td>
+    <td><span class="pill">closed</span></td>
+    <td class="status-reason"></td>
+    <td>Yes</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>MilitaryHifi</td>
+    <td><a href="https://www.head-fi.org/classifieds/simgot-supermix-4.112668/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-22</td>
     <td class="iem-col"><a href="kiwi-ears-orchestra-lite.html">Kiwi Ears Orchestra Lite</a></td>
     <td>Kiwi Ears</td>
     <td>$105</td>
@@ -1357,18 +1418,34 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-22</td>
-    <td class="iem-col"><a href="unique-melody-mest-jet-black.html">Unique Melody MEST Jet Black</a></td>
-    <td>Unique Melody</td>
-    <td>$950</td>
-    <td>$922.46</td>
-    <td><span class="badge badge-stale">Fair (3.0% above market)</span></td>
+    <td class="iem-col"><a href="letshuoer-s15.html">Letshuoer S15</a></td>
+    <td>Letshuoer</td>
+    <td>$115</td>
+    <td>$73.96</td>
+    <td><span class="badge badge-stale">Overpriced (55.5% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>1</td>
+    <td>headfi</td>
+    <td>Rininja</td>
+    <td><a href="https://www.head-fi.org/classifieds/intuaura-view-splendor-ii-3-5mm-version-letshuoer-chimera-cable.112649/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-22</td>
+    <td class="iem-col"><a href="sennheiser-ie600.html">Sennheiser IE600</a></td>
+    <td>Sennheiser</td>
+    <td>$400</td>
+    <td>$360.22</td>
+    <td><span class="badge badge-stale">High (11.0% above market)</span></td>
     <td><span class="pill">active</span></td>
     <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
     <td>No</td>
     <td>0</td>
     <td>headfi</td>
-    <td>Rininja</td>
-    <td><a href="https://www.head-fi.org/classifieds/um-mest-jet-black.112647/" target="_blank">source</a></td>
+    <td>ACArduino</td>
+    <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie600.112656/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -1441,38 +1518,6 @@ td.status-reason { overflow: hidden; }
     <td>FatFreq</td>
     <td>$100</td>
     <td>$179.59</td>
-    <td><span class="badge badge-deal">Closed: Great Deal (44.3% below market)</span></td>
-    <td><span class="pill">closed</span></td>
-    <td class="status-reason"></td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>trojan2900</td>
-    <td><a href="https://www.head-fi.org/classifieds/sale-pending-fatfreq-x-hbb-deuce.112622/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-21</td>
-    <td class="iem-col"><a href="effect-audio-perseus.html">Effect Audio Perseus</a></td>
-    <td>Effect Audio</td>
-    <td>$870</td>
-    <td>N/A</td>
-    <td><span class="badge badge-stale">N/A</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>DenverFi</td>
-    <td><a href="https://www.head-fi.org/classifieds/effect-audio-perseus.112603/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-21</td>
-    <td class="iem-col"><a href="fatfreq-x-hbb-deuce.html">FatFreq x HBB Deuce</a></td>
-    <td>FatFreq</td>
-    <td>$100</td>
-    <td>$179.59</td>
     <td><span class="badge badge-deal">Great Deal (44.3% below market)</span></td>
     <td><span class="pill">active</span></td>
     <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
@@ -1501,6 +1546,22 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-21</td>
+    <td class="iem-col"><a href="fatfreq-x-hbb-deuce.html">FatFreq x HBB Deuce</a></td>
+    <td>FatFreq</td>
+    <td>$100</td>
+    <td>$179.59</td>
+    <td><span class="badge badge-deal">Closed: Great Deal (44.3% below market)</span></td>
+    <td><span class="pill">closed</span></td>
+    <td class="status-reason"></td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>trojan2900</td>
+    <td><a href="https://www.head-fi.org/classifieds/sale-pending-fatfreq-x-hbb-deuce.112622/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-21</td>
     <td class="iem-col"><a href="symphonium-crimson.html">Symphonium Crimson</a></td>
     <td>Symphonium</td>
     <td>$800</td>
@@ -1513,6 +1574,22 @@ td.status-reason { overflow: hidden; }
     <td>headfi</td>
     <td>moosophocles</td>
     <td><a href="https://www.head-fi.org/classifieds/symphonium-crimson.112628/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-21</td>
+    <td class="iem-col"><a href="mysticraft-hex.html">Mysticraft Hex</a></td>
+    <td>Mysticraft</td>
+    <td>$10,000</td>
+    <td>$9,617.02</td>
+    <td><span class="badge badge-stale">Closed: Fair (4.0% above market)</span></td>
+    <td><span class="pill">closed</span></td>
+    <td class="status-reason"></td>
+    <td>Yes</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>aaf</td>
+    <td><a href="https://www.head-fi.org/classifieds/mysticraft-hex.112588/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -1533,18 +1610,18 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-21</td>
-    <td class="iem-col"><a href="mysticraft-hex.html">Mysticraft Hex</a></td>
-    <td>Mysticraft</td>
-    <td>$10,000</td>
-    <td>$9,617.02</td>
-    <td><span class="badge badge-stale">Closed: Fair (4.0% above market)</span></td>
-    <td><span class="pill">closed</span></td>
-    <td class="status-reason"></td>
-    <td>Yes</td>
+    <td class="iem-col"><a href="effect-audio-perseus.html">Effect Audio Perseus</a></td>
+    <td>Effect Audio</td>
+    <td>$870</td>
+    <td>N/A</td>
+    <td><span class="badge badge-stale">N/A</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
     <td>0</td>
     <td>headfi</td>
-    <td>aaf</td>
-    <td><a href="https://www.head-fi.org/classifieds/mysticraft-hex.112588/" target="_blank">source</a></td>
+    <td>DenverFi</td>
+    <td><a href="https://www.head-fi.org/classifieds/effect-audio-perseus.112603/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -1613,22 +1690,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-20</td>
-    <td class="iem-col"><a href="epz-p40.html">EPZ P40</a></td>
-    <td>EPZ</td>
-    <td>$110</td>
-    <td>N/A</td>
-    <td><span class="badge badge-stale">N/A</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=200:len309457_page=200:len309396_json=200:len309649</td>
-    <td>No</td>
-    <td>0</td>
-    <td>reddit_rss</td>
-    <td>unclebrudy</td>
-    <td><a href="https://old.reddit.com/r/AVexchange/comments/1v1cr6f/wts_usca_h_et142_epz_p40_oracle_mk3_w_ppff_local/#item-2" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-20</td>
     <td class="iem-col"><a href="thieaudio-oracle.html">ThieAudio Oracle</a></td>
     <td>ThieAudio</td>
     <td>$290</td>
@@ -1641,6 +1702,22 @@ td.status-reason { overflow: hidden; }
     <td>reddit_rss</td>
     <td>unclebrudy</td>
     <td><a href="https://old.reddit.com/r/AVexchange/comments/1v1cr6f/wts_usca_h_et142_epz_p40_oracle_mk3_w_ppff_local/#item-3" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-20</td>
+    <td class="iem-col"><a href="epz-p40.html">EPZ P40</a></td>
+    <td>EPZ</td>
+    <td>$110</td>
+    <td>N/A</td>
+    <td><span class="badge badge-stale">N/A</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=200:len309457_page=200:len309396_json=200:len309649</td>
+    <td>No</td>
+    <td>0</td>
+    <td>reddit_rss</td>
+    <td>unclebrudy</td>
+    <td><a href="https://old.reddit.com/r/AVexchange/comments/1v1cr6f/wts_usca_h_et142_epz_p40_oracle_mk3_w_ppff_local/#item-2" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -1709,22 +1786,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-20</td>
-    <td class="iem-col"><a href="campfire-audio-mammoth.html">Campfire Audio Mammoth</a></td>
-    <td>Campfire Audio</td>
-    <td>$250</td>
-    <td>N/A</td>
-    <td><span class="badge badge-stale">N/A</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>Khareef1278</td>
-    <td><a href="https://www.head-fi.org/classifieds/campfire-audio-mammoth.112556/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-20</td>
     <td class="iem-col"><a href="moondrop-solis.html">Moondrop Solis</a></td>
     <td>Moondrop</td>
     <td>$400</td>
@@ -1737,6 +1798,22 @@ td.status-reason { overflow: hidden; }
     <td>headfi</td>
     <td>osanchez4808</td>
     <td><a href="https://www.head-fi.org/classifieds/moondrop-solis.112560/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-20</td>
+    <td class="iem-col"><a href="campfire-audio-mammoth.html">Campfire Audio Mammoth</a></td>
+    <td>Campfire Audio</td>
+    <td>$250</td>
+    <td>N/A</td>
+    <td><span class="badge badge-stale">N/A</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>Khareef1278</td>
+    <td><a href="https://www.head-fi.org/classifieds/campfire-audio-mammoth.112556/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -1789,6 +1866,38 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-19</td>
+    <td class="iem-col"><a href="7hz-timeless-ii.html">7Hz Timeless II</a></td>
+    <td>7Hz</td>
+    <td>$150</td>
+    <td>$131.08</td>
+    <td><span class="badge badge-stale">High (14.4% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>Bob</td>
+    <td><a href="https://www.head-fi.org/classifieds/7hz-timeless-ii.112477/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-19</td>
+    <td class="iem-col"><a href="crinear-meta.html">CrinEar Meta</a></td>
+    <td>CrinEar</td>
+    <td>$250</td>
+    <td>$247.65</td>
+    <td><span class="badge badge-stale">Fair (0.9% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>Ikeiya</td>
+    <td><a href="https://www.head-fi.org/classifieds/crinear-meta-527.112453/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-19</td>
     <td class="iem-col"><a href="sony-ier-z1r.html">Sony IER-Z1R</a></td>
     <td>Sony</td>
     <td>$1,000</td>
@@ -1817,38 +1926,6 @@ td.status-reason { overflow: hidden; }
     <td>headfi</td>
     <td>Ikeiya</td>
     <td><a href="https://www.head-fi.org/classifieds/starry-audio-syzygy.112452/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-19</td>
-    <td class="iem-col"><a href="crinear-meta.html">CrinEar Meta</a></td>
-    <td>CrinEar</td>
-    <td>$250</td>
-    <td>$247.65</td>
-    <td><span class="badge badge-stale">Fair (0.9% above market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>Ikeiya</td>
-    <td><a href="https://www.head-fi.org/classifieds/crinear-meta-527.112453/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-19</td>
-    <td class="iem-col"><a href="7hz-timeless-ii.html">7Hz Timeless II</a></td>
-    <td>7Hz</td>
-    <td>$150</td>
-    <td>$131.08</td>
-    <td><span class="badge badge-stale">High (14.4% above market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>Bob</td>
-    <td><a href="https://www.head-fi.org/classifieds/7hz-timeless-ii.112477/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -1885,22 +1962,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-18</td>
-    <td class="iem-col"><a href="softears-volume-s.html">Softears Volume S</a></td>
-    <td>Softears</td>
-    <td>$210</td>
-    <td>$202.14</td>
-    <td><span class="badge badge-stale">Fair (3.9% above market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=200:len309445_page=200:len309384_json=200:len312587</td>
-    <td>No</td>
-    <td>0</td>
-    <td>reddit_rss</td>
-    <td>poochzag</td>
-    <td><a href="https://old.reddit.com/r/AVexchange/comments/1v03awr/wts_usga_h_hisenior_cano_cristales_binary_ep321/#item-3" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-18</td>
     <td class="iem-col"><a href="binary-acoustics-ep321-mems.html">Binary Acoustics EP321 MEMS</a></td>
     <td>Binary Acoustics</td>
     <td>$150</td>
@@ -1913,6 +1974,22 @@ td.status-reason { overflow: hidden; }
     <td>reddit_rss</td>
     <td>poochzag</td>
     <td><a href="https://old.reddit.com/r/AVexchange/comments/1v03awr/wts_usga_h_hisenior_cano_cristales_binary_ep321/#item-2" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-18</td>
+    <td class="iem-col"><a href="softears-volume-s.html">Softears Volume S</a></td>
+    <td>Softears</td>
+    <td>$210</td>
+    <td>$202.14</td>
+    <td><span class="badge badge-stale">Fair (3.9% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=200:len309445_page=200:len309384_json=200:len312587</td>
+    <td>No</td>
+    <td>0</td>
+    <td>reddit_rss</td>
+    <td>poochzag</td>
+    <td><a href="https://old.reddit.com/r/AVexchange/comments/1v03awr/wts_usga_h_hisenior_cano_cristales_binary_ep321/#item-3" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -1997,22 +2074,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-18</td>
-    <td class="iem-col"><a href="empire-ears-legend-x.html">Empire Ears Legend X</a></td>
-    <td>Empire Ears</td>
-    <td>$800</td>
-    <td>$800.84</td>
-    <td><span class="badge badge-stale">Fair (0.1% below market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>MisterSlaw</td>
-    <td><a href="https://www.head-fi.org/classifieds/empire-ears-legend-x.112403/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-18</td>
     <td class="iem-col"><a href="softears-twilight.html">Softears Twilight</a></td>
     <td>Softears</td>
     <td>$525</td>
@@ -2029,22 +2090,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-18</td>
-    <td class="iem-col"><a href="sony-ier-m9.html">Sony IER-M9</a></td>
-    <td>Sony</td>
-    <td>$725</td>
-    <td>$520.95</td>
-    <td><span class="badge badge-stale">Overpriced (39.2% above market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>KipFox</td>
-    <td><a href="https://www.head-fi.org/classifieds/sony-ier-m9.112408/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-18</td>
     <td class="iem-col"><a href="vision-ears-ext.html">Vision Ears EXT</a></td>
     <td>Vision Ears</td>
     <td>$975</td>
@@ -2057,6 +2102,38 @@ td.status-reason { overflow: hidden; }
     <td>headfi</td>
     <td>sparty09</td>
     <td><a href="https://www.head-fi.org/classifieds/vision-ears-ext-og.112415/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-18</td>
+    <td class="iem-col"><a href="empire-ears-legend-x.html">Empire Ears Legend X</a></td>
+    <td>Empire Ears</td>
+    <td>$800</td>
+    <td>$800.84</td>
+    <td><span class="badge badge-stale">Fair (0.1% below market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>MisterSlaw</td>
+    <td><a href="https://www.head-fi.org/classifieds/empire-ears-legend-x.112403/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-18</td>
+    <td class="iem-col"><a href="sony-ier-m9.html">Sony IER-M9</a></td>
+    <td>Sony</td>
+    <td>$700</td>
+    <td>$520.95</td>
+    <td><span class="badge badge-stale">Overpriced (34.4% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>KipFox</td>
+    <td><a href="https://www.head-fi.org/classifieds/sony-ier-m9.112408/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -2205,18 +2282,18 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-17</td>
-    <td class="iem-col"><a href="7hz-zero.html">7Hz Zero</a></td>
-    <td>7Hz</td>
-    <td>$75</td>
-    <td>N/A</td>
-    <td><span class="badge badge-stale">N/A</span></td>
-    <td><span class="pill">active</span></td>
+    <td class="iem-col"><a href="dunu-kima.html">Dunu Kima</a></td>
+    <td>Dunu</td>
+    <td>$85</td>
+    <td>$50</td>
+    <td><span class="badge badge-stale">Closed: Overpriced (70.0% above market)</span></td>
+    <td><span class="pill">closed</span></td>
     <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
     <td>No</td>
     <td>1</td>
     <td>headfi</td>
     <td>MilitaryHifi</td>
-    <td><a href="https://www.head-fi.org/classifieds/bundle-monster-ears-shadow-x-kz-zenith-7hz-zero-2.112360/" target="_blank">source</a></td>
+    <td><a href="https://www.head-fi.org/classifieds/bundle-dunu-kima-2-simgot-ea500-celest-ignite-beast.112356/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -2237,18 +2314,18 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-17</td>
-    <td class="iem-col"><a href="dunu-kima.html">Dunu Kima</a></td>
-    <td>Dunu</td>
-    <td>$85</td>
-    <td>$50</td>
-    <td><span class="badge badge-stale">Closed: Overpriced (70.0% above market)</span></td>
+    <td class="iem-col"><a href="7hz-zero.html">7Hz Zero</a></td>
+    <td>7Hz</td>
+    <td>$75</td>
+    <td>N/A</td>
+    <td><span class="badge badge-stale">N/A</span></td>
     <td><span class="pill">closed</span></td>
     <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
     <td>No</td>
     <td>1</td>
     <td>headfi</td>
     <td>MilitaryHifi</td>
-    <td><a href="https://www.head-fi.org/classifieds/bundle-dunu-kima-2-simgot-ea500-celest-ignite-beast.112356/" target="_blank">source</a></td>
+    <td><a href="https://www.head-fi.org/classifieds/bundle-monster-ears-shadow-x-kz-zenith-7hz-zero-2.112360/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -2365,34 +2442,18 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-16</td>
-    <td class="iem-col"><a href="softears-edge.html">Softears Edge</a></td>
-    <td>Softears</td>
-    <td>$335</td>
-    <td>$413.25</td>
-    <td><span class="badge badge-deal">Closed: Good Deal (18.9% below market)</span></td>
+    <td class="iem-col"><a href="alpha-omega-fulgrim.html">Alpha&Omega Fulgrim</a></td>
+    <td>Alpha&Omega</td>
+    <td>$4,300</td>
+    <td>$4,520.96</td>
+    <td><span class="badge badge-stale">Closed: Fair (4.9% below market)</span></td>
     <td><span class="pill">closed</span></td>
     <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
     <td>Yes</td>
     <td>0</td>
     <td>headfi</td>
-    <td>alchemical</td>
-    <td><a href="https://www.head-fi.org/classifieds/softears-edge-like-new-free-worldwide-shipping-included.112330/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-16</td>
-    <td class="iem-col"><a href="canpur-cp752b.html">Canpur CP752B</a></td>
-    <td>Canpur</td>
-    <td>$3,300</td>
-    <td>$3,787.5</td>
-    <td><span class="badge badge-deal">Good Deal (12.9% below market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
     <td>Echo42987</td>
-    <td><a href="https://www.head-fi.org/classifieds/canpur-cp752b.112315/" target="_blank">source</a></td>
+    <td><a href="https://www.head-fi.org/classifieds/alpha-omega-fulgrim-14-69.112312/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -2413,6 +2474,22 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-16</td>
+    <td class="iem-col"><a href="canpur-cp752b.html">Canpur CP752B</a></td>
+    <td>Canpur</td>
+    <td>$3,300</td>
+    <td>$3,787.5</td>
+    <td><span class="badge badge-deal">Good Deal (12.9% below market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>Echo42987</td>
+    <td><a href="https://www.head-fi.org/classifieds/canpur-cp752b.112315/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-16</td>
     <td class="iem-col"><a href="7th-acoustics-asteria.html">7th Acoustics Asteria</a></td>
     <td>7th Acoustics</td>
     <td>$3,300</td>
@@ -2429,18 +2506,18 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-16</td>
-    <td class="iem-col"><a href="alpha-omega-fulgrim.html">Alpha&Omega Fulgrim</a></td>
-    <td>Alpha&Omega</td>
-    <td>$4,300</td>
-    <td>$4,520.96</td>
-    <td><span class="badge badge-stale">Closed: Fair (4.9% below market)</span></td>
-    <td><span class="pill">closed</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>Yes</td>
+    <td class="iem-col"><a href="juzear-x-koto-nebula.html">Juzear x Koto Nebula</a></td>
+    <td>Juzear</td>
+    <td>$110</td>
+    <td>N/A</td>
+    <td><span class="badge badge-stale">N/A</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_page_loaded_unclear_status__headfi_diag_http=200_html=45410_visible=1624_classifieds=1_listing_id=0_contact=0_views=0_for_sale=0_for_trade=0_sold=0_closed=0_expired=0_condition=0_challenge=0_title_match=0_windows=1</td>
+    <td>No</td>
     <td>0</td>
     <td>headfi</td>
-    <td>Echo42987</td>
-    <td><a href="https://www.head-fi.org/classifieds/alpha-omega-fulgrim-14-69.112312/" target="_blank">source</a></td>
+    <td>krafty</td>
+    <td><a href="https://www.head-fi.org/classifieds/juzear-x-koto-nebula-pd.112324/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -2461,18 +2538,18 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-16</td>
-    <td class="iem-col"><a href="juzear-x-koto-nebula.html">Juzear x Koto Nebula</a></td>
-    <td>Juzear</td>
-    <td>$110</td>
-    <td>N/A</td>
-    <td><span class="badge badge-stale">N/A</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_page_loaded_unclear_status__headfi_diag_http=200_html=45410_visible=1624_classifieds=1_listing_id=0_contact=0_views=0_for_sale=0_for_trade=0_sold=0_closed=0_expired=0_condition=0_challenge=0_title_match=0_windows=1</td>
-    <td>No</td>
+    <td class="iem-col"><a href="softears-edge.html">Softears Edge</a></td>
+    <td>Softears</td>
+    <td>$335</td>
+    <td>$413.25</td>
+    <td><span class="badge badge-deal">Closed: Good Deal (18.9% below market)</span></td>
+    <td><span class="pill">closed</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>Yes</td>
     <td>0</td>
     <td>headfi</td>
-    <td>krafty</td>
-    <td><a href="https://www.head-fi.org/classifieds/juzear-x-koto-nebula-pd.112324/" target="_blank">source</a></td>
+    <td>alchemical</td>
+    <td><a href="https://www.head-fi.org/classifieds/softears-edge-like-new-free-worldwide-shipping-included.112330/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -2525,70 +2602,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-15</td>
-    <td class="iem-col"><a href="hisenior-mega-7.html">HiSenior Mega 7</a></td>
-    <td>HiSenior</td>
-    <td>$300</td>
-    <td>$300</td>
-    <td><span class="badge badge-stale">Closed: Fair (0.0% above market)</span></td>
-    <td><span class="pill">closed</span></td>
-    <td class="status-reason"></td>
-    <td>Yes</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>trojan2900</td>
-    <td><a href="https://www.head-fi.org/classifieds/hisenior-mega7.112285/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-15</td>
-    <td class="iem-col"><a href="ziigaat-luna.html">Ziigaat Luna</a></td>
-    <td>Ziigaat</td>
-    <td>$123</td>
-    <td>$160</td>
-    <td><span class="badge badge-deal">Great Deal (23.1% below market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>bozodidthedub</td>
-    <td><a href="https://www.head-fi.org/classifieds/my-ziigaat-luna-for-your-hype-4-or-tea-pro-og.112261/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-15</td>
-    <td class="iem-col"><a href="flipears-arion.html">Flipears Arion</a></td>
-    <td>Flipears</td>
-    <td>$1,850</td>
-    <td>$1,799</td>
-    <td><span class="badge badge-stale">Fair (2.8% above market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>Pelilin</td>
-    <td><a href="https://www.head-fi.org/classifieds/flipears-arion.112240/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-15</td>
-    <td class="iem-col"><a href="flipears-aisha-electri.html">Flipears Aisha Electri</a></td>
-    <td>flipears</td>
-    <td>$540</td>
-    <td>$535</td>
-    <td><span class="badge badge-stale">Fair (0.9% above market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>ctjacks336</td>
-    <td><a href="https://www.head-fi.org/classifieds/flipears-aisha-electri.112274/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-15</td>
     <td class="iem-col"><a href="punch-audio-martilo.html">Punch Audio Martilo</a></td>
     <td>Punch Audio</td>
     <td>$125</td>
@@ -2617,6 +2630,70 @@ td.status-reason { overflow: hidden; }
     <td>headfi</td>
     <td>ronin22</td>
     <td><a href="https://www.head-fi.org/classifieds/sold-thieaudio-valhalla-in-excellent-condition.112232/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-15</td>
+    <td class="iem-col"><a href="flipears-aisha-electri.html">Flipears Aisha Electri</a></td>
+    <td>flipears</td>
+    <td>$540</td>
+    <td>$535</td>
+    <td><span class="badge badge-stale">Fair (0.9% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>ctjacks336</td>
+    <td><a href="https://www.head-fi.org/classifieds/flipears-aisha-electri.112274/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-15</td>
+    <td class="iem-col"><a href="hisenior-mega-7.html">HiSenior Mega 7</a></td>
+    <td>HiSenior</td>
+    <td>$300</td>
+    <td>$300</td>
+    <td><span class="badge badge-stale">Closed: Fair (0.0% above market)</span></td>
+    <td><span class="pill">closed</span></td>
+    <td class="status-reason"></td>
+    <td>Yes</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>trojan2900</td>
+    <td><a href="https://www.head-fi.org/classifieds/hisenior-mega7.112285/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-15</td>
+    <td class="iem-col"><a href="flipears-arion.html">Flipears Arion</a></td>
+    <td>Flipears</td>
+    <td>$1,850</td>
+    <td>$1,799</td>
+    <td><span class="badge badge-stale">Fair (2.8% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>Pelilin</td>
+    <td><a href="https://www.head-fi.org/classifieds/flipears-arion.112240/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-15</td>
+    <td class="iem-col"><a href="ziigaat-luna.html">Ziigaat Luna</a></td>
+    <td>Ziigaat</td>
+    <td>$123</td>
+    <td>$160</td>
+    <td><span class="badge badge-deal">Great Deal (23.1% below market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>bozodidthedub</td>
+    <td><a href="https://www.head-fi.org/classifieds/my-ziigaat-luna-for-your-hype-4-or-tea-pro-og.112261/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -2735,22 +2812,6 @@ td.status-reason { overflow: hidden; }
     <td class="nowrap">2026-07-14</td>
     <td class="iem-col"><a href="kbear-diamond.html">KBear Diamond</a></td>
     <td>KBear</td>
-    <td>$735</td>
-    <td>N/A</td>
-    <td><span class="badge badge-stale">N/A</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8501_json=403:len189908</td>
-    <td>No</td>
-    <td>0</td>
-    <td>reddit_rss</td>
-    <td>headphones_lover_123</td>
-    <td><a href="https://old.reddit.com/r/AVexchange/comments/1uvz89o/wtsukrukrh_nordost_blue_heaven_hdmi_audioquest/#item-5" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-14</td>
-    <td class="iem-col"><a href="kbear-diamond.html">KBear Diamond</a></td>
-    <td>KBear</td>
     <td>$29</td>
     <td>N/A</td>
     <td><span class="badge badge-stale">N/A</span></td>
@@ -2761,6 +2822,22 @@ td.status-reason { overflow: hidden; }
     <td>reddit_rss</td>
     <td>headphones_lover_123</td>
     <td><a href="https://old.reddit.com/r/AVexchange/comments/1uvz89o/wtsukrukrh_nordost_blue_heaven_hdmi_audioquest/#item-9" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-14</td>
+    <td class="iem-col"><a href="kbear-diamond.html">KBear Diamond</a></td>
+    <td>KBear</td>
+    <td>$735</td>
+    <td>N/A</td>
+    <td><span class="badge badge-stale">N/A</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8501_json=403:len189908</td>
+    <td>No</td>
+    <td>0</td>
+    <td>reddit_rss</td>
+    <td>headphones_lover_123</td>
+    <td><a href="https://old.reddit.com/r/AVexchange/comments/1uvz89o/wtsukrukrh_nordost_blue_heaven_hdmi_audioquest/#item-5" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -2909,22 +2986,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-13</td>
-    <td class="iem-col"><a href="punch-audio-martilo.html">Punch Audio Martilo</a></td>
-    <td>Punch Audio</td>
-    <td>$175</td>
-    <td>$165</td>
-    <td><span class="badge badge-stale">Closed: Fair (6.1% above market)</span></td>
-    <td><span class="pill">closed</span></td>
-    <td class="status-reason">confirmed sold from source check</td>
-    <td>Yes</td>
-    <td>0</td>
-    <td>reddit_rss</td>
-    <td>Deathpoop5</td>
-    <td><a href="https://old.reddit.com/r/AVexchange/comments/1uvpc1k/wts_usaca_h_hisenior_mega5est_punch_audio_martilo/#item-2" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-13</td>
     <td class="iem-col"><a href="xenns-mangird-top-pro.html">XENNS Mangird Top Pro</a></td>
     <td>XENNS</td>
     <td>$345</td>
@@ -2941,50 +3002,18 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-13</td>
-    <td class="iem-col"><a href="sony-ier-z1r.html">Sony IER-Z1R</a></td>
-    <td>Sony</td>
-    <td>$250</td>
-    <td>$951.4</td>
-    <td><span class="badge badge-deal">Great Deal (73.7% below market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
+    <td class="iem-col"><a href="punch-audio-martilo.html">Punch Audio Martilo</a></td>
+    <td>Punch Audio</td>
+    <td>$175</td>
+    <td>$165</td>
+    <td><span class="badge badge-stale">Closed: Fair (6.1% above market)</span></td>
+    <td><span class="pill">closed</span></td>
+    <td class="status-reason">confirmed sold from source check</td>
+    <td>Yes</td>
     <td>0</td>
-    <td>headfi</td>
-    <td>CB7FB8KgYh24E</td>
-    <td><a href="https://www.head-fi.org/classifieds/bassless-sony-ier-z1r.112099/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-13</td>
-    <td class="iem-col"><a href="fatfreq-scarlet-mini.html">FatFreq Scarlet Mini</a></td>
-    <td>FatFreq</td>
-    <td>$550</td>
-    <td>$406.53</td>
-    <td><span class="badge badge-stale">Overpriced (35.3% above market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>1</td>
-    <td>headfi</td>
-    <td>piscesyy</td>
-    <td><a href="https://www.head-fi.org/classifieds/pending-like-new-fatfreq-scarlet-mini-w-upgrade-red-cable-2-pin-4-4mm-w-modular-termination.112155/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-13</td>
-    <td class="iem-col"><a href="flipears-arion.html">Flipears Arion</a></td>
-    <td>Flipears</td>
-    <td>$1,950</td>
-    <td>$1,799</td>
-    <td><span class="badge badge-stale">Fair (8.4% above market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>piscesyy</td>
-    <td><a href="https://www.head-fi.org/classifieds/like-new-flipears-arion-2-pin-4-4mm.112156/" target="_blank">source</a></td>
+    <td>reddit_rss</td>
+    <td>Deathpoop5</td>
+    <td><a href="https://old.reddit.com/r/AVexchange/comments/1uvpc1k/wts_usaca_h_hisenior_mega5est_punch_audio_martilo/#item-2" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -3005,18 +3034,34 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-13</td>
-    <td class="iem-col"><a href="symphonium-zenith.html">Symphonium Zenith</a></td>
-    <td>Symphonium</td>
-    <td>$1,575</td>
-    <td>$1,662.5</td>
-    <td><span class="badge badge-stale">Closed: Fair (5.3% below market)</span></td>
-    <td><span class="pill">closed</span></td>
-    <td class="status-reason"></td>
-    <td>Yes</td>
+    <td class="iem-col"><a href="fatfreq-scarlet-mini.html">FatFreq Scarlet Mini</a></td>
+    <td>FatFreq</td>
+    <td>$550</td>
+    <td>$406.53</td>
+    <td><span class="badge badge-stale">Overpriced (35.3% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>1</td>
+    <td>headfi</td>
+    <td>piscesyy</td>
+    <td><a href="https://www.head-fi.org/classifieds/pending-like-new-fatfreq-scarlet-mini-w-upgrade-red-cable-2-pin-4-4mm-w-modular-termination.112155/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-13</td>
+    <td class="iem-col"><a href="sony-ier-z1r.html">Sony IER-Z1R</a></td>
+    <td>Sony</td>
+    <td>$250</td>
+    <td>$951.4</td>
+    <td><span class="badge badge-deal">Great Deal (73.7% below market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
     <td>0</td>
     <td>headfi</td>
-    <td>drewbadour</td>
-    <td><a href="https://www.head-fi.org/classifieds/symphonium-zenith.112124/" target="_blank">source</a></td>
+    <td>CB7FB8KgYh24E</td>
+    <td><a href="https://www.head-fi.org/classifieds/bassless-sony-ier-z1r.112099/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -3049,6 +3094,38 @@ td.status-reason { overflow: hidden; }
     <td>headfi</td>
     <td>Josh83</td>
     <td><a href="https://www.head-fi.org/classifieds/ziigaat-luna-single-owner-mint-all-tips-unused.112102/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-13</td>
+    <td class="iem-col"><a href="flipears-arion.html">Flipears Arion</a></td>
+    <td>Flipears</td>
+    <td>$1,950</td>
+    <td>$1,799</td>
+    <td><span class="badge badge-stale">Fair (8.4% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>piscesyy</td>
+    <td><a href="https://www.head-fi.org/classifieds/like-new-flipears-arion-2-pin-4-4mm.112156/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-13</td>
+    <td class="iem-col"><a href="symphonium-zenith.html">Symphonium Zenith</a></td>
+    <td>Symphonium</td>
+    <td>$1,575</td>
+    <td>$1,662.5</td>
+    <td><span class="badge badge-stale">Closed: Fair (5.3% below market)</span></td>
+    <td><span class="pill">closed</span></td>
+    <td class="status-reason"></td>
+    <td>Yes</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>drewbadour</td>
+    <td><a href="https://www.head-fi.org/classifieds/symphonium-zenith.112124/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -3101,6 +3178,22 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-12</td>
+    <td class="iem-col"><a href="forte-ears-macbeth.html">Forte Ears Macbeth</a></td>
+    <td>Forte Ears</td>
+    <td>$2,100</td>
+    <td>N/A</td>
+    <td><span class="badge badge-stale">N/A</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>PaKiwiAl</td>
+    <td><a href="https://www.head-fi.org/classifieds/pd-forte-ears-macbeth.112050/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-12</td>
     <td class="iem-col"><a href="meze-alba.html">Meze Alba</a></td>
     <td>Meze</td>
     <td>$100</td>
@@ -3113,22 +3206,6 @@ td.status-reason { overflow: hidden; }
     <td>headfi</td>
     <td>stormwrx</td>
     <td><a href="https://www.head-fi.org/classifieds/meze-alba.112057/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-12</td>
-    <td class="iem-col"><a href="forte-ears-macbeth.html">Forte Ears Macbeth</a></td>
-    <td>Forte Ears</td>
-    <td>$2,200</td>
-    <td>N/A</td>
-    <td><span class="badge badge-stale">N/A</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>PaKiwiAl</td>
-    <td><a href="https://www.head-fi.org/classifieds/forte-ears-macbeth.112050/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -3151,7 +3228,7 @@ td.status-reason { overflow: hidden; }
     <td class="nowrap">2026-07-12</td>
     <td class="iem-col"><a href="forte-ears-macbeth.html">Forte Ears Macbeth</a></td>
     <td>Forte Ears</td>
-    <td>$2,100</td>
+    <td>$2,200</td>
     <td>N/A</td>
     <td><span class="badge badge-stale">N/A</span></td>
     <td><span class="pill">active</span></td>
@@ -3160,7 +3237,7 @@ td.status-reason { overflow: hidden; }
     <td>0</td>
     <td>headfi</td>
     <td>PaKiwiAl</td>
-    <td><a href="https://www.head-fi.org/classifieds/pd-forte-ears-macbeth.112050/" target="_blank">source</a></td>
+    <td><a href="https://www.head-fi.org/classifieds/forte-ears-macbeth.112050/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -3261,22 +3338,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-11</td>
-    <td class="iem-col"><a href="oriolus-traillii-ultra-iem-system.html">Oriolus Traillii Ultra IEM System</a></td>
-    <td>Oriolus</td>
-    <td>$7,500</td>
-    <td>N/A</td>
-    <td><span class="badge badge-stale">N/A</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>Crazeee</td>
-    <td><a href="https://www.head-fi.org/classifieds/oriolus-traillii-ultra-iem-system.111995/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-11</td>
     <td class="iem-col"><a href="dunu-glacier.html">Dunu Glacier</a></td>
     <td>Dunu</td>
     <td>$900</td>
@@ -3289,6 +3350,22 @@ td.status-reason { overflow: hidden; }
     <td>headfi</td>
     <td>MisterSlaw</td>
     <td><a href="https://www.head-fi.org/classifieds/dunu-glacier-mmcx.112027/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-11</td>
+    <td class="iem-col"><a href="oriolus-traillii-ultra-iem-system.html">Oriolus Traillii Ultra IEM System</a></td>
+    <td>Oriolus</td>
+    <td>$7,500</td>
+    <td>N/A</td>
+    <td><span class="badge badge-stale">N/A</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>Crazeee</td>
+    <td><a href="https://www.head-fi.org/classifieds/oriolus-traillii-ultra-iem-system.111995/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -3517,22 +3594,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-08</td>
-    <td class="iem-col"><a href="hisenior-mega-5-est.html">HiSenior Mega 5 EST</a></td>
-    <td>HiSenior</td>
-    <td>$150</td>
-    <td>$202.24</td>
-    <td><span class="badge badge-deal">Closed: Great Deal (25.8% below market)</span></td>
-    <td><span class="pill">closed</span></td>
-    <td class="status-reason"></td>
-    <td>Yes</td>
-    <td>0</td>
-    <td>reddit_rss</td>
-    <td>Moosty_</td>
-    <td><a href="https://old.reddit.com/r/AVexchange/comments/1ur9u36/wts_usami_h_thieaudio_hype_4_mkii_fiio_fa19/#item-3" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-08</td>
     <td class="iem-col"><a href="thieaudio-hype-4-mkii.html">ThieAudio Hype 4 MKII</a></td>
     <td>ThieAudio</td>
     <td>$200</td>
@@ -3545,6 +3606,22 @@ td.status-reason { overflow: hidden; }
     <td>reddit_rss</td>
     <td>Moosty_</td>
     <td><a href="https://old.reddit.com/r/AVexchange/comments/1ur9u36/wts_usami_h_thieaudio_hype_4_mkii_fiio_fa19/#item-1" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-08</td>
+    <td class="iem-col"><a href="hisenior-mega-5-est.html">HiSenior Mega 5 EST</a></td>
+    <td>HiSenior</td>
+    <td>$150</td>
+    <td>$202.24</td>
+    <td><span class="badge badge-deal">Closed: Great Deal (25.8% below market)</span></td>
+    <td><span class="pill">closed</span></td>
+    <td class="status-reason"></td>
+    <td>Yes</td>
+    <td>0</td>
+    <td>reddit_rss</td>
+    <td>Moosty_</td>
+    <td><a href="https://old.reddit.com/r/AVexchange/comments/1ur9u36/wts_usami_h_thieaudio_hype_4_mkii_fiio_fa19/#item-3" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -3645,22 +3722,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-08</td>
-    <td class="iem-col"><a href="yu9-que.html">YU9 Que</a></td>
-    <td>YU9</td>
-    <td>$280</td>
-    <td>$374.17</td>
-    <td><span class="badge badge-deal">Closed: Great Deal (25.2% below market)</span></td>
-    <td><span class="pill">closed</span></td>
-    <td class="status-reason"></td>
-    <td>Yes</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>bschnell9</td>
-    <td><a href="https://www.head-fi.org/classifieds/yu9-que.111885/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-08</td>
     <td class="iem-col"><a href="softears-volume-s.html">Softears Volume S</a></td>
     <td>Softears</td>
     <td>$210</td>
@@ -3673,6 +3734,22 @@ td.status-reason { overflow: hidden; }
     <td>headfi</td>
     <td>ascortjkk</td>
     <td><a href="https://www.head-fi.org/classifieds/softears-volume-s.111889/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-08</td>
+    <td class="iem-col"><a href="yu9-que.html">YU9 Que</a></td>
+    <td>YU9</td>
+    <td>$280</td>
+    <td>$374.17</td>
+    <td><span class="badge badge-deal">Closed: Great Deal (25.2% below market)</span></td>
+    <td><span class="pill">closed</span></td>
+    <td class="status-reason"></td>
+    <td>Yes</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>bschnell9</td>
+    <td><a href="https://www.head-fi.org/classifieds/yu9-que.111885/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -3775,6 +3852,22 @@ td.status-reason { overflow: hidden; }
     <td class="nowrap">2026-07-07</td>
     <td class="iem-col"><a href="flipears-arion.html">Flipears Arion</a></td>
     <td>Flipears</td>
+    <td>$1,800</td>
+    <td>$1,799</td>
+    <td><span class="badge badge-stale">Fair (0.1% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>subguy812</td>
+    <td><a href="https://www.head-fi.org/classifieds/flipears-arion-mint.111843/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-07</td>
+    <td class="iem-col"><a href="flipears-arion.html">Flipears Arion</a></td>
+    <td>Flipears</td>
     <td>$1,700</td>
     <td>$1,799</td>
     <td><span class="badge badge-stale">Closed: Fair (5.5% below market)</span></td>
@@ -3788,19 +3881,19 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="nowrap">2026-07-07</td>
-    <td class="iem-col"><a href="flipears-arion.html">Flipears Arion</a></td>
-    <td>Flipears</td>
-    <td>$1,800</td>
-    <td>$1,799</td>
-    <td><span class="badge badge-stale">Fair (0.1% above market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td class="nowrap">2026-07-06</td>
+    <td class="iem-col"><a href="fiio-fh5.html">FiiO FH5</a></td>
+    <td>FiiO</td>
+    <td>$100</td>
+    <td>N/A</td>
+    <td><span class="badge badge-stale">N/A</span></td>
+    <td><span class="pill">closed</span></td>
+    <td class="status-reason"></td>
     <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>subguy812</td>
-    <td><a href="https://www.head-fi.org/classifieds/flipears-arion-mint.111843/" target="_blank">source</a></td>
+    <td>1</td>
+    <td>reddit_rss</td>
+    <td>ianto7</td>
+    <td><a href="https://old.reddit.com/r/AVexchange/comments/1upd39i/wtsusakyh_monarch_mkiv_sennheiser_ie900_fiio_fh5/#item-3" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -3833,22 +3926,6 @@ td.status-reason { overflow: hidden; }
     <td>reddit_rss</td>
     <td>ianto7</td>
     <td><a href="https://old.reddit.com/r/AVexchange/comments/1upd39i/wtsusakyh_monarch_mkiv_sennheiser_ie900_fiio_fh5/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-06</td>
-    <td class="iem-col"><a href="fiio-fh5.html">FiiO FH5</a></td>
-    <td>FiiO</td>
-    <td>$100</td>
-    <td>N/A</td>
-    <td><span class="badge badge-stale">N/A</span></td>
-    <td><span class="pill">closed</span></td>
-    <td class="status-reason"></td>
-    <td>No</td>
-    <td>1</td>
-    <td>reddit_rss</td>
-    <td>ianto7</td>
-    <td><a href="https://old.reddit.com/r/AVexchange/comments/1upd39i/wtsusakyh_monarch_mkiv_sennheiser_ie900_fiio_fh5/#item-3" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -3917,34 +3994,18 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-06</td>
-    <td class="iem-col"><a href="thieaudio-monarch-mkiii.html">ThieAudio Monarch MKIII</a></td>
-    <td>ThieAudio</td>
-    <td>$650</td>
-    <td>$573.33</td>
-    <td><span class="badge badge-stale">High (13.4% above market)</span></td>
+    <td class="iem-col"><a href="night-oblivion-longinus.html">Night Oblivion Longinus</a></td>
+    <td>Night Oblivion</td>
+    <td>$400</td>
+    <td>$525</td>
+    <td><span class="badge badge-deal">Great Deal (23.8% below market)</span></td>
     <td><span class="pill">active</span></td>
     <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
     <td>No</td>
     <td>0</td>
     <td>headfi</td>
-    <td>Bob</td>
-    <td><a href="https://www.head-fi.org/classifieds/thieaudio-monarch-mkiii.111800/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-06</td>
-    <td class="iem-col"><a href="letshuoer-s15.html">Letshuoer S15</a></td>
-    <td>Letshuoer</td>
-    <td>$125</td>
-    <td>$78.18</td>
-    <td><span class="badge badge-stale">Overpriced (59.9% above market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>1</td>
-    <td>headfi</td>
-    <td>Rininja</td>
-    <td><a href="https://www.head-fi.org/classifieds/intuaura-view-splendor-ii-3-5mm-version-letshuoer-chimera-cable.111816/" target="_blank">source</a></td>
+    <td>theintention</td>
+    <td><a href="https://www.head-fi.org/classifieds/night-oblivion-longinus.111785/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -3965,6 +4026,22 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-06</td>
+    <td class="iem-col"><a href="letshuoer-s15.html">Letshuoer S15</a></td>
+    <td>Letshuoer</td>
+    <td>$125</td>
+    <td>$73.96</td>
+    <td><span class="badge badge-stale">Overpriced (69.0% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>1</td>
+    <td>headfi</td>
+    <td>Rininja</td>
+    <td><a href="https://www.head-fi.org/classifieds/intuaura-view-splendor-ii-3-5mm-version-letshuoer-chimera-cable.111816/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-06</td>
     <td class="iem-col"><a href="thieaudio-monarch-mkiii.html">ThieAudio Monarch MKIII</a></td>
     <td>ThieAudio</td>
     <td>$625</td>
@@ -3981,38 +4058,6 @@ td.status-reason { overflow: hidden; }
 
 <tr>
     <td class="nowrap">2026-07-06</td>
-    <td class="iem-col"><a href="elysian-apostle-2026.html">Elysian Apostle 2026</a></td>
-    <td>Elysian</td>
-    <td>$1,060</td>
-    <td>$1,342.13</td>
-    <td><span class="badge badge-deal">Great Deal (21.0% below market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>Crryo</td>
-    <td><a href="https://www.head-fi.org/classifieds/elysian-apostle-2026.111812/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-06</td>
-    <td class="iem-col"><a href="night-oblivion-longinus.html">Night Oblivion Longinus</a></td>
-    <td>Night Oblivion</td>
-    <td>$400</td>
-    <td>$525</td>
-    <td><span class="badge badge-deal">Great Deal (23.8% below market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
-    <td>No</td>
-    <td>0</td>
-    <td>headfi</td>
-    <td>theintention</td>
-    <td><a href="https://www.head-fi.org/classifieds/night-oblivion-longinus.111785/" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-06</td>
     <td class="iem-col"><a href="64-audio-fourte-blanc.html">64 Audio Fourte Blanc</a></td>
     <td>64 Audio</td>
     <td>$1,250</td>
@@ -4025,6 +4070,38 @@ td.status-reason { overflow: hidden; }
     <td>headfi</td>
     <td>kokocrunch</td>
     <td><a href="https://www.head-fi.org/classifieds/64-audio-fourte-blanc.111814/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-06</td>
+    <td class="iem-col"><a href="thieaudio-monarch-mkiii.html">ThieAudio Monarch MKIII</a></td>
+    <td>ThieAudio</td>
+    <td>$650</td>
+    <td>$573.33</td>
+    <td><span class="badge badge-stale">High (13.4% above market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>Bob</td>
+    <td><a href="https://www.head-fi.org/classifieds/thieaudio-monarch-mkiii.111800/" target="_blank">source</a></td>
+</tr>
+
+<tr>
+    <td class="nowrap">2026-07-06</td>
+    <td class="iem-col"><a href="elysian-apostle-2026.html">Elysian Apostle 2026</a></td>
+    <td>Elysian</td>
+    <td>$1,060</td>
+    <td>$1,342.13</td>
+    <td><span class="badge badge-deal">Great Deal (21.0% below market)</span></td>
+    <td><span class="pill">active</span></td>
+    <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+    <td>No</td>
+    <td>0</td>
+    <td>headfi</td>
+    <td>Crryo</td>
+    <td><a href="https://www.head-fi.org/classifieds/elysian-apostle-2026.111812/" target="_blank">source</a></td>
 </tr>
 
 <tr>
@@ -4153,54 +4230,6 @@ td.status-reason { overflow: hidden; }
     <td>reddit_rss</td>
     <td>Traxaber</td>
     <td><a href="https://old.reddit.com/r/AVexchange/comments/1ungdr5/wts_usnj_h_elysian_pilgrim_35mm_w_zelle_venmo/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-04</td>
-    <td class="iem-col"><a href="thieaudio-monarch-mkiv.html">ThieAudio Monarch MKIV</a></td>
-    <td>ThieAudio</td>
-    <td>$1,000</td>
-    <td>$858.75</td>
-    <td><span class="badge badge-stale">High (16.4% above market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=200:len312824_page=200:len309348_json=200:len309581</td>
-    <td>No</td>
-    <td>0</td>
-    <td>reddit_rss</td>
-    <td>Traxaber</td>
-    <td><a href="https://old.reddit.com/r/AVexchange/comments/1ungb0f/wts_usnj_h_thieaudio_monarch_mk4_w_butterfly/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-04</td>
-    <td class="iem-col"><a href="sony-ier-z1r.html">Sony IER-Z1R</a></td>
-    <td>Sony</td>
-    <td>$1,000</td>
-    <td>$951.4</td>
-    <td><span class="badge badge-stale">Closed: Fair (5.1% above market)</span></td>
-    <td><span class="pill">closed</span></td>
-    <td class="status-reason">confirmed sold from source check</td>
-    <td>No</td>
-    <td>1</td>
-    <td>reddit_rss</td>
-    <td>Traxaber</td>
-    <td><a href="https://old.reddit.com/r/AVexchange/comments/1unfww2/wts_usnj_h_sony_ierz1r_w_zelle_venmo/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr>
-    <td class="nowrap">2026-07-04</td>
-    <td class="iem-col"><a href="thieaudio-monarch-mkiv.html">ThieAudio Monarch MKIV</a></td>
-    <td>ThieAudio</td>
-    <td>$850</td>
-    <td>$858.75</td>
-    <td><span class="badge badge-stale">Fair (1.0% below market)</span></td>
-    <td><span class="pill">active</span></td>
-    <td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8501_json=403:len189908</td>
-    <td>No</td>
-    <td>0</td>
-    <td>reddit_rss</td>
-    <td>dannypkker</td>
-    <td><a href="https://old.reddit.com/r/AVexchange/comments/1uncdup/wts_usama_h_monarch_mk4_questyle_sigma_magsafe/#item-1" target="_blank">source</a></td>
 </tr>
 
 </table>
