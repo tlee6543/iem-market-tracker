@@ -44,8 +44,6 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 .chart-panel h3 { margin-top: 0; }
 .chart-panel canvas { width: 100% !important; min-height: 360px; }
 .chart-hint { margin-top: 8px; }
-.quick-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
-.quick-link { display: inline-block; padding: 10px 14px; border: 1px solid #ddd; background: #fafafa; border-radius: 6px; font-weight: bold; }
 .rank-col { width: 64px; text-align: right; }
 .metric-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
 .metric-card { background: white; border: 1px solid #ddd; padding: 16px; min-width: 190px; }
@@ -181,12 +179,15 @@ td.status-reason { overflow: hidden; }
 .rankings-controls { display: grid; grid-template-columns: minmax(240px, 1fr) repeat(2, minmax(160px, 220px)); gap: 10px; align-items: end; }
 .rankings-control label { display: block; font-size: 12px; color: #666; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .03em; }
 .rankings-control input, .rankings-control select { width: 100%; box-sizing: border-box; padding: 11px; border: 1px solid #ccc; border-radius: 6px; background: #fff; font-size: 14px; }
-.score-chip { display: inline-block; min-width: 38px; text-align: center; border: 1px solid #ccc; border-radius: 999px; padding: 4px 8px; background: #fafafa; font-weight: bold; }
-.score-elite { background: #14532d; border-color: #14532d; color: #fff; }
-.score-excellent { background: #4d7c0f; border-color: #4d7c0f; color: #fff; }
-.score-good { background: #d9f99d; border-color: #a3c75d; color: #1a2e05; }
-.score-mixed { background: #fef3c7; border-color: #e7c768; color: #78350f; }
-.score-low { background: #fee2e2; border-color: #e9a8a8; color: #7f1d1d; }
+.score-chip { display: inline-block; min-width: 38px; text-align: center; border: 0; padding: 0; background: transparent; color: inherit; font-weight: bold; }
+/* Match the Final Score conditional-format colors in the source spreadsheet. */
+.score-band-8 { background: #00ff00; border-color: #00b800; color: #000; }
+.score-band-7 { background: #b6d7a8; border-color: #8fbd7c; color: #000; }
+.score-band-6 { background: #00ffff; border-color: #00b8b8; color: #000; }
+.score-band-5 { background: #9fc5e8; border-color: #6fa8dc; color: #000; }
+.score-band-4 { background: #ffe599; border-color: #d6b656; color: #000; }
+.score-band-3 { background: #ff9900; border-color: #cc7a00; color: #000; }
+.score-band-2 { background: #e06666; border-color: #b84d4d; color: #000; }
 .score-scale-legend { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 10px; font-size: 12px; color: #555; }
 .score-scale-item { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
 .score-scale-swatch { width: 12px; height: 12px; border-radius: 999px; border: 1px solid rgba(0,0,0,.18); display: inline-block; }
@@ -281,7 +282,6 @@ td.status-reason { overflow: hidden; }
         </div>
     </div>
     
-<p><a href="index.html">← Back</a></p>
 <h1>Dita</h1>
 <div class="card"><p>All tracked IEMs for this brand.</p></div>
 <table class="main-table">
