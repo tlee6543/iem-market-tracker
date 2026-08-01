@@ -79,37 +79,46 @@ a:hover { text-decoration: underline; }
 .creator-popover-actions .creator-youtube-link { background: #111; border-color: #111; color: #fff; }
 .creator-popover-actions .creator-youtube-link:hover { background: #333; color: #fff; }
 
-.about-hero {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 24px;
-    flex-wrap: wrap;
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 24px;
-    margin-bottom: 20px;
-}
-.about-hero h1 { margin: 4px 0 8px; }
-.about-lead { max-width: 760px; margin: 0; color: #555; font-size: 16px; line-height: 1.55; }
-.about-youtube-cta {
-    display: inline-block;
-    flex: 0 0 auto;
-    background: #111;
-    color: #fff;
-    border: 1px solid #111;
-    border-radius: 999px;
-    padding: 10px 14px;
-    font-weight: bold;
-    white-space: nowrap;
-}
-.about-youtube-cta:hover { color: #fff; background: #333; text-decoration: none; }
 .about-sections { display: grid; grid-template-columns: 1fr; gap: 16px; }
-.about-section { margin-bottom: 0; }
+.about-section {
+    margin-bottom: 0;
+    border-left: 4px solid #111;
+}
 .about-section h2 { margin-top: 0; }
 .about-section p { margin: 0 0 14px; color: #444; line-height: 1.65; max-width: 920px; }
 .about-section p:last-child { margin-bottom: 0; }
-.about-ranking-section { border-left: 4px solid #111; }
+
+.rankings-heading-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+.rankings-heading-wrap h1 { margin: 0; }
+.rankings-profile-link {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: #111;
+    color: #fff;
+    font-size: 21px;
+    font-weight: bold;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12);
+}
+.rankings-profile-link:hover { text-decoration: none; border-color: #888; }
+.rankings-profile-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.rankings-profile-fallback { line-height: 1; }
 .stats { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
 .stat { background: white; border: 1px solid #ddd; padding: 16px; min-width: 150px; }
 .excluded { background: #f3f3f3; color: #666; }
@@ -389,8 +398,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     .site-footer-row { align-items: flex-start; }
     .creator-popover-panel { left: 0; right: auto; }
     .creator-popover-panel::after { left: 18px; right: auto; }
-    .about-hero { display: block; }
-    .about-youtube-cta { margin-top: 16px; white-space: normal; }
+    .rankings-profile-link { width: 44px; height: 44px; flex-basis: 44px; }
 }
 
 </style>
@@ -423,21 +431,8 @@ score backgrounds cannot be lost to broader table/cell styling.
         </div>
     </div>
     
-<!-- about-page-build: footer-about-v9 -->
-<section class="about-hero">
-    <div>
-        <div class="product-label">About</div>
-        <h1>About the IEM Market Tracker</h1>
-        <p class="about-lead">
-            A project that places subjective reviewing and objective market data side by side,
-            giving listeners more context for both how an IEM is evaluated and how it performs
-            in the secondary market.
-        </p>
-    </div>
-    <a class="about-youtube-cta" href="https://www.youtube.com/@Precogvision" target="_blank" rel="noopener">
-        Visit Precogvision on YouTube
-    </a>
-</section>
+<!-- about-page-build: streamlined-about-v10 -->
+
 
 <div class="about-sections">
     <section class="card about-section">
@@ -466,7 +461,7 @@ score backgrounds cannot be lost to broader table/cell styling.
         </p>
     </section>
 
-    <section class="card about-section about-ranking-section">
+    <section class="card about-section">
         <h2>About the Ranking List</h2>
         <p>
             The ranking list was created to make my subjective preferences as a reviewer more
