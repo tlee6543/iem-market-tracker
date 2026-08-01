@@ -181,7 +181,15 @@ td.status-reason { overflow: hidden; }
 .rankings-controls { display: grid; grid-template-columns: minmax(240px, 1fr) repeat(2, minmax(160px, 220px)); gap: 10px; align-items: end; }
 .rankings-control label { display: block; font-size: 12px; color: #666; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .03em; }
 .rankings-control input, .rankings-control select { width: 100%; box-sizing: border-box; padding: 11px; border: 1px solid #ccc; border-radius: 6px; background: #fff; font-size: 14px; }
-.score-chip { display: inline-block; min-width: 38px; text-align: center; border: 1px solid #ccc; border-radius: 999px; padding: 4px 8px; background: #fafafa; }
+.score-chip { display: inline-block; min-width: 38px; text-align: center; border: 1px solid #ccc; border-radius: 999px; padding: 4px 8px; background: #fafafa; font-weight: bold; }
+.score-elite { background: #14532d; border-color: #14532d; color: #fff; }
+.score-excellent { background: #4d7c0f; border-color: #4d7c0f; color: #fff; }
+.score-good { background: #d9f99d; border-color: #a3c75d; color: #1a2e05; }
+.score-mixed { background: #fef3c7; border-color: #e7c768; color: #78350f; }
+.score-low { background: #fee2e2; border-color: #e9a8a8; color: #7f1d1d; }
+.score-scale-legend { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 10px; font-size: 12px; color: #555; }
+.score-scale-item { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.score-scale-swatch { width: 12px; height: 12px; border-radius: 999px; border: 1px solid rgba(0,0,0,.18); display: inline-block; }
 .tracker-match { font-size: 11px; color: #666; display: block; margin-top: 4px; font-weight: normal; }
 .rankings-empty { display: none; }
 .rankings-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
@@ -280,7 +288,7 @@ td.status-reason { overflow: hidden; }
 <tr><th class="iem-col">IEM</th><th>Market Value</th><th>Avg</th><th>Low</th><th>High</th><th>Samples</th></tr>
 
 <tr>
-    <td class="iem-col"><a href="fatfreq-grand-maestro.html">FatFreq Grand Maestro</a></td>
+    <td class="iem-col"><a href="fatfreq-grand-maestro.html?from=brand&brand=fatfreq">FatFreq Grand Maestro</a></td>
     <td title="recency-weighted 365d closed sales, 8 samples, 90d half-life">$1,568.7</td>
     <td>$2,051.7</td>
     <td>$1,100</td>
@@ -289,7 +297,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="fatfreq-grand-maestro-anniversary.html">FatFreq Grand Maestro Anniversary</a></td>
+    <td class="iem-col"><a href="fatfreq-grand-maestro-anniversary.html?from=brand&brand=fatfreq">FatFreq Grand Maestro Anniversary</a></td>
     <td title="recency-weighted 365d closed sales, 3 samples, 90d half-life">$3,592.88</td>
     <td>$3,866.67</td>
     <td>$3,300</td>
@@ -298,7 +306,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="fatfreq-maestro-mini.html">FatFreq Maestro Mini</a></td>
+    <td class="iem-col"><a href="fatfreq-maestro-mini.html?from=brand&brand=fatfreq">FatFreq Maestro Mini</a></td>
     <td title="recency-weighted all dated closed sales, 12 samples, 180d half-life">$336.46</td>
     <td>$366.67</td>
     <td>$320</td>
@@ -307,7 +315,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="fatfreq-maestro-se.html">FatFreq Maestro SE</a></td>
+    <td class="iem-col"><a href="fatfreq-maestro-se.html?from=brand&brand=fatfreq">FatFreq Maestro SE</a></td>
     <td title="recency-weighted 365d closed sales, 4 samples, 90d half-life">$924.36</td>
     <td>$1,174.67</td>
     <td>$850</td>
@@ -316,7 +324,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="fatfreq-quantum.html">FatFreq Quantum</a></td>
+    <td class="iem-col"><a href="fatfreq-quantum.html?from=brand&brand=fatfreq">FatFreq Quantum</a></td>
     <td title="recency-weighted 365d closed sales, 6 samples, 90d half-life">$436.57</td>
     <td>$477.25</td>
     <td>$380</td>
@@ -325,7 +333,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="fatfreq-scarlet-mini.html">FatFreq Scarlet Mini</a></td>
+    <td class="iem-col"><a href="fatfreq-scarlet-mini.html?from=brand&brand=fatfreq">FatFreq Scarlet Mini</a></td>
     <td title="recency-weighted 365d closed sales, 2 samples, 90d half-life">$406.53</td>
     <td>$571.43</td>
     <td>$400</td>
@@ -334,7 +342,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="fatfreq-x-hbb-deuce.html">FatFreq x HBB Deuce</a></td>
+    <td class="iem-col"><a href="fatfreq-x-hbb-deuce.html?from=brand&brand=fatfreq">FatFreq x HBB Deuce</a></td>
     <td title="recency-weighted 365d closed sales, 11 samples, 90d half-life">$179.59</td>
     <td>$181.75</td>
     <td>$110</td>

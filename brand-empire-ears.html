@@ -181,7 +181,15 @@ td.status-reason { overflow: hidden; }
 .rankings-controls { display: grid; grid-template-columns: minmax(240px, 1fr) repeat(2, minmax(160px, 220px)); gap: 10px; align-items: end; }
 .rankings-control label { display: block; font-size: 12px; color: #666; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .03em; }
 .rankings-control input, .rankings-control select { width: 100%; box-sizing: border-box; padding: 11px; border: 1px solid #ccc; border-radius: 6px; background: #fff; font-size: 14px; }
-.score-chip { display: inline-block; min-width: 38px; text-align: center; border: 1px solid #ccc; border-radius: 999px; padding: 4px 8px; background: #fafafa; }
+.score-chip { display: inline-block; min-width: 38px; text-align: center; border: 1px solid #ccc; border-radius: 999px; padding: 4px 8px; background: #fafafa; font-weight: bold; }
+.score-elite { background: #14532d; border-color: #14532d; color: #fff; }
+.score-excellent { background: #4d7c0f; border-color: #4d7c0f; color: #fff; }
+.score-good { background: #d9f99d; border-color: #a3c75d; color: #1a2e05; }
+.score-mixed { background: #fef3c7; border-color: #e7c768; color: #78350f; }
+.score-low { background: #fee2e2; border-color: #e9a8a8; color: #7f1d1d; }
+.score-scale-legend { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 10px; font-size: 12px; color: #555; }
+.score-scale-item { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.score-scale-swatch { width: 12px; height: 12px; border-radius: 999px; border: 1px solid rgba(0,0,0,.18); display: inline-block; }
 .tracker-match { font-size: 11px; color: #666; display: block; margin-top: 4px; font-weight: normal; }
 .rankings-empty { display: none; }
 .rankings-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
@@ -280,7 +288,7 @@ td.status-reason { overflow: hidden; }
 <tr><th class="iem-col">IEM</th><th>Market Value</th><th>Avg</th><th>Low</th><th>High</th><th>Samples</th></tr>
 
 <tr>
-    <td class="iem-col"><a href="empire-ears-bravado-mk-ii.html">Empire Ears Bravado MK.II</a></td>
+    <td class="iem-col"><a href="empire-ears-bravado-mk-ii.html?from=brand&brand=empire-ears">Empire Ears Bravado MK.II</a></td>
     <td title="recency-weighted all dated closed sales, 2 samples, 180d half-life">$430.62</td>
     <td>$482</td>
     <td>$415</td>
@@ -289,7 +297,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="empire-ears-esr-mk-ii.html">Empire Ears ESR MK.II</a></td>
+    <td class="iem-col"><a href="empire-ears-esr-mk-ii.html?from=brand&brand=empire-ears">Empire Ears ESR MK.II</a></td>
     <td title="recency-weighted all dated closed sales, 2 samples, 180d half-life">$384.71</td>
     <td>$439.5</td>
     <td>$350</td>
@@ -298,7 +306,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="empire-ears-evo.html">Empire Ears EVO</a></td>
+    <td class="iem-col"><a href="empire-ears-evo.html?from=brand&brand=empire-ears">Empire Ears EVO</a></td>
     <td title="recency-weighted 365d closed sales, 2 samples, 90d half-life">$1,241.8</td>
     <td>$1,339.62</td>
     <td>$1,100</td>
@@ -307,7 +315,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="empire-ears-hero.html">Empire Ears Hero</a></td>
+    <td class="iem-col"><a href="empire-ears-hero.html?from=brand&brand=empire-ears">Empire Ears Hero</a></td>
     <td title="recency-weighted 365d closed sales, 4 samples, 90d half-life">$588.21</td>
     <td>$574.89</td>
     <td>$350</td>
@@ -316,7 +324,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="empire-ears-legend-x.html">Empire Ears Legend X</a></td>
+    <td class="iem-col"><a href="empire-ears-legend-x.html?from=brand&brand=empire-ears">Empire Ears Legend X</a></td>
     <td title="recency-weighted 365d closed sales, 6 samples, 90d half-life">$800.84</td>
     <td>$820.89</td>
     <td>$500</td>
@@ -325,7 +333,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="empire-ears-legend-x-se.html">Empire Ears Legend X SE</a></td>
+    <td class="iem-col"><a href="empire-ears-legend-x-se.html?from=brand&brand=empire-ears">Empire Ears Legend X SE</a></td>
     <td title="recency-weighted 365d closed sales, 3 samples, 90d half-life">$1,028.59</td>
     <td>$1,100</td>
     <td>$1,000</td>
@@ -334,7 +342,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="empire-ears-novus.html">Empire Ears Novus</a></td>
+    <td class="iem-col"><a href="empire-ears-novus.html?from=brand&brand=empire-ears">Empire Ears Novus</a></td>
     <td title="recency-weighted 365d closed sales, 9 samples, 90d half-life">$3,117.54</td>
     <td>$3,158.9</td>
     <td>$2,790</td>
@@ -343,7 +351,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="empire-ears-odin.html">Empire Ears Odin</a></td>
+    <td class="iem-col"><a href="empire-ears-odin.html?from=brand&brand=empire-ears">Empire Ears Odin</a></td>
     <td title="recency-weighted 365d closed sales, 9 samples, 90d half-life">$1,488.69</td>
     <td>$1,668.36</td>
     <td>$1,100</td>
@@ -352,7 +360,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="empire-ears-odin-mkii.html">Empire Ears Odin MKII</a></td>
+    <td class="iem-col"><a href="empire-ears-odin-mkii.html?from=brand&brand=empire-ears">Empire Ears Odin MKII</a></td>
     <td title="recency-weighted 365d closed sales, 2 samples, 90d half-life">$3,097.41</td>
     <td>$3,125</td>
     <td>$2,900</td>
@@ -361,7 +369,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="empire-ears-odyssey.html">Empire Ears Odyssey</a></td>
+    <td class="iem-col"><a href="empire-ears-odyssey.html?from=brand&brand=empire-ears">Empire Ears Odyssey</a></td>
     <td title="recency-weighted 365d closed sales, 6 samples, 90d half-life">$1,611.84</td>
     <td>$1,954.09</td>
     <td>$1,525</td>
@@ -370,7 +378,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="empire-ears-raven.html">Empire Ears Raven</a></td>
+    <td class="iem-col"><a href="empire-ears-raven.html?from=brand&brand=empire-ears">Empire Ears Raven</a></td>
     <td title="recency-weighted 365d closed sales, 12 samples, 90d half-life">$1,798.32</td>
     <td>$2,160.03</td>
     <td>$1,400</td>
@@ -379,7 +387,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="empire-ears-triton.html">Empire Ears Triton</a></td>
+    <td class="iem-col"><a href="empire-ears-triton.html?from=brand&brand=empire-ears">Empire Ears Triton</a></td>
     <td title="recency-weighted 365d closed sales, 12 samples, 90d half-life">$1,068.48</td>
     <td>$1,128.7</td>
     <td>$800</td>

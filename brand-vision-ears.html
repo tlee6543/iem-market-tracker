@@ -181,7 +181,15 @@ td.status-reason { overflow: hidden; }
 .rankings-controls { display: grid; grid-template-columns: minmax(240px, 1fr) repeat(2, minmax(160px, 220px)); gap: 10px; align-items: end; }
 .rankings-control label { display: block; font-size: 12px; color: #666; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .03em; }
 .rankings-control input, .rankings-control select { width: 100%; box-sizing: border-box; padding: 11px; border: 1px solid #ccc; border-radius: 6px; background: #fff; font-size: 14px; }
-.score-chip { display: inline-block; min-width: 38px; text-align: center; border: 1px solid #ccc; border-radius: 999px; padding: 4px 8px; background: #fafafa; }
+.score-chip { display: inline-block; min-width: 38px; text-align: center; border: 1px solid #ccc; border-radius: 999px; padding: 4px 8px; background: #fafafa; font-weight: bold; }
+.score-elite { background: #14532d; border-color: #14532d; color: #fff; }
+.score-excellent { background: #4d7c0f; border-color: #4d7c0f; color: #fff; }
+.score-good { background: #d9f99d; border-color: #a3c75d; color: #1a2e05; }
+.score-mixed { background: #fef3c7; border-color: #e7c768; color: #78350f; }
+.score-low { background: #fee2e2; border-color: #e9a8a8; color: #7f1d1d; }
+.score-scale-legend { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 10px; font-size: 12px; color: #555; }
+.score-scale-item { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.score-scale-swatch { width: 12px; height: 12px; border-radius: 999px; border: 1px solid rgba(0,0,0,.18); display: inline-block; }
 .tracker-match { font-size: 11px; color: #666; display: block; margin-top: 4px; font-weight: normal; }
 .rankings-empty { display: none; }
 .rankings-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
@@ -280,7 +288,7 @@ td.status-reason { overflow: hidden; }
 <tr><th class="iem-col">IEM</th><th>Market Value</th><th>Avg</th><th>Low</th><th>High</th><th>Samples</th></tr>
 
 <tr>
-    <td class="iem-col"><a href="vision-ears-ext.html">Vision Ears EXT</a></td>
+    <td class="iem-col"><a href="vision-ears-ext.html?from=brand&brand=vision-ears">Vision Ears EXT</a></td>
     <td title="recency-weighted all dated closed sales, 12 samples, 180d half-life">$1,106.88</td>
     <td>$1,718.7</td>
     <td>$850</td>
@@ -289,7 +297,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="vision-ears-ext-mkii.html">Vision Ears EXT MKII</a></td>
+    <td class="iem-col"><a href="vision-ears-ext-mkii.html?from=brand&brand=vision-ears">Vision Ears EXT MKII</a></td>
     <td title="recency-weighted 365d closed sales, 3 samples, 90d half-life">$2,341.62</td>
     <td>$2,383.33</td>
     <td>$2,150</td>
@@ -298,7 +306,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="vision-ears-elysium.html">Vision Ears Elysium</a></td>
+    <td class="iem-col"><a href="vision-ears-elysium.html?from=brand&brand=vision-ears">Vision Ears Elysium</a></td>
     <td title="recency-weighted 365d closed sales, 3 samples, 90d half-life">$987.09</td>
     <td>$1,501.52</td>
     <td>$925</td>
@@ -307,7 +315,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="vision-ears-erlkonig.html">Vision Ears Erlkonig</a></td>
+    <td class="iem-col"><a href="vision-ears-erlkonig.html?from=brand&brand=vision-ears">Vision Ears Erlkonig</a></td>
     <td title="recency-weighted all dated closed sales, 7 samples, 180d half-life">$2,244.69</td>
     <td>$2,939.29</td>
     <td>$2,200</td>
@@ -316,7 +324,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="vision-ears-phonix.html">Vision Ears Phonix</a></td>
+    <td class="iem-col"><a href="vision-ears-phonix.html?from=brand&brand=vision-ears">Vision Ears Phonix</a></td>
     <td title="recency-weighted 365d closed sales, 7 samples, 90d half-life">$1,937.94</td>
     <td>$2,445.78</td>
     <td>$1,250</td>
@@ -325,7 +333,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="vision-ears-phonix-fe.html">Vision Ears Phonix FE</a></td>
+    <td class="iem-col"><a href="vision-ears-phonix-fe.html?from=brand&brand=vision-ears">Vision Ears Phonix FE</a></td>
     <td title="no clean closed-sale samples">N/A</td>
     <td>N/A</td>
     <td>N/A</td>
@@ -334,7 +342,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="vision-ears-ve10.html">Vision Ears VE10</a></td>
+    <td class="iem-col"><a href="vision-ears-ve10.html?from=brand&brand=vision-ears">Vision Ears VE10</a></td>
     <td title="recency-weighted 365d closed sales, 12 samples, 90d half-life">$1,557.26</td>
     <td>$1,757.35</td>
     <td>$1,350</td>
@@ -343,7 +351,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="vision-ears-ve7.html">Vision Ears VE7</a></td>
+    <td class="iem-col"><a href="vision-ears-ve7.html?from=brand&brand=vision-ears">Vision Ears VE7</a></td>
     <td title="recency-weighted all dated closed sales, 3 samples, 180d half-life">$1,353.2</td>
     <td>$1,166.67</td>
     <td>$700</td>
@@ -352,7 +360,7 @@ td.status-reason { overflow: hidden; }
 </tr>
 
 <tr>
-    <td class="iem-col"><a href="vision-ears-ve8.html">Vision Ears VE8</a></td>
+    <td class="iem-col"><a href="vision-ears-ve8.html?from=brand&brand=vision-ears">Vision Ears VE8</a></td>
     <td title="recency-weighted 365d closed sales, 3 samples, 90d half-life">$921.06</td>
     <td>$1,285.64</td>
     <td>$900</td>
