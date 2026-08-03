@@ -832,7 +832,7 @@
     "comments": "Exceptional tuning and treble refinement; sets the benchmark at $400.",
     "based_on": "Loaner",
     "tracker_slug": "yu9-que",
-    "market_value": 374.17,
+    "market_value": 364.0,
     "market_confidence": "High"
   },
   {
@@ -2174,7 +2174,7 @@
     "comments": "",
     "based_on": "Loaner unit",
     "tracker_slug": "crinear-reference",
-    "market_value": 290.91,
+    "market_value": 293.89,
     "market_confidence": "High"
   },
   {
@@ -9374,7 +9374,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Alien Brain",
-    "canonical_name": "",
+    "canonical_name": "Campfire Audio Alien Brain",
     "final_score": null,
     "tonality": "—",
     "bass": "—",
@@ -9389,7 +9389,7 @@
     "price": "—",
     "comments": "",
     "based_on": "Brief demo",
-    "tracker_slug": "",
+    "tracker_slug": "campfire-audio-alien-brain",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -9484,7 +9484,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Clara",
-    "canonical_name": "",
+    "canonical_name": "Campfire Audio Clara",
     "final_score": null,
     "tonality": "—",
     "bass": "—",
@@ -9499,14 +9499,14 @@
     "price": "—",
     "comments": "Most normal sounding Campfire IEM yet. Neutral with sub-bass boost, very pleasant on the ears but missing some mid-treble for resolution/edge.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
+    "tracker_slug": "campfire-audio-clara",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Moon Rover",
-    "canonical_name": "",
+    "canonical_name": "Campfire Audio Moon Rover",
     "final_score": null,
     "tonality": "—",
     "bass": "—",
@@ -9521,9 +9521,9 @@
     "price": "—",
     "comments": "Sounds like Andromeda 2020 with more treble extension, and everything is fine up until the mid-treble where there's a huge peak.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
+    "tracker_slug": "campfire-audio-moon-rover",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -9572,7 +9572,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Supermoon",
-    "canonical_name": "",
+    "canonical_name": "Campfire Audio Supermoon",
     "final_score": null,
     "tonality": "—",
     "bass": "—",
@@ -9587,9 +9587,9 @@
     "price": "—",
     "comments": "Heavily V-shaped while hanging onto tonal balance by a thread.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "campfire-audio-supermoon",
+    "market_value": 530.0,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -9989,8 +9989,8 @@
   },
   {
     "entry_type": "demoed",
-    "iem": "Crinacle Daybreak",
-    "canonical_name": "",
+    "iem": "CrinEars Daybreak",
+    "canonical_name": "CrinEar Daybreak",
     "final_score": null,
     "tonality": "—",
     "bass": "—",
@@ -10005,14 +10005,14 @@
     "price": "—",
     "comments": "Treble has some unnatural peaking past 10kHz that lends to a Focal-esque, metallic tinge.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "crinear-daybreak",
+    "market_value": 106.67,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
-    "iem": "Crinacle META",
-    "canonical_name": "",
+    "iem": "CrinEars Meta",
+    "canonical_name": "CrinEar Meta",
     "final_score": null,
     "tonality": "—",
     "bass": "—",
@@ -10027,9 +10027,9 @@
     "price": "—",
     "comments": "Very safe sounding overall albeit competently tuned.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "crinear-meta",
+    "market_value": 247.65,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -11851,7 +11851,7 @@
     "bias": "6",
     "setup": "—",
     "price": "—",
-    "comments": "",
+    "comments": "Lean sound signature with an aggressive pinna rise and mid-treble spike to create a high-clarity sound.",
     "based_on": "Brief demo",
     "tracker_slug": "noble-audio-kronos",
     "market_value": 3000.0,
@@ -12093,7 +12093,7 @@
     "bias": "1",
     "setup": "—",
     "price": "—",
-    "comments": "",
+    "comments": "Sounds like music being played behind tinfoil.",
     "based_on": "Brief demo",
     "tracker_slug": "",
     "market_value": null,
