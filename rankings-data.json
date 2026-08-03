@@ -5170,9 +5170,9 @@
     "price": "$600",
     "comments": "123 setting. V-shaped and a bit harsh in the lower-treble.",
     "based_on": "Crinacle's unit",
-    "tracker_slug": "",
+    "tracker_slug": "tansio-mirai-land",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -6483,7 +6483,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
