@@ -203,7 +203,7 @@
     "comments": "Terrific dynamic range and soundstage depth; the closest I have heard to a two-channel system in an IEM for these qualities.",
     "based_on": "Personal unit",
     "tracker_slug": "64-audio-u12t",
-    "market_value": 933.14,
+    "market_value": 922.46,
     "market_confidence": "High"
   },
   {
@@ -272,7 +272,7 @@
     "comments": "Rich bass and out-of-head imaging.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "64-audio-tia-trio",
-    "market_value": 1011.65,
+    "market_value": 991.03,
     "market_confidence": "High"
   },
   {
@@ -364,7 +364,7 @@
     "comments": "Excellent BA bass and aggressive listen that maintains Elysian's house sound.",
     "based_on": "Demo",
     "tracker_slug": "elysian-diva",
-    "market_value": 939.58,
+    "market_value": 933.37,
     "market_confidence": "Medium"
   },
   {
@@ -410,7 +410,7 @@
     "comments": "Great technicalities. Lacking that last leg of refinement in terms of coherency.",
     "based_on": "Symphonium tour unit",
     "tracker_slug": "symphonium-helios",
-    "market_value": 466.38,
+    "market_value": 495.06,
     "market_confidence": "Medium"
   },
   {
@@ -456,7 +456,7 @@
     "comments": "High-clarity signature that invokes a sense of stateliness.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "empire-ears-odin",
-    "market_value": 1488.69,
+    "market_value": 1486.9,
     "market_confidence": "Medium"
   },
   {
@@ -479,7 +479,7 @@
     "comments": "Sounds quite hi-fi and grand sounding, but coherency could use work - bass is distinct from the EST tweeters.",
     "based_on": "Zepp & Co Unit",
     "tracker_slug": "empire-ears-raven",
-    "market_value": 1798.32,
+    "market_value": 1877.49,
     "market_confidence": "High"
   },
   {
@@ -571,7 +571,7 @@
     "comments": "Boring, but you won't find anything more well-rounded for the price. Exceptional timbre for a BA IEM.",
     "based_on": "Loaner",
     "tracker_slug": "sony-ier-m9",
-    "market_value": 520.95,
+    "market_value": 516.45,
     "market_confidence": "High"
   },
   {
@@ -640,7 +640,7 @@
     "comments": "Tasteful W-shape tuning that delivers in the technical department. Mid-treble can be sharp, though.",
     "based_on": "Schezade unit",
     "tracker_slug": "vision-ears-ext",
-    "market_value": 1106.88,
+    "market_value": 1105.48,
     "market_confidence": "Medium"
   },
   {
@@ -847,8 +847,8 @@
     "comments": "Engaging imaging with some minor coherency issues.",
     "based_on": "Loaner",
     "tracker_slug": "unique-melody-mest",
-    "market_value": 539.56,
-    "market_confidence": "Medium"
+    "market_value": 711.11,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -985,7 +985,7 @@
     "comments": "A warmer, more coherent MEST with setbacks in resolution and imaging.",
     "based_on": "Antdroid's unit",
     "tracker_slug": "unique-melody-mest-mk2",
-    "market_value": 652.68,
+    "market_value": 642.88,
     "market_confidence": "High"
   },
   {
@@ -1100,7 +1100,7 @@
     "comments": "A solid improvement in imaging with slightly more palatable tonality than its predecessor.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "thieaudio-monarch-mkii",
-    "market_value": 563.96,
+    "market_value": 560.87,
     "market_confidence": "High"
   },
   {
@@ -1353,7 +1353,7 @@
     "comments": "Bass sounds somewhat 'BA-ish' for being DD, but well-tuned, decently technical, and a very solid package overall.",
     "based_on": "—",
     "tracker_slug": "thieaudio-hype-4",
-    "market_value": 218.83,
+    "market_value": 247.32,
     "market_confidence": "Medium"
   },
   {
@@ -1468,7 +1468,7 @@
     "comments": "Slightly \"wet\" characteristic that takes the edge off of the qdc-inspired tuning. Very pleasant on the ears.",
     "based_on": "DUNU loaner",
     "tracker_slug": "dunu-sa6",
-    "market_value": 304.74,
+    "market_value": 280.37,
     "market_confidence": "Medium"
   },
   {
@@ -1514,7 +1514,7 @@
     "comments": "Well-tuned from top-to-bottom with good timbre. Safe to the point of boredom.",
     "based_on": "Moondrop tour",
     "tracker_slug": "softears-rsv",
-    "market_value": 437.71,
+    "market_value": 389.38,
     "market_confidence": "Medium"
   },
   {
@@ -1583,7 +1583,7 @@
     "comments": "Japanese flavor of tuning (mid-bass and upper-mid focus) finally done justice. Strong technical chops and slightly forward.",
     "based_on": "—",
     "tracker_slug": "tanchjim-origin",
-    "market_value": 521.1,
+    "market_value": 524.49,
     "market_confidence": "Medium"
   },
   {
@@ -1836,7 +1836,7 @@
     "comments": "A warmer rendition of the original SA6, best considered a side-grade than a true upgrade.",
     "based_on": "—",
     "tracker_slug": "dunu-sa6-mk2",
-    "market_value": 232.14,
+    "market_value": 250.42,
     "market_confidence": "Medium"
   },
   {
@@ -2043,7 +2043,7 @@
     "comments": "Bass lacks texture, but a fairly holographic, \"grand\" presentation that is unique for a V-shaped response.",
     "based_on": "Zepp & Co Unit",
     "tracker_slug": "empire-ears-legend-x",
-    "market_value": 800.84,
+    "market_value": 793.55,
     "market_confidence": "Medium"
   },
   {
@@ -2066,7 +2066,7 @@
     "comments": "Extreme basshead's dream. Incredible sub-bass shelf while maintaining midrange and treble balance.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "fatfreq-maestro-mini",
-    "market_value": 336.46,
+    "market_value": 336.59,
     "market_confidence": "High"
   },
   {
@@ -2089,7 +2089,7 @@
     "comments": "More 'musical' tonality with a touch of spice in the treble. Technicalities could use work for the price.",
     "based_on": "—",
     "tracker_slug": "letshuoer-cadenza-12",
-    "market_value": 1250.0,
+    "market_value": 1228.36,
     "market_confidence": "Medium"
   },
   {
@@ -2617,9 +2617,9 @@
     "price": "$1,600",
     "comments": "Sounds basically the same as the original Valkyrie.",
     "based_on": "headphones.com unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "empire-ears-valkyrie-mk-ii",
+    "market_value": 530.71,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -2939,9 +2939,9 @@
     "price": "$500",
     "comments": "Well-tuned with surprisingly good treble extension. Upwards compressed dynamics contrast poorly with tuning.",
     "based_on": "Super*Review's unit",
-    "tracker_slug": "kiwi-ears-orchestra",
+    "tracker_slug": "",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -3077,9 +3077,9 @@
     "price": "$700",
     "comments": "A more pleasant, warmer Monarch with cutbacks in resolution.",
     "based_on": "headphones.com unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "thieaudio-clairvoyance",
+    "market_value": 410.0,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -3124,7 +3124,7 @@
     "comments": "Has the planar advantage with most of its disadvantages and a reasonable tonality.",
     "based_on": "Review unit",
     "tracker_slug": "7hz-timeless",
-    "market_value": 94.45,
+    "market_value": 92.28,
     "market_confidence": "Medium"
   },
   {
@@ -3216,7 +3216,7 @@
     "comments": "More resolving than the Timeless, but even brighter. Tonality still remains the bottleneck to the planar IEM landscape.",
     "based_on": "Shuoer unit",
     "tracker_slug": "letshuoer-s12",
-    "market_value": 100.0,
+    "market_value": null,
     "market_confidence": "Low"
   },
   {
@@ -3492,8 +3492,8 @@
     "comments": "Solid layering chops and all-rounder; however, can sound overly sharp in the treble and generally plasticky.",
     "based_on": "headphones.com unit",
     "tracker_slug": "empire-ears-esr-mk-ii",
-    "market_value": 384.71,
-    "market_confidence": "Low"
+    "market_value": 350.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -3607,7 +3607,7 @@
     "comments": "Pleasant tonality, but low-level detailing and compression.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "thieaudio-oracle",
-    "market_value": 410.0,
+    "market_value": null,
     "market_confidence": "Low"
   },
   {
@@ -4205,7 +4205,7 @@
     "comments": "See KXXS. Just slightly less upper-midrange and more bass.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "moondrop-aria",
-    "market_value": 39.16,
+    "market_value": 35.0,
     "market_confidence": "Low"
   },
   {
@@ -5400,9 +5400,9 @@
     "price": "$130",
     "comments": "Good bass and slightly shouty upper-midrange and lower-treble. Solid set overall.",
     "based_on": "Loaner",
-    "tracker_slug": "samsung-galaxy-buds",
-    "market_value": 87.35,
-    "market_confidence": "Medium"
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -5492,9 +5492,9 @@
     "price": "$200",
     "comments": "Sounds best with the BA switch off. Somewhat thin, mid-treble oriented sound.",
     "based_on": "Review unit",
-    "tracker_slug": "dunu-talos",
+    "tracker_slug": "",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -6044,9 +6044,9 @@
     "price": "$270",
     "comments": "Well-tuned with something of a mid-treble suckout that negatively impacts timbre.",
     "based_on": "Personal unit",
-    "tracker_slug": "apple-airpods-pro",
-    "market_value": 153.18,
-    "market_confidence": "Medium"
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -6113,7 +6113,7 @@
     "price": "$900",
     "comments": "Sounds like it has metallic timbre. Percussino compression around 5kHz due to lack of treble extension and generally bad tuning.",
     "based_on": "Super*Review's unit",
-    "tracker_slug": "moondrop-illustrious",
+    "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -6159,9 +6159,9 @@
     "price": "$600",
     "comments": "Midrange doesn't sound very DD-like; more along the lines of etched and gritty perhaps due to 11kHz peak in treble.",
     "based_on": "Loaner",
-    "tracker_slug": "oriolus-isabellae",
-    "market_value": 1385.0,
-    "market_confidence": "Low"
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -6182,9 +6182,9 @@
     "price": "$100",
     "comments": "Better bass shelf than the OG Buds, but with setbacks in the strange treble and timbre.",
     "based_on": "Loaner",
-    "tracker_slug": "samsung-galaxy-buds",
-    "market_value": 87.35,
-    "market_confidence": "Medium"
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -6483,7 +6483,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -7149,8 +7149,8 @@
     "comments": "Valkyrie's darker, bloated brother.",
     "based_on": "headphones.com unit",
     "tracker_slug": "empire-ears-bravado-mk-ii",
-    "market_value": 430.62,
-    "market_confidence": "Low"
+    "market_value": 402.22,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -7608,9 +7608,9 @@
     "price": "$50",
     "comments": "Chi-Fi's foray into neutral tuning. It's showing its age with very mediocre technicalities, though.",
     "based_on": "Super*Review's unit",
-    "tracker_slug": "tinhifi-t2",
-    "market_value": 40.0,
-    "market_confidence": "Low"
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -10783,7 +10783,7 @@
     "comments": "Extremely heavy - but controlled - bass shelf with neutral midrange and treble.",
     "based_on": "Brief demo",
     "tracker_slug": "fatfreq-grand-maestro",
-    "market_value": 1568.7,
+    "market_value": 1946.91,
     "market_confidence": "Medium"
   },
   {
@@ -10829,7 +10829,7 @@
     "comments": "Grand Maestro with an even more controlled sub-bass boost for more of a sub-woofer characteristic.",
     "based_on": "Brief demo",
     "tracker_slug": "fatfreq-maestro-se",
-    "market_value": 924.36,
+    "market_value": 909.31,
     "market_confidence": "Medium"
   },
   {
@@ -11496,7 +11496,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "kiwi-ears-cadenza",
-    "market_value": 33.52,
+    "market_value": 29.68,
     "market_confidence": "Low"
   },
   {
@@ -11634,7 +11634,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "kiwi-ears-cadenza",
-    "market_value": 33.52,
+    "market_value": 29.68,
     "market_confidence": "Low"
   },
   {
@@ -11841,7 +11841,7 @@
     "comments": "DD IEM with a technical focus due to an extra dash of upper-midrange presence and less bass than most single DDs.",
     "based_on": "Brief demo",
     "tracker_slug": "letshuoer-s15",
-    "market_value": 73.96,
+    "market_value": 75.04,
     "market_confidence": "Medium"
   },
   {
@@ -12922,7 +12922,7 @@
     "comments": "Solid resolution but tuning has issues.",
     "based_on": "Brief demo",
     "tracker_slug": "qdc-emperor",
-    "market_value": 2045.41,
+    "market_value": 1800.0,
     "market_confidence": "Low"
   },
   {
@@ -14003,7 +14003,7 @@
     "comments": "Essentially an Erlkonig on Setting 3 with more treble extension.",
     "based_on": "Brief demo",
     "tracker_slug": "vision-ears-phonix",
-    "market_value": 1937.94,
+    "market_value": 1948.57,
     "market_confidence": "Medium"
   },
   {
@@ -14141,8 +14141,8 @@
     "comments": "Very pleasant tuning with thumpy bass albeit lacking wow factor in techs.",
     "based_on": "Brief demo",
     "tracker_slug": "xenns-mangird-tea-pro",
-    "market_value": 249.82,
-    "market_confidence": "High"
+    "market_value": 251.3,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
