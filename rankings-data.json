@@ -2,6 +2,7 @@
   {
     "entry_type": "ranked",
     "iem": "Subtonic Storm",
+    "favorite": true,
     "canonical_name": "Subtonic Storm",
     "final_score": 9.1,
     "tonality": "8.7",
@@ -24,6 +25,7 @@
   {
     "entry_type": "ranked",
     "iem": "Mysticraft Hex",
+    "favorite": false,
     "canonical_name": "Mysticraft Hex",
     "final_score": 8.9,
     "tonality": "8.0",
@@ -46,6 +48,7 @@
   {
     "entry_type": "ranked",
     "iem": "Brise Audio Fugaku",
+    "favorite": false,
     "canonical_name": "Brise Audio Fugaku",
     "final_score": 8.7,
     "tonality": "8.7",
@@ -68,6 +71,7 @@
   {
     "entry_type": "ranked",
     "iem": "Elysian Annihilator 2021",
+    "favorite": false,
     "canonical_name": "Elysian Annihilator pre-2026",
     "final_score": 8.7,
     "tonality": "8.0",
@@ -90,6 +94,7 @@
   {
     "entry_type": "ranked",
     "iem": "Elysian Annihilator 2023",
+    "favorite": true,
     "canonical_name": "Elysian Annihilator pre-2026",
     "final_score": 8.7,
     "tonality": "8.3",
@@ -112,6 +117,7 @@
   {
     "entry_type": "ranked",
     "iem": "Mysticraft Tet",
+    "favorite": false,
     "canonical_name": "Mysticraft Tet",
     "final_score": 8.7,
     "tonality": "8.3",
@@ -134,6 +140,7 @@
   {
     "entry_type": "ranked",
     "iem": "Symphonium Audio Zenith",
+    "favorite": true,
     "canonical_name": "Symphonium Zenith",
     "final_score": 8.6,
     "tonality": "8.7",
@@ -156,6 +163,7 @@
   {
     "entry_type": "ranked",
     "iem": "7th Acoustics Asteria",
+    "favorite": false,
     "canonical_name": "7th Acoustics Asteria",
     "final_score": 8.3,
     "tonality": "9.0",
@@ -178,6 +186,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio U12t",
+    "favorite": false,
     "canonical_name": "64 Audio U12t",
     "final_score": 8.2,
     "tonality": "8.0",
@@ -200,6 +209,7 @@
   {
     "entry_type": "ranked",
     "iem": "Hercules Audio Moses",
+    "favorite": false,
     "canonical_name": "Hercules Audio Moses",
     "final_score": 8.2,
     "tonality": "8.3",
@@ -222,6 +232,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Valhalla",
+    "favorite": true,
     "canonical_name": "ThieAudio Valhalla",
     "final_score": 8.2,
     "tonality": "8.3",
@@ -244,6 +255,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio Tia Trio",
+    "favorite": true,
     "canonical_name": "64 Audio Tia Trio",
     "final_score": 8.1,
     "tonality": "8.0",
@@ -266,6 +278,7 @@
   {
     "entry_type": "ranked",
     "iem": "Symphonium Europa",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 8.1,
     "tonality": "8.3",
@@ -288,6 +301,7 @@
   {
     "entry_type": "ranked",
     "iem": "Elysian X",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 8.0,
     "tonality": "8.3",
@@ -310,6 +324,7 @@
   {
     "entry_type": "ranked",
     "iem": "Symphonium Audio Crimson",
+    "favorite": false,
     "canonical_name": "Symphonium Crimson",
     "final_score": 8.0,
     "tonality": "8.0",
@@ -332,6 +347,7 @@
   {
     "entry_type": "ranked",
     "iem": "Elysian Diva",
+    "favorite": false,
     "canonical_name": "Elysian Diva",
     "final_score": 7.8,
     "tonality": "7.7",
@@ -354,6 +370,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio U4s",
+    "favorite": false,
     "canonical_name": "64 Audio U4s",
     "final_score": 7.7,
     "tonality": "7.7",
@@ -376,6 +393,7 @@
   {
     "entry_type": "ranked",
     "iem": "Symphonium Helios",
+    "favorite": false,
     "canonical_name": "Symphonium Helios",
     "final_score": 7.7,
     "tonality": "7.7",
@@ -398,6 +416,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Monarch MKIV",
+    "favorite": true,
     "canonical_name": "ThieAudio Monarch MKIV",
     "final_score": 7.7,
     "tonality": "8.0",
@@ -420,6 +439,7 @@
   {
     "entry_type": "ranked",
     "iem": "Empire Ears Odin",
+    "favorite": false,
     "canonical_name": "Empire Ears Odin",
     "final_score": 7.6,
     "tonality": "8.3",
@@ -442,6 +462,7 @@
   {
     "entry_type": "ranked",
     "iem": "Empire Ears Raven",
+    "favorite": false,
     "canonical_name": "Empire Ears Raven",
     "final_score": 7.6,
     "tonality": "7.3",
@@ -464,6 +485,7 @@
   {
     "entry_type": "ranked",
     "iem": "Softears Karma",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 7.5,
     "tonality": "7.7",
@@ -486,6 +508,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sony IER-Z1R",
+    "favorite": false,
     "canonical_name": "Sony IER-Z1R",
     "final_score": 7.5,
     "tonality": "8.0",
@@ -508,6 +531,7 @@
   {
     "entry_type": "ranked",
     "iem": "Effect Audio x Elysian Gaea",
+    "favorite": false,
     "canonical_name": "Effect Audio x Elysian Acoustic Labs Gaea",
     "final_score": 7.4,
     "tonality": "7.3",
@@ -530,6 +554,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sony IER-M9",
+    "favorite": false,
     "canonical_name": "Sony IER-M9",
     "final_score": 7.4,
     "tonality": "7.3",
@@ -552,6 +577,7 @@
   {
     "entry_type": "ranked",
     "iem": "Symphonium Helios SE",
+    "favorite": false,
     "canonical_name": "Symphonium Helios SE",
     "final_score": 7.4,
     "tonality": "7.3",
@@ -574,6 +600,7 @@
   {
     "entry_type": "ranked",
     "iem": "UM MEST Jet Black",
+    "favorite": false,
     "canonical_name": "Unique Melody MEST Jet Black",
     "final_score": 7.4,
     "tonality": "8.0",
@@ -596,6 +623,7 @@
   {
     "entry_type": "ranked",
     "iem": "Vision Ears EXT",
+    "favorite": false,
     "canonical_name": "Vision Ears EXT",
     "final_score": 7.4,
     "tonality": "7.3",
@@ -618,6 +646,7 @@
   {
     "entry_type": "ranked",
     "iem": "7th Acoustics Supernova",
+    "favorite": false,
     "canonical_name": "7th Acoustics Supernova",
     "final_score": 7.3,
     "tonality": "8.0",
@@ -640,6 +669,7 @@
   {
     "entry_type": "ranked",
     "iem": "Empire Ears EVO",
+    "favorite": false,
     "canonical_name": "Empire Ears EVO",
     "final_score": 7.3,
     "tonality": "7.3",
@@ -662,6 +692,7 @@
   {
     "entry_type": "ranked",
     "iem": "Mysticraft Myth",
+    "favorite": false,
     "canonical_name": "Mysticraft Myth",
     "final_score": 7.3,
     "tonality": "7.0",
@@ -684,6 +715,7 @@
   {
     "entry_type": "ranked",
     "iem": "Prisma Audio Lumen",
+    "favorite": false,
     "canonical_name": "Prisma Audio Lumen",
     "final_score": 7.3,
     "tonality": "7.7",
@@ -706,6 +738,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Monarch MKIII",
+    "favorite": false,
     "canonical_name": "ThieAudio Monarch MKIII",
     "final_score": 7.3,
     "tonality": "7.3",
@@ -728,6 +761,7 @@
   {
     "entry_type": "ranked",
     "iem": "Aful Dawn-X",
+    "favorite": false,
     "canonical_name": "Aful Dawn-X",
     "final_score": 7.2,
     "tonality": "8.0",
@@ -750,6 +784,7 @@
   {
     "entry_type": "ranked",
     "iem": "DUNU Glacier",
+    "favorite": false,
     "canonical_name": "Dunu Glacier",
     "final_score": 7.2,
     "tonality": "7.3",
@@ -772,6 +807,7 @@
   {
     "entry_type": "ranked",
     "iem": "Empire Ears Legend X SE",
+    "favorite": false,
     "canonical_name": "Empire Ears Legend X SE",
     "final_score": 7.2,
     "tonality": "7.3",
@@ -794,6 +830,7 @@
   {
     "entry_type": "ranked",
     "iem": "Unique Melody MEST",
+    "favorite": false,
     "canonical_name": "Unique Melody MEST",
     "final_score": 7.2,
     "tonality": "7.0",
@@ -816,6 +853,7 @@
   {
     "entry_type": "ranked",
     "iem": "YU9 Audio Que",
+    "favorite": true,
     "canonical_name": "YU9 Que",
     "final_score": 7.2,
     "tonality": "7.7",
@@ -838,6 +876,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio Nio",
+    "favorite": false,
     "canonical_name": "64 Audio Nio",
     "final_score": 7.1,
     "tonality": "7.3",
@@ -860,6 +899,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio U6t",
+    "favorite": false,
     "canonical_name": "64 Audio U6t",
     "final_score": 7.1,
     "tonality": "7.7",
@@ -882,6 +922,7 @@
   {
     "entry_type": "ranked",
     "iem": "Audeze LCDi4 (w/ Cipher)",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 7.1,
     "tonality": "7.0",
@@ -904,6 +945,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop S8",
+    "favorite": false,
     "canonical_name": "Moondrop S8",
     "final_score": 7.1,
     "tonality": "7.3",
@@ -926,6 +968,7 @@
   {
     "entry_type": "ranked",
     "iem": "Unique Melody MEST MK2",
+    "favorite": false,
     "canonical_name": "Unique Melody MEST MK2",
     "final_score": 7.1,
     "tonality": "7.0",
@@ -948,6 +991,7 @@
   {
     "entry_type": "ranked",
     "iem": "Hidition Violet",
+    "favorite": false,
     "canonical_name": "Hidition Violet",
     "final_score": 7.0,
     "tonality": "7.3",
@@ -970,6 +1014,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Variations",
+    "favorite": true,
     "canonical_name": "Moondrop Variations",
     "final_score": 7.0,
     "tonality": "7.3",
@@ -984,7 +1029,7 @@
     "setup": "1DD/2BA/2EST",
     "price": "$550",
     "comments": "A more refined B2 Dusk with better bass texture and treble extension.",
-    "based_on": "Super*Review's unit",
+    "based_on": "Personal unit",
     "tracker_slug": "moondrop-variations",
     "market_value": 304.05,
     "market_confidence": "Medium"
@@ -992,6 +1037,7 @@
   {
     "entry_type": "ranked",
     "iem": "Oriolus Traillii",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 7.0,
     "tonality": "7.0",
@@ -1014,6 +1060,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sennheiser IE900",
+    "favorite": false,
     "canonical_name": "Sennheiser IE900",
     "final_score": 7.0,
     "tonality": "7.3",
@@ -1036,6 +1083,7 @@
   {
     "entry_type": "ranked",
     "iem": "Thieaudio Monarch MKII",
+    "favorite": false,
     "canonical_name": "ThieAudio Monarch MKII",
     "final_score": 7.0,
     "tonality": "7.0",
@@ -1058,6 +1106,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio Solo",
+    "favorite": false,
     "canonical_name": "64 Audio Solo",
     "final_score": 6.9,
     "tonality": "6.7",
@@ -1080,6 +1129,7 @@
   {
     "entry_type": "ranked",
     "iem": "Campfire Andromeda 2020",
+    "favorite": false,
     "canonical_name": "Campfire Andromeda 2020",
     "final_score": 6.9,
     "tonality": "6.7",
@@ -1102,6 +1152,7 @@
   {
     "entry_type": "ranked",
     "iem": "Hyla Sarda",
+    "favorite": false,
     "canonical_name": "Hyla Sarda",
     "final_score": 6.9,
     "tonality": "7.0",
@@ -1124,6 +1175,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Dark Saber",
+    "favorite": false,
     "canonical_name": "Moondrop Dark Saber",
     "final_score": 6.9,
     "tonality": "7.0",
@@ -1146,6 +1198,7 @@
   {
     "entry_type": "ranked",
     "iem": "Symphonium Audio Meteor",
+    "favorite": false,
     "canonical_name": "Symphonium Meteor",
     "final_score": 6.9,
     "tonality": "7.0",
@@ -1168,6 +1221,7 @@
   {
     "entry_type": "ranked",
     "iem": "Vision Ears VE7",
+    "favorite": false,
     "canonical_name": "Vision Ears VE7",
     "final_score": 6.9,
     "tonality": "7.3",
@@ -1190,6 +1244,7 @@
   {
     "entry_type": "ranked",
     "iem": "Xenns Top Pro",
+    "favorite": false,
     "canonical_name": "XENNS Mangird Top Pro",
     "final_score": 6.9,
     "tonality": "7.0",
@@ -1212,6 +1267,7 @@
   {
     "entry_type": "ranked",
     "iem": "qdc Anole VX",
+    "favorite": false,
     "canonical_name": "qdc Anole VX",
     "final_score": 6.9,
     "tonality": "6.7",
@@ -1234,6 +1290,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio A3t (Demo)",
+    "favorite": false,
     "canonical_name": "64 Audio A3t",
     "final_score": 6.8,
     "tonality": "7.3",
@@ -1256,6 +1313,7 @@
   {
     "entry_type": "ranked",
     "iem": "DUNU SA6 Ultra",
+    "favorite": false,
     "canonical_name": "Dunu SA6 Ultra",
     "final_score": 6.7,
     "tonality": "7.0",
@@ -1278,6 +1336,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Hype 4",
+    "favorite": false,
     "canonical_name": "ThieAudio Hype 4",
     "final_score": 6.65,
     "tonality": "7.0",
@@ -1300,6 +1359,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop B2: Dusk",
+    "favorite": false,
     "canonical_name": "Moondrop Dusk",
     "final_score": 6.6,
     "tonality": "6.7",
@@ -1322,6 +1382,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sennheiser IE600",
+    "favorite": false,
     "canonical_name": "Sennheiser IE600",
     "final_score": 6.6,
     "tonality": "6.7",
@@ -1344,6 +1405,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio U18S",
+    "favorite": false,
     "canonical_name": "64 Audio U18s",
     "final_score": 6.5,
     "tonality": "6.7",
@@ -1366,6 +1428,7 @@
   {
     "entry_type": "ranked",
     "iem": "Binary Acoustics EP321 MEMS",
+    "favorite": true,
     "canonical_name": "Binary Acoustics EP321 MEMS",
     "final_score": 6.5,
     "tonality": "7.0",
@@ -1388,6 +1451,7 @@
   {
     "entry_type": "ranked",
     "iem": "Dunu SA6",
+    "favorite": false,
     "canonical_name": "Dunu SA6",
     "final_score": 6.5,
     "tonality": "6.7",
@@ -1410,6 +1474,7 @@
   {
     "entry_type": "ranked",
     "iem": "HiSenior Mega5 EST (Revised)",
+    "favorite": false,
     "canonical_name": "HiSenior Mega 5 EST",
     "final_score": 6.5,
     "tonality": "6.7",
@@ -1432,6 +1497,7 @@
   {
     "entry_type": "ranked",
     "iem": "Softears RSV",
+    "favorite": false,
     "canonical_name": "Softears RSV",
     "final_score": 6.5,
     "tonality": "7.7",
@@ -1454,6 +1520,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sony XBA-N3",
+    "favorite": true,
     "canonical_name": "Sony XBA-N3",
     "final_score": 6.5,
     "tonality": "7.3",
@@ -1468,7 +1535,7 @@
     "setup": "1DD/1BA",
     "price": "Discontinued",
     "comments": "Sinfully addictive tuning hampered only by a slight lack of detail and imaging performance.",
-    "based_on": "Loaner unit",
+    "based_on": "Personal unit",
     "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
@@ -1476,6 +1543,7 @@
   {
     "entry_type": "ranked",
     "iem": "qdc Anole V14",
+    "favorite": false,
     "canonical_name": "qdc Anole V14",
     "final_score": 6.5,
     "tonality": "6.3",
@@ -1498,6 +1566,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tanchjim Origin",
+    "favorite": false,
     "canonical_name": "Tanchjim Origin",
     "final_score": 6.45,
     "tonality": "6.7",
@@ -1520,6 +1589,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio Duo",
+    "favorite": false,
     "canonical_name": "64 Audio Duo",
     "final_score": 6.4,
     "tonality": "7.3",
@@ -1542,6 +1612,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio Fourte Blanc",
+    "favorite": false,
     "canonical_name": "64 Audio Fourte Blanc",
     "final_score": 6.4,
     "tonality": "5.7",
@@ -1564,6 +1635,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio Tia Fourte",
+    "favorite": false,
     "canonical_name": "64 Audio Tia Fourte",
     "final_score": 6.4,
     "tonality": "5.0",
@@ -1586,6 +1658,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fiio FX17",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 6.4,
     "tonality": "6.3",
@@ -1608,6 +1681,7 @@
   {
     "entry_type": "ranked",
     "iem": "LETSHUOER EJ07M",
+    "favorite": false,
     "canonical_name": "Letshuoer EJ07M",
     "final_score": 6.4,
     "tonality": "7.3",
@@ -1630,6 +1704,7 @@
   {
     "entry_type": "ranked",
     "iem": "Shuoer EJ07M Kinda Lava",
+    "favorite": false,
     "canonical_name": "Letshuoer EJ07M Kinda Lava",
     "final_score": 6.4,
     "tonality": "7.3",
@@ -1652,6 +1727,7 @@
   {
     "entry_type": "ranked",
     "iem": "Softears RS10",
+    "favorite": false,
     "canonical_name": "Softears RS10",
     "final_score": 6.4,
     "tonality": "6.0",
@@ -1674,6 +1750,7 @@
   {
     "entry_type": "ranked",
     "iem": "Softears RSV MKII",
+    "favorite": false,
     "canonical_name": "Softears RSV MKII",
     "final_score": 6.4,
     "tonality": "6.0",
@@ -1696,6 +1773,7 @@
   {
     "entry_type": "ranked",
     "iem": "Symphonium Triton",
+    "favorite": false,
     "canonical_name": "Symphonium Triton",
     "final_score": 6.4,
     "tonality": "7.0",
@@ -1718,6 +1796,7 @@
   {
     "entry_type": "ranked",
     "iem": "Custom Art FIBAE 7U",
+    "favorite": false,
     "canonical_name": "Custom Art FIBAE 7U",
     "final_score": 6.3,
     "tonality": "6.0",
@@ -1740,6 +1819,7 @@
   {
     "entry_type": "ranked",
     "iem": "DUNU SA6 MKII",
+    "favorite": false,
     "canonical_name": "Dunu SA6 MK2",
     "final_score": 6.3,
     "tonality": "6.7",
@@ -1762,6 +1842,7 @@
   {
     "entry_type": "ranked",
     "iem": "DUNU Zen Pro",
+    "favorite": false,
     "canonical_name": "Dunu Zen Pro",
     "final_score": 6.3,
     "tonality": "6.3",
@@ -1784,6 +1865,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Dusk (no DSP)",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 6.3,
     "tonality": "6.7",
@@ -1806,6 +1888,7 @@
   {
     "entry_type": "ranked",
     "iem": "Noble Audio Viking Ragnar",
+    "favorite": false,
     "canonical_name": "Noble Audio Viking Ragnar",
     "final_score": 6.3,
     "tonality": "6.0",
@@ -1828,6 +1911,7 @@
   {
     "entry_type": "ranked",
     "iem": "SoftEars Volume S",
+    "favorite": false,
     "canonical_name": "Softears Volume S",
     "final_score": 6.3,
     "tonality": "6.3",
@@ -1850,6 +1934,7 @@
   {
     "entry_type": "ranked",
     "iem": "Softears Turii",
+    "favorite": false,
     "canonical_name": "Softears Turii",
     "final_score": 6.3,
     "tonality": "6.3",
@@ -1872,6 +1957,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Oracle MKIII",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 6.3,
     "tonality": "6.0",
@@ -1894,6 +1980,7 @@
   {
     "entry_type": "ranked",
     "iem": "Vision Ears Erlkonig",
+    "favorite": false,
     "canonical_name": "Vision Ears Erlkonig",
     "final_score": 6.3,
     "tonality": "5.7",
@@ -1916,6 +2003,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio A4s",
+    "favorite": false,
     "canonical_name": "64 Audio A4s",
     "final_score": 6.2,
     "tonality": "6.7",
@@ -1938,6 +2026,7 @@
   {
     "entry_type": "ranked",
     "iem": "Empire Ears Legend X",
+    "favorite": false,
     "canonical_name": "Empire Ears Legend X",
     "final_score": 6.2,
     "tonality": "6.0",
@@ -1960,6 +2049,7 @@
   {
     "entry_type": "ranked",
     "iem": "FatFreq Maestro Mini",
+    "favorite": false,
     "canonical_name": "FatFreq Maestro Mini",
     "final_score": 6.2,
     "tonality": "7.0",
@@ -1982,6 +2072,7 @@
   {
     "entry_type": "ranked",
     "iem": "LETSHUOER Cadenza 12",
+    "favorite": false,
     "canonical_name": "Letshuoer Cadenza 12",
     "final_score": 6.2,
     "tonality": "6.0",
@@ -2004,6 +2095,7 @@
   {
     "entry_type": "ranked",
     "iem": "Lime Ears Anima",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 6.2,
     "tonality": "6.0",
@@ -2026,6 +2118,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Blessing 3",
+    "favorite": false,
     "canonical_name": "Moondrop Blessing 3",
     "final_score": 6.2,
     "tonality": "6.3",
@@ -2048,6 +2141,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Dusk 2 (w/ DSP)",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 6.2,
     "tonality": "6.7",
@@ -2070,6 +2164,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Orchestra MKII",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 6.2,
     "tonality": "6.0",
@@ -2092,6 +2187,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio V16 Divinity",
+    "favorite": false,
     "canonical_name": "ThieAudio V16 Divinity",
     "final_score": 6.2,
     "tonality": "6.3",
@@ -2114,6 +2210,7 @@
   {
     "entry_type": "ranked",
     "iem": "Audio Hekili",
+    "favorite": false,
     "canonical_name": "Audio Hekili",
     "final_score": 6.1,
     "tonality": "6.3",
@@ -2136,6 +2233,7 @@
   {
     "entry_type": "ranked",
     "iem": "Craft Ears Aurum",
+    "favorite": false,
     "canonical_name": "CraftEars Aurum",
     "final_score": 6.1,
     "tonality": "6.3",
@@ -2158,6 +2256,7 @@
   {
     "entry_type": "ranked",
     "iem": "CrinEars Reference",
+    "favorite": false,
     "canonical_name": "CrinEar Reference",
     "final_score": 6.1,
     "tonality": "6.3",
@@ -2180,6 +2279,7 @@
   {
     "entry_type": "ranked",
     "iem": "DUNU DK-3001 BD",
+    "favorite": false,
     "canonical_name": "Dunu DK-3001 BD",
     "final_score": 6.1,
     "tonality": "6.0",
@@ -2202,6 +2302,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fearless x Crinacle Dawn",
+    "favorite": false,
     "canonical_name": "Fearless Audio Crinacle Dawn",
     "final_score": 6.1,
     "tonality": "6.7",
@@ -2224,6 +2325,7 @@
   {
     "entry_type": "ranked",
     "iem": "FiR Radon 6",
+    "favorite": false,
     "canonical_name": "FIR Audio Radon 6",
     "final_score": 6.1,
     "tonality": "6.0",
@@ -2246,6 +2348,7 @@
   {
     "entry_type": "ranked",
     "iem": "GS Audio SE11",
+    "favorite": false,
     "canonical_name": "GS Audio SE11",
     "final_score": 6.1,
     "tonality": "6.3",
@@ -2268,6 +2371,7 @@
   {
     "entry_type": "ranked",
     "iem": "Ice Lab Prismatica",
+    "favorite": false,
     "canonical_name": "Ice Lab Prismatica",
     "final_score": 6.1,
     "tonality": "6.0",
@@ -2290,6 +2394,7 @@
   {
     "entry_type": "ranked",
     "iem": "Mangird Xenns Top",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 6.1,
     "tonality": "6.3",
@@ -2312,6 +2417,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tanchjim Oxygen",
+    "favorite": false,
     "canonical_name": "Tanchjim Oxygen",
     "final_score": 6.1,
     "tonality": "6.0",
@@ -2334,6 +2440,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Hype 2",
+    "favorite": false,
     "canonical_name": "ThieAudio Hype 2",
     "final_score": 6.1,
     "tonality": "6.3",
@@ -2356,6 +2463,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Prestige",
+    "favorite": false,
     "canonical_name": "ThieAudio Prestige",
     "final_score": 6.1,
     "tonality": "6.0",
@@ -2378,6 +2486,7 @@
   {
     "entry_type": "ranked",
     "iem": "iSine 20 (w/ Cipher cable)",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 6.1,
     "tonality": "6.3",
@@ -2400,6 +2509,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio A3t",
+    "favorite": false,
     "canonical_name": "64 Audio A3t",
     "final_score": 6.0,
     "tonality": "6.3",
@@ -2422,6 +2532,7 @@
   {
     "entry_type": "ranked",
     "iem": "Binary Acoustics Chopin",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 6.0,
     "tonality": "6.0",
@@ -2444,6 +2555,7 @@
   {
     "entry_type": "ranked",
     "iem": "DUNU Vulkan",
+    "favorite": false,
     "canonical_name": "Dunu Vulkan",
     "final_score": 6.0,
     "tonality": "6.0",
@@ -2466,6 +2578,7 @@
   {
     "entry_type": "ranked",
     "iem": "Empire Ears Valkyrie",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 6.0,
     "tonality": "6.0",
@@ -2488,6 +2601,7 @@
   {
     "entry_type": "ranked",
     "iem": "Empire Ears Valkyrie MK.II",
+    "favorite": false,
     "canonical_name": "Empire Ears Valkyrie MK.II",
     "final_score": 6.0,
     "tonality": "6.0",
@@ -2510,6 +2624,7 @@
   {
     "entry_type": "ranked",
     "iem": "Hidition NT6 Pro",
+    "favorite": false,
     "canonical_name": "Hidition NT6",
     "final_score": 6.0,
     "tonality": "6.0",
@@ -2532,6 +2647,7 @@
   {
     "entry_type": "ranked",
     "iem": "Hidition Waltz",
+    "favorite": false,
     "canonical_name": "Hidition Waltz",
     "final_score": 6.0,
     "tonality": "6.3",
@@ -2554,6 +2670,7 @@
   {
     "entry_type": "ranked",
     "iem": "Juzear Defiant",
+    "favorite": false,
     "canonical_name": "Juzear Defiant",
     "final_score": 6.0,
     "tonality": "6.3",
@@ -2576,6 +2693,7 @@
   {
     "entry_type": "ranked",
     "iem": "Lime Ears Terra",
+    "favorite": false,
     "canonical_name": "Lime Ears Terra",
     "final_score": 6.0,
     "tonality": "6.0",
@@ -2598,6 +2716,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop B2",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 6.0,
     "tonality": "6.0",
@@ -2620,6 +2739,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop May DSP",
+    "favorite": true,
     "canonical_name": "Moondrop May",
     "final_score": 6.0,
     "tonality": "6.0",
@@ -2642,6 +2762,7 @@
   {
     "entry_type": "ranked",
     "iem": "Thieaudio Monarch",
+    "favorite": false,
     "canonical_name": "ThieAudio Monarch MKI",
     "final_score": 6.0,
     "tonality": "6.0",
@@ -2664,6 +2785,7 @@
   {
     "entry_type": "ranked",
     "iem": "Unique Melody MEXT",
+    "favorite": false,
     "canonical_name": "Unique Melody MEXT",
     "final_score": 6.0,
     "tonality": "6.0",
@@ -2686,6 +2808,7 @@
   {
     "entry_type": "ranked",
     "iem": "Vision Ears VE8",
+    "favorite": false,
     "canonical_name": "Vision Ears VE8",
     "final_score": 6.0,
     "tonality": "5.7",
@@ -2708,6 +2831,7 @@
   {
     "entry_type": "ranked",
     "iem": "Campfire Andromeda 2019",
+    "favorite": false,
     "canonical_name": "Campfire Andromeda pre-2020",
     "final_score": 5.9,
     "tonality": "5.7",
@@ -2730,6 +2854,7 @@
   {
     "entry_type": "ranked",
     "iem": "Hidition Viento-B Universal",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.9,
     "tonality": "5.7",
@@ -2752,6 +2877,7 @@
   {
     "entry_type": "ranked",
     "iem": "Jomo Audio Trinity Brass",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.9,
     "tonality": "5.7",
@@ -2774,6 +2900,7 @@
   {
     "entry_type": "ranked",
     "iem": "Juzear Defiant Gamerfidelity",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.9,
     "tonality": "6.0",
@@ -2796,6 +2923,7 @@
   {
     "entry_type": "ranked",
     "iem": "Kiwi Ears Orchestra",
+    "favorite": false,
     "canonical_name": "Kiwi Ears Orchestra",
     "final_score": 5.9,
     "tonality": "6.3",
@@ -2818,6 +2946,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sennheiser IE200",
+    "favorite": false,
     "canonical_name": "Sennheiser IE200",
     "final_score": 5.9,
     "tonality": "6.0",
@@ -2840,6 +2969,7 @@
   {
     "entry_type": "ranked",
     "iem": "Shure KSE1500",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.9,
     "tonality": "4.3",
@@ -2861,7 +2991,8 @@
   },
   {
     "entry_type": "ranked",
-    "iem": "Tanchjim Hana 2021 ⭑",
+    "iem": "Tanchjim Hana 2021",
+    "favorite": true,
     "canonical_name": "Tanchjim Hana 2021",
     "final_score": 5.9,
     "tonality": "6.0",
@@ -2876,7 +3007,7 @@
     "setup": "1DD",
     "price": "$180",
     "comments": "Essentially a cheaper Tanchjim Oxygen.",
-    "based_on": "Super*Review's unit",
+    "based_on": "Personal unit",
     "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
@@ -2884,6 +3015,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Elixir",
+    "favorite": false,
     "canonical_name": "ThieAudio Elixir",
     "final_score": 5.9,
     "tonality": "6.0",
@@ -2906,6 +3038,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Excalibur",
+    "favorite": false,
     "canonical_name": "ThieAudio Excalibur",
     "final_score": 5.9,
     "tonality": "6.0",
@@ -2928,6 +3061,7 @@
   {
     "entry_type": "ranked",
     "iem": "Thieaudio Clairvoyance",
+    "favorite": false,
     "canonical_name": "ThieAudio Clairvoyance",
     "final_score": 5.9,
     "tonality": "6.3",
@@ -2950,6 +3084,7 @@
   {
     "entry_type": "ranked",
     "iem": "Vision Ears Elysium",
+    "favorite": false,
     "canonical_name": "Vision Ears Elysium",
     "final_score": 5.9,
     "tonality": "5.3",
@@ -2972,6 +3107,7 @@
   {
     "entry_type": "ranked",
     "iem": "7Hz Timeless",
+    "favorite": false,
     "canonical_name": "7Hz Timeless",
     "final_score": 5.8,
     "tonality": "5.3",
@@ -2994,6 +3130,7 @@
   {
     "entry_type": "ranked",
     "iem": "DUNU Falcon Pro (Experimental)",
+    "favorite": false,
     "canonical_name": "Dunu Falcon Pro Experimental",
     "final_score": 5.8,
     "tonality": "5.3",
@@ -3016,6 +3153,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Kato",
+    "favorite": false,
     "canonical_name": "Moondrop Kato",
     "final_score": 5.8,
     "tonality": "6.0",
@@ -3038,6 +3176,7 @@
   {
     "entry_type": "ranked",
     "iem": "Raptgo Hook X",
+    "favorite": false,
     "canonical_name": "Raptgo Hook X",
     "final_score": 5.8,
     "tonality": "5.7",
@@ -3060,6 +3199,7 @@
   {
     "entry_type": "ranked",
     "iem": "Shuoer S12",
+    "favorite": false,
     "canonical_name": "Letshuoer S12",
     "final_score": 5.8,
     "tonality": "5.3",
@@ -3082,6 +3222,7 @@
   {
     "entry_type": "ranked",
     "iem": "Aful Performer 8S",
+    "favorite": false,
     "canonical_name": "Aful Performer 8S",
     "final_score": 5.7,
     "tonality": "5.7",
@@ -3104,6 +3245,7 @@
   {
     "entry_type": "ranked",
     "iem": "Etymotic ER2XR",
+    "favorite": false,
     "canonical_name": "Etymotic ER2XR",
     "final_score": 5.7,
     "tonality": "6.0",
@@ -3126,6 +3268,7 @@
   {
     "entry_type": "ranked",
     "iem": "HiSenior Mega7",
+    "favorite": false,
     "canonical_name": "HiSenior Mega 7",
     "final_score": 5.7,
     "tonality": "6.0",
@@ -3148,6 +3291,7 @@
   {
     "entry_type": "ranked",
     "iem": "Juzear Harrier",
+    "favorite": false,
     "canonical_name": "Juzear Harrier",
     "final_score": 5.7,
     "tonality": "6.0",
@@ -3170,6 +3314,7 @@
   {
     "entry_type": "ranked",
     "iem": "NiceHCK Rockies",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.7,
     "tonality": "6.0",
@@ -3192,6 +3337,7 @@
   {
     "entry_type": "ranked",
     "iem": "Audio Lokahi",
+    "favorite": false,
     "canonical_name": "Audio Lokahi",
     "final_score": 5.6,
     "tonality": "5.7",
@@ -3214,6 +3360,7 @@
   {
     "entry_type": "ranked",
     "iem": "Campfire Solaris OG",
+    "favorite": false,
     "canonical_name": "Campfire Audio Solaris OG",
     "final_score": 5.6,
     "tonality": "5.3",
@@ -3236,6 +3383,7 @@
   {
     "entry_type": "ranked",
     "iem": "FAudio Dark Sky",
+    "favorite": false,
     "canonical_name": "FAudio Dark Sky",
     "final_score": 5.6,
     "tonality": "6.0",
@@ -3258,6 +3406,7 @@
   {
     "entry_type": "ranked",
     "iem": "Simgot Supermix 4",
+    "favorite": false,
     "canonical_name": "Simgot Supermix 4",
     "final_score": 5.6,
     "tonality": "5.3",
@@ -3280,6 +3429,7 @@
   {
     "entry_type": "ranked",
     "iem": "Xenns Mangird Tea 2",
+    "favorite": false,
     "canonical_name": "XENNS Mangird Tea 2",
     "final_score": 5.55,
     "tonality": "6.3",
@@ -3302,6 +3452,7 @@
   {
     "entry_type": "ranked",
     "iem": "Binary Acoustics 1900",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.5,
     "tonality": "5.7",
@@ -3324,6 +3475,7 @@
   {
     "entry_type": "ranked",
     "iem": "Empire Ears ESR MK.II",
+    "favorite": false,
     "canonical_name": "Empire Ears ESR MK.II",
     "final_score": 5.5,
     "tonality": "5.7",
@@ -3346,6 +3498,7 @@
   {
     "entry_type": "ranked",
     "iem": "Empire Ears Hero",
+    "favorite": false,
     "canonical_name": "Empire Ears Hero",
     "final_score": 5.5,
     "tonality": "5.3",
@@ -3368,6 +3521,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fearless Audio S8P",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.5,
     "tonality": "5.0",
@@ -3390,6 +3544,7 @@
   {
     "entry_type": "ranked",
     "iem": "Skorea Agate",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.5,
     "tonality": "5.7",
@@ -3412,6 +3567,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sony MDR-EX800ST",
+    "favorite": false,
     "canonical_name": "Sony MDR-EX800ST",
     "final_score": 5.5,
     "tonality": "5.3",
@@ -3434,6 +3590,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Oracle",
+    "favorite": false,
     "canonical_name": "ThieAudio Oracle",
     "final_score": 5.5,
     "tonality": "6.3",
@@ -3456,6 +3613,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Voyager 14",
+    "favorite": false,
     "canonical_name": "ThieAudio Voyager 14",
     "final_score": 5.5,
     "tonality": "6.0",
@@ -3478,6 +3636,7 @@
   {
     "entry_type": "ranked",
     "iem": "EPZ P40",
+    "favorite": false,
     "canonical_name": "EPZ P40",
     "final_score": 5.4,
     "tonality": "5.3",
@@ -3500,6 +3659,7 @@
   {
     "entry_type": "ranked",
     "iem": "Kinera Nanna 2.0",
+    "favorite": false,
     "canonical_name": "Kinera Nanna 2.0",
     "final_score": 5.4,
     "tonality": "6.0",
@@ -3522,6 +3682,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Solis",
+    "favorite": false,
     "canonical_name": "Moondrop Solis",
     "final_score": 5.4,
     "tonality": "5.7",
@@ -3544,6 +3705,7 @@
   {
     "entry_type": "ranked",
     "iem": "Prisma Azul",
+    "favorite": false,
     "canonical_name": "Prisma Audio Azul",
     "final_score": 5.4,
     "tonality": "5.7",
@@ -3566,6 +3728,7 @@
   {
     "entry_type": "ranked",
     "iem": "SeeAudio Bravery",
+    "favorite": false,
     "canonical_name": "SeeAudio Bravery",
     "final_score": 5.4,
     "tonality": "5.7",
@@ -3588,6 +3751,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sony MDR-EX1000 (no filter)",
+    "favorite": false,
     "canonical_name": "Sony MDR-EX1000",
     "final_score": 5.4,
     "tonality": "4.7",
@@ -3610,6 +3774,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio A3e (Demo)",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.3,
     "tonality": "6.0",
@@ -3632,6 +3797,7 @@
   {
     "entry_type": "ranked",
     "iem": "Astell&Kern ZERO1",
+    "favorite": false,
     "canonical_name": "Astell&Kern ZERO1",
     "final_score": 5.3,
     "tonality": "5.0",
@@ -3654,6 +3820,7 @@
   {
     "entry_type": "ranked",
     "iem": "Audeze Euclid",
+    "favorite": false,
     "canonical_name": "Audeze Euclid",
     "final_score": 5.3,
     "tonality": "4.7",
@@ -3676,6 +3843,7 @@
   {
     "entry_type": "ranked",
     "iem": "Aya Audio Siren",
+    "favorite": false,
     "canonical_name": "Aya Audio Siren",
     "final_score": 5.3,
     "tonality": "5.3",
@@ -3698,6 +3866,7 @@
   {
     "entry_type": "ranked",
     "iem": "DUNU DN142",
+    "favorite": false,
     "canonical_name": "Dunu DN142",
     "final_score": 5.3,
     "tonality": "5.3",
@@ -3720,6 +3889,7 @@
   {
     "entry_type": "ranked",
     "iem": "Etymotic ER4XR",
+    "favorite": false,
     "canonical_name": "Etymotic ER4XR",
     "final_score": 5.3,
     "tonality": "5.7",
@@ -3742,6 +3912,7 @@
   {
     "entry_type": "ranked",
     "iem": "Etymotic EVO",
+    "favorite": false,
     "canonical_name": "Etymotic EVO",
     "final_score": 5.3,
     "tonality": "5.0",
@@ -3764,6 +3935,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fiio FH7S",
+    "favorite": false,
     "canonical_name": "FiiO FH7S",
     "final_score": 5.3,
     "tonality": "5.3",
@@ -3786,6 +3958,7 @@
   {
     "entry_type": "ranked",
     "iem": "Noble Audio Ronin",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.3,
     "tonality": "5.0",
@@ -3808,6 +3981,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tanchjim Soda",
+    "favorite": false,
     "canonical_name": "Tanchjim Soda",
     "final_score": 5.3,
     "tonality": "5.7",
@@ -3830,6 +4004,7 @@
   {
     "entry_type": "ranked",
     "iem": "Truthears Hexa",
+    "favorite": false,
     "canonical_name": "Truthear Hexa",
     "final_score": 5.3,
     "tonality": "5.7",
@@ -3852,6 +4027,7 @@
   {
     "entry_type": "ranked",
     "iem": "A&K x CFA Pathfinder",
+    "favorite": false,
     "canonical_name": "Astell&Kern x CFA Pathfinder",
     "final_score": 5.2,
     "tonality": "5.0",
@@ -3874,6 +4050,7 @@
   {
     "entry_type": "ranked",
     "iem": "DUNU Falcon Pro",
+    "favorite": false,
     "canonical_name": "Dunu Falcon Pro",
     "final_score": 5.2,
     "tonality": "5.3",
@@ -3896,6 +4073,7 @@
   {
     "entry_type": "ranked",
     "iem": "Drop x JVC HA-FDX1",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.2,
     "tonality": "5.0",
@@ -3918,6 +4096,7 @@
   {
     "entry_type": "ranked",
     "iem": "EPZ P50",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.2,
     "tonality": "5.7",
@@ -3940,6 +4119,7 @@
   {
     "entry_type": "ranked",
     "iem": "Etymotic ER2SE",
+    "favorite": false,
     "canonical_name": "Etymotic ER2SE",
     "final_score": 5.2,
     "tonality": "5.7",
@@ -3962,6 +4142,7 @@
   {
     "entry_type": "ranked",
     "iem": "Final x Dita Shichiku.Kangen",
+    "favorite": false,
     "canonical_name": "Final Audio x Dita Shichiku.Kangen",
     "final_score": 5.2,
     "tonality": "4.7",
@@ -3984,6 +4165,7 @@
   {
     "entry_type": "ranked",
     "iem": "MiM Dark Magician",
+    "favorite": false,
     "canonical_name": "MiM Dark Magician",
     "final_score": 5.2,
     "tonality": "5.7",
@@ -4006,6 +4188,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Aria",
+    "favorite": false,
     "canonical_name": "Moondrop Aria",
     "final_score": 5.2,
     "tonality": "5.7",
@@ -4028,6 +4211,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop KXXS",
+    "favorite": false,
     "canonical_name": "Moondrop KXXS",
     "final_score": 5.2,
     "tonality": "5.7",
@@ -4050,6 +4234,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop KXXX",
+    "favorite": false,
     "canonical_name": "Moondrop KXXX",
     "final_score": 5.2,
     "tonality": "5.7",
@@ -4072,6 +4257,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Starfield",
+    "favorite": false,
     "canonical_name": "Moondrop Starfield",
     "final_score": 5.2,
     "tonality": "5.7",
@@ -4094,6 +4280,7 @@
   {
     "entry_type": "ranked",
     "iem": "OpenAudio Mercury",
+    "favorite": false,
     "canonical_name": "OpenAudio Mercury",
     "final_score": 5.2,
     "tonality": "5.3",
@@ -4116,6 +4303,7 @@
   {
     "entry_type": "ranked",
     "iem": "Shuoer EJ07",
+    "favorite": false,
     "canonical_name": "Letshuoer EJ07",
     "final_score": 5.2,
     "tonality": "5.7",
@@ -4138,6 +4326,7 @@
   {
     "entry_type": "ranked",
     "iem": "SoftEars Edge",
+    "favorite": false,
     "canonical_name": "Softears Edge",
     "final_score": 5.2,
     "tonality": "5.0",
@@ -4160,6 +4349,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tanchjim Prism",
+    "favorite": false,
     "canonical_name": "Tanchjim Prism",
     "final_score": 5.2,
     "tonality": "5.0",
@@ -4182,6 +4372,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tansio Mirai Spark",
+    "favorite": false,
     "canonical_name": "Tansio Mirai Spark",
     "final_score": 5.2,
     "tonality": "4.7",
@@ -4204,6 +4395,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tansio Mirai Zodiac",
+    "favorite": false,
     "canonical_name": "Tansio Mirai Zodiac",
     "final_score": 5.2,
     "tonality": "5.0",
@@ -4226,6 +4418,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Oracle MKII",
+    "favorite": false,
     "canonical_name": "ThieAudio Oracle MKII",
     "final_score": 5.2,
     "tonality": "5.3",
@@ -4248,6 +4441,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tripowin x HBB Olina",
+    "favorite": false,
     "canonical_name": "Tripowin Olina",
     "final_score": 5.2,
     "tonality": "5.7",
@@ -4270,6 +4464,7 @@
   {
     "entry_type": "ranked",
     "iem": "Dunu EST112",
+    "favorite": false,
     "canonical_name": "Dunu EST112",
     "final_score": 5.15,
     "tonality": "5.0",
@@ -4292,6 +4487,7 @@
   {
     "entry_type": "ranked",
     "iem": "Hidition NT6",
+    "favorite": false,
     "canonical_name": "Hidition NT6",
     "final_score": 5.15,
     "tonality": "5.0",
@@ -4314,6 +4510,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio Aspire 3",
+    "favorite": false,
     "canonical_name": "64 Audio Aspire 3",
     "final_score": 5.1,
     "tonality": "5.0",
@@ -4336,6 +4533,7 @@
   {
     "entry_type": "ranked",
     "iem": "Aful Performer 5",
+    "favorite": false,
     "canonical_name": "Aful Performer 5",
     "final_score": 5.1,
     "tonality": "5.3",
@@ -4358,6 +4556,7 @@
   {
     "entry_type": "ranked",
     "iem": "Campfire Solaris 2020",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.1,
     "tonality": "5.3",
@@ -4380,6 +4579,7 @@
   {
     "entry_type": "ranked",
     "iem": "Ikko OH10",
+    "favorite": false,
     "canonical_name": "Ikko OH10",
     "final_score": 5.1,
     "tonality": "5.0",
@@ -4402,6 +4602,7 @@
   {
     "entry_type": "ranked",
     "iem": "KZ PR1 Pro",
+    "favorite": false,
     "canonical_name": "KZ PR1 Pro",
     "final_score": 5.1,
     "tonality": "4.7",
@@ -4424,6 +4625,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Armature Art 12",
+    "favorite": false,
     "canonical_name": "Moondrop Armature 12",
     "final_score": 5.1,
     "tonality": "5.3",
@@ -4446,6 +4648,7 @@
   {
     "entry_type": "ranked",
     "iem": "SeeAudio x Crinacle Midnight",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.1,
     "tonality": "5.7",
@@ -4468,6 +4671,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tanchjim Darling",
+    "favorite": false,
     "canonical_name": "Tanchjim Darling",
     "final_score": 5.1,
     "tonality": "4.3",
@@ -4490,6 +4694,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Hype 4 MKII",
+    "favorite": false,
     "canonical_name": "ThieAudio Hype 4 MKII",
     "final_score": 5.1,
     "tonality": "5.3",
@@ -4512,6 +4717,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Legacy 9",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.1,
     "tonality": "5.7",
@@ -4534,6 +4740,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tin Audio P1 Max",
+    "favorite": false,
     "canonical_name": "TinHiFi P1 Max",
     "final_score": 5.1,
     "tonality": "5.0",
@@ -4556,6 +4763,7 @@
   {
     "entry_type": "ranked",
     "iem": "7Hz Salnotes Dioko",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.05,
     "tonality": "5.0",
@@ -4578,6 +4786,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio Aspire 1",
+    "favorite": false,
     "canonical_name": "64 Audio Aspire 1",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -4600,6 +4809,7 @@
   {
     "entry_type": "ranked",
     "iem": "Apple Airpods Pro 2",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -4622,6 +4832,7 @@
   {
     "entry_type": "ranked",
     "iem": "BGVP DM8",
+    "favorite": false,
     "canonical_name": "BGVP DM8",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -4644,6 +4855,7 @@
   {
     "entry_type": "ranked",
     "iem": "DUNU Titan S",
+    "favorite": false,
     "canonical_name": "Dunu Titan S",
     "final_score": 5.0,
     "tonality": "5.3",
@@ -4666,6 +4878,7 @@
   {
     "entry_type": "ranked",
     "iem": "Dunu DK-3001 Pro",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -4688,6 +4901,7 @@
   {
     "entry_type": "ranked",
     "iem": "Dunu Luna",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.0,
     "tonality": "4.3",
@@ -4710,6 +4924,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fearless S8Z",
+    "favorite": false,
     "canonical_name": "Fearless Audio S8Z",
     "final_score": 5.0,
     "tonality": "4.7",
@@ -4732,6 +4947,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fiio FH5",
+    "favorite": false,
     "canonical_name": "FiiO FH5",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -4754,6 +4970,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fiio FH7",
+    "favorite": false,
     "canonical_name": "FiiO FH7",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -4776,6 +4993,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fiio FH9",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -4798,6 +5016,7 @@
   {
     "entry_type": "ranked",
     "iem": "Final Audio B3",
+    "favorite": false,
     "canonical_name": "Final Audio B3",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -4820,6 +5039,7 @@
   {
     "entry_type": "ranked",
     "iem": "Hidition NT8",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -4842,6 +5062,7 @@
   {
     "entry_type": "ranked",
     "iem": "Lime Ears Pneuma",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -4864,6 +5085,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Kadenz",
+    "favorite": false,
     "canonical_name": "Moondrop Kadenz",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -4886,6 +5108,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Solis 2",
+    "favorite": false,
     "canonical_name": "Moondrop Solis 2",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -4908,6 +5131,7 @@
   {
     "entry_type": "ranked",
     "iem": "Softears Studio 4",
+    "favorite": false,
     "canonical_name": "Softears Studio 4",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -4930,6 +5154,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tansio Mirai Land",
+    "favorite": false,
     "canonical_name": "Tansio Mirai Land",
     "final_score": 5.0,
     "tonality": "4.3",
@@ -4952,6 +5177,7 @@
   {
     "entry_type": "ranked",
     "iem": "Vision Ears VE6",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -4974,6 +5200,7 @@
   {
     "entry_type": "ranked",
     "iem": "Dunu DK-2001",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 4.9,
     "tonality": "4.7",
@@ -4996,6 +5223,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Blessing OG",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 4.9,
     "tonality": "5.0",
@@ -5018,6 +5246,7 @@
   {
     "entry_type": "ranked",
     "iem": "ROSESESA CJ20",
+    "favorite": false,
     "canonical_name": "Rose Technics CJ20",
     "final_score": 4.9,
     "tonality": "5.0",
@@ -5040,6 +5269,7 @@
   {
     "entry_type": "ranked",
     "iem": "SoftEars Volume",
+    "favorite": false,
     "canonical_name": "Softears Volume",
     "final_score": 4.9,
     "tonality": "5.0",
@@ -5062,6 +5292,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tangzu Waner SG 2 Red Lion",
+    "favorite": false,
     "canonical_name": "Tangzu Waner SG 2 Red Lion",
     "final_score": 4.9,
     "tonality": "4.7",
@@ -5084,6 +5315,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio U18T",
+    "favorite": false,
     "canonical_name": "64 Audio U18t",
     "final_score": 4.8,
     "tonality": "4.7",
@@ -5106,6 +5338,7 @@
   {
     "entry_type": "ranked",
     "iem": "Empire Ears Zeus XIV",
+    "favorite": false,
     "canonical_name": "Empire Ears Zeus XIV",
     "final_score": 4.8,
     "tonality": "3.7",
@@ -5128,6 +5361,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Aria Snow",
+    "favorite": false,
     "canonical_name": "Moondrop Aria Snow",
     "final_score": 4.8,
     "tonality": "5.3",
@@ -5150,6 +5384,7 @@
   {
     "entry_type": "ranked",
     "iem": "Samsung Galaxy Buds",
+    "favorite": false,
     "canonical_name": "Samsung Galaxy Buds",
     "final_score": 4.8,
     "tonality": "5.3",
@@ -5172,6 +5407,7 @@
   {
     "entry_type": "ranked",
     "iem": "SoftEars Cerberus",
+    "favorite": false,
     "canonical_name": "Softears Cerberus",
     "final_score": 4.8,
     "tonality": "4.7",
@@ -5194,6 +5430,7 @@
   {
     "entry_type": "ranked",
     "iem": "TinHifi T4",
+    "favorite": false,
     "canonical_name": "TinHiFi T4",
     "final_score": 4.8,
     "tonality": "5.3",
@@ -5216,6 +5453,7 @@
   {
     "entry_type": "ranked",
     "iem": "Campfire Atlas",
+    "favorite": false,
     "canonical_name": "Campfire Audio Atlas",
     "final_score": 4.7,
     "tonality": "5.3",
@@ -5238,6 +5476,7 @@
   {
     "entry_type": "ranked",
     "iem": "DUNU Talos",
+    "favorite": false,
     "canonical_name": "Dunu Talos",
     "final_score": 4.7,
     "tonality": "4.0",
@@ -5260,6 +5499,7 @@
   {
     "entry_type": "ranked",
     "iem": "LETSHUOER x Gizaudio Galileo",
+    "favorite": false,
     "canonical_name": "Letshuoer x Gizaudio Galileo",
     "final_score": 4.7,
     "tonality": "5.0",
@@ -5282,6 +5522,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Sparks",
+    "favorite": false,
     "canonical_name": "Moondrop Sparks",
     "final_score": 4.7,
     "tonality": "5.7",
@@ -5304,6 +5545,7 @@
   {
     "entry_type": "ranked",
     "iem": "Samsung Galaxy Buds Pro",
+    "favorite": false,
     "canonical_name": "Samsung Galaxy Buds Pro",
     "final_score": 4.7,
     "tonality": "5.7",
@@ -5326,6 +5568,7 @@
   {
     "entry_type": "ranked",
     "iem": "Yu9 U556",
+    "favorite": false,
     "canonical_name": "YU9 U556",
     "final_score": 4.7,
     "tonality": "5.0",
@@ -5348,6 +5591,7 @@
   {
     "entry_type": "ranked",
     "iem": "Campfire Holocene",
+    "favorite": false,
     "canonical_name": "Campfire Audio Holocene",
     "final_score": 4.6,
     "tonality": "4.0",
@@ -5370,6 +5614,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Stellaris",
+    "favorite": false,
     "canonical_name": "Moondrop Stellaris",
     "final_score": 4.6,
     "tonality": "4.3",
@@ -5392,6 +5637,7 @@
   {
     "entry_type": "ranked",
     "iem": "Noble Audio Fokus Rex",
+    "favorite": false,
     "canonical_name": "Noble Audio Fokus Rex",
     "final_score": 4.6,
     "tonality": "4.3",
@@ -5414,6 +5660,7 @@
   {
     "entry_type": "ranked",
     "iem": "Noble Audio K10 Encore",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 4.6,
     "tonality": "4.3",
@@ -5436,6 +5683,7 @@
   {
     "entry_type": "ranked",
     "iem": "SeeAudio Yume",
+    "favorite": false,
     "canonical_name": "SeeAudio Yume",
     "final_score": 4.6,
     "tonality": "5.0",
@@ -5458,6 +5706,7 @@
   {
     "entry_type": "ranked",
     "iem": "Thieaudio Legacy 4",
+    "favorite": false,
     "canonical_name": "ThieAudio Legacy 4",
     "final_score": 4.6,
     "tonality": "5.0",
@@ -5480,6 +5729,7 @@
   {
     "entry_type": "ranked",
     "iem": "Truthear x Crinacle Zero",
+    "favorite": false,
     "canonical_name": "Truthear x Crinacle Zero",
     "final_score": 4.6,
     "tonality": "5.0",
@@ -5502,6 +5752,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio Aspire 2",
+    "favorite": false,
     "canonical_name": "64 Audio Aspire 2",
     "final_score": 4.5,
     "tonality": "5.0",
@@ -5524,6 +5775,7 @@
   {
     "entry_type": "ranked",
     "iem": "CCA CRA+",
+    "favorite": false,
     "canonical_name": "CCA CRA",
     "final_score": 4.5,
     "tonality": "5.0",
@@ -5546,6 +5798,7 @@
   {
     "entry_type": "ranked",
     "iem": "Etymotic ER3XR",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 4.5,
     "tonality": "5.7",
@@ -5568,6 +5821,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Illumination",
+    "favorite": false,
     "canonical_name": "Moondrop Illumination",
     "final_score": 4.5,
     "tonality": "5.0",
@@ -5590,6 +5844,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Jiu",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 4.5,
     "tonality": "5.0",
@@ -5612,6 +5867,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sennheiser IE800S",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 4.5,
     "tonality": "5.0",
@@ -5634,6 +5890,7 @@
   {
     "entry_type": "ranked",
     "iem": "7Hz Zero",
+    "favorite": false,
     "canonical_name": "7Hz Zero",
     "final_score": 4.4,
     "tonality": "4.7",
@@ -5656,6 +5913,7 @@
   {
     "entry_type": "ranked",
     "iem": "Bose QuietComfort Buds",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 4.4,
     "tonality": "5.0",
@@ -5678,6 +5936,7 @@
   {
     "entry_type": "ranked",
     "iem": "Dunu Zen",
+    "favorite": false,
     "canonical_name": "Dunu Zen",
     "final_score": 4.4,
     "tonality": "4.3",
@@ -5700,6 +5959,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fiio FD5",
+    "favorite": false,
     "canonical_name": "FiiO FD5",
     "final_score": 4.4,
     "tonality": "4.3",
@@ -5722,6 +5982,7 @@
   {
     "entry_type": "ranked",
     "iem": "Ikko Opal OH2",
+    "favorite": false,
     "canonical_name": "Ikko Opal OH2",
     "final_score": 4.4,
     "tonality": "4.7",
@@ -5744,6 +6005,7 @@
   {
     "entry_type": "ranked",
     "iem": "Skorea Agate Lite",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 4.4,
     "tonality": "5.0",
@@ -5766,6 +6028,7 @@
   {
     "entry_type": "ranked",
     "iem": "Apple AirPods Pro",
+    "favorite": false,
     "canonical_name": "Apple AirPods Pro",
     "final_score": 4.3,
     "tonality": "5.0",
@@ -5788,6 +6051,7 @@
   {
     "entry_type": "ranked",
     "iem": "Kefine Klean SV",
+    "favorite": false,
     "canonical_name": "Kefine Klean SV",
     "final_score": 4.3,
     "tonality": "4.0",
@@ -5810,6 +6074,7 @@
   {
     "entry_type": "ranked",
     "iem": "Mangird Tea",
+    "favorite": false,
     "canonical_name": "XENNS Mangird Tea",
     "final_score": 4.3,
     "tonality": "5.0",
@@ -5832,6 +6097,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Illustrious",
+    "favorite": false,
     "canonical_name": "Moondrop Illustrious",
     "final_score": 4.3,
     "tonality": "4.3",
@@ -5854,6 +6120,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Kanas Pro",
+    "favorite": false,
     "canonical_name": "Moondrop Kanas Pro",
     "final_score": 4.3,
     "tonality": "5.0",
@@ -5876,6 +6143,7 @@
   {
     "entry_type": "ranked",
     "iem": "Oriolus Isabellae",
+    "favorite": false,
     "canonical_name": "Oriolus Isabellae",
     "final_score": 4.3,
     "tonality": "4.3",
@@ -5898,6 +6166,7 @@
   {
     "entry_type": "ranked",
     "iem": "Samsung Galaxy Buds+",
+    "favorite": false,
     "canonical_name": "Samsung Galaxy Buds",
     "final_score": 4.3,
     "tonality": "5.0",
@@ -5920,6 +6189,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sony MH750",
+    "favorite": false,
     "canonical_name": "Sony MH750",
     "final_score": 4.3,
     "tonality": "5.0",
@@ -5942,6 +6212,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sony MH755",
+    "favorite": false,
     "canonical_name": "Sony MH755",
     "final_score": 4.3,
     "tonality": "5.0",
@@ -5964,6 +6235,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tanchjim Ola",
+    "favorite": false,
     "canonical_name": "Tanchjim Ola",
     "final_score": 4.3,
     "tonality": "5.0",
@@ -5986,6 +6258,7 @@
   {
     "entry_type": "ranked",
     "iem": "Truthears Hola",
+    "favorite": false,
     "canonical_name": "Truthear Hola",
     "final_score": 4.3,
     "tonality": "5.0",
@@ -6008,6 +6281,7 @@
   {
     "entry_type": "ranked",
     "iem": "Unique Meldody 3DT",
+    "favorite": false,
     "canonical_name": "Unique Melody 3DT",
     "final_score": 4.3,
     "tonality": "4.0",
@@ -6030,6 +6304,7 @@
   {
     "entry_type": "ranked",
     "iem": "YanYin Aladdin",
+    "favorite": false,
     "canonical_name": "YanYin Aladdin",
     "final_score": 4.3,
     "tonality": "4.7",
@@ -6052,6 +6327,7 @@
   {
     "entry_type": "ranked",
     "iem": "BQEYZ Autumn",
+    "favorite": false,
     "canonical_name": "BQEYZ Autumn",
     "final_score": 4.2,
     "tonality": "4.3",
@@ -6074,6 +6350,7 @@
   {
     "entry_type": "ranked",
     "iem": "CCA CRA",
+    "favorite": false,
     "canonical_name": "CCA CRA",
     "final_score": 4.2,
     "tonality": "4.7",
@@ -6096,6 +6373,7 @@
   {
     "entry_type": "ranked",
     "iem": "Campfire Ara",
+    "favorite": false,
     "canonical_name": "Campfire Audio Ara",
     "final_score": 4.2,
     "tonality": "4.3",
@@ -6118,6 +6396,7 @@
   {
     "entry_type": "ranked",
     "iem": "Final Audio E500",
+    "favorite": false,
     "canonical_name": "Final Audio E500",
     "final_score": 4.2,
     "tonality": "4.7",
@@ -6140,6 +6419,7 @@
   {
     "entry_type": "ranked",
     "iem": "LETSHUOER D13",
+    "favorite": false,
     "canonical_name": "Letshuoer D13",
     "final_score": 4.2,
     "tonality": "4.3",
@@ -6162,6 +6442,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tanchjim Tanya",
+    "favorite": false,
     "canonical_name": "Tanchjim Tanya",
     "final_score": 4.2,
     "tonality": "5.0",
@@ -6184,6 +6465,7 @@
   {
     "entry_type": "ranked",
     "iem": "Truthear Gate",
+    "favorite": false,
     "canonical_name": "Truthear Gate",
     "final_score": 4.2,
     "tonality": "4.7",
@@ -6206,6 +6488,7 @@
   {
     "entry_type": "ranked",
     "iem": "Unique Melody MEST Mini",
+    "favorite": false,
     "canonical_name": "Unique Melody MEST Mini",
     "final_score": 4.2,
     "tonality": "4.0",
@@ -6228,6 +6511,7 @@
   {
     "entry_type": "ranked",
     "iem": "7Hz Eternal",
+    "favorite": false,
     "canonical_name": "7Hz Eternal",
     "final_score": 4.1,
     "tonality": "4.3",
@@ -6250,6 +6534,7 @@
   {
     "entry_type": "ranked",
     "iem": "DUNU Titan X",
+    "favorite": false,
     "canonical_name": "Dunu Titan X",
     "final_score": 4.1,
     "tonality": "4.0",
@@ -6272,6 +6557,7 @@
   {
     "entry_type": "ranked",
     "iem": "Final Audio A8000",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 4.1,
     "tonality": "4.0",
@@ -6294,6 +6580,7 @@
   {
     "entry_type": "ranked",
     "iem": "Kbear Diamond",
+    "favorite": false,
     "canonical_name": "KBear Diamond",
     "final_score": 4.1,
     "tonality": "4.3",
@@ -6316,6 +6603,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sony WF-1000XM4",
+    "favorite": false,
     "canonical_name": "Sony WF1000XM4",
     "final_score": 4.1,
     "tonality": "4.3",
@@ -6338,6 +6626,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tanchjim Echo",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 4.1,
     "tonality": "5.0",
@@ -6360,6 +6649,7 @@
   {
     "entry_type": "ranked",
     "iem": "Vision Ears 3.2",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 4.1,
     "tonality": "4.3",
@@ -6382,6 +6672,7 @@
   {
     "entry_type": "ranked",
     "iem": "7th Acoustics Proxima",
+    "favorite": false,
     "canonical_name": "7th Acoustics Proxima",
     "final_score": 4.0,
     "tonality": "4.0",
@@ -6404,6 +6695,7 @@
   {
     "entry_type": "ranked",
     "iem": "Blon BL03",
+    "favorite": false,
     "canonical_name": "Blon BL03",
     "final_score": 4.0,
     "tonality": "4.3",
@@ -6426,6 +6718,7 @@
   {
     "entry_type": "ranked",
     "iem": "Canal Works CW-U77",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 4.0,
     "tonality": "4.0",
@@ -6448,6 +6741,7 @@
   {
     "entry_type": "ranked",
     "iem": "Colorfly Quintet",
+    "favorite": false,
     "canonical_name": "Colorfly Quintet",
     "final_score": 4.0,
     "tonality": "4.0",
@@ -6470,6 +6764,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Chu",
+    "favorite": false,
     "canonical_name": "Moondrop Chu",
     "final_score": 4.0,
     "tonality": "4.0",
@@ -6492,6 +6787,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop SSP",
+    "favorite": false,
     "canonical_name": "Moondrop SSP",
     "final_score": 4.0,
     "tonality": "3.7",
@@ -6514,6 +6810,7 @@
   {
     "entry_type": "ranked",
     "iem": "Shanling ME800",
+    "favorite": false,
     "canonical_name": "Shanling ME800",
     "final_score": 4.0,
     "tonality": "4.0",
@@ -6536,6 +6833,7 @@
   {
     "entry_type": "ranked",
     "iem": "ThieAudio Legacy 5",
+    "favorite": false,
     "canonical_name": "ThieAudio Legacy 5",
     "final_score": 4.0,
     "tonality": "4.0",
@@ -6558,6 +6856,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tripowin x HBB Mele",
+    "favorite": false,
     "canonical_name": "Tripowin HBB Mele",
     "final_score": 4.0,
     "tonality": "4.3",
@@ -6580,6 +6879,7 @@
   {
     "entry_type": "ranked",
     "iem": "Vision Ears EVE20",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 4.0,
     "tonality": "4.0",
@@ -6602,6 +6902,7 @@
   {
     "entry_type": "ranked",
     "iem": "qdc Superior EX",
+    "favorite": false,
     "canonical_name": "qdc Superior EX",
     "final_score": 4.0,
     "tonality": "4.0",
@@ -6624,6 +6925,7 @@
   {
     "entry_type": "ranked",
     "iem": "Intime Sora",
+    "favorite": false,
     "canonical_name": "Intime Sora",
     "final_score": 3.9,
     "tonality": "4.0",
@@ -6646,6 +6948,7 @@
   {
     "entry_type": "ranked",
     "iem": "KZ Zex Pro",
+    "favorite": false,
     "canonical_name": "KZ ZEX Pro",
     "final_score": 3.9,
     "tonality": "4.3",
@@ -6668,6 +6971,7 @@
   {
     "entry_type": "ranked",
     "iem": "Simphonio VR1",
+    "favorite": false,
     "canonical_name": "Simphonio VR1",
     "final_score": 3.9,
     "tonality": "4.3",
@@ -6690,6 +6994,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tanchjim Hana",
+    "favorite": false,
     "canonical_name": "Tanchjim Hana",
     "final_score": 3.9,
     "tonality": "4.3",
@@ -6712,6 +7017,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tripowin Lea",
+    "favorite": false,
     "canonical_name": "Tripowin Lea",
     "final_score": 3.9,
     "tonality": "4.0",
@@ -6734,6 +7040,7 @@
   {
     "entry_type": "ranked",
     "iem": "KZ EDX Ultra",
+    "favorite": false,
     "canonical_name": "KZ EDX Ultra",
     "final_score": 3.8,
     "tonality": "4.3",
@@ -6756,6 +7063,7 @@
   {
     "entry_type": "ranked",
     "iem": "Effect Audio Axiom",
+    "favorite": false,
     "canonical_name": "Effect Audio Axiom",
     "final_score": 3.7,
     "tonality": "3.0",
@@ -6778,6 +7086,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fiio x Crinacle FHE Eclipse",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.7,
     "tonality": "4.0",
@@ -6800,6 +7109,7 @@
   {
     "entry_type": "ranked",
     "iem": "Audiosense DT200",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.6,
     "tonality": "5.0",
@@ -6822,6 +7132,7 @@
   {
     "entry_type": "ranked",
     "iem": "Empire Ears Bravado MK.II",
+    "favorite": false,
     "canonical_name": "Empire Ears Bravado MK.II",
     "final_score": 3.6,
     "tonality": "4.0",
@@ -6844,6 +7155,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fiio FX15",
+    "favorite": false,
     "canonical_name": "FiiO FX15",
     "final_score": 3.6,
     "tonality": "3.7",
@@ -6866,6 +7178,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop SSR",
+    "favorite": false,
     "canonical_name": "Moondrop SSR",
     "final_score": 3.6,
     "tonality": "3.7",
@@ -6888,6 +7201,7 @@
   {
     "entry_type": "ranked",
     "iem": "Noble Audio Sultan",
+    "favorite": false,
     "canonical_name": "Noble Audio Sultan",
     "final_score": 3.6,
     "tonality": "4.0",
@@ -6910,6 +7224,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tanchjim Zero",
+    "favorite": false,
     "canonical_name": "Tanchjim Zero",
     "final_score": 3.6,
     "tonality": "4.0",
@@ -6932,6 +7247,7 @@
   {
     "entry_type": "ranked",
     "iem": "Kinera iDun 2.0",
+    "favorite": false,
     "canonical_name": "Kinera iDun 2.0",
     "final_score": 3.5,
     "tonality": "4.0",
@@ -6954,6 +7270,7 @@
   {
     "entry_type": "ranked",
     "iem": "NF Audio NA2+",
+    "favorite": false,
     "canonical_name": "NF Audio NA2+",
     "final_score": 3.5,
     "tonality": "3.0",
@@ -6976,6 +7293,7 @@
   {
     "entry_type": "ranked",
     "iem": "Drop + Grell TWS1X",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.4,
     "tonality": "4.3",
@@ -6998,6 +7316,7 @@
   {
     "entry_type": "ranked",
     "iem": "EarFun Free Pro 2",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.4,
     "tonality": "4.3",
@@ -7020,6 +7339,7 @@
   {
     "entry_type": "ranked",
     "iem": "Earfun Oluv Edition",
+    "favorite": false,
     "canonical_name": "Earfun Oluv Edition",
     "final_score": 3.4,
     "tonality": "4.3",
@@ -7042,6 +7362,7 @@
   {
     "entry_type": "ranked",
     "iem": "Kinera Norn",
+    "favorite": false,
     "canonical_name": "Kinera Norn",
     "final_score": 3.4,
     "tonality": "3.3",
@@ -7064,6 +7385,7 @@
   {
     "entry_type": "ranked",
     "iem": "Skorea Taaffete",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.4,
     "tonality": "3.3",
@@ -7086,6 +7408,7 @@
   {
     "entry_type": "ranked",
     "iem": "AKG Phone Buds",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.3,
     "tonality": "3.3",
@@ -7108,6 +7431,7 @@
   {
     "entry_type": "ranked",
     "iem": "EarSonics Stark",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.3,
     "tonality": "3.0",
@@ -7130,6 +7454,7 @@
   {
     "entry_type": "ranked",
     "iem": "Final Audio A4000",
+    "favorite": false,
     "canonical_name": "Final Audio A4000",
     "final_score": 3.3,
     "tonality": "3.0",
@@ -7152,6 +7477,7 @@
   {
     "entry_type": "ranked",
     "iem": "JVC FWX1",
+    "favorite": false,
     "canonical_name": "Drop JVC FWX1",
     "final_score": 3.3,
     "tonality": "3.0",
@@ -7174,6 +7500,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Spaceship",
+    "favorite": false,
     "canonical_name": "Moondrop Spaceship",
     "final_score": 3.3,
     "tonality": "4.0",
@@ -7196,6 +7523,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sennheiser IE 300",
+    "favorite": false,
     "canonical_name": "Sennheiser IE300",
     "final_score": 3.3,
     "tonality": "3.0",
@@ -7218,6 +7546,7 @@
   {
     "entry_type": "ranked",
     "iem": "Shanling ME700 Lite",
+    "favorite": false,
     "canonical_name": "Shanling ME700 Lite",
     "final_score": 3.3,
     "tonality": "3.0",
@@ -7240,6 +7569,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sony MDR-EX15",
+    "favorite": false,
     "canonical_name": "Sony MDR-EX15",
     "final_score": 3.3,
     "tonality": "3.7",
@@ -7262,6 +7592,7 @@
   {
     "entry_type": "ranked",
     "iem": "TinHifi T2",
+    "favorite": false,
     "canonical_name": "TinHiFi T2",
     "final_score": 3.3,
     "tonality": "4.0",
@@ -7284,6 +7615,7 @@
   {
     "entry_type": "ranked",
     "iem": "iBasso IT01X",
+    "favorite": false,
     "canonical_name": "iBasso IT01X",
     "final_score": 3.3,
     "tonality": "4.0",
@@ -7306,6 +7638,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio A2e (Demo)",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.2,
     "tonality": "3.7",
@@ -7328,6 +7661,7 @@
   {
     "entry_type": "ranked",
     "iem": "AudioSense T800",
+    "favorite": false,
     "canonical_name": "AudioSense T800",
     "final_score": 3.2,
     "tonality": "3.7",
@@ -7350,6 +7684,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fearless Audio Shangri-La",
+    "favorite": false,
     "canonical_name": "Fearless Audio Shangri-La",
     "final_score": 3.2,
     "tonality": "3.3",
@@ -7372,6 +7707,7 @@
   {
     "entry_type": "ranked",
     "iem": "HZSound Heart Mirror",
+    "favorite": false,
     "canonical_name": "HZSound Heart Mirror",
     "final_score": 3.2,
     "tonality": "3.0",
@@ -7394,6 +7730,7 @@
   {
     "entry_type": "ranked",
     "iem": "KZ EDX Pro",
+    "favorite": false,
     "canonical_name": "KZ EDX Pro",
     "final_score": 3.2,
     "tonality": "3.3",
@@ -7416,6 +7753,7 @@
   {
     "entry_type": "ranked",
     "iem": "Skorea Donian (switches off)",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.2,
     "tonality": "3.3",
@@ -7438,6 +7776,7 @@
   {
     "entry_type": "ranked",
     "iem": "SoftEars Studio 2",
+    "favorite": false,
     "canonical_name": "Softears Studio 2",
     "final_score": 3.2,
     "tonality": "3.3",
@@ -7460,6 +7799,7 @@
   {
     "entry_type": "ranked",
     "iem": "Thieaudio Legacy 3",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.2,
     "tonality": "3.7",
@@ -7482,6 +7822,7 @@
   {
     "entry_type": "ranked",
     "iem": "CCA CSN",
+    "favorite": false,
     "canonical_name": "CCA CSN",
     "final_score": 3.1,
     "tonality": "3.3",
@@ -7504,6 +7845,7 @@
   {
     "entry_type": "ranked",
     "iem": "Cayin Fantasy",
+    "favorite": false,
     "canonical_name": "Cayin Fantasy",
     "final_score": 3.1,
     "tonality": "2.7",
@@ -7526,6 +7868,7 @@
   {
     "entry_type": "ranked",
     "iem": "JH Audio Layla Aion",
+    "favorite": false,
     "canonical_name": "JH Audio Layla Aion",
     "final_score": 3.1,
     "tonality": "2.7",
@@ -7548,6 +7891,7 @@
   {
     "entry_type": "ranked",
     "iem": "Moondrop Quarks",
+    "favorite": false,
     "canonical_name": "Moondrop Quarks",
     "final_score": 3.1,
     "tonality": "3.0",
@@ -7570,6 +7914,7 @@
   {
     "entry_type": "ranked",
     "iem": "Thieaudio Legacy 2",
+    "favorite": false,
     "canonical_name": "ThieAudio Legacy 2 (L2)",
     "final_score": 3.1,
     "tonality": "3.7",
@@ -7592,6 +7937,7 @@
   {
     "entry_type": "ranked",
     "iem": "Westone W30",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.1,
     "tonality": "3.7",
@@ -7614,6 +7960,7 @@
   {
     "entry_type": "ranked",
     "iem": "CCZ Plume",
+    "favorite": false,
     "canonical_name": "CCZ Plume",
     "final_score": 3.0,
     "tonality": "3.0",
@@ -7636,6 +7983,7 @@
   {
     "entry_type": "ranked",
     "iem": "Custom Art FIBAE Black",
+    "favorite": false,
     "canonical_name": "Custom Art FIBAE Black",
     "final_score": 3.0,
     "tonality": "3.3",
@@ -7658,6 +8006,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fearless Audio Provence",
+    "favorite": false,
     "canonical_name": "Fearless Audio Provence",
     "final_score": 3.0,
     "tonality": "3.3",
@@ -7680,6 +8029,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fiio FD3",
+    "favorite": false,
     "canonical_name": "FiiO FD3",
     "final_score": 3.0,
     "tonality": "3.0",
@@ -7702,6 +8052,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fiio FH3",
+    "favorite": false,
     "canonical_name": "FiiO FH3",
     "final_score": 3.0,
     "tonality": "3.0",
@@ -7724,6 +8075,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fiio FH5S",
+    "favorite": false,
     "canonical_name": "FiiO FH5S",
     "final_score": 3.0,
     "tonality": "3.0",
@@ -7746,6 +8098,7 @@
   {
     "entry_type": "ranked",
     "iem": "GS Audio GD3C",
+    "favorite": false,
     "canonical_name": "GS Audio GD3C",
     "final_score": 3.0,
     "tonality": "3.0",
@@ -7768,6 +8121,7 @@
   {
     "entry_type": "ranked",
     "iem": "Geek Wold 10 (blocked vent)",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.0,
     "tonality": "3.0",
@@ -7790,6 +8144,7 @@
   {
     "entry_type": "ranked",
     "iem": "KZ DQ6",
+    "favorite": false,
     "canonical_name": "KZ DQ6",
     "final_score": 3.0,
     "tonality": "3.0",
@@ -7812,6 +8167,7 @@
   {
     "entry_type": "ranked",
     "iem": "KZ Zex",
+    "favorite": false,
     "canonical_name": "KZ ZEX",
     "final_score": 3.0,
     "tonality": "3.0",
@@ -7834,6 +8190,7 @@
   {
     "entry_type": "ranked",
     "iem": "Kinera Freya",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.0,
     "tonality": "3.0",
@@ -7856,6 +8213,7 @@
   {
     "entry_type": "ranked",
     "iem": "Periodic Audio Be",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.0,
     "tonality": "3.3",
@@ -7878,6 +8236,7 @@
   {
     "entry_type": "ranked",
     "iem": "Sennheiser Momentum TWS 2.0",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.0,
     "tonality": "3.0",
@@ -7900,6 +8259,7 @@
   {
     "entry_type": "ranked",
     "iem": "Thieaudio Voyager 3",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 3.0,
     "tonality": "3.0",
@@ -7922,6 +8282,7 @@
   {
     "entry_type": "ranked",
     "iem": "TinHifi P2",
+    "favorite": false,
     "canonical_name": "TinHiFi P2",
     "final_score": 3.0,
     "tonality": "2.7",
@@ -7944,6 +8305,7 @@
   {
     "entry_type": "ranked",
     "iem": "TinHifi T2 Evo",
+    "favorite": false,
     "canonical_name": "TinHiFi T2 Evo",
     "final_score": 3.0,
     "tonality": "2.7",
@@ -7966,6 +8328,7 @@
   {
     "entry_type": "ranked",
     "iem": "TinHifi T5",
+    "favorite": false,
     "canonical_name": "TinHiFi T5",
     "final_score": 3.0,
     "tonality": "3.0",
@@ -7988,6 +8351,7 @@
   {
     "entry_type": "ranked",
     "iem": "Tripowin TC01",
+    "favorite": false,
     "canonical_name": "Tripowin TC01",
     "final_score": 3.0,
     "tonality": "3.0",
@@ -8010,6 +8374,7 @@
   {
     "entry_type": "ranked",
     "iem": "qdc Uranus",
+    "favorite": false,
     "canonical_name": "qdc Uranus",
     "final_score": 3.0,
     "tonality": "3.0",
@@ -8032,6 +8397,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fearless Audio Barcelona",
+    "favorite": false,
     "canonical_name": "Fearless Audio Barcelona",
     "final_score": 2.9,
     "tonality": "3.3",
@@ -8054,6 +8420,7 @@
   {
     "entry_type": "ranked",
     "iem": "KBear Neon",
+    "favorite": false,
     "canonical_name": "KBear Neon",
     "final_score": 2.9,
     "tonality": "3.3",
@@ -8076,6 +8443,7 @@
   {
     "entry_type": "ranked",
     "iem": "KZ ZAS",
+    "favorite": false,
     "canonical_name": "KZ ZAS",
     "final_score": 2.9,
     "tonality": "2.7",
@@ -8098,6 +8466,7 @@
   {
     "entry_type": "ranked",
     "iem": "Nicehck TopGuy",
+    "favorite": false,
     "canonical_name": "NiceHCK Topguy",
     "final_score": 2.9,
     "tonality": "2.7",
@@ -8120,6 +8489,7 @@
   {
     "entry_type": "ranked",
     "iem": "Westone W40",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 2.9,
     "tonality": "3.7",
@@ -8142,6 +8512,7 @@
   {
     "entry_type": "ranked",
     "iem": "Audiosense AQ7",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 2.8,
     "tonality": "2.0",
@@ -8164,6 +8535,7 @@
   {
     "entry_type": "ranked",
     "iem": "Empire Ears Wraith",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 2.7,
     "tonality": "3.3",
@@ -8186,6 +8558,7 @@
   {
     "entry_type": "ranked",
     "iem": "Final Audio EVA",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 2.7,
     "tonality": "3.0",
@@ -8208,6 +8581,7 @@
   {
     "entry_type": "ranked",
     "iem": "Jaybirds Vista",
+    "favorite": false,
     "canonical_name": "Jaybird Vista",
     "final_score": 2.7,
     "tonality": "3.0",
@@ -8230,6 +8604,7 @@
   {
     "entry_type": "ranked",
     "iem": "Blon A8 Prometheus",
+    "favorite": false,
     "canonical_name": "Blon A8 Prometheus",
     "final_score": 2.6,
     "tonality": "3.0",
@@ -8252,6 +8627,7 @@
   {
     "entry_type": "ranked",
     "iem": "Campfire Audio Saber",
+    "favorite": false,
     "canonical_name": "Campfire Audio Saber",
     "final_score": 2.6,
     "tonality": "3.0",
@@ -8274,6 +8650,7 @@
   {
     "entry_type": "ranked",
     "iem": "Hiby Crystal6",
+    "favorite": false,
     "canonical_name": "Hiby Crystal6",
     "final_score": 2.6,
     "tonality": "2.0",
@@ -8296,6 +8673,7 @@
   {
     "entry_type": "ranked",
     "iem": "Ikko Gems OH1S",
+    "favorite": false,
     "canonical_name": "Ikko Gems OH1s",
     "final_score": 2.6,
     "tonality": "2.3",
@@ -8318,6 +8696,7 @@
   {
     "entry_type": "ranked",
     "iem": "MMR Thummim",
+    "favorite": false,
     "canonical_name": "Metal Magic Research Thummim",
     "final_score": 2.6,
     "tonality": "2.7",
@@ -8340,6 +8719,7 @@
   {
     "entry_type": "ranked",
     "iem": "Rhapsodio Master",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 2.6,
     "tonality": "3.0",
@@ -8362,6 +8742,7 @@
   {
     "entry_type": "ranked",
     "iem": "TinHifi T3",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 2.6,
     "tonality": "3.0",
@@ -8384,6 +8765,7 @@
   {
     "entry_type": "ranked",
     "iem": "BGVP NS9",
+    "favorite": false,
     "canonical_name": "BGVP NS9",
     "final_score": 2.4,
     "tonality": "2.3",
@@ -8406,6 +8788,7 @@
   {
     "entry_type": "ranked",
     "iem": "Fearless Audio Tequila",
+    "favorite": false,
     "canonical_name": "Fearless Audio Tequila",
     "final_score": 2.4,
     "tonality": "2.3",
@@ -8428,6 +8811,7 @@
   {
     "entry_type": "ranked",
     "iem": "Noble Audio X",
+    "favorite": false,
     "canonical_name": "Noble Audio x Drop Noble X",
     "final_score": 2.2,
     "tonality": "2.7",
@@ -8450,6 +8834,7 @@
   {
     "entry_type": "ranked",
     "iem": "Campfire Honeydew",
+    "favorite": false,
     "canonical_name": "Campfire Audio Honeydew",
     "final_score": 2.1,
     "tonality": "2.3",
@@ -8472,6 +8857,7 @@
   {
     "entry_type": "ranked",
     "iem": "Campfire Satsuma",
+    "favorite": false,
     "canonical_name": "Campfire Audio Satsuma",
     "final_score": 2.1,
     "tonality": "2.3",
@@ -8494,6 +8880,7 @@
   {
     "entry_type": "ranked",
     "iem": "Campfire Vega 2020",
+    "favorite": false,
     "canonical_name": "Campfire Audio Vega 2020",
     "final_score": 2.1,
     "tonality": "2.0",
@@ -8516,6 +8903,7 @@
   {
     "entry_type": "ranked",
     "iem": "JVC FX7 Gumy",
+    "favorite": false,
     "canonical_name": "JVC FX7 Gumy",
     "final_score": 2.1,
     "tonality": "2.3",
@@ -8538,6 +8926,7 @@
   {
     "entry_type": "ranked",
     "iem": "KZ AST",
+    "favorite": false,
     "canonical_name": "KZ AST",
     "final_score": 2.1,
     "tonality": "2.3",
@@ -8560,6 +8949,7 @@
   {
     "entry_type": "ranked",
     "iem": "MMR Homunculus",
+    "favorite": false,
     "canonical_name": "Metal Magic Research Homunculus",
     "final_score": 2.1,
     "tonality": "2.7",
@@ -8582,6 +8972,7 @@
   {
     "entry_type": "ranked",
     "iem": "Shuoer Tape Pro",
+    "favorite": false,
     "canonical_name": "Letshuoer Tape Pro",
     "final_score": 2.1,
     "tonality": "1.7",
@@ -8604,6 +8995,7 @@
   {
     "entry_type": "ranked",
     "iem": "Campfire Dorado 2020",
+    "favorite": false,
     "canonical_name": "Campfire Audio Dorado 2020",
     "final_score": 2.0,
     "tonality": "1.7",
@@ -8626,6 +9018,7 @@
   {
     "entry_type": "ranked",
     "iem": "Campfire Mammoth",
+    "favorite": false,
     "canonical_name": "Campfire Audio Mammoth",
     "final_score": 2.0,
     "tonality": "2.0",
@@ -8648,6 +9041,7 @@
   {
     "entry_type": "ranked",
     "iem": "Dunu SA3",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 2.0,
     "tonality": "2.0",
@@ -8670,6 +9064,7 @@
   {
     "entry_type": "ranked",
     "iem": "FLC 8P",
+    "favorite": false,
     "canonical_name": "FLC Technology 8P",
     "final_score": 2.0,
     "tonality": "2.0",
@@ -8692,6 +9087,7 @@
   {
     "entry_type": "ranked",
     "iem": "HiFiMAN Bolt",
+    "favorite": false,
     "canonical_name": "Hifiman Bolt",
     "final_score": 2.0,
     "tonality": "1.7",
@@ -8714,6 +9110,7 @@
   {
     "entry_type": "ranked",
     "iem": "KZ ZS10 Pro",
+    "favorite": false,
     "canonical_name": "KZ ZS10 Pro",
     "final_score": 2.0,
     "tonality": "2.0",
@@ -8736,6 +9133,7 @@
   {
     "entry_type": "ranked",
     "iem": "Nothing Ear 2",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 2.0,
     "tonality": "1.0",
@@ -8758,6 +9156,7 @@
   {
     "entry_type": "ranked",
     "iem": "Rhapsodio Zombie MK. II",
+    "favorite": false,
     "canonical_name": "Rhapsodio Zombie MK.II",
     "final_score": 2.0,
     "tonality": "2.0",
@@ -8780,6 +9179,7 @@
   {
     "entry_type": "ranked",
     "iem": "Shozy Black Hole Mini",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 2.0,
     "tonality": "2.0",
@@ -8802,6 +9202,7 @@
   {
     "entry_type": "ranked",
     "iem": "VSonic GR07",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 2.0,
     "tonality": "2.0",
@@ -8824,6 +9225,7 @@
   {
     "entry_type": "ranked",
     "iem": "Shure SE215",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 1.9,
     "tonality": "2.7",
@@ -8846,6 +9248,7 @@
   {
     "entry_type": "ranked",
     "iem": "Periodic Audio Ti",
+    "favorite": false,
     "canonical_name": "",
     "final_score": 1.2,
     "tonality": "1.7",
@@ -8868,6 +9271,7 @@
   {
     "entry_type": "ranked",
     "iem": "oBravo Cupid",
+    "favorite": false,
     "canonical_name": "oBravo Cupid",
     "final_score": 1.2,
     "tonality": "1.3",
@@ -8890,6 +9294,7 @@
   {
     "entry_type": "demoed",
     "iem": "7Hz Legato",
+    "favorite": false,
     "canonical_name": "7Hz Legato",
     "final_score": null,
     "tonality": "—",
@@ -8912,6 +9317,7 @@
   {
     "entry_type": "demoed",
     "iem": "7Hz Salnotes Zero 2",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -8934,6 +9340,7 @@
   {
     "entry_type": "demoed",
     "iem": "Acoustune HS2000MX",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -8956,6 +9363,7 @@
   {
     "entry_type": "demoed",
     "iem": "ADV Sound M5TWS",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -8978,6 +9386,7 @@
   {
     "entry_type": "demoed",
     "iem": "ADV Sound Turbo",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9000,6 +9409,7 @@
   {
     "entry_type": "demoed",
     "iem": "Aful Cantor",
+    "favorite": false,
     "canonical_name": "Aful Cantor",
     "final_score": null,
     "tonality": "—",
@@ -9022,6 +9432,7 @@
   {
     "entry_type": "demoed",
     "iem": "Aful Explorer",
+    "favorite": false,
     "canonical_name": "Aful Explorer",
     "final_score": null,
     "tonality": "—",
@@ -9044,6 +9455,7 @@
   {
     "entry_type": "demoed",
     "iem": "Aful Magic One",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9066,6 +9478,7 @@
   {
     "entry_type": "demoed",
     "iem": "Alpha Omega Fulgrim",
+    "favorite": false,
     "canonical_name": "Alpha&Omega Fulgrim",
     "final_score": null,
     "tonality": "—",
@@ -9088,6 +9501,7 @@
   {
     "entry_type": "demoed",
     "iem": "Alpha Omega Omega",
+    "favorite": false,
     "canonical_name": "Alpha&Omega Omega",
     "final_score": null,
     "tonality": "—",
@@ -9110,6 +9524,7 @@
   {
     "entry_type": "demoed",
     "iem": "AME Mousa",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9132,6 +9547,7 @@
   {
     "entry_type": "demoed",
     "iem": "Aroma Audio Jewel",
+    "favorite": false,
     "canonical_name": "Aroma Audio Jewel",
     "final_score": null,
     "tonality": "—",
@@ -9154,6 +9570,7 @@
   {
     "entry_type": "demoed",
     "iem": "Aroma Audio Wei Fan",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9176,6 +9593,7 @@
   {
     "entry_type": "demoed",
     "iem": "Astell & Kern Novus",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9198,6 +9616,7 @@
   {
     "entry_type": "demoed",
     "iem": "Astrotec Phoenix",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9220,6 +9639,7 @@
   {
     "entry_type": "demoed",
     "iem": "Aur Audio Alita",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9242,6 +9662,7 @@
   {
     "entry_type": "demoed",
     "iem": "Aur Audio Aure",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9264,6 +9685,7 @@
   {
     "entry_type": "demoed",
     "iem": "Aur Audio Neon Pro",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9286,6 +9708,7 @@
   {
     "entry_type": "demoed",
     "iem": "Aya Trident",
+    "favorite": false,
     "canonical_name": "Aya Audio Trident",
     "final_score": null,
     "tonality": "—",
@@ -9308,6 +9731,7 @@
   {
     "entry_type": "demoed",
     "iem": "Beyerdynamic Xelento",
+    "favorite": false,
     "canonical_name": "Beyerdynamic Xelento",
     "final_score": null,
     "tonality": "—",
@@ -9330,6 +9754,7 @@
   {
     "entry_type": "demoed",
     "iem": "BGVP Wukong",
+    "favorite": false,
     "canonical_name": "BGVP Wukong",
     "final_score": null,
     "tonality": "—",
@@ -9352,6 +9777,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Andromeda 10",
+    "favorite": false,
     "canonical_name": "Campfire Andromeda 10",
     "final_score": null,
     "tonality": "—",
@@ -9374,6 +9800,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Alien Brain",
+    "favorite": false,
     "canonical_name": "Campfire Audio Alien Brain",
     "final_score": null,
     "tonality": "—",
@@ -9396,6 +9823,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Andro Emerald Sea",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9418,6 +9846,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Astrolith",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9440,6 +9869,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Bonnerville",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9462,6 +9892,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Cascara",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9484,6 +9915,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Clara",
+    "favorite": false,
     "canonical_name": "Campfire Audio Clara",
     "final_score": null,
     "tonality": "—",
@@ -9506,6 +9938,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Moon Rover",
+    "favorite": false,
     "canonical_name": "Campfire Audio Moon Rover",
     "final_score": null,
     "tonality": "—",
@@ -9528,6 +9961,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Ponderosa",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9550,6 +9984,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Solaris Stellar Horizon",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9572,6 +10007,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Supermoon",
+    "favorite": false,
     "canonical_name": "Campfire Audio Supermoon",
     "final_score": null,
     "tonality": "—",
@@ -9594,6 +10030,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Audio Trifecta",
+    "favorite": false,
     "canonical_name": "Campfire Audio Trifecta",
     "final_score": null,
     "tonality": "—",
@@ -9616,6 +10053,7 @@
   {
     "entry_type": "demoed",
     "iem": "Campfire Chimera",
+    "favorite": false,
     "canonical_name": "Campfire Audio Chimera",
     "final_score": null,
     "tonality": "—",
@@ -9638,6 +10076,7 @@
   {
     "entry_type": "demoed",
     "iem": "Canpur 54E",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9660,6 +10099,7 @@
   {
     "entry_type": "demoed",
     "iem": "Canpur 622",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9682,6 +10122,7 @@
   {
     "entry_type": "demoed",
     "iem": "Canpur CP622B",
+    "favorite": false,
     "canonical_name": "Canpur CP622B",
     "final_score": null,
     "tonality": "—",
@@ -9704,6 +10145,7 @@
   {
     "entry_type": "demoed",
     "iem": "Canpur CP622B Titanium",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9726,6 +10168,7 @@
   {
     "entry_type": "demoed",
     "iem": "Canpur CP752B",
+    "favorite": false,
     "canonical_name": "Canpur CP752B",
     "final_score": null,
     "tonality": "—",
@@ -9748,6 +10191,7 @@
   {
     "entry_type": "demoed",
     "iem": "Canpur Mona Lisa",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9770,6 +10214,7 @@
   {
     "entry_type": "demoed",
     "iem": "Canpur Silver Flash",
+    "favorite": false,
     "canonical_name": "Canpur Silver Flash",
     "final_score": null,
     "tonality": "—",
@@ -9792,6 +10237,7 @@
   {
     "entry_type": "demoed",
     "iem": "Canpure CP74E",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9814,6 +10260,7 @@
   {
     "entry_type": "demoed",
     "iem": "CFA Fathom",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9836,6 +10283,7 @@
   {
     "entry_type": "demoed",
     "iem": "Clariar i640",
+    "favorite": false,
     "canonical_name": "Clariar i640",
     "final_score": null,
     "tonality": "—",
@@ -9858,6 +10306,7 @@
   {
     "entry_type": "demoed",
     "iem": "Craft Ears Argentium",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9880,6 +10329,7 @@
   {
     "entry_type": "demoed",
     "iem": "Craft Ears CE2",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9902,6 +10352,7 @@
   {
     "entry_type": "demoed",
     "iem": "Craft Ears CE4",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9924,6 +10375,7 @@
   {
     "entry_type": "demoed",
     "iem": "Craft Ears CE6",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9946,6 +10398,7 @@
   {
     "entry_type": "demoed",
     "iem": "Craft Ears Cuprim",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -9968,6 +10421,7 @@
   {
     "entry_type": "demoed",
     "iem": "CrinEars Daybreak",
+    "favorite": false,
     "canonical_name": "CrinEar Daybreak",
     "final_score": null,
     "tonality": "—",
@@ -9990,6 +10444,7 @@
   {
     "entry_type": "demoed",
     "iem": "CrinEars Meta",
+    "favorite": false,
     "canonical_name": "CrinEar Meta",
     "final_score": null,
     "tonality": "—",
@@ -10012,6 +10467,7 @@
   {
     "entry_type": "demoed",
     "iem": "Custom Art FIBAE 5",
+    "favorite": false,
     "canonical_name": "Custom Art FIBAE 5",
     "final_score": null,
     "tonality": "—",
@@ -10034,6 +10490,7 @@
   {
     "entry_type": "demoed",
     "iem": "Dita Perpetua",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10056,6 +10513,7 @@
   {
     "entry_type": "demoed",
     "iem": "DUNU DaVinci",
+    "favorite": false,
     "canonical_name": "Dunu DaVinci",
     "final_score": null,
     "tonality": "—",
@@ -10078,6 +10536,7 @@
   {
     "entry_type": "demoed",
     "iem": "DUNU SA6EST",
+    "favorite": false,
     "canonical_name": "Dunu SA6EST",
     "final_score": null,
     "tonality": "—",
@@ -10100,6 +10559,7 @@
   {
     "entry_type": "demoed",
     "iem": "Elysian Annihilator 2026",
+    "favorite": false,
     "canonical_name": "Elysian Annihilator 2026",
     "final_score": null,
     "tonality": "—",
@@ -10122,6 +10582,7 @@
   {
     "entry_type": "demoed",
     "iem": "Elysian Apostle",
+    "favorite": false,
     "canonical_name": "Elysian Apostle 2026",
     "final_score": null,
     "tonality": "—",
@@ -10144,6 +10605,7 @@
   {
     "entry_type": "demoed",
     "iem": "Elysian Apostle 2026",
+    "favorite": false,
     "canonical_name": "Elysian Apostle 2026",
     "final_score": null,
     "tonality": "—",
@@ -10166,6 +10628,7 @@
   {
     "entry_type": "demoed",
     "iem": "Elysian Pilgrim (Production)",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10188,6 +10651,7 @@
   {
     "entry_type": "demoed",
     "iem": "Elysian Pilgrim (Proto)",
+    "favorite": false,
     "canonical_name": "Elysian Pilgrim",
     "final_score": null,
     "tonality": "—",
@@ -10210,6 +10674,7 @@
   {
     "entry_type": "demoed",
     "iem": "Empire Ears Odin MKII",
+    "favorite": false,
     "canonical_name": "Empire Ears Odin MKII",
     "final_score": null,
     "tonality": "—",
@@ -10232,6 +10697,7 @@
   {
     "entry_type": "demoed",
     "iem": "Empire Ears Odyssey",
+    "favorite": false,
     "canonical_name": "Empire Ears Odyssey",
     "final_score": null,
     "tonality": "—",
@@ -10254,6 +10720,7 @@
   {
     "entry_type": "demoed",
     "iem": "Empire Ears Triton",
+    "favorite": false,
     "canonical_name": "Empire Ears Triton",
     "final_score": null,
     "tonality": "—",
@@ -10276,6 +10743,7 @@
   {
     "entry_type": "demoed",
     "iem": "Faith Audio U1000",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10298,6 +10766,7 @@
   {
     "entry_type": "demoed",
     "iem": "FatFreq Grand Maestro",
+    "favorite": false,
     "canonical_name": "FatFreq Grand Maestro",
     "final_score": null,
     "tonality": "—",
@@ -10320,6 +10789,7 @@
   {
     "entry_type": "demoed",
     "iem": "FatFreq Hayabusa",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10342,6 +10812,7 @@
   {
     "entry_type": "demoed",
     "iem": "FatFreq Maestro SE",
+    "favorite": false,
     "canonical_name": "FatFreq Maestro SE",
     "final_score": null,
     "tonality": "—",
@@ -10364,6 +10835,7 @@
   {
     "entry_type": "demoed",
     "iem": "FatFreq Sakura",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10386,6 +10858,7 @@
   {
     "entry_type": "demoed",
     "iem": "FatFreq Tsuru",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10408,6 +10881,7 @@
   {
     "entry_type": "demoed",
     "iem": "Fiio FA19",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10430,6 +10904,7 @@
   {
     "entry_type": "demoed",
     "iem": "FiR Audio Krypton 5",
+    "favorite": false,
     "canonical_name": "FIR Audio Krypton 5",
     "final_score": null,
     "tonality": "—",
@@ -10452,6 +10927,7 @@
   {
     "entry_type": "demoed",
     "iem": "FiR Audio Neon 4",
+    "favorite": false,
     "canonical_name": "FIR Audio Neon 4",
     "final_score": null,
     "tonality": "—",
@@ -10474,6 +10950,7 @@
   {
     "entry_type": "demoed",
     "iem": "FiR Audio Xenon 6",
+    "favorite": false,
     "canonical_name": "FIR Audio Xenon 6",
     "final_score": null,
     "tonality": "—",
@@ -10496,6 +10973,7 @@
   {
     "entry_type": "demoed",
     "iem": "Fitear TG335",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10518,6 +10996,7 @@
   {
     "entry_type": "demoed",
     "iem": "FlipEars Artha",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10540,6 +11019,7 @@
   {
     "entry_type": "demoed",
     "iem": "FlipEars Aurora",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10562,6 +11042,7 @@
   {
     "entry_type": "demoed",
     "iem": "Flipears Zurq",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10584,6 +11065,7 @@
   {
     "entry_type": "demoed",
     "iem": "ForteEars Macbeth",
+    "favorite": false,
     "canonical_name": "Forte Ears Macbeth",
     "final_score": null,
     "tonality": "—",
@@ -10606,6 +11088,7 @@
   {
     "entry_type": "demoed",
     "iem": "Geekfly Superfly 16",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10628,6 +11111,7 @@
   {
     "entry_type": "demoed",
     "iem": "Hercules Audio Noah",
+    "favorite": false,
     "canonical_name": "Hercules Audio Noah",
     "final_score": null,
     "tonality": "—",
@@ -10650,6 +11134,7 @@
   {
     "entry_type": "demoed",
     "iem": "Hyla TE-5B",
+    "favorite": false,
     "canonical_name": "Hyla TE-5B",
     "final_score": null,
     "tonality": "—",
@@ -10672,6 +11157,7 @@
   {
     "entry_type": "demoed",
     "iem": "Hyla TE-5T",
+    "favorite": false,
     "canonical_name": "Hyla TE-5T",
     "final_score": null,
     "tonality": "—",
@@ -10694,6 +11180,7 @@
   {
     "entry_type": "demoed",
     "iem": "I/O Volare",
+    "favorite": false,
     "canonical_name": "I/O Audio Volare",
     "final_score": null,
     "tonality": "—",
@@ -10716,6 +11203,7 @@
   {
     "entry_type": "demoed",
     "iem": "InEar Pro Mission X",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10738,6 +11226,7 @@
   {
     "entry_type": "demoed",
     "iem": "InEar Prophile P8",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10760,6 +11249,7 @@
   {
     "entry_type": "demoed",
     "iem": "JH Audio 16v2",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10782,6 +11272,7 @@
   {
     "entry_type": "demoed",
     "iem": "JH Audio Jolene",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10804,6 +11295,7 @@
   {
     "entry_type": "demoed",
     "iem": "JH Audio Lola",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10826,6 +11318,7 @@
   {
     "entry_type": "demoed",
     "iem": "JH Audio Roxanne",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10848,6 +11341,7 @@
   {
     "entry_type": "demoed",
     "iem": "Jomo Audio GT600",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10870,6 +11364,7 @@
   {
     "entry_type": "demoed",
     "iem": "Jomo Boxster",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10892,6 +11387,7 @@
   {
     "entry_type": "demoed",
     "iem": "Jomo Cappucino",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10914,6 +11410,7 @@
   {
     "entry_type": "demoed",
     "iem": "Jomo Spyder",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10936,6 +11433,7 @@
   {
     "entry_type": "demoed",
     "iem": "Justears 41T",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10958,6 +11456,7 @@
   {
     "entry_type": "demoed",
     "iem": "JVC HA-FW10000",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -10980,6 +11479,7 @@
   {
     "entry_type": "demoed",
     "iem": "Kiwi Ears Cadenza",
+    "favorite": false,
     "canonical_name": "Kiwi Ears Cadenza",
     "final_score": null,
     "tonality": "—",
@@ -10990,10 +11490,10 @@
     "detail": "—",
     "imaging": "—",
     "dynamics": "—",
-    "bias": "—",
+    "bias": "4",
     "setup": "—",
     "price": "—",
-    "comments": "can't remember what I heard",
+    "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "kiwi-ears-cadenza",
     "market_value": 33.52,
@@ -11002,6 +11502,7 @@
   {
     "entry_type": "demoed",
     "iem": "Kiwi Ears Quartet",
+    "favorite": false,
     "canonical_name": "Kiwi Ears Quartet",
     "final_score": null,
     "tonality": "—",
@@ -11024,6 +11525,7 @@
   {
     "entry_type": "demoed",
     "iem": "Kiwi Ears Quintet",
+    "favorite": false,
     "canonical_name": "Kiwi Ears Quintet",
     "final_score": null,
     "tonality": "—",
@@ -11046,6 +11548,7 @@
   {
     "entry_type": "demoed",
     "iem": "Kiwi Ears Singolo",
+    "favorite": false,
     "canonical_name": "Kiwi Ears x Crinacle Singolo",
     "final_score": null,
     "tonality": "—",
@@ -11068,6 +11571,7 @@
   {
     "entry_type": "demoed",
     "iem": "Kiwiears Astral",
+    "favorite": false,
     "canonical_name": "Kiwi Ears Astral",
     "final_score": null,
     "tonality": "—",
@@ -11090,6 +11594,7 @@
   {
     "entry_type": "demoed",
     "iem": "Kiwiears Belle",
+    "favorite": false,
     "canonical_name": "Kiwi Ears Belle",
     "final_score": null,
     "tonality": "—",
@@ -11111,29 +11616,8 @@
   },
   {
     "entry_type": "demoed",
-    "iem": "KiwiEars Cadenza",
-    "canonical_name": "Kiwi Ears Cadenza",
-    "final_score": null,
-    "tonality": "—",
-    "bass": "—",
-    "midrange": "—",
-    "treble": "—",
-    "tech": "—",
-    "detail": "—",
-    "imaging": "—",
-    "dynamics": "—",
-    "bias": "5",
-    "setup": "—",
-    "price": "—",
-    "comments": "",
-    "based_on": "Brief demo",
-    "tracker_slug": "kiwi-ears-cadenza",
-    "market_value": 33.52,
-    "market_confidence": "Low"
-  },
-  {
-    "entry_type": "demoed",
     "iem": "Kiwiears Cadenza II",
+    "favorite": false,
     "canonical_name": "Kiwi Ears Cadenza",
     "final_score": null,
     "tonality": "—",
@@ -11156,6 +11640,7 @@
   {
     "entry_type": "demoed",
     "iem": "Kiwiears Chorus",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11178,6 +11663,7 @@
   {
     "entry_type": "demoed",
     "iem": "Kiwiears Halycon",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11200,6 +11686,7 @@
   {
     "entry_type": "demoed",
     "iem": "KiwiEars Orchestra Lite",
+    "favorite": false,
     "canonical_name": "Kiwi Ears Orchestra Lite",
     "final_score": null,
     "tonality": "—",
@@ -11222,6 +11709,7 @@
   {
     "entry_type": "demoed",
     "iem": "Kumitate Labs Lakh",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11244,6 +11732,7 @@
   {
     "entry_type": "demoed",
     "iem": "Kumitate Labs REF",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11266,6 +11755,7 @@
   {
     "entry_type": "demoed",
     "iem": "KZ Ling Long",
+    "favorite": false,
     "canonical_name": "KZ LingLong",
     "final_score": null,
     "tonality": "—",
@@ -11288,6 +11778,7 @@
   {
     "entry_type": "demoed",
     "iem": "LETSHOUER Cadenza 4",
+    "favorite": false,
     "canonical_name": "Letshuoer Cadenza 4",
     "final_score": null,
     "tonality": "—",
@@ -11310,6 +11801,7 @@
   {
     "entry_type": "demoed",
     "iem": "LETSHUOER Cadenza 4",
+    "favorite": false,
     "canonical_name": "Letshuoer Cadenza 4",
     "final_score": null,
     "tonality": "—",
@@ -11332,6 +11824,7 @@
   {
     "entry_type": "demoed",
     "iem": "LETSHUOER DZ4",
+    "favorite": false,
     "canonical_name": "Letshuoer S15",
     "final_score": null,
     "tonality": "—",
@@ -11354,6 +11847,7 @@
   {
     "entry_type": "demoed",
     "iem": "LETSHUOER Ember",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11376,6 +11870,7 @@
   {
     "entry_type": "demoed",
     "iem": "LETSHUOER Sonota",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11398,6 +11893,7 @@
   {
     "entry_type": "demoed",
     "iem": "Lime Ears Aether",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11420,6 +11916,7 @@
   {
     "entry_type": "demoed",
     "iem": "Melodic Artification Alter Ego",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11442,6 +11939,7 @@
   {
     "entry_type": "demoed",
     "iem": "Melodic Artification Eternitum",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11464,6 +11962,7 @@
   {
     "entry_type": "demoed",
     "iem": "Meze Advar",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11486,6 +11985,7 @@
   {
     "entry_type": "demoed",
     "iem": "Meze Rai Penta",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11508,6 +12008,7 @@
   {
     "entry_type": "demoed",
     "iem": "Moondrop Aria 2",
+    "favorite": false,
     "canonical_name": "Moondrop Aria II",
     "final_score": null,
     "tonality": "—",
@@ -11530,6 +12031,7 @@
   {
     "entry_type": "demoed",
     "iem": "Moondrop Chu 2",
+    "favorite": false,
     "canonical_name": "Moondrop Chu 2",
     "final_score": null,
     "tonality": "—",
@@ -11552,6 +12054,7 @@
   {
     "entry_type": "demoed",
     "iem": "Moondrop Droplet",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11574,6 +12077,7 @@
   {
     "entry_type": "demoed",
     "iem": "Moondrop LAN",
+    "favorite": false,
     "canonical_name": "Moondrop LAN",
     "final_score": null,
     "tonality": "—",
@@ -11596,6 +12100,7 @@
   {
     "entry_type": "demoed",
     "iem": "Moondrop Pavane",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11618,6 +12123,7 @@
   {
     "entry_type": "demoed",
     "iem": "Moondrop Rays",
+    "favorite": false,
     "canonical_name": "Moondrop Rays",
     "final_score": null,
     "tonality": "—",
@@ -11640,6 +12146,7 @@
   {
     "entry_type": "demoed",
     "iem": "Moondrop Starfield II",
+    "favorite": false,
     "canonical_name": "Moondrop Starfield II",
     "final_score": null,
     "tonality": "—",
@@ -11650,7 +12157,7 @@
     "detail": "—",
     "imaging": "—",
     "dynamics": "—",
-    "bias": "—",
+    "bias": "4",
     "setup": "—",
     "price": "—",
     "comments": "can't remember what I heard",
@@ -11662,6 +12169,7 @@
   {
     "entry_type": "demoed",
     "iem": "NG Audio Metis",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11684,6 +12192,7 @@
   {
     "entry_type": "demoed",
     "iem": "Night Oblivion Butastur",
+    "favorite": false,
     "canonical_name": "Night Oblivion Butastur",
     "final_score": null,
     "tonality": "—",
@@ -11706,6 +12215,7 @@
   {
     "entry_type": "demoed",
     "iem": "Nightjar Duality (Proto)",
+    "favorite": false,
     "canonical_name": "Nightjar Duality",
     "final_score": null,
     "tonality": "—",
@@ -11728,6 +12238,7 @@
   {
     "entry_type": "demoed",
     "iem": "Noble Audio Jade",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11750,6 +12261,7 @@
   {
     "entry_type": "demoed",
     "iem": "Noble Audio Kadence",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11772,6 +12284,7 @@
   {
     "entry_type": "demoed",
     "iem": "Noble Audio Khan",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11794,6 +12307,7 @@
   {
     "entry_type": "demoed",
     "iem": "Noble Audio Kronos",
+    "favorite": false,
     "canonical_name": "Noble Audio Kronos",
     "final_score": null,
     "tonality": "—",
@@ -11816,6 +12330,7 @@
   {
     "entry_type": "demoed",
     "iem": "Noble Audio Kublia Khan",
+    "favorite": false,
     "canonical_name": "Noble Audio Kublai Khan",
     "final_score": null,
     "tonality": "—",
@@ -11838,6 +12353,7 @@
   {
     "entry_type": "demoed",
     "iem": "Noble Audio Onyx",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11860,6 +12376,7 @@
   {
     "entry_type": "demoed",
     "iem": "Noble Audio Spartacus",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11882,6 +12399,7 @@
   {
     "entry_type": "demoed",
     "iem": "Noble Audio Viking",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11904,6 +12422,7 @@
   {
     "entry_type": "demoed",
     "iem": "Noble Audio XII",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11926,6 +12445,7 @@
   {
     "entry_type": "demoed",
     "iem": "Noble Audio XM1",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11948,6 +12468,7 @@
   {
     "entry_type": "demoed",
     "iem": "Noble Audio Zephyr",
+    "favorite": false,
     "canonical_name": "Noble Audio Zephyr",
     "final_score": null,
     "tonality": "—",
@@ -11970,6 +12491,7 @@
   {
     "entry_type": "demoed",
     "iem": "Nostalgia Audio Camelot",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -11992,6 +12514,7 @@
   {
     "entry_type": "demoed",
     "iem": "Nostalgia Audio N12",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12014,6 +12537,7 @@
   {
     "entry_type": "demoed",
     "iem": "Nostalgia Audio Teserract",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12036,6 +12560,7 @@
   {
     "entry_type": "demoed",
     "iem": "oBravo Ra-Cu",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12058,6 +12583,7 @@
   {
     "entry_type": "demoed",
     "iem": "Oriolus Mellianus",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12080,6 +12606,7 @@
   {
     "entry_type": "demoed",
     "iem": "Oriolus Szalayi",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12102,6 +12629,7 @@
   {
     "entry_type": "demoed",
     "iem": "Penon Rival",
+    "favorite": false,
     "canonical_name": "Penon Rival",
     "final_score": null,
     "tonality": "—",
@@ -12124,6 +12652,7 @@
   {
     "entry_type": "demoed",
     "iem": "PMG Audio APX ME",
+    "favorite": false,
     "canonical_name": "PMG Audio APX ME",
     "final_score": null,
     "tonality": "—",
@@ -12146,6 +12675,7 @@
   {
     "entry_type": "demoed",
     "iem": "PMG Audio APX SE",
+    "favorite": false,
     "canonical_name": "PMG Audio APX SE",
     "final_score": null,
     "tonality": "—",
@@ -12168,6 +12698,7 @@
   {
     "entry_type": "demoed",
     "iem": "Prisma Audio Lux",
+    "favorite": false,
     "canonical_name": "Prisma Audio Lux",
     "final_score": null,
     "tonality": "—",
@@ -12190,6 +12721,7 @@
   {
     "entry_type": "demoed",
     "iem": "Punch Audio Martilo",
+    "favorite": false,
     "canonical_name": "Punch Audio Martilo",
     "final_score": null,
     "tonality": "—",
@@ -12212,6 +12744,7 @@
   {
     "entry_type": "demoed",
     "iem": "QDC 4 Pro",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12234,6 +12767,7 @@
   {
     "entry_type": "demoed",
     "iem": "QDC 8 Pro",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12256,6 +12790,7 @@
   {
     "entry_type": "demoed",
     "iem": "qdc 8SE",
+    "favorite": false,
     "canonical_name": "qdc 8SE",
     "final_score": null,
     "tonality": "—",
@@ -12278,6 +12813,7 @@
   {
     "entry_type": "demoed",
     "iem": "qdc 8SL/8CL",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12300,6 +12836,7 @@
   {
     "entry_type": "demoed",
     "iem": "qdc 8SS",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12322,6 +12859,7 @@
   {
     "entry_type": "demoed",
     "iem": "qdc Anole V6",
+    "favorite": false,
     "canonical_name": "qdc Anole V6",
     "final_score": null,
     "tonality": "—",
@@ -12344,6 +12882,7 @@
   {
     "entry_type": "demoed",
     "iem": "QDC Crave",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12366,6 +12905,7 @@
   {
     "entry_type": "demoed",
     "iem": "qdc Emperor",
+    "favorite": false,
     "canonical_name": "Qdc Emperor",
     "final_score": null,
     "tonality": "—",
@@ -12388,6 +12928,7 @@
   {
     "entry_type": "demoed",
     "iem": "qdc Folk",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12410,6 +12951,7 @@
   {
     "entry_type": "demoed",
     "iem": "qdc Gemini",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12432,6 +12974,7 @@
   {
     "entry_type": "demoed",
     "iem": "QDC King",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12454,6 +12997,7 @@
   {
     "entry_type": "demoed",
     "iem": "qdc Tiger",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12476,6 +13020,7 @@
   {
     "entry_type": "demoed",
     "iem": "qdc White Tiger",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12498,6 +13043,7 @@
   {
     "entry_type": "demoed",
     "iem": "Questyle NHB12",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12520,6 +13066,7 @@
   {
     "entry_type": "demoed",
     "iem": "Rossi Wing First Light",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12542,6 +13089,7 @@
   {
     "entry_type": "demoed",
     "iem": "SeeAudio Anou",
+    "favorite": false,
     "canonical_name": "SeeAudio Anou",
     "final_score": null,
     "tonality": "—",
@@ -12564,6 +13112,7 @@
   {
     "entry_type": "demoed",
     "iem": "SeeAudio Miu",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12586,6 +13135,7 @@
   {
     "entry_type": "demoed",
     "iem": "SeeAudio Neko",
+    "favorite": false,
     "canonical_name": "SeeAudio Neko",
     "final_score": null,
     "tonality": "—",
@@ -12608,6 +13158,7 @@
   {
     "entry_type": "demoed",
     "iem": "SeeAudio Neko JP",
+    "favorite": false,
     "canonical_name": "SeeAudio Neko JP",
     "final_score": null,
     "tonality": "—",
@@ -12630,6 +13181,7 @@
   {
     "entry_type": "demoed",
     "iem": "SeeAudio Yume Ultra",
+    "favorite": false,
     "canonical_name": "SeeAudio Yume Ultra",
     "final_score": null,
     "tonality": "—",
@@ -12652,6 +13204,7 @@
   {
     "entry_type": "demoed",
     "iem": "Shuoer Soloist 2",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12674,6 +13227,7 @@
   {
     "entry_type": "demoed",
     "iem": "Shure SE846 Gen 2",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12696,6 +13250,7 @@
   {
     "entry_type": "demoed",
     "iem": "Simphonio P-Zero",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12718,6 +13273,7 @@
   {
     "entry_type": "demoed",
     "iem": "Skorea Procycon",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12740,6 +13296,7 @@
   {
     "entry_type": "demoed",
     "iem": "Softears Engima",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12762,6 +13319,7 @@
   {
     "entry_type": "demoed",
     "iem": "Softears SE6 Live",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12784,6 +13342,7 @@
   {
     "entry_type": "demoed",
     "iem": "Softears Twilight",
+    "favorite": false,
     "canonical_name": "Softears Twilight",
     "final_score": null,
     "tonality": "—",
@@ -12806,6 +13365,7 @@
   {
     "entry_type": "demoed",
     "iem": "Sony IER-M7",
+    "favorite": false,
     "canonical_name": "Sony IER-M7",
     "final_score": null,
     "tonality": "—",
@@ -12828,6 +13388,7 @@
   {
     "entry_type": "demoed",
     "iem": "Sony JustEar XJE-MH2",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12850,6 +13411,7 @@
   {
     "entry_type": "demoed",
     "iem": "Symphonium Titan",
+    "favorite": false,
     "canonical_name": "Symphonium Titan",
     "final_score": null,
     "tonality": "—",
@@ -12872,6 +13434,7 @@
   {
     "entry_type": "demoed",
     "iem": "Tanchjim Kara",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12894,6 +13457,7 @@
   {
     "entry_type": "demoed",
     "iem": "Tangzu Xue Tao",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12916,6 +13480,7 @@
   {
     "entry_type": "demoed",
     "iem": "ThieAudio Origin",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12938,6 +13503,7 @@
   {
     "entry_type": "demoed",
     "iem": "ThieAudio Prestige LTD",
+    "favorite": false,
     "canonical_name": "ThieAudio Prestige LTD",
     "final_score": null,
     "tonality": "—",
@@ -12960,6 +13526,7 @@
   {
     "entry_type": "demoed",
     "iem": "Traillii Ti",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -12982,6 +13549,7 @@
   {
     "entry_type": "demoed",
     "iem": "Traillii Ultra",
+    "favorite": false,
     "canonical_name": "Oriolus Traillii Ultra IEM System",
     "final_score": null,
     "tonality": "—",
@@ -13004,6 +13572,7 @@
   {
     "entry_type": "demoed",
     "iem": "TRI Starlight",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13026,6 +13595,7 @@
   {
     "entry_type": "demoed",
     "iem": "TruthEars Pure",
+    "favorite": false,
     "canonical_name": "Truthear Pure",
     "final_score": null,
     "tonality": "—",
@@ -13048,6 +13618,7 @@
   {
     "entry_type": "demoed",
     "iem": "UE Live",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13070,6 +13641,7 @@
   {
     "entry_type": "demoed",
     "iem": "UE Premiere",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13092,6 +13664,7 @@
   {
     "entry_type": "demoed",
     "iem": "UE Reference Remastered",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13114,6 +13687,7 @@
   {
     "entry_type": "demoed",
     "iem": "UE11 Pro",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13136,6 +13710,7 @@
   {
     "entry_type": "demoed",
     "iem": "UE18+ Pro",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13158,6 +13733,7 @@
   {
     "entry_type": "demoed",
     "iem": "Unique Melody FuSang",
+    "favorite": false,
     "canonical_name": "Unique Melody FuSang",
     "final_score": null,
     "tonality": "—",
@@ -13180,6 +13756,7 @@
   {
     "entry_type": "demoed",
     "iem": "Unique Melody MEST Indigo",
+    "favorite": false,
     "canonical_name": "Unique Melody MEST Indigo",
     "final_score": null,
     "tonality": "—",
@@ -13202,6 +13779,7 @@
   {
     "entry_type": "demoed",
     "iem": "Unique Melody MEST MKIII",
+    "favorite": false,
     "canonical_name": "Unique Melody MEST MK3",
     "final_score": null,
     "tonality": "—",
@@ -13224,6 +13802,7 @@
   {
     "entry_type": "demoed",
     "iem": "Unique Melody Multiverse Mentor",
+    "favorite": false,
     "canonical_name": "Unique Melody Multiverse Mentor",
     "final_score": null,
     "tonality": "—",
@@ -13246,6 +13825,7 @@
   {
     "entry_type": "demoed",
     "iem": "Unique Melody Pentara",
+    "favorite": false,
     "canonical_name": "Unique Melody Pentara",
     "final_score": null,
     "tonality": "—",
@@ -13268,6 +13848,7 @@
   {
     "entry_type": "demoed",
     "iem": "Unique Melody Red Halo",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13290,6 +13871,7 @@
   {
     "entry_type": "demoed",
     "iem": "Unique Melody V44",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13312,6 +13894,7 @@
   {
     "entry_type": "demoed",
     "iem": "VE Meister",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13334,6 +13917,7 @@
   {
     "entry_type": "demoed",
     "iem": "Venture Electronics Grand Duke",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13356,6 +13940,7 @@
   {
     "entry_type": "demoed",
     "iem": "Vision Ears Aura",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13378,6 +13963,7 @@
   {
     "entry_type": "demoed",
     "iem": "Vision Ears EXT MKII",
+    "favorite": false,
     "canonical_name": "Vision Ears EXT MKII",
     "final_score": null,
     "tonality": "—",
@@ -13400,6 +13986,7 @@
   {
     "entry_type": "demoed",
     "iem": "Vision Ears Phonix",
+    "favorite": false,
     "canonical_name": "Vision Ears Phonix",
     "final_score": null,
     "tonality": "—",
@@ -13422,6 +14009,7 @@
   {
     "entry_type": "demoed",
     "iem": "Vision Ears VE10",
+    "favorite": false,
     "canonical_name": "Vision Ears VE10",
     "final_score": null,
     "tonality": "—",
@@ -13444,6 +14032,7 @@
   {
     "entry_type": "demoed",
     "iem": "Volk Audio Etoile",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13466,6 +14055,7 @@
   {
     "entry_type": "demoed",
     "iem": "VOLK Audio Stella",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13488,6 +14078,7 @@
   {
     "entry_type": "demoed",
     "iem": "Westone Pro X20",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13510,6 +14101,7 @@
   {
     "entry_type": "demoed",
     "iem": "Westone W80",
+    "favorite": false,
     "canonical_name": "",
     "final_score": null,
     "tonality": "—",
@@ -13532,6 +14124,7 @@
   {
     "entry_type": "demoed",
     "iem": "Xenns Tea Pro",
+    "favorite": false,
     "canonical_name": "XENNS Mangird Tea Pro",
     "final_score": null,
     "tonality": "—",
@@ -13554,6 +14147,7 @@
   {
     "entry_type": "demoed",
     "iem": "Xenns Tea Pro SE",
+    "favorite": false,
     "canonical_name": "XENNS Mangird Tea Pro SE",
     "final_score": null,
     "tonality": "—",
@@ -13576,6 +14170,7 @@
   {
     "entry_type": "demoed",
     "iem": "Ziigaat Horzon",
+    "favorite": false,
     "canonical_name": "Ziigaat Horizon",
     "final_score": null,
     "tonality": "—",
@@ -13598,6 +14193,7 @@
   {
     "entry_type": "demoed",
     "iem": "Ziigaat Odyssey 2",
+    "favorite": false,
     "canonical_name": "Ziigaat x Hangout Odyssey 2",
     "final_score": null,
     "tonality": "—",
