@@ -433,7 +433,7 @@
     "comments": "Excellent detail retreival and competent tuning. Can be slightly thin sounding and forward in the treble.",
     "based_on": "Loaner",
     "tracker_slug": "thieaudio-monarch-mkiv",
-    "market_value": 858.75,
+    "market_value": 852.22,
     "market_confidence": "High"
   },
   {
@@ -663,7 +663,7 @@
     "comments": "Nearly immaculate tonality, coherency, and timbre with reasonably good technicalities.",
     "based_on": "Tour unit",
     "tracker_slug": "7th-acoustics-supernova",
-    "market_value": 630.66,
+    "market_value": 548.25,
     "market_confidence": "Medium"
   },
   {
@@ -1928,7 +1928,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 202.14,
+    "market_value": 202.5,
     "market_confidence": "High"
   },
   {
@@ -3699,8 +3699,8 @@
     "comments": "Very plasticky and thin transients. Not very impressive.",
     "based_on": "Moondrop tour",
     "tracker_slug": "moondrop-solis",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 320.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -5469,9 +5469,9 @@
     "price": "Discontinued",
     "comments": "Easily the best CA DD IEM with insane amounts of bass and just enough treble to balance it.",
     "based_on": "headphones.com unit",
-    "tracker_slug": "campfire-audio-atlas",
-    "market_value": 375.48,
-    "market_confidence": "Medium"
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -5608,7 +5608,7 @@
     "comments": "Clearly has Andromeda inspiration, but it's been taken too far.",
     "based_on": "headphones.com unit",
     "tracker_slug": "campfire-audio-holocene",
-    "market_value": 189.94,
+    "market_value": 217.78,
     "market_confidence": "Medium"
   },
   {
@@ -6390,7 +6390,7 @@
     "comments": "Very good detail and sharp imaging, but wonky midrange. Not as holographic as the Andro 2020 either.",
     "based_on": "headphones.com unit",
     "tracker_slug": "campfire-audio-ara",
-    "market_value": 478.17,
+    "market_value": 382.14,
     "market_confidence": "Low"
   },
   {
@@ -8644,7 +8644,7 @@
     "comments": "CFA whiffs again. Muffled midrange with a peak somewhere in the mid treble and no air.",
     "based_on": "Loaner",
     "tracker_slug": "campfire-audio-saber",
-    "market_value": 90.0,
+    "market_value": null,
     "market_confidence": "Low"
   },
   {
@@ -11588,7 +11588,7 @@
     "comments": "New meta style tuning that's a little more forward than the KE4. More depth to sound but also more fatiguing.",
     "based_on": "Brief demo",
     "tracker_slug": "kiwi-ears-astral",
-    "market_value": 192.5,
+    "market_value": 184.0,
     "market_confidence": "High"
   },
   {
