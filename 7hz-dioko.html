@@ -212,6 +212,17 @@ td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
 .compare-select { width: 100%; padding: 10px; font-size: 14px; }
+.compare-ranking-row td { background: #fafafa; }
+.compare-ranking-last td { border-bottom: 3px solid #111; }
+.compare-final-score {
+    display: inline-block;
+    min-width: 38px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,.18);
+    font-weight: bold;
+    text-align: center;
+}
 .deal-positive { font-weight: bold; }
 .sponsor-shell { display: grid; grid-template-columns: minmax(260px, 1.6fr) minmax(240px, 1fr); gap: 14px; margin-bottom: 20px; }
 .sponsor-card, .supporter-card { background: white; border: 1px solid #ddd; padding: 14px 16px; border-radius: 8px; }
@@ -467,7 +478,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 71d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 71d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (41/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 71d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 72d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 72d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (41/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 72d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
