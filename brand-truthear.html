@@ -272,9 +272,15 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
-.table-scroll { width: 100%; overflow-x: auto; border: 1px solid #ddd; background: #fff; }
-.rankings-table { min-width: 1830px; border: 0; }
-.rankings-table.breakdowns-collapsed { min-width: 1320px; }
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    background: #fff;
+    scrollbar-gutter: stable;
+}
+.rankings-table { min-width: 1710px; border: 0; table-layout: auto; }
+.rankings-table.breakdowns-collapsed { min-width: 1240px; }
 .rankings-table th { position: sticky; top: 0; z-index: 2; white-space: nowrap; }
 .rankings-table td { vertical-align: middle; }
 .rankings-table .score-cell { font-size: 16px; font-weight: bold; text-align: center; white-space: nowrap; }
@@ -283,10 +289,37 @@ td.status-reason { overflow: hidden; }
 .rankings-table th.ranking-summary-header { background: #333; }
 .rankings-table td.ranking-summary-cell { background: #f1f1f1; font-weight: bold; text-align: center; white-space: nowrap; }
 .rankings-table.breakdowns-collapsed .ranking-breakdown-column { display: none; }
-.rankings-table .iem-ranking-name { min-width: 220px; font-weight: bold; }
-.rankings-table .comments-cell { min-width: 320px; max-width: 520px; line-height: 1.35; }
-.rankings-table .setup-cell { min-width: 170px; }
-.rankings-table .based-on-cell { min-width: 150px; }
+.rankings-table .iem-ranking-name { min-width: 210px; font-weight: bold; }
+.rankings-table .ranking-breakdown-column { min-width: 46px; }
+.rankings-table .ranking-summary-cell,
+.rankings-table th.ranking-summary-header { min-width: 52px; }
+.rankings-table .comments-cell {
+    min-width: 280px;
+    max-width: 420px;
+    line-height: 1.35;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+.rankings-table .setup-cell,
+.rankings-table th.setup-cell {
+    width: 110px;
+    min-width: 110px;
+    max-width: 120px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.25;
+}
+.rankings-table .based-on-cell,
+.rankings-table th.based-on-cell {
+    width: 125px;
+    min-width: 125px;
+    max-width: 145px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.25;
+}
 .rankings-controls { display: grid; grid-template-columns: minmax(240px, 1fr) repeat(2, minmax(160px, 220px)); gap: 10px; align-items: end; }
 .rankings-control label { display: block; font-size: 12px; color: #666; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .03em; }
 .rankings-control input, .rankings-control select { width: 100%; box-sizing: border-box; padding: 11px; border: 1px solid #ccc; border-radius: 6px; background: #fff; font-size: 14px; }
@@ -456,15 +489,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="card"><p>All tracked IEMs for this brand.</p></div>
 <table class="main-table">
 <tr><th class="iem-col">IEM</th><th>Market Value</th><th>Avg</th><th>Low</th><th>High</th><th>Samples</th></tr>
-
-<tr>
-    <td class="iem-col"><a href="truthear-gate.html?from=brand&brand=truthear">Truthear Gate</a></td>
-    <td title="no clean closed-sale samples">N/A</td>
-    <td>N/A</td>
-    <td>N/A</td>
-    <td>N/A</td>
-    <td>0</td>
-</tr>
 
 <tr>
     <td class="iem-col"><a href="truthear-hexa.html?from=brand&brand=truthear">Truthear Hexa</a></td>

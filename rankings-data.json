@@ -75,8 +75,8 @@
     "entry_type": "ranked",
     "iem": "Elysian Annihilator 2021",
     "favorite": false,
-    "canonical_name": "Elysian Annihilator pre-2026",
-    "release_year": "2021",
+    "canonical_name": "Elysian Annihilator 2021",
+    "release_year": "—",
     "final_score": 8.7,
     "tonality": "8.0",
     "bass": "7.0",
@@ -91,16 +91,16 @@
     "price": "$3,500",
     "comments": "Agressive listen with excellent resolution and, currently, the only true implementation of the EST drivers.",
     "based_on": "Loaner",
-    "tracker_slug": "elysian-annihilator-pre-2026",
-    "market_value": 2331.12,
-    "market_confidence": "High"
+    "tracker_slug": "elysian-annihilator-2021",
+    "market_value": 3008.43,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
     "iem": "Elysian Annihilator 2023",
     "favorite": true,
-    "canonical_name": "Elysian Annihilator pre-2026",
-    "release_year": "2021",
+    "canonical_name": "Elysian Annihilator 2023",
+    "release_year": "—",
     "final_score": 8.7,
     "tonality": "8.3",
     "bass": "8.0",
@@ -115,8 +115,8 @@
     "price": "$3,000",
     "comments": "More of an all-rounder with better bass compared to the 2021 version, sacrifices some soundstage.",
     "based_on": "Personal unit",
-    "tracker_slug": "elysian-annihilator-pre-2026",
-    "market_value": 2331.12,
+    "tracker_slug": "elysian-annihilator-2023",
+    "market_value": 2171.02,
     "market_confidence": "High"
   },
   {
@@ -6765,7 +6765,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",

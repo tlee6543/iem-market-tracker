@@ -1,6 +1,6 @@
 
 <html>
-<head><title>Truthear Gate - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
+<head><title>Elysian Annihilator 2021 - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
 body { font-family: Arial; margin: 40px; background: #f7f7f7; color: #111; }
 table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
 .main-table .iem-col { width: 28%; max-width: 320px; }
@@ -272,9 +272,15 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
-.table-scroll { width: 100%; overflow-x: auto; border: 1px solid #ddd; background: #fff; }
-.rankings-table { min-width: 1830px; border: 0; }
-.rankings-table.breakdowns-collapsed { min-width: 1320px; }
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    background: #fff;
+    scrollbar-gutter: stable;
+}
+.rankings-table { min-width: 1710px; border: 0; table-layout: auto; }
+.rankings-table.breakdowns-collapsed { min-width: 1240px; }
 .rankings-table th { position: sticky; top: 0; z-index: 2; white-space: nowrap; }
 .rankings-table td { vertical-align: middle; }
 .rankings-table .score-cell { font-size: 16px; font-weight: bold; text-align: center; white-space: nowrap; }
@@ -283,10 +289,37 @@ td.status-reason { overflow: hidden; }
 .rankings-table th.ranking-summary-header { background: #333; }
 .rankings-table td.ranking-summary-cell { background: #f1f1f1; font-weight: bold; text-align: center; white-space: nowrap; }
 .rankings-table.breakdowns-collapsed .ranking-breakdown-column { display: none; }
-.rankings-table .iem-ranking-name { min-width: 220px; font-weight: bold; }
-.rankings-table .comments-cell { min-width: 320px; max-width: 520px; line-height: 1.35; }
-.rankings-table .setup-cell { min-width: 170px; }
-.rankings-table .based-on-cell { min-width: 150px; }
+.rankings-table .iem-ranking-name { min-width: 210px; font-weight: bold; }
+.rankings-table .ranking-breakdown-column { min-width: 46px; }
+.rankings-table .ranking-summary-cell,
+.rankings-table th.ranking-summary-header { min-width: 52px; }
+.rankings-table .comments-cell {
+    min-width: 280px;
+    max-width: 420px;
+    line-height: 1.35;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+.rankings-table .setup-cell,
+.rankings-table th.setup-cell {
+    width: 110px;
+    min-width: 110px;
+    max-width: 120px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.25;
+}
+.rankings-table .based-on-cell,
+.rankings-table th.based-on-cell {
+    width: 125px;
+    min-width: 125px;
+    max-width: 145px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.25;
+}
 .rankings-controls { display: grid; grid-template-columns: minmax(240px, 1fr) repeat(2, minmax(160px, 220px)); gap: 10px; align-items: end; }
 .rankings-control label { display: block; font-size: 12px; color: #666; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .03em; }
 .rankings-control input, .rankings-control select { width: 100%; box-sizing: border-box; padding: 11px; border: 1px solid #ccc; border-radius: 6px; background: #fff; font-size: 14px; }
@@ -454,13 +487,13 @@ score backgrounds cannot be lost to broader table/cell styling.
     
 <p><a id="back-link" href="index.html">← Back to Market Tracker</a></p>
 <div class="iem-title-row">
-    <h1>Truthear Gate</h1>
+    <h1>Elysian Annihilator 2021</h1>
     <div class="grab-link-wrap">
         <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-truthear.html">Truthear</a></p>
+<p><a href="brand-elysian.html">Elysian</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -483,13 +516,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 65/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 15/30, recent sample depth 0/15, source diversity 5/10, price consistency 10/10. Current inputs: 15 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 148d ago, 1 source type(s), price CV 0.12." aria-label="Liquidity/confidence score: 65/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 15/30, recent sample depth 0/15, source diversity 5/10, price consistency 10/10. Current inputs: 15 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 148d ago, 1 source type(s), price CV 0.12." tabindex="0">Medium (65/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">15 included sample(s), latest 148d ago.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">15</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -513,57 +546,265 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
-<td>2026-06-30</td>
-<td>$110</td>
+<tr id="row-0" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
+<td>2026-03-10</td>
+<td>$3,000</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason">confirmed sold from source check</td>
-<td></td>
-<td>1</td>
-<td>reddit_rss</td>
-<td>vuldera</td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>SilverLodestar</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1uk5kyr/wts_uspa_h_iem_bundle_truthear_hexa_simgot_ew300/#item-1" target="_blank">source</a></td>
+<td><span id="deal-score-0">Closed: Fair (0.3% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021.105195/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="reddit" class="listing-row excluded">
-<td></td>
-<td>2025-07-12</td>
-<td></td>
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
+<td>2025-04-23</td>
+<td>$3,200</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason">lister never updated</td>
-<td></td>
-<td>1</td>
-<td>reddit_rss</td>
-<td>lypseshig</td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>tjzurlaaa</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">N/A</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1lydrwg/wts_uspa_h_meze_alba_iems_w_all_accesories/#item-1" target="_blank">source</a></td>
+<td><span id="deal-score-1">Closed: Fair (6.4% above market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021.87092/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" data-source="headfi" class="listing-row excluded">
+<tr id="row-2" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" checked></td>
+<td>2025-03-31</td>
+<td>$2,899</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>LimitlessE</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-2">Closed: Fair (3.6% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021-rare-price-drop.85842/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-3" data-source="headfi" class="listing-row excluded">
 <td></td>
-<td>2025-01-21</td>
+<td>2024-10-16</td>
 <td></td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
-<td>intoitreviews</td>
+<td>tjzurlaaa</td>
+<td>1</td>
+<td>0</td>
+<td><span id="deal-score-3">N/A</span></td>
+<td><a href="https://www.head-fi.org/classifieds/annihilator-2021.76516/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-4" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="headfi" checked></td>
+<td>2024-10-01</td>
+<td>$2,600</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>good condition</td>
+<td>0</td>
+<td>headfi</td>
+<td>acaldejon</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">N/A</span></td>
-<td><a href="https://www.head-fi.org/classifieds/7hz-zero-nicehck-eb2s-tanchjim-ola-sonic-memory-sm1-lite-truthear-gate-ccz-dc10-pro-others.81943/" target="_blank">source</a></td>
+<td><span id="deal-score-4">Closed: Good Deal (13.6% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021.75685/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-5" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="headfi" checked></td>
+<td>2024-06-03</td>
+<td>$2,600</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>RazorItoh</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-5">Closed: Good Deal (13.6% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021.69143/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-6" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="headfi" checked></td>
+<td>2024-05-09</td>
+<td>$2,500</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>Yarbles</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-6">Closed: Good Deal (16.9% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021.67669/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-7" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="7" data-source="headfi" checked></td>
+<td>2023-12-14</td>
+<td>$2,500</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>good condition</td>
+<td>0</td>
+<td>headfi</td>
+<td>Hifihedgehog</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-7">Closed: Good Deal (16.9% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/sold-usa-mi-h-elysian-annihilator-2021-w-paypal-g-s.59117/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-8" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="8" data-source="headfi" checked></td>
+<td>2023-08-07</td>
+<td>$2,800</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>mint, like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>Natesdailies</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-8">Closed: Fair (6.9% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/annihilator-21.52241/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-9" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="9" data-source="headfi" checked></td>
+<td>2023-06-14</td>
+<td>$2,700</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>ranfan</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-9">Closed: Good Deal (10.3% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021.49271/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-10" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="10" data-source="headfi" checked></td>
+<td>2023-03-11</td>
+<td>$2,700</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>mint, like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>Amit</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-10">Closed: Good Deal (10.3% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021-universal.43439/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-11" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="11" data-source="headfi" checked></td>
+<td>2023-02-25</td>
+<td>$2,900</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>mint, like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>Damz87</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-11">Closed: Fair (3.6% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2021.42355/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-12" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="12" data-source="headfi" checked></td>
+<td>2022-12-10</td>
+<td>$2,700</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>mint, like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>Rockwell75</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-12">Closed: Good Deal (10.3% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021-universal.37680/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-13" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="13" data-source="headfi" checked></td>
+<td>2022-11-30</td>
+<td>$1,750</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>evo</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-13">Closed: Great Deal (41.8% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021-ciem.37116/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-14" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="14" data-source="headfi" checked></td>
+<td>2022-10-25</td>
+<td>$2,800</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>mint, like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>tma6</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-14">Closed: Fair (6.9% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021-mint.35170/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-15" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="15" data-source="headfi" checked></td>
+<td>2022-01-23</td>
+<td>$2,800</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>bden59</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-15">Closed: Fair (6.9% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/elysian-annihilator-2021-uiem.18735/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "IEM Bundle: Truthear Hexa, Simgot EW300, Truthear Gate", "raw_text": "Selling these three popular IEMs together as a complete bundle. Great starter pack!\nPrice: $110 OBO Shipped (Includes PayPal G&S fees and tracking)\n*Open to reasonable offers!*\nCondition & Notes:\nCleaning: Everything was cleaned with 70% alcohol and Q-tips, then dried completely before packing.\nIncluded: All original boxes, sleeves, cables, cases, and all original ear tips are included.\nTruthear Hexa: Shells are clean. The stock black cable has one small section with a slightly loose braid weave. It is purely cosmetic and works perfectly.\nSimgot EW300: Matte-polished metal shells have slight signs of use. Includes the extra tuning nozzles, filters, and gaskets in their original bags.\nTruthear Gate: White version. Clear shells are clean. Includes the bag of 7 pairs of stock tips.\nPhotos: https://imgur.com/a/iem-bundle-package-aOE62Jt\nPlease comment on this post before sending a PM. Thanks!\nsubmitted by /u/vuldera\n[link] [comments]", "seller_username": "vuldera", "url": "https://old.reddit.com/r/AVexchange/comments/1uk5kyr/wts_uspa_h_iem_bundle_truthear_hexa_simgot_ew300/#item-1", "price_num": 110.0, "date_ms": 1782863174000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 1, "title": "Meze Alba Iems w/ all accesories, upgraded truthear gate cable + bonus eartips", "raw_text": "perfectly functional iem with one very small paint chip shown on second image, 2nd batch/updated batch\nsubmitted by /u/lypseshig\n[link] [comments]", "seller_username": "lypseshig", "url": "https://old.reddit.com/r/AVexchange/comments/1lydrwg/wts_uspa_h_meze_alba_iems_w_all_accesories/#item-1", "price_num": null, "date_ms": 1752361672000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=meze alba | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 2, "title": "Sold: 7hz Zero, Nicehck EB2S, Tanchjim Ola, Sonic memory sm1 lite, Truthear Gate, CCZ DC10 Pro, others...", "raw_text": "For Sale / Trade Sold: 7hz Zero, Nicehck EB2S, Tanchjim Ola, Sonic memory sm1 lite, Truthear Gate, CCZ DC10 Pro, others... Price 15.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America FS a bunch of iems. Already boxed up. Must buy whole lot. Letting this go basically shipping and PayPal fees, so they don't go to waste. intoitreviews Listing Jan 21, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "intoitreviews", "url": "https://www.head-fi.org/classifieds/7hz-zero-nicehck-eb2s-tanchjim-ola-sonic-memory-sm1-lite-truthear-gate-ccz-dc10-pro-others.81943/", "price_num": null, "date_ms": 1737417600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Sold: Elysian Annihilator 2021", "raw_text": "For Sale Sold: Elysian Annihilator 2021 Price 3000.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Hey all, Today is the day that I decided to let go of my beloved and, apparently super-rare, Elysian Annihilator 2021 IEMs. These have served me very well for the last couple of years, but I think it\u2019s time to try other IEMs like the Asteria. I purchased these from another Head-fier in 2022... SilverLodestar Listing Mar 10, 2026 Comments: 1 Category: In-Ear Monitors", "seller_username": "SilverLodestar", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.105195/", "price_num": 3000.0, "date_ms": 1773100800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Closed: Elysian Annihilator 2021", "raw_text": "For Sale Closed: Elysian Annihilator 2021 Price 3200.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to AnywhereNorth America Sorry to all who wanted this Iem, I just love it too much :) thank you all for the offers God bless tjzurlaaa Listing Apr 23, 2025 Comments: 4 Category: In-Ear Monitors", "seller_username": "tjzurlaaa", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.87092/", "price_num": 3200.0, "date_ms": 1745366400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Closed: Elysian Annihilator 2021 RARE (Price Drop)", "raw_text": "For Sale Closed: Elysian Annihilator 2021 RARE (Price Drop) Price 2899.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Selling a legendary 21 Annihilator unit. This is the unit crin measured so it\u2019s literally the unit that sits on top of his old ranking list. Crin recently remeasured it on the 5128 under my request. As shown by the graph it has great channel matching and is still in perfect condition except for... LimitlessE Listing Mar 31, 2025 Comments: 2 Category: In-Ear Monitors", "seller_username": "LimitlessE", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-rare-price-drop.85842/", "price_num": 2899.0, "date_ms": 1743379200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Annihilator 2021", "raw_text": "For Sale / Trade Sold: Annihilator 2021 Price 0.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to AnywhereNorth America Sold tjzurlaaa Listing Oct 16, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "tjzurlaaa", "url": "https://www.head-fi.org/classifieds/annihilator-2021.76516/", "price_num": null, "date_ms": 1729036800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Elysian Annihilator 2021", "raw_text": "For Sale Sold: Elysian Annihilator 2021 Price 2600.00 USD Condition Good Negotiability Firm Ships to United States of America Hey, I have an Elysian Annihilator 2021 in good condition that I want to sell. It comes with the original box, all Spinfit CP100 tips, warranty card, carrying case, & the Liquid Links Martini terminated in 3.5MM SE. (The cleaning cloth is missing though) Also, I will only ship in the lower 48 &... acaldejon Listing Oct 1, 2024 Comments: 4 Category: In-Ear Monitors", "seller_username": "acaldejon", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.75685/", "price_num": 2600.0, "date_ms": 1727740800000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Traded: Elysian Annihilator 2021", "raw_text": "For Sale / Trade Traded: Elysian Annihilator 2021 Price 2600.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Got my 2021 Annihilators for sale. They were made in November of 2022 comes with OG inbox, L/XL tips, and case/cloth. For trades would be open to a high-end DAP or IEMs. RazorItoh Listing Jun 3, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "RazorItoh", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.69143/", "price_num": 2600.0, "date_ms": 1717372800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: Elysian Annihilator 2021", "raw_text": "For Sale Sold: Elysian Annihilator 2021 Price 2500.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere These were acquired a few days as an exchange for an A&K SP3000 DAP which I really did not like. They were exchanged more as something I believed would be an easier sell or trade. The condition is impeccable. The box is good as new & all the tips are sealed and the case/other accessories have... Yarbles Listing May 9, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "Yarbles", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.67669/", "price_num": 2500.0, "date_ms": 1715212800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: [SOLD] [USA-MI] [H] Elysian Annihilator 2021 [W] PayPal G&S", "raw_text": "For Sale Sold: [SOLD] [USA-MI] [H] Elysian Annihilator 2021 [W] PayPal G&S Price 2500.00 USD Condition Good Negotiability Or best offer Ships to United States of America Original owner. For sale is a 2021 Elysian Annihilator manufactured in July 2nd 2022. In good condition and (as pictured) with just a few superficial scratches on the cable plug and the cable braid medallion yet works marvelously. Original packaging included. As a bonus, comes with a free THX... Hifihedgehog Listing Dec 14, 2023 Comments: 8 Category: In-Ear Monitors", "seller_username": "Hifihedgehog", "url": "https://www.head-fi.org/classifieds/sold-usa-mi-h-elysian-annihilator-2021-w-paypal-g-s.59117/", "price_num": 2500.0, "date_ms": 1702512000000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Annihilator 21", "raw_text": "For Sale Sold: Annihilator 21 Price 2800.00 USD Condition Excellent/Like new Negotiability Firm Ships to AnywhereAsia Pending sale Regretfully parting with my Annihilator 21. In practically mint condition. Shipping included in the price. Asking cash. Only trade im accepting is XE6 (you add). Natesdailies Listing Aug 7, 2023 Comments: 3 Category: In-Ear Monitors", "seller_username": "Natesdailies", "url": "https://www.head-fi.org/classifieds/annihilator-21.52241/", "price_num": 2800.0, "date_ms": 1691366400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Elysian Annihilator 2021", "raw_text": "For Sale / Trade Sold: Elysian Annihilator 2021 Price 2700.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling my Annihilator 2021. Complete with box and accessories. Price includes shipping worldwide. Shipping from Japan. Warranty still available until 2023 August ranfan Listing Jun 14, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "ranfan", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021.49271/", "price_num": 2700.0, "date_ms": 1686700800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Closed: Elysian Annihilator 2021 (Universal)", "raw_text": "For Sale Closed: Elysian Annihilator 2021 (Universal) Price 2700.00 USD Condition Excellent/Like new Negotiability Firm Ships to AnywhereUnited States of America For sale is the hard to find Elysian Annihiator. One of the best IEMs on the planet and one of my favorites but I would like to use the cash for something else. All original packaging and accessories plus warranty card with a date of March 2023. IEMs and everything included is mint. The... Sajid Amit Listing Mar 11, 2023 Comments: 3 Category: In-Ear Monitors", "seller_username": "Amit", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-universal.43439/", "price_num": 2700.0, "date_ms": 1678492800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Elysian Acoustic Labs Annihilator 2021", "raw_text": "For Sale Sold: Elysian Acoustic Labs Annihilator 2021 Price 2900.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Regretfully selling my Elysian Acoustic Labs Annihilator 2021 IEM\u2019s. I am the original owner, purchased directly from Elysian Acoustic Labs in December 2022. The IEMs, accessories and packaging are all in mint condition, and still covered under warranty. Only the IEM\u2019s and cable have been taken... Damz87 Listing Feb 25, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "Damz87", "url": "https://www.head-fi.org/classifieds/elysian-acoustic-labs-annihilator-2021.42355/", "price_num": 2900.0, "date_ms": 1677283200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Elysian Annihilator 2021 Universal", "raw_text": "For Sale / Trade Sold: Elysian Annihilator 2021 Universal Price 2700.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America For sale is my Elysian Annihiator. My favorite IEM at the moment but some circumstances have changed and I have to seek a new home for it. All original packaging and accessories plus warranty card with a date of March 2023. IEMs and everything included is mint, except: 1) The stock cable has... Rockwell75 Listing Dec 10, 2022 Comments: 2 Category: In-Ear Monitors", "seller_username": "Rockwell75", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-universal.37680/", "price_num": 2700.0, "date_ms": 1670630400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Elysian Annihilator (2021) CIEM", "raw_text": "For Sale Sold: Elysian Annihilator (2021) CIEM Price 1750.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere For sale is a CUSTOM Elysian Acoustic Labs Annihilator (2021) that comes with the Liquid Links Martini cable. This IEM has been babied by me and functions perfectly. It's never left my home. I will ship this worldwide at buyers risk. You need to handle the reshell yourself, whether that is... aaf evo Listing Nov 30, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "evo", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-ciem.37116/", "price_num": 1750.0, "date_ms": 1669766400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: Elysian Annihilator 2021 (Mint)", "raw_text": "For Sale Sold: Elysian Annihilator 2021 (Mint) Price 2800.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Excellent condition Annihilator 2021 edition. My favorite set in my collection, but getting the itch to try new things. Shipping is included in the price, PayPal works for payment. Condition is like new, I baby these things. Comes with all accessories and a kick ass box. PM if interested! tma6 Listing Oct 25, 2022 Comments: 1 Category: In-Ear Monitors", "seller_username": "tma6", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-mint.35170/", "price_num": 2800.0, "date_ms": 1666656000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Elysian Annihilator 2021 UIEM", "raw_text": "For Sale Sold: Elysian Annihilator 2021 UIEM Price 2800.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to AnywhereEurope For sale almost new Elysian Annihilator 2021 UIEM. PM your questions. Will try to add better pics tomorrow. bden59 Listing Jan 23, 2022 Comments: 6 Category: In-Ear Monitors", "seller_username": "bden59", "url": "https://www.head-fi.org/classifieds/elysian-annihilator-2021-uiem.18735/", "price_num": 2800.0, "date_ms": 1642896000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -668,9 +909,9 @@ function updateIemBackLink(source) {
     };
 
     if (origin === "brand") {
-        const brandSlug = String(params.get("brand") || "truthear").replace(/[^a-z0-9-]/gi, "");
+        const brandSlug = String(params.get("brand") || "elysian").replace(/[^a-z0-9-]/gi, "");
         backLink.href = "brand-" + brandSlug + ".html";
-        backLink.textContent = "← Back to Truthear";
+        backLink.textContent = "← Back to Elysian";
         return;
     }
 
