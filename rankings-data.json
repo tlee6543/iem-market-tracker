@@ -42,7 +42,7 @@
     "comments": "Slightly intense in the treble and odd tonally but easily at the top for a sense of detail and dynamics.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-hex",
-    "market_value": 9617.02,
+    "market_value": 9166.33,
     "market_confidence": "High"
   },
   {
@@ -226,7 +226,7 @@
     "comments": "Sounds like a warmer, more forgiving Elysian Annihilator with great spherical-esque imaging.",
     "based_on": "Loaner unit",
     "tracker_slug": "hercules-audio-moses",
-    "market_value": 2893.81,
+    "market_value": 2658.33,
     "market_confidence": "High"
   },
   {
@@ -572,7 +572,7 @@
     "based_on": "Loaner",
     "tracker_slug": "sony-ier-m9",
     "market_value": 516.45,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -709,7 +709,7 @@
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-myth",
-    "market_value": 987.25,
+    "market_value": 994.8,
     "market_confidence": "High"
   },
   {
@@ -1445,8 +1445,8 @@
     "comments": "Exceptional dynamics and treble extension. Tuning/coherency could use some work.",
     "based_on": "Review unit",
     "tracker_slug": "binary-acoustics-ep321-mems",
-    "market_value": 215.0,
-    "market_confidence": "Low"
+    "market_value": 223.4,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -2618,8 +2618,8 @@
     "comments": "Sounds basically the same as the original Valkyrie.",
     "based_on": "headphones.com unit",
     "tracker_slug": "empire-ears-valkyrie-mk-ii",
-    "market_value": 530.71,
-    "market_confidence": "Medium"
+    "market_value": 519.27,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -6483,7 +6483,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -9011,9 +9011,9 @@
     "price": "$1,100",
     "comments": "Slightly more resolving than the Vega 2020 from the midrange and up, but even more piercing.",
     "based_on": "Headphones.com unit",
-    "tracker_slug": "",
+    "tracker_slug": "campfire-audio-dorado-2020",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -10185,7 +10185,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "canpur-cp752b",
-    "market_value": 3787.5,
+    "market_value": 3690.0,
     "market_confidence": "High"
   },
   {
@@ -13520,7 +13520,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "thieaudio-prestige-ltd",
-    "market_value": 827.5,
+    "market_value": 842.0,
     "market_confidence": "High"
   },
   {
