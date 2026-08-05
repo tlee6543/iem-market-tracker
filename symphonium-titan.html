@@ -437,6 +437,101 @@ score backgrounds cannot be lost to broader table/cell styling.
 .score-distribution-panel canvas { width: 100% !important; height: 180px !important; margin-top: 8px; }
 .distribution-stats { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; font-size: 12px; color: #555; }
 .distribution-stats b { color: #111; }
+
+.price-score-popover { position: relative; z-index: 39; }
+.price-score-trigger {
+    border: 1px solid #bbb;
+    background: #fff;
+    border-radius: 999px;
+    padding: 9px 14px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.price-score-trigger:hover,
+.price-score-trigger:focus { background: #f3f3f3; }
+.price-score-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 9px);
+    width: min(700px, calc(100vw - 48px));
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px 16px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity .14s ease, transform .14s ease, visibility .14s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+.price-score-popover.is-open .price-score-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.price-score-panel::before {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: -7px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    transform: rotate(45deg);
+}
+.price-score-panel h2 { margin: 0; font-size: 16px; }
+.price-score-controls {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(130px, 1fr));
+    gap: 9px;
+    margin-top: 12px;
+}
+.price-score-control label {
+    display: block;
+    margin-bottom: 4px;
+    color: #666;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+}
+.price-score-control select {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    padding: 8px;
+    font-size: 12px;
+}
+.price-score-chart-wrap {
+    position: relative;
+    width: 100%;
+    height: 330px;
+    margin-top: 8px;
+}
+.price-score-chart-wrap canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+.price-score-stats {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 9px;
+    color: #555;
+    font-size: 12px;
+}
+.price-score-stats b { color: #111; }
+.price-score-method-note { margin-top: 7px; line-height: 1.35; }
+
 @media (max-width: 900px) {
     .rankings-controls { grid-template-columns: 1fr; }
 }
@@ -450,6 +545,11 @@ score backgrounds cannot be lost to broader table/cell styling.
     .score-distribution-popover { display: inline-block; margin: 0; }
     .score-distribution-panel { left: 0; right: auto; width: min(430px, calc(100vw - 32px)); }
     .score-distribution-panel::before { left: 20px; right: auto; }
+    .price-score-popover { display: inline-block; margin: 0; }
+    .price-score-panel { left: 0; right: auto; width: min(700px, calc(100vw - 32px)); }
+    .price-score-panel::before { left: 20px; right: auto; }
+    .price-score-controls { grid-template-columns: 1fr; }
+    .price-score-chart-wrap { height: 300px; }
     .site-footer-row { align-items: flex-start; }
     .creator-popover-panel { left: 0; right: auto; }
     .creator-popover-panel::after { left: 18px; right: auto; }
