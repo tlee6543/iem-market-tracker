@@ -588,22 +588,31 @@ score backgrounds cannot be lost to broader table/cell styling.
     
 <h1>Value Kings</h1>
 <div class="card notice-card">
-    <h2>Performance relative to price</h2>
+    <h2>Price efficiency, adjusted for cheaper alternatives</h2>
     <p class="muted">
-        This page uses Precogvision's formal ranking list to estimate how much Final Score is normally
-        associated with a given price. The model regresses <b>Final Score</b> against
-        <b>log10(ranking-sheet Price)</b>, which is better suited to a list spanning budget IEMs through
-        multi-thousand-dollar flagships.
+        This page estimates the price normally associated with each Final Score in
+        Precogvision's formal ranking list. Unlike the previous model, it predicts
+        <b>log10(Price) from Final Score</b>, so an IEM is rewarded for costing less than
+        its score would normally imply rather than merely outperforming other products in
+        an expensive price bracket.
     </p>
     <p class="muted">
-        For each IEM, <b>Value Deviation = Actual Final Score − Expected Final Score</b>.
-        Positive residuals mean the IEM scored higher than its price predicts; the largest positive
-        residuals rank highest. R² summarizes the fit of the overall model and is not an individual IEM score.
+        <b>Value Multiple = Expected Price ÷ Actual Price.</b> A result of 2.00× means the
+        IEM costs about half of the model-implied price for its score. That efficiency is
+        standardized, then reduced when a substantially cheaper IEM scores nearly as well.
+    </p>
+    <p class="muted">
+        <b>Adjusted Value Score = Price-Efficiency σ − 0.75 × log10(Comparable Premium).</b>
+        The comparable is the cheapest lower-priced IEM scoring no more than
+        0.25 points below the current IEM. Higher-scoring cheaper IEMs
+        also qualify. Only products priced below their model expectation and finishing with
+        a positive adjusted score are shown.
     </p>
     <p class="small">
-        Formal rankings with a valid Final Score and ranking-sheet Price are included. Demo-only entries,
-        resale retention, fit, accessories, availability, and listener preference are not part of this model.
-        See <a href="resale-leaders.html">Resale Leaders</a> for secondary-market retention.
+        Formal rankings with a valid Final Score and ranking-sheet Price are included.
+        Demo-only entries, resale retention, fit, accessories, availability, and listener
+        preference are not part of this model. See <a href="resale-leaders.html">Resale Leaders</a>
+        for secondary-market retention.
     </p>
 </div>
 
@@ -611,588 +620,99 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="metric-card">
         <div class="product-label">Model R²</div>
         <div class="metric-value">0.299</div>
-        <div class="small">Share of Final Score variance explained by log-price.</div>
+        <div class="small">Share of log-price variance explained by Final Score.</div>
     </div>
     <div class="metric-card">
         <div class="product-label">Rankings Analyzed</div>
         <div class="metric-value">362</div>
-        <div class="small">210 scored above the fitted price curve.</div>
+        <div class="small">110 passed the adjusted-value filter.</div>
     </div>
     <div class="metric-card">
-        <div class="product-label">Residual Spread</div>
-        <div class="metric-value">1.37</div>
-        <div class="small">Residual standard error in Final Score points.</div>
+        <div class="product-label">Price Residual Spread</div>
+        <div class="metric-value">0.514</div>
+        <div class="small">Residual standard error in log10-price units.</div>
     </div>
     <div class="metric-card">
-        <div class="product-label">Largest Value Deviation</div>
-        <div class="metric-value">+2.62</div>
-        <div class="small">Symphonium Audio Zenith</div>
+        <div class="product-label">Top Adjusted Value</div>
+        <div class="metric-value">+2.42</div>
+        <div class="small">CCA CRA · 17.59× expected-price multiple</div>
     </div>
 </div>
 <div class="card">
-    <div class="product-label">Regression</div>
-    <div class="product-value">Expected Final Score = 1.254 + 1.453 × log10(Price)</div>
-    <div class="small">IEMs below are ordered by raw positive residual in Final Score points. Residual σ shows the same deviation relative to the model's residual spread.</div>
+    <div class="product-label">Expected-price regression</div>
+    <div class="product-value">Expected Price = 10^(1.558 + 0.205 × Final Score)</div>
+    <div class="small">
+        Rankings below are ordered by Adjusted Value Score. Price-Efficiency σ measures how
+        far below the expected log-price an IEM sits. Comparable Premium shows how much more
+        it costs than the cheapest close-scoring alternative used for the adjustment.
+    </div>
 </div>
-<table class="main-table">
+<div class="table-scroll">
+<table class="main-table" style="min-width: 1450px;">
 <tr>
     <th class="rank-col">#</th>
     <th class="iem-col">IEM</th>
     <th>Brand</th>
     <th>Price</th>
     <th>Final Score</th>
-    <th>Expected Score</th>
-    <th>Value Deviation</th>
-    <th>Residual σ</th>
+    <th>Expected Price</th>
+    <th>Value Multiple</th>
+    <th>Price-Efficiency σ</th>
+    <th>Cheapest Comparable</th>
+    <th>Comparable Premium</th>
+    <th>Comparable Penalty</th>
+    <th>Adjusted Value Score</th>
     <th>Value Tier</th>
 </tr>
 
 <tr>
     <td class="rank-col">1</td>
     <td class="iem-col">
-        <a href="symphonium-zenith.html?from=value-kings">Symphonium Audio Zenith</a>
-        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
-        <span class="tracker-match">Tracker: Symphonium Zenith</span>
+        CCA CRA
+        
+        
     </td>
-    <td><a href="brand-symphonium.html">Symphonium</a></td>
-    <td class="nowrap">$1,800</td>
-    <td><b>8.6</b></td>
-    <td>5.98</td>
-    <td><b>+2.62</b></td>
-    <td>+1.91σ</td>
+    <td>CCA</td>
+    <td class="nowrap">$15</td>
+    <td><b>4.2</b></td>
+    <td class="nowrap">$263.79</td>
+    <td><b>17.59×</b></td>
+    <td>+2.42σ</td>
+    <td>
+        No cheaper close-scoring peer
+        
+    </td>
+    <td>—</td>
+    <td>—</td>
+    <td><b>+2.42</b></td>
     <td><span class="badge badge-deal">Exceptional</span></td>
 </tr>
 
 <tr>
     <td class="rank-col">2</td>
     <td class="iem-col">
-        <a href="subtonic-storm.html?from=value-kings">Subtonic Storm</a>
-        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
+        Sony MDR-EX15
+        
         
     </td>
-    <td><a href="brand-subtonic.html">Subtonic</a></td>
-    <td class="nowrap">$5,200</td>
-    <td><b>9.1</b></td>
-    <td>6.65</td>
-    <td><b>+2.45</b></td>
-    <td>+1.79σ</td>
+    <td>Sony</td>
+    <td class="nowrap">$10</td>
+    <td><b>3.3</b></td>
+    <td class="nowrap">$172.33</td>
+    <td><b>17.23×</b></td>
+    <td>+2.41σ</td>
+    <td>
+        No cheaper close-scoring peer
+        
+    </td>
+    <td>—</td>
+    <td>—</td>
+    <td><b>+2.41</b></td>
     <td><span class="badge badge-deal">Exceptional</span></td>
 </tr>
 
 <tr>
     <td class="rank-col">3</td>
-    <td class="iem-col">
-        <a href="elysian-annihilator-2023.html?from=value-kings">Elysian Annihilator 2023</a>
-        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
-        
-    </td>
-    <td><a href="brand-elysian.html">Elysian</a></td>
-    <td class="nowrap">$3,000</td>
-    <td><b>8.7</b></td>
-    <td>6.31</td>
-    <td><b>+2.39</b></td>
-    <td>+1.75σ</td>
-    <td><span class="badge badge-deal">Exceptional</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">4</td>
-    <td class="iem-col">
-        <a href="elysian-annihilator-2021.html?from=value-kings">Elysian Annihilator 2021</a>
-        
-        
-    </td>
-    <td><a href="brand-elysian.html">Elysian</a></td>
-    <td class="nowrap">$3,500</td>
-    <td><b>8.7</b></td>
-    <td>6.40</td>
-    <td><b>+2.30</b></td>
-    <td>+1.68σ</td>
-    <td><span class="badge badge-deal">Exceptional</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">5</td>
-    <td class="iem-col">
-        <a href="symphonium-europa.html?from=value-kings">Symphonium Europa</a>
-        
-        
-    </td>
-    <td><a href="brand-symphonium.html">Symphonium</a></td>
-    <td class="nowrap">$1,500</td>
-    <td><b>8.1</b></td>
-    <td>5.87</td>
-    <td><b>+2.23</b></td>
-    <td>+1.63σ</td>
-    <td><span class="badge badge-deal">Exceptional</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">6</td>
-    <td class="iem-col">
-        <a href="yu9-que.html?from=value-kings">YU9 Audio Que</a>
-        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
-        <span class="tracker-match">Tracker: YU9 Que</span>
-    </td>
-    <td><a href="brand-yu9.html">YU9</a></td>
-    <td class="nowrap">$400</td>
-    <td><b>7.2</b></td>
-    <td>5.04</td>
-    <td><b>+2.16</b></td>
-    <td>+1.58σ</td>
-    <td><span class="badge badge-deal">Exceptional</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">7</td>
-    <td class="iem-col">
-        <a href="64-audio-u12t.html?from=value-kings">64 Audio U12t</a>
-        
-        
-    </td>
-    <td><a href="brand-64-audio.html">64 Audio</a></td>
-    <td class="nowrap">$2,000</td>
-    <td><b>8.2</b></td>
-    <td>6.05</td>
-    <td><b>+2.15</b></td>
-    <td>+1.57σ</td>
-    <td><span class="badge badge-deal">Exceptional</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">8</td>
-    <td class="iem-col">
-        <a href="thieaudio-valhalla.html?from=value-kings">ThieAudio Valhalla</a>
-        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
-        
-    </td>
-    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
-    <td class="nowrap">$2,000</td>
-    <td><b>8.2</b></td>
-    <td>6.05</td>
-    <td><b>+2.15</b></td>
-    <td>+1.57σ</td>
-    <td><span class="badge badge-deal">Exceptional</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">9</td>
-    <td class="iem-col">
-        <a href="symphonium-crimson.html?from=value-kings">Symphonium Audio Crimson</a>
-        
-        <span class="tracker-match">Tracker: Symphonium Crimson</span>
-    </td>
-    <td><a href="brand-symphonium.html">Symphonium</a></td>
-    <td class="nowrap">$1,500</td>
-    <td><b>8.0</b></td>
-    <td>5.87</td>
-    <td><b>+2.13</b></td>
-    <td>+1.56σ</td>
-    <td><span class="badge badge-deal">Exceptional</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">10</td>
-    <td class="iem-col">
-        <a href="64-audio-u4s.html?from=value-kings">64 Audio U4s</a>
-        
-        
-    </td>
-    <td><a href="brand-64-audio.html">64 Audio</a></td>
-    <td class="nowrap">$1,100</td>
-    <td><b>7.7</b></td>
-    <td>5.67</td>
-    <td><b>+2.03</b></td>
-    <td>+1.48σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">11</td>
-    <td class="iem-col">
-        <a href="symphonium-helios.html?from=value-kings">Symphonium Helios</a>
-        
-        
-    </td>
-    <td><a href="brand-symphonium.html">Symphonium</a></td>
-    <td class="nowrap">$1,100</td>
-    <td><b>7.7</b></td>
-    <td>5.67</td>
-    <td><b>+2.03</b></td>
-    <td>+1.48σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">12</td>
-    <td class="iem-col">
-        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
-        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
-        <span class="tracker-match">Tracker: Moondrop May</span>
-    </td>
-    <td><a href="brand-moondrop.html">Moondrop</a></td>
-    <td class="nowrap">$75</td>
-    <td><b>6.0</b></td>
-    <td>3.98</td>
-    <td><b>+2.02</b></td>
-    <td>+1.48σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">13</td>
-    <td class="iem-col">
-        <a href="thieaudio-monarch-mkiv.html?from=value-kings">ThieAudio Monarch MKIV</a>
-        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
-        
-    </td>
-    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
-    <td class="nowrap">$1,150</td>
-    <td><b>7.7</b></td>
-    <td>5.70</td>
-    <td><b>+2.00</b></td>
-    <td>+1.46σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">14</td>
-    <td class="iem-col">
-        <a href="64-audio-tia-trio.html?from=value-kings">64 Audio Tia Trio</a>
-        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
-        
-    </td>
-    <td><a href="brand-64-audio.html">64 Audio</a></td>
-    <td class="nowrap">$2,300</td>
-    <td><b>8.1</b></td>
-    <td>6.14</td>
-    <td><b>+1.96</b></td>
-    <td>+1.43σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">15</td>
-    <td class="iem-col">
-        <a href="elysian-diva.html?from=value-kings">Elysian Diva</a>
-        
-        
-    </td>
-    <td><a href="brand-elysian.html">Elysian</a></td>
-    <td class="nowrap">$1,500</td>
-    <td><b>7.8</b></td>
-    <td>5.87</td>
-    <td><b>+1.93</b></td>
-    <td>+1.41σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">16</td>
-    <td class="iem-col">
-        <a href="7th-acoustics-supernova.html?from=value-kings">7th Acoustics Supernova</a>
-        
-        
-    </td>
-    <td><a href="brand-7th-acoustics.html">7th Acoustics</a></td>
-    <td class="nowrap">$750</td>
-    <td><b>7.3</b></td>
-    <td>5.43</td>
-    <td><b>+1.87</b></td>
-    <td>+1.37σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">17</td>
-    <td class="iem-col">
-        <a href="mysticraft-hex.html?from=value-kings">Mysticraft Hex</a>
-        
-        
-    </td>
-    <td><a href="brand-mysticraft.html">Mysticraft</a></td>
-    <td class="nowrap">$9,800</td>
-    <td><b>8.9</b></td>
-    <td>7.05</td>
-    <td><b>+1.85</b></td>
-    <td>+1.35σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">18</td>
-    <td class="iem-col">
-        <a href="7th-acoustics-asteria.html?from=value-kings">7th Acoustics Asteria</a>
-        
-        
-    </td>
-    <td><a href="brand-7th-acoustics.html">7th Acoustics</a></td>
-    <td class="nowrap">$3,800</td>
-    <td><b>8.3</b></td>
-    <td>6.46</td>
-    <td><b>+1.84</b></td>
-    <td>+1.35σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">19</td>
-    <td class="iem-col">
-        <a href="juzear-defiant.html?from=value-kings">Juzear Defiant</a>
-        
-        
-    </td>
-    <td><a href="brand-juzear.html">Juzear</a></td>
-    <td class="nowrap">$100</td>
-    <td><b>6.0</b></td>
-    <td>4.16</td>
-    <td><b>+1.84</b></td>
-    <td>+1.35σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">20</td>
-    <td class="iem-col">
-        Mysticraft Tet
-        
-        
-    </td>
-    <td>Mysticraft</td>
-    <td class="nowrap">$7,700</td>
-    <td><b>8.7</b></td>
-    <td>6.90</td>
-    <td><b>+1.80</b></td>
-    <td>+1.32σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">21</td>
-    <td class="iem-col">
-        <a href="hercules-audio-moses.html?from=value-kings">Hercules Audio Moses</a>
-        
-        
-    </td>
-    <td><a href="brand-hercules-audio.html">Hercules Audio</a></td>
-    <td class="nowrap">$3,500</td>
-    <td><b>8.2</b></td>
-    <td>6.40</td>
-    <td><b>+1.80</b></td>
-    <td>+1.31σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">22</td>
-    <td class="iem-col">
-        <a href="sony-ier-m9.html?from=value-kings">Sony IER-M9</a>
-        
-        
-    </td>
-    <td><a href="brand-sony.html">Sony</a></td>
-    <td class="nowrap">$1,000</td>
-    <td><b>7.4</b></td>
-    <td>5.61</td>
-    <td><b>+1.79</b></td>
-    <td>+1.31σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">23</td>
-    <td class="iem-col">
-        <a href="moondrop-variations.html?from=value-kings">Moondrop Variations</a>
-        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
-        
-    </td>
-    <td><a href="brand-moondrop.html">Moondrop</a></td>
-    <td class="nowrap">$550</td>
-    <td><b>7.0</b></td>
-    <td>5.24</td>
-    <td><b>+1.76</b></td>
-    <td>+1.29σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">24</td>
-    <td class="iem-col">
-        <a href="xenns-mangird-top-pro.html?from=value-kings">Xenns Top Pro</a>
-        
-        <span class="tracker-match">Tracker: XENNS Mangird Top Pro</span>
-    </td>
-    <td><a href="brand-xenns.html">XENNS</a></td>
-    <td class="nowrap">$500</td>
-    <td><b>6.9</b></td>
-    <td>5.18</td>
-    <td><b>+1.72</b></td>
-    <td>+1.26σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">25</td>
-    <td class="iem-col">
-        <a href="moondrop-s8.html?from=value-kings">Moondrop S8</a>
-        
-        
-    </td>
-    <td><a href="brand-moondrop.html">Moondrop</a></td>
-    <td class="nowrap">$700</td>
-    <td><b>7.1</b></td>
-    <td>5.39</td>
-    <td><b>+1.71</b></td>
-    <td>+1.25σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">26</td>
-    <td class="iem-col">
-        <a href="symphonium-helios-se.html?from=value-kings">Symphonium Helios SE</a>
-        
-        
-    </td>
-    <td><a href="brand-symphonium.html">Symphonium</a></td>
-    <td class="nowrap">$1,150</td>
-    <td><b>7.4</b></td>
-    <td>5.70</td>
-    <td><b>+1.70</b></td>
-    <td>+1.24σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">27</td>
-    <td class="iem-col">
-        <a href="mysticraft-myth.html?from=value-kings">Mysticraft Myth</a>
-        
-        
-    </td>
-    <td><a href="brand-mysticraft.html">Mysticraft</a></td>
-    <td class="nowrap">$1,000</td>
-    <td><b>7.3</b></td>
-    <td>5.61</td>
-    <td><b>+1.69</b></td>
-    <td>+1.23σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">28</td>
-    <td class="iem-col">
-        <a href="thieaudio-monarch-mkiii.html?from=value-kings">ThieAudio Monarch MKIII</a>
-        
-        
-    </td>
-    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
-    <td class="nowrap">$1,000</td>
-    <td><b>7.3</b></td>
-    <td>5.61</td>
-    <td><b>+1.69</b></td>
-    <td>+1.23σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">29</td>
-    <td class="iem-col">
-        <a href="moondrop-blessing-2-dusk.html?from=value-kings">Moondrop B2: Dusk</a>
-        
-        <span class="tracker-match">Tracker: Moondrop Blessing 2 Dusk</span>
-    </td>
-    <td><a href="brand-moondrop.html">Moondrop</a></td>
-    <td class="nowrap">$330</td>
-    <td><b>6.6</b></td>
-    <td>4.91</td>
-    <td><b>+1.69</b></td>
-    <td>+1.23σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">30</td>
-    <td class="iem-col">
-        Juzear Defiant Gamerfidelity
-        
-        
-    </td>
-    <td>Juzear</td>
-    <td class="nowrap">$110</td>
-    <td><b>5.9</b></td>
-    <td>4.22</td>
-    <td><b>+1.68</b></td>
-    <td>+1.23σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">31</td>
-    <td class="iem-col">
-        <a href="binary-acoustics-ep321-mems.html?from=value-kings">Binary Acoustics EP321 MEMS</a>
-        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
-        
-    </td>
-    <td><a href="brand-binary-acoustics.html">Binary Acoustics</a></td>
-    <td class="nowrap">$300</td>
-    <td><b>6.5</b></td>
-    <td>4.85</td>
-    <td><b>+1.65</b></td>
-    <td>+1.20σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">32</td>
-    <td class="iem-col">
-        <a href="tanchjim-origin.html?from=value-kings">Tanchjim Origin</a>
-        
-        
-    </td>
-    <td><a href="brand-tanchjim.html">Tanchjim</a></td>
-    <td class="nowrap">$280</td>
-    <td><b>6.5</b></td>
-    <td>4.81</td>
-    <td><b>+1.64</b></td>
-    <td>+1.20σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">33</td>
-    <td class="iem-col">
-        <a href="unique-melody-mest-jet-black.html?from=value-kings">UM MEST Jet Black</a>
-        
-        <span class="tracker-match">Tracker: Unique Melody MEST Jet Black</span>
-    </td>
-    <td><a href="brand-unique-melody.html">Unique Melody</a></td>
-    <td class="nowrap">$1,300</td>
-    <td><b>7.4</b></td>
-    <td>5.78</td>
-    <td><b>+1.62</b></td>
-    <td>+1.19σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">34</td>
-    <td class="iem-col">
-        <a href="thieaudio-hype-4.html?from=value-kings">ThieAudio Hype 4</a>
-        
-        
-    </td>
-    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
-    <td class="nowrap">$400</td>
-    <td><b>6.7</b></td>
-    <td>5.04</td>
-    <td><b>+1.61</b></td>
-    <td>+1.18σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">35</td>
     <td class="iem-col">
         Tangzu Waner SG 2 Red Lion
         
@@ -1201,46 +721,527 @@ score backgrounds cannot be lost to broader table/cell styling.
     <td>Tangzu</td>
     <td class="nowrap">$25</td>
     <td><b>4.9</b></td>
-    <td>3.29</td>
-    <td><b>+1.61</b></td>
-    <td>+1.18σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">36</td>
-    <td class="iem-col">
-        <a href="symphonium-meteor.html?from=value-kings">Symphonium Audio Meteor</a>
-        
-        <span class="tracker-match">Tracker: Symphonium Meteor</span>
-    </td>
-    <td><a href="brand-symphonium.html">Symphonium</a></td>
-    <td class="nowrap">$600</td>
-    <td><b>6.9</b></td>
-    <td>5.29</td>
-    <td><b>+1.61</b></td>
-    <td>+1.18σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">37</td>
-    <td class="iem-col">
-        <a href="sony-ier-z1r.html?from=value-kings">Sony IER-Z1R</a>
-        
+    <td class="nowrap">$367.36</td>
+    <td><b>14.69×</b></td>
+    <td>+2.27σ</td>
+    <td>
+        No cheaper close-scoring peer
         
     </td>
-    <td><a href="brand-sony.html">Sony</a></td>
-    <td class="nowrap">$1,700</td>
-    <td><b>7.5</b></td>
-    <td>5.95</td>
-    <td><b>+1.55</b></td>
-    <td>+1.14σ</td>
+    <td>—</td>
+    <td>—</td>
+    <td><b>+2.27</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">4</td>
+    <td class="iem-col">
+        Truthears Hola
+        
+        <span class="tracker-match">Tracker: Truthear Hola</span>
+    </td>
+    <td>Truthear</td>
+    <td class="nowrap">$19</td>
+    <td><b>4.3</b></td>
+    <td class="nowrap">$276.57</td>
+    <td><b>14.56×</b></td>
+    <td>+2.26σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>1.27×</td>
+    <td>−0.08</td>
+    <td><b>+2.19</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">5</td>
+    <td class="iem-col">
+        Tanchjim Zero
+        
+        
+    </td>
+    <td>Tanchjim</td>
+    <td class="nowrap">$15</td>
+    <td><b>3.6</b></td>
+    <td class="nowrap">$198.6</td>
+    <td><b>13.24×</b></td>
+    <td>+2.18σ</td>
+    <td>
+        No cheaper close-scoring peer
+        
+    </td>
+    <td>—</td>
+    <td>—</td>
+    <td><b>+2.18</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">6</td>
+    <td class="iem-col">
+        <a href="7hz-zero.html?from=value-kings">7Hz Zero</a>
+        
+        
+    </td>
+    <td><a href="brand-7hz.html">7Hz</a></td>
+    <td class="nowrap">$20</td>
+    <td><b>4.4</b></td>
+    <td class="nowrap">$289.97</td>
+    <td><b>14.50×</b></td>
+    <td>+2.26σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>1.33×</td>
+    <td>−0.09</td>
+    <td><b>+2.17</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">7</td>
+    <td class="iem-col">
+        <a href="truthear-gate.html?from=value-kings">Truthear Gate</a>
+        
+        
+    </td>
+    <td><a href="brand-truthear.html">Truthear</a></td>
+    <td class="nowrap">$20</td>
+    <td><b>4.2</b></td>
+    <td class="nowrap">$263.79</td>
+    <td><b>13.19×</b></td>
+    <td>+2.18σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>1.33×</td>
+    <td>−0.09</td>
+    <td><b>+2.09</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">8</td>
+    <td class="iem-col">
+        Moondrop Jiu
+        
+        
+    </td>
+    <td>Moondrop</td>
+    <td class="nowrap">$25</td>
+    <td><b>4.5</b></td>
+    <td class="nowrap">$304.02</td>
+    <td><b>12.16×</b></td>
+    <td>+2.11σ</td>
+    <td>
+        Truthears Hola
+        <span class="tracker-match">$19 · score 4.3</span>
+    </td>
+    <td>1.32×</td>
+    <td>−0.09</td>
+    <td><b>+2.02</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">9</td>
+    <td class="iem-col">
+        Moondrop Chu
+        
+        
+    </td>
+    <td>Moondrop</td>
+    <td class="nowrap">$20</td>
+    <td><b>4.0</b></td>
+    <td class="nowrap">$239.98</td>
+    <td><b>12.00×</b></td>
+    <td>+2.10σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>1.33×</td>
+    <td>−0.09</td>
+    <td><b>+2.01</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">10</td>
+    <td class="iem-col">
+        KZ EDX Pro
+        
+        
+    </td>
+    <td>KZ</td>
+    <td class="nowrap">$14</td>
+    <td><b>3.2</b></td>
+    <td class="nowrap">$164.36</td>
+    <td><b>11.74×</b></td>
+    <td>+2.08σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>1.40×</td>
+    <td>−0.11</td>
+    <td><b>+1.97</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">11</td>
+    <td class="iem-col">
+        JVC FX7 Gumy
+        
+        
+    </td>
+    <td>JVC</td>
+    <td class="nowrap">$10</td>
+    <td><b>2.1</b></td>
+    <td class="nowrap">$97.68</td>
+    <td><b>9.77×</b></td>
+    <td>+1.93σ</td>
+    <td>
+        No cheaper close-scoring peer
+        
+    </td>
+    <td>—</td>
+    <td>—</td>
+    <td><b>+1.93</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">12</td>
+    <td class="iem-col">
+        CCA CRA+
+        
+        <span class="tracker-match">Tracker: CCA CRA</span>
+    </td>
+    <td>CCA</td>
+    <td class="nowrap">$28</td>
+    <td><b>4.5</b></td>
+    <td class="nowrap">$304.02</td>
+    <td><b>10.86×</b></td>
+    <td>+2.02σ</td>
+    <td>
+        Truthears Hola
+        <span class="tracker-match">$19 · score 4.3</span>
+    </td>
+    <td>1.47×</td>
+    <td>−0.13</td>
+    <td><b>+1.89</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">13</td>
+    <td class="iem-col">
+        HiFiMAN Bolt
+        
+        <span class="tracker-match">Tracker: Hifiman Bolt</span>
+    </td>
+    <td>Hifiman</td>
+    <td class="nowrap">$10</td>
+    <td><b>2.0</b></td>
+    <td class="nowrap">$93.16</td>
+    <td><b>9.32×</b></td>
+    <td>+1.89σ</td>
+    <td>
+        No cheaper close-scoring peer
+        
+    </td>
+    <td>—</td>
+    <td>—</td>
+    <td><b>+1.89</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">14</td>
+    <td class="iem-col">
+        Moondrop Quarks
+        
+        
+    </td>
+    <td>Moondrop</td>
+    <td class="nowrap">$15</td>
+    <td><b>3.1</b></td>
+    <td class="nowrap">$156.77</td>
+    <td><b>10.45×</b></td>
+    <td>+1.98σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>1.50×</td>
+    <td>−0.13</td>
+    <td><b>+1.85</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">15</td>
+    <td class="iem-col">
+        Tanchjim Tanya
+        
+        
+    </td>
+    <td>Tanchjim</td>
+    <td class="nowrap">$25</td>
+    <td><b>4.2</b></td>
+    <td class="nowrap">$263.79</td>
+    <td><b>10.55×</b></td>
+    <td>+1.99σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>1.67×</td>
+    <td>−0.17</td>
+    <td><b>+1.83</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">16</td>
+    <td class="iem-col">
+        KZ EDX Ultra
+        
+        
+    </td>
+    <td>KZ</td>
+    <td class="nowrap">$22</td>
+    <td><b>3.8</b></td>
+    <td class="nowrap">$218.31</td>
+    <td><b>9.92×</b></td>
+    <td>+1.94σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>1.47×</td>
+    <td>−0.12</td>
+    <td><b>+1.82</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">17</td>
+    <td class="iem-col">
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
+        <span class="tracker-match">Tracker: Moondrop May</span>
+    </td>
+    <td><a href="brand-moondrop.html">Moondrop</a></td>
+    <td class="nowrap">$75</td>
+    <td><b>6.0</b></td>
+    <td class="nowrap">$618.15</td>
+    <td><b>8.24×</b></td>
+    <td>+1.78σ</td>
+    <td>
+        No cheaper close-scoring peer
+        
+    </td>
+    <td>—</td>
+    <td>—</td>
+    <td><b>+1.78</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">18</td>
+    <td class="iem-col">
+        Tripowin Lea
+        
+        
+    </td>
+    <td>Tripowin</td>
+    <td class="nowrap">$26</td>
+    <td><b>3.9</b></td>
+    <td class="nowrap">$228.89</td>
+    <td><b>8.80×</b></td>
+    <td>+1.84σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>1.73×</td>
+    <td>−0.18</td>
+    <td><b>+1.66</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">19</td>
+    <td class="iem-col">
+        Moondrop Spaceship
+        
+        
+    </td>
+    <td>Moondrop</td>
+    <td class="nowrap">$20</td>
+    <td><b>3.3</b></td>
+    <td class="nowrap">$172.33</td>
+    <td><b>8.62×</b></td>
+    <td>+1.82σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>2.00×</td>
+    <td>−0.23</td>
+    <td><b>+1.59</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">20</td>
+    <td class="iem-col">
+        KZ PR1 Pro
+        
+        
+    </td>
+    <td>KZ</td>
+    <td class="nowrap">$50</td>
+    <td><b>5.1</b></td>
+    <td class="nowrap">$403.81</td>
+    <td><b>8.08×</b></td>
+    <td>+1.77σ</td>
+    <td>
+        Tangzu Waner SG 2 Red Lion
+        <span class="tracker-match">$25 · score 4.9</span>
+    </td>
+    <td>2.00×</td>
+    <td>−0.23</td>
+    <td><b>+1.54</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">21</td>
+    <td class="iem-col">
+        CCA CSN
+        
+        
+    </td>
+    <td>CCA</td>
+    <td class="nowrap">$20</td>
+    <td><b>3.1</b></td>
+    <td class="nowrap">$156.77</td>
+    <td><b>7.84×</b></td>
+    <td>+1.74σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>2.00×</td>
+    <td>−0.23</td>
+    <td><b>+1.51</b></td>
+    <td><span class="badge badge-deal">Exceptional</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">22</td>
+    <td class="iem-col">
+        <a href="juzear-defiant.html?from=value-kings">Juzear Defiant</a>
+        
+        
+    </td>
+    <td><a href="brand-juzear.html">Juzear</a></td>
+    <td class="nowrap">$100</td>
+    <td><b>6.0</b></td>
+    <td class="nowrap">$618.15</td>
+    <td><b>6.18×</b></td>
+    <td>+1.54σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>1.33×</td>
+    <td>−0.09</td>
+    <td><b>+1.45</b></td>
     <td><span class="badge badge-deal">Excellent</span></td>
 </tr>
 
 <tr>
-    <td class="rank-col">38</td>
+    <td class="rank-col">23</td>
+    <td class="iem-col">
+        DUNU Titan X
+        
+        <span class="tracker-match">Tracker: Dunu Titan X</span>
+    </td>
+    <td>Dunu</td>
+    <td class="nowrap">$35</td>
+    <td><b>4.1</b></td>
+    <td class="nowrap">$251.6</td>
+    <td><b>7.19×</b></td>
+    <td>+1.67σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>2.33×</td>
+    <td>−0.28</td>
+    <td><b>+1.39</b></td>
+    <td><span class="badge badge-deal">Excellent</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">24</td>
+    <td class="iem-col">
+        KZ Zex
+        
+        <span class="tracker-match">Tracker: KZ ZEX</span>
+    </td>
+    <td>KZ</td>
+    <td class="nowrap">$22</td>
+    <td><b>3.0</b></td>
+    <td class="nowrap">$149.52</td>
+    <td><b>6.80×</b></td>
+    <td>+1.62σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>2.20×</td>
+    <td>−0.26</td>
+    <td><b>+1.36</b></td>
+    <td><span class="badge badge-deal">Excellent</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">25</td>
+    <td class="iem-col">
+        KZ Zex Pro
+        
+        <span class="tracker-match">Tracker: KZ ZEX Pro</span>
+    </td>
+    <td>KZ</td>
+    <td class="nowrap">$34</td>
+    <td><b>3.9</b></td>
+    <td class="nowrap">$228.89</td>
+    <td><b>6.73×</b></td>
+    <td>+1.61σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>2.27×</td>
+    <td>−0.27</td>
+    <td><b>+1.35</b></td>
+    <td><span class="badge badge-deal">Excellent</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">26</td>
     <td class="iem-col">
         <a href="etymotic-er2xr.html?from=value-kings">Etymotic ER2XR</a>
         
@@ -1249,42 +1250,339 @@ score backgrounds cannot be lost to broader table/cell styling.
     <td><a href="brand-etymotic.html">Etymotic</a></td>
     <td class="nowrap">$100</td>
     <td><b>5.7</b></td>
-    <td>4.16</td>
-    <td><b>+1.54</b></td>
-    <td>+1.13σ</td>
+    <td class="nowrap">$536.36</td>
+    <td><b>5.36×</b></td>
+    <td>+1.42σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>1.33×</td>
+    <td>−0.09</td>
+    <td><b>+1.33</b></td>
     <td><span class="badge badge-deal">Excellent</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">27</td>
+    <td class="iem-col">
+        Tanchjim Ola
+        
+        
+    </td>
+    <td>Tanchjim</td>
+    <td class="nowrap">$40</td>
+    <td><b>4.3</b></td>
+    <td class="nowrap">$276.57</td>
+    <td><b>6.91×</b></td>
+    <td>+1.63σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>2.67×</td>
+    <td>−0.32</td>
+    <td><b>+1.32</b></td>
+    <td><span class="badge badge-deal">Excellent</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">28</td>
+    <td class="iem-col">
+        <a href="truthear-hexa.html?from=value-kings">Truthears Hexa</a>
+        
+        <span class="tracker-match">Tracker: Truthear Hexa</span>
+    </td>
+    <td><a href="brand-truthear.html">Truthear</a></td>
+    <td class="nowrap">$80</td>
+    <td><b>5.3</b></td>
+    <td class="nowrap">$443.89</td>
+    <td><b>5.55×</b></td>
+    <td>+1.45σ</td>
+    <td>
+        KZ PR1 Pro
+        <span class="tracker-match">$50 · score 5.1</span>
+    </td>
+    <td>1.60×</td>
+    <td>−0.15</td>
+    <td><b>+1.30</b></td>
+    <td><span class="badge badge-deal">Excellent</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">29</td>
+    <td class="iem-col">
+        Juzear Defiant Gamerfidelity
+        
+        
+    </td>
+    <td>Juzear</td>
+    <td class="nowrap">$110</td>
+    <td><b>5.9</b></td>
+    <td class="nowrap">$589.59</td>
+    <td><b>5.36×</b></td>
+    <td>+1.42σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>1.47×</td>
+    <td>−0.12</td>
+    <td><b>+1.29</b></td>
+    <td><span class="badge badge-deal">Excellent</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">30</td>
+    <td class="iem-col">
+        <a href="truthear-x-crinacle-zero.html?from=value-kings">Truthear x Crinacle Zero</a>
+        
+        
+    </td>
+    <td><a href="brand-truthear.html">Truthear</a></td>
+    <td class="nowrap">$50</td>
+    <td><b>4.6</b></td>
+    <td class="nowrap">$318.75</td>
+    <td><b>6.37×</b></td>
+    <td>+1.57σ</td>
+    <td>
+        <a href="7hz-zero.html?from=value-kings">7Hz Zero</a>
+        <span class="tracker-match">$20 · score 4.4</span>
+    </td>
+    <td>2.50×</td>
+    <td>−0.30</td>
+    <td><b>+1.27</b></td>
+    <td><span class="badge badge-deal">Excellent</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">31</td>
+    <td class="iem-col">
+        Blon BL03
+        
+        
+    </td>
+    <td>Blon</td>
+    <td class="nowrap">$40</td>
+    <td><b>4.0</b></td>
+    <td class="nowrap">$239.98</td>
+    <td><b>6.00×</b></td>
+    <td>+1.51σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>2.67×</td>
+    <td>−0.32</td>
+    <td><b>+1.20</b></td>
+    <td><span class="badge badge-deal">Excellent</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">32</td>
+    <td class="iem-col">
+        Moondrop SSP
+        
+        
+    </td>
+    <td>Moondrop</td>
+    <td class="nowrap">$40</td>
+    <td><b>4.0</b></td>
+    <td class="nowrap">$239.98</td>
+    <td><b>6.00×</b></td>
+    <td>+1.51σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>2.67×</td>
+    <td>−0.32</td>
+    <td><b>+1.20</b></td>
+    <td><span class="badge badge-deal">Excellent</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">33</td>
+    <td class="iem-col">
+        <a href="moondrop-aria.html?from=value-kings">Moondrop Aria</a>
+        
+        
+    </td>
+    <td><a href="brand-moondrop.html">Moondrop</a></td>
+    <td class="nowrap">$90</td>
+    <td><b>5.2</b></td>
+    <td class="nowrap">$423.38</td>
+    <td><b>4.70×</b></td>
+    <td>+1.31σ</td>
+    <td>
+        KZ PR1 Pro
+        <span class="tracker-match">$50 · score 5.1</span>
+    </td>
+    <td>1.80×</td>
+    <td>−0.19</td>
+    <td><b>+1.12</b></td>
+    <td><span class="badge badge-deal">Excellent</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">34</td>
+    <td class="iem-col">
+        KZ DQ6
+        
+        
+    </td>
+    <td>KZ</td>
+    <td class="nowrap">$28</td>
+    <td><b>3.0</b></td>
+    <td class="nowrap">$149.52</td>
+    <td><b>5.34×</b></td>
+    <td>+1.42σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>2.80×</td>
+    <td>−0.34</td>
+    <td><b>+1.08</b></td>
+    <td><span class="badge badge-deal">Excellent</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">35</td>
+    <td class="iem-col">
+        Moondrop SSR
+        
+        
+    </td>
+    <td>Moondrop</td>
+    <td class="nowrap">$40</td>
+    <td><b>3.6</b></td>
+    <td class="nowrap">$198.6</td>
+    <td><b>4.97×</b></td>
+    <td>+1.35σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>2.67×</td>
+    <td>−0.32</td>
+    <td><b>+1.04</b></td>
+    <td><span class="badge badge-deal">Excellent</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">36</td>
+    <td class="iem-col">
+        <a href="etymotic-er2se.html?from=value-kings">Etymotic ER2SE</a>
+        
+        
+    </td>
+    <td><a href="brand-etymotic.html">Etymotic</a></td>
+    <td class="nowrap">$100</td>
+    <td><b>5.2</b></td>
+    <td class="nowrap">$423.38</td>
+    <td><b>4.23×</b></td>
+    <td>+1.22σ</td>
+    <td>
+        KZ PR1 Pro
+        <span class="tracker-match">$50 · score 5.1</span>
+    </td>
+    <td>2.00×</td>
+    <td>−0.23</td>
+    <td><b>+0.99</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">37</td>
+    <td class="iem-col">
+        Tripowin x HBB Olina
+        
+        <span class="tracker-match">Tracker: Tripowin Olina</span>
+    </td>
+    <td>Tripowin</td>
+    <td class="nowrap">$100</td>
+    <td><b>5.2</b></td>
+    <td class="nowrap">$423.38</td>
+    <td><b>4.23×</b></td>
+    <td>+1.22σ</td>
+    <td>
+        KZ PR1 Pro
+        <span class="tracker-match">$50 · score 5.1</span>
+    </td>
+    <td>2.00×</td>
+    <td>−0.23</td>
+    <td><b>+0.99</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">38</td>
+    <td class="iem-col">
+        <a href="dunu-titan-s.html?from=value-kings">DUNU Titan S</a>
+        
+        <span class="tracker-match">Tracker: Dunu Titan S</span>
+    </td>
+    <td>Dunu</td>
+    <td class="nowrap">$79</td>
+    <td><b>5.0</b></td>
+    <td class="nowrap">$385.15</td>
+    <td><b>4.88×</b></td>
+    <td>+1.34σ</td>
+    <td>
+        Tangzu Waner SG 2 Red Lion
+        <span class="tracker-match">$25 · score 4.9</span>
+    </td>
+    <td>3.16×</td>
+    <td>−0.37</td>
+    <td><b>+0.96</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
 </tr>
 
 <tr>
     <td class="rank-col">39</td>
     <td class="iem-col">
-        <a href="effect-audio-x-elysian-acoustic-labs-gaea.html?from=value-kings">Effect Audio x Elysian Gaea</a>
+        <a href="kefine-klean-sv.html?from=value-kings">Kefine Klean SV</a>
         
-        <span class="tracker-match">Tracker: Effect Audio x Elysian Acoustic Labs Gaea</span>
+        
     </td>
-    <td><a href="brand-effect-audio.html">Effect Audio</a></td>
-    <td class="nowrap">$1,300</td>
-    <td><b>7.3</b></td>
-    <td>5.78</td>
-    <td><b>+1.52</b></td>
-    <td>+1.11σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
+    <td><a href="brand-kefine.html">Kefine</a></td>
+    <td class="nowrap">$55</td>
+    <td><b>4.3</b></td>
+    <td class="nowrap">$276.57</td>
+    <td><b>5.03×</b></td>
+    <td>+1.37σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>3.67×</td>
+    <td>−0.42</td>
+    <td><b>+0.94</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
 </tr>
 
 <tr>
     <td class="rank-col">40</td>
     <td class="iem-col">
-        <a href="effect-audio-perseus.html?from=value-kings">Effect Audio Perseus</a>
+        Tripowin x HBB Mele
         
-        
+        <span class="tracker-match">Tracker: Tripowin HBB Mele</span>
     </td>
-    <td><a href="brand-effect-audio.html">Effect Audio</a></td>
-    <td class="nowrap">$1,000</td>
-    <td><b>7.1</b></td>
-    <td>5.61</td>
-    <td><b>+1.49</b></td>
-    <td>+1.09σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
+    <td>Tripowin</td>
+    <td class="nowrap">$50</td>
+    <td><b>4.0</b></td>
+    <td class="nowrap">$239.98</td>
+    <td><b>4.80×</b></td>
+    <td>+1.33σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>3.33×</td>
+    <td>−0.39</td>
+    <td><b>+0.93</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
 </tr>
 
 <tr>
@@ -1297,2286 +1595,21 @@ score backgrounds cannot be lost to broader table/cell styling.
     <td><a href="brand-sennheiser.html">Sennheiser</a></td>
     <td class="nowrap">$150</td>
     <td><b>5.9</b></td>
-    <td>4.42</td>
-    <td><b>+1.48</b></td>
-    <td>+1.09σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
+    <td class="nowrap">$589.59</td>
+    <td><b>3.93×</b></td>
+    <td>+1.16σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>2.00×</td>
+    <td>−0.23</td>
+    <td><b>+0.93</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
 </tr>
 
 <tr>
     <td class="rank-col">42</td>
-    <td class="iem-col">
-        <a href="prisma-audio-lumen.html?from=value-kings">Prisma Audio Lumen</a>
-        
-        
-    </td>
-    <td><a href="brand-prisma-audio.html">Prisma Audio</a></td>
-    <td class="nowrap">$1,400</td>
-    <td><b>7.3</b></td>
-    <td>5.83</td>
-    <td><b>+1.47</b></td>
-    <td>+1.08σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">43</td>
-    <td class="iem-col">
-        <a href="elysian-x.html?from=value-kings">Elysian X</a>
-        
-        
-    </td>
-    <td><a href="brand-elysian.html">Elysian</a></td>
-    <td class="nowrap">$4,500</td>
-    <td><b>8.0</b></td>
-    <td>6.56</td>
-    <td><b>+1.44</b></td>
-    <td>+1.05σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">44</td>
-    <td class="iem-col">
-        <a href="aful-dawn-x.html?from=value-kings">Aful Dawn-X</a>
-        
-        
-    </td>
-    <td><a href="brand-aful.html">Aful</a></td>
-    <td class="nowrap">$1,300</td>
-    <td><b>7.2</b></td>
-    <td>5.78</td>
-    <td><b>+1.42</b></td>
-    <td>+1.04σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">45</td>
-    <td class="iem-col">
-        <a href="unique-melody-mest.html?from=value-kings">Unique Melody MEST</a>
-        
-        
-    </td>
-    <td><a href="brand-unique-melody.html">Unique Melody</a></td>
-    <td class="nowrap">$1,300</td>
-    <td><b>7.2</b></td>
-    <td>5.78</td>
-    <td><b>+1.42</b></td>
-    <td>+1.04σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">46</td>
-    <td class="iem-col">
-        <a href="dunu-sa6-ultra.html?from=value-kings">DUNU SA6 Ultra</a>
-        
-        <span class="tracker-match">Tracker: Dunu SA6 Ultra</span>
-    </td>
-    <td><a href="brand-dunu.html">Dunu</a></td>
-    <td class="nowrap">$600</td>
-    <td><b>6.7</b></td>
-    <td>5.29</td>
-    <td><b>+1.41</b></td>
-    <td>+1.03σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">47</td>
-    <td class="iem-col">
-        <a href="softears-volume-s.html?from=value-kings">SoftEars Volume S</a>
-        
-        <span class="tracker-match">Tracker: Softears Volume S</span>
-    </td>
-    <td><a href="brand-softears.html">Softears</a></td>
-    <td class="nowrap">$320</td>
-    <td><b>6.3</b></td>
-    <td>4.89</td>
-    <td><b>+1.41</b></td>
-    <td>+1.03σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">48</td>
-    <td class="iem-col">
-        Binary Acoustics Chopin
-        
-        
-    </td>
-    <td>Binary Acoustics</td>
-    <td class="nowrap">$200</td>
-    <td><b>6.0</b></td>
-    <td>4.60</td>
-    <td><b>+1.40</b></td>
-    <td>+1.03σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">49</td>
-    <td class="iem-col">
-        <a href="dunu-glacier.html?from=value-kings">DUNU Glacier</a>
-        
-        <span class="tracker-match">Tracker: Dunu Glacier</span>
-    </td>
-    <td><a href="brand-dunu.html">Dunu</a></td>
-    <td class="nowrap">$1,350</td>
-    <td><b>7.2</b></td>
-    <td>5.80</td>
-    <td><b>+1.40</b></td>
-    <td>+1.02σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">50</td>
-    <td class="iem-col">
-        <a href="thieaudio-monarch-mkii.html?from=value-kings">Thieaudio Monarch MKII</a>
-        
-        <span class="tracker-match">Tracker: ThieAudio Monarch MKII</span>
-    </td>
-    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
-    <td class="nowrap">$1,000</td>
-    <td><b>7.0</b></td>
-    <td>5.61</td>
-    <td><b>+1.39</b></td>
-    <td>+1.01σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">51</td>
-    <td class="iem-col">
-        <a href="letshuoer-s12.html?from=value-kings">Shuoer S12</a>
-        
-        <span class="tracker-match">Tracker: Letshuoer S12</span>
-    </td>
-    <td><a href="brand-letshuoer.html">Letshuoer</a></td>
-    <td class="nowrap">$150</td>
-    <td><b>5.8</b></td>
-    <td>4.42</td>
-    <td><b>+1.38</b></td>
-    <td>+1.01σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">52</td>
-    <td class="iem-col">
-        KZ PR1 Pro
-        
-        
-    </td>
-    <td>KZ</td>
-    <td class="nowrap">$50</td>
-    <td><b>5.1</b></td>
-    <td>3.72</td>
-    <td><b>+1.38</b></td>
-    <td>+1.01σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">53</td>
-    <td class="iem-col">
-        Tanchjim Hana 2021
-        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
-        
-    </td>
-    <td>Tanchjim</td>
-    <td class="nowrap">$180</td>
-    <td><b>5.9</b></td>
-    <td>4.53</td>
-    <td><b>+1.37</b></td>
-    <td>+1.00σ</td>
-    <td><span class="badge badge-deal">Excellent</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">54</td>
-    <td class="iem-col">
-        <a href="64-audio-u6t.html?from=value-kings">64 Audio U6t</a>
-        
-        
-    </td>
-    <td><a href="brand-64-audio.html">64 Audio</a></td>
-    <td class="nowrap">$1,300</td>
-    <td><b>7.1</b></td>
-    <td>5.78</td>
-    <td><b>+1.32</b></td>
-    <td>+0.97σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">55</td>
-    <td class="iem-col">
-        Tanchjim Oxygen
-        
-        
-    </td>
-    <td>Tanchjim</td>
-    <td class="nowrap">$270</td>
-    <td><b>6.1</b></td>
-    <td>4.79</td>
-    <td><b>+1.31</b></td>
-    <td>+0.96σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">56</td>
-    <td class="iem-col">
-        <a href="moondrop-blessing-3.html?from=value-kings">Moondrop Blessing 3</a>
-        
-        
-    </td>
-    <td><a href="brand-moondrop.html">Moondrop</a></td>
-    <td class="nowrap">$320</td>
-    <td><b>6.2</b></td>
-    <td>4.89</td>
-    <td><b>+1.31</b></td>
-    <td>+0.96σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">57</td>
-    <td class="iem-col">
-        <a href="brise-audio-fugaku.html?from=value-kings">Brise Audio Fugaku</a>
-        
-        
-    </td>
-    <td><a href="brand-brise-audio.html">Brise Audio</a></td>
-    <td class="nowrap">$17,000</td>
-    <td><b>8.7</b></td>
-    <td>7.40</td>
-    <td><b>+1.30</b></td>
-    <td>+0.95σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">58</td>
-    <td class="iem-col">
-        Softears Karma
-        
-        
-    </td>
-    <td>Softears</td>
-    <td class="nowrap">$2,600</td>
-    <td><b>7.5</b></td>
-    <td>6.22</td>
-    <td><b>+1.28</b></td>
-    <td>+0.94σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">59</td>
-    <td class="iem-col">
-        <a href="truthear-hexa.html?from=value-kings">Truthears Hexa</a>
-        
-        <span class="tracker-match">Tracker: Truthear Hexa</span>
-    </td>
-    <td><a href="brand-truthear.html">Truthear</a></td>
-    <td class="nowrap">$80</td>
-    <td><b>5.3</b></td>
-    <td>4.02</td>
-    <td><b>+1.28</b></td>
-    <td>+0.94σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">60</td>
-    <td class="iem-col">
-        ThieAudio Elixir
-        
-        
-    </td>
-    <td>ThieAudio</td>
-    <td class="nowrap">$210</td>
-    <td><b>5.9</b></td>
-    <td>4.63</td>
-    <td><b>+1.27</b></td>
-    <td>+0.93σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">61</td>
-    <td class="iem-col">
-        Moondrop Dusk (no DSP)
-        
-        
-    </td>
-    <td>Moondrop</td>
-    <td class="nowrap">$400</td>
-    <td><b>6.3</b></td>
-    <td>5.04</td>
-    <td><b>+1.26</b></td>
-    <td>+0.93σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">62</td>
-    <td class="iem-col">
-        <a href="dunu-sa6.html?from=value-kings">Dunu SA6</a>
-        
-        
-    </td>
-    <td><a href="brand-dunu.html">Dunu</a></td>
-    <td class="nowrap">$550</td>
-    <td><b>6.5</b></td>
-    <td>5.24</td>
-    <td><b>+1.26</b></td>
-    <td>+0.92σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">63</td>
-    <td class="iem-col">
-        <a href="7hz-zero.html?from=value-kings">7Hz Zero</a>
-        
-        
-    </td>
-    <td><a href="brand-7hz.html">7Hz</a></td>
-    <td class="nowrap">$20</td>
-    <td><b>4.4</b></td>
-    <td>3.14</td>
-    <td><b>+1.26</b></td>
-    <td>+0.92σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">64</td>
-    <td class="iem-col">
-        ThieAudio Orchestra MKII
-        
-        
-    </td>
-    <td>ThieAudio</td>
-    <td class="nowrap">$350</td>
-    <td><b>6.2</b></td>
-    <td>4.95</td>
-    <td><b>+1.25</b></td>
-    <td>+0.91σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">65</td>
-    <td class="iem-col">
-        Audio Hekili
-        
-        
-    </td>
-    <td>Audio</td>
-    <td class="nowrap">$300</td>
-    <td><b>6.1</b></td>
-    <td>4.85</td>
-    <td><b>+1.25</b></td>
-    <td>+0.91σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">66</td>
-    <td class="iem-col">
-        <a href="thieaudio-hype-2.html?from=value-kings">ThieAudio Hype 2</a>
-        
-        
-    </td>
-    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
-    <td class="nowrap">$300</td>
-    <td><b>6.1</b></td>
-    <td>4.85</td>
-    <td><b>+1.25</b></td>
-    <td>+0.91σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">67</td>
-    <td class="iem-col">
-        CCA CRA
-        
-        
-    </td>
-    <td>CCA</td>
-    <td class="nowrap">$15</td>
-    <td><b>4.2</b></td>
-    <td>2.96</td>
-    <td><b>+1.24</b></td>
-    <td>+0.91σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">68</td>
-    <td class="iem-col">
-        <a href="moondrop-kato.html?from=value-kings">Moondrop Kato</a>
-        
-        
-    </td>
-    <td><a href="brand-moondrop.html">Moondrop</a></td>
-    <td class="nowrap">$190</td>
-    <td><b>5.8</b></td>
-    <td>4.57</td>
-    <td><b>+1.23</b></td>
-    <td>+0.90σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">69</td>
-    <td class="iem-col">
-        <a href="unique-melody-mest-mk2.html?from=value-kings">Unique Melody MEST MK2</a>
-        
-        
-    </td>
-    <td><a href="brand-unique-melody.html">Unique Melody</a></td>
-    <td class="nowrap">$1,500</td>
-    <td><b>7.1</b></td>
-    <td>5.87</td>
-    <td><b>+1.23</b></td>
-    <td>+0.90σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">70</td>
-    <td class="iem-col">
-        <a href="campfire-andromeda-2020.html?from=value-kings">Campfire Andromeda 2020</a>
-        
-        
-    </td>
-    <td><a href="brand-campfire-audio.html">Campfire Audio</a></td>
-    <td class="nowrap">$1,100</td>
-    <td><b>6.9</b></td>
-    <td>5.67</td>
-    <td><b>+1.23</b></td>
-    <td>+0.90σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">71</td>
-    <td class="iem-col">
-        <a href="sennheiser-ie900.html?from=value-kings">Sennheiser IE900</a>
-        
-        
-    </td>
-    <td><a href="brand-sennheiser.html">Sennheiser</a></td>
-    <td class="nowrap">$1,300</td>
-    <td><b>7.0</b></td>
-    <td>5.78</td>
-    <td><b>+1.22</b></td>
-    <td>+0.89σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">72</td>
-    <td class="iem-col">
-        Moondrop Jiu
-        
-        
-    </td>
-    <td>Moondrop</td>
-    <td class="nowrap">$25</td>
-    <td><b>4.5</b></td>
-    <td>3.29</td>
-    <td><b>+1.21</b></td>
-    <td>+0.89σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">73</td>
-    <td class="iem-col">
-        <a href="empire-ears-odin.html?from=value-kings">Empire Ears Odin</a>
-        
-        
-    </td>
-    <td><a href="brand-empire-ears.html">Empire Ears</a></td>
-    <td class="nowrap">$3,500</td>
-    <td><b>7.6</b></td>
-    <td>6.40</td>
-    <td><b>+1.20</b></td>
-    <td>+0.87σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">74</td>
-    <td class="iem-col">
-        Truthears Hola
-        
-        <span class="tracker-match">Tracker: Truthear Hola</span>
-    </td>
-    <td>Truthear</td>
-    <td class="nowrap">$19</td>
-    <td><b>4.3</b></td>
-    <td>3.11</td>
-    <td><b>+1.19</b></td>
-    <td>+0.87σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">75</td>
-    <td class="iem-col">
-        <a href="empire-ears-raven.html?from=value-kings">Empire Ears Raven</a>
-        
-        
-    </td>
-    <td><a href="brand-empire-ears.html">Empire Ears</a></td>
-    <td class="nowrap">$3,600</td>
-    <td><b>7.6</b></td>
-    <td>6.42</td>
-    <td><b>+1.18</b></td>
-    <td>+0.86σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">76</td>
-    <td class="iem-col">
-        <a href="64-audio-nio.html?from=value-kings">64 Audio Nio</a>
-        
-        
-    </td>
-    <td><a href="brand-64-audio.html">64 Audio</a></td>
-    <td class="nowrap">$1,700</td>
-    <td><b>7.1</b></td>
-    <td>5.95</td>
-    <td><b>+1.15</b></td>
-    <td>+0.84σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">77</td>
-    <td class="iem-col">
-        <a href="crinear-reference.html?from=value-kings">CrinEars Reference</a>
-        
-        <span class="tracker-match">Tracker: CrinEar Reference</span>
-    </td>
-    <td><a href="brand-crinear.html">CrinEar</a></td>
-    <td class="nowrap">$350</td>
-    <td><b>6.1</b></td>
-    <td>4.95</td>
-    <td><b>+1.15</b></td>
-    <td>+0.84σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">78</td>
-    <td class="iem-col">
-        Hyla Sarda
-        
-        
-    </td>
-    <td>Hyla</td>
-    <td class="nowrap">$1,250</td>
-    <td><b>6.9</b></td>
-    <td>5.75</td>
-    <td><b>+1.15</b></td>
-    <td>+0.84σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">79</td>
-    <td class="iem-col">
-        <a href="sennheiser-ie600.html?from=value-kings">Sennheiser IE600</a>
-        
-        
-    </td>
-    <td><a href="brand-sennheiser.html">Sennheiser</a></td>
-    <td class="nowrap">$780</td>
-    <td><b>6.6</b></td>
-    <td>5.46</td>
-    <td><b>+1.14</b></td>
-    <td>+0.84σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">80</td>
-    <td class="iem-col">
-        CCA CRA+
-        
-        <span class="tracker-match">Tracker: CCA CRA</span>
-    </td>
-    <td>CCA</td>
-    <td class="nowrap">$28</td>
-    <td><b>4.5</b></td>
-    <td>3.36</td>
-    <td><b>+1.14</b></td>
-    <td>+0.84σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">81</td>
-    <td class="iem-col">
-        <a href="7hz-timeless.html?from=value-kings">7Hz Timeless</a>
-        
-        
-    </td>
-    <td><a href="brand-7hz.html">7Hz</a></td>
-    <td class="nowrap">$220</td>
-    <td><b>5.8</b></td>
-    <td>4.66</td>
-    <td><b>+1.14</b></td>
-    <td>+0.84σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">82</td>
-    <td class="iem-col">
-        LETSHUOER EJ07M
-        
-        <span class="tracker-match">Tracker: Letshuoer EJ07M</span>
-    </td>
-    <td>Letshuoer</td>
-    <td class="nowrap">$600</td>
-    <td><b>6.4</b></td>
-    <td>5.29</td>
-    <td><b>+1.11</b></td>
-    <td>+0.81σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">83</td>
-    <td class="iem-col">
-        <a href="moondrop-aria.html?from=value-kings">Moondrop Aria</a>
-        
-        
-    </td>
-    <td><a href="brand-moondrop.html">Moondrop</a></td>
-    <td class="nowrap">$90</td>
-    <td><b>5.2</b></td>
-    <td>4.09</td>
-    <td><b>+1.11</b></td>
-    <td>+0.81σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">84</td>
-    <td class="iem-col">
-        <a href="moondrop-blessing-2.html?from=value-kings">Moondrop B2</a>
-        
-        <span class="tracker-match">Tracker: Moondrop Blessing 2</span>
-    </td>
-    <td><a href="brand-moondrop.html">Moondrop</a></td>
-    <td class="nowrap">$320</td>
-    <td><b>6.0</b></td>
-    <td>4.89</td>
-    <td><b>+1.11</b></td>
-    <td>+0.81σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">85</td>
-    <td class="iem-col">
-        <a href="simgot-supermix-4.html?from=value-kings">Simgot Supermix 4</a>
-        
-        
-    </td>
-    <td><a href="brand-simgot.html">Simgot</a></td>
-    <td class="nowrap">$170</td>
-    <td><b>5.6</b></td>
-    <td>4.50</td>
-    <td><b>+1.10</b></td>
-    <td>+0.81σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">86</td>
-    <td class="iem-col">
-        <a href="raptgo-hook-x.html?from=value-kings">Raptgo Hook X</a>
-        
-        
-    </td>
-    <td><a href="brand-raptgo.html">Raptgo</a></td>
-    <td class="nowrap">$240</td>
-    <td><b>5.8</b></td>
-    <td>4.71</td>
-    <td><b>+1.09</b></td>
-    <td>+0.80σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">87</td>
-    <td class="iem-col">
-        <a href="softears-rsv.html?from=value-kings">Softears RSV</a>
-        
-        
-    </td>
-    <td><a href="brand-softears.html">Softears</a></td>
-    <td class="nowrap">$730</td>
-    <td><b>6.5</b></td>
-    <td>5.42</td>
-    <td><b>+1.08</b></td>
-    <td>+0.79σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">88</td>
-    <td class="iem-col">
-        <a href="64-audio-solo.html?from=value-kings">64 Audio Solo</a>
-        
-        
-    </td>
-    <td><a href="brand-64-audio.html">64 Audio</a></td>
-    <td class="nowrap">$1,400</td>
-    <td><b>6.9</b></td>
-    <td>5.83</td>
-    <td><b>+1.07</b></td>
-    <td>+0.79σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">89</td>
-    <td class="iem-col">
-        <a href="truthear-gate.html?from=value-kings">Truthear Gate</a>
-        
-        
-    </td>
-    <td><a href="brand-truthear.html">Truthear</a></td>
-    <td class="nowrap">$20</td>
-    <td><b>4.2</b></td>
-    <td>3.14</td>
-    <td><b>+1.06</b></td>
-    <td>+0.77σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">90</td>
-    <td class="iem-col">
-        <a href="etymotic-er2se.html?from=value-kings">Etymotic ER2SE</a>
-        
-        
-    </td>
-    <td><a href="brand-etymotic.html">Etymotic</a></td>
-    <td class="nowrap">$100</td>
-    <td><b>5.2</b></td>
-    <td>4.16</td>
-    <td><b>+1.04</b></td>
-    <td>+0.76σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">91</td>
-    <td class="iem-col">
-        Tripowin x HBB Olina
-        
-        <span class="tracker-match">Tracker: Tripowin Olina</span>
-    </td>
-    <td>Tripowin</td>
-    <td class="nowrap">$100</td>
-    <td><b>5.2</b></td>
-    <td>4.16</td>
-    <td><b>+1.04</b></td>
-    <td>+0.76σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">92</td>
-    <td class="iem-col">
-        <a href="letshuoer-ej07m-kinda-lava.html?from=value-kings">Shuoer EJ07M Kinda Lava</a>
-        
-        <span class="tracker-match">Tracker: Letshuoer EJ07M Kinda Lava</span>
-    </td>
-    <td><a href="brand-letshuoer.html">Letshuoer</a></td>
-    <td class="nowrap">$670</td>
-    <td><b>6.4</b></td>
-    <td>5.36</td>
-    <td><b>+1.04</b></td>
-    <td>+0.76σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">93</td>
-    <td class="iem-col">
-        <a href="empire-ears-legend-x-se.html?from=value-kings">Empire Ears Legend X SE</a>
-        
-        
-    </td>
-    <td><a href="brand-empire-ears.html">Empire Ears</a></td>
-    <td class="nowrap">$2,400</td>
-    <td><b>7.2</b></td>
-    <td>6.17</td>
-    <td><b>+1.03</b></td>
-    <td>+0.76σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">94</td>
-    <td class="iem-col">
-        <a href="dunu-sa6-mk2.html?from=value-kings">DUNU SA6 MKII</a>
-        
-        <span class="tracker-match">Tracker: Dunu SA6 MK2</span>
-    </td>
-    <td><a href="brand-dunu.html">Dunu</a></td>
-    <td class="nowrap">$580</td>
-    <td><b>6.3</b></td>
-    <td>5.27</td>
-    <td><b>+1.03</b></td>
-    <td>+0.75σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">95</td>
-    <td class="iem-col">
-        <a href="softears-rsv-mkii.html?from=value-kings">Softears RSV MKII</a>
-        
-        
-    </td>
-    <td><a href="brand-softears.html">Softears</a></td>
-    <td class="nowrap">$700</td>
-    <td><b>6.4</b></td>
-    <td>5.39</td>
-    <td><b>+1.01</b></td>
-    <td>+0.74σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">96</td>
-    <td class="iem-col">
-        <a href="dunu-vulkan.html?from=value-kings">DUNU Vulkan</a>
-        
-        <span class="tracker-match">Tracker: Dunu Vulkan</span>
-    </td>
-    <td><a href="brand-dunu.html">Dunu</a></td>
-    <td class="nowrap">$380</td>
-    <td><b>6.0</b></td>
-    <td>5.00</td>
-    <td><b>+1.00</b></td>
-    <td>+0.73σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">97</td>
-    <td class="iem-col">
-        DUNU DK-3001 BD
-        
-        <span class="tracker-match">Tracker: Dunu DK-3001 BD</span>
-    </td>
-    <td>Dunu</td>
-    <td class="nowrap">$450</td>
-    <td><b>6.1</b></td>
-    <td>5.11</td>
-    <td><b>+0.99</b></td>
-    <td>+0.72σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">98</td>
-    <td class="iem-col">
-        <a href="dunu-titan-s.html?from=value-kings">DUNU Titan S</a>
-        
-        <span class="tracker-match">Tracker: Dunu Titan S</span>
-    </td>
-    <td>Dunu</td>
-    <td class="nowrap">$79</td>
-    <td><b>5.0</b></td>
-    <td>4.01</td>
-    <td><b>+0.99</b></td>
-    <td>+0.72σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">99</td>
-    <td class="iem-col">
-        Moondrop Starfield
-        
-        
-    </td>
-    <td>Moondrop</td>
-    <td class="nowrap">$110</td>
-    <td><b>5.2</b></td>
-    <td>4.22</td>
-    <td><b>+0.98</b></td>
-    <td>+0.72σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">100</td>
-    <td class="iem-col">
-        <a href="empire-ears-evo.html?from=value-kings">Empire Ears EVO</a>
-        
-        
-    </td>
-    <td><a href="brand-empire-ears.html">Empire Ears</a></td>
-    <td class="nowrap">$3,100</td>
-    <td><b>7.3</b></td>
-    <td>6.33</td>
-    <td><b>+0.97</b></td>
-    <td>+0.71σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">101</td>
-    <td class="iem-col">
-        <a href="epz-p40.html?from=value-kings">EPZ P40</a>
-        
-        
-    </td>
-    <td><a href="brand-epz.html">EPZ</a></td>
-    <td class="nowrap">$160</td>
-    <td><b>5.4</b></td>
-    <td>4.46</td>
-    <td><b>+0.94</b></td>
-    <td>+0.69σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">102</td>
-    <td class="iem-col">
-        Tanchjim Tanya
-        
-        
-    </td>
-    <td>Tanchjim</td>
-    <td class="nowrap">$25</td>
-    <td><b>4.2</b></td>
-    <td>3.29</td>
-    <td><b>+0.91</b></td>
-    <td>+0.67σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">103</td>
-    <td class="iem-col">
-        Audeze LCDi4 (w/ Cipher)
-        
-        
-    </td>
-    <td>Audeze</td>
-    <td class="nowrap">$2,500</td>
-    <td><b>7.1</b></td>
-    <td>6.19</td>
-    <td><b>+0.91</b></td>
-    <td>+0.66σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">104</td>
-    <td class="iem-col">
-        <a href="vision-ears-ve7.html?from=value-kings">Vision Ears VE7</a>
-        
-        
-    </td>
-    <td><a href="brand-vision-ears.html">Vision Ears</a></td>
-    <td class="nowrap">$1,860</td>
-    <td><b>6.9</b></td>
-    <td>6.01</td>
-    <td><b>+0.89</b></td>
-    <td>+0.65σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">105</td>
-    <td class="iem-col">
-        7Hz Salnotes Dioko
-        
-        
-    </td>
-    <td>7Hz</td>
-    <td class="nowrap">$100</td>
-    <td><b>5.0</b></td>
-    <td>4.16</td>
-    <td><b>+0.89</b></td>
-    <td>+0.65σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">106</td>
-    <td class="iem-col">
-        Audio Lokahi
-        
-        
-    </td>
-    <td>Audio</td>
-    <td class="nowrap">$240</td>
-    <td><b>5.6</b></td>
-    <td>4.71</td>
-    <td><b>+0.89</b></td>
-    <td>+0.65σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">107</td>
-    <td class="iem-col">
-        Mangird Xenns Top
-        
-        
-    </td>
-    <td>Mangird</td>
-    <td class="nowrap">$530</td>
-    <td><b>6.1</b></td>
-    <td>5.21</td>
-    <td><b>+0.89</b></td>
-    <td>+0.65σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">108</td>
-    <td class="iem-col">
-        <a href="truthear-x-crinacle-zero.html?from=value-kings">Truthear x Crinacle Zero</a>
-        
-        
-    </td>
-    <td><a href="brand-truthear.html">Truthear</a></td>
-    <td class="nowrap">$50</td>
-    <td><b>4.6</b></td>
-    <td>3.72</td>
-    <td><b>+0.88</b></td>
-    <td>+0.64σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">109</td>
-    <td class="iem-col">
-        Moondrop Chu
-        
-        
-    </td>
-    <td>Moondrop</td>
-    <td class="nowrap">$20</td>
-    <td><b>4.0</b></td>
-    <td>3.14</td>
-    <td><b>+0.86</b></td>
-    <td>+0.63σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">110</td>
-    <td class="iem-col">
-        <a href="symphonium-triton.html?from=value-kings">Symphonium Triton</a>
-        
-        
-    </td>
-    <td><a href="brand-symphonium.html">Symphonium</a></td>
-    <td class="nowrap">$900</td>
-    <td><b>6.4</b></td>
-    <td>5.55</td>
-    <td><b>+0.85</b></td>
-    <td>+0.62σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">111</td>
-    <td class="iem-col">
-        <a href="qdc-anole-vx.html?from=value-kings">qdc Anole VX</a>
-        
-        
-    </td>
-    <td><a href="brand-qdc.html">qdc</a></td>
-    <td class="nowrap">$2,000</td>
-    <td><b>6.9</b></td>
-    <td>6.05</td>
-    <td><b>+0.85</b></td>
-    <td>+0.62σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">112</td>
-    <td class="iem-col">
-        iSine 20 (w/ Cipher cable)
-        
-        
-    </td>
-    <td>iSine</td>
-    <td class="nowrap">$600</td>
-    <td><b>6.1</b></td>
-    <td>5.29</td>
-    <td><b>+0.81</b></td>
-    <td>+0.59σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">113</td>
-    <td class="iem-col">
-        Binary Acoustics 1900
-        
-        
-    </td>
-    <td>Binary Acoustics</td>
-    <td class="nowrap">$235</td>
-    <td><b>5.5</b></td>
-    <td>4.70</td>
-    <td><b>+0.80</b></td>
-    <td>+0.59σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">114</td>
-    <td class="iem-col">
-        <a href="juzear-harrier.html?from=value-kings">Juzear Harrier</a>
-        
-        
-    </td>
-    <td><a href="brand-juzear.html">Juzear</a></td>
-    <td class="nowrap">$330</td>
-    <td><b>5.7</b></td>
-    <td>4.91</td>
-    <td><b>+0.79</b></td>
-    <td>+0.58σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">115</td>
-    <td class="iem-col">
-        <a href="moondrop-aria-snow.html?from=value-kings">Moondrop Aria Snow</a>
-        
-        
-    </td>
-    <td><a href="brand-moondrop.html">Moondrop</a></td>
-    <td class="nowrap">$80</td>
-    <td><b>4.8</b></td>
-    <td>4.02</td>
-    <td><b>+0.78</b></td>
-    <td>+0.57σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">116</td>
-    <td class="iem-col">
-        <a href="dunu-zen-pro.html?from=value-kings">DUNU Zen Pro</a>
-        
-        <span class="tracker-match">Tracker: Dunu Zen Pro</span>
-    </td>
-    <td><a href="brand-dunu.html">Dunu</a></td>
-    <td class="nowrap">$900</td>
-    <td><b>6.3</b></td>
-    <td>5.55</td>
-    <td><b>+0.75</b></td>
-    <td>+0.55σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">117</td>
-    <td class="iem-col">
-        Kiwi Ears Orchestra
-        
-        
-    </td>
-    <td>Kiwi Ears</td>
-    <td class="nowrap">$500</td>
-    <td><b>5.9</b></td>
-    <td>5.18</td>
-    <td><b>+0.72</b></td>
-    <td>+0.53σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">118</td>
-    <td class="iem-col">
-        Tanchjim Ola
-        
-        
-    </td>
-    <td>Tanchjim</td>
-    <td class="nowrap">$40</td>
-    <td><b>4.3</b></td>
-    <td>3.58</td>
-    <td><b>+0.72</b></td>
-    <td>+0.53σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">119</td>
-    <td class="iem-col">
-        Moondrop KXXX
-        
-        
-    </td>
-    <td>Moondrop</td>
-    <td class="nowrap">$170</td>
-    <td><b>5.2</b></td>
-    <td>4.50</td>
-    <td><b>+0.70</b></td>
-    <td>+0.52σ</td>
-    <td><span class="badge badge-deal">Strong</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">120</td>
-    <td class="iem-col">
-        <a href="aful-performer-8s.html?from=value-kings">Aful Performer 8S</a>
-        
-        
-    </td>
-    <td><a href="brand-aful.html">Aful</a></td>
-    <td class="nowrap">$390</td>
-    <td><b>5.7</b></td>
-    <td>5.02</td>
-    <td><b>+0.68</b></td>
-    <td>+0.50σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">121</td>
-    <td class="iem-col">
-        <a href="64-audio-duo.html?from=value-kings">64 Audio Duo</a>
-        
-        
-    </td>
-    <td><a href="brand-64-audio.html">64 Audio</a></td>
-    <td class="nowrap">$1,200</td>
-    <td><b>6.4</b></td>
-    <td>5.73</td>
-    <td><b>+0.67</b></td>
-    <td>+0.49σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">122</td>
-    <td class="iem-col">
-        <a href="ikko-oh10.html?from=value-kings">Ikko OH10</a>
-        
-        
-    </td>
-    <td><a href="brand-ikko.html">Ikko</a></td>
-    <td class="nowrap">$160</td>
-    <td><b>5.1</b></td>
-    <td>4.46</td>
-    <td><b>+0.64</b></td>
-    <td>+0.47σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">123</td>
-    <td class="iem-col">
-        Tanchjim Zero
-        
-        
-    </td>
-    <td>Tanchjim</td>
-    <td class="nowrap">$15</td>
-    <td><b>3.6</b></td>
-    <td>2.96</td>
-    <td><b>+0.64</b></td>
-    <td>+0.47σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">124</td>
-    <td class="iem-col">
-        EPZ P50
-        
-        
-    </td>
-    <td>EPZ</td>
-    <td class="nowrap">$190</td>
-    <td><b>5.2</b></td>
-    <td>4.57</td>
-    <td><b>+0.63</b></td>
-    <td>+0.46σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">125</td>
-    <td class="iem-col">
-        Moondrop KXXS
-        
-        
-    </td>
-    <td>Moondrop</td>
-    <td class="nowrap">$190</td>
-    <td><b>5.2</b></td>
-    <td>4.57</td>
-    <td><b>+0.63</b></td>
-    <td>+0.46σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">126</td>
-    <td class="iem-col">
-        Hidition Violet
-        
-        
-    </td>
-    <td>Hidition</td>
-    <td class="nowrap">$3,300</td>
-    <td><b>7.0</b></td>
-    <td>6.37</td>
-    <td><b>+0.63</b></td>
-    <td>+0.46σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">127</td>
-    <td class="iem-col">
-        Moondrop Sparks
-        
-        
-    </td>
-    <td>Moondrop</td>
-    <td class="nowrap">$90</td>
-    <td><b>4.7</b></td>
-    <td>4.09</td>
-    <td><b>+0.61</b></td>
-    <td>+0.44σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">128</td>
-    <td class="iem-col">
-        Tin Audio P1 Max
-        
-        <span class="tracker-match">Tracker: TinHiFi P1 Max</span>
-    </td>
-    <td>TinHiFi</td>
-    <td class="nowrap">$170</td>
-    <td><b>5.1</b></td>
-    <td>4.50</td>
-    <td><b>+0.60</b></td>
-    <td>+0.44σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">129</td>
-    <td class="iem-col">
-        DUNU Titan X
-        
-        <span class="tracker-match">Tracker: Dunu Titan X</span>
-    </td>
-    <td>Dunu</td>
-    <td class="nowrap">$35</td>
-    <td><b>4.1</b></td>
-    <td>3.50</td>
-    <td><b>+0.60</b></td>
-    <td>+0.44σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">130</td>
-    <td class="iem-col">
-        <a href="xenns-mangird-tea-2.html?from=value-kings">Xenns Mangird Tea 2</a>
-        
-        <span class="tracker-match">Tracker: XENNS Mangird Tea 2</span>
-    </td>
-    <td><a href="brand-xenns.html">XENNS</a></td>
-    <td class="nowrap">$350</td>
-    <td><b>5.5</b></td>
-    <td>4.95</td>
-    <td><b>+0.60</b></td>
-    <td>+0.44σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">131</td>
-    <td class="iem-col">
-        KZ EDX Ultra
-        
-        
-    </td>
-    <td>KZ</td>
-    <td class="nowrap">$22</td>
-    <td><b>3.8</b></td>
-    <td>3.21</td>
-    <td><b>+0.59</b></td>
-    <td>+0.44σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">132</td>
-    <td class="iem-col">
-        Sony MDR-EX15
-        
-        
-    </td>
-    <td>Sony</td>
-    <td class="nowrap">$10</td>
-    <td><b>3.3</b></td>
-    <td>2.71</td>
-    <td><b>+0.59</b></td>
-    <td>+0.43σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">133</td>
-    <td class="iem-col">
-        <a href="hisenior-mega-7.html?from=value-kings">HiSenior Mega7</a>
-        
-        <span class="tracker-match">Tracker: HiSenior Mega 7</span>
-    </td>
-    <td><a href="brand-hisenior.html">HiSenior</a></td>
-    <td class="nowrap">$450</td>
-    <td><b>5.7</b></td>
-    <td>5.11</td>
-    <td><b>+0.59</b></td>
-    <td>+0.43σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">134</td>
-    <td class="iem-col">
-        NiceHCK Rockies
-        
-        
-    </td>
-    <td>NiceHCK</td>
-    <td class="nowrap">$450</td>
-    <td><b>5.7</b></td>
-    <td>5.11</td>
-    <td><b>+0.59</b></td>
-    <td>+0.43σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">135</td>
-    <td class="iem-col">
-        Tripowin Lea
-        
-        
-    </td>
-    <td>Tripowin</td>
-    <td class="nowrap">$26</td>
-    <td><b>3.9</b></td>
-    <td>3.31</td>
-    <td><b>+0.59</b></td>
-    <td>+0.43σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">136</td>
-    <td class="iem-col">
-        <a href="seeaudio-bravery.html?from=value-kings">SeeAudio Bravery</a>
-        
-        
-    </td>
-    <td><a href="brand-seeaudio.html">SeeAudio</a></td>
-    <td class="nowrap">$280</td>
-    <td><b>5.4</b></td>
-    <td>4.81</td>
-    <td><b>+0.59</b></td>
-    <td>+0.43σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">137</td>
-    <td class="iem-col">
-        <a href="thieaudio-monarch-mki.html?from=value-kings">Thieaudio Monarch</a>
-        
-        <span class="tracker-match">Tracker: ThieAudio Monarch MKI</span>
-    </td>
-    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
-    <td class="nowrap">$730</td>
-    <td><b>6.0</b></td>
-    <td>5.42</td>
-    <td><b>+0.58</b></td>
-    <td>+0.43σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">138</td>
-    <td class="iem-col">
-        TinHifi T4
-        
-        <span class="tracker-match">Tracker: TinHiFi T4</span>
-    </td>
-    <td>TinHiFi</td>
-    <td class="nowrap">$110</td>
-    <td><b>4.8</b></td>
-    <td>4.22</td>
-    <td><b>+0.58</b></td>
-    <td>+0.42σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">139</td>
-    <td class="iem-col">
-        DUNU DN142
-        
-        <span class="tracker-match">Tracker: Dunu DN142</span>
-    </td>
-    <td>Dunu</td>
-    <td class="nowrap">$250</td>
-    <td><b>5.3</b></td>
-    <td>4.74</td>
-    <td><b>+0.56</b></td>
-    <td>+0.41σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">140</td>
-    <td class="iem-col">
-        GS Audio SE11
-        
-        
-    </td>
-    <td>GS Audio</td>
-    <td class="nowrap">$900</td>
-    <td><b>6.1</b></td>
-    <td>5.55</td>
-    <td><b>+0.55</b></td>
-    <td>+0.40σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">141</td>
-    <td class="iem-col">
-        <a href="ice-lab-prismatica.html?from=value-kings">Ice Lab Prismatica</a>
-        
-        
-    </td>
-    <td><a href="brand-ice-lab.html">Ice Lab</a></td>
-    <td class="nowrap">$900</td>
-    <td><b>6.1</b></td>
-    <td>5.55</td>
-    <td><b>+0.55</b></td>
-    <td>+0.40σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">142</td>
-    <td class="iem-col">
-        Prisma Azul
-        
-        <span class="tracker-match">Tracker: Prisma Audio Azul</span>
-    </td>
-    <td>Prisma Audio</td>
-    <td class="nowrap">$300</td>
-    <td><b>5.4</b></td>
-    <td>4.85</td>
-    <td><b>+0.55</b></td>
-    <td>+0.40σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">143</td>
-    <td class="iem-col">
-        <a href="dunu-falcon-pro.html?from=value-kings">DUNU Falcon Pro</a>
-        
-        <span class="tracker-match">Tracker: Dunu Falcon Pro</span>
-    </td>
-    <td><a href="brand-dunu.html">Dunu</a></td>
-    <td class="nowrap">$220</td>
-    <td><b>5.2</b></td>
-    <td>4.66</td>
-    <td><b>+0.54</b></td>
-    <td>+0.40σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">144</td>
-    <td class="iem-col">
-        <a href="letshuoer-x-gizaudio-galileo.html?from=value-kings">LETSHUOER x Gizaudio Galileo</a>
-        
-        <span class="tracker-match">Tracker: Letshuoer x Gizaudio Galileo</span>
-    </td>
-    <td><a href="brand-letshuoer.html">Letshuoer</a></td>
-    <td class="nowrap">$100</td>
-    <td><b>4.7</b></td>
-    <td>4.16</td>
-    <td><b>+0.54</b></td>
-    <td>+0.39σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">145</td>
-    <td class="iem-col">
-        Fiio FX17
-        
-        
-    </td>
-    <td>Fiio</td>
-    <td class="nowrap">$1,500</td>
-    <td><b>6.4</b></td>
-    <td>5.87</td>
-    <td><b>+0.53</b></td>
-    <td>+0.39σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">146</td>
-    <td class="iem-col">
-        64 Audio A4s
-        
-        
-    </td>
-    <td>64 Audio</td>
-    <td class="nowrap">$1,100</td>
-    <td><b>6.2</b></td>
-    <td>5.67</td>
-    <td><b>+0.53</b></td>
-    <td>+0.38σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">147</td>
-    <td class="iem-col">
-        <a href="kefine-klean-sv.html?from=value-kings">Kefine Klean SV</a>
-        
-        
-    </td>
-    <td><a href="brand-kefine.html">Kefine</a></td>
-    <td class="nowrap">$55</td>
-    <td><b>4.3</b></td>
-    <td>3.78</td>
-    <td><b>+0.52</b></td>
-    <td>+0.38σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">148</td>
-    <td class="iem-col">
-        <a href="thieaudio-clairvoyance.html?from=value-kings">Thieaudio Clairvoyance</a>
-        
-        <span class="tracker-match">Tracker: ThieAudio Clairvoyance</span>
-    </td>
-    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
-    <td class="nowrap">$700</td>
-    <td><b>5.9</b></td>
-    <td>5.39</td>
-    <td><b>+0.51</b></td>
-    <td>+0.37σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">149</td>
-    <td class="iem-col">
-        SeeAudio x Crinacle Midnight
-        
-        
-    </td>
-    <td>SeeAudio</td>
-    <td class="nowrap">$200</td>
-    <td><b>5.1</b></td>
-    <td>4.60</td>
-    <td><b>+0.50</b></td>
-    <td>+0.37σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">150</td>
-    <td class="iem-col">
-        ThieAudio Excalibur
-        
-        
-    </td>
-    <td>ThieAudio</td>
-    <td class="nowrap">$720</td>
-    <td><b>5.9</b></td>
-    <td>5.41</td>
-    <td><b>+0.49</b></td>
-    <td>+0.36σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">151</td>
-    <td class="iem-col">
-        Samsung Galaxy Buds
-        
-        
-    </td>
-    <td>Samsung</td>
-    <td class="nowrap">$130</td>
-    <td><b>4.8</b></td>
-    <td>4.33</td>
-    <td><b>+0.47</b></td>
-    <td>+0.35σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">152</td>
-    <td class="iem-col">
-        Softears Turii
-        
-        
-    </td>
-    <td>Softears</td>
-    <td class="nowrap">$1,400</td>
-    <td><b>6.3</b></td>
-    <td>5.83</td>
-    <td><b>+0.47</b></td>
-    <td>+0.35σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">153</td>
-    <td class="iem-col">
-        Drop x JVC HA-FDX1
-        
-        
-    </td>
-    <td>Drop</td>
-    <td class="nowrap">$250</td>
-    <td><b>5.2</b></td>
-    <td>4.74</td>
-    <td><b>+0.46</b></td>
-    <td>+0.34σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">154</td>
-    <td class="iem-col">
-        64 Audio A3t
-        
-        
-    </td>
-    <td>64 Audio</td>
-    <td class="nowrap">$900</td>
-    <td><b>6.0</b></td>
-    <td>5.55</td>
-    <td><b>+0.45</b></td>
-    <td>+0.33σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">155</td>
-    <td class="iem-col">
-        <a href="hidition-waltz.html?from=value-kings">Hidition Waltz</a>
-        
-        
-    </td>
-    <td><a href="brand-hidition.html">Hidition</a></td>
-    <td class="nowrap">$900</td>
-    <td><b>6.0</b></td>
-    <td>5.55</td>
-    <td><b>+0.45</b></td>
-    <td>+0.33σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">156</td>
-    <td class="iem-col">
-        <a href="etymotic-er4xr.html?from=value-kings">Etymotic ER4XR</a>
-        
-        
-    </td>
-    <td><a href="brand-etymotic.html">Etymotic</a></td>
-    <td class="nowrap">$300</td>
-    <td><b>5.3</b></td>
-    <td>4.85</td>
-    <td><b>+0.45</b></td>
-    <td>+0.33σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">157</td>
-    <td class="iem-col">
-        Tanchjim Soda
-        
-        
-    </td>
-    <td>Tanchjim</td>
-    <td class="nowrap">$300</td>
-    <td><b>5.3</b></td>
-    <td>4.85</td>
-    <td><b>+0.45</b></td>
-    <td>+0.33σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">158</td>
-    <td class="iem-col">
-        <a href="aful-performer-5.html?from=value-kings">Aful Performer 5</a>
-        
-        
-    </td>
-    <td><a href="brand-aful.html">Aful</a></td>
-    <td class="nowrap">$220</td>
-    <td><b>5.1</b></td>
-    <td>4.66</td>
-    <td><b>+0.44</b></td>
-    <td>+0.32σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">159</td>
-    <td class="iem-col">
-        Custom Art FIBAE 7U
-        
-        
-    </td>
-    <td>Custom Art</td>
-    <td class="nowrap">$1,500</td>
-    <td><b>6.3</b></td>
-    <td>5.87</td>
-    <td><b>+0.43</b></td>
-    <td>+0.31σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">160</td>
-    <td class="iem-col">
-        KZ Zex Pro
-        
-        <span class="tracker-match">Tracker: KZ ZEX Pro</span>
-    </td>
-    <td>KZ</td>
-    <td class="nowrap">$34</td>
-    <td><b>3.9</b></td>
-    <td>3.48</td>
-    <td><b>+0.42</b></td>
-    <td>+0.31σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">161</td>
-    <td class="iem-col">
-        Blon BL03
-        
-        
-    </td>
-    <td>Blon</td>
-    <td class="nowrap">$40</td>
-    <td><b>4.0</b></td>
-    <td>3.58</td>
-    <td><b>+0.42</b></td>
-    <td>+0.31σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">162</td>
-    <td class="iem-col">
-        Moondrop SSP
-        
-        
-    </td>
-    <td>Moondrop</td>
-    <td class="nowrap">$40</td>
-    <td><b>4.0</b></td>
-    <td>3.58</td>
-    <td><b>+0.42</b></td>
-    <td>+0.31σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">163</td>
-    <td class="iem-col">
-        ROSESESA CJ20
-        
-        <span class="tracker-match">Tracker: Rose Technics CJ20</span>
-    </td>
-    <td>Rose Technics</td>
-    <td class="nowrap">$170</td>
-    <td><b>4.9</b></td>
-    <td>4.50</td>
-    <td><b>+0.40</b></td>
-    <td>+0.30σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">164</td>
-    <td class="iem-col">
-        Moondrop Stellaris
-        
-        
-    </td>
-    <td>Moondrop</td>
-    <td class="nowrap">$110</td>
-    <td><b>4.6</b></td>
-    <td>4.22</td>
-    <td><b>+0.38</b></td>
-    <td>+0.28σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">165</td>
-    <td class="iem-col">
-        <a href="thieaudio-prestige.html?from=value-kings">ThieAudio Prestige</a>
-        
-        
-    </td>
-    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
-    <td class="nowrap">$1,200</td>
-    <td><b>6.1</b></td>
-    <td>5.73</td>
-    <td><b>+0.37</b></td>
-    <td>+0.27σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">166</td>
-    <td class="iem-col">
-        Yu9 U556
-        
-        <span class="tracker-match">Tracker: YU9 U556</span>
-    </td>
-    <td>YU9</td>
-    <td class="nowrap">$136</td>
-    <td><b>4.7</b></td>
-    <td>4.35</td>
-    <td><b>+0.35</b></td>
-    <td>+0.25σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">167</td>
-    <td class="iem-col">
-        <a href="moondrop-kadenz.html?from=value-kings">Moondrop Kadenz</a>
-        
-        
-    </td>
-    <td><a href="brand-moondrop.html">Moondrop</a></td>
-    <td class="nowrap">$220</td>
-    <td><b>5.0</b></td>
-    <td>4.66</td>
-    <td><b>+0.34</b></td>
-    <td>+0.25σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">168</td>
-    <td class="iem-col">
-        Fearless Audio S8P
-        
-        
-    </td>
-    <td>Fearless Audio</td>
-    <td class="nowrap">$489</td>
-    <td><b>5.5</b></td>
-    <td>5.16</td>
-    <td><b>+0.34</b></td>
-    <td>+0.25σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">169</td>
-    <td class="iem-col">
-        ThieAudio V16 Divinity
-        
-        
-    </td>
-    <td>ThieAudio</td>
-    <td class="nowrap">$1,500</td>
-    <td><b>6.2</b></td>
-    <td>5.87</td>
-    <td><b>+0.33</b></td>
-    <td>+0.24σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">170</td>
-    <td class="iem-col">
-        Softears RS10
-        
-        
-    </td>
-    <td>Softears</td>
-    <td class="nowrap">$2,100</td>
-    <td><b>6.4</b></td>
-    <td>6.08</td>
-    <td><b>+0.32</b></td>
-    <td>+0.23σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">171</td>
-    <td class="iem-col">
-        KZ EDX Pro
-        
-        
-    </td>
-    <td>KZ</td>
-    <td class="nowrap">$14</td>
-    <td><b>3.2</b></td>
-    <td>2.92</td>
-    <td><b>+0.28</b></td>
-    <td>+0.21σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">172</td>
-    <td class="iem-col">
-        Tripowin x HBB Mele
-        
-        <span class="tracker-match">Tracker: Tripowin HBB Mele</span>
-    </td>
-    <td>Tripowin</td>
-    <td class="nowrap">$50</td>
-    <td><b>4.0</b></td>
-    <td>3.72</td>
-    <td><b>+0.28</b></td>
-    <td>+0.20σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">173</td>
-    <td class="iem-col">
-        <a href="thieaudio-oracle.html?from=value-kings">ThieAudio Oracle</a>
-        
-        
-    </td>
-    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
-    <td class="nowrap">$539</td>
-    <td><b>5.5</b></td>
-    <td>5.22</td>
-    <td><b>+0.28</b></td>
-    <td>+0.20σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">174</td>
-    <td class="iem-col">
-        Craft Ears Aurum
-        
-        <span class="tracker-match">Tracker: CraftEars Aurum</span>
-    </td>
-    <td>CraftEars</td>
-    <td class="nowrap">$1,400</td>
-    <td><b>6.1</b></td>
-    <td>5.83</td>
-    <td><b>+0.27</b></td>
-    <td>+0.20σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">175</td>
-    <td class="iem-col">
-        Fearless x Crinacle Dawn
-        
-        <span class="tracker-match">Tracker: Fearless Audio Crinacle Dawn</span>
-    </td>
-    <td>Fearless Audio</td>
-    <td class="nowrap">$1,400</td>
-    <td><b>6.1</b></td>
-    <td>5.83</td>
-    <td><b>+0.27</b></td>
-    <td>+0.20σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">176</td>
-    <td class="iem-col">
-        Lime Ears Terra
-        
-        
-    </td>
-    <td>Lime Ears</td>
-    <td class="nowrap">$1,200</td>
-    <td><b>6.0</b></td>
-    <td>5.73</td>
-    <td><b>+0.27</b></td>
-    <td>+0.20σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">177</td>
-    <td class="iem-col">
-        <a href="unique-melody-mext.html?from=value-kings">Unique Melody MEXT</a>
-        
-        
-    </td>
-    <td><a href="brand-unique-melody.html">Unique Melody</a></td>
-    <td class="nowrap">$1,200</td>
-    <td><b>6.0</b></td>
-    <td>5.73</td>
-    <td><b>+0.27</b></td>
-    <td>+0.20σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">178</td>
-    <td class="iem-col">
-        Apple Airpods Pro 2
-        
-        
-    </td>
-    <td>Apple</td>
-    <td class="nowrap">$250</td>
-    <td><b>5.0</b></td>
-    <td>4.74</td>
-    <td><b>+0.26</b></td>
-    <td>+0.19σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">179</td>
-    <td class="iem-col">
-        <a href="fiio-fh5.html?from=value-kings">Fiio FH5</a>
-        
-        <span class="tracker-match">Tracker: FiiO FH5</span>
-    </td>
-    <td><a href="brand-fiio.html">FiiO</a></td>
-    <td class="nowrap">$260</td>
-    <td><b>5.0</b></td>
-    <td>4.76</td>
-    <td><b>+0.24</b></td>
-    <td>+0.17σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">180</td>
-    <td class="iem-col">
-        Fiio FH7S
-        
-        <span class="tracker-match">Tracker: FiiO FH7S</span>
-    </td>
-    <td>FiiO</td>
-    <td class="nowrap">$430</td>
-    <td><b>5.3</b></td>
-    <td>5.08</td>
-    <td><b>+0.22</b></td>
-    <td>+0.16σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">181</td>
-    <td class="iem-col">
-        <a href="oriolus-traillii-jp.html?from=value-kings">Oriolus Traillii</a>
-        
-        <span class="tracker-match">Tracker: Oriolus Traillii JP</span>
-    </td>
-    <td><a href="brand-oriolus.html">Oriolus</a></td>
-    <td class="nowrap">$6,600</td>
-    <td><b>7.0</b></td>
-    <td>6.81</td>
-    <td><b>+0.19</b></td>
-    <td>+0.14σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">182</td>
-    <td class="iem-col">
-        <a href="64-audio-u18s.html?from=value-kings">64 Audio U18S</a>
-        
-        <span class="tracker-match">Tracker: 64 Audio U18s</span>
-    </td>
-    <td><a href="brand-64-audio.html">64 Audio</a></td>
-    <td class="nowrap">$3,000</td>
-    <td><b>6.5</b></td>
-    <td>6.31</td>
-    <td><b>+0.19</b></td>
-    <td>+0.14σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">183</td>
-    <td class="iem-col">
-        <a href="qdc-anole-v14.html?from=value-kings">qdc Anole V14</a>
-        
-        
-    </td>
-    <td><a href="brand-qdc.html">qdc</a></td>
-    <td class="nowrap">$3,000</td>
-    <td><b>6.5</b></td>
-    <td>6.31</td>
-    <td><b>+0.19</b></td>
-    <td>+0.14σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">184</td>
     <td class="iem-col">
         Intime Sora
         
@@ -3585,174 +1618,596 @@ score backgrounds cannot be lost to broader table/cell styling.
     <td>Intime</td>
     <td class="nowrap">$50</td>
     <td><b>3.9</b></td>
-    <td>3.72</td>
-    <td><b>+0.18</b></td>
-    <td>+0.13σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
+    <td class="nowrap">$228.89</td>
+    <td><b>4.58×</b></td>
+    <td>+1.29σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>3.33×</td>
+    <td>−0.39</td>
+    <td><b>+0.89</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
 </tr>
 
 <tr>
-    <td class="rank-col">185</td>
+    <td class="rank-col">43</td>
     <td class="iem-col">
-        Moondrop Spaceship
+        <a href="letshuoer-s12.html?from=value-kings">Shuoer S12</a>
         
-        
+        <span class="tracker-match">Tracker: Letshuoer S12</span>
     </td>
-    <td>Moondrop</td>
-    <td class="nowrap">$20</td>
-    <td><b>3.3</b></td>
-    <td>3.14</td>
-    <td><b>+0.16</b></td>
-    <td>+0.11σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">186</td>
-    <td class="iem-col">
-        Samsung Galaxy Buds+
-        
-        <span class="tracker-match">Tracker: Samsung Galaxy Buds</span>
-    </td>
-    <td>Samsung</td>
-    <td class="nowrap">$100</td>
-    <td><b>4.3</b></td>
-    <td>4.16</td>
-    <td><b>+0.14</b></td>
-    <td>+0.10σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">187</td>
-    <td class="iem-col">
-        Moondrop Quarks
-        
-        
-    </td>
-    <td>Moondrop</td>
-    <td class="nowrap">$15</td>
-    <td><b>3.1</b></td>
-    <td>2.96</td>
-    <td><b>+0.14</b></td>
-    <td>+0.10σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">188</td>
-    <td class="iem-col">
-        64 Audio A3e (Demo)
-        
-        
-    </td>
-    <td>64 Audio</td>
-    <td class="nowrap">$500</td>
-    <td><b>5.3</b></td>
-    <td>5.18</td>
-    <td><b>+0.12</b></td>
-    <td>+0.09σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">189</td>
-    <td class="iem-col">
-        <a href="etymotic-evo.html?from=value-kings">Etymotic EVO</a>
-        
-        
-    </td>
-    <td><a href="brand-etymotic.html">Etymotic</a></td>
-    <td class="nowrap">$500</td>
-    <td><b>5.3</b></td>
-    <td>5.18</td>
-    <td><b>+0.12</b></td>
-    <td>+0.09σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">190</td>
-    <td class="iem-col">
-        <a href="seeaudio-yume.html?from=value-kings">SeeAudio Yume</a>
-        
-        
-    </td>
-    <td><a href="brand-seeaudio.html">SeeAudio</a></td>
-    <td class="nowrap">$170</td>
-    <td><b>4.6</b></td>
-    <td>4.50</td>
-    <td><b>+0.10</b></td>
-    <td>+0.08σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">191</td>
-    <td class="iem-col">
-        DUNU Talos
-        
-        <span class="tracker-match">Tracker: Dunu Talos</span>
-    </td>
-    <td>Dunu</td>
-    <td class="nowrap">$200</td>
-    <td><b>4.7</b></td>
-    <td>4.60</td>
-    <td><b>+0.10</b></td>
-    <td>+0.07σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">192</td>
-    <td class="iem-col">
-        Samsung Galaxy Buds Pro
-        
-        
-    </td>
-    <td>Samsung</td>
-    <td class="nowrap">$200</td>
-    <td><b>4.7</b></td>
-    <td>4.60</td>
-    <td><b>+0.10</b></td>
-    <td>+0.07σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">193</td>
-    <td class="iem-col">
-        <a href="empire-ears-valkyrie-mk-ii.html?from=value-kings">Empire Ears Valkyrie MK.II</a>
-        
-        
-    </td>
-    <td><a href="brand-empire-ears.html">Empire Ears</a></td>
-    <td class="nowrap">$1,600</td>
-    <td><b>6.0</b></td>
-    <td>5.91</td>
-    <td><b>+0.09</b></td>
-    <td>+0.07σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">194</td>
-    <td class="iem-col">
-        Etymotic ER3XR
-        
-        
-    </td>
-    <td>Etymotic</td>
+    <td><a href="brand-letshuoer.html">Letshuoer</a></td>
     <td class="nowrap">$150</td>
-    <td><b>4.5</b></td>
-    <td>4.42</td>
-    <td><b>+0.08</b></td>
-    <td>+0.06σ</td>
+    <td><b>5.8</b></td>
+    <td class="nowrap">$562.35</td>
+    <td><b>3.75×</b></td>
+    <td>+1.12σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>2.00×</td>
+    <td>−0.23</td>
+    <td><b>+0.89</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">44</td>
+    <td class="iem-col">
+        Moondrop Starfield
+        
+        
+    </td>
+    <td>Moondrop</td>
+    <td class="nowrap">$110</td>
+    <td><b>5.2</b></td>
+    <td class="nowrap">$423.38</td>
+    <td><b>3.85×</b></td>
+    <td>+1.14σ</td>
+    <td>
+        KZ PR1 Pro
+        <span class="tracker-match">$50 · score 5.1</span>
+    </td>
+    <td>2.20×</td>
+    <td>−0.26</td>
+    <td><b>+0.88</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">45</td>
+    <td class="iem-col">
+        <a href="moondrop-aria-snow.html?from=value-kings">Moondrop Aria Snow</a>
+        
+        
+    </td>
+    <td><a href="brand-moondrop.html">Moondrop</a></td>
+    <td class="nowrap">$80</td>
+    <td><b>4.8</b></td>
+    <td class="nowrap">$350.38</td>
+    <td><b>4.38×</b></td>
+    <td>+1.25σ</td>
+    <td>
+        Tangzu Waner SG 2 Red Lion
+        <span class="tracker-match">$25 · score 4.9</span>
+    </td>
+    <td>3.20×</td>
+    <td>−0.38</td>
+    <td><b>+0.87</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">46</td>
+    <td class="iem-col">
+        <a href="tanchjim-origin.html?from=value-kings">Tanchjim Origin</a>
+        
+        
+    </td>
+    <td><a href="brand-tanchjim.html">Tanchjim</a></td>
+    <td class="nowrap">$280</td>
+    <td><b>6.5</b></td>
+    <td class="nowrap">$764.81</td>
+    <td><b>2.73×</b></td>
+    <td>+0.85σ</td>
+    <td>
+        No cheaper close-scoring peer
+        
+    </td>
+    <td>—</td>
+    <td>—</td>
+    <td><b>+0.85</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">47</td>
+    <td class="iem-col">
+        <a href="yu9-que.html?from=value-kings">YU9 Audio Que</a>
+        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
+        <span class="tracker-match">Tracker: YU9 Que</span>
+    </td>
+    <td><a href="brand-yu9.html">YU9</a></td>
+    <td class="nowrap">$400</td>
+    <td><b>7.2</b></td>
+    <td class="nowrap">$1,090.56</td>
+    <td><b>2.73×</b></td>
+    <td>+0.85σ</td>
+    <td>
+        No cheaper close-scoring peer
+        
+    </td>
+    <td>—</td>
+    <td>—</td>
+    <td><b>+0.85</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">48</td>
+    <td class="iem-col">
+        <a href="binary-acoustics-ep321-mems.html?from=value-kings">Binary Acoustics EP321 MEMS</a>
+        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
+        
+    </td>
+    <td><a href="brand-binary-acoustics.html">Binary Acoustics</a></td>
+    <td class="nowrap">$300</td>
+    <td><b>6.5</b></td>
+    <td class="nowrap">$783.12</td>
+    <td><b>2.61×</b></td>
+    <td>+0.81σ</td>
+    <td>
+        <a href="tanchjim-origin.html?from=value-kings">Tanchjim Origin</a>
+        <span class="tracker-match">$280 · score 6.5</span>
+    </td>
+    <td>1.07×</td>
+    <td>−0.02</td>
+    <td><b>+0.79</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">49</td>
+    <td class="iem-col">
+        Tanchjim Hana 2021
+        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
+        
+    </td>
+    <td>Tanchjim</td>
+    <td class="nowrap">$180</td>
+    <td><b>5.9</b></td>
+    <td class="nowrap">$589.59</td>
+    <td><b>3.28×</b></td>
+    <td>+1.00σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>2.40×</td>
+    <td>−0.29</td>
+    <td><b>+0.72</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">50</td>
+    <td class="iem-col">
+        <a href="moondrop-blessing-2-dusk.html?from=value-kings">Moondrop B2: Dusk</a>
+        
+        <span class="tracker-match">Tracker: Moondrop Blessing 2 Dusk</span>
+    </td>
+    <td><a href="brand-moondrop.html">Moondrop</a></td>
+    <td class="nowrap">$330</td>
+    <td><b>6.6</b></td>
+    <td class="nowrap">$821.06</td>
+    <td><b>2.49×</b></td>
+    <td>+0.77σ</td>
+    <td>
+        <a href="tanchjim-origin.html?from=value-kings">Tanchjim Origin</a>
+        <span class="tracker-match">$280 · score 6.5</span>
+    </td>
+    <td>1.18×</td>
+    <td>−0.05</td>
+    <td><b>+0.72</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">51</td>
+    <td class="iem-col">
+        7Hz Salnotes Dioko
+        
+        
+    </td>
+    <td>7Hz</td>
+    <td class="nowrap">$100</td>
+    <td><b>5.0</b></td>
+    <td class="nowrap">$394.37</td>
+    <td><b>3.94×</b></td>
+    <td>+1.16σ</td>
+    <td>
+        Tangzu Waner SG 2 Red Lion
+        <span class="tracker-match">$25 · score 4.9</span>
+    </td>
+    <td>4.00×</td>
+    <td>−0.45</td>
+    <td><b>+0.71</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">52</td>
+    <td class="iem-col">
+        Moondrop Sparks
+        
+        
+    </td>
+    <td>Moondrop</td>
+    <td class="nowrap">$90</td>
+    <td><b>4.7</b></td>
+    <td class="nowrap">$334.19</td>
+    <td><b>3.71×</b></td>
+    <td>+1.11σ</td>
+    <td>
+        Tangzu Waner SG 2 Red Lion
+        <span class="tracker-match">$25 · score 4.9</span>
+    </td>
+    <td>3.60×</td>
+    <td>−0.42</td>
+    <td><b>+0.69</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">53</td>
+    <td class="iem-col">
+        <a href="simgot-supermix-4.html?from=value-kings">Simgot Supermix 4</a>
+        
+        
+    </td>
+    <td><a href="brand-simgot.html">Simgot</a></td>
+    <td class="nowrap">$170</td>
+    <td><b>5.6</b></td>
+    <td class="nowrap">$511.58</td>
+    <td><b>3.01×</b></td>
+    <td>+0.93σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>2.27×</td>
+    <td>−0.27</td>
+    <td><b>+0.66</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">54</td>
+    <td class="iem-col">
+        <a href="epz-p40.html?from=value-kings">EPZ P40</a>
+        
+        
+    </td>
+    <td><a href="brand-epz.html">EPZ</a></td>
+    <td class="nowrap">$160</td>
+    <td><b>5.4</b></td>
+    <td class="nowrap">$465.39</td>
+    <td><b>2.91×</b></td>
+    <td>+0.90σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>2.13×</td>
+    <td>−0.25</td>
+    <td><b>+0.66</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">55</td>
+    <td class="iem-col">
+        Binary Acoustics Chopin
+        
+        
+    </td>
+    <td>Binary Acoustics</td>
+    <td class="nowrap">$200</td>
+    <td><b>6.0</b></td>
+    <td class="nowrap">$618.15</td>
+    <td><b>3.09×</b></td>
+    <td>+0.95σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>2.67×</td>
+    <td>−0.32</td>
+    <td><b>+0.63</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">56</td>
+    <td class="iem-col">
+        <a href="softears-volume-s.html?from=value-kings">SoftEars Volume S</a>
+        
+        <span class="tracker-match">Tracker: Softears Volume S</span>
+    </td>
+    <td><a href="brand-softears.html">Softears</a></td>
+    <td class="nowrap">$320</td>
+    <td><b>6.3</b></td>
+    <td class="nowrap">$712.42</td>
+    <td><b>2.23×</b></td>
+    <td>+0.68σ</td>
+    <td>
+        Tanchjim Oxygen
+        <span class="tracker-match">$270 · score 6.1</span>
+    </td>
+    <td>1.19×</td>
+    <td>−0.06</td>
+    <td><b>+0.62</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">57</td>
+    <td class="iem-col">
+        <a href="moondrop-kato.html?from=value-kings">Moondrop Kato</a>
+        
+        
+    </td>
+    <td><a href="brand-moondrop.html">Moondrop</a></td>
+    <td class="nowrap">$190</td>
+    <td><b>5.8</b></td>
+    <td class="nowrap">$562.35</td>
+    <td><b>2.96×</b></td>
+    <td>+0.92σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>2.53×</td>
+    <td>−0.30</td>
+    <td><b>+0.61</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">58</td>
+    <td class="iem-col">
+        <a href="letshuoer-x-gizaudio-galileo.html?from=value-kings">LETSHUOER x Gizaudio Galileo</a>
+        
+        <span class="tracker-match">Tracker: Letshuoer x Gizaudio Galileo</span>
+    </td>
+    <td><a href="brand-letshuoer.html">Letshuoer</a></td>
+    <td class="nowrap">$100</td>
+    <td><b>4.7</b></td>
+    <td class="nowrap">$334.19</td>
+    <td><b>3.34×</b></td>
+    <td>+1.02σ</td>
+    <td>
+        Tangzu Waner SG 2 Red Lion
+        <span class="tracker-match">$25 · score 4.9</span>
+    </td>
+    <td>4.00×</td>
+    <td>−0.45</td>
+    <td><b>+0.57</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">59</td>
+    <td class="iem-col">
+        ThieAudio Elixir
+        
+        
+    </td>
+    <td>ThieAudio</td>
+    <td class="nowrap">$210</td>
+    <td><b>5.9</b></td>
+    <td class="nowrap">$589.59</td>
+    <td><b>2.81×</b></td>
+    <td>+0.87σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>2.80×</td>
+    <td>−0.34</td>
+    <td><b>+0.54</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">60</td>
+    <td class="iem-col">
+        Geek Wold 10 (blocked vent)
+        
+        
+    </td>
+    <td>Geek</td>
+    <td class="nowrap">$45</td>
+    <td><b>3.0</b></td>
+    <td class="nowrap">$149.52</td>
+    <td><b>3.32×</b></td>
+    <td>+1.02σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>4.50×</td>
+    <td>−0.49</td>
+    <td><b>+0.53</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">61</td>
+    <td class="iem-col">
+        Tripowin TC01
+        
+        
+    </td>
+    <td>Tripowin</td>
+    <td class="nowrap">$45</td>
+    <td><b>3.0</b></td>
+    <td class="nowrap">$149.52</td>
+    <td><b>3.32×</b></td>
+    <td>+1.02σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>4.50×</td>
+    <td>−0.49</td>
+    <td><b>+0.53</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">62</td>
+    <td class="iem-col">
+        TinHifi T2
+        
+        <span class="tracker-match">Tracker: TinHiFi T2</span>
+    </td>
+    <td>TinHiFi</td>
+    <td class="nowrap">$50</td>
+    <td><b>3.3</b></td>
+    <td class="nowrap">$172.33</td>
+    <td><b>3.45×</b></td>
+    <td>+1.05σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>5.00×</td>
+    <td>−0.52</td>
+    <td><b>+0.52</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">63</td>
+    <td class="iem-col">
+        <a href="thieaudio-hype-4.html?from=value-kings">ThieAudio Hype 4</a>
+        
+        
+    </td>
+    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
+    <td class="nowrap">$400</td>
+    <td><b>6.7</b></td>
+    <td class="nowrap">$840.71</td>
+    <td><b>2.10×</b></td>
+    <td>+0.63σ</td>
+    <td>
+        <a href="tanchjim-origin.html?from=value-kings">Tanchjim Origin</a>
+        <span class="tracker-match">$280 · score 6.5</span>
+    </td>
+    <td>1.43×</td>
+    <td>−0.12</td>
+    <td><b>+0.51</b></td>
+    <td><span class="badge badge-deal">Strong</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">64</td>
+    <td class="iem-col">
+        TinHifi T4
+        
+        <span class="tracker-match">Tracker: TinHiFi T4</span>
+    </td>
+    <td>TinHiFi</td>
+    <td class="nowrap">$110</td>
+    <td><b>4.8</b></td>
+    <td class="nowrap">$350.38</td>
+    <td><b>3.19×</b></td>
+    <td>+0.98σ</td>
+    <td>
+        Tangzu Waner SG 2 Red Lion
+        <span class="tracker-match">$25 · score 4.9</span>
+    </td>
+    <td>4.40×</td>
+    <td>−0.48</td>
+    <td><b>+0.50</b></td>
     <td><span class="badge badge-deal">Above Expected</span></td>
 </tr>
 
 <tr>
-    <td class="rank-col">195</td>
+    <td class="rank-col">65</td>
+    <td class="iem-col">
+        HZSound Heart Mirror
+        
+        
+    </td>
+    <td>HZSound</td>
+    <td class="nowrap">$50</td>
+    <td><b>3.2</b></td>
+    <td class="nowrap">$164.36</td>
+    <td><b>3.29×</b></td>
+    <td>+1.01σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>5.00×</td>
+    <td>−0.52</td>
+    <td><b>+0.48</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">66</td>
+    <td class="iem-col">
+        <a href="xenns-mangird-top-pro.html?from=value-kings">Xenns Top Pro</a>
+        
+        <span class="tracker-match">Tracker: XENNS Mangird Top Pro</span>
+    </td>
+    <td><a href="brand-xenns.html">XENNS</a></td>
+    <td class="nowrap">$500</td>
+    <td><b>6.9</b></td>
+    <td class="nowrap">$946.26</td>
+    <td><b>1.89×</b></td>
+    <td>+0.54σ</td>
+    <td>
+        <a href="yu9-que.html?from=value-kings">YU9 Audio Que</a>
+        <span class="tracker-match">$400 · score 7.2</span>
+    </td>
+    <td>1.25×</td>
+    <td>−0.07</td>
+    <td><b>+0.47</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">67</td>
+    <td class="iem-col">
+        <a href="7hz-timeless.html?from=value-kings">7Hz Timeless</a>
+        
+        
+    </td>
+    <td><a href="brand-7hz.html">7Hz</a></td>
+    <td class="nowrap">$220</td>
+    <td><b>5.8</b></td>
+    <td class="nowrap">$562.35</td>
+    <td><b>2.56×</b></td>
+    <td>+0.79σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>2.93×</td>
+    <td>−0.35</td>
+    <td><b>+0.44</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">68</td>
     <td class="iem-col">
         <a href="kbear-diamond.html?from=value-kings">Kbear Diamond</a>
         
@@ -3761,142 +2216,412 @@ score backgrounds cannot be lost to broader table/cell styling.
     <td><a href="brand-kbear.html">KBear</a></td>
     <td class="nowrap">$80</td>
     <td><b>4.1</b></td>
-    <td>4.02</td>
-    <td><b>+0.08</b></td>
-    <td>+0.06σ</td>
+    <td class="nowrap">$251.6</td>
+    <td><b>3.15×</b></td>
+    <td>+0.97σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>5.33×</td>
+    <td>−0.55</td>
+    <td><b>+0.42</b></td>
     <td><span class="badge badge-deal">Above Expected</span></td>
 </tr>
 
 <tr>
-    <td class="rank-col">196</td>
+    <td class="rank-col">69</td>
     <td class="iem-col">
-        <a href="softears-volume.html?from=value-kings">SoftEars Volume</a>
+        TinHifi T2 Evo
         
-        <span class="tracker-match">Tracker: Softears Volume</span>
+        <span class="tracker-match">Tracker: TinHiFi T2 Evo</span>
     </td>
-    <td><a href="brand-softears.html">Softears</a></td>
-    <td class="nowrap">$285</td>
-    <td><b>4.9</b></td>
-    <td>4.82</td>
-    <td><b>+0.08</b></td>
-    <td>+0.06σ</td>
+    <td>TinHiFi</td>
+    <td class="nowrap">$50</td>
+    <td><b>3.0</b></td>
+    <td class="nowrap">$149.52</td>
+    <td><b>2.99×</b></td>
+    <td>+0.93σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>5.00×</td>
+    <td>−0.52</td>
+    <td><b>+0.40</b></td>
     <td><span class="badge badge-deal">Above Expected</span></td>
 </tr>
 
 <tr>
-    <td class="rank-col">197</td>
+    <td class="rank-col">70</td>
     <td class="iem-col">
-        Ikko Opal OH2
-        
+        <a href="moondrop-variations.html?from=value-kings">Moondrop Variations</a>
+        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
         
     </td>
-    <td>Ikko</td>
-    <td class="nowrap">$130</td>
-    <td><b>4.4</b></td>
-    <td>4.33</td>
-    <td><b>+0.07</b></td>
-    <td>+0.05σ</td>
+    <td><a href="brand-moondrop.html">Moondrop</a></td>
+    <td class="nowrap">$550</td>
+    <td><b>7.0</b></td>
+    <td class="nowrap">$992.1</td>
+    <td><b>1.80×</b></td>
+    <td>+0.50σ</td>
+    <td>
+        <a href="yu9-que.html?from=value-kings">YU9 Audio Que</a>
+        <span class="tracker-match">$400 · score 7.2</span>
+    </td>
+    <td>1.38×</td>
+    <td>−0.10</td>
+    <td><b>+0.39</b></td>
     <td><span class="badge badge-deal">Above Expected</span></td>
 </tr>
 
 <tr>
-    <td class="rank-col">198</td>
+    <td class="rank-col">71</td>
     <td class="iem-col">
-        <a href="thieaudio-hype-4-mkii.html?from=value-kings">ThieAudio Hype 4 MKII</a>
+        Moondrop KXXX
         
         
     </td>
-    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
+    <td>Moondrop</td>
+    <td class="nowrap">$170</td>
+    <td><b>5.2</b></td>
+    <td class="nowrap">$423.38</td>
+    <td><b>2.49×</b></td>
+    <td>+0.77σ</td>
+    <td>
+        KZ PR1 Pro
+        <span class="tracker-match">$50 · score 5.1</span>
+    </td>
+    <td>3.40×</td>
+    <td>−0.40</td>
+    <td><b>+0.37</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">72</td>
+    <td class="iem-col">
+        KBear Neon
+        
+        
+    </td>
+    <td>KBear</td>
+    <td class="nowrap">$50</td>
+    <td><b>2.9</b></td>
+    <td class="nowrap">$142.61</td>
+    <td><b>2.85×</b></td>
+    <td>+0.89σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>5.00×</td>
+    <td>−0.52</td>
+    <td><b>+0.36</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">73</td>
+    <td class="iem-col">
+        Moondrop Dusk (no DSP)
+        
+        
+    </td>
+    <td>Moondrop</td>
     <td class="nowrap">$400</td>
-    <td><b>5.1</b></td>
-    <td>5.04</td>
-    <td><b>+0.06</b></td>
-    <td>+0.05σ</td>
+    <td><b>6.3</b></td>
+    <td class="nowrap">$712.42</td>
+    <td><b>1.78×</b></td>
+    <td>+0.49σ</td>
+    <td>
+        Tanchjim Oxygen
+        <span class="tracker-match">$270 · score 6.1</span>
+    </td>
+    <td>1.48×</td>
+    <td>−0.13</td>
+    <td><b>+0.36</b></td>
     <td><span class="badge badge-deal">Above Expected</span></td>
 </tr>
 
 <tr>
-    <td class="rank-col">199</td>
+    <td class="rank-col">74</td>
     <td class="iem-col">
-        <a href="empire-ears-legend-x.html?from=value-kings">Empire Ears Legend X</a>
+        Moondrop Stellaris
         
         
     </td>
-    <td><a href="brand-empire-ears.html">Empire Ears</a></td>
-    <td class="nowrap">$2,300</td>
-    <td><b>6.2</b></td>
-    <td>6.14</td>
-    <td><b>+0.06</b></td>
-    <td>+0.04σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">200</td>
-    <td class="iem-col">
-        <a href="letshuoer-cadenza-12.html?from=value-kings">LETSHUOER Cadenza 12</a>
-        
-        <span class="tracker-match">Tracker: Letshuoer Cadenza 12</span>
+    <td>Moondrop</td>
+    <td class="nowrap">$110</td>
+    <td><b>4.6</b></td>
+    <td class="nowrap">$318.75</td>
+    <td><b>2.90×</b></td>
+    <td>+0.90σ</td>
+    <td>
+        <a href="7hz-zero.html?from=value-kings">7Hz Zero</a>
+        <span class="tracker-match">$20 · score 4.4</span>
     </td>
-    <td><a href="brand-letshuoer.html">Letshuoer</a></td>
-    <td class="nowrap">$2,300</td>
-    <td><b>6.2</b></td>
-    <td>6.14</td>
-    <td><b>+0.06</b></td>
-    <td>+0.04σ</td>
+    <td>5.50×</td>
+    <td>−0.56</td>
+    <td><b>+0.34</b></td>
     <td><span class="badge badge-deal">Above Expected</span></td>
 </tr>
 
 <tr>
-    <td class="rank-col">201</td>
+    <td class="rank-col">75</td>
     <td class="iem-col">
-        <a href="64-audio-aspire-1.html?from=value-kings">64 Audio Aspire 1</a>
+        <a href="raptgo-hook-x.html?from=value-kings">Raptgo Hook X</a>
         
         
     </td>
-    <td><a href="brand-64-audio.html">64 Audio</a></td>
-    <td class="nowrap">$350</td>
-    <td><b>5.0</b></td>
-    <td>4.95</td>
-    <td><b>+0.05</b></td>
-    <td>+0.04σ</td>
+    <td><a href="brand-raptgo.html">Raptgo</a></td>
+    <td class="nowrap">$240</td>
+    <td><b>5.8</b></td>
+    <td class="nowrap">$562.35</td>
+    <td><b>2.34×</b></td>
+    <td>+0.72σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>3.20×</td>
+    <td>−0.38</td>
+    <td><b>+0.34</b></td>
     <td><span class="badge badge-deal">Above Expected</span></td>
 </tr>
 
 <tr>
-    <td class="rank-col">202</td>
+    <td class="rank-col">76</td>
     <td class="iem-col">
-        BGVP DM8
+        Tanchjim Oxygen
         
         
     </td>
-    <td>BGVP</td>
-    <td class="nowrap">$350</td>
-    <td><b>5.0</b></td>
-    <td>4.95</td>
-    <td><b>+0.05</b></td>
-    <td>+0.04σ</td>
+    <td>Tanchjim</td>
+    <td class="nowrap">$270</td>
+    <td><b>6.1</b></td>
+    <td class="nowrap">$648.1</td>
+    <td><b>2.40×</b></td>
+    <td>+0.74σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>3.60×</td>
+    <td>−0.42</td>
+    <td><b>+0.32</b></td>
     <td><span class="badge badge-deal">Above Expected</span></td>
 </tr>
 
 <tr>
-    <td class="rank-col">203</td>
+    <td class="rank-col">77</td>
     <td class="iem-col">
-        Dunu DK-2001
+        Samsung Galaxy Buds
         
         
     </td>
-    <td>DUNU</td>
-    <td class="nowrap">$300</td>
-    <td><b>4.9</b></td>
-    <td>4.85</td>
-    <td><b>+0.05</b></td>
-    <td>+0.03σ</td>
+    <td>Samsung</td>
+    <td class="nowrap">$130</td>
+    <td><b>4.8</b></td>
+    <td class="nowrap">$350.38</td>
+    <td><b>2.70×</b></td>
+    <td>+0.84σ</td>
+    <td>
+        Tangzu Waner SG 2 Red Lion
+        <span class="tracker-match">$25 · score 4.9</span>
+    </td>
+    <td>5.20×</td>
+    <td>−0.54</td>
+    <td><b>+0.30</b></td>
     <td><span class="badge badge-deal">Above Expected</span></td>
 </tr>
 
 <tr>
-    <td class="rank-col">204</td>
+    <td class="rank-col">78</td>
+    <td class="iem-col">
+        <a href="kz-zs10-pro.html?from=value-kings">KZ ZS10 Pro</a>
+        
+        
+    </td>
+    <td><a href="brand-kz.html">KZ</a></td>
+    <td class="nowrap">$40</td>
+    <td><b>2.0</b></td>
+    <td class="nowrap">$93.16</td>
+    <td><b>2.33×</b></td>
+    <td>+0.71σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>4.00×</td>
+    <td>−0.45</td>
+    <td><b>+0.26</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">79</td>
+    <td class="iem-col">
+        Audio Lokahi
+        
+        
+    </td>
+    <td>Audio</td>
+    <td class="nowrap">$240</td>
+    <td><b>5.6</b></td>
+    <td class="nowrap">$511.58</td>
+    <td><b>2.13×</b></td>
+    <td>+0.64σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>3.20×</td>
+    <td>−0.38</td>
+    <td><b>+0.26</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">80</td>
+    <td class="iem-col">
+        <a href="symphonium-meteor.html?from=value-kings">Symphonium Audio Meteor</a>
+        
+        <span class="tracker-match">Tracker: Symphonium Meteor</span>
+    </td>
+    <td><a href="brand-symphonium.html">Symphonium</a></td>
+    <td class="nowrap">$600</td>
+    <td><b>6.9</b></td>
+    <td class="nowrap">$946.26</td>
+    <td><b>1.58×</b></td>
+    <td>+0.39σ</td>
+    <td>
+        <a href="yu9-que.html?from=value-kings">YU9 Audio Que</a>
+        <span class="tracker-match">$400 · score 7.2</span>
+    </td>
+    <td>1.50×</td>
+    <td>−0.13</td>
+    <td><b>+0.25</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">81</td>
+    <td class="iem-col">
+        Binary Acoustics 1900
+        
+        
+    </td>
+    <td>Binary Acoustics</td>
+    <td class="nowrap">$235</td>
+    <td><b>5.5</b></td>
+    <td class="nowrap">$487.94</td>
+    <td><b>2.08×</b></td>
+    <td>+0.62σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>3.13×</td>
+    <td>−0.37</td>
+    <td><b>+0.25</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">82</td>
+    <td class="iem-col">
+        EPZ P50
+        
+        
+    </td>
+    <td>EPZ</td>
+    <td class="nowrap">$190</td>
+    <td><b>5.2</b></td>
+    <td class="nowrap">$423.38</td>
+    <td><b>2.23×</b></td>
+    <td>+0.68σ</td>
+    <td>
+        KZ PR1 Pro
+        <span class="tracker-match">$50 · score 5.1</span>
+    </td>
+    <td>3.80×</td>
+    <td>−0.43</td>
+    <td><b>+0.24</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">83</td>
+    <td class="iem-col">
+        Moondrop KXXS
+        
+        
+    </td>
+    <td>Moondrop</td>
+    <td class="nowrap">$190</td>
+    <td><b>5.2</b></td>
+    <td class="nowrap">$423.38</td>
+    <td><b>2.23×</b></td>
+    <td>+0.68σ</td>
+    <td>
+        KZ PR1 Pro
+        <span class="tracker-match">$50 · score 5.1</span>
+    </td>
+    <td>3.80×</td>
+    <td>−0.43</td>
+    <td><b>+0.24</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">84</td>
+    <td class="iem-col">
+        Samsung Galaxy Buds+
+        
+        <span class="tracker-match">Tracker: Samsung Galaxy Buds</span>
+    </td>
+    <td>Samsung</td>
+    <td class="nowrap">$100</td>
+    <td><b>4.3</b></td>
+    <td class="nowrap">$276.57</td>
+    <td><b>2.77×</b></td>
+    <td>+0.86σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>6.67×</td>
+    <td>−0.62</td>
+    <td><b>+0.24</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">85</td>
+    <td class="iem-col">
+        Yu9 U556
+        
+        <span class="tracker-match">Tracker: YU9 U556</span>
+    </td>
+    <td>YU9</td>
+    <td class="nowrap">$136</td>
+    <td><b>4.7</b></td>
+    <td class="nowrap">$334.19</td>
+    <td><b>2.46×</b></td>
+    <td>+0.76σ</td>
+    <td>
+        Tangzu Waner SG 2 Red Lion
+        <span class="tracker-match">$25 · score 4.9</span>
+    </td>
+    <td>5.44×</td>
+    <td>−0.55</td>
+    <td><b>+0.21</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">86</td>
     <td class="iem-col">
         LETSHUOER D13
         
@@ -3905,111 +2630,579 @@ score backgrounds cannot be lost to broader table/cell styling.
     <td>Letshuoer</td>
     <td class="nowrap">$100</td>
     <td><b>4.2</b></td>
-    <td>4.16</td>
-    <td><b>+0.04</b></td>
-    <td>+0.03σ</td>
+    <td class="nowrap">$263.79</td>
+    <td><b>2.64×</b></td>
+    <td>+0.82σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>6.67×</td>
+    <td>−0.62</td>
+    <td><b>+0.20</b></td>
     <td><span class="badge badge-deal">Above Expected</span></td>
 </tr>
 
 <tr>
-    <td class="rank-col">205</td>
+    <td class="rank-col">87</td>
     <td class="iem-col">
-        Tanchjim Darling
+        Audio Hekili
+        
+        
+    </td>
+    <td>Audio</td>
+    <td class="nowrap">$300</td>
+    <td><b>6.1</b></td>
+    <td class="nowrap">$648.1</td>
+    <td><b>2.16×</b></td>
+    <td>+0.65σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>4.00×</td>
+    <td>−0.45</td>
+    <td><b>+0.20</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">88</td>
+    <td class="iem-col">
+        <a href="thieaudio-hype-2.html?from=value-kings">ThieAudio Hype 2</a>
+        
+        
+    </td>
+    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
+    <td class="nowrap">$300</td>
+    <td><b>6.1</b></td>
+    <td class="nowrap">$648.1</td>
+    <td><b>2.16×</b></td>
+    <td>+0.65σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>4.00×</td>
+    <td>−0.45</td>
+    <td><b>+0.20</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">89</td>
+    <td class="iem-col">
+        <a href="64-audio-u4s.html?from=value-kings">64 Audio U4s</a>
+        
+        
+    </td>
+    <td><a href="brand-64-audio.html">64 Audio</a></td>
+    <td class="nowrap">$1,100</td>
+    <td><b>7.7</b></td>
+    <td class="nowrap">$1,381.59</td>
+    <td><b>1.26×</b></td>
+    <td>+0.19σ</td>
+    <td>
+        No cheaper close-scoring peer
+        
+    </td>
+    <td>—</td>
+    <td>—</td>
+    <td><b>+0.19</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">90</td>
+    <td class="iem-col">
+        <a href="symphonium-helios.html?from=value-kings">Symphonium Helios</a>
+        
+        
+    </td>
+    <td><a href="brand-symphonium.html">Symphonium</a></td>
+    <td class="nowrap">$1,100</td>
+    <td><b>7.7</b></td>
+    <td class="nowrap">$1,381.59</td>
+    <td><b>1.26×</b></td>
+    <td>+0.19σ</td>
+    <td>
+        No cheaper close-scoring peer
+        
+    </td>
+    <td>—</td>
+    <td>—</td>
+    <td><b>+0.19</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">91</td>
+    <td class="iem-col">
+        <a href="ikko-oh10.html?from=value-kings">Ikko OH10</a>
+        
+        
+    </td>
+    <td><a href="brand-ikko.html">Ikko</a></td>
+    <td class="nowrap">$160</td>
+    <td><b>5.1</b></td>
+    <td class="nowrap">$403.81</td>
+    <td><b>2.52×</b></td>
+    <td>+0.78σ</td>
+    <td>
+        Tangzu Waner SG 2 Red Lion
+        <span class="tracker-match">$25 · score 4.9</span>
+    </td>
+    <td>6.40×</td>
+    <td>−0.60</td>
+    <td><b>+0.18</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">92</td>
+    <td class="iem-col">
+        Earfun Oluv Edition
+        
+        
+    </td>
+    <td>Earfun</td>
+    <td class="nowrap">$70</td>
+    <td><b>3.4</b></td>
+    <td class="nowrap">$180.67</td>
+    <td><b>2.58×</b></td>
+    <td>+0.80σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>7.00×</td>
+    <td>−0.63</td>
+    <td><b>+0.17</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">93</td>
+    <td class="iem-col">
+        <a href="moondrop-blessing-3.html?from=value-kings">Moondrop Blessing 3</a>
+        
+        
+    </td>
+    <td><a href="brand-moondrop.html">Moondrop</a></td>
+    <td class="nowrap">$320</td>
+    <td><b>6.2</b></td>
+    <td class="nowrap">$679.5</td>
+    <td><b>2.12×</b></td>
+    <td>+0.64σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>4.27×</td>
+    <td>−0.47</td>
+    <td><b>+0.16</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">94</td>
+    <td class="iem-col">
+        Tanchjim Echo
         
         
     </td>
     <td>Tanchjim</td>
-    <td class="nowrap">$420</td>
+    <td class="nowrap">$100</td>
+    <td><b>4.1</b></td>
+    <td class="nowrap">$251.6</td>
+    <td><b>2.52×</b></td>
+    <td>+0.78σ</td>
+    <td>
+        CCA CRA
+        <span class="tracker-match">$15 · score 4.2</span>
+    </td>
+    <td>6.67×</td>
+    <td>−0.62</td>
+    <td><b>+0.16</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">95</td>
+    <td class="iem-col">
+        <a href="moondrop-s8.html?from=value-kings">Moondrop S8</a>
+        
+        
+    </td>
+    <td><a href="brand-moondrop.html">Moondrop</a></td>
+    <td class="nowrap">$700</td>
+    <td><b>7.1</b></td>
+    <td class="nowrap">$1,040.17</td>
+    <td><b>1.49×</b></td>
+    <td>+0.33σ</td>
+    <td>
+        <a href="yu9-que.html?from=value-kings">YU9 Audio Que</a>
+        <span class="tracker-match">$400 · score 7.2</span>
+    </td>
+    <td>1.75×</td>
+    <td>−0.18</td>
+    <td><b>+0.15</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">96</td>
+    <td class="iem-col">
+        <a href="7th-acoustics-supernova.html?from=value-kings">7th Acoustics Supernova</a>
+        
+        
+    </td>
+    <td><a href="brand-7th-acoustics.html">7th Acoustics</a></td>
+    <td class="nowrap">$750</td>
+    <td><b>7.3</b></td>
+    <td class="nowrap">$1,143.39</td>
+    <td><b>1.52×</b></td>
+    <td>+0.36σ</td>
+    <td>
+        <a href="yu9-que.html?from=value-kings">YU9 Audio Que</a>
+        <span class="tracker-match">$400 · score 7.2</span>
+    </td>
+    <td>1.88×</td>
+    <td>−0.20</td>
+    <td><b>+0.15</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">97</td>
+    <td class="iem-col">
+        <a href="thieaudio-monarch-mkiv.html?from=value-kings">ThieAudio Monarch MKIV</a>
+        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
+        
+    </td>
+    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
+    <td class="nowrap">$1,150</td>
+    <td><b>7.7</b></td>
+    <td class="nowrap">$1,381.59</td>
+    <td><b>1.20×</b></td>
+    <td>+0.16σ</td>
+    <td>
+        <a href="64-audio-u4s.html?from=value-kings">64 Audio U4s</a>
+        <span class="tracker-match">$1,100 · score 7.7</span>
+    </td>
+    <td>1.05×</td>
+    <td>−0.01</td>
+    <td><b>+0.14</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">98</td>
+    <td class="iem-col">
+        <a href="symphonium-zenith.html?from=value-kings">Symphonium Audio Zenith</a>
+        <span class="ranking-favorite" role="img" aria-label="Precogvision favorite" title="Precogvision favorite">❤️</span>
+        <span class="tracker-match">Tracker: Symphonium Zenith</span>
+    </td>
+    <td><a href="brand-symphonium.html">Symphonium</a></td>
+    <td class="nowrap">$1,800</td>
+    <td><b>8.6</b></td>
+    <td class="nowrap">$2,114.93</td>
+    <td><b>1.17×</b></td>
+    <td>+0.14σ</td>
+    <td>
+        No cheaper close-scoring peer
+        
+    </td>
+    <td>—</td>
+    <td>—</td>
+    <td><b>+0.14</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">99</td>
+    <td class="iem-col">
+        Tin Audio P1 Max
+        
+        <span class="tracker-match">Tracker: TinHiFi P1 Max</span>
+    </td>
+    <td>TinHiFi</td>
+    <td class="nowrap">$170</td>
     <td><b>5.1</b></td>
-    <td>5.07</td>
-    <td><b>+0.03</b></td>
-    <td>+0.02σ</td>
+    <td class="nowrap">$403.81</td>
+    <td><b>2.38×</b></td>
+    <td>+0.73σ</td>
+    <td>
+        Tangzu Waner SG 2 Red Lion
+        <span class="tracker-match">$25 · score 4.9</span>
+    </td>
+    <td>6.80×</td>
+    <td>−0.62</td>
+    <td><b>+0.11</b></td>
     <td><span class="badge badge-deal">Above Expected</span></td>
 </tr>
 
 <tr>
-    <td class="rank-col">206</td>
+    <td class="rank-col">100</td>
     <td class="iem-col">
-        MiM Dark Magician
+        <a href="symphonium-europa.html?from=value-kings">Symphonium Europa</a>
         
         
     </td>
-    <td>MiM</td>
-    <td class="nowrap">$500</td>
+    <td><a href="brand-symphonium.html">Symphonium</a></td>
+    <td class="nowrap">$1,500</td>
+    <td><b>8.1</b></td>
+    <td class="nowrap">$1,669.42</td>
+    <td><b>1.11×</b></td>
+    <td>+0.09σ</td>
+    <td>
+        No cheaper close-scoring peer
+        
+    </td>
+    <td>—</td>
+    <td>—</td>
+    <td><b>+0.09</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">101</td>
+    <td class="iem-col">
+        <a href="moondrop-blessing-2.html?from=value-kings">Moondrop B2</a>
+        
+        <span class="tracker-match">Tracker: Moondrop Blessing 2</span>
+    </td>
+    <td><a href="brand-moondrop.html">Moondrop</a></td>
+    <td class="nowrap">$320</td>
+    <td><b>6.0</b></td>
+    <td class="nowrap">$618.15</td>
+    <td><b>1.93×</b></td>
+    <td>+0.56σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>4.27×</td>
+    <td>−0.47</td>
+    <td><b>+0.08</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">102</td>
+    <td class="iem-col">
+        <a href="dunu-sa6.html?from=value-kings">Dunu SA6</a>
+        
+        
+    </td>
+    <td><a href="brand-dunu.html">Dunu</a></td>
+    <td class="nowrap">$550</td>
+    <td><b>6.5</b></td>
+    <td class="nowrap">$783.12</td>
+    <td><b>1.42×</b></td>
+    <td>+0.30σ</td>
+    <td>
+        <a href="tanchjim-origin.html?from=value-kings">Tanchjim Origin</a>
+        <span class="tracker-match">$280 · score 6.5</span>
+    </td>
+    <td>1.96×</td>
+    <td>−0.22</td>
+    <td><b>+0.08</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">103</td>
+    <td class="iem-col">
+        <a href="dunu-falcon-pro.html?from=value-kings">DUNU Falcon Pro</a>
+        
+        <span class="tracker-match">Tracker: Dunu Falcon Pro</span>
+    </td>
+    <td><a href="brand-dunu.html">Dunu</a></td>
+    <td class="nowrap">$220</td>
     <td><b>5.2</b></td>
-    <td>5.18</td>
-    <td><b>+0.02</b></td>
-    <td>+0.02σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">207</td>
-    <td class="iem-col">
-        <a href="softears-edge.html?from=value-kings">SoftEars Edge</a>
-        
-        <span class="tracker-match">Tracker: Softears Edge</span>
+    <td class="nowrap">$423.38</td>
+    <td><b>1.92×</b></td>
+    <td>+0.55σ</td>
+    <td>
+        KZ PR1 Pro
+        <span class="tracker-match">$50 · score 5.1</span>
     </td>
-    <td><a href="brand-softears.html">Softears</a></td>
-    <td class="nowrap">$500</td>
-    <td><b>5.2</b></td>
-    <td>5.18</td>
-    <td><b>+0.02</b></td>
-    <td>+0.02σ</td>
+    <td>4.40×</td>
+    <td>−0.48</td>
+    <td><b>+0.07</b></td>
     <td><span class="badge badge-deal">Above Expected</span></td>
 </tr>
 
 <tr>
-    <td class="rank-col">208</td>
+    <td class="rank-col">104</td>
     <td class="iem-col">
-        Moondrop SSR
+        ThieAudio Orchestra MKII
         
         
-    </td>
-    <td>Moondrop</td>
-    <td class="nowrap">$40</td>
-    <td><b>3.6</b></td>
-    <td>3.58</td>
-    <td><b>+0.02</b></td>
-    <td>+0.01σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">209</td>
-    <td class="iem-col">
-        Aya Audio Siren
-        
-        
-    </td>
-    <td>Aya Audio</td>
-    <td class="nowrap">$600</td>
-    <td><b>5.3</b></td>
-    <td>5.29</td>
-    <td><b>+0.01</b></td>
-    <td>+0.01σ</td>
-    <td><span class="badge badge-deal">Above Expected</span></td>
-</tr>
-
-<tr>
-    <td class="rank-col">210</td>
-    <td class="iem-col">
-        Thieaudio Legacy 4
-        
-        <span class="tracker-match">Tracker: ThieAudio Legacy 4</span>
     </td>
     <td>ThieAudio</td>
-    <td class="nowrap">$200</td>
-    <td><b>4.6</b></td>
-    <td>4.60</td>
+    <td class="nowrap">$350</td>
+    <td><b>6.2</b></td>
+    <td class="nowrap">$679.5</td>
+    <td><b>1.94×</b></td>
+    <td>+0.56σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>4.67×</td>
+    <td>−0.50</td>
+    <td><b>+0.06</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">105</td>
+    <td class="iem-col">
+        <a href="dunu-sa6-ultra.html?from=value-kings">DUNU SA6 Ultra</a>
+        
+        <span class="tracker-match">Tracker: Dunu SA6 Ultra</span>
+    </td>
+    <td><a href="brand-dunu.html">Dunu</a></td>
+    <td class="nowrap">$600</td>
+    <td><b>6.7</b></td>
+    <td class="nowrap">$860.83</td>
+    <td><b>1.43×</b></td>
+    <td>+0.31σ</td>
+    <td>
+        <a href="tanchjim-origin.html?from=value-kings">Tanchjim Origin</a>
+        <span class="tracker-match">$280 · score 6.5</span>
+    </td>
+    <td>2.14×</td>
+    <td>−0.25</td>
+    <td><b>+0.06</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">106</td>
+    <td class="iem-col">
+        <a href="symphonium-crimson.html?from=value-kings">Symphonium Audio Crimson</a>
+        
+        <span class="tracker-match">Tracker: Symphonium Crimson</span>
+    </td>
+    <td><a href="brand-symphonium.html">Symphonium</a></td>
+    <td class="nowrap">$1,500</td>
+    <td><b>8.0</b></td>
+    <td class="nowrap">$1,592.28</td>
+    <td><b>1.06×</b></td>
+    <td>+0.05σ</td>
+    <td>
+        No cheaper close-scoring peer
+        
+    </td>
+    <td>—</td>
+    <td>—</td>
+    <td><b>+0.05</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">107</td>
+    <td class="iem-col">
+        ROSESESA CJ20
+        
+        <span class="tracker-match">Tracker: Rose Technics CJ20</span>
+    </td>
+    <td>Rose Technics</td>
+    <td class="nowrap">$170</td>
+    <td><b>4.9</b></td>
+    <td class="nowrap">$367.36</td>
+    <td><b>2.16×</b></td>
+    <td>+0.65σ</td>
+    <td>
+        Tangzu Waner SG 2 Red Lion
+        <span class="tracker-match">$25 · score 4.9</span>
+    </td>
+    <td>6.80×</td>
+    <td>−0.62</td>
+    <td><b>+0.03</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">108</td>
+    <td class="iem-col">
+        <a href="crinear-reference.html?from=value-kings">CrinEars Reference</a>
+        
+        <span class="tracker-match">Tracker: CrinEar Reference</span>
+    </td>
+    <td><a href="brand-crinear.html">CrinEar</a></td>
+    <td class="nowrap">$350</td>
+    <td><b>6.1</b></td>
+    <td class="nowrap">$648.1</td>
+    <td><b>1.85×</b></td>
+    <td>+0.52σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>4.67×</td>
+    <td>−0.50</td>
+    <td><b>+0.02</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">109</td>
+    <td class="iem-col">
+        EarFun Free Pro 2
+        
+        
+    </td>
+    <td>EarFun</td>
+    <td class="nowrap">$80</td>
+    <td><b>3.4</b></td>
+    <td class="nowrap">$180.67</td>
+    <td><b>2.26×</b></td>
+    <td>+0.69σ</td>
+    <td>
+        Sony MDR-EX15
+        <span class="tracker-match">$10 · score 3.3</span>
+    </td>
+    <td>8.00×</td>
+    <td>−0.68</td>
+    <td><b>+0.01</b></td>
+    <td><span class="badge badge-deal">Above Expected</span></td>
+</tr>
+
+<tr>
+    <td class="rank-col">110</td>
+    <td class="iem-col">
+        <a href="seeaudio-bravery.html?from=value-kings">SeeAudio Bravery</a>
+        
+        
+    </td>
+    <td><a href="brand-seeaudio.html">SeeAudio</a></td>
+    <td class="nowrap">$280</td>
+    <td><b>5.4</b></td>
+    <td class="nowrap">$465.39</td>
+    <td><b>1.66×</b></td>
+    <td>+0.43σ</td>
+    <td>
+        <a href="moondrop-may.html?from=value-kings">Moondrop May DSP</a>
+        <span class="tracker-match">$75 · score 6.0</span>
+    </td>
+    <td>3.73×</td>
+    <td>−0.43</td>
     <td><b>+0.00</b></td>
-    <td>+0.00σ</td>
     <td><span class="badge badge-deal">Above Expected</span></td>
 </tr>
 
 </table>
+</div>
 
-<p class="small">This is a relative value model based on Precogvision's own scores and the prices recorded in the ranking sheet; it is not an objective or universal buying guide.</p>
+<p class="small">
+    This is a relative value model based on Precogvision's own scores and ranking-sheet prices.
+    The adjustable build settings are VALUE_KINGS_COMPARABLE_SCORE_WINDOW,
+    VALUE_KINGS_COMPARABLE_PENALTY_WEIGHT, and VALUE_KINGS_MIN_ADJUSTED_SCORE.
+</p>
 
     <footer class="site-footer">
         <div class="site-footer-row">
