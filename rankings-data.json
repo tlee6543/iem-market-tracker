@@ -452,7 +452,7 @@
     "comments": "Excellent detail retreival and competent tuning. Can be slightly thin sounding and forward in the treble.",
     "based_on": "Loaner",
     "tracker_slug": "thieaudio-monarch-mkiv",
-    "market_value": 852.22,
+    "market_value": 849.38,
     "market_confidence": "High"
   },
   {
@@ -740,7 +740,7 @@
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-myth",
-    "market_value": 994.8,
+    "market_value": 981.0,
     "market_confidence": "High"
   },
   {
@@ -1053,7 +1053,7 @@
     "based_on": "Antdroid's unit",
     "tracker_slug": "unique-melody-mest-mk2",
     "market_value": 642.88,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -1821,7 +1821,7 @@
     "based_on": "Review unit",
     "tracker_slug": "letshuoer-ej07m-kinda-lava",
     "market_value": 425.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
