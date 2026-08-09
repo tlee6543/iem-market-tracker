@@ -1,6 +1,6 @@
 
 <html>
-<head><title>Aur Audio Aehta - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
+<head><title>ThieAudio V16 Divinity - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
 body { font-family: Arial; margin: 40px; background: #f7f7f7; color: #111; }
 table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
 .main-table .iem-col { width: 28%; max-width: 320px; }
@@ -588,13 +588,13 @@ score backgrounds cannot be lost to broader table/cell styling.
     
 <p><a id="back-link" href="index.html">← Back to Market Tracker</a></p>
 <div class="iem-title-row">
-    <h1>Aur Audio Aehta</h1>
+    <h1>ThieAudio V16 Divinity</h1>
     <div class="grab-link-wrap">
         <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-aur-audio.html">Aur Audio</a></p>
+<p><a href="brand-thieaudio.html">ThieAudio</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -607,9 +607,9 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$1,500</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2021</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">16BA</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
 
@@ -617,13 +617,15 @@ score backgrounds cannot be lost to broader table/cell styling.
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 44d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 44d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (41/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 44d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -638,7 +640,8 @@ score backgrounds cannot be lost to broader table/cell styling.
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -649,40 +652,24 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 <tr id="row-0" data-source="reddit" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
-<td>2026-06-29</td>
-<td>$765</td>
-<td><span class="pill">closed</span></td>
-<td class="status-reason">confirmed sold from source check</td>
-<td>and comes with a 2-pin cable with a 4</td>
-<td>1</td>
-<td>reddit_rss</td>
-<td>Markmurd61</td>
-<td>0</td>
-<td>0</td>
-<td><span id="deal-score-0">Closed: Fair (1.3% below market)</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1uj4n24/wtsustxhaur_audio_aehta_3_tuning_switches_wpaypal/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-1" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
-<td>2026-06-26</td>
-<td>$775</td>
-<td><span class="pill">closed</span></td>
+<td>2026-08-08</td>
+<td>$950</td>
+<td><span class="pill">active</span></td>
 <td class="status-reason"></td>
-<td>excellent</td>
+<td>like new</td>
 <td>0</td>
-<td>headfi</td>
-<td>Markmurd</td>
+<td>reddit_rss</td>
+<td>djkindred</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
-<td><a href="https://www.head-fi.org/classifieds/aur-audio-aehta.111301/" target="_blank">source</a></td>
+<td><span id="deal-score-0">N/A</span></td>
+<td><a href="https://www.reddit.com/r/AVexchange/comments/1vj6zsa/wts_usatx_h_thieaudio_v16_divinity_letshuoer/#item-1" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Aur Audio Aehta - 3 Tuning Switches", "raw_text": "This set of Aur Audio Aehta is in excellent condition and comes with a 2-pin cable with a 4.4mm connector along with a puck carry case. The driver configuration is 10 drivers per side with 2 dynamic drivers, 2 bone conduction, 4 balanced armature drivers and 2 EST drivers.In addition it has three tuning switches, one for lows, one for mids and one for highs.\nI offer next business day mail out with shipping costs included in the price. Thanks for your interest!\nsubmitted by /u/Markmurd61\n[link] [comments]", "seller_username": "Markmurd61", "url": "https://old.reddit.com/r/AVexchange/comments/1uj4n24/wtsustxhaur_audio_aehta_3_tuning_switches_wpaypal/#item-1", "price_num": 765.0, "date_ms": 1782766454000, "listing_status": "closed", "condition_text": "and comes with a 2-pin cable with a 4", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 1, "title": "Aur Audio Aehta", "raw_text": "Aur Audio Aehta\nListing ID: 111301\nFor Sale 775.00 USD\nCondition Good\nNegotiability Or Best Offer\nShips To North America\nThis set of Aur Audio Aehta is in excellent condition and comes with a 2-pin cable with a 4.4mm connector along with a puck carry case. The driver configuration is 10 drivers per side with 2 dynamic drivers, 2 bone conduction, 4 balanced armature...\nListed by: Markmurd (80)\nListed: 2026-06-26\nSOLD", "seller_username": "Markmurd", "url": "https://www.head-fi.org/classifieds/aur-audio-aehta.111301/", "price_num": 775.0, "date_ms": 1782432000000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}];
-const originalMsrpUsd = null;
+const allRows = [{"row_id": 0, "title": "Thieaudio V16 Divinity", "raw_text": "Thieaudio V16 Divinity - Like New Condition. Includes all original items. Original Owner and purchased in the last 60 days new from Bloom. $950", "seller_username": "djkindred", "url": "https://www.reddit.com/r/AVexchange/comments/1vj6zsa/wts_usatx_h_thieaudio_v16_divinity_letshuoer/#item-1", "price_num": 950.0, "date_ms": 1786222936000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked"}];
+const originalMsrpUsd = 1500.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
 
@@ -788,9 +775,9 @@ function updateIemBackLink(source) {
     };
 
     if (origin === "brand") {
-        const brandSlug = String(params.get("brand") || "aur-audio").replace(/[^a-z0-9-]/gi, "");
+        const brandSlug = String(params.get("brand") || "thieaudio").replace(/[^a-z0-9-]/gi, "");
         backLink.href = "brand-" + brandSlug + ".html";
-        backLink.textContent = "← Back to Aur Audio";
+        backLink.textContent = "← Back to ThieAudio";
         return;
     }
 

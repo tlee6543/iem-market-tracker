@@ -164,7 +164,7 @@
     "comments": "Exceptional musicality and unfettered driver efficiency.",
     "based_on": "Loaner unit",
     "tracker_slug": "symphonium-zenith",
-    "market_value": 1662.5,
+    "market_value": 1655.0,
     "market_confidence": "High"
   },
   {
@@ -452,7 +452,7 @@
     "comments": "Excellent detail retreival and competent tuning. Can be slightly thin sounding and forward in the treble.",
     "based_on": "Loaner",
     "tracker_slug": "thieaudio-monarch-mkiv",
-    "market_value": 849.38,
+    "market_value": 856.43,
     "market_confidence": "High"
   },
   {
@@ -2323,9 +2323,9 @@
     "price": "$1,500",
     "comments": "Nice BA bass and detail overall, but the upper-midrange is odd and treble sounds sort of dead.",
     "based_on": "Loaner",
-    "tracker_slug": "",
+    "tracker_slug": "thieaudio-v16-divinity",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -4941,7 +4941,7 @@
     "based_on": "Loaner unit",
     "tracker_slug": "thieaudio-hype-4-mkii",
     "market_value": 252.55,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",

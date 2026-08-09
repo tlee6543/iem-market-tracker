@@ -1,1 +1,1 @@
-build_id=expected-price-adjusted-value-kings-2026-08-05\ngenerated_at=2026-08-08T20:52:45.060207+00:00\n
+build_id=expected-price-adjusted-value-kings-2026-08-05\ngenerated_at=2026-08-09T02:32:30.469093+00:00\n
