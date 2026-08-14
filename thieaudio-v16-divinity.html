@@ -625,7 +625,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -650,8 +650,24 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
+<tr id="row-0" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<td>2026-08-09</td>
+<td>$950</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason"></td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>djkindred</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">N/A</span></td>
+<td><a href="https://www.head-fi.org/classifieds/thieaudio-v16-divinity-like-new.113604/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="reddit" ></td>
 <td>2026-08-08</td>
 <td>$950</td>
 <td><span class="pill">active</span></td>
@@ -662,13 +678,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>djkindred</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td><span id="deal-score-1">N/A</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vj6zsa/wts_usatx_h_thieaudio_v16_divinity_letshuoer/#item-1" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Thieaudio V16 Divinity", "raw_text": "Thieaudio V16 Divinity - Like New Condition. Includes all original items. Original Owner and purchased in the last 60 days new from Bloom. $950", "seller_username": "djkindred", "url": "https://www.reddit.com/r/AVexchange/comments/1vj6zsa/wts_usatx_h_thieaudio_v16_divinity_letshuoer/#item-1", "price_num": 950.0, "date_ms": 1786222936000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked"}];
+const allRows = [{"row_id": 0, "title": "Thieaudio V16 Divinity Like New", "raw_text": "Thieaudio V16 Divinity Like New Listing ID: 113604 For Sale 950.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Reducing the collection. Original owner from a smoke-free / pet-free home. Thieaudio V16 Divinity - Like New Condition. Includes all original items. Original Owner and purchased in the last 60 days new from Bloom. Price is net of PayPal fees... Listed by: djkindred (74) Listed: 2026-08-09", "seller_username": "djkindred", "url": "https://www.head-fi.org/classifieds/thieaudio-v16-divinity-like-new.113604/", "price_num": 950.0, "date_ms": 1786233600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Thieaudio V16 Divinity", "raw_text": "Thieaudio V16 Divinity - Like New Condition. Includes all original items. Original Owner and purchased in the last 60 days new from Bloom. $950", "seller_username": "djkindred", "url": "https://www.reddit.com/r/AVexchange/comments/1vj6zsa/wts_usatx_h_thieaudio_v16_divinity_letshuoer/#item-1", "price_num": 950.0, "date_ms": 1786222936000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked"}];
 const originalMsrpUsd = 1500.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

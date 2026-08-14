@@ -188,7 +188,7 @@
     "comments": "Pretty much the closest to a tonal panacea that I've heard only held back by the bass.",
     "based_on": "Loaner",
     "tracker_slug": "7th-acoustics-asteria",
-    "market_value": 3416.67,
+    "market_value": 3375.0,
     "market_confidence": "High"
   },
   {
@@ -548,7 +548,7 @@
     "comments": "Top-tier bass, treble, and soundstage height and width. I don't approve of the midrange these days.",
     "based_on": "Loaner",
     "tracker_slug": "sony-ier-z1r",
-    "market_value": 951.4,
+    "market_value": 899.67,
     "market_confidence": "High"
   },
   {
@@ -572,8 +572,8 @@
     "comments": "Boring, but you won't find anything more well-rounded for the price. Exceptional timbre for a BA IEM.",
     "based_on": "Loaner",
     "tracker_slug": "sony-ier-m9",
-    "market_value": 516.45,
-    "market_confidence": "Medium"
+    "market_value": 533.46,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -644,8 +644,8 @@
     "comments": "Tasteful W-shape tuning that delivers in the technical department. Mid-treble can be sharp, though.",
     "based_on": "Schezade unit",
     "tracker_slug": "vision-ears-ext",
-    "market_value": 1105.48,
-    "market_confidence": "Medium"
+    "market_value": 1017.23,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -836,8 +836,8 @@
     "comments": "Quite exciting and dynamic, possibly a bit bright in the treble.",
     "based_on": "—",
     "tracker_slug": "dunu-glacier",
-    "market_value": 921.8,
-    "market_confidence": "Medium"
+    "market_value": 771.22,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -1028,8 +1028,8 @@
     "comments": "Excellent treble extension and detail retrieval.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "moondrop-s8",
-    "market_value": 340.28,
-    "market_confidence": "Medium"
+    "market_value": 344.3,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -1124,8 +1124,8 @@
     "comments": "Dull microdynamics and treble at a not-so-dull price.",
     "based_on": "Loaner",
     "tracker_slug": "oriolus-traillii-jp",
-    "market_value": 2871.16,
-    "market_confidence": "Medium"
+    "market_value": 2972.09,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -1172,7 +1172,7 @@
     "comments": "A solid improvement in imaging with slightly more palatable tonality than its predecessor.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "thieaudio-monarch-mkii",
-    "market_value": 560.87,
+    "market_value": 516.67,
     "market_confidence": "High"
   },
   {
@@ -1340,7 +1340,7 @@
     "comments": "Slightly colored but well-rounded tonality with minor quirks.",
     "based_on": "Loaner unit",
     "tracker_slug": "xenns-mangird-top-pro",
-    "market_value": 362.7,
+    "market_value": 348.33,
     "market_confidence": "High"
   },
   {
@@ -1700,7 +1700,7 @@
     "comments": "Strong dynamics and easy-going signature that could use more detail in the midrange.",
     "based_on": "Personal unit",
     "tracker_slug": "64-audio-duo",
-    "market_value": 499.88,
+    "market_value": 474.36,
     "market_confidence": "High"
   },
   {
@@ -2036,7 +2036,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 202.5,
+    "market_value": 196.88,
     "market_confidence": "High"
   },
   {
@@ -4412,8 +4412,8 @@
     "comments": "See KXXS. Just slightly less upper-midrange and more bass.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "moondrop-aria",
-    "market_value": 35.0,
-    "market_confidence": "Low"
+    "market_value": 43.17,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -4532,8 +4532,8 @@
     "comments": "Decent tonality, but weak treble extension and technicalities.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "letshuoer-ej07",
-    "market_value": 899.0,
-    "market_confidence": "Low"
+    "market_value": 681.82,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -4556,8 +4556,8 @@
     "comments": "Boomy and enveloping sounding; however, lacks the technical chops and raw detail to compete.",
     "based_on": "Review unit",
     "tracker_slug": "softears-edge",
-    "market_value": 413.25,
-    "market_confidence": "Medium"
+    "market_value": 390.8,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -4940,8 +4940,8 @@
     "comments": "Thin, crunchy, and unnaturally boosted treble that pervades to the rest of the sound. Hard listen tbh.",
     "based_on": "Loaner unit",
     "tracker_slug": "thieaudio-hype-4-mkii",
-    "market_value": 252.55,
-    "market_confidence": "Medium"
+    "market_value": 263.33,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -9452,8 +9452,8 @@
     "comments": "The saga of horrible bloat and zero midrange and treble continues.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "campfire-audio-mammoth",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 180.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -10388,8 +10388,8 @@
     "comments": "Most normal sounding Campfire IEM yet. Neutral with sub-bass boost, very pleasant on the ears but missing some mid-treble for resolution/edge.",
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-clara",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 1400.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -10508,7 +10508,7 @@
     "comments": "Literally sounds like balls.",
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-trifecta",
-    "market_value": 1664.39,
+    "market_value": 1742.81,
     "market_confidence": "Medium"
   },
   {
@@ -10652,7 +10652,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "canpur-cp752b",
-    "market_value": 3690.0,
+    "market_value": 3616.67,
     "market_confidence": "High"
   },
   {
@@ -11156,8 +11156,8 @@
     "comments": "Great detail pick-up and solid tuning at the expense of being somewhat strident.",
     "based_on": "Brief demo",
     "tracker_slug": "elysian-pilgrim",
-    "market_value": 275.0,
-    "market_confidence": "Medium"
+    "market_value": 233.07,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -11636,7 +11636,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "hercules-audio-noah",
-    "market_value": 319.41,
+    "market_value": 309.99,
     "market_confidence": "High"
   },
   {
@@ -13220,7 +13220,7 @@
     "comments": "A bit QDC-esque with the tuning but with more aggressive pinna rise and better bass. Treble a little too scooped in the mid-treble.",
     "based_on": "Brief demo",
     "tracker_slug": "penon-rival",
-    "market_value": null,
+    "market_value": 2565.0,
     "market_confidence": "Low"
   },
   {
