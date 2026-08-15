@@ -619,18 +619,20 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$54.99</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2023</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">2DD</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
 
-
+<p class="small"><a href="https://truthear.com/products/zero-red" target="_blank">Product info source</a> — high confidence</p>
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
     <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 21/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 518d ago, 1 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 21/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 518d ago, 1 source type(s), two samples; limited volatility read." tabindex="0">Low (21/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 518d ago.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -651,7 +653,8 @@ score backgrounds cannot be lost to broader table/cell styling.
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -714,7 +717,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </table>
 <script>
 const allRows = [{"row_id": 0, "title": "Truthear x Crinacle Zero: Red", "raw_text": "Truthear x Crinacle Zero: Red - $40", "seller_username": "mzup87", "url": "https://www.reddit.com/r/AVexchange/comments/1vnnhjx/wts_usmn_h_truthear_x_crinacle_zero_collection/#item-2", "price_num": 40.0, "date_ms": 1786655494000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Closed: Truthear x Crinacle ZERO: RED", "raw_text": "For Sale Closed: Truthear x Crinacle ZERO: RED Price 30.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling my Truthear x Crinacle ZERO: RED IEMs with original packaging and accessories. They are in excellent condition and have been used for under 30 minutes. Price includes shipping to CONUS. Four Kneez Listing Mar 15, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Kneez", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero-red.84922/", "price_num": 30.0, "date_ms": 1741996800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: TRUTHEAR x Crinacle Zero:RED", "raw_text": "For Sale Sold: TRUTHEAR x Crinacle Zero:RED Price 45.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America For sale is a TRUTHEAR x Crinacle Zero:RED in excellent condition and all original packaging and accessories. Price includes shipping and PayPal fees. Great IEM, just needs a home where it will get more use. Thanks for looking! nicdub Listing May 12, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "nicdub", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero-red.67828/", "price_num": 45.0, "date_ms": 1715472000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
-const originalMsrpUsd = null;
+const originalMsrpUsd = 54.99;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
 

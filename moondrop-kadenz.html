@@ -619,24 +619,26 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$189.99</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2024</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">1DD</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
-
-
+<p class="small"><b>Notes:</b> Stage 1 catalog expansion. Original 2024 launch/review price; current official list pricing may be higher.</p>
+<p class="small"><a href="https://theheadphonelist.com/products/kadenz/" target="_blank">Product info source</a> — high confidence</p>
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 30/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 8/30, recent sample depth 4/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 248d ago, 1 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 30/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 8/30, recent sample depth 4/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 248d ago, 1 source type(s), two samples; limited volatility read." tabindex="0">Low (30/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 248d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 34/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 8/30, recent sample depth 4/15, source diversity 5/10, price consistency 4/10. Current inputs: 3 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 184d ago, 1 source type(s), price CV 0.23." aria-label="Liquidity/confidence score: 34/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 8/30, recent sample depth 4/15, source diversity 5/10, price consistency 4/10. Current inputs: 3 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 184d ago, 1 source type(s), price CV 0.23." tabindex="0">Low (34/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">3 included sample(s), latest 184d ago.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">3</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">6</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -651,7 +653,8 @@ score backgrounds cannot be lost to broader table/cell styling.
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -660,7 +663,24 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Age / Close Time</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="reddit" class="listing-row excluded">
+<tr id="row-0" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" checked></td>
+<td>2026-02-12</td>
+<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
+<td>$70</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td></td>
+<td>0</td>
+<td>reddit_rss</td>
+<td>rickytikitak</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">Closed: Great Deal (21.5% below market)</span></td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1r2h5xb/wts_usaga_h_topping_dx3_with_box_moondrop_kadenz/#item-2" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="reddit" class="listing-row excluded">
 <td></td>
 <td>2026-01-05</td>
 <td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
@@ -671,14 +691,14 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>0</td>
 <td>reddit_rss</td>
 <td>rickytikitak</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td><span id="deal-score-1">N/A</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1q4semx/wts_usaga_h_meze_105_aer_and_moondrop_kadenz_w/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="reddit" ></td>
+<tr id="row-2" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="reddit" ></td>
 <td>2025-12-30</td>
 <td title="The tracker first observed this listing closed about 174 day(s) after it was listed. The exact close date may have been earlier.">Closed · ≤174d</td>
 <td>$80</td>
@@ -690,12 +710,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>rickytikitak</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-1">Closed: Great Deal (25.6% below market)</span></td>
+<td><span id="deal-score-2">Closed: Good Deal (10.3% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1pz3bd7/wts_usaga_h_meze_105_aer_and_moondrop_kadenz_w/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="reddit" checked></td>
+<tr id="row-3" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="reddit" checked></td>
 <td>2025-12-09</td>
 <td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$95</td>
@@ -707,12 +727,29 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>iPros</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">Closed: Good Deal (11.6% below market)</span></td>
+<td><span id="deal-score-3">Closed: Fair (6.6% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1pigfuq/wtsusacahziigaat_horizon_moondrop_kadenz_pula/#item-2" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="reddit" checked></td>
+<tr id="row-4" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="reddit" ></td>
+<td>2025-11-08</td>
+<td title="The tracker first observed this listing closed about 225 day(s) after it was listed. The exact close date may have been earlier.">Closed · ≤225d</td>
+<td>$140</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">lister never updated</td>
+<td></td>
+<td>0</td>
+<td>reddit_rss</td>
+<td>gagsfps</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-4">Closed: Overpriced (57.1% above market)</span></td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1os0amu/wts_usaca_h_moondrop_blessing_3_kadenz_little/#item-2" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-5" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="reddit" checked></td>
 <td>2025-10-26</td>
 <td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$125</td>
@@ -724,14 +761,31 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>p51d_bnnck</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-3">Closed: High (16.3% above market)</span></td>
+<td><span id="deal-score-5">Closed: Overpriced (40.2% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1ogrx5q/wtsusanj_h_effect_audio_x_elysian_audio_gaea/#item-4" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-6" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="reddit" ></td>
+<td>2025-09-29</td>
+<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
+<td>$250</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>used</td>
+<td>0</td>
+<td>reddit_rss</td>
+<td>TheTrooper503</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-6">Closed: Overpriced (180.5% above market)</span></td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1nt95fk/wtsusorh_moondrop_discdream2_ultra_kadenz_iems_w/#item-1" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Meze 105 aer and Moondrop Kadenz", "raw_text": "Repost of previous post. Meze sold but KADENZ still available. Willing to do 70 shipped for them. Thanks for looking\nsubmitted by /u/rickytikitak\n[link] [comments]", "seller_username": "rickytikitak", "url": "https://old.reddit.com/r/AVexchange/comments/1q4semx/wts_usaga_h_meze_105_aer_and_moondrop_kadenz_w/#item-1", "price_num": null, "date_ms": 1767635014000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=moondrop kadenz"}, {"row_id": 1, "title": "Meze 105 aer and Moondrop Kadenz", "raw_text": "As the title says. Have both these up for sale. For the meze barely used at all. Have about 20 hours used on it. Wanting 260 shipped for that one. For the moondrop kadenz it has seen it's fair share of love. Works perfectly fine and comes with the interchangeable sound tips. Want 80 shipped since they are loved. Thanks for looking! Kadenz-$80 Meze 105 Aer- $260 Timestampped photos here: https://imgur.com/a/pLdumHV\nsubmitted by /u/rickytikitak\n[link] [comments]", "seller_username": "rickytikitak", "url": "https://old.reddit.com/r/AVexchange/comments/1pz3bd7/wts_usaga_h_meze_105_aer_and_moondrop_kadenz_w/#item-1", "price_num": 80.0, "date_ms": 1767054883000, "listing_status": "closed", "condition_text": "fair, used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=moondrop kadenz | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Moondrop - Kadenz", "raw_text": "Moondrop - Kadenz $95 tested for an hour but fit didn\u2019t work for me. Includes all accessories and still has plastic wrap on. Incredible value for money on this one. (Sold)", "seller_username": "iPros", "url": "https://old.reddit.com/r/AVexchange/comments/1pigfuq/wtsusacahziigaat_horizon_moondrop_kadenz_pula/#item-2", "price_num": 95.0, "date_ms": 1765307989000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=moondrop kadenz"}, {"row_id": 3, "title": "Moondrop Kadenz", "raw_text": "Moondrop Kadenz: $125 -does not come with large tips all other accessories included.\nI am not interested in any trades. Please comment before sending a pm\nsubmitted by /u/p51d_bnnck\n[link] [comments]", "seller_username": "p51d_bnnck", "url": "https://old.reddit.com/r/AVexchange/comments/1ogrx5q/wtsusanj_h_effect_audio_x_elysian_audio_gaea/#item-4", "price_num": 125.0, "date_ms": 1761503060000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=moondrop kadenz"}];
-const originalMsrpUsd = null;
+const allRows = [{"row_id": 0, "title": "Kadenz", "raw_text": "Kadenz-70 shipped.\ntimestamp here: https://imgur.com/a/GJ9pBz6\nsubmitted by /u/rickytikitak\n[link] [comments]", "seller_username": "rickytikitak", "url": "https://old.reddit.com/r/AVexchange/comments/1r2h5xb/wts_usaga_h_topping_dx3_with_box_moondrop_kadenz/#item-2", "price_num": 70.0, "date_ms": 1770862707000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=moondrop kadenz"}, {"row_id": 1, "title": "Meze 105 aer and Moondrop Kadenz", "raw_text": "Repost of previous post. Meze sold but KADENZ still available. Willing to do 70 shipped for them. Thanks for looking\nsubmitted by /u/rickytikitak\n[link] [comments]", "seller_username": "rickytikitak", "url": "https://old.reddit.com/r/AVexchange/comments/1q4semx/wts_usaga_h_meze_105_aer_and_moondrop_kadenz_w/#item-1", "price_num": null, "date_ms": 1767635014000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=moondrop kadenz | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Meze 105 aer and Moondrop Kadenz", "raw_text": "As the title says. Have both these up for sale. For the meze barely used at all. Have about 20 hours used on it. Wanting 260 shipped for that one. For the moondrop kadenz it has seen it's fair share of love. Works perfectly fine and comes with the interchangeable sound tips. Want 80 shipped since they are loved. Thanks for looking! Kadenz-$80 Meze 105 Aer- $260 Timestampped photos here: https://imgur.com/a/pLdumHV\nsubmitted by /u/rickytikitak\n[link] [comments]", "seller_username": "rickytikitak", "url": "https://old.reddit.com/r/AVexchange/comments/1pz3bd7/wts_usaga_h_meze_105_aer_and_moondrop_kadenz_w/#item-1", "price_num": 80.0, "date_ms": 1767054883000, "listing_status": "closed", "condition_text": "fair, used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=moondrop kadenz | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "Moondrop - Kadenz", "raw_text": "Moondrop - Kadenz $95 tested for an hour but fit didn\u2019t work for me. Includes all accessories and still has plastic wrap on. Incredible value for money on this one. (Sold)", "seller_username": "iPros", "url": "https://old.reddit.com/r/AVexchange/comments/1pigfuq/wtsusacahziigaat_horizon_moondrop_kadenz_pula/#item-2", "price_num": 95.0, "date_ms": 1765307989000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=moondrop kadenz"}, {"row_id": 4, "title": "Kadenz", "raw_text": "Kadenz - $140 + shipping OBO", "seller_username": "gagsfps", "url": "https://old.reddit.com/r/AVexchange/comments/1os0amu/wts_usaca_h_moondrop_blessing_3_kadenz_little/#item-2", "price_num": 140.0, "date_ms": 1762635385000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=moondrop kadenz | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 5, "title": "Moondrop Kadenz", "raw_text": "Moondrop Kadenz: $125 -does not come with large tips all other accessories included.\nI am not interested in any trades. Please comment before sending a pm\nsubmitted by /u/p51d_bnnck\n[link] [comments]", "seller_username": "p51d_bnnck", "url": "https://old.reddit.com/r/AVexchange/comments/1ogrx5q/wtsusanj_h_effect_audio_x_elysian_audio_gaea/#item-4", "price_num": 125.0, "date_ms": 1761503060000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=moondrop kadenz"}, {"row_id": 6, "title": "MOONDROP DISCDREAM2 ULTRA + KADENZ IEMs", "raw_text": "Hi folks,\nDoing a bit of fall cleaning and letting go of a couple of MOONDROP items I barely use anymore. Both were purchased from Amazon in October 2024 and are in like-new / open-box condition . Just moving on from rarely used gear\u2014you know how these things go. \ud83d\ude05\n\ud83c\udfa7 What\u2019s for sale:\nMOONDROP DISCDREAM2 ULTRA Portable CD Player\nGorgeous design, super solid build\nBarely used (I played most of my CDs on my stereo setup instead)\n$250 shipped\n[SOLD] MOONDROP KADENZ In-Ear Monitors\nTried briefly\u2014great set, but I tend to reach for other IEMs more.\nIncludes all original accessories\n$100 shipped\n\ud83d\udcbc Bundle Price:\n$325 shipped for both (save $25)\n\ud83e\uddfc Condition:\nBoth are in like-new or open-box condition , used for just a few hours. Stored carefully and fully functional.\n\ud83d\udce6 Includes:\nOriginal packaging and accessories for both items. Nothing is missing.\n\ud83d\udcac Reason for selling:\nDownsizing gear that doesn\u2019t get much use anymore\u2026 and let\u2019s be honest, I\u2019ll probably just replace it with something else down the line. \ud83d\ude43\n\ud83d\udcb0 Payment:\nPayPal Goods and Services only\n\ud83d\udccd USA buyers only\n\ud83d\udcf8 Pictures available with timestamp\n\u274c Not looking for trades right now\u2014I hope you understand!\nsubmitted by /u/TheTrooper503\n[link] [comments]", "seller_username": "TheTrooper503", "url": "https://old.reddit.com/r/AVexchange/comments/1nt95fk/wtsusorh_moondrop_discdream2_ultra_kadenz_iems_w/#item-1", "price_num": 250.0, "date_ms": 1759121140000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=moondrop kadenz | auto_high_outlier_70pct_above_median_median_110.0_cutoff_187.0"}];
+const originalMsrpUsd = 189.99;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
 

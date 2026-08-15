@@ -619,24 +619,26 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$1,499</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2018</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">1DD/3BA</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
-
-
+<p class="small"><b>Notes:</b> Historical backfill for original Solaris OG; launched in 2018.</p>
+<p class="small"><a href="https://crinacle.com/rankings/iems/pre2023/" target="_blank">Product info source</a> — high confidence</p>
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 14/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 1960d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 14/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 1960d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (14/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 1960d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 21/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 1817d ago, 1 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 21/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 1817d ago, 1 source type(s), two samples; limited volatility read." tabindex="0">Low (21/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 1817d ago.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -651,7 +653,8 @@ score backgrounds cannot be lost to broader table/cell styling.
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -662,6 +665,23 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 <tr id="row-0" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
+<td>2021-08-24</td>
+<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
+<td>$660</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason"></td>
+<td>used</td>
+<td>0</td>
+<td>headfi</td>
+<td>osanchez4808</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">Closed: Fair (6.7% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/campfire-audio-solaris.9982/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2021-04-03</td>
 <td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$850</td>
@@ -673,14 +693,14 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>toobuzz</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-1">Closed: High (20.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/campfire-solaris-og.1932/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Sold: Campfire Solaris OG", "raw_text": "For Sale / Trade Sold: Campfire Solaris OG Price 850.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America I am selling my OG Campfire Solaris. These come with all original packaging and accessories (gently sterilized with isopropyl alcohol). The leather case shows a very small bit of wear but otherwise these are in perfect condition. I am the original owner and I purchased them on 5/3/2019. They... toobuzz Listing Apr 3, 2021 Comments: 2 Category: In-Ear Monitors", "seller_username": "toobuzz", "url": "https://www.head-fi.org/classifieds/campfire-solaris-og.1932/", "price_num": 850.0, "date_ms": 1617408000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
-const originalMsrpUsd = null;
+const allRows = [{"row_id": 0, "title": "Sold: Campfire Audio Solaris", "raw_text": "For Sale / Trade Sold: Campfire Audio Solaris Price 660.00 USD Condition Good Negotiability Firm Ships to United States of America Selling a pair of Campfire Audio Solaris that have been very well kept since being purchased. These were mostly used in a work from home setup in pet and smoke free home. Only reason for selling is the flashy design that's a bit too much for my daily commute. They sound great and offer... osanchez4808 Listing Aug 24, 2021 Comments: 1 Category: In-Ear Monitors", "seller_username": "osanchez4808", "url": "https://www.head-fi.org/classifieds/campfire-audio-solaris.9982/", "price_num": 660.0, "date_ms": 1629763200000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Sold: Campfire Solaris OG", "raw_text": "For Sale / Trade Sold: Campfire Solaris OG Price 850.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America I am selling my OG Campfire Solaris. These come with all original packaging and accessories (gently sterilized with isopropyl alcohol). The leather case shows a very small bit of wear but otherwise these are in perfect condition. I am the original owner and I purchased them on 5/3/2019. They... toobuzz Listing Apr 3, 2021 Comments: 2 Category: In-Ear Monitors", "seller_username": "toobuzz", "url": "https://www.head-fi.org/classifieds/campfire-solaris-og.1932/", "price_num": 850.0, "date_ms": 1617408000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const originalMsrpUsd = 1499.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
 

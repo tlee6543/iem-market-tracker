@@ -619,18 +619,20 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$219</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2023</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">1DD/2BA/1Planar/1PZT</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
 
-
+<p class="small"><a href="https://kiwiears.com/products/kiwi-ears-quintet" target="_blank">Product info source</a> — high confidence</p>
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
     <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 40/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 8/30, recent sample depth 4/15, source diversity 5/10, price consistency 10/10. Current inputs: 3 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 212d ago, 1 source type(s), price CV 0.08." aria-label="Liquidity/confidence score: 40/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 8/30, recent sample depth 4/15, source diversity 5/10, price consistency 10/10. Current inputs: 3 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 212d ago, 1 source type(s), price CV 0.08." tabindex="0">Low (40/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">3 included sample(s), latest 212d ago.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -651,7 +653,8 @@ score backgrounds cannot be lost to broader table/cell styling.
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -731,7 +734,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </table>
 <script>
 const allRows = [{"row_id": 0, "title": "Kiwi Ears Quintet", "raw_text": "Kiwi Ears Quintet - $135 (SOLD)", "seller_username": "Roydashme", "url": "https://old.reddit.com/r/AVexchange/comments/1qd6n14/wts_usaca_h_assortment_of_iems_w_paypal/#item-5", "price_num": 135.0, "date_ms": 1768442432000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kefine"}, {"row_id": 1, "title": "Kiwiears Quintet", "raw_text": "Kiwiears Quintet - $110 (Traded)", "seller_username": "superfrogyto", "url": "https://old.reddit.com/r/AVexchange/comments/1peinoe/wts_wtt_usany_h_quintet_unicrom_s08_w_paypal_cash/#item-1", "price_num": 110.0, "date_ms": 1764899826000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears"}, {"row_id": 2, "title": "Kiwiears Quintet", "raw_text": "Hey everyone,\nI\u2019ve got a pair of gently used Kiwiear Quintets with all original packaging and accessories included. They\u2019ve got a grand total of maybe 10 hrs of use from me. I gave it time but decided they weren\u2019t for me. Asking $140 shipped OBO.\nTime stamps: https://imgur.com/a/IrjOAbq\nsubmitted by /u/Im6cninoit\n[link] [comments]", "seller_username": "Im6cninoit", "url": "https://old.reddit.com/r/AVexchange/comments/1p5p1v3/wtsusaorh_kiwiears_quintet_w_paypal_local_cash/#item-1", "price_num": 140.0, "date_ms": 1764009170000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=kiwiears | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 3, "title": "Kiwiears Quintet", "raw_text": "Kiwiears Quintet - $120", "seller_username": "Traxaber", "url": "https://old.reddit.com/r/AVexchange/comments/1mnx2jr/wts_usnj_h_a_bunch_of_iems_blessing_3_hype_4/#item-10", "price_num": 120.0, "date_ms": 1754966617000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears"}];
-const originalMsrpUsd = null;
+const originalMsrpUsd = 219.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
 

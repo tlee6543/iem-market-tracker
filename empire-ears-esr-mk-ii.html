@@ -619,18 +619,20 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$1,099</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2020</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">3BA/2EST</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
-
-
+<p class="small"><b>Notes:</b> Historical backfill; ESR MKII was introduced in the 2020 lineup.</p>
+<p class="small"><a href="https://crinacle.com/2020/08/09/sneak-peek-empire-ears-2020-lineup/" target="_blank">Product info source</a> — high confidence</p>
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
     <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 50/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 22/35, recency 15/30, recent sample depth 4/15, source diversity 5/10, price consistency 4/10. Current inputs: 5 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 162d ago, 1 source type(s), price CV 0.33." aria-label="Liquidity/confidence score: 50/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 22/35, recency 15/30, recent sample depth 4/15, source diversity 5/10, price consistency 4/10. Current inputs: 5 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 162d ago, 1 source type(s), price CV 0.33." tabindex="0">Medium (50/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">5 included sample(s), latest 162d ago.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -651,7 +653,8 @@ score backgrounds cannot be lost to broader table/cell styling.
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -748,7 +751,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </table>
 <script>
 const allRows = [{"row_id": 0, "title": "Traded: Empire Ears ESR MKII", "raw_text": "For Sale Traded: Empire Ears ESR MKII Price 350.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America This is more for those of you looking to get something at a good price or collector's item with Empire Ears shutting down. All original packaging and accessories are included. Can provide date stampe image of serial no upon request. Price includes 7 Day Express Shipping via Canada Post. KuroKitsu Listing Mar 6, 2026 Comments: 1 Category: In-Ear Monitors", "seller_username": "KuroKitsu", "url": "https://www.head-fi.org/classifieds/empire-ears-esr-mkii.104938/", "price_num": 350.0, "date_ms": 1772755200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Sold: Empire Ears ESR MK II", "raw_text": "For Sale Sold: Empire Ears ESR MK II Price 350.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Selling a pair of Empire Ears ESR MK II that are in great condition. Listing includes just the IEMs and no cable or ear tips. Let me know if you have any questions. Thanks for looking! osanchez4808 Listing Oct 4, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "osanchez4808", "url": "https://www.head-fi.org/classifieds/empire-ears-esr-mk-ii.96250/", "price_num": 350.0, "date_ms": 1759536000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: Empire Ears ESR 2 (Sold)", "raw_text": "For Sale Sold: Empire Ears ESR 2 (Sold) Price 500.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America SOLD the ESR2. You buy these because you are getting a like new Empire Ears $1k IEM for less than half retail! Why? Because $500 is INSANE for these! They are mint and have been serviced and cleaned by Empire Ears in the last 3 months. Comes with all accessories and all are unused. Daveshast Listing Nov 22, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Daveshast", "url": "https://www.head-fi.org/classifieds/empire-ears-esr-2-sold.78610/", "price_num": 500.0, "date_ms": 1732233600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Empire Ears ESR Mk II Hybrid - Additional Price Drop!", "raw_text": "For Sale Sold: Empire Ears ESR Mk II Hybrid - Additional Price Drop! Price 529.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Empire Ears Mk II is a 5 driver Hybrid IEM: 5 Proprietary Drivers, Hybrid Design 3 Proprietary Balanced Drivers - 1 Low, 1 Mid, 1 High 2 Premium Electrostatic Drivers - 1 High, 1 Super-High It has superb technicalities and is amongst the most resolving, neutral IEM's I have heard. My unit is... LoryWiv Listing Sep 29, 2024 Comments: 2 Category: In-Ear Monitors", "seller_username": "LoryWiv", "url": "https://www.head-fi.org/classifieds/empire-ears-esr-mk-ii-hybrid-additional-price-drop.75561/", "price_num": 529.0, "date_ms": 1727568000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Closed: Brand new Empire Ears ESR mk 2 Mkii mk2", "raw_text": "For Sale Closed: Brand new Empire Ears ESR mk 2 Mkii mk2 Price 800.00 USD Condition New in box Negotiability Or best offer Ships to Anywhere Rare chance to get brand new empire ears esr mkii Analytical sound, high resolution. Please PM for more details. Thomastb Listing Apr 15, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "Thomastb", "url": "https://www.head-fi.org/classifieds/brand-new-empire-ears-esr-mk-2-mkii-mk2.66232/", "price_num": 800.0, "date_ms": 1713139200000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
-const originalMsrpUsd = null;
+const originalMsrpUsd = 1099.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
 
