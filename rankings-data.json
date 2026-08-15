@@ -4435,9 +4435,9 @@
     "price": "$190",
     "comments": "Excellent timbre; not the most resolving set, but very easy on the ears.",
     "based_on": "Personal unit",
-    "tracker_slug": "",
+    "tracker_slug": "moondrop-kxxs",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -5995,9 +5995,9 @@
     "price": "$200",
     "comments": "Good tonal balance, but can be fatiguing. Sounds like it's trying too hard.",
     "based_on": "Linsoul unit",
-    "tracker_slug": "",
+    "tracker_slug": "thieaudio-legacy-4",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -7507,9 +7507,9 @@
     "price": "$800",
     "comments": "Odd recessions in frequency response lead to unique imaging but uncanny tonality.",
     "based_on": "—",
-    "tracker_slug": "",
+    "tracker_slug": "fiio-fx15",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
