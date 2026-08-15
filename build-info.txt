@@ -1,1 +1,1 @@
-build_id=market-dashboard-range-age-2026-08-14\ngenerated_at=2026-08-15T20:01:44.078591+00:00\n
+build_id=stage1-market-history-catalog-2026-08-15\ngenerated_at=2026-08-15T20:22:04.569408+00:00\n
