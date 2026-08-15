@@ -68,7 +68,7 @@
     "comments": "World-class bass with incredible depth and dynamics. Held back by a slightly unrefined treble response.",
     "based_on": "Show floor unit",
     "tracker_slug": "brise-audio-fugaku",
-    "market_value": 11447.83,
+    "market_value": 11504.46,
     "market_confidence": "Medium"
   },
   {
@@ -236,7 +236,7 @@
     "comments": "Sounds like a warmer, more forgiving Elysian Annihilator with great spherical-esque imaging.",
     "based_on": "Loaner unit",
     "tracker_slug": "hercules-audio-moses",
-    "market_value": 2658.33,
+    "market_value": 2843.47,
     "market_confidence": "High"
   },
   {
@@ -1124,7 +1124,7 @@
     "comments": "Dull microdynamics and treble at a not-so-dull price.",
     "based_on": "Loaner",
     "tracker_slug": "oriolus-traillii-jp",
-    "market_value": 2972.09,
+    "market_value": 2603.9,
     "market_confidence": "High"
   },
   {
@@ -1725,7 +1725,7 @@
     "based_on": "Headphones.com unit",
     "tracker_slug": "64-audio-fourte-blanc",
     "market_value": 1648.42,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -2468,8 +2468,8 @@
     "comments": "Probably the most palatable FiR IEM, colored presentation with spicy mid and upper-treble.",
     "based_on": "Schezade unit",
     "tracker_slug": "fir-audio-radon-6",
-    "market_value": 1920.39,
-    "market_confidence": "Medium"
+    "market_value": 1918.8,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -3453,7 +3453,7 @@
     "based_on": "Loaner",
     "tracker_slug": "hisenior-mega-7",
     "market_value": 300.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -5451,8 +5451,8 @@
     "entry_type": "ranked",
     "iem": "Dunu DK-2001",
     "favorite": false,
-    "canonical_name": "",
-    "release_year": "—",
+    "canonical_name": "Dunu DK-2001",
+    "release_year": "2020",
     "final_score": 4.9,
     "tonality": "4.7",
     "bass": "5.0",
@@ -5467,9 +5467,9 @@
     "price": "$300",
     "comments": "A leaner, more forward version of the 3001.",
     "based_on": "DUNU loaner",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "dunu-dk-2001",
+    "market_value": 285.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -5707,9 +5707,9 @@
     "price": "$110",
     "comments": "Solid tuning and technical chops for the price, not much to complain about here.",
     "based_on": "Super*Review's unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "tinhifi-t4",
+    "market_value": 20.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -6020,8 +6020,8 @@
     "comments": "Close ringer for the Harman IEM target with great bass and slightly harsh upper-mids and lower-treble.",
     "based_on": "Review unit",
     "tracker_slug": "truthear-x-crinacle-zero",
-    "market_value": 33.7,
-    "market_confidence": "High"
+    "market_value": 31.02,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -6789,7 +6789,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -7027,9 +7027,9 @@
     "price": "$40",
     "comments": "Pleasant, bassy, warm tonality marred by subpar resolution.",
     "based_on": "Super*Review's unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "blon-bl03",
+    "market_value": 65.0,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -10916,7 +10916,7 @@
     "comments": "Treble has some unnatural peaking past 10kHz that lends to a Focal-esque, metallic tinge.",
     "based_on": "Brief demo",
     "tracker_slug": "crinear-daybreak",
-    "market_value": 106.67,
+    "market_value": 113.62,
     "market_confidence": "High"
   },
   {
@@ -11379,8 +11379,8 @@
     "entry_type": "demoed",
     "iem": "Fiio FA19",
     "favorite": false,
-    "canonical_name": "",
-    "release_year": "—",
+    "canonical_name": "FiiO FA19",
+    "release_year": "2024",
     "final_score": null,
     "tonality": "—",
     "bass": "—",
@@ -11395,9 +11395,9 @@
     "price": "—",
     "comments": "Treble sounds sibilant and overall tuning is quite off-putting.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "fiio-fa19",
+    "market_value": 600.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -13347,8 +13347,8 @@
     "entry_type": "demoed",
     "iem": "QDC 8 Pro",
     "favorite": false,
-    "canonical_name": "",
-    "release_year": "—",
+    "canonical_name": "qdc 8Pro",
+    "release_year": "2023",
     "final_score": null,
     "tonality": "—",
     "bass": "—",
@@ -13363,9 +13363,9 @@
     "price": "—",
     "comments": "",
     "based_on": "Brief demo",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "qdc-8pro",
+    "market_value": 800.0,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -14691,8 +14691,8 @@
     "entry_type": "demoed",
     "iem": "VOLK Audio Stella",
     "favorite": false,
-    "canonical_name": "",
-    "release_year": "—",
+    "canonical_name": "VOLK Audio x Astell&Kern STELLA",
+    "release_year": "2026",
     "final_score": null,
     "tonality": "—",
     "bass": "—",
@@ -14707,9 +14707,9 @@
     "price": "—",
     "comments": "",
     "based_on": "Brief demo",
-    "tracker_slug": "",
+    "tracker_slug": "volk-audio-x-astell-kern-stella",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",

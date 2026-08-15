@@ -1,0 +1,1555 @@
+
+<html>
+<head><title>EarAcoustic Utopia OSHUN - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
+body { font-family: Arial; margin: 40px; background: #f7f7f7; color: #111; }
+table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
+.main-table .iem-col { width: 28%; max-width: 320px; }
+.main-table td:first-child { max-width: 320px; }
+th, td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+th { background: #111; color: white; }
+.card { background: white; padding: 20px; border: 1px solid #ddd; margin-bottom: 20px; }
+a { color: #0066cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.muted { color: #666; }
+.small { font-size: 13px; color: #666; }
+.top-credit { background: white; border: 1px solid #ddd; padding: 10px 14px; margin-bottom: 20px; font-size: 14px; color: #555; }
+.top-credit a { font-weight: bold; color: #0066cc; }
+.site-topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.site-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.site-nav a { display: inline-block; padding: 7px 10px; border-radius: 6px; color: #333; font-weight: bold; }
+.site-nav a:hover { background: #eee; text-decoration: none; }
+.support-tool-link { display: inline-block; background: #111; color: #fff; border: 1px solid #111; border-radius: 999px; padding: 9px 14px; font-size: 14px; font-weight: bold; }
+.support-tool-link:hover { color: #fff; text-decoration: none; }
+.site-footer { margin-top: 34px; padding-top: 16px; border-top: 1px solid #ddd; font-size: 14px; color: #555; }
+.site-footer a { font-weight: bold; color: #0066cc; }
+.site-footer-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.site-footer-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.footer-separator { color: #aaa; }
+.creator-credit { display: inline-flex; align-items: center; gap: 4px; }
+.creator-popover { display: inline-block; position: relative; }
+.creator-popover summary {
+    display: inline;
+    list-style: none;
+    cursor: pointer;
+    color: #0066cc;
+    font-weight: bold;
+}
+.creator-popover summary::-webkit-details-marker { display: none; }
+.creator-popover summary:hover { text-decoration: underline; }
+.creator-popover-panel {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 10px);
+    width: min(310px, calc(100vw - 48px));
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 14px;
+    color: #333;
+    line-height: 1.4;
+    box-shadow: 0 10px 28px rgba(0,0,0,.18);
+    z-index: 1200;
+}
+.creator-popover-panel::after {
+    content: "";
+    position: absolute;
+    right: 18px;
+    bottom: -7px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    transform: rotate(45deg);
+}
+.creator-popover-panel p { margin: 5px 0 12px; font-size: 13px; color: #666; }
+.creator-popover-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.creator-popover-actions a {
+    display: inline-block;
+    border: 1px solid #bbb;
+    border-radius: 999px;
+    padding: 7px 10px;
+    font-size: 12px;
+    text-decoration: none;
+}
+.creator-popover-actions a:hover { background: #f3f3f3; text-decoration: none; }
+.creator-popover-actions .creator-youtube-link { background: #111; border-color: #111; color: #fff; }
+.creator-popover-actions .creator-youtube-link:hover { background: #333; color: #fff; }
+
+.about-sections { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.about-section {
+    margin-bottom: 0;
+    border-left: 4px solid #111;
+}
+.about-section h2 { margin-top: 0; }
+.about-section p { margin: 0 0 14px; color: #444; line-height: 1.65; max-width: 920px; }
+.about-section p:last-child { margin-bottom: 0; }
+
+.rankings-heading-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+.rankings-heading-wrap h1 { margin: 0; }
+.rankings-profile-link {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: #111;
+    color: #fff;
+    font-size: 21px;
+    font-weight: bold;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12);
+}
+.rankings-profile-link:hover { text-decoration: none; border-color: #888; }
+.rankings-profile-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.rankings-profile-fallback { line-height: 1; }
+.stats { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.stat { background: white; border: 1px solid #ddd; padding: 16px; min-width: 150px; }
+.excluded { background: #f3f3f3; color: #666; }
+.included { background: #fff; }
+.pill { display: inline-block; padding: 2px 6px; border: 1px solid #ccc; border-radius: 10px; font-size: 12px; }
+.controls { margin: 10px 0 20px 0; display: flex; gap: 10px; align-items: center; }
+button { padding: 8px 12px; cursor: pointer; }
+input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
+.search-box { width: 100%; max-width: 520px; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-top: 8px; }
+.search-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.clear-btn { padding: 10px 12px; cursor: pointer; border: 1px solid #ccc; background: white; border-radius: 6px; }
+.hidden-row { display: none; }
+.result-count { margin-top: 10px; color: #666; font-size: 13px; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.product-field { border: 1px solid #eee; padding: 10px; background: #fafafa; }
+.product-label { font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: .02em; }
+.product-value { margin-top: 4px; font-weight: bold; }
+.chart-scroll { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; }
+.chart-panel { flex: 0 0 min(100%, 960px); scroll-snap-align: start; border: 1px solid #eee; background: #fff; padding: 14px; box-sizing: border-box; }
+.chart-panel h3 { margin-top: 0; }
+.chart-panel canvas { width: 100% !important; min-height: 360px; }
+.chart-hint { margin-top: 8px; }
+.rank-col { width: 64px; text-align: right; }
+.metric-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.metric-card { background: white; border: 1px solid #ddd; padding: 16px; min-width: 190px; }
+.metric-card .metric-value { font-size: 24px; font-weight: bold; margin-top: 6px; }
+.how-to-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 14px; }
+.how-to-card { border: 1px solid #eee; background: #fafafa; padding: 12px; border-radius: 8px; }
+.how-to-card h3 { margin: 0 0 6px 0; font-size: 16px; }
+.caveat-list { margin: 10px 0 0 18px; padding: 0; color: #555; }
+.caveat-list li { margin-bottom: 6px; }
+.notice-card { border-left: 4px solid #111; }
+.confidence-mini { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; align-items: center; }
+.confidence-mini span { display: inline-block; }
+
+.filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.filter-btn { padding: 9px 12px; border: 1px solid #ccc; background: #fff; border-radius: 999px; cursor: pointer; }
+.filter-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-toggle { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+.source-toggle-label { font-size: 13px; color: #555; font-weight: bold; margin-right: 2px; }
+.source-btn { padding: 9px 14px; border: 1px solid #bbb; background: #fff; border-radius: 999px; cursor: pointer; font-weight: bold; }
+.source-btn.active { background: #111; color: #fff; border-color: #111; }
+.source-hidden { display: none; }
+.badge { display: inline-block; padding: 3px 8px; border-radius: 999px; border: 1px solid #ccc; background: #fafafa; font-size: 12px; white-space: nowrap; }
+.badge-high { background: #ecfdf3; border-color: #b7e4c7; }
+.badge-medium { background: #fff8e1; border-color: #ead88a; }
+.badge-low { background: #f5f5f5; border-color: #ccc; }
+.badge-deal { background: #ecfdf3; border-color: #b7e4c7; font-weight: bold; }
+.badge-score { font-weight: bold; cursor: help; position: relative; }
+.badge-score[data-tooltip]:hover::after, .badge-score[data-tooltip]:focus::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 0;
+    top: 130%;
+    width: min(520px, 78vw);
+    white-space: normal;
+    line-height: 1.35;
+    background: #111;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: normal;
+    z-index: 9999;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+.badge-score[data-tooltip]:hover::before, .badge-score[data-tooltip]:focus::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 108%;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #111 transparent;
+    z-index: 10000;
+}
+.badge-stale { background: #f3f3f3; color: #666; }
+.source-breakdown { font-size: 12px; color: #555; }
+/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+.status-reason {
+    width: 260px;
+    max-width: 260px;
+    font-size: 12px;
+    color: #555;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.35;
+}
+th.reason-col { width: 260px; max-width: 260px; }
+td.status-reason { overflow: hidden; }
+.nowrap { white-space: nowrap; }
+.compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.compare-select { width: 100%; padding: 10px; font-size: 14px; }
+.compare-ranking-row td { background: #fafafa; }
+.compare-ranking-last td { border-bottom: 3px solid #111; }
+.compare-final-score {
+    display: inline-block;
+    min-width: 38px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,.18);
+    font-weight: bold;
+    text-align: center;
+}
+.deal-positive { font-weight: bold; }
+.sponsor-shell { display: grid; grid-template-columns: minmax(260px, 1.6fr) minmax(240px, 1fr); gap: 14px; margin-bottom: 20px; }
+.sponsor-card, .supporter-card { background: white; border: 1px solid #ddd; padding: 14px 16px; border-radius: 8px; }
+.sponsor-label, .supporter-label { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #777; margin-bottom: 6px; font-weight: bold; }
+.sponsor-body { display: flex; align-items: center; gap: 12px; }
+.sponsor-logo { width: 56px; height: 56px; object-fit: contain; border: 1px solid #eee; border-radius: 8px; background: #fafafa; }
+.sponsor-name { font-size: 18px; font-weight: bold; margin-bottom: 3px; }
+.sponsor-tagline { color: #555; font-size: 13px; }
+.sponsor-cta { font-size: 13px; color: #666; }
+.supporter-list { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+.supporter-chip { display: inline-block; border: 1px solid #ddd; background: #fafafa; border-radius: 999px; padding: 4px 9px; font-size: 12px; color: #333; }
+.supporter-chip a { color: #333; }
+.dev-badge { display: inline-block; margin-left: 6px; padding: 2px 6px; border-radius: 999px; border: 1px solid #ead88a; background: #fff8e1; color: #111; font-size: 11px; font-weight: bold; line-height: 1.2; cursor: help; position: relative; vertical-align: middle; }
+.dev-badge[data-tooltip]:hover::after, .dev-badge[data-tooltip]:focus::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 0;
+    top: 135%;
+    width: min(440px, 78vw);
+    white-space: normal;
+    line-height: 1.35;
+    background: #111;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+    z-index: 9999;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+.dev-badge[data-tooltip]:hover::before, .dev-badge[data-tooltip]:focus::before {
+    content: "";
+    position: absolute;
+    right: 14px;
+    top: 112%;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #111 transparent;
+    z-index: 10000;
+}
+.iem-title-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 0 0 4px 0; }
+.iem-title-row h1 { margin: 0; }
+.grab-link-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 8px; margin-left: auto; }
+.grab-link-btn { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.grab-link-btn:hover { background: #f3f3f3; }
+.grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
+.grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+    background: #fff;
+    scrollbar-gutter: stable;
+}
+.rankings-table { min-width: 1710px; border: 0; table-layout: auto; }
+.rankings-table.breakdowns-collapsed { min-width: 1240px; }
+.rankings-table th { position: sticky; top: 0; z-index: 2; white-space: nowrap; }
+.rankings-table td { vertical-align: middle; }
+.rankings-table .score-cell { font-size: 16px; font-weight: bold; text-align: center; white-space: nowrap; }
+.rankings-table .subscore-cell,
+.rankings-table .release-year-cell { text-align: center; white-space: nowrap; }
+.rankings-table th.ranking-summary-header { background: #333; }
+.rankings-table td.ranking-summary-cell { background: #f1f1f1; font-weight: bold; text-align: center; white-space: nowrap; }
+.rankings-table.breakdowns-collapsed .ranking-breakdown-column { display: none; }
+.rankings-table .iem-ranking-name { min-width: 210px; font-weight: bold; }
+.rankings-table .ranking-breakdown-column { min-width: 46px; }
+.rankings-table .ranking-summary-cell,
+.rankings-table th.ranking-summary-header { min-width: 52px; }
+.rankings-table .comments-cell {
+    min-width: 280px;
+    max-width: 420px;
+    line-height: 1.35;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+.rankings-table .setup-cell,
+.rankings-table th.setup-cell {
+    width: 110px;
+    min-width: 110px;
+    max-width: 120px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.25;
+}
+.rankings-table .based-on-cell,
+.rankings-table th.based-on-cell {
+    width: 125px;
+    min-width: 125px;
+    max-width: 145px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.25;
+}
+.rankings-controls { display: grid; grid-template-columns: minmax(240px, 1fr) repeat(2, minmax(160px, 220px)); gap: 10px; align-items: end; }
+.rankings-control label { display: block; font-size: 12px; color: #666; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .03em; }
+.rankings-control input, .rankings-control select { width: 100%; box-sizing: border-box; padding: 11px; border: 1px solid #ccc; border-radius: 6px; background: #fff; font-size: 14px; }
+.score-chip { display: inline-block; min-width: 38px; text-align: center; border: 0; padding: 0; background: transparent; color: inherit; font-weight: bold; }
+/*
+Exact Final Score conditional-format colors from the source spreadsheet.
+The table-cell selectors are deliberately specific and use !important so the
+score backgrounds cannot be lost to broader table/cell styling.
+*/
+.rankings-table td.score-cell.score-band-8,
+.score-scale-swatch.score-band-8 { background-color: #00ff00 !important; color: #000 !important; }
+.rankings-table td.score-cell.score-band-7,
+.score-scale-swatch.score-band-7 { background-color: #b6d7a8 !important; color: #000 !important; }
+.rankings-table td.score-cell.score-band-6,
+.score-scale-swatch.score-band-6 { background-color: #00ffff !important; color: #000 !important; }
+.rankings-table td.score-cell.score-band-5,
+.score-scale-swatch.score-band-5 { background-color: #9fc5e8 !important; color: #000 !important; }
+.rankings-table td.score-cell.score-band-4,
+.score-scale-swatch.score-band-4 { background-color: #ffe599 !important; color: #000 !important; }
+.rankings-table td.score-cell.score-band-3,
+.score-scale-swatch.score-band-3 { background-color: #ff9900 !important; color: #000 !important; }
+.rankings-table td.score-cell.score-band-2,
+.score-scale-swatch.score-band-2 { background-color: #e06666 !important; color: #000 !important; }
+.score-scale-legend { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 10px; font-size: 12px; color: #555; }
+.score-scale-item { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.score-scale-swatch { width: 12px; height: 12px; border-radius: 999px; border: 1px solid rgba(0,0,0,.18); display: inline-block; }
+.tracker-match { font-size: 11px; color: #666; display: block; margin-top: 4px; font-weight: normal; }
+.ranking-favorite {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 15px;
+    line-height: 1;
+    vertical-align: -1px;
+    cursor: help;
+}
+.rankings-empty { display: none; }
+.rankings-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.rankings-title-row h1 { margin: 0; }
+.rankings-title-actions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; flex-wrap: wrap; margin-left: auto; }
+.demoed-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #bbb;
+    background: #fff;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+}
+.demoed-toggle:hover { background: #f3f3f3; }
+.demoed-toggle input { margin: 0; transform: scale(1.05); }
+.demoed-toggle-count {
+    display: inline-block;
+    min-width: 18px;
+    padding: 1px 6px;
+    border-radius: 999px;
+    background: #eee;
+    color: #444;
+    font-size: 11px;
+    text-align: center;
+}
+.rankings-table td.score-cell.score-demoed {
+    background-color: #eeeeee !important;
+    color: #444 !important;
+    font-size: 12px;
+    letter-spacing: .01em;
+}
+.demoed-entry-note { display: block; margin-top: 3px; font-size: 11px; color: #666; font-weight: normal; }
+.score-distribution-popover { position: relative; z-index: 40; }
+.score-distribution-trigger { border: 1px solid #bbb; background: #fff; border-radius: 999px; padding: 9px 14px; font-weight: bold; white-space: nowrap; }
+.score-distribution-trigger:hover, .score-distribution-trigger:focus { background: #f3f3f3; }
+.score-distribution-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 9px);
+    width: min(430px, calc(100vw - 48px));
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px 16px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity .14s ease, transform .14s ease, visibility .14s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+.score-distribution-popover:hover .score-distribution-panel,
+.score-distribution-popover:focus-within .score-distribution-panel,
+.score-distribution-popover.is-open .score-distribution-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.score-distribution-panel::before {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: -7px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    transform: rotate(45deg);
+}
+.score-distribution-panel h2 { margin: 0; font-size: 16px; }
+.score-distribution-panel canvas { width: 100% !important; height: 180px !important; margin-top: 8px; }
+.distribution-stats { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; font-size: 12px; color: #555; }
+.distribution-stats b { color: #111; }
+
+.price-score-popover { position: relative; z-index: 39; }
+.price-score-trigger {
+    border: 1px solid #bbb;
+    background: #fff;
+    border-radius: 999px;
+    padding: 9px 14px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.price-score-trigger:hover,
+.price-score-trigger:focus { background: #f3f3f3; }
+.price-score-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 9px);
+    width: min(700px, calc(100vw - 48px));
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px 16px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity .14s ease, transform .14s ease, visibility .14s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+.price-score-popover.is-open .price-score-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.price-score-panel::before {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: -7px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    transform: rotate(45deg);
+}
+.price-score-panel h2 { margin: 0; font-size: 16px; }
+.price-score-controls {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(130px, 1fr));
+    gap: 9px;
+    margin-top: 12px;
+}
+.price-score-control label {
+    display: block;
+    margin-bottom: 4px;
+    color: #666;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+}
+.price-score-control select {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    padding: 8px;
+    font-size: 12px;
+}
+.price-score-chart-wrap {
+    position: relative;
+    width: 100%;
+    height: 330px;
+    margin-top: 8px;
+}
+.price-score-chart-wrap canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+.price-score-stats {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 9px;
+    color: #555;
+    font-size: 12px;
+}
+.price-score-stats b { color: #111; }
+.price-score-method-note { margin-top: 7px; line-height: 1.35; }
+
+@media (max-width: 900px) {
+    .rankings-controls { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+    .sponsor-shell { grid-template-columns: 1fr; }
+    .iem-title-row { align-items: flex-start; }
+    .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .rankings-title-row { display: block; }
+    .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
+    .demoed-toggle { white-space: normal; }
+    .score-distribution-popover { display: inline-block; margin: 0; }
+    .score-distribution-panel { left: 0; right: auto; width: min(430px, calc(100vw - 32px)); }
+    .score-distribution-panel::before { left: 20px; right: auto; }
+    .price-score-popover { display: inline-block; margin: 0; }
+    .price-score-panel { left: 0; right: auto; width: min(700px, calc(100vw - 32px)); }
+    .price-score-panel::before { left: 20px; right: auto; }
+    .price-score-controls { grid-template-columns: 1fr; }
+    .price-score-chart-wrap { height: 300px; }
+    .site-footer-row { align-items: flex-start; }
+    .creator-popover-panel { left: 0; right: auto; }
+    .creator-popover-panel::after { left: 18px; right: auto; }
+    .rankings-profile-link { width: 44px; height: 44px; flex-basis: 44px; }
+}
+
+</style></head>
+<body>
+
+    <div class="site-topbar">
+        <nav class="site-nav" aria-label="Site navigation">
+            <a href="index.html">Market Tracker</a>
+            <a href="rankings.html">Rankings</a>
+            <a href="value-kings.html">Value Kings</a>
+            <a href="resale-leaders.html">Resale Leaders</a>
+            <a href="recent-listings.html">Recent Listings</a>
+            <a href="compare.html">Compare</a>
+        </nav>
+        <a class="support-tool-link" href="https://www.patreon.com/c/precogvision/membership" target="_blank" rel="noopener">Support the tracker + get shouted out</a>
+    </div>
+    
+    <div class="sponsor-shell">
+        
+        <div class="sponsor-card">
+            <div class="sponsor-label">Sponsor</div>
+            <div class="sponsor-name">Sponsor this space</div>
+            <div class="sponsor-cta">Top banner placement available. Contact <a href="https://www.youtube.com/@Precogvision" target="_blank">Precogvision</a> to support the tracker.</div>
+        </div>
+        
+        <div class="supporter-card">
+            <div class="supporter-label">Supporters</div>
+            <div class="small">Thanks to the people helping keep this tool alive.</div>
+            <div class="supporter-list"><span class="supporter-chip">Supporter shoutouts coming soon</span></div>
+        </div>
+    </div>
+    
+<p><a id="back-link" href="index.html">← Back to Market Tracker</a></p>
+<div class="iem-title-row">
+    <h1>EarAcoustic Utopia OSHUN</h1>
+    <div class="grab-link-wrap">
+        <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
+        <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
+    </div>
+</div>
+<p><a href="brand-earacoustic.html">EarAcoustic</a></p>
+<div class="card">
+    <div class="source-toggle" aria-label="Marketplace source">
+        <span class="source-toggle-label">Marketplace:</span>
+        <button class="source-btn active" data-source="both" onclick="setMarketplaceSource('both')">Both</button>
+        <button class="source-btn" data-source="reddit" onclick="setMarketplaceSource('reddit')">Reddit</button>
+        <button class="source-btn" data-source="headfi" onclick="setMarketplaceSource('headfi')">Head-Fi</button>
+    </div>
+    <p class="small">The selected marketplace filters the listing table, charts, market value, sample counts, and confidence score.</p>
+</div>
+<div class="card">
+<h2>Product Info</h2>
+<div class="product-grid">
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2026</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">1DD</div></div>
+    <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
+</div>
+
+
+</div>
+<div class="stats">
+    <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    
+    <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
+    <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
+    <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
+    <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
+</div>
+<div class="card">
+    <h2>Price Over Time</h2>
+    <p class="muted">Checked rows are included in chart and closed-sale metrics. When fewer than 3 clean closed-sale samples exist, 2+ independent active/stale asks aged 180+ days can cap Market Value as a discounted unsold ceiling signal without being treated as completed sales. Click a dot to open the source listing.</p>
+    <div class="controls"><button onclick="setAllCheckboxes(true)">Select visible priced rows</button><button onclick="setAllCheckboxes(false)">Clear visible rows</button></div>
+    <p class="small chart-hint">Scroll horizontally to view the MSRP-retention chart.</p>
+    <div class="chart-scroll">
+        <div class="chart-panel">
+            <h3>Secondary Price USD</h3>
+            <canvas id="chart"></canvas>
+        </div>
+        <div class="chart-panel">
+            <h3>Secondary Value vs Original MSRP</h3>
+            
+            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            
+        </div>
+    </div>
+</div>
+<h2>Listings</h2>
+<table>
+<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
+
+<tr id="row-0" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
+<td>2026-08-10</td>
+<td>$115</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason"></td>
+<td></td>
+<td>0</td>
+<td>reddit_rss</td>
+<td>cozmozmoz</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">N/A</span></td>
+<td><a href="https://www.reddit.com/r/AVexchange/comments/1vl185w/wts_usoh_h_dita_prelude_iem_115_earacoustic/#item-1" target="_blank">source</a></td>
+</tr>
+
+</table>
+<script>
+const allRows = [{"row_id": 0, "title": "Dita Prelude IEM ($115), EarAcoustic Utopia OSHUN IEM ($130)", "raw_text": "submitted by /u/cozmozmoz\n[link] [comments]", "seller_username": "cozmozmoz", "url": "https://www.reddit.com/r/AVexchange/comments/1vl185w/wts_usoh_h_dita_prelude_iem_115_earacoustic/#item-1", "price_num": 115.0, "date_ms": 1786405351000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked"}];
+const originalMsrpUsd = null;
+const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
+let currentMarketplaceSource = "both";
+
+function normalizeMarketplaceSource(platform) {
+    const text = String(platform || "").toLowerCase().trim();
+    if (["reddit", "reddit_rss", "avexchange", "r/avexchange"].includes(text)) return "reddit";
+    if (["headfi", "head-fi", "head-fi classifieds"].includes(text)) return "headfi";
+    if (["manual", "manual_csv", "manual input"].includes(text)) return "manual";
+    return "other";
+}
+function sourceMatches(row) {
+    return currentMarketplaceSource === "both" || row.source_key === currentMarketplaceSource;
+}
+function getSourceRows() {
+    return allRows.filter(sourceMatches);
+}
+function safeLocalStorageGet(key) {
+    try { return window.localStorage.getItem(key); } catch (error) { return null; }
+}
+function safeLocalStorageSet(key, value) {
+    try { window.localStorage.setItem(key, value); } catch (error) {}
+}
+function fallbackCopyText(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
+    document.body.removeChild(textarea);
+    return copied;
+}
+async function grabCurrentIemLink() {
+    const button = document.getElementById("grab-link-button");
+    const feedback = document.getElementById("grab-link-feedback");
+    const shareUrl = window.location.href;
+    let copied = false;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+            copied = true;
+        } else {
+            copied = fallbackCopyText(shareUrl);
+        }
+    } catch (error) {
+        copied = fallbackCopyText(shareUrl);
+    }
+
+    if (copied) {
+        button.textContent = "Copied!";
+        button.classList.add("copied");
+        feedback.textContent = "Link copied";
+    } else {
+        feedback.textContent = "Copy failed";
+    }
+
+    window.setTimeout(function() {
+        button.textContent = "Grab Link";
+        button.classList.remove("copied");
+        feedback.textContent = "";
+    }, 1800);
+}
+function getIemPageOrigin() {
+    const params = new URLSearchParams(window.location.search);
+    const explicitOrigin = String(params.get("from") || "").toLowerCase();
+    const allowedOrigins = ["market", "rankings", "value-kings", "resale-leaders", "recent-listings", "compare", "brand"];
+    if (allowedOrigins.includes(explicitOrigin)) return explicitOrigin;
+
+    // Fallback for links generated by older cached pages that lack ?from=.
+    try {
+        if (document.referrer) {
+            const referrer = new URL(document.referrer);
+            if (referrer.origin === window.location.origin) {
+                const filename = referrer.pathname.split("/").pop().toLowerCase();
+                if (filename === "rankings.html") return "rankings";
+                if (filename === "value-kings.html") return "value-kings";
+                if (filename === "resale-leaders.html") return "resale-leaders";
+                if (filename === "recent-listings.html") return "recent-listings";
+                if (filename === "compare.html") return "compare";
+                if (filename.startsWith("brand-") && filename.endsWith(".html")) return "brand";
+            }
+        }
+    } catch (error) {}
+
+    return "market";
+}
+function updateIemBackLink(source) {
+    const backLink = document.getElementById("back-link");
+    if (!backLink) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const origin = getIemPageOrigin();
+    const destinations = {
+        "rankings": {href: "rankings.html", label: "← Back to Rankings"},
+        "value-kings": {href: "value-kings.html", label: "← Back to Value Kings"},
+        "resale-leaders": {href: "resale-leaders.html", label: "← Back to Resale Leaders"},
+        "recent-listings": {href: "recent-listings.html", label: "← Back to Recent Listings"},
+        "compare": {href: "compare.html", label: "← Back to Compare"},
+    };
+
+    if (origin === "brand") {
+        const brandSlug = String(params.get("brand") || "earacoustic").replace(/[^a-z0-9-]/gi, "");
+        backLink.href = "brand-" + brandSlug + ".html";
+        backLink.textContent = "← Back to EarAcoustic";
+        return;
+    }
+
+    if (destinations[origin]) {
+        backLink.href = destinations[origin].href;
+        backLink.textContent = destinations[origin].label;
+        return;
+    }
+
+    backLink.href = "index.html?source=" + encodeURIComponent(source);
+    backLink.textContent = "← Back to Market Tracker";
+}
+function getInitialMarketplaceSource() {
+    const params = new URLSearchParams(window.location.search);
+    const querySource = String(params.get("source") || "").toLowerCase();
+    if (["both", "reddit", "headfi"].includes(querySource)) return querySource;
+
+    const storedSource = String(safeLocalStorageGet("iemMarketplaceSource") || "").toLowerCase();
+    if (["both", "reddit", "headfi"].includes(storedSource)) return storedSource;
+
+    return "both";
+}
+function updateCurrentPageSourceQuery(source) {
+    try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("source", source);
+        window.history.replaceState({}, "", url);
+    } catch (error) {}
+}
+function setMarketplaceSource(source) {
+    if (!["both", "reddit", "headfi"].includes(source)) source = "both";
+    currentMarketplaceSource = source;
+    safeLocalStorageSet("iemMarketplaceSource", source);
+    updateCurrentPageSourceQuery(source);
+
+    document.querySelectorAll(".source-btn").forEach(function(button) {
+        button.classList.toggle("active", button.getAttribute("data-source") === source);
+    });
+
+    allRows.forEach(function(row) {
+        const tableRow = document.getElementById("row-" + row.row_id);
+        if (tableRow) tableRow.classList.toggle("source-hidden", !sourceMatches(row));
+    });
+
+    updateIemBackLink(source);
+
+    updateStatsAndChart();
+}
+function money(value) { if (value === null || value === undefined || Number.isNaN(value)) return "$N/A"; return "$" + Math.round(Number(value)).toLocaleString(); }
+function moneyRound(value) { return money(value); }
+function dateLabel(value) { if (value === null || value === undefined || Number.isNaN(value)) return ""; return new Date(value).toLocaleDateString(); }
+function pct(value) { if (value === null || value === undefined || Number.isNaN(value)) return "N/A"; return Number(value).toLocaleString(undefined, {maximumFractionDigits: 1}) + "%"; }
+function median(values) { if (!values.length) return null; const sorted = [...values].sort((a,b)=>a-b); const mid = Math.floor(sorted.length/2); return sorted.length % 2 === 0 ? (sorted[mid-1] + sorted[mid]) / 2 : sorted[mid]; }
+function average(values) { if (!values.length) return null; return values.reduce((a,b)=>a+b, 0) / values.length; }
+function dealScoreDisplay(row, marketValue) {
+    const price = Number(row.price_num);
+    const market = Number(marketValue);
+    if (!Number.isFinite(price) || price <= 0 || !Number.isFinite(market) || market <= 0) return "N/A";
+
+    const deltaPct = ((price - market) / market) * 100;
+    let label = "Fair";
+    if (deltaPct <= -20) label = "Great Deal";
+    else if (deltaPct <= -10) label = "Good Deal";
+    else if (deltaPct <= 10) label = "Fair";
+    else if (deltaPct <= 25) label = "High";
+    else label = "Overpriced";
+
+    const direction = deltaPct < 0 ? "below" : "above";
+    const detail = Math.abs(deltaPct).toFixed(1) + "% " + direction + " market";
+    return String(row.listing_status || "").toLowerCase() === "closed"
+        ? "Closed: " + label + " (" + detail + ")"
+        : label + " (" + detail + ")";
+}
+const staleUnsoldMarketDays = 180;
+const staleUnsoldCeilingDiscount = 0.95;
+const staleUnsoldCeilingMinAsks = 2;
+const staleUnsoldCeilingMaxClosedSamples = 2;
+function rowAgeDays(row) {
+    if (row.date_ms === null || row.date_ms === undefined || Number.isNaN(row.date_ms)) return null;
+    const dayMs = 24 * 60 * 60 * 1000;
+    return Math.max(0, Math.floor((Date.now() - row.date_ms) / dayMs));
+}
+function rowHasManualExclusionMarker(row) {
+    const notes = String(row.notes || "").toLowerCase();
+    const markers = ["manual_excluded", "manually_excluded", "bad_parse", "parse_error", "non_usd", "auto_bundle_excluded", "auto_low_outlier", "auto_high_outlier", "outlier", "trade_cash_difference", "wanted_side_price"];
+    return markers.some(marker => notes.indexOf(marker) !== -1);
+}
+function rowHasTradeCashDifferentialContext(row) {
+    const combined = [row.title, row.raw_text, row.notes].map(value => String(value || "")).join("\n");
+    const tradeLanguage = /\b(accept|trade|trades|trading|swap|looking for|want|wanted|wtt)\b/i.test(combined);
+    const cashDelta = /(?:\+\s*\$\s*\d{2,5}|plus\s+\$\s*\d{2,5}|\$\s*\d{2,5}\s*(?:on\s+top|difference|extra))/i.test(combined);
+    return tradeLanguage && cashDelta;
+}
+function isStaleUnsoldCeilingRow(row) {
+    if (row.price_num === null || row.price_num === undefined || Number.isNaN(row.price_num) || row.price_num <= 0) return false;
+    if (Number(row.is_bundle || 0) === 1) return false;
+    if (Number(row.is_possible_duplicate || 0) === 1) return false;
+    if (rowHasManualExclusionMarker(row)) return false;
+    if (rowHasTradeCashDifferentialContext(row)) return false;
+
+    const status = String(row.listing_status || "").toLowerCase().trim();
+    const closedReason = String(row.closed_reason || "").toLowerCase().trim();
+    const statusComment = String(row.status_comment || "").toLowerCase().trim();
+    const staleMarker = status === "stale" || status === "stale_unsold" || closedReason.startsWith("stale_unsold") || closedReason === "stale_active_timeout" || statusComment.includes("stale unsold") || statusComment.includes("lister never updated");
+    const ageDays = rowAgeDays(row);
+    // Older checker runs may already have written a stale marker using a
+    // shorter timeout. Do not use it as a ceiling until the current 180d
+    // threshold is reached. Preserve explicit stale rows with no usable date.
+    if (staleMarker) return ageDays === null || ageDays >= staleUnsoldMarketDays;
+    if (ageDays === null || ageDays < staleUnsoldMarketDays) return false;
+    return ["active", "unknown", ""].includes(status);
+}
+function applyStaleUnsoldCeiling(baseResult, candidateRows, closedSampleCount) {
+    if (Number(closedSampleCount || 0) > staleUnsoldCeilingMaxClosedSamples) return baseResult;
+
+    const ceilingRows = (candidateRows || []).filter(isStaleUnsoldCeilingRow);
+    if (ceilingRows.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const sellerKeys = ceilingRows
+        .map(row => String(row.seller_username || "").toLowerCase().trim())
+        .filter(value => value && !["unknown", "nan", "none", "null"].includes(value));
+    const independentSellerCount = new Set(sellerKeys).size;
+    if (independentSellerCount < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const stalePrices = ceilingRows
+        .map(row => Number(row.price_num))
+        .filter(value => !Number.isNaN(value) && value > 0);
+
+    if (stalePrices.length < staleUnsoldCeilingMinAsks) return baseResult;
+
+    const medianStaleAsk = median(stalePrices);
+    const ceilingValue = medianStaleAsk * staleUnsoldCeilingDiscount;
+    const discountPct = Math.round((1 - staleUnsoldCeilingDiscount) * 100);
+    const ceilingNote = "stale unsold ask ceiling: " + stalePrices.length + " ask(s) from " + independentSellerCount + " seller(s) ≥" + staleUnsoldMarketDays + "d, median ask " + moneyRound(medianStaleAsk) + ", " + discountPct + "% discount";
+
+    if (baseResult.value === null || baseResult.value === undefined || Number.isNaN(baseResult.value) || baseResult.value <= 0) {
+        return {value: ceilingValue, basis: ceilingNote + "; no closed-sale market value available"};
+    }
+
+    if (ceilingValue < baseResult.value) {
+        return {value: ceilingValue, basis: baseResult.basis + "; capped by " + ceilingNote};
+    }
+
+    return {value: baseResult.value, basis: baseResult.basis + "; " + ceilingNote + " did not cap"};
+}
+
+function calculateMarketValueFromRows(rows, allCandidateRows) {
+    const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
+    let baseResult;
+
+    if (!pricedRows.length) {
+        baseResult = {value: null, basis: "no selected closed-sale samples"};
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
+    }
+
+    const now = Date.now();
+    const dayMs = 24 * 60 * 60 * 1000;
+
+    // 1. Best case: enough true recent closed-sale samples.
+    const cutoff90 = now - 90 * dayMs;
+    const recent90 = pricedRows.filter(row => row.date_ms !== null && row.date_ms >= cutoff90);
+
+    if (recent90.length >= 3) {
+        baseResult = {
+            value: average(recent90.map(r => r.price_num)),
+            basis: "90d closed-sale avg, " + recent90.length + " samples"
+        };
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
+    }
+
+    // 2. Recency-weighted fallback when recent data is sparse.
+    const datedRows = pricedRows
+        .filter(row => row.date_ms !== null)
+        .sort((a, b) => b.date_ms - a.date_ms);
+
+    if (datedRows.length >= 2) {
+        const latestDate = datedRows[0].date_ms;
+        const cutoff365 = latestDate - 365 * dayMs;
+        const last365 = datedRows.filter(row => row.date_ms >= cutoff365);
+
+        let weightedRows;
+        let halfLifeDays;
+        let basisWindow;
+
+        if (last365.length >= 2) {
+            weightedRows = last365;
+            halfLifeDays = 90;
+            basisWindow = "365d";
+        } else {
+            weightedRows = datedRows;
+            halfLifeDays = 180;
+            basisWindow = "all dated";
+        }
+
+        weightedRows = weightedRows
+            .sort((a, b) => b.date_ms - a.date_ms)
+            .slice(0, 12);
+
+        let weightedTotal = 0;
+        let weightTotal = 0;
+
+        weightedRows.forEach(function(row) {
+            const ageDays = (latestDate - row.date_ms) / dayMs;
+            const weight = Math.pow(0.5, ageDays / halfLifeDays);
+            weightedTotal += row.price_num * weight;
+            weightTotal += weight;
+        });
+
+        baseResult = {
+            value: weightTotal ? weightedTotal / weightTotal : null,
+            basis: "recency-weighted " + basisWindow + " closed sales, " + weightedRows.length + " samples, " + halfLifeDays + "d half-life"
+        };
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
+    }
+
+    // 3. Fallback when dates are missing or only one sample exists.
+    const prices = pricedRows.map(r => r.price_num);
+
+    if (prices.length >= 2) {
+        baseResult = {
+            value: median(prices),
+            basis: "all-time closed-sale median, " + prices.length + " samples"
+        };
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
+    }
+
+    if (prices.length === 1) {
+        baseResult = {
+            value: prices[0],
+            basis: "single clean closed-sale sample"
+        };
+        return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
+    }
+
+    baseResult = {value: null, basis: "no fallback closed-sale samples"};
+    return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
+}
+
+function normalizePlatformForScore(platform) {
+    const text = String(platform || "").toLowerCase().trim();
+    if (["reddit", "reddit_rss", "avexchange", "r/avexchange"].includes(text)) return "Reddit";
+    if (["headfi", "head-fi", "head-fi classifieds"].includes(text)) return "Head-Fi";
+    if (["manual", "manual_csv", "manual input"].includes(text)) return "Manual";
+    return text ? text : "Unknown";
+}
+function calculateLiquidityConfidenceFromRows(rows) {
+    const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
+    if (!pricedRows.length) {
+        return {
+            score: 0,
+            bucket: "Low",
+            cssClass: "badge-low",
+            display: "Low (0/100)",
+            detail: "No included priced samples.",
+            tooltip: "Liquidity/confidence score: 0/100. No included clean priced samples are available yet."
+        };
+    }
+
+    const now = Date.now();
+    const dayMs = 24 * 60 * 60 * 1000;
+    const datedRows = pricedRows.filter(row => row.date_ms !== null && !Number.isNaN(row.date_ms));
+    const sampleCount = pricedRows.length;
+    const latestMs = datedRows.length ? Math.max(...datedRows.map(row => row.date_ms)) : null;
+    const latestDays = latestMs === null ? null : Math.max(0, Math.floor((now - latestMs) / dayMs));
+    const recent90 = datedRows.filter(row => row.date_ms >= now - 90 * dayMs);
+    const recent180 = datedRows.filter(row => row.date_ms >= now - 180 * dayMs);
+    const recent365 = datedRows.filter(row => row.date_ms >= now - 365 * dayMs);
+
+    const sampleScore = Math.min(sampleCount / 8, 1) * 35;
+
+    let recencyScore = 0;
+    if (latestDays === null) recencyScore = 0;
+    else if (latestDays <= 14) recencyScore = 30;
+    else if (latestDays <= 30) recencyScore = 27;
+    else if (latestDays <= 90) recencyScore = 22;
+    else if (latestDays <= 180) recencyScore = 15;
+    else if (latestDays <= 365) recencyScore = 8;
+    else recencyScore = 3;
+
+    let recentDepthScore = 0;
+    if (recent90.length >= 3) recentDepthScore = 15;
+    else if (recent90.length === 2) recentDepthScore = 12;
+    else if (recent90.length === 1) recentDepthScore = 8;
+    else if (recent180.length >= 2) recentDepthScore = 7;
+    else if (recent365.length >= 2) recentDepthScore = 4;
+
+    const sourceSet = new Set(
+        pricedRows
+            .map(row => normalizePlatformForScore(row.platform))
+            .filter(label => label && label !== "Unknown")
+    );
+    const sourceCount = sourceSet.size;
+    let sourceScore = 0;
+    if (sourceCount >= 3) sourceScore = 10;
+    else if (sourceCount === 2) sourceScore = 8;
+    else if (sourceCount === 1) sourceScore = 5;
+
+    const prices = pricedRows.map(row => Number(row.price_num)).filter(v => !Number.isNaN(v));
+    let consistencyScore = 2;
+    let volatilityNote = "single sample; no volatility read";
+    if (prices.length >= 3) {
+        const mean = average(prices);
+        const variance = prices.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / prices.length;
+        const std = Math.sqrt(variance);
+        const cv = mean > 0 ? std / mean : null;
+        if (cv !== null && cv <= 0.12) consistencyScore = 10;
+        else if (cv !== null && cv <= 0.22) consistencyScore = 7;
+        else if (cv !== null && cv <= 0.35) consistencyScore = 4;
+        else consistencyScore = 1;
+        volatilityNote = cv === null ? "price consistency unavailable" : "price CV " + cv.toFixed(2);
+    } else if (prices.length === 2) {
+        consistencyScore = 4;
+        volatilityNote = "two samples; limited volatility read";
+    }
+
+    let score = Math.round(sampleScore + recencyScore + recentDepthScore + sourceScore + consistencyScore);
+    score = Math.max(0, Math.min(100, score));
+
+    let bucket = "Low";
+    let cssClass = "badge-low";
+    if (score >= 75) { bucket = "High"; cssClass = "badge-high"; }
+    else if (score >= 45) { bucket = "Medium"; cssClass = "badge-medium"; }
+
+    const latestText = latestDays === null ? "unknown" : latestDays + "d ago";
+    const tooltip = "Liquidity/confidence score: " + score + "/100. " +
+        "This estimates how trustworthy and liquid the current secondary-market read is. " +
+        "Formula: sample count " + Math.round(sampleScore) + "/35, recency " + Math.round(recencyScore) + "/30, " +
+        "recent sample depth " + Math.round(recentDepthScore) + "/15, source diversity " + Math.round(sourceScore) + "/10, " +
+        "price consistency " + Math.round(consistencyScore) + "/10. " +
+        "Current inputs: " + sampleCount + " included priced sample(s), " + recent90.length + " in the last 90 days, " +
+        recent180.length + " in the last 180 days, latest sample " + latestText + ", " +
+        sourceCount + " source type(s), " + volatilityNote + ".";
+
+    return {
+        score: score,
+        bucket: bucket,
+        cssClass: cssClass,
+        display: bucket + " (" + score + "/100)",
+        detail: sampleCount + " included sample(s), latest " + latestText + ".",
+        tooltip: tooltip
+    };
+}
+function getSelectedRows() {
+    const selectedIds = new Set();
+
+    document.querySelectorAll(".row-toggle").forEach(function(cb) {
+        const rowId = Number(cb.dataset.rowId);
+        const tableRow = document.getElementById("row-" + rowId);
+
+        if (cb.checked) selectedIds.add(rowId);
+
+        if (tableRow) {
+            tableRow.classList.toggle("included", cb.checked);
+            tableRow.classList.toggle("excluded", !cb.checked);
+        }
+    });
+
+    return allRows.filter(function(row) {
+        return sourceMatches(row) &&
+            selectedIds.has(row.row_id) &&
+            row.price_num !== null &&
+            !Number.isNaN(row.price_num);
+    });
+}
+
+function getSmoothingConfig(sampleCount) {
+    // More samples can support a wider smoothing window and a denser curve.
+    // Thin datasets stay close to the actual points.
+    if (sampleCount < 4) return {windowSize: 1, segmentsPerGap: 1, tension: 0.15};
+    if (sampleCount < 8) return {windowSize: 3, segmentsPerGap: 3, tension: 0.25};
+    if (sampleCount < 16) return {windowSize: 5, segmentsPerGap: 5, tension: 0.35};
+    if (sampleCount < 30) return {windowSize: 7, segmentsPerGap: 7, tension: 0.40};
+    return {windowSize: 9, segmentsPerGap: 9, tension: 0.45};
+}
+
+function weightedMovingAverageAt(points, index, windowSize, valueKey) {
+    if (windowSize <= 1) return points[index][valueKey];
+
+    const halfWindow = Math.floor(windowSize / 2);
+    const start = Math.max(0, index - halfWindow);
+    const end = Math.min(points.length - 1, index + halfWindow);
+    let total = 0;
+    let weightTotal = 0;
+
+    for (let i = start; i <= end; i++) {
+        const distance = Math.abs(i - index);
+        const weight = 1 / (1 + distance);
+        total += points[i][valueKey] * weight;
+        weightTotal += weight;
+    }
+
+    return total / weightTotal;
+}
+
+function buildSmoothedLine(rows, valueFn, extraMetaFn) {
+    const basePoints = rows
+        .filter(row => row.date_ms !== null && row.price_num !== null)
+        .map(function(row) {
+            const value = valueFn(row);
+            const extra = extraMetaFn ? extraMetaFn(row, value) : {};
+            return Object.assign({
+                x: row.date_ms,
+                y_raw: value
+            }, extra);
+        })
+        .filter(point => point.y_raw !== null && !Number.isNaN(point.y_raw))
+        .sort((a, b) => a.x - b.x);
+
+    if (basePoints.length === 0) return [];
+
+    if (basePoints.length === 1) {
+        return [Object.assign({}, basePoints[0], {
+            y: basePoints[0].y_raw,
+            sample_count: 1,
+            smoothing_window: 1
+        })];
+    }
+
+    const config = getSmoothingConfig(basePoints.length);
+
+    const smoothedAnchors = basePoints.map(function(point, index) {
+        const y = weightedMovingAverageAt(basePoints, index, config.windowSize, "y_raw");
+        return Object.assign({}, point, {
+            y: y,
+            sample_count: basePoints.length,
+            smoothing_window: config.windowSize
+        });
+    });
+
+    const granular = [];
+
+    for (let i = 0; i < smoothedAnchors.length - 1; i++) {
+        const a = smoothedAnchors[i];
+        const b = smoothedAnchors[i + 1];
+
+        if (i === 0) granular.push(a);
+
+        for (let step = 1; step <= config.segmentsPerGap; step++) {
+            const t = step / config.segmentsPerGap;
+            const x = a.x + (b.x - a.x) * t;
+            const y = a.y + (b.y - a.y) * t;
+            granular.push(Object.assign({}, a, {
+                x: x,
+                y: y,
+                sample_count: basePoints.length,
+                smoothing_window: config.windowSize
+            }));
+        }
+    }
+
+    return granular;
+}
+
+function calculateSmoothedPriceLine(rows) {
+    return buildSmoothedLine(
+        rows,
+        row => row.price_num,
+        function(row, value) {
+            return {
+                price_usd: value
+            };
+        }
+    );
+}
+
+function calculateSmoothedRetentionLine(rows) {
+    if (!hasOriginalMsrp) return [];
+
+    return buildSmoothedLine(
+        rows,
+        row => (row.price_num / originalMsrpUsd) * 100,
+        function(row, value) {
+            return {
+                retention_pct: value,
+                delta_pct: value - 100,
+                price_usd: row.price_num
+            };
+        }
+    ).map(function(point) {
+        const retention = point.y;
+        return Object.assign({}, point, {
+            retention_pct: retention,
+            delta_pct: retention - 100,
+            price_usd: (retention / 100) * originalMsrpUsd
+        });
+    });
+}
+
+function updateStatsAndChart() {
+    const sourceRows = getSourceRows();
+    const selectedRows = getSelectedRows();
+    const prices = selectedRows.map(r => r.price_num).filter(v => v !== null && !Number.isNaN(v));
+    const marketValueResult = calculateMarketValueFromRows(selectedRows, sourceRows);
+
+    document.getElementById("stat-market-value").textContent = money(marketValueResult.value);
+    document.getElementById("stat-market-basis").textContent = marketValueResult.basis;
+    document.getElementById("stat-total-priced-rows").textContent = sourceRows.filter(
+        row => row.price_num !== null && !Number.isNaN(row.price_num)
+    ).length;
+
+    if (hasOriginalMsrp && document.getElementById("stat-market-vs-msrp")) {
+        if (marketValueResult.value !== null && !Number.isNaN(marketValueResult.value)) {
+            const mvRetention = (marketValueResult.value / originalMsrpUsd) * 100;
+            const mvDelta = mvRetention - 100;
+            const direction = mvDelta >= 0 ? "above" : "below";
+            document.getElementById("stat-market-vs-msrp").textContent = pct(mvRetention) + " of MSRP";
+            document.getElementById("stat-market-vs-msrp-detail").textContent =
+                Math.abs(mvDelta).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction;
+        } else {
+            document.getElementById("stat-market-vs-msrp").textContent = "N/A";
+            document.getElementById("stat-market-vs-msrp-detail").textContent = "";
+        }
+    }
+
+    document.getElementById("stat-average").textContent = money(average(prices));
+    document.getElementById("stat-low").textContent = money(prices.length ? Math.min(...prices) : null);
+    document.getElementById("stat-high").textContent = money(prices.length ? Math.max(...prices) : null);
+    document.getElementById("stat-samples").textContent = prices.length;
+
+    const liquidityConfidence = calculateLiquidityConfidenceFromRows(selectedRows);
+    const liquidityBadge = document.getElementById("stat-liquidity-confidence");
+    const liquidityDetail = document.getElementById("stat-liquidity-confidence-detail");
+
+    if (liquidityBadge) {
+        liquidityBadge.textContent = liquidityConfidence.display;
+        liquidityBadge.className = "badge badge-score " + liquidityConfidence.cssClass;
+        liquidityBadge.setAttribute("data-tooltip", liquidityConfidence.tooltip);
+        liquidityBadge.setAttribute("aria-label", liquidityConfidence.tooltip);
+        liquidityBadge.removeAttribute("title");
+    }
+    if (liquidityDetail) liquidityDetail.textContent = liquidityConfidence.detail;
+
+    sourceRows.forEach(function(row) {
+        const dealElement = document.getElementById("deal-score-" + row.row_id);
+        if (dealElement) dealElement.textContent = dealScoreDisplay(row, marketValueResult.value);
+    });
+
+    const priceScatter = selectedRows
+        .filter(r => r.date_ms !== null && r.price_num !== null)
+        .map(row => ({
+            x: row.date_ms,
+            y: row.price_num,
+            url: row.url,
+            title: row.title,
+            status: row.listing_status,
+            condition: row.condition_text,
+            platform: row.platform
+        }));
+
+    chart.data.datasets[0].data = priceScatter;
+    chart.data.datasets[1].data = calculateSmoothedPriceLine(selectedRows);
+    chart.update();
+
+    if (hasOriginalMsrp && msrpChart) {
+        msrpChart.data.datasets[0].data = selectedRows
+            .filter(r => r.date_ms !== null && r.price_num !== null)
+            .map(row => ({
+                x: row.date_ms,
+                y: (row.price_num / originalMsrpUsd) * 100,
+                price_usd: row.price_num,
+                url: row.url,
+                title: row.title,
+                status: row.listing_status,
+                condition: row.condition_text,
+                platform: row.platform
+            }));
+
+        msrpChart.data.datasets[1].data = calculateSmoothedRetentionLine(selectedRows);
+        msrpChart.update();
+    }
+}
+
+function setAllCheckboxes(checked) {
+    document.querySelectorAll(".row-toggle").forEach(function(cb) {
+        const checkboxSource = String(cb.getAttribute("data-source") || "other");
+        if (currentMarketplaceSource === "both" || checkboxSource === currentMarketplaceSource) {
+            cb.checked = checked;
+        }
+    });
+    updateStatsAndChart();
+}
+const chart = new Chart(document.getElementById("chart"), {
+    type: "scatter",
+    data: {
+        datasets: [
+            {
+                label: "Selected Listing Price",
+                data: []
+            },
+            {
+                label: "Smoothed Secondary Price Curve",
+                data: [],
+                type: "line",
+                showLine: true,
+                pointRadius: 0,
+                pointHitRadius: 12,
+                borderWidth: 2,
+                tension: 0.35
+            }
+        ]
+    },
+    options: {
+        interaction: {
+            mode: "nearest",
+            intersect: false
+        },
+        onClick: function(event, elements) {
+            if (elements.length > 0) {
+                const element = elements[0];
+                if (element.datasetIndex === 0) {
+                    const point = this.data.datasets[0].data[element.index];
+                    if (point.url) window.open(point.url, "_blank");
+                }
+            }
+        },
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function(context) {
+                        if (!context.length) return "";
+                        return dateLabel(context[0].raw.x);
+                    },
+                    label: function(context) {
+                        const p = context.raw;
+
+                        if (context.datasetIndex === 1) {
+                            return [
+                                "Smoothed secondary value: " + moneyRound(p.y),
+                                "Smoothing window: " + p.smoothing_window + " sample(s)",
+                                "Based on selected samples: " + p.sample_count
+                            ];
+                        }
+
+                        return [
+                            "Price: " + moneyRound(p.y),
+                            p.status ? "Status: " + p.status : "",
+                            p.condition ? "Condition: " + p.condition : "",
+                            p.platform ? "Platform: " + p.platform : "",
+                            p.title || "",
+                            p.url ? "Click dot to open listing" : ""
+                        ].filter(Boolean);
+                    }
+                }
+            }
+        },
+        scales: {
+            x: {
+                type: "linear",
+                title: {display: true, text: "Date"},
+                ticks: {callback: value => new Date(value).toLocaleDateString()}
+            },
+            y: {
+                title: {display: true, text: "Price USD"},
+                ticks: {callback: value => moneyRound(value)}
+            }
+        }
+    }
+});
+const msrpCanvas = document.getElementById("msrpChart");
+const msrpChart = hasOriginalMsrp && msrpCanvas ? new Chart(msrpCanvas, {
+    type: "scatter",
+    data: {
+        datasets: [
+            {
+                label: "Listing Retention Points",
+                data: []
+            },
+            {
+                label: "Smoothed Retention Curve",
+                data: [],
+                type: "line",
+                showLine: true,
+                pointRadius: 0,
+                pointHitRadius: 12,
+                borderWidth: 2,
+                tension: 0.35
+            }
+        ]
+    },
+    options: {
+        interaction: {
+            mode: "nearest",
+            intersect: false
+        },
+        onClick: function(event, elements) {
+            if (elements.length > 0) {
+                const element = elements[0];
+                if (element.datasetIndex === 0) {
+                    const point = this.data.datasets[0].data[element.index];
+                    if (point.url) window.open(point.url, "_blank");
+                }
+            }
+        },
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function(context) {
+                        if (!context.length) return "";
+                        return dateLabel(context[0].raw.x);
+                    },
+                    label: function(context) {
+                        const p = context.raw;
+
+                        if (context.datasetIndex === 1) {
+                            const direction = p.delta_pct >= 0 ? "above" : "below";
+                            return [
+                                "Smoothed retention: " + pct(p.retention_pct),
+                                Math.abs(p.delta_pct).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction + " original MSRP",
+                                "Estimated secondary value: " + moneyRound(p.price_usd),
+                                "MSRP: " + moneyRound(originalMsrpUsd),
+                                "Smoothing window: " + p.smoothing_window + " sample(s)",
+                                "Based on selected samples: " + p.sample_count
+                            ];
+                        }
+
+                        const delta = p.y - 100;
+                        const direction = delta >= 0 ? "above" : "below";
+
+                        return [
+                            pct(p.y) + " of original MSRP",
+                            Math.abs(delta).toLocaleString(undefined, {maximumFractionDigits: 1}) + "% " + direction + " original MSRP",
+                            "Price: " + moneyRound(p.price_usd),
+                            "MSRP: " + moneyRound(originalMsrpUsd),
+                            p.status ? "Status: " + p.status : "",
+                            p.condition ? "Condition: " + p.condition : "",
+                            p.platform ? "Platform: " + p.platform : "",
+                            p.title || "",
+                            p.url ? "Click dot to open listing" : ""
+                        ].filter(Boolean);
+                    }
+                }
+            }
+        },
+        scales: {
+            x: {
+                type: "linear",
+                title: {display: true, text: "Date"},
+                ticks: {callback: value => new Date(value).toLocaleDateString()}
+            },
+            y: {
+                title: {display: true, text: "Secondary Value / MSRP (%)"},
+                ticks: {callback: value => value + "%"}
+            }
+        }
+    }
+}) : null;
+document.querySelectorAll(".row-toggle").forEach(cb => cb.addEventListener("change", updateStatsAndChart));
+const grabLinkButton = document.getElementById("grab-link-button");
+if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
+setMarketplaceSource(getInitialMarketplaceSource());
+</script>
+
+    <footer class="site-footer">
+        <div class="site-footer-row">
+            <div class="site-footer-links">
+                <a href="about.html">About this site</a>
+                <span class="footer-separator" aria-hidden="true">•</span>
+                <span>Independent IEM market data and rankings</span>
+            </div>
+            <span class="creator-credit">
+                Developed by
+                <details class="creator-popover">
+                    <summary aria-label="Open Precogvision links">Precogvision</summary>
+                    <div class="creator-popover-panel">
+                        <strong>Theo Lee / Precogvision</strong>
+                        <p>Independent audio reviews, IEM analysis, and data-driven market research.</p>
+                        <div class="creator-popover-actions">
+                            <a class="creator-youtube-link" href="https://www.youtube.com/@Precogvision" target="_blank" rel="noopener">Visit YouTube</a>
+                            <a href="about.html">About the site</a>
+                        </div>
+                    </div>
+                </details>
+            </span>
+        </div>
+    </footer>
+    
+</body>
+</html>
