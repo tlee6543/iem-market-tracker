@@ -619,7 +619,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$159</div></div>
     <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2025</div></div>
     <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">1DD</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
@@ -631,6 +631,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
     <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -651,7 +653,8 @@ score backgrounds cannot be lost to broader table/cell styling.
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -680,7 +683,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </table>
 <script>
 const allRows = [{"row_id": 0, "title": "Dita Prelude", "raw_text": "Dita Prelude - $90 original box, storage case and tips included. Missing USB the dongle.\nsubmitted by /u/bling527\n[link] [comments]", "seller_username": "bling527", "url": "https://old.reddit.com/r/AVexchange/comments/1spx20w/wts_usny_h_crinear_meta_meze_99_classic_v2_effect/#item-4", "price_num": 90.0, "date_ms": 1776614759000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=crinear | active_status_checker_stale_timeout_30d_lister_never_updated"}];
-const originalMsrpUsd = null;
+const originalMsrpUsd = 159.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
 

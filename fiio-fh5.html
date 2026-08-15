@@ -619,18 +619,20 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$259.99</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2018</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">1DD/3BA</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
 
-
+<p class="small"><a href="https://www.fiio.com/fh15" target="_blank">Product info source</a> — high confidence</p>
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
     <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -651,7 +653,8 @@ score backgrounds cannot be lost to broader table/cell styling.
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -680,7 +683,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </table>
 <script>
 const allRows = [{"row_id": 0, "title": "Fiio FH5", "raw_text": "__STRIKE_START__ Fiio FH5: $100 __STRIKE_END__ -- SOLD --\nBought these years ago but ended up sticking with my Blessing 2's at the time. In great condition. Comes with upgraded Yinyoo mmcx cable as well as the original and never used great solid plastic Fiio IEM carrying case. All the stock tips are unused, however some of the stems/nozzles are cracked probably just from being old.", "seller_username": "ianto7", "url": "https://old.reddit.com/r/AVexchange/comments/1upd39i/wtsusakyh_monarch_mkiv_sennheiser_ie900_fiio_fh5/#item-3", "price_num": 100.0, "date_ms": 1783378420000, "listing_status": "closed", "condition_text": "great condition", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | reddit_item_line_strikethrough_sold | comments_checked_rss_and_html | auto_bundle_excluded"}];
-const originalMsrpUsd = null;
+const originalMsrpUsd = 259.99;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
 

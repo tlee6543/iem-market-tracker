@@ -619,7 +619,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$499</div></div>
     <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2026</div></div>
     <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">6BA/2Planar</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
@@ -631,6 +631,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
     <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 26/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 15/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 119d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 26/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 15/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 119d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (26/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 119d ago.</span></div>
+    
+    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -651,7 +653,8 @@ score backgrounds cannot be lost to broader table/cell styling.
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
+            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
+            <canvas id="msrpChart"></canvas>
             
         </div>
     </div>
@@ -731,7 +734,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </table>
 <script>
 const allRows = [{"row_id": 0, "title": "Yanyin Baker IEMs", "raw_text": "Yanyin Baker IEMs in very good to excellent condition for sale. Great sounding and well built.\nComes with original accessories, case, and box.\n$315 PayPal G&S, includes shipping in continental US\n-8-Driver Hybrid System: 6 BA and 2 Planar each side\n-Aluminum & Damascus Steel Build\n-Interchangeable Plugs for Versatility (3.5 & 4.4mm)\n-Comfortable Fit with Metal Sound Tube\n-High-Quality 6N Copper-Plated Cable\nsubmitted by /u/BackgroundLivid2055\n[link] [comments]", "seller_username": "BackgroundLivid2055", "url": "https://www.reddit.com/r/AVexchange/comments/1vlsgdn/wts_usut_h_yanyin_baker_iems_w_paypal_315/#item-1", "price_num": 315.0, "date_ms": 1786478839000, "listing_status": "active", "condition_text": "for sale", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Yanyin Baker", "raw_text": "- Yanyin Baker $325 => $300", "seller_username": "Inspektah94", "url": "https://old.reddit.com/r/AVexchange/comments/1socfyw/wtsusanyh_kefine_klean_sv_yanyin_baker_twistura/#item-3", "price_num": 325.0, "date_ms": 1776457332000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kefine"}, {"row_id": 2, "title": "Yanyin Baker", "raw_text": "- Yanyin Baker: $340", "seller_username": "Inspektah94", "url": "https://old.reddit.com/r/AVexchange/comments/1s69mf2/wtsusanyh_kiwi_ears_etude_kefine_klean_sv_yanyin/#item-2", "price_num": 340.0, "date_ms": 1774726217000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=kefine | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "Yanyin Baker", "raw_text": "- Yanyin Baker : $340\nprices include shipping CONUS. bundle possible.\nnot looking for other trades than AP80 pro max, Onix Xm2 or SMSL pl200/T\nthanks\nsubmitted by /u/Inspektah94\n[link] [comments]", "seller_username": "Inspektah94", "url": "https://old.reddit.com/r/AVexchange/comments/1s02tph/wtsusanyh_kiwi_ears_etude_kefine_klean_sv_yanyin/#item-3", "price_num": 340.0, "date_ms": 1774127274000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=kefine | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}];
-const originalMsrpUsd = null;
+const originalMsrpUsd = 499.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
 
