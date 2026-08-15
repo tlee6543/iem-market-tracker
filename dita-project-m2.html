@@ -139,6 +139,16 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 .chart-panel h3 { margin-top: 0; }
 .chart-panel canvas { width: 100% !important; min-height: 360px; }
 .chart-hint { margin-top: 8px; }
+.dashboard-metrics .metric-card { flex: 1 1 190px; }
+.dashboard-source-mix { font-size: 19px !important; line-height: 1.25; }
+.dashboard-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 20px; }
+.dashboard-chart-card { margin-bottom: 0; min-width: 0; }
+.dashboard-wide { grid-column: 1 / -1; }
+.dashboard-chart-card h2 { margin-top: 0; }
+.dashboard-chart-wrap { position: relative; width: 100%; height: 390px; }
+.dashboard-table-scroll { border: 0; }
+.dashboard-table { min-width: 980px; }
+.dashboard-table td, .dashboard-table th { vertical-align: middle; }
 .rank-col { width: 64px; text-align: right; }
 .metric-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
 .metric-card { background: white; border: 1px solid #ddd; padding: 16px; min-width: 190px; }
@@ -536,6 +546,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .rankings-controls { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .dashboard-chart-wrap { height: 320px; }
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
@@ -563,7 +575,7 @@ score backgrounds cannot be lost to broader table/cell styling.
         <nav class="site-nav" aria-label="Site navigation">
             <a href="index.html">Market Tracker</a>
             <a href="rankings.html">Rankings</a>
-            <a href="value-kings.html">Value Kings</a>
+            <a href="market-dashboard.html">Market Dashboard</a>
             <a href="resale-leaders.html">Resale Leaders</a>
             <a href="recent-listings.html">Recent Listings</a>
             <a href="compare.html">Compare</a>
@@ -617,6 +629,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
+    <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
     <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 60/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 30/30, recent sample depth 12/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 9d ago, 1 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 60/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 30/30, recent sample depth 12/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 9d ago, 1 source type(s), two samples; limited volatility read." tabindex="0">Medium (60/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 9d ago.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
@@ -645,11 +658,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 </div>
 <h2>Listings</h2>
 <table>
-<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
+<tr><th>Use?</th><th>Date</th><th>Age / Close Time</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
 <tr id="row-0" data-source="reddit" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
 <td>2026-08-10</td>
+<td title="Listing age is measured from the listing date to today.">Active · 4d</td>
 <td>$249</td>
 <td><span class="pill">active</span></td>
 <td class="status-reason"></td>
@@ -666,6 +680,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-1" data-source="headfi" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" ></td>
 <td>2026-08-10</td>
+<td title="Listing age is measured from the listing date to today.">Active · 5d</td>
 <td>$249</td>
 <td><span class="pill">active</span></td>
 <td class="status-reason"></td>
@@ -682,6 +697,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-2" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" checked></td>
 <td>2026-08-06</td>
+<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$250</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -698,6 +714,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-3" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="headfi" checked></td>
 <td>2026-08-04</td>
+<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$250</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -784,7 +801,7 @@ async function grabCurrentIemLink() {
 function getIemPageOrigin() {
     const params = new URLSearchParams(window.location.search);
     const explicitOrigin = String(params.get("from") || "").toLowerCase();
-    const allowedOrigins = ["market", "rankings", "value-kings", "resale-leaders", "recent-listings", "compare", "brand"];
+    const allowedOrigins = ["market", "rankings", "market-dashboard", "resale-leaders", "recent-listings", "compare", "brand"];
     if (allowedOrigins.includes(explicitOrigin)) return explicitOrigin;
 
     // Fallback for links generated by older cached pages that lack ?from=.
@@ -794,7 +811,7 @@ function getIemPageOrigin() {
             if (referrer.origin === window.location.origin) {
                 const filename = referrer.pathname.split("/").pop().toLowerCase();
                 if (filename === "rankings.html") return "rankings";
-                if (filename === "value-kings.html") return "value-kings";
+                if (filename === "market-dashboard.html") return "market-dashboard";
                 if (filename === "resale-leaders.html") return "resale-leaders";
                 if (filename === "recent-listings.html") return "recent-listings";
                 if (filename === "compare.html") return "compare";
@@ -813,7 +830,7 @@ function updateIemBackLink(source) {
     const origin = getIemPageOrigin();
     const destinations = {
         "rankings": {href: "rankings.html", label: "← Back to Rankings"},
-        "value-kings": {href: "value-kings.html", label: "← Back to Value Kings"},
+        "market-dashboard": {href: "market-dashboard.html", label: "← Back to Market Dashboard"},
         "resale-leaders": {href: "resale-leaders.html", label: "← Back to Resale Leaders"},
         "recent-listings": {href: "recent-listings.html", label: "← Back to Recent Listings"},
         "compare": {href: "compare.html", label: "← Back to Compare"},
@@ -1059,6 +1076,79 @@ function calculateMarketValueFromRows(rows, allCandidateRows) {
 
     baseResult = {value: null, basis: "no fallback closed-sale samples"};
     return applyStaleUnsoldCeiling(baseResult, allCandidateRows || rows, pricedRows.length);
+}
+
+function quantile(values, q) {
+    if (!values.length) return null;
+    const sorted = [...values].sort((a, b) => a - b);
+    if (sorted.length === 1) return sorted[0];
+    const position = (sorted.length - 1) * q;
+    const lower = Math.floor(position);
+    const upper = Math.ceil(position);
+    if (lower === upper) return sorted[lower];
+    const weight = position - lower;
+    return sorted[lower] * (1 - weight) + sorted[upper] * weight;
+}
+function calculateMarketValueRangeFromRows(rows, marketValue) {
+    const pricedRows = rows.filter(row => row.price_num !== null && !Number.isNaN(row.price_num) && row.price_num > 0);
+    if (pricedRows.length < 2) {
+        return {display: "N/A", basis: "At least 2 selected clean closed-sale comps are required for a range."};
+    }
+
+    const now = Date.now();
+    const dayMs = 24 * 60 * 60 * 1000;
+    const recent90 = pricedRows.filter(row => row.date_ms !== null && row.date_ms >= now - 90 * dayMs);
+    let comps;
+    let compBasis;
+
+    if (recent90.length >= 3) {
+        comps = recent90;
+        compBasis = recent90.length + " clean closed sales from the last 90 days";
+    } else {
+        const dated = pricedRows
+            .filter(row => row.date_ms !== null)
+            .sort((a, b) => b.date_ms - a.date_ms);
+
+        if (dated.length >= 2) {
+            const latest = dated[0].date_ms;
+            const last365 = dated.filter(row => row.date_ms >= latest - 365 * dayMs);
+            comps = (last365.length >= 2 ? last365 : dated).slice(0, 12);
+            compBasis = comps.length + " clean closed sales from " + (last365.length >= 2 ? "the latest 365 days" : "all dated history");
+        } else {
+            comps = pricedRows;
+            compBasis = pricedRows.length + " clean closed-sale comp(s)";
+        }
+    }
+
+    const prices = comps.map(row => Number(row.price_num)).filter(value => Number.isFinite(value) && value > 0);
+    if (prices.length < 2) {
+        return {display: "N/A", basis: compBasis + "; at least 2 comps are required for a range"};
+    }
+
+    let low;
+    let high;
+    let spreadBasis;
+    if (prices.length >= 5) {
+        low = quantile(prices, 0.10);
+        high = quantile(prices, 0.90);
+        spreadBasis = "middle 80% of comps";
+    } else {
+        low = Math.min(...prices);
+        high = Math.max(...prices);
+        spreadBasis = "observed min–max";
+    }
+
+    const mv = Number(marketValue);
+    if (Number.isFinite(mv) && mv > 0) {
+        low = Math.min(low, mv);
+        high = Math.max(high, mv);
+    }
+
+    const step = 25;
+    low = Math.max(0, Math.floor(low / step) * step);
+    high = Math.ceil(high / step) * step;
+    const display = Math.abs(high - low) < 0.01 ? money(low) : money(low) + "–" + money(high);
+    return {display: display, basis: spreadBasis + "; " + compBasis};
 }
 
 function normalizePlatformForScore(platform) {
@@ -1319,6 +1409,11 @@ function updateStatsAndChart() {
 
     document.getElementById("stat-market-value").textContent = money(marketValueResult.value);
     document.getElementById("stat-market-basis").textContent = marketValueResult.basis;
+    const marketRangeResult = calculateMarketValueRangeFromRows(selectedRows, marketValueResult.value);
+    const marketRangeElement = document.getElementById("stat-market-range");
+    const marketRangeBasisElement = document.getElementById("stat-market-range-basis");
+    if (marketRangeElement) marketRangeElement.textContent = marketRangeResult.display;
+    if (marketRangeBasisElement) marketRangeBasisElement.textContent = marketRangeResult.basis;
     document.getElementById("stat-total-priced-rows").textContent = sourceRows.filter(
         row => row.price_num !== null && !Number.isNaN(row.price_num)
     ).length;

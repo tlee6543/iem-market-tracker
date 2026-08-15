@@ -139,6 +139,16 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 .chart-panel h3 { margin-top: 0; }
 .chart-panel canvas { width: 100% !important; min-height: 360px; }
 .chart-hint { margin-top: 8px; }
+.dashboard-metrics .metric-card { flex: 1 1 190px; }
+.dashboard-source-mix { font-size: 19px !important; line-height: 1.25; }
+.dashboard-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 20px; }
+.dashboard-chart-card { margin-bottom: 0; min-width: 0; }
+.dashboard-wide { grid-column: 1 / -1; }
+.dashboard-chart-card h2 { margin-top: 0; }
+.dashboard-chart-wrap { position: relative; width: 100%; height: 390px; }
+.dashboard-table-scroll { border: 0; }
+.dashboard-table { min-width: 980px; }
+.dashboard-table td, .dashboard-table th { vertical-align: middle; }
 .rank-col { width: 64px; text-align: right; }
 .metric-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
 .metric-card { background: white; border: 1px solid #ddd; padding: 16px; min-width: 190px; }
@@ -536,6 +546,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .rankings-controls { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .dashboard-chart-wrap { height: 320px; }
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
@@ -563,7 +575,7 @@ score backgrounds cannot be lost to broader table/cell styling.
         <nav class="site-nav" aria-label="Site navigation">
             <a href="index.html">Market Tracker</a>
             <a href="rankings.html">Rankings</a>
-            <a href="value-kings.html">Value Kings</a>
+            <a href="market-dashboard.html">Market Dashboard</a>
             <a href="resale-leaders.html">Resale Leaders</a>
             <a href="recent-listings.html">Recent Listings</a>
             <a href="compare.html">Compare</a>
