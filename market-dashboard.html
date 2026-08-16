@@ -18,9 +18,19 @@ a:hover { text-decoration: underline; }
 .top-credit { background: white; border: 1px solid #ddd; padding: 10px 14px; margin-bottom: 20px; font-size: 14px; color: #555; }
 .top-credit a { font-weight: bold; color: #0066cc; }
 .site-topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.site-header-left { display: flex; align-items: center; gap: 14px; min-width: 0; flex-wrap: wrap; }
+.site-brand { display: inline-flex; align-items: center; gap: 9px; color: #111; font-weight: 800; font-size: 18px; white-space: nowrap; }
+.site-brand:hover { text-decoration: none; }
+.site-brand-logo { width: 36px; height: 36px; object-fit: contain; flex: 0 0 auto; }
 .site-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .site-nav a { display: inline-block; padding: 7px 10px; border-radius: 6px; color: #333; font-weight: bold; }
 .site-nav a:hover { background: #eee; text-decoration: none; }
+@media (max-width: 760px) {
+    .site-topbar { align-items: flex-start; }
+    .site-header-left { width: 100%; }
+    .site-brand { font-size: 17px; }
+    .site-brand-logo { width: 34px; height: 34px; }
+}
 .support-tool-link { display: inline-block; background: #111; color: #fff; border: 1px solid #111; border-radius: 999px; padding: 9px 14px; font-size: 14px; font-weight: bold; }
 .support-tool-link:hover { color: #fff; text-decoration: none; }
 .site-footer { margin-top: 34px; padding-top: 16px; border-top: 1px solid #ddd; font-size: 14px; color: #555; }
@@ -613,14 +623,20 @@ score backgrounds cannot be lost to broader table/cell styling.
 <body>
 
     <div class="site-topbar">
-        <nav class="site-nav" aria-label="Site navigation">
-            <a href="index.html">Market Tracker</a>
-            <a href="rankings.html">Rankings</a>
-            <a href="market-dashboard.html">Market Dashboard</a>
-            <a href="resale-leaders.html">Resale Leaders</a>
-            <a href="recent-listings.html">Recent Listings</a>
-            <a href="compare.html">Compare</a>
-        </nav>
+        <div class="site-header-left">
+            <a class="site-brand" href="index.html" aria-label="IEM Market Tracker home">
+                <img class="site-brand-logo" src="favicon-192x192.png" alt="">
+                <span>IEM Market Tracker</span>
+            </a>
+            <nav class="site-nav" aria-label="Site navigation">
+                <a href="index.html">Market Tracker</a>
+                <a href="rankings.html">Rankings</a>
+                <a href="market-dashboard.html">Market Dashboard</a>
+                <a href="resale-leaders.html">Resale Leaders</a>
+                <a href="recent-listings.html">Recent Listings</a>
+                <a href="compare.html">Compare</a>
+            </nav>
+        </div>
         <a class="support-tool-link" href="https://www.patreon.com/c/precogvision/membership" target="_blank" rel="noopener">Support the tracker + get shouted out</a>
     </div>
     

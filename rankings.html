@@ -18,9 +18,19 @@ a:hover { text-decoration: underline; }
 .top-credit { background: white; border: 1px solid #ddd; padding: 10px 14px; margin-bottom: 20px; font-size: 14px; color: #555; }
 .top-credit a { font-weight: bold; color: #0066cc; }
 .site-topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.site-header-left { display: flex; align-items: center; gap: 14px; min-width: 0; flex-wrap: wrap; }
+.site-brand { display: inline-flex; align-items: center; gap: 9px; color: #111; font-weight: 800; font-size: 18px; white-space: nowrap; }
+.site-brand:hover { text-decoration: none; }
+.site-brand-logo { width: 36px; height: 36px; object-fit: contain; flex: 0 0 auto; }
 .site-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .site-nav a { display: inline-block; padding: 7px 10px; border-radius: 6px; color: #333; font-weight: bold; }
 .site-nav a:hover { background: #eee; text-decoration: none; }
+@media (max-width: 760px) {
+    .site-topbar { align-items: flex-start; }
+    .site-header-left { width: 100%; }
+    .site-brand { font-size: 17px; }
+    .site-brand-logo { width: 34px; height: 34px; }
+}
 .support-tool-link { display: inline-block; background: #111; color: #fff; border: 1px solid #111; border-radius: 999px; padding: 9px 14px; font-size: 14px; font-weight: bold; }
 .support-tool-link:hover { color: #fff; text-decoration: none; }
 .site-footer { margin-top: 34px; padding-top: 16px; border-top: 1px solid #ddd; font-size: 14px; color: #555; }
@@ -583,14 +593,20 @@ score backgrounds cannot be lost to broader table/cell styling.
 <body>
 
     <div class="site-topbar">
-        <nav class="site-nav" aria-label="Site navigation">
-            <a href="index.html">Market Tracker</a>
-            <a href="rankings.html">Rankings</a>
-            <a href="market-dashboard.html">Market Dashboard</a>
-            <a href="resale-leaders.html">Resale Leaders</a>
-            <a href="recent-listings.html">Recent Listings</a>
-            <a href="compare.html">Compare</a>
-        </nav>
+        <div class="site-header-left">
+            <a class="site-brand" href="index.html" aria-label="IEM Market Tracker home">
+                <img class="site-brand-logo" src="favicon-192x192.png" alt="">
+                <span>IEM Market Tracker</span>
+            </a>
+            <nav class="site-nav" aria-label="Site navigation">
+                <a href="index.html">Market Tracker</a>
+                <a href="rankings.html">Rankings</a>
+                <a href="market-dashboard.html">Market Dashboard</a>
+                <a href="resale-leaders.html">Resale Leaders</a>
+                <a href="recent-listings.html">Recent Listings</a>
+                <a href="compare.html">Compare</a>
+            </nav>
+        </div>
         <a class="support-tool-link" href="https://www.patreon.com/c/precogvision/membership" target="_blank" rel="noopener">Support the tracker + get shouted out</a>
     </div>
     
@@ -10235,7 +10251,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <td class="setup-cell">1DD/2BA</td>
     <td class="nowrap">$170</td>
     <td class="nowrap"><a href="seeaudio-yume.html?from=rankings">$100</a></td>
-    <td><span class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 81d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 81d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low</span></td>
+    <td><span class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 82d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 82d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low</span></td>
     <td class="comments-cell">Class-leading tonal balance butchered by subpar technicalities.</td>
     <td class="based-on-cell">Linsoul unit</td>
 </tr>
@@ -24090,7 +24106,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </table>
 </div>
 <div id="rankingsEmpty" class="card rankings-empty"><p class="muted">No rankings match the current filters.</p></div>
-<p class="small">Data refreshed from the published Google Sheet during the 2026-08-16 05:08 UTC site build.</p>
+<p class="small">Data refreshed from the published Google Sheet during the 2026-08-16 05:37 UTC site build.</p>
 <script>
 const formalScoreDistributionValues = [9.1, 8.9, 8.7, 8.7, 8.7, 8.7, 8.6, 8.3, 8.2, 8.2, 8.2, 8.1, 8.1, 8.0, 8.0, 7.8, 7.7, 7.7, 7.7, 7.6, 7.6, 7.5, 7.5, 7.4, 7.4, 7.4, 7.4, 7.3, 7.3, 7.3, 7.3, 7.3, 7.3, 7.2, 7.2, 7.2, 7.2, 7.2, 7.1, 7.1, 7.1, 7.1, 7.1, 7.1, 7.0, 7.0, 7.0, 7.0, 7.0, 6.9, 6.9, 6.9, 6.9, 6.9, 6.9, 6.9, 6.9, 6.8, 6.7, 6.65, 6.6, 6.6, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.5, 6.45, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.4, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.3, 6.2, 6.2, 6.2, 6.2, 6.2, 6.2, 6.2, 6.2, 6.2, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.1, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.9, 5.8, 5.8, 5.8, 5.8, 5.8, 5.7, 5.7, 5.7, 5.7, 5.7, 5.6, 5.6, 5.6, 5.6, 5.55, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.5, 5.4, 5.4, 5.4, 5.4, 5.4, 5.4, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.3, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.2, 5.15, 5.15, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.1, 5.05, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 4.9, 4.9, 4.9, 4.9, 4.9, 4.8, 4.8, 4.8, 4.8, 4.8, 4.8, 4.7, 4.7, 4.7, 4.7, 4.7, 4.7, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.6, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.4, 4.4, 4.4, 4.4, 4.4, 4.4, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.3, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.2, 4.1, 4.1, 4.1, 4.1, 4.1, 4.1, 4.1, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 3.9, 3.9, 3.9, 3.9, 3.9, 3.8, 3.7, 3.7, 3.6, 3.6, 3.6, 3.6, 3.6, 3.6, 3.5, 3.5, 3.4, 3.4, 3.4, 3.4, 3.4, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.3, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.1, 3.1, 3.1, 3.1, 3.1, 3.1, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 2.9, 2.9, 2.9, 2.9, 2.9, 2.8, 2.7, 2.7, 2.7, 2.6, 2.6, 2.6, 2.6, 2.6, 2.6, 2.6, 2.4, 2.4, 2.2, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.1, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 1.9, 1.2, 1.2];
 const demoedBiasDistributionValues = [4.0, 5.0, 5.0, 4.0, 5.0, 6.5, 5.0, 5.0, 5.0, 6.0, 5.0, 5.0, 6.0, 8.0, 3.0, 5.0, 6.0, 5.0, 5.0, 6.0, 5.0, 6.0, 5.5, 5.0, 5.0, 4.0, 3.0, 6.0, 4.0, 2.0, 6.0, 6.0, 3.0, 5.5, 5.0, 7.0, 5.0, 7.0, 6.0, 5.5, 6.0, 4.0, 6.0, 3.0, 3.0, 5.0, 5.0, 3.0, 5.5, 6.0, 6.0, 6.0, 6.0, 6.0, 6.0, 8.0, 8.0, 6.0, 7.0, 6.0, 7.0, 6.0, 4.0, 6.0, 5.0, 6.5, 5.0, 4.0, 4.0, 3.0, 4.0, 5.0, 2.0, 3.0, 4.0, 5.0, 5.0, 3.0, 6.0, 5.0, 4.0, 6.0, 6.0, 7.0, 3.0, 3.0, 3.0, 3.0, 5.0, 3.0, 3.0, 5.0, 5.0, 5.0, 4.0, 4.0, 5.0, 4.0, 5.0, 4.0, 5.0, 5.0, 5.0, 3.0, 5.0, 5.5, 5.0, 5.5, 5.5, 5.0, 7.0, 5.0, 4.0, 4.0, 4.0, 4.0, 2.0, 4.0, 5.0, 6.0, 4.0, 5.0, 6.0, 6.0, 5.0, 5.0, 7.0, 5.0, 3.0, 5.0, 3.0, 4.0, 4.0, 4.0, 1.0, 6.0, 4.0, 6.5, 6.0, 6.0, 7.0, 5.5, 5.0, 6.0, 4.0, 6.0, 6.0, 7.0, 7.0, 6.0, 4.0, 6.0, 6.0, 5.0, 5.0, 3.0, 4.0, 3.0, 5.0, 5.0, 5.0, 5.0, 5.0, 4.0, 5.0, 6.0, 5.0, 6.0, 6.0, 2.0, 6.0, 4.0, 4.0, 6.0, 6.0, 7.0, 6.0, 2.0, 5.0, 5.0, 3.0, 6.0, 4.0, 4.0, 6.0, 7.0, 7.0, 6.0, 6.0, 4.0, 6.0, 4.0, 2.0, 5.0, 6.0, 7.0, 6.0, 5.0, 6.0, 3.0, 3.0, 7.0, 7.0, 5.5, 5.5];
