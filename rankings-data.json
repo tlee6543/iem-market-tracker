@@ -404,7 +404,7 @@
     "comments": "Fantastic colored tonality with options, and the unique technical qualities to back it up. M12/M15 modules recommended.",
     "based_on": "Review unit",
     "tracker_slug": "64-audio-u4s",
-    "market_value": 692.54,
+    "market_value": 688.22,
     "market_confidence": "High"
   },
   {
@@ -5588,8 +5588,8 @@
     "comments": "Bloated BA bass and overly compressed dynamic range. The least \"64 Audio\" sounding IEM that fails to bridge mainstream tuning and Hi-Fi.",
     "based_on": "headphones.com unit",
     "tracker_slug": "64-audio-u18t",
-    "market_value": 1115.34,
-    "market_confidence": "Medium"
+    "market_value": 1308.34,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -9044,8 +9044,8 @@
     "comments": "CFA whiffs again. Muffled midrange with a peak somewhere in the mid treble and no air.",
     "based_on": "Loaner",
     "tracker_slug": "campfire-audio-saber",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 250.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -13220,8 +13220,8 @@
     "comments": "A bit QDC-esque with the tuning but with more aggressive pinna rise and better bass. Treble a little too scooped in the mid-treble.",
     "based_on": "Brief demo",
     "tracker_slug": "penon-rival",
-    "market_value": 2565.0,
-    "market_confidence": "Low"
+    "market_value": 2591.57,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
