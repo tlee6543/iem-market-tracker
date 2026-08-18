@@ -1964,7 +1964,7 @@
     "comments": "Solid tuning with good speed. Could use more air and some minor work in the treble.",
     "based_on": "DUNU loaner",
     "tracker_slug": "dunu-zen-pro",
-    "market_value": 350.0,
+    "market_value": null,
     "market_confidence": "Low"
   },
   {
@@ -2612,7 +2612,7 @@
     "comments": "Very bright in the upper-treble which leads to a fatiguing sound and masking issues.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "thieaudio-prestige",
-    "market_value": 712.22,
+    "market_value": 810.2,
     "market_confidence": "Medium"
   },
   {
@@ -4556,7 +4556,7 @@
     "comments": "Boomy and enveloping sounding; however, lacks the technical chops and raw detail to compete.",
     "based_on": "Review unit",
     "tracker_slug": "softears-edge",
-    "market_value": 390.8,
+    "market_value": 384.0,
     "market_confidence": "High"
   },
   {
@@ -5876,7 +5876,7 @@
     "comments": "Clearly has Andromeda inspiration, but it's been taken too far.",
     "based_on": "headphones.com unit",
     "tracker_slug": "campfire-audio-holocene",
-    "market_value": 217.78,
+    "market_value": 249.35,
     "market_confidence": "Medium"
   },
   {
@@ -10652,7 +10652,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "canpur-cp752b",
-    "market_value": 3616.67,
+    "market_value": 3400.0,
     "market_confidence": "High"
   },
   {
