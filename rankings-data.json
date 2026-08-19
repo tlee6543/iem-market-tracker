@@ -452,7 +452,7 @@
     "comments": "Excellent detail retreival and competent tuning. Can be slightly thin sounding and forward in the treble.",
     "based_on": "Loaner",
     "tracker_slug": "thieaudio-monarch-mkiv",
-    "market_value": 865.83,
+    "market_value": 859.0,
     "market_confidence": "High"
   },
   {
@@ -5469,7 +5469,7 @@
     "based_on": "DUNU loaner",
     "tracker_slug": "dunu-dk-2001",
     "market_value": 285.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
