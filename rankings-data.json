@@ -188,7 +188,7 @@
     "comments": "Pretty much the closest to a tonal panacea that I've heard only held back by the bass.",
     "based_on": "Loaner",
     "tracker_slug": "7th-acoustics-asteria",
-    "market_value": 3375.0,
+    "market_value": 3366.67,
     "market_confidence": "High"
   },
   {
@@ -740,7 +740,7 @@
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-myth",
-    "market_value": 981.0,
+    "market_value": 941.67,
     "market_confidence": "High"
   },
   {
@@ -1820,8 +1820,8 @@
     "comments": "Basically the EJ07M with some adjustment to the bass for more clarity.",
     "based_on": "Review unit",
     "tracker_slug": "letshuoer-ej07m-kinda-lava",
-    "market_value": 425.0,
-    "market_confidence": "Low"
+    "market_value": 352.4,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -3885,7 +3885,7 @@
     "based_on": "Moondrop tour",
     "tracker_slug": "moondrop-solis",
     "market_value": 320.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -9453,7 +9453,7 @@
     "based_on": "Headphones.com unit",
     "tracker_slug": "campfire-audio-mammoth",
     "market_value": 180.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
