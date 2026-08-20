@@ -15,18 +15,21 @@ a:hover { text-decoration: underline; }
 .top-credit { background: white; border: 1px solid #ddd; padding: 10px 14px; margin-bottom: 20px; font-size: 14px; color: #555; }
 .top-credit a { font-weight: bold; color: #0066cc; }
 .site-topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
-.site-header-left { display: flex; align-items: center; gap: 14px; min-width: 0; flex-wrap: wrap; }
-.site-brand { display: inline-flex; align-items: center; gap: 9px; color: #111; font-weight: 800; font-size: 18px; white-space: nowrap; }
+.site-header-left { display: flex; align-items: center; gap: 14px; min-width: 0; flex-wrap: nowrap; }
+.site-brand { display: inline-flex; align-items: center; gap: 9px; min-height: 36px; line-height: 1; color: #111; font-weight: 800; font-size: 18px; white-space: nowrap; }
+.site-brand span { display: inline-flex; align-items: center; min-height: 36px; }
 .site-brand:hover { text-decoration: none; }
 .site-brand-logo { width: 36px; height: 36px; object-fit: contain; flex: 0 0 auto; }
-.site-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.site-nav a { display: inline-block; padding: 7px 10px; border-radius: 6px; color: #333; font-weight: bold; }
+.site-nav { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.site-nav a { display: inline-flex; align-items: center; min-height: 36px; box-sizing: border-box; padding: 0 10px; line-height: 1; border-radius: 6px; color: #333; font-weight: bold; }
 .site-nav a:hover { background: #eee; text-decoration: none; }
 @media (max-width: 760px) {
     .site-topbar { align-items: flex-start; }
-    .site-header-left { width: 100%; }
+    .site-header-left { width: 100%; flex-wrap: wrap; gap: 8px 14px; }
     .site-brand { font-size: 17px; }
     .site-brand-logo { width: 34px; height: 34px; }
+    .site-nav { width: 100%; gap: 4px; }
+    .site-nav a { min-height: 32px; padding: 0 8px; }
 }
 .support-tool-link { display: inline-block; background: #111; color: #fff; border: 1px solid #111; border-radius: 999px; padding: 9px 14px; font-size: 14px; font-weight: bold; }
 .support-tool-link:hover { color: #fff; text-decoration: none; }
@@ -653,7 +656,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 26/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 15/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 150d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 26/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 15/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 150d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (26/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 150d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 26/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 15/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 151d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 26/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 15/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 151d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (26/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 151d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -684,12 +687,11 @@ score backgrounds cannot be lost to broader table/cell styling.
 </div>
 <h2>Listings</h2>
 <table>
-<tr><th>Use?</th><th>Date</th><th>Age / Close Time</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
+<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
 <tr id="row-0" data-source="reddit" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" checked></td>
 <td>2026-03-22</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$25</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>

@@ -15,18 +15,21 @@ a:hover { text-decoration: underline; }
 .top-credit { background: white; border: 1px solid #ddd; padding: 10px 14px; margin-bottom: 20px; font-size: 14px; color: #555; }
 .top-credit a { font-weight: bold; color: #0066cc; }
 .site-topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
-.site-header-left { display: flex; align-items: center; gap: 14px; min-width: 0; flex-wrap: wrap; }
-.site-brand { display: inline-flex; align-items: center; gap: 9px; color: #111; font-weight: 800; font-size: 18px; white-space: nowrap; }
+.site-header-left { display: flex; align-items: center; gap: 14px; min-width: 0; flex-wrap: nowrap; }
+.site-brand { display: inline-flex; align-items: center; gap: 9px; min-height: 36px; line-height: 1; color: #111; font-weight: 800; font-size: 18px; white-space: nowrap; }
+.site-brand span { display: inline-flex; align-items: center; min-height: 36px; }
 .site-brand:hover { text-decoration: none; }
 .site-brand-logo { width: 36px; height: 36px; object-fit: contain; flex: 0 0 auto; }
-.site-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.site-nav a { display: inline-block; padding: 7px 10px; border-radius: 6px; color: #333; font-weight: bold; }
+.site-nav { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.site-nav a { display: inline-flex; align-items: center; min-height: 36px; box-sizing: border-box; padding: 0 10px; line-height: 1; border-radius: 6px; color: #333; font-weight: bold; }
 .site-nav a:hover { background: #eee; text-decoration: none; }
 @media (max-width: 760px) {
     .site-topbar { align-items: flex-start; }
-    .site-header-left { width: 100%; }
+    .site-header-left { width: 100%; flex-wrap: wrap; gap: 8px 14px; }
     .site-brand { font-size: 17px; }
     .site-brand-logo { width: 34px; height: 34px; }
+    .site-nav { width: 100%; gap: 4px; }
+    .site-nav a { min-height: 32px; padding: 0 8px; }
 }
 .support-tool-link { display: inline-block; background: #111; color: #fff; border: 1px solid #111; border-radius: 999px; padding: 9px 14px; font-size: 14px; font-weight: bold; }
 .support-tool-link:hover { color: #fff; text-decoration: none; }
@@ -684,12 +687,11 @@ score backgrounds cannot be lost to broader table/cell styling.
 </div>
 <h2>Listings</h2>
 <table>
-<tr><th>Use?</th><th>Date</th><th>Age / Close Time</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
+<tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
 <tr id="row-0" data-source="headfi" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
 <td>2026-08-05</td>
-<td title="Listing age is measured from the listing date to today.">Active · 15d</td>
 <td>$330</td>
 <td><span class="pill">active</span></td>
 <td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
@@ -706,7 +708,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-1" data-source="reddit" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="reddit" ></td>
 <td>2026-07-27</td>
-<td title="Listing age is measured from the listing date to today.">Active · 23d</td>
 <td>$400</td>
 <td><span class="pill">active</span></td>
 <td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8470_json=403:len189908</td>
@@ -723,7 +724,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-2" data-source="reddit" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="reddit" ></td>
 <td>2026-07-03</td>
-<td title="The listing was last observed active about 6 day(s) after it was listed and first observed closed about 7 day(s) after listing. The exact close date is between those checks.">Closed · 6–7d</td>
 <td>$275</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason">confirmed sold from source check</td>
@@ -740,7 +740,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-3" data-source="reddit" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="reddit" ></td>
 <td>2026-06-30</td>
-<td title="The listing was last observed active about 1 day(s) after it was listed and first observed closed about 2 day(s) after listing. The exact close date is between those checks.">Closed · 1–2d</td>
 <td>$275</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason">confirmed sold from source check</td>
@@ -757,7 +756,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-4" data-source="reddit" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="reddit" ></td>
 <td>2026-06-20</td>
-<td title="The tracker first observed this listing closed about 2 day(s) after it was listed. The exact close date may have been earlier.">Closed · ≤2d</td>
 <td>$250</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason">confirmed sold from source check</td>
@@ -774,7 +772,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-5" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="headfi" checked></td>
 <td>2026-04-12</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$300</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -791,7 +788,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-6" data-source="reddit" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="reddit" checked></td>
 <td>2026-02-14</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$250</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -808,7 +804,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-7" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2026-02-08</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td></td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -825,7 +820,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-8" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="8" data-source="headfi" checked></td>
 <td>2026-01-01</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$300</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -842,7 +836,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-9" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="9" data-source="headfi" checked></td>
 <td>2025-12-31</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$270</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -859,7 +852,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-10" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="10" data-source="headfi" checked></td>
 <td>2025-12-30</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$340</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -876,7 +868,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-11" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="11" data-source="headfi" checked></td>
 <td>2025-10-08</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$450</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -893,7 +884,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-12" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="12" data-source="headfi" checked></td>
 <td>2025-09-24</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$300</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -910,7 +900,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-13" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="13" data-source="headfi" checked></td>
 <td>2025-09-02</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$315</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -927,7 +916,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-14" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="14" data-source="headfi" checked></td>
 <td>2025-08-06</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$315</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -944,7 +932,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-15" data-source="headfi" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="15" data-source="headfi" ></td>
 <td>2025-07-09</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$330</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -961,7 +948,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-16" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="16" data-source="headfi" checked></td>
 <td>2025-06-11</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$330</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -978,7 +964,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-17" data-source="headfi" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="17" data-source="headfi" ></td>
 <td>2025-03-19</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$330</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -995,7 +980,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-18" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="18" data-source="headfi" checked></td>
 <td>2024-12-13</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$450</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1012,7 +996,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-19" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="19" data-source="headfi" checked></td>
 <td>2024-11-16</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$325</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1029,7 +1012,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-20" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="20" data-source="headfi" checked></td>
 <td>2024-11-04</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$280</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1046,7 +1028,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-21" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="21" data-source="headfi" checked></td>
 <td>2024-09-09</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$280</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1063,7 +1044,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-22" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="22" data-source="headfi" checked></td>
 <td>2024-07-21</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$420</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1080,7 +1060,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-23" data-source="headfi" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="23" data-source="headfi" ></td>
 <td>2024-07-19</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$350</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1097,7 +1076,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-24" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="24" data-source="headfi" checked></td>
 <td>2024-05-28</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$349</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1114,7 +1092,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-25" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="25" data-source="headfi" checked></td>
 <td>2024-05-02</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$430</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1131,7 +1108,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-26" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="26" data-source="headfi" checked></td>
 <td>2024-04-23</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$315</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1148,7 +1124,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-27" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="27" data-source="headfi" checked></td>
 <td>2024-01-23</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$330</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1165,7 +1140,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-28" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2024-01-14</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td></td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1182,7 +1156,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-29" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2024-01-12</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td></td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1199,7 +1172,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-30" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="30" data-source="headfi" checked></td>
 <td>2023-12-24</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$350</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1216,7 +1188,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-31" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="31" data-source="headfi" checked></td>
 <td>2023-12-02</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$400</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1233,7 +1204,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-32" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="32" data-source="headfi" checked></td>
 <td>2023-11-26</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$340</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1250,7 +1220,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-33" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="33" data-source="headfi" checked></td>
 <td>2023-11-16</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$350</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1267,7 +1236,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-34" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="34" data-source="headfi" checked></td>
 <td>2023-11-10</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$375</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1284,7 +1252,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-35" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="35" data-source="headfi" checked></td>
 <td>2023-10-16</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$500</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1301,7 +1268,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-36" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="36" data-source="headfi" checked></td>
 <td>2023-10-13</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$439</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1318,7 +1284,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-37" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="37" data-source="headfi" checked></td>
 <td>2023-09-19</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$370</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1335,7 +1300,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-38" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="38" data-source="headfi" checked></td>
 <td>2023-09-15</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$380</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1352,7 +1316,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-39" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="39" data-source="headfi" checked></td>
 <td>2023-07-03</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$380</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1369,7 +1332,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-40" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="40" data-source="headfi" checked></td>
 <td>2023-06-12</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$320</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1386,7 +1348,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-41" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="41" data-source="headfi" checked></td>
 <td>2023-05-22</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$410</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1403,7 +1364,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-42" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="42" data-source="headfi" checked></td>
 <td>2023-05-12</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$365</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1420,7 +1380,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-43" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="43" data-source="headfi" checked></td>
 <td>2023-04-17</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$380</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1437,7 +1396,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-44" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="44" data-source="headfi" checked></td>
 <td>2023-03-19</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$390</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1454,7 +1412,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-45" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="45" data-source="headfi" checked></td>
 <td>2023-03-12</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$385</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1471,7 +1428,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-46" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="46" data-source="headfi" checked></td>
 <td>2023-02-20</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$390</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1488,7 +1444,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-47" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2023-01-25</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td></td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1505,7 +1460,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-48" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="48" data-source="headfi" checked></td>
 <td>2023-01-14</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$420</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1522,7 +1476,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-49" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="49" data-source="headfi" checked></td>
 <td>2022-11-13</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$400</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1539,7 +1492,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-50" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="50" data-source="headfi" checked></td>
 <td>2022-11-07</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$390</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1556,7 +1508,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-51" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="51" data-source="headfi" checked></td>
 <td>2022-10-14</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$419</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1573,7 +1524,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-52" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="52" data-source="headfi" checked></td>
 <td>2022-09-10</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$425</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1590,7 +1540,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-53" data-source="headfi" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="53" data-source="headfi" ></td>
 <td>2022-08-17</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$450</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1607,7 +1556,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-54" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="54" data-source="headfi" checked></td>
 <td>2022-07-12</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$400</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1624,7 +1572,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-55" data-source="headfi" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="55" data-source="headfi" ></td>
 <td>2022-07-05</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$420</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1641,7 +1588,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-56" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="56" data-source="headfi" checked></td>
 <td>2022-05-02</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$400</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1658,7 +1604,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-57" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="57" data-source="headfi" checked></td>
 <td>2022-04-04</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$400</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1675,7 +1620,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-58" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="58" data-source="headfi" checked></td>
 <td>2022-03-14</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$380</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1692,7 +1636,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-59" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="59" data-source="headfi" checked></td>
 <td>2022-03-05</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$375</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1709,7 +1652,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-60" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="60" data-source="headfi" checked></td>
 <td>2022-03-03</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$379</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1726,7 +1668,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-61" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="61" data-source="headfi" checked></td>
 <td>2022-02-23</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$400</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1743,7 +1684,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-62" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="62" data-source="headfi" checked></td>
 <td>2022-02-18</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$400</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1760,7 +1700,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-63" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="63" data-source="headfi" checked></td>
 <td>2022-02-10</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$400</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1777,7 +1716,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-64" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="64" data-source="headfi" checked></td>
 <td>2022-01-29</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$420</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1794,7 +1732,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-65" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="65" data-source="headfi" checked></td>
 <td>2022-01-18</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$420</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1811,7 +1748,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-66" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="66" data-source="headfi" checked></td>
 <td>2022-01-18</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$450</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1828,7 +1764,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-67" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="67" data-source="headfi" checked></td>
 <td>2022-01-10</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$410</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1845,7 +1780,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-68" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="68" data-source="headfi" checked></td>
 <td>2021-12-31</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$420</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1862,7 +1796,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-69" data-source="headfi" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="69" data-source="headfi" ></td>
 <td>2021-12-31</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$330</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1879,7 +1812,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-70" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="70" data-source="headfi" checked></td>
 <td>2021-12-05</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$420</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1896,7 +1828,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-71" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="71" data-source="headfi" checked></td>
 <td>2021-11-05</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$400</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1913,7 +1844,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-72" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="72" data-source="headfi" checked></td>
 <td>2021-10-30</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$400</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1930,7 +1860,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-73" data-source="headfi" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="73" data-source="headfi" ></td>
 <td>2021-10-16</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$500</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1947,7 +1876,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-74" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="74" data-source="headfi" checked></td>
 <td>2021-09-04</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$440</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1964,7 +1892,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-75" data-source="headfi" class="listing-row included">
 <td><input type="checkbox" class="row-toggle" data-row-id="75" data-source="headfi" checked></td>
 <td>2021-08-16</td>
-<td title="This listing is closed, but the tracker does not have a usable closure-observation timestamp.">Closed · unknown</td>
 <td>$450</td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>
@@ -1981,7 +1908,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-76" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td></td>
-<td title="Listing date is unavailable, so age/close time cannot be estimated.">Unknown</td>
 <td></td>
 <td><span class="pill">closed</span></td>
 <td class="status-reason"></td>

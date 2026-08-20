@@ -18,18 +18,21 @@ a:hover { text-decoration: underline; }
 .top-credit { background: white; border: 1px solid #ddd; padding: 10px 14px; margin-bottom: 20px; font-size: 14px; color: #555; }
 .top-credit a { font-weight: bold; color: #0066cc; }
 .site-topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
-.site-header-left { display: flex; align-items: center; gap: 14px; min-width: 0; flex-wrap: wrap; }
-.site-brand { display: inline-flex; align-items: center; gap: 9px; color: #111; font-weight: 800; font-size: 18px; white-space: nowrap; }
+.site-header-left { display: flex; align-items: center; gap: 14px; min-width: 0; flex-wrap: nowrap; }
+.site-brand { display: inline-flex; align-items: center; gap: 9px; min-height: 36px; line-height: 1; color: #111; font-weight: 800; font-size: 18px; white-space: nowrap; }
+.site-brand span { display: inline-flex; align-items: center; min-height: 36px; }
 .site-brand:hover { text-decoration: none; }
 .site-brand-logo { width: 36px; height: 36px; object-fit: contain; flex: 0 0 auto; }
-.site-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.site-nav a { display: inline-block; padding: 7px 10px; border-radius: 6px; color: #333; font-weight: bold; }
+.site-nav { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.site-nav a { display: inline-flex; align-items: center; min-height: 36px; box-sizing: border-box; padding: 0 10px; line-height: 1; border-radius: 6px; color: #333; font-weight: bold; }
 .site-nav a:hover { background: #eee; text-decoration: none; }
 @media (max-width: 760px) {
     .site-topbar { align-items: flex-start; }
-    .site-header-left { width: 100%; }
+    .site-header-left { width: 100%; flex-wrap: wrap; gap: 8px 14px; }
     .site-brand { font-size: 17px; }
     .site-brand-logo { width: 34px; height: 34px; }
+    .site-nav { width: 100%; gap: 4px; }
+    .site-nav a { min-height: 32px; padding: 0 8px; }
 }
 .support-tool-link { display: inline-block; background: #111; color: #fff; border: 1px solid #111; border-radius: 999px; padding: 9px 14px; font-size: 14px; font-weight: bold; }
 .support-tool-link:hover { color: #fff; text-decoration: none; }
@@ -605,11 +608,32 @@ score backgrounds cannot be lost to broader table/cell styling.
 .dashboard-drill-table td { padding: 9px 12px; border-bottom: 1px solid rgba(15, 23, 42, .07); vertical-align: top; }
 .dashboard-drill-table a { font-weight: 700; }
 .dashboard-drill-empty { padding: 28px 22px; text-align: center; opacity: .65; }
+.dashboard-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.dashboard-toolbar-copy { flex: 1 1 420px; }
+.dashboard-toolbar-copy p { margin: 6px 0 0; }
+.dashboard-toolbar-title { margin-top: 4px; font-size: 18px; font-weight: 800; }
+.dashboard-history-control { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; }
+.dashboard-history-control select { min-width: 190px; padding: 9px 34px 9px 11px; border: 1px solid rgba(15, 23, 42, .2); border-radius: 8px; background: #fff; font: inherit; color: #111; }
+.dashboard-primary-metrics .metric-card { flex-basis: 210px; }
+.dashboard-diagnostics { background: #fff; border: 1px solid #d8d8d8; margin-bottom: 20px; }
+.dashboard-diagnostics > summary { display: flex; align-items: center; justify-content: space-between; gap: 14px; cursor: pointer; list-style: none; padding: 17px 20px; font-size: 17px; font-weight: 800; }
+.dashboard-diagnostics > summary::-webkit-details-marker { display: none; }
+.dashboard-diagnostics > summary::after { content: "+"; flex: 0 0 auto; font-size: 22px; line-height: 1; color: #555; }
+.dashboard-diagnostics[open] > summary::after { content: "−"; }
+.dashboard-diagnostics[open] > summary { border-bottom: 1px solid #e5e5e5; }
+.dashboard-diagnostics-summary-note { margin-left: auto; font-size: 12px; font-weight: 400; color: #777; }
+.dashboard-diagnostic-body { padding: 18px 20px 20px; }
+.dashboard-diagnostic-body > .small:first-child { margin-top: 0; }
+.dashboard-diagnostic-metrics { margin: 14px 0 18px; }
+.dashboard-diagnostic-body .dashboard-grid { margin-bottom: 0; }
 @media (max-width: 640px) {
     .dashboard-drill-overlay { padding: 8px; }
     .dashboard-drill-dialog { width: 100%; max-height: 94vh; border-radius: 12px; }
     .dashboard-drill-header { padding: 16px 16px 8px; }
     .dashboard-drill-note, .dashboard-drill-tools { padding-left: 16px; padding-right: 16px; }
+    .dashboard-diagnostics-summary-note { display: none; }
+    .dashboard-history-control { width: 100%; justify-content: space-between; }
+    .dashboard-history-control select { flex: 1 1 auto; min-width: 0; }
 }
 </style>
 
@@ -659,136 +683,161 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="card notice-card">
     <h2>IEM Secondary Market at a Glance</h2>
     <p class="muted">
-        This page uses the full tracker dataset to show market-wide pricing, activity, and resale trends.
-        The index is designed to answer a different question from an individual IEM page: is the broader used-IEM market moving up or down?
+        The headline index tracks same-IEM price movement across the used market and is anchored to <b>100 in January 2024</b>.
+        Current snapshot metrics are kept separate from lower-confidence coverage diagnostics.
     </p>
-    <p class="small">
-        The market index is anchored to <b>100 in January 2024</b>. It is equal-weighted across IEMs and uses same-IEM month-to-month price changes,
-        rather than simply averaging all sale prices, so a changing mix of cheap and expensive products has less influence on the trend.
-    </p>
-    <p class="small"><b>Drill-through:</b> click any headline metric, chart point/bar, or MSRP-tier table row to see the actual IEMs behind that number. IEM names link to their individual tracker pages when available.</p>
+    <p class="small"><b>Drill-through:</b> click a headline metric, chart point/bar, or MSRP-tier row to see the IEMs behind it.</p>
 </div>
 
-<div class="metric-row dashboard-metrics">
+<div class="card dashboard-toolbar">
+    <div class="dashboard-toolbar-copy">
+        <div class="product-label">Dashboard date range</div>
+        <div class="dashboard-toolbar-title">2024 onward by default</div>
+        <p class="small">This filter applies to historical charts. Current snapshot metrics and the MSRP-tier table remain current-state views. Legacy coverage is less complete.</p>
+    </div>
+    <label class="dashboard-history-control" for="dashboardHistoryRange">
+        <span>History</span>
+        <select id="dashboardHistoryRange">
+            <option value="recent" selected>2024–present</option>
+            <option value="all">Include legacy years</option>
+        </select>
+    </label>
+</div>
+
+<div class="metric-row dashboard-metrics dashboard-primary-metrics">
     <div class="metric-card dashboard-drill-trigger" data-drill-key="metric:index" title="Click to view contributing IEMs">
         <div class="product-label">IEM Market Index</div>
         <div class="metric-value">65.5</div>
         <div class="small">Jan 2024 = 100 · -34.5% since baseline</div>
-        <div class="drill-hint">Click to view contributing IEMs</div>
+        <div class="drill-hint">Click to view contributors</div>
     </div>
     <div class="metric-card dashboard-drill-trigger" data-drill-key="metric:index-3m" title="Click to view contributing IEMs">
         <div class="product-label">3-Month Move</div>
         <div class="metric-value">-6.8%</div>
         <div class="small">Broad secondary-market index</div>
-        <div class="drill-hint">Click to view contributing IEMs</div>
+        <div class="drill-hint">Click to view contributors</div>
     </div>
     <div class="metric-card dashboard-drill-trigger" data-drill-key="metric:index-12m" title="Click to view contributing IEMs">
         <div class="product-label">12-Month Move</div>
         <div class="metric-value">-16.4%</div>
         <div class="small">Broad secondary-market index</div>
-        <div class="drill-hint">Click to view contributing IEMs</div>
+        <div class="drill-hint">Click to view contributors</div>
     </div>
     <div class="metric-card dashboard-drill-trigger" data-drill-key="metric:retention" title="Click to view contributing IEMs">
         <div class="product-label">Median Resale Retention</div>
         <div class="metric-value">55.7%</div>
-        <div class="small">Current IEM market values with MSRP + ≥3 clean samples</div>
-        <div class="drill-hint">Click to view contributing IEMs</div>
-    </div>
-    <div class="metric-card dashboard-drill-trigger" data-drill-key="metric:clean-sales" title="Click to view contributing IEMs">
-        <div class="product-label">Clean Closed Sales</div>
-        <div class="metric-value">3,037</div>
-        <div class="small">267 in the last 90 days</div>
-        <div class="drill-hint">Click to view contributing IEMs</div>
+        <div class="small">IEMs with MSRP + ≥3 clean samples</div>
+        <div class="drill-hint">Click to view contributors</div>
     </div>
     <div class="metric-card dashboard-drill-trigger" data-drill-key="metric:active-listings" title="Click to view contributing IEMs">
         <div class="product-label">Active Priced Listings</div>
         <div class="metric-value">512</div>
-        <div class="small">Across 362 currently tracked IEMs</div>
-        <div class="drill-hint">Click to view contributing IEMs</div>
-    </div>
-    <div class="metric-card dashboard-drill-trigger" data-drill-key="metric:source-mix" title="Click to view contributing IEMs">
-        <div class="product-label">Clean-Sale Source Mix</div>
-        <div class="metric-value dashboard-source-mix">Reddit 9% / Head-Fi 91%</div>
-        <div class="small">Share of included clean closed-sale observations</div>
-        <div class="drill-hint">Click to view contributing IEMs</div>
-    </div>
-    <div class="metric-card dashboard-drill-trigger" data-drill-key="metric:catalog" title="Click to view contributing IEMs">
-        <div class="product-label">Cataloged IEMs</div>
-        <div class="metric-value">589</div>
-        <div class="small">463 with release year</div>
-        <div class="drill-hint">Click to view contributing IEMs</div>
-    </div>
-    <div class="metric-card dashboard-drill-trigger" data-drill-key="metric:msrp-coverage" title="Click to view contributing IEMs">
-        <div class="product-label">Catalog MSRP Coverage</div>
-        <div class="metric-value">78%</div>
-        <div class="small">459 products with original MSRP</div>
-        <div class="drill-hint">Click to view contributing IEMs</div>
+        <div class="small">Across 362 tracked IEMs</div>
+        <div class="drill-hint">Click to view contributors</div>
     </div>
 </div>
 
 <div class="dashboard-grid">
     <section class="card dashboard-chart-card dashboard-wide">
         <h2>IEM Secondary Market Index</h2>
-        <p class="small">Hover a point to see the index level and contributor count; click a point to inspect the actual same-IEM contributors. The current month may be partial.</p>
+        <p class="small">Same-IEM price movement, equal-weighted across contributors. Hover for contributor count; click a point for drill-through. The current month may be partial.</p>
         
         <div class="dashboard-chart-wrap"><canvas id="marketIndexChart"></canvas></div>
         
     </section>
 
     <section class="card dashboard-chart-card dashboard-wide">
-        <h2>Clean Sale Activity</h2>
-        <p class="small">Monthly count of included clean closed-sale observations and the number of distinct IEMs represented.</p>
-        
-        <div class="dashboard-chart-wrap"><canvas id="marketActivityChart"></canvas></div>
-        
-    </section>
-
-    <section class="card dashboard-chart-card dashboard-wide">
-        <h2>Observed Listings & IEM Count Over Time</h2>
-        <p class="small">Uses every matched priced listing, not only Market Value samples. Bars show listings per month; the lines show distinct IEMs listed and distinct IEMs with closed listings. This is the best view of how broad and active the tracked market has become.</p>
-        
-        <div class="dashboard-chart-wrap"><canvas id="rawMarketActivityChart"></canvas></div>
-        
-    </section>
-
-    <section class="card dashboard-chart-card dashboard-wide">
         <h2>Raw Secondary Price Level</h2>
-        <p class="small">Monthly median price of matched closed listings, with the 25th–75th percentile range. Unlike the repeat-IEM index, this line is intentionally sensitive to the mix of cheap and expensive products being traded.</p>
+        <p class="small">Monthly median closed-listing price with the 25th–75th percentile range. This is intentionally mix-sensitive, so changes can reflect which products traded as well as price movement.</p>
         
         <div class="dashboard-chart-wrap"><canvas id="rawSecondaryPriceChart"></canvas></div>
         
     </section>
-
-    <section class="card dashboard-chart-card dashboard-wide">
-        <h2>IEM Releases by Year</h2>
-        <p class="small">Count of cataloged IEM models by release year. This will become more complete as the lower-cost and newer-product catalog is expanded.</p>
-        
-        <div class="dashboard-chart-wrap"><canvas id="releaseCountChart"></canvas></div>
-        
-    </section>
-
-    <section class="card dashboard-chart-card dashboard-wide">
-        <h2>New-IEM MSRP by Release Year</h2>
-        <p class="small">Median original MSRP for products released each year, with the 25th and 75th percentiles. Hover to see the number of products with MSRP in that year's sample.</p>
-        
-        <div class="dashboard-chart-wrap"><canvas id="msrpByYearChart"></canvas></div>
-        
-    </section>
-
-    <section class="card dashboard-chart-card dashboard-wide">
-        <h2>Release Mix by MSRP Tier</h2>
-        <p class="small">Number of cataloged releases in each original-MSRP tier by year. This is designed to show whether growth is happening mostly in budget IEMs, the middle of the market, or the high end.</p>
-        
-        <div class="dashboard-chart-wrap"><canvas id="msrpTierReleaseChart"></canvas></div>
-        
-    </section>
 </div>
+
+<details id="dashboardDiagnostics" class="dashboard-diagnostics">
+    <summary>
+        <span>Diagnostics</span>
+        <span class="dashboard-diagnostics-summary-note">Coverage-sensitive views and catalog checks</span>
+    </summary>
+    <div class="dashboard-diagnostic-body">
+        <p class="small">These views are useful for validating tracker depth and catalog composition, but they are more sensitive to when the tracker was built and how complete older product data is. They are collapsed by default for that reason.</p>
+
+        <div class="metric-row dashboard-metrics dashboard-diagnostic-metrics">
+            <div class="metric-card dashboard-drill-trigger" data-drill-key="metric:clean-sales" title="Click to view contributing IEMs">
+                <div class="product-label">Clean Closed Sales</div>
+                <div class="metric-value">3,037</div>
+                <div class="small">267 in the last 90 days</div>
+                <div class="drill-hint">Coverage diagnostic</div>
+            </div>
+            <div class="metric-card dashboard-drill-trigger" data-drill-key="metric:source-mix" title="Click to view contributing IEMs">
+                <div class="product-label">Clean-Sale Source Mix</div>
+                <div class="metric-value dashboard-source-mix">Reddit 9% / Head-Fi 91%</div>
+                <div class="small">Share of included clean closed-sale observations</div>
+                <div class="drill-hint">Coverage diagnostic</div>
+            </div>
+            <div class="metric-card dashboard-drill-trigger" data-drill-key="metric:catalog" title="Click to view contributing IEMs">
+                <div class="product-label">Cataloged IEMs</div>
+                <div class="metric-value">589</div>
+                <div class="small">463 with release year</div>
+                <div class="drill-hint">Catalog diagnostic</div>
+            </div>
+            <div class="metric-card dashboard-drill-trigger" data-drill-key="metric:msrp-coverage" title="Click to view contributing IEMs">
+                <div class="product-label">Catalog MSRP Coverage</div>
+                <div class="metric-value">78%</div>
+                <div class="small">459 products with original MSRP</div>
+                <div class="drill-hint">Catalog diagnostic</div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <section class="card dashboard-chart-card dashboard-wide">
+                <h2>Clean Sale Activity</h2>
+                <p class="small">Monthly clean closed-sale count and distinct IEM count. Recent periods naturally benefit from better tracker coverage, so use this mainly as a data-depth diagnostic.</p>
+                
+                <div class="dashboard-chart-wrap"><canvas id="marketActivityChart"></canvas></div>
+                
+            </section>
+
+            <section class="card dashboard-chart-card dashboard-wide">
+                <h2>Observed Listings & IEM Count Over Time</h2>
+                <p class="small">Every matched priced listing by month, plus distinct IEMs listed and closed. This is strongly affected by tracker coverage and is not a clean measure of underlying market growth.</p>
+                
+                <div class="dashboard-chart-wrap"><canvas id="rawMarketActivityChart"></canvas></div>
+                
+            </section>
+
+            <section class="card dashboard-chart-card dashboard-wide">
+                <h2>IEM Releases by Year</h2>
+                <p class="small">Count of cataloged IEM models by release year. Catalog completeness varies by year, especially before 2024.</p>
+                
+                <div class="dashboard-chart-wrap"><canvas id="releaseCountChart"></canvas></div>
+                
+            </section>
+
+            <section class="card dashboard-chart-card dashboard-wide">
+                <h2>New-IEM MSRP by Release Year</h2>
+                <p class="small">Median original MSRP with 25th–75th percentiles. Only years with at least 5 cataloged products with MSRP are plotted; legacy comparisons should still be treated as directional because catalog coverage varies.</p>
+                
+                <div class="dashboard-chart-wrap"><canvas id="msrpByYearChart"></canvas></div>
+                
+            </section>
+
+            <section class="card dashboard-chart-card dashboard-wide">
+                <h2>Release Mix by MSRP Tier</h2>
+                <p class="small">Cataloged releases by original-MSRP tier and year. Useful for catalog composition checks, but not a complete industry release census.</p>
+                
+                <div class="dashboard-chart-wrap"><canvas id="msrpTierReleaseChart"></canvas></div>
+                
+            </section>
+        </div>
+    </div>
+</details>
 
 <section class="card">
     <h2>Market by Original MSRP Tier</h2>
     <p class="muted">
-        The tier table combines current tracker Market Values with full clean-sale history. Median retention requires at least 3 clean samples per IEM.
-        Tier indices are shown only when there is enough repeat-IEM coverage to avoid presenting a mostly unsupported line.
+        A current-state comparison of market value and resale retention across original-MSRP tiers. Median retention requires at least 3 clean samples per IEM, and tier indices appear only when repeat-IEM coverage is sufficient.
     </p>
     <div class="table-scroll dashboard-table-scroll">
         <table class="main-table dashboard-table">
@@ -797,8 +846,6 @@ score backgrounds cannot be lost to broader table/cell styling.
                 <th>Tracked IEMs</th>
                 <th>Median Market Value</th>
                 <th>Median Retention</th>
-                <th>Clean Sales</th>
-                <th>Sales / 90d</th>
                 <th>Index</th>
                 <th>12m Move</th>
             </tr>
@@ -808,8 +855,6 @@ score backgrounds cannot be lost to broader table/cell styling.
                 <td>127</td>
                 <td>$147.56</td>
                 <td>62.9%</td>
-                <td>596</td>
-                <td>115</td>
                 <td>55.5</td>
                 <td>-25.2%</td>
             </tr>
@@ -819,8 +864,6 @@ score backgrounds cannot be lost to broader table/cell styling.
                 <td>39</td>
                 <td>$374.8</td>
                 <td>52.3%</td>
-                <td>386</td>
-                <td>23</td>
                 <td>70.3</td>
                 <td>-23.5%</td>
             </tr>
@@ -830,8 +873,6 @@ score backgrounds cannot be lost to broader table/cell styling.
                 <td>56</td>
                 <td>$725</td>
                 <td>53.3%</td>
-                <td>795</td>
-                <td>40</td>
                 <td>56.6</td>
                 <td>-12.8%</td>
             </tr>
@@ -841,8 +882,6 @@ score backgrounds cannot be lost to broader table/cell styling.
                 <td>23</td>
                 <td>$1,028.59</td>
                 <td>46.1%</td>
-                <td>485</td>
-                <td>15</td>
                 <td>55.4</td>
                 <td>-16.4%</td>
             </tr>
@@ -852,8 +891,6 @@ score backgrounds cannot be lost to broader table/cell styling.
                 <td>43</td>
                 <td>$2,171.59</td>
                 <td>51.6%</td>
-                <td>690</td>
-                <td>30</td>
                 <td>63.0</td>
                 <td>-17.3%</td>
             </tr>
@@ -908,7 +945,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 <script>
 const marketIndexPayload = {"labels": ["Jan 2024", "Feb 2024", "Mar 2024", "Apr 2024", "May 2024", "Jun 2024", "Jul 2024", "Aug 2024", "Sep 2024", "Oct 2024", "Nov 2024", "Dec 2024", "Jan 2025", "Feb 2025", "Mar 2025", "Apr 2025", "May 2025", "Jun 2025", "Jul 2025", "Aug 2025", "Sep 2025", "Oct 2025", "Nov 2025", "Dec 2025", "Jan 2026", "Feb 2026", "Mar 2026", "Apr 2026", "May 2026", "Jun 2026", "Jul 2026", "Aug 2026"], "months": ["2024-01-01", "2024-02-01", "2024-03-01", "2024-04-01", "2024-05-01", "2024-06-01", "2024-07-01", "2024-08-01", "2024-09-01", "2024-10-01", "2024-11-01", "2024-12-01", "2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01", "2025-05-01", "2025-06-01", "2025-07-01", "2025-08-01", "2025-09-01", "2025-10-01", "2025-11-01", "2025-12-01", "2026-01-01", "2026-02-01", "2026-03-01", "2026-04-01", "2026-05-01", "2026-06-01", "2026-07-01", "2026-08-01"], "datasets": [{"label": "Overall Market", "values": [100.0, 100.26, 98.4, 98.02, 96.83, 92.8, 91.55, 90.58, 88.81, 87.74, 85.22, 82.85, 82.85, 84.02, 81.43, 80.34, 79.33, 78.3, 78.31, 78.31, 76.38, 76.38, 75.14, 74.32, 74.21, 71.17, 70.93, 70.75, 70.3, 68.46, 66.76, 65.49], "contributors": [27, 26, 26, 30, 35, 27, 27, 28, 26, 26, 28, 35, 28, 19, 31, 29, 26, 31, 28, 25, 38, 40, 33, 40, 48, 33, 49, 50, 35, 38, 42, 25]}, {"label": "Under $500", "values": [100.0, 100.0, 100.1, 105.01, 105.01, 105.01, 105.01, 101.12, 101.12, 94.8, 75.84, 75.07, 79.75, 90.69, 75.58, 75.58, 74.54, 73.71, 73.71, 74.23, 67.14, 68.37, 69.18, 66.38, 67.13, 59.08, 58.88, 59.12, 60.87, 60.23, 57.72, 55.53], "contributors": [2, 1, 4, 3, 2, 2, 1, 4, 3, 3, 3, 6, 4, 3, 7, 3, 6, 9, 7, 8, 12, 8, 6, 12, 14, 7, 13, 14, 10, 18, 16, 10]}, {"label": "$500–999", "values": [100.0, 100.06, 100.06, 98.91, 99.98, 102.48, 95.61, 106.54, 86.99, 86.99, 83.9, 86.85, 94.08, 94.08, 87.87, 95.7, 97.76, 97.76, 94.39, 91.85, 91.29, 91.29, 90.5, 88.19, 86.88, 87.04, 81.49, 80.27, 80.27, 80.27, 68.29, 70.27], "contributors": [5, 4, 3, 4, 6, 3, 6, 3, 3, 2, 7, 4, 3, 1, 4, 4, 3, 2, 4, 4, 6, 9, 4, 6, 6, 3, 3, 5, 3, 2, 5, 4]}, {"label": "$1,000–1,999", "values": [100.0, 95.45, 92.15, 92.15, 89.23, 82.14, 84.07, 77.45, 80.03, 78.69, 76.43, 73.43, 71.91, 76.99, 65.15, 63.04, 63.04, 61.82, 64.26, 64.91, 63.69, 63.66, 61.29, 62.2, 62.2, 62.66, 62.84, 57.91, 55.27, 56.09, 58.03, 56.61], "contributors": [10, 9, 6, 7, 11, 6, 9, 10, 8, 4, 6, 9, 9, 7, 5, 8, 5, 7, 8, 7, 9, 7, 12, 7, 11, 9, 12, 8, 8, 5, 7, 5]}, {"label": "$2,000–2,999", "values": [100.0, 104.66, 105.82, 96.96, 99.96, 93.6, 88.48, 88.48, 78.57, 78.57, 82.93, 83.15, 83.18, 71.11, 69.21, 71.19, 68.41, 67.3, 66.27, 66.27, 64.99, 70.41, 68.86, 67.98, 69.99, 65.28, 64.15, 63.82, 66.06, 64.15, 55.4, 55.4], "contributors": [4, 3, 3, 3, 6, 6, 4, 2, 4, 5, 3, 6, 3, 3, 7, 5, 4, 3, 4, 2, 7, 6, 4, 5, 6, 7, 5, 7, 5, 5, 3, 2]}, {"label": "$3,000+", "values": [100.0, 100.0, 98.14, 98.37, 97.78, 93.15, 87.9, 87.9, 84.14, 83.23, 82.93, 77.75, 80.27, 78.1, 76.23, 73.65, 74.31, 73.88, 73.9, 76.17, 76.45, 73.87, 71.41, 72.45, 70.74, 71.24, 70.49, 70.49, 66.85, 62.14, 62.97, 62.97], "contributors": [5, 9, 10, 13, 10, 10, 7, 9, 8, 12, 9, 10, 8, 5, 8, 9, 8, 10, 5, 4, 4, 10, 7, 10, 11, 7, 15, 15, 9, 6, 7, 1]}]};
-const marketActivityPayload = {"labels": ["Jan 2024", "Feb 2024", "Mar 2024", "Apr 2024", "May 2024", "Jun 2024", "Jul 2024", "Aug 2024", "Sep 2024", "Oct 2024", "Nov 2024", "Dec 2024", "Jan 2025", "Feb 2025", "Mar 2025", "Apr 2025", "May 2025", "Jun 2025", "Jul 2025", "Aug 2025", "Sep 2025", "Oct 2025", "Nov 2025", "Dec 2025", "Jan 2026", "Feb 2026", "Mar 2026", "Apr 2026", "May 2026", "Jun 2026", "Jul 2026", "Aug 2026"], "months": ["2024-01-01", "2024-02-01", "2024-03-01", "2024-04-01", "2024-05-01", "2024-06-01", "2024-07-01", "2024-08-01", "2024-09-01", "2024-10-01", "2024-11-01", "2024-12-01", "2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01", "2025-05-01", "2025-06-01", "2025-07-01", "2025-08-01", "2025-09-01", "2025-10-01", "2025-11-01", "2025-12-01", "2026-01-01", "2026-02-01", "2026-03-01", "2026-04-01", "2026-05-01", "2026-06-01", "2026-07-01", "2026-08-01"], "clean_sales": [50, 35, 47, 50, 65, 41, 44, 56, 41, 48, 65, 56, 48, 29, 53, 54, 57, 60, 43, 56, 74, 73, 61, 73, 83, 65, 96, 102, 81, 93, 86, 54], "distinct_iems": [35, 30, 32, 34, 42, 30, 33, 33, 29, 32, 36, 40, 39, 24, 38, 35, 39, 39, 33, 41, 53, 55, 39, 48, 63, 45, 63, 60, 55, 76, 65, 45], "median_sale_price": [795.0, 950.0, 1000.0, 1275.0, 975.0, 875.0, 762.5, 924.5, 800.0, 912.5, 850.0, 987.0, 725.0, 899.0, 850.0, 900.0, 650.0, 850.0, 680.0, 432.5, 392.5, 800.0, 800.0, 550.0, 650.0, 825.0, 850.0, 555.0, 590.0, 450.0, 350.0, 350.0]};
+const marketActivityPayload = {"labels": ["Mar 2021", "Apr 2021", "May 2021", "Jun 2021", "Jul 2021", "Aug 2021", "Sep 2021", "Oct 2021", "Nov 2021", "Dec 2021", "Jan 2022", "Feb 2022", "Mar 2022", "Apr 2022", "May 2022", "Jun 2022", "Jul 2022", "Aug 2022", "Sep 2022", "Oct 2022", "Nov 2022", "Dec 2022", "Jan 2023", "Feb 2023", "Mar 2023", "Apr 2023", "May 2023", "Jun 2023", "Jul 2023", "Aug 2023", "Sep 2023", "Oct 2023", "Nov 2023", "Dec 2023", "Jan 2024", "Feb 2024", "Mar 2024", "Apr 2024", "May 2024", "Jun 2024", "Jul 2024", "Aug 2024", "Sep 2024", "Oct 2024", "Nov 2024", "Dec 2024", "Jan 2025", "Feb 2025", "Mar 2025", "Apr 2025", "May 2025", "Jun 2025", "Jul 2025", "Aug 2025", "Sep 2025", "Oct 2025", "Nov 2025", "Dec 2025", "Jan 2026", "Feb 2026", "Mar 2026", "Apr 2026", "May 2026", "Jun 2026", "Jul 2026", "Aug 2026"], "months": ["2021-03-01", "2021-04-01", "2021-05-01", "2021-06-01", "2021-07-01", "2021-08-01", "2021-09-01", "2021-10-01", "2021-11-01", "2021-12-01", "2022-01-01", "2022-02-01", "2022-03-01", "2022-04-01", "2022-05-01", "2022-06-01", "2022-07-01", "2022-08-01", "2022-09-01", "2022-10-01", "2022-11-01", "2022-12-01", "2023-01-01", "2023-02-01", "2023-03-01", "2023-04-01", "2023-05-01", "2023-06-01", "2023-07-01", "2023-08-01", "2023-09-01", "2023-10-01", "2023-11-01", "2023-12-01", "2024-01-01", "2024-02-01", "2024-03-01", "2024-04-01", "2024-05-01", "2024-06-01", "2024-07-01", "2024-08-01", "2024-09-01", "2024-10-01", "2024-11-01", "2024-12-01", "2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01", "2025-05-01", "2025-06-01", "2025-07-01", "2025-08-01", "2025-09-01", "2025-10-01", "2025-11-01", "2025-12-01", "2026-01-01", "2026-02-01", "2026-03-01", "2026-04-01", "2026-05-01", "2026-06-01", "2026-07-01", "2026-08-01"], "clean_sales": [21, 29, 26, 24, 23, 24, 29, 26, 33, 26, 25, 21, 17, 21, 14, 28, 29, 41, 28, 31, 45, 30, 34, 44, 52, 41, 31, 48, 39, 59, 34, 40, 42, 43, 50, 35, 47, 50, 65, 41, 44, 56, 41, 48, 65, 56, 48, 29, 53, 54, 57, 60, 43, 56, 74, 73, 61, 73, 83, 65, 96, 102, 81, 93, 86, 54], "distinct_iems": [12, 15, 15, 13, 13, 14, 18, 15, 17, 20, 15, 13, 10, 12, 10, 20, 16, 21, 21, 19, 23, 22, 27, 28, 26, 28, 26, 31, 25, 39, 29, 28, 29, 31, 35, 30, 32, 34, 42, 30, 33, 33, 29, 32, 36, 40, 39, 24, 38, 35, 39, 39, 33, 41, 53, 55, 39, 48, 63, 45, 63, 60, 55, 76, 65, 45], "median_sale_price": [780.0, 850.0, 1025.0, 1362.5, 1250.0, 887.5, 725.0, 765.0, 1200.0, 1125.0, 725.0, 1000.0, 1190.0, 750.0, 700.0, 750.0, 900.0, 825.0, 862.5, 1200.0, 820.0, 1100.0, 837.5, 962.5, 977.5, 1000.0, 750.0, 785.0, 676.0, 850.0, 812.5, 1037.5, 825.0, 780.0, 795.0, 950.0, 1000.0, 1275.0, 975.0, 875.0, 762.5, 924.5, 800.0, 912.5, 850.0, 987.0, 725.0, 899.0, 850.0, 900.0, 650.0, 850.0, 680.0, 432.5, 392.5, 800.0, 800.0, 550.0, 650.0, 825.0, 850.0, 555.0, 590.0, 450.0, 350.0, 350.0]};
 const rawHistoryPayload = {"labels": ["Mar 2021", "Apr 2021", "May 2021", "Jun 2021", "Jul 2021", "Aug 2021", "Sep 2021", "Oct 2021", "Nov 2021", "Dec 2021", "Jan 2022", "Feb 2022", "Mar 2022", "Apr 2022", "May 2022", "Jun 2022", "Jul 2022", "Aug 2022", "Sep 2022", "Oct 2022", "Nov 2022", "Dec 2022", "Jan 2023", "Feb 2023", "Mar 2023", "Apr 2023", "May 2023", "Jun 2023", "Jul 2023", "Aug 2023", "Sep 2023", "Oct 2023", "Nov 2023", "Dec 2023", "Jan 2024", "Feb 2024", "Mar 2024", "Apr 2024", "May 2024", "Jun 2024", "Jul 2024", "Aug 2024", "Sep 2024", "Oct 2024", "Nov 2024", "Dec 2024", "Jan 2025", "Feb 2025", "Mar 2025", "Apr 2025", "May 2025", "Jun 2025", "Jul 2025", "Aug 2025", "Sep 2025", "Oct 2025", "Nov 2025", "Dec 2025", "Jan 2026", "Feb 2026", "Mar 2026", "Apr 2026", "May 2026", "Jun 2026", "Jul 2026", "Aug 2026"], "months": ["2021-03-01", "2021-04-01", "2021-05-01", "2021-06-01", "2021-07-01", "2021-08-01", "2021-09-01", "2021-10-01", "2021-11-01", "2021-12-01", "2022-01-01", "2022-02-01", "2022-03-01", "2022-04-01", "2022-05-01", "2022-06-01", "2022-07-01", "2022-08-01", "2022-09-01", "2022-10-01", "2022-11-01", "2022-12-01", "2023-01-01", "2023-02-01", "2023-03-01", "2023-04-01", "2023-05-01", "2023-06-01", "2023-07-01", "2023-08-01", "2023-09-01", "2023-10-01", "2023-11-01", "2023-12-01", "2024-01-01", "2024-02-01", "2024-03-01", "2024-04-01", "2024-05-01", "2024-06-01", "2024-07-01", "2024-08-01", "2024-09-01", "2024-10-01", "2024-11-01", "2024-12-01", "2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01", "2025-05-01", "2025-06-01", "2025-07-01", "2025-08-01", "2025-09-01", "2025-10-01", "2025-11-01", "2025-12-01", "2026-01-01", "2026-02-01", "2026-03-01", "2026-04-01", "2026-05-01", "2026-06-01", "2026-07-01", "2026-08-01"], "priced_listings": [25, 34, 26, 27, 26, 29, 33, 28, 38, 29, 27, 24, 20, 24, 14, 31, 40, 43, 28, 37, 49, 32, 36, 51, 55, 46, 33, 55, 44, 68, 39, 51, 51, 49, 56, 40, 53, 57, 70, 45, 50, 66, 47, 54, 70, 65, 54, 37, 60, 58, 63, 78, 54, 70, 89, 84, 73, 91, 90, 85, 127, 138, 130, 222, 338, 263], "distinct_listed_iems": [14, 15, 15, 13, 14, 16, 18, 15, 17, 20, 17, 15, 12, 14, 10, 20, 17, 22, 21, 21, 24, 23, 29, 30, 27, 29, 27, 35, 26, 40, 31, 30, 32, 33, 37, 30, 34, 36, 44, 31, 34, 41, 32, 34, 37, 42, 41, 30, 42, 38, 42, 45, 37, 47, 60, 62, 45, 58, 68, 56, 74, 81, 77, 131, 154, 160], "closed_listings": [25, 34, 26, 27, 26, 29, 33, 28, 38, 29, 27, 24, 20, 24, 14, 31, 40, 43, 28, 37, 49, 32, 36, 51, 55, 46, 33, 55, 44, 68, 39, 51, 51, 49, 56, 40, 53, 57, 69, 45, 50, 66, 47, 54, 70, 65, 54, 37, 60, 58, 63, 78, 54, 70, 89, 82, 71, 90, 90, 83, 125, 136, 116, 140, 120, 64], "distinct_traded_iems": [14, 15, 15, 13, 14, 16, 18, 15, 17, 20, 17, 15, 12, 14, 10, 20, 17, 22, 21, 21, 24, 23, 29, 30, 27, 29, 27, 35, 26, 40, 31, 30, 32, 33, 37, 30, 34, 36, 43, 31, 34, 41, 32, 34, 37, 42, 41, 30, 42, 38, 42, 45, 37, 47, 60, 60, 44, 57, 68, 54, 73, 79, 70, 96, 84, 53], "median_price": [850.0, 850.0, 1025.0, 1375.0, 1225.0, 825.0, 750.0, 765.0, 1200.0, 980.0, 750.0, 1080.0, 1095.0, 837.5, 700.0, 750.0, 900.0, 819.0, 862.5, 1250.0, 825.0, 1040.0, 837.5, 1000.0, 955.0, 850.0, 799.0, 720.0, 725.0, 842.5, 825.0, 1100.0, 850.0, 780.0, 810.0, 949.5, 1000.0, 1400.0, 980.0, 850.0, 675.0, 1050.0, 800.0, 962.5, 850.0, 975.0, 725.0, 850.0, 837.5, 889.5, 580.0, 850.0, 680.0, 432.5, 400.0, 720.0, 625.0, 462.5, 650.0, 740.0, 700.0, 587.5, 550.0, 437.5, 350.0, 360.0], "p25_price": [620.0, 536.25, 731.25, 712.5, 700.0, 550.0, 509.0, 500.0, 625.0, 420.0, 435.0, 568.75, 628.75, 625.0, 558.75, 600.0, 550.0, 577.5, 563.75, 500.0, 550.0, 557.5, 517.5, 650.0, 650.0, 550.0, 540.0, 412.5, 397.5, 447.5, 549.5, 750.0, 462.5, 399.0, 500.0, 650.0, 550.0, 699.0, 635.0, 650.0, 425.0, 412.5, 487.5, 650.0, 506.25, 549.0, 320.0, 450.0, 317.5, 435.0, 307.5, 333.75, 443.75, 142.5, 150.0, 302.5, 405.0, 192.5, 217.5, 300.0, 175.0, 196.25, 215.0, 157.5, 180.0, 225.0], "p75_price": [1325.0, 1200.0, 1474.25, 1912.5, 2198.0, 1550.0, 1300.0, 1506.25, 1418.75, 1400.0, 1300.0, 1350.0, 1612.5, 1125.0, 993.75, 1200.0, 1543.75, 1200.0, 1805.5, 2100.0, 1375.0, 1525.0, 1525.0, 1682.5, 1615.0, 1499.75, 1425.0, 1270.0, 1275.0, 1362.5, 1799.5, 1745.0, 1425.0, 2000.0, 1331.25, 1925.0, 1600.0, 2200.0, 2100.0, 1800.0, 1175.0, 2174.25, 1325.0, 2000.0, 1800.0, 1595.0, 1287.5, 1300.0, 1450.0, 1837.5, 950.0, 1899.75, 1217.5, 900.0, 950.0, 1687.5, 1225.0, 1131.25, 1486.75, 1440.0, 1450.0, 1312.5, 1006.25, 900.0, 800.0, 911.75]};
 const releaseHistoryPayload = {"labels": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"], "counts": [7, 14, 10, 21, 31, 43, 74, 51, 52, 38, 62, 39]};
 const msrpHistoryPayload = {"labels": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"], "median": [1100.0, 1299.5, 1800.0, 1499.0, 469.0, 499.99, 359.5, 430.0, 450.0, 320.0, 399.5, 499.0], "p25": [569.5, 437.5, 1000.0, 699.0, 159.5, 169.5, 124.0, 100.0, 130.0, 189.99, 276.5, 259.0], "p75": [1400.0, 1816.25, 2000.0, 2000.0, 1250.0, 1307.5, 1074.25, 1445.0, 1349.5, 1400.0, 1999.25, 2600.0], "counts": [7, 14, 9, 21, 31, 43, 74, 51, 51, 37, 60, 37]};
@@ -1017,194 +1054,324 @@ document.addEventListener("keydown", event => {
     if (event.key === "Escape" && dashboardDrillOverlay?.classList.contains("open")) closeDashboardDrill();
 });
 
-const indexCanvas = document.getElementById("marketIndexChart");
-if (indexCanvas && marketIndexPayload.labels.length) {
-    new Chart(indexCanvas, {
-        type: "line",
-        data: {
-            labels: marketIndexPayload.labels,
-            datasets: marketIndexPayload.datasets.map(function(dataset) {
-                return {
-                    label: dataset.label,
-                    data: dataset.values,
-                    borderWidth: dataset.label === "Overall Market" ? 3 : 2,
-                    pointRadius: dataset.label === "Overall Market" ? 2 : 1,
-                    pointHoverRadius: 5,
-                    tension: 0.25,
-                    spanGaps: true,
-                    contributorCounts: dataset.contributors
-                };
-            })
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            interaction: {mode: "index", intersect: false},
-            onClick: dashboardChartClick((el, chart) => `index:${chart.data.datasets[el.datasetIndex].label}:${marketIndexPayload.months[el.index]}`),
-            plugins: {
-                tooltip: {
-                    callbacks: {
-                        afterLabel: function(context) {
-                            const counts = context.dataset.contributorCounts || [];
-                            const count = counts[context.dataIndex] || 0;
-                            return "Same-IEM contributors: " + count;
-                        }
-                    }
-                }
-            },
-            scales: {
-                y: {
-                    title: {display: true, text: "Index (Jan 2024 = 100)"}
-                }
-            }
-        }
-    });
+const dashboardHistoryRange = document.getElementById("dashboardHistoryRange");
+const dashboardDiagnostics = document.getElementById("dashboardDiagnostics");
+const DASHBOARD_HISTORY_CUTOFF = "2024-01-01";
+const dashboardCharts = {};
+
+function includeLegacyHistory() {
+    return dashboardHistoryRange?.value === "all";
 }
 
-const activityCanvas = document.getElementById("marketActivityChart");
-if (activityCanvas && marketActivityPayload.labels.length) {
-    new Chart(activityCanvas, {
-        data: {
-            labels: marketActivityPayload.labels,
-            datasets: [
-                {
-                    type: "bar",
-                    label: "Clean closed sales",
-                    data: marketActivityPayload.clean_sales,
-                    yAxisID: "y"
+function sliceByIndices(values, indices) {
+    const source = Array.isArray(values) ? values : [];
+    return indices.map(index => source[index]);
+}
+
+function monthlyHistoryIndices(months) {
+    const source = Array.isArray(months) ? months : [];
+    if (includeLegacyHistory()) return source.map((_value, index) => index);
+    return source.map((_value, index) => index).filter(index => String(source[index] || "") >= DASHBOARD_HISTORY_CUTOFF);
+}
+
+function yearlyHistoryIndices(labels) {
+    const source = Array.isArray(labels) ? labels : [];
+    if (includeLegacyHistory()) return source.map((_value, index) => index);
+    return source.map((_value, index) => index).filter(index => Number(source[index]) >= 2024);
+}
+
+function filteredIndexHistory() {
+    const indices = monthlyHistoryIndices(marketIndexPayload.months);
+    return {
+        labels: sliceByIndices(marketIndexPayload.labels, indices),
+        months: sliceByIndices(marketIndexPayload.months, indices),
+        datasets: (marketIndexPayload.datasets || []).map(dataset => ({
+            ...dataset,
+            values: sliceByIndices(dataset.values, indices),
+            contributors: sliceByIndices(dataset.contributors, indices),
+        })),
+    };
+}
+
+function filteredActivityHistory() {
+    const indices = monthlyHistoryIndices(marketActivityPayload.months);
+    return {
+        labels: sliceByIndices(marketActivityPayload.labels, indices),
+        months: sliceByIndices(marketActivityPayload.months, indices),
+        clean_sales: sliceByIndices(marketActivityPayload.clean_sales, indices),
+        distinct_iems: sliceByIndices(marketActivityPayload.distinct_iems, indices),
+        median_sale_price: sliceByIndices(marketActivityPayload.median_sale_price, indices),
+    };
+}
+
+function filteredRawHistory() {
+    const indices = monthlyHistoryIndices(rawHistoryPayload.months);
+    return {
+        labels: sliceByIndices(rawHistoryPayload.labels, indices),
+        months: sliceByIndices(rawHistoryPayload.months, indices),
+        priced_listings: sliceByIndices(rawHistoryPayload.priced_listings, indices),
+        distinct_listed_iems: sliceByIndices(rawHistoryPayload.distinct_listed_iems, indices),
+        closed_listings: sliceByIndices(rawHistoryPayload.closed_listings, indices),
+        distinct_traded_iems: sliceByIndices(rawHistoryPayload.distinct_traded_iems, indices),
+        median_price: sliceByIndices(rawHistoryPayload.median_price, indices),
+        p25_price: sliceByIndices(rawHistoryPayload.p25_price, indices),
+        p75_price: sliceByIndices(rawHistoryPayload.p75_price, indices),
+    };
+}
+
+function filteredReleaseHistory() {
+    const indices = yearlyHistoryIndices(releaseHistoryPayload.labels);
+    return {
+        labels: sliceByIndices(releaseHistoryPayload.labels, indices),
+        counts: sliceByIndices(releaseHistoryPayload.counts, indices),
+    };
+}
+
+function filteredMsrpHistory() {
+    const indices = yearlyHistoryIndices(msrpHistoryPayload.labels);
+    return {
+        labels: sliceByIndices(msrpHistoryPayload.labels, indices),
+        median: sliceByIndices(msrpHistoryPayload.median, indices),
+        p25: sliceByIndices(msrpHistoryPayload.p25, indices),
+        p75: sliceByIndices(msrpHistoryPayload.p75, indices),
+        counts: sliceByIndices(msrpHistoryPayload.counts, indices),
+    };
+}
+
+function filteredMsrpTierHistory() {
+    const indices = yearlyHistoryIndices(msrpTierHistoryPayload.labels);
+    return {
+        labels: sliceByIndices(msrpTierHistoryPayload.labels, indices),
+        datasets: (msrpTierHistoryPayload.datasets || []).map(dataset => ({
+            ...dataset,
+            data: sliceByIndices(dataset.data, indices),
+        })),
+    };
+}
+
+function replaceDashboardChart(key, canvas, config) {
+    if (dashboardCharts[key]) {
+        dashboardCharts[key].destroy();
+        dashboardCharts[key] = null;
+    }
+    if (!canvas || !config) return;
+    dashboardCharts[key] = new Chart(canvas, config);
+}
+
+function clearDiagnosticCharts() {
+    ["activity", "rawActivity", "release", "msrpYear", "msrpTier"].forEach(key => replaceDashboardChart(key, null, null));
+}
+
+function renderDashboardCharts() {
+    const indexData = filteredIndexHistory();
+    const rawData = filteredRawHistory();
+
+    const indexCanvas = document.getElementById("marketIndexChart");
+    if (indexCanvas && indexData.labels.length) {
+        replaceDashboardChart("index", indexCanvas, {
+            type: "line",
+            data: {
+                labels: indexData.labels,
+                datasets: indexData.datasets.map(function(dataset) {
+                    return {
+                        label: dataset.label,
+                        data: dataset.values,
+                        borderWidth: dataset.label === "Overall Market" ? 3 : 2,
+                        pointRadius: dataset.label === "Overall Market" ? 2 : 1,
+                        pointHoverRadius: 5,
+                        tension: 0.25,
+                        spanGaps: true,
+                        contributorCounts: dataset.contributors,
+                    };
+                }),
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {mode: "index", intersect: false},
+                onClick: dashboardChartClick((el, chart) => `index:${chart.data.datasets[el.datasetIndex].label}:${indexData.months[el.index]}`),
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            afterLabel: function(context) {
+                                const counts = context.dataset.contributorCounts || [];
+                                const count = counts[context.dataIndex] || 0;
+                                return "Same-IEM contributors: " + count;
+                            },
+                        },
+                    },
                 },
-                {
-                    type: "line",
-                    label: "Distinct IEMs",
-                    data: marketActivityPayload.distinct_iems,
-                    yAxisID: "y1",
-                    borderWidth: 2,
-                    pointRadius: 2,
-                    tension: 0.25
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            interaction: {mode: "index", intersect: false},
-            onClick: dashboardChartClick((el) => `activity:${marketActivityPayload.months[el.index]}`),
-            plugins: {
-                tooltip: {
-                    callbacks: {
-                        footer: function(items) {
-                            if (!items.length) return "";
-                            const idx = items[0].dataIndex;
-                            const price = marketActivityPayload.median_sale_price[idx];
-                            return price === null || price === undefined ? "" : "Median observed sale: $" + Math.round(price).toLocaleString();
-                        }
-                    }
-                }
+                scales: {y: {title: {display: true, text: "Index (Jan 2024 = 100)"}}},
             },
-            scales: {
-                y: {beginAtZero: true, title: {display: true, text: "Clean sales"}},
-                y1: {beginAtZero: true, position: "right", grid: {drawOnChartArea: false}, title: {display: true, text: "Distinct IEMs"}}
-            }
-        }
-    });
-}
+        });
+    } else {
+        replaceDashboardChart("index", null, null);
+    }
 
-const rawActivityCanvas = document.getElementById("rawMarketActivityChart");
-if (rawActivityCanvas && rawHistoryPayload.labels.length) {
-    new Chart(rawActivityCanvas, {
-        data: {
-            labels: rawHistoryPayload.labels,
-            datasets: [
-                {type: "bar", label: "Priced listings", data: rawHistoryPayload.priced_listings, yAxisID: "y"},
-                {type: "line", label: "Distinct IEMs listed", data: rawHistoryPayload.distinct_listed_iems, yAxisID: "y1", borderWidth: 2, pointRadius: 1, tension: 0.2},
-                {type: "line", label: "Distinct IEMs closed", data: rawHistoryPayload.distinct_traded_iems, yAxisID: "y1", borderWidth: 2, pointRadius: 1, borderDash: [6, 4], tension: 0.2}
-            ]
-        },
-        options: {
-            responsive: true, maintainAspectRatio: false, interaction: {mode: "index", intersect: false},
-            onClick: dashboardChartClick((el) => `raw-activity:${rawHistoryPayload.months[el.index]}`),
-            scales: {
-                y: {beginAtZero: true, title: {display: true, text: "Priced listings"}},
-                y1: {beginAtZero: true, position: "right", grid: {drawOnChartArea: false}, title: {display: true, text: "Distinct IEM models"}}
-            }
-        }
-    });
-}
+    const rawPriceCanvas = document.getElementById("rawSecondaryPriceChart");
+    if (rawPriceCanvas && rawData.labels.length) {
+        replaceDashboardChart("rawPrice", rawPriceCanvas, {
+            type: "line",
+            data: {
+                labels: rawData.labels,
+                datasets: [
+                    {label: "75th percentile", data: rawData.p75_price, borderWidth: 1, pointRadius: 0, borderDash: [5, 4], tension: 0.2, spanGaps: true},
+                    {label: "Median closed price", data: rawData.median_price, borderWidth: 3, pointRadius: 2, tension: 0.2, spanGaps: true},
+                    {label: "25th percentile", data: rawData.p25_price, borderWidth: 1, pointRadius: 0, borderDash: [5, 4], tension: 0.2, spanGaps: true},
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {mode: "index", intersect: false},
+                onClick: dashboardChartClick((el) => `raw-price:${rawData.months[el.index]}`),
+                plugins: {
+                    tooltip: {callbacks: {footer: function(items) {
+                        if (!items.length) return "";
+                        const idx = items[0].dataIndex;
+                        return "Closed listings: " + (rawData.closed_listings[idx] || 0);
+                    }}},
+                },
+                scales: {y: {title: {display: true, text: "Price USD"}}},
+            },
+        });
+    } else {
+        replaceDashboardChart("rawPrice", null, null);
+    }
 
-const rawPriceCanvas = document.getElementById("rawSecondaryPriceChart");
-if (rawPriceCanvas && rawHistoryPayload.labels.length) {
-    new Chart(rawPriceCanvas, {
-        type: "line",
-        data: {
-            labels: rawHistoryPayload.labels,
-            datasets: [
-                {label: "75th percentile", data: rawHistoryPayload.p75_price, borderWidth: 1, pointRadius: 0, borderDash: [5, 4], tension: 0.2, spanGaps: true},
-                {label: "Median closed price", data: rawHistoryPayload.median_price, borderWidth: 3, pointRadius: 2, tension: 0.2, spanGaps: true},
-                {label: "25th percentile", data: rawHistoryPayload.p25_price, borderWidth: 1, pointRadius: 0, borderDash: [5, 4], tension: 0.2, spanGaps: true}
-            ]
-        },
-        options: {
-            responsive: true, maintainAspectRatio: false, interaction: {mode: "index", intersect: false},
-            onClick: dashboardChartClick((el) => `raw-price:${rawHistoryPayload.months[el.index]}`),
-            plugins: {
-                tooltip: {callbacks: {footer: function(items) {
+    if (!dashboardDiagnostics?.open) {
+        clearDiagnosticCharts();
+        return;
+    }
+
+    const activityData = filteredActivityHistory();
+    const releaseData = filteredReleaseHistory();
+    const msrpData = filteredMsrpHistory();
+    const msrpTierData = filteredMsrpTierHistory();
+
+    const activityCanvas = document.getElementById("marketActivityChart");
+    if (activityCanvas && activityData.labels.length) {
+        replaceDashboardChart("activity", activityCanvas, {
+            data: {
+                labels: activityData.labels,
+                datasets: [
+                    {type: "bar", label: "Clean closed sales", data: activityData.clean_sales, yAxisID: "y"},
+                    {type: "line", label: "Distinct IEMs", data: activityData.distinct_iems, yAxisID: "y1", borderWidth: 2, pointRadius: 2, tension: 0.25},
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {mode: "index", intersect: false},
+                onClick: dashboardChartClick((el) => `activity:${activityData.months[el.index]}`),
+                plugins: {tooltip: {callbacks: {footer: function(items) {
                     if (!items.length) return "";
                     const idx = items[0].dataIndex;
-                    return "Closed listings: " + (rawHistoryPayload.closed_listings[idx] || 0);
-                }}}
+                    const price = activityData.median_sale_price[idx];
+                    return price === null || price === undefined ? "" : "Median observed sale: $" + Math.round(price).toLocaleString();
+                }}}},
+                scales: {
+                    y: {beginAtZero: true, title: {display: true, text: "Clean sales"}},
+                    y1: {beginAtZero: true, position: "right", grid: {drawOnChartArea: false}, title: {display: true, text: "Distinct IEMs"}},
+                },
             },
-            scales: {y: {title: {display: true, text: "Price USD"}}}
-        }
-    });
+        });
+    } else {
+        replaceDashboardChart("activity", null, null);
+    }
+
+    const rawActivityCanvas = document.getElementById("rawMarketActivityChart");
+    if (rawActivityCanvas && rawData.labels.length) {
+        replaceDashboardChart("rawActivity", rawActivityCanvas, {
+            data: {
+                labels: rawData.labels,
+                datasets: [
+                    {type: "bar", label: "Priced listings", data: rawData.priced_listings, yAxisID: "y"},
+                    {type: "line", label: "Distinct IEMs listed", data: rawData.distinct_listed_iems, yAxisID: "y1", borderWidth: 2, pointRadius: 1, tension: 0.2},
+                    {type: "line", label: "Distinct IEMs closed", data: rawData.distinct_traded_iems, yAxisID: "y1", borderWidth: 2, pointRadius: 1, borderDash: [6, 4], tension: 0.2},
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {mode: "index", intersect: false},
+                onClick: dashboardChartClick((el) => `raw-activity:${rawData.months[el.index]}`),
+                scales: {
+                    y: {beginAtZero: true, title: {display: true, text: "Priced listings"}},
+                    y1: {beginAtZero: true, position: "right", grid: {drawOnChartArea: false}, title: {display: true, text: "Distinct IEM models"}},
+                },
+            },
+        });
+    } else {
+        replaceDashboardChart("rawActivity", null, null);
+    }
+
+    const releaseCanvas = document.getElementById("releaseCountChart");
+    if (releaseCanvas && releaseData.labels.length) {
+        replaceDashboardChart("release", releaseCanvas, {
+            type: "bar",
+            data: {labels: releaseData.labels, datasets: [{label: "Cataloged IEM releases", data: releaseData.counts}]},
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                onClick: dashboardChartClick((el, chart) => `release:${chart.data.labels[el.index]}`),
+                scales: {y: {beginAtZero: true, title: {display: true, text: "IEM models"}}},
+            },
+        });
+    } else {
+        replaceDashboardChart("release", null, null);
+    }
+
+    const msrpYearCanvas = document.getElementById("msrpByYearChart");
+    if (msrpYearCanvas && msrpData.labels.length) {
+        replaceDashboardChart("msrpYear", msrpYearCanvas, {
+            type: "line",
+            data: {
+                labels: msrpData.labels,
+                datasets: [
+                    {label: "75th percentile MSRP", data: msrpData.p75, borderWidth: 1, pointRadius: 1, borderDash: [5, 4], tension: 0.2},
+                    {label: "Median MSRP", data: msrpData.median, borderWidth: 3, pointRadius: 3, tension: 0.2},
+                    {label: "25th percentile MSRP", data: msrpData.p25, borderWidth: 1, pointRadius: 1, borderDash: [5, 4], tension: 0.2},
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {mode: "index", intersect: false},
+                onClick: dashboardChartClick((el, chart) => `msrp:${chart.data.labels[el.index]}`),
+                plugins: {tooltip: {callbacks: {footer: function(items) {
+                    if (!items.length) return "";
+                    const idx = items[0].dataIndex;
+                    return "Products with MSRP: " + (msrpData.counts[idx] || 0);
+                }}}},
+                scales: {y: {beginAtZero: true, title: {display: true, text: "Original MSRP USD"}}},
+            },
+        });
+    } else {
+        replaceDashboardChart("msrpYear", null, null);
+    }
+
+    const msrpTierCanvas = document.getElementById("msrpTierReleaseChart");
+    if (msrpTierCanvas && msrpTierData.labels.length) {
+        replaceDashboardChart("msrpTier", msrpTierCanvas, {
+            type: "bar",
+            data: {labels: msrpTierData.labels, datasets: msrpTierData.datasets},
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                onClick: dashboardChartClick((el, chart) => `tier-release:${chart.data.datasets[el.datasetIndex].label}:${chart.data.labels[el.index]}`),
+                plugins: {tooltip: {mode: "index", intersect: false}},
+                scales: {x: {stacked: true}, y: {stacked: true, beginAtZero: true, title: {display: true, text: "Cataloged releases"}}},
+            },
+        });
+    } else {
+        replaceDashboardChart("msrpTier", null, null);
+    }
 }
 
-const releaseCanvas = document.getElementById("releaseCountChart");
-if (releaseCanvas && releaseHistoryPayload.labels.length) {
-    new Chart(releaseCanvas, {
-        type: "bar",
-        data: {labels: releaseHistoryPayload.labels, datasets: [{label: "Cataloged IEM releases", data: releaseHistoryPayload.counts}]},
-        options: {responsive: true, maintainAspectRatio: false, onClick: dashboardChartClick((el) => `release:${releaseHistoryPayload.labels[el.index]}`), scales: {y: {beginAtZero: true, title: {display: true, text: "IEM models"}}}}
-    });
-}
-
-const msrpYearCanvas = document.getElementById("msrpByYearChart");
-if (msrpYearCanvas && msrpHistoryPayload.labels.length) {
-    new Chart(msrpYearCanvas, {
-        type: "line",
-        data: {
-            labels: msrpHistoryPayload.labels,
-            datasets: [
-                {label: "75th percentile MSRP", data: msrpHistoryPayload.p75, borderWidth: 1, pointRadius: 1, borderDash: [5, 4], tension: 0.2},
-                {label: "Median MSRP", data: msrpHistoryPayload.median, borderWidth: 3, pointRadius: 3, tension: 0.2},
-                {label: "25th percentile MSRP", data: msrpHistoryPayload.p25, borderWidth: 1, pointRadius: 1, borderDash: [5, 4], tension: 0.2}
-            ]
-        },
-        options: {
-            responsive: true, maintainAspectRatio: false, interaction: {mode: "index", intersect: false},
-            onClick: dashboardChartClick((el) => `msrp:${msrpHistoryPayload.labels[el.index]}`),
-            plugins: {tooltip: {callbacks: {footer: function(items) {
-                if (!items.length) return "";
-                const idx = items[0].dataIndex;
-                return "Products with MSRP: " + (msrpHistoryPayload.counts[idx] || 0);
-            }}}},
-            scales: {y: {beginAtZero: true, title: {display: true, text: "Original MSRP USD"}}}
-        }
-    });
-}
-
-const msrpTierCanvas = document.getElementById("msrpTierReleaseChart");
-if (msrpTierCanvas && msrpTierHistoryPayload.labels.length) {
-    new Chart(msrpTierCanvas, {
-        type: "bar",
-        data: {labels: msrpTierHistoryPayload.labels, datasets: msrpTierHistoryPayload.datasets},
-        options: {
-            responsive: true, maintainAspectRatio: false,
-            onClick: dashboardChartClick((el, chart) => `tier-release:${chart.data.datasets[el.datasetIndex].label}:${msrpTierHistoryPayload.labels[el.index]}`),
-            plugins: {tooltip: {mode: "index", intersect: false}},
-            scales: {x: {stacked: true}, y: {stacked: true, beginAtZero: true, title: {display: true, text: "Cataloged releases"}}}
-        }
-    });
-}
+dashboardHistoryRange?.addEventListener("change", renderDashboardCharts);
+dashboardDiagnostics?.addEventListener("toggle", () => requestAnimationFrame(renderDashboardCharts));
+renderDashboardCharts();
 </script>
 
     <footer class="site-footer">
