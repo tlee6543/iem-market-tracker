@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -694,7 +694,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-07-24</td>
 <td>$450</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8471_json=403:len189908</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -707,7 +707,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Empire Ears EVR", "raw_text": "Empire Ears EVR - $450 shipped via UPS and fully insured within CONUS.\nPlease add 4% for PayPal G&S or no extra fees with PayPal F&F or Zelle.", "seller_username": "Dr-Soot", "url": "https://old.reddit.com/r/AVexchange/comments/1v5o4t1/wtsusmdh_hedd_d1_headphones_and_empire_ears_evr/#item-2", "price_num": 450.0, "date_ms": 1784927331000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8471_json=403:len189908", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}];
+const allRows = [{"row_id": 0, "title": "Empire Ears EVR", "raw_text": "Empire Ears EVR - $450 shipped via UPS and fully insured within CONUS.\nPlease add 4% for PayPal G&S or no extra fees with PayPal F&F or Zelle.", "seller_username": "Dr-Soot", "url": "https://old.reddit.com/r/AVexchange/comments/1v5o4t1/wtsusmdh_hedd_d1_headphones_and_empire_ears_evr/#item-2", "price_num": 450.0, "date_ms": 1784927331000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}];
 const originalMsrpUsd = 699.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

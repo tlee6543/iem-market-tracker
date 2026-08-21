@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -694,7 +694,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-09</td>
 <td>$950</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -710,7 +710,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-08</td>
 <td>$950</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=200:len317995_page=200:len316182_json=200:len318190</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td>like new</td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -723,7 +723,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Thieaudio V16 Divinity Like New", "raw_text": "Thieaudio V16 Divinity Like New Listing ID: 113604 For Sale 950.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Reducing the collection. Original owner from a smoke-free / pet-free home. Thieaudio V16 Divinity - Like New Condition. Includes all original items. Original Owner and purchased in the last 60 days new from Bloom. Price is net of PayPal fees... Listed by: djkindred (75) Listed: 2026-08-09", "seller_username": "djkindred", "url": "https://www.head-fi.org/classifieds/thieaudio-v16-divinity-like-new.113604/", "price_num": 950.0, "date_ms": 1786233600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Thieaudio V16 Divinity", "raw_text": "Thieaudio V16 Divinity - Like New Condition. Includes all original items. Original Owner and purchased in the last 60 days new from Bloom. $950", "seller_username": "djkindred", "url": "https://www.reddit.com/r/AVexchange/comments/1vj6zsa/wts_usatx_h_thieaudio_v16_divinity_letshuoer/#item-1", "price_num": 950.0, "date_ms": 1786222936000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len317995_page=200:len316182_json=200:len318190", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}];
+const allRows = [{"row_id": 0, "title": "Thieaudio V16 Divinity Like New", "raw_text": "Thieaudio V16 Divinity Like New Listing ID: 113604 For Sale 950.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Reducing the collection. Original owner from a smoke-free / pet-free home. Thieaudio V16 Divinity - Like New Condition. Includes all original items. Original Owner and purchased in the last 60 days new from Bloom. Price is net of PayPal fees... Listed by: djkindred (75) Listed: 2026-08-09", "seller_username": "djkindred", "url": "https://www.head-fi.org/classifieds/thieaudio-v16-divinity-like-new.113604/", "price_num": 950.0, "date_ms": 1786233600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Thieaudio V16 Divinity", "raw_text": "Thieaudio V16 Divinity - Like New Condition. Includes all original items. Original Owner and purchased in the last 60 days new from Bloom. $950", "seller_username": "djkindred", "url": "https://www.reddit.com/r/AVexchange/comments/1vj6zsa/wts_usatx_h_thieaudio_v16_divinity_letshuoer/#item-1", "price_num": 950.0, "date_ms": 1786222936000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}];
 const originalMsrpUsd = 1500.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

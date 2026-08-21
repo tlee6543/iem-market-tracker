@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -694,7 +694,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-04</td>
 <td>$5,700</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">headfi_page_loaded_unclear_status__headfi_diag_http=200_html=48677_visible=2296_classifieds=1_listing_id=0_contact=0_views=0_for_sale=0_for_trade=0_sold=0_closed=0_expired=0_condition=0_challenge=0_title_match=0_windows=1</td>
+<td class="status-reason">Status unclear</td>
 <td>like new, excellent, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -710,7 +710,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-06-21</td>
 <td>$6,800</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+<td class="status-reason">Head-Fi check pending</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>

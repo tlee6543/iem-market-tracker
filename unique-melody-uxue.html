@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -691,7 +691,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-06-29</td>
 <td></td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=200:len318002_page=200:len317965_json=200:len318169</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -707,7 +707,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-06-24</td>
 <td></td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=200:len318021_page=200:len316019_json=200:len318259</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -723,7 +723,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-06-18</td>
 <td>$230</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason">confirmed sold from source check</td>
+<td class="status-reason">Sale confirmed</td>
 <td>mint</td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -739,7 +739,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-05-29</td>
 <td>$200</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason">confirmed sold from source check</td>
+<td class="status-reason">Sale confirmed</td>
 <td>used</td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -752,7 +752,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Unique Melody UXUE, Apevoix Nebula", "raw_text": "submitted by /u/mzup87\n[link] [comments]", "seller_username": "mzup87", "url": "https://old.reddit.com/r/AVexchange/comments/1uit4on/wts_usmn_h_unique_melody_uxue_apevoix_nebula_w/#item-1", "price_num": null, "date_ms": 1782741148000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len318002_page=200:len317965_json=200:len318169", "notes": "reddit_rss_parser_v13_item_level_sold_and_strikethrough_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Unique Melody UXUE, Apevoix Nebula", "raw_text": "submitted by /u/mzup87\n[link] [comments]", "seller_username": "mzup87", "url": "https://old.reddit.com/r/AVexchange/comments/1ueleat/wts_usmn_h_unique_melody_uxue_apevoix_nebula_w/#item-1", "price_num": null, "date_ms": 1782325102000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len318021_page=200:len316019_json=200:len318259", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Unique Melody UXUE (Mint/Boxed)", "raw_text": "* Unique Melody UXUE (Mint/Boxed) - $230: Flawless cosmetic and functional condition. Incredible hybrid performance with UM's signature implementation. Includes the complete retail presentation and all original accessories.", "seller_username": "mzup87", "url": "https://old.reddit.com/r/AVexchange/comments/1u9dhcg/wts_usmn_h_unique_melody_uxue_apevoix_nebula_w/#item-1", "price_num": 230.0, "date_ms": 1781805596000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "Unique Melody Uxue TWS", "raw_text": "Unique Melody Uxue TWS - $200 Net OBO.\nDiscount if you buy 2 or more! Will ship free via UPS Ground to CONUS. Elsewhere please inquire.\nsubmitted by /u/abemusedman\n[link] [comments]", "seller_username": "abemusedman", "url": "https://old.reddit.com/r/AVexchange/comments/1trdi21/wtsustxhcouple_of_mint_iems_aful_dawnx_apevoix/#item-3", "price_num": 200.0, "date_ms": 1780084099000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=unique melody | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}];
+const allRows = [{"row_id": 0, "title": "Unique Melody UXUE, Apevoix Nebula", "raw_text": "submitted by /u/mzup87\n[link] [comments]", "seller_username": "mzup87", "url": "https://old.reddit.com/r/AVexchange/comments/1uit4on/wts_usmn_h_unique_melody_uxue_apevoix_nebula_w/#item-1", "price_num": null, "date_ms": 1782741148000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v13_item_level_sold_and_strikethrough_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 1, "title": "Unique Melody UXUE, Apevoix Nebula", "raw_text": "submitted by /u/mzup87\n[link] [comments]", "seller_username": "mzup87", "url": "https://old.reddit.com/r/AVexchange/comments/1ueleat/wts_usmn_h_unique_melody_uxue_apevoix_nebula_w/#item-1", "price_num": null, "date_ms": 1782325102000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v11_title_price_fallback_preserve_existing_price | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Unique Melody UXUE (Mint/Boxed)", "raw_text": "* Unique Melody UXUE (Mint/Boxed) - $230: Flawless cosmetic and functional condition. Incredible hybrid performance with UM's signature implementation. Includes the complete retail presentation and all original accessories.", "seller_username": "mzup87", "url": "https://old.reddit.com/r/AVexchange/comments/1u9dhcg/wts_usmn_h_unique_melody_uxue_apevoix_nebula_w/#item-1", "price_num": 230.0, "date_ms": 1781805596000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "Unique Melody Uxue TWS", "raw_text": "Unique Melody Uxue TWS - $200 Net OBO.\nDiscount if you buy 2 or more! Will ship free via UPS Ground to CONUS. Elsewhere please inquire.\nsubmitted by /u/abemusedman\n[link] [comments]", "seller_username": "abemusedman", "url": "https://old.reddit.com/r/AVexchange/comments/1trdi21/wtsustxhcouple_of_mint_iems_aful_dawnx_apevoix/#item-3", "price_num": 200.0, "date_ms": 1780084099000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=unique melody | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

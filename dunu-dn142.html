@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -694,7 +694,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-17</td>
 <td>$200</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8470_json=403:len189908</td>
+<td class="status-reason">No sale detected</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -710,7 +710,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-17</td>
 <td>$200</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8470_json=429:len0</td>
+<td class="status-reason">No sale detected</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -723,7 +723,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Dunu DN142 In Ear Monitor", "raw_text": "submitted by /u/SteelCityChampion\n[link] [comments]", "seller_username": "SteelCityChampion", "url": "https://www.reddit.com/r/AVexchange/comments/1vr7hfc/wts_ukshf_h_dunu_dn142_in_ear_monitor_w_paypal/#item-1", "price_num": 200.0, "date_ms": 1787006921000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8470_json=403:len189908", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Dunu DN142 In Ear Monitor", "raw_text": "submitted by /u/SteelCityChampion\n[link] [comments]", "seller_username": "SteelCityChampion", "url": "https://www.reddit.com/r/AVexchange/comments/1vqnoq4/wts_ukshf_h_dunu_dn142_in_ear_monitor_w_paypal/#item-1", "price_num": 200.0, "date_ms": 1786959749000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8470_json=429:len0", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}];
+const allRows = [{"row_id": 0, "title": "Dunu DN142 In Ear Monitor", "raw_text": "submitted by /u/SteelCityChampion\n[link] [comments]", "seller_username": "SteelCityChampion", "url": "https://www.reddit.com/r/AVexchange/comments/1vr7hfc/wts_ukshf_h_dunu_dn142_in_ear_monitor_w_paypal/#item-1", "price_num": 200.0, "date_ms": 1787006921000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len318019_page=200:len122617_json=200:len318223", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Dunu DN142 In Ear Monitor", "raw_text": "submitted by /u/SteelCityChampion\n[link] [comments]", "seller_username": "SteelCityChampion", "url": "https://www.reddit.com/r/AVexchange/comments/1vqnoq4/wts_ukshf_h_dunu_dn142_in_ear_monitor_w_paypal/#item-1", "price_num": 200.0, "date_ms": 1786959749000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len318027_page=200:len318015_json=200:len318240", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}];
 const originalMsrpUsd = 250.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

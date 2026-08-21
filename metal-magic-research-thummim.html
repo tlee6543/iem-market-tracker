@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -691,7 +691,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2023-10-22</td>
 <td>$1,700</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -707,7 +707,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2023-10-17</td>
 <td>$1,790</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -723,7 +723,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2023-09-22</td>
 <td>$2,050</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -739,7 +739,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2023-09-22</td>
 <td>$1,800</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -755,7 +755,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2023-09-18</td>
 <td>$2,050</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -771,7 +771,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2023-04-16</td>
 <td>$1,650</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td></td>
 <td>1</td>
 <td>headfi</td>
@@ -787,7 +787,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2023-02-18</td>
 <td>$1,918</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>1</td>
 <td>headfi</td>
@@ -803,7 +803,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2022-12-30</td>
 <td>$1,900</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -819,7 +819,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2022-06-15</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td></td>
 <td>0</td>
 <td>headfi</td>
@@ -835,7 +835,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2022-02-18</td>
 <td>$2,700</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -851,7 +851,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2022-01-08</td>
 <td>$2,050</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -867,7 +867,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2021-11-29</td>
 <td>$2,799</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -883,7 +883,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2021-11-19</td>
 <td>$2,500</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -899,7 +899,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2021-11-04</td>
 <td>$2,100</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -915,7 +915,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2021-09-27</td>
 <td>$2,350</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -931,7 +931,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2021-09-20</td>
 <td>$1,999</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -947,7 +947,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2021-06-22</td>
 <td>$3,100</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -963,7 +963,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2021-04-11</td>
 <td>$3,550</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -979,7 +979,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2021-04-03</td>
 <td>$3,550</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>

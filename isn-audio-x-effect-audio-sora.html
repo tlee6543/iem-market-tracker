@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -694,7 +694,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-07</td>
 <td>$210</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -710,7 +710,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-07-07</td>
 <td>$300</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8452_json=429:len0</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td>isn sora</td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -726,7 +726,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-07-07</td>
 <td>$300</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason">confirmed sold from Head-Fi extension source check</td>
+<td class="status-reason">Sale confirmed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -742,7 +742,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-07-03</td>
 <td>$275</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=200:len317947_page=200:len317939_json=200:len318143</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -755,7 +755,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "ISN Audio x Effect Audio Sora", "raw_text": "ISN Audio x Effect Audio Sora Listing ID: 113528 For Sale 210.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Another set of splendid IEM\u2019s up for grabs. They sound great and reviews back me up on that. Low hours. No box. Comes with original Effect Audio cable terminated 4.4mm, original case, and assorted tips. More pics will come later. Free shipping... Listed by: trojan2900 (707) Listed: 2026-08-07", "seller_username": "trojan2900", "url": "https://www.head-fi.org/classifieds/isn-audio-x-effect-audio-sora.113528/", "price_num": 210.0, "date_ms": 1786060800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "ISN Sora", "raw_text": "Selling excellent condition ISN Sora. Comes with stock packaging, eartips, and accessories listed in picture. Cable is 4.4mm termination.\nWill ship within 24 hours of purchase. Let me know if you have any questions!\n$300 G&S / OBO F&F\nsubmitted by /u/jfleysh\n[link] [comments]", "seller_username": "jfleysh", "url": "https://old.reddit.com/r/AVexchange/comments/1upxruj/wtsusafl_h_isn_sora_w_paypal/#item-1", "price_num": 300.0, "date_ms": 1783436711000, "listing_status": "active", "condition_text": "isn sora", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8452_json=429:len0", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 2, "title": "ISN Sora", "raw_text": "ISN Sora\nListing ID: 111835\nFor Sale 300.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To United States Of America\nSelling excellent condition ISN Sora. Comes with stock packaging, eartips, and accessories listed in picture. Cable is 4.4mm termination. Will ship within 24 hours of purchase. Let me know if you have any questions!\nListed by: jfleysh (64)\nListed: 2026-07-07", "seller_username": "jfleysh", "url": "https://www.head-fi.org/classifieds/isn-sora.111835/", "price_num": 300.0, "date_ms": 1783382400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "category_listing_id_text_fallback_v8 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 3, "title": "ISN Sora IEM", "raw_text": "Up for sale is this beautiful IEM from Penon/ISN, a 2DD/2 BA/1 BCD/ 2 Microplanar set.\nThe Sora is an incredible set that punches waaay above its weight . Beautiful pearl-like face plates and a bespoke Effect audio Cable. Has 2 tuning switches that provide 4 distinct profiles. The bassy tuning is quite Basshead, but not a touch of muddiness . Great soundstage due to the BC implementation . Honestly if I were not living in summit fi, this might be the most impressive set I\u2019ve owned (along with the Que)\n$OLD shipped CONUS via PayPal Friends and Fam or Zelle\nsubmitted by /u/BaddAsh13\n[link] [comments]", "seller_username": "BaddAsh13", "url": "https://old.reddit.com/r/AVexchange/comments/1ump4zs/wtsusawah_isn_sora_iem_w_paypal_or_zelle/#item-1", "price_num": 275.0, "date_ms": 1783110324000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len317947_page=200:len317939_json=200:len318143", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | preserved_existing_price_on_missing_reparse | active_status_checker_verified_or_left_active"}];
+const allRows = [{"row_id": 0, "title": "ISN Audio x Effect Audio Sora", "raw_text": "ISN Audio x Effect Audio Sora Listing ID: 113528 For Sale 210.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Another set of splendid IEM\u2019s up for grabs. They sound great and reviews back me up on that. Low hours. No box. Comes with original Effect Audio cable terminated 4.4mm, original case, and assorted tips. More pics will come later. Free shipping... Listed by: trojan2900 (707) Listed: 2026-08-07", "seller_username": "trojan2900", "url": "https://www.head-fi.org/classifieds/isn-audio-x-effect-audio-sora.113528/", "price_num": 210.0, "date_ms": 1786060800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "ISN Sora", "raw_text": "Selling excellent condition ISN Sora. Comes with stock packaging, eartips, and accessories listed in picture. Cable is 4.4mm termination.\nWill ship within 24 hours of purchase. Let me know if you have any questions!\n$300 G&S / OBO F&F\nsubmitted by /u/jfleysh\n[link] [comments]", "seller_username": "jfleysh", "url": "https://old.reddit.com/r/AVexchange/comments/1upxruj/wtsusafl_h_isn_sora_w_paypal/#item-1", "price_num": 300.0, "date_ms": 1783436711000, "listing_status": "active", "condition_text": "isn sora", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 2, "title": "ISN Sora", "raw_text": "ISN Sora\nListing ID: 111835\nFor Sale 300.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To United States Of America\nSelling excellent condition ISN Sora. Comes with stock packaging, eartips, and accessories listed in picture. Cable is 4.4mm termination. Will ship within 24 hours of purchase. Let me know if you have any questions!\nListed by: jfleysh (64)\nListed: 2026-07-07", "seller_username": "jfleysh", "url": "https://www.head-fi.org/classifieds/isn-sora.111835/", "price_num": 300.0, "date_ms": 1783382400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "category_listing_id_text_fallback_v8 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 3, "title": "ISN Sora IEM", "raw_text": "Up for sale is this beautiful IEM from Penon/ISN, a 2DD/2 BA/1 BCD/ 2 Microplanar set.\nThe Sora is an incredible set that punches waaay above its weight . Beautiful pearl-like face plates and a bespoke Effect audio Cable. Has 2 tuning switches that provide 4 distinct profiles. The bassy tuning is quite Basshead, but not a touch of muddiness . Great soundstage due to the BC implementation . Honestly if I were not living in summit fi, this might be the most impressive set I\u2019ve owned (along with the Que)\n$OLD shipped CONUS via PayPal Friends and Fam or Zelle\nsubmitted by /u/BaddAsh13\n[link] [comments]", "seller_username": "BaddAsh13", "url": "https://old.reddit.com/r/AVexchange/comments/1ump4zs/wtsusawah_isn_sora_iem_w_paypal_or_zelle/#item-1", "price_num": 275.0, "date_ms": 1783110324000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | preserved_existing_price_on_missing_reparse | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}];
 const originalMsrpUsd = 440.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

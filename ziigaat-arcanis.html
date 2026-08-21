@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -694,7 +694,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-07-16</td>
 <td>$260</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8467_json=403:len189908</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td>the unused stock cable</td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -710,7 +710,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-03-17</td>
 <td>$210</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -726,7 +726,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-01-15</td>
 <td>$250</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -739,7 +739,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Ziigaat Arcanis IEM", "raw_text": "$260, Shipping included in price. Accept Paypal F&F or G&S.\nMint Condition: the unused stock cable, ear tips, and case included.\nEverything fully sanitized and cleaned.\n*Note* The original memory foam tips were discarded for hygienic reasons and are not included.\nPlease comment on this post before sending a PM.\nsubmitted by /u/Caelumii\n[link] [comments]", "seller_username": "Caelumii", "url": "https://old.reddit.com/r/AVexchange/comments/1uy70d4/wts_uspa_h_ziigaat_arcanis_iem_w_paypal_260/#item-1", "price_num": 260.0, "date_ms": 1784217695000, "listing_status": "active", "condition_text": "the unused stock cable", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8467_json=403:len189908", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Ziigaat Arcanis", "raw_text": "[SOLD] Ziigaat Arcanis - $210 (No box, includes 3rd party cable)\nsubmitted by /u/TheDeliBoyChronicles\n[link] [comments]", "seller_username": "TheDeliBoyChronicles", "url": "https://old.reddit.com/r/AVexchange/comments/1rwa988/wts_usnyc_h_crinear_daybreak_ziigaat_arcanis_w/#item-2", "price_num": 210.0, "date_ms": 1773762431000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=crinear"}, {"row_id": 2, "title": "Ziigaat Arcanis", "raw_text": "Ziigaat Arcanis - $250", "seller_username": "Roydashme", "url": "https://old.reddit.com/r/AVexchange/comments/1qd6n14/wts_usaca_h_assortment_of_iems_w_paypal/#item-9", "price_num": 250.0, "date_ms": 1768442432000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kefine"}];
+const allRows = [{"row_id": 0, "title": "Ziigaat Arcanis IEM", "raw_text": "$260, Shipping included in price. Accept Paypal F&F or G&S.\nMint Condition: the unused stock cable, ear tips, and case included.\nEverything fully sanitized and cleaned.\n*Note* The original memory foam tips were discarded for hygienic reasons and are not included.\nPlease comment on this post before sending a PM.\nsubmitted by /u/Caelumii\n[link] [comments]", "seller_username": "Caelumii", "url": "https://old.reddit.com/r/AVexchange/comments/1uy70d4/wts_uspa_h_ziigaat_arcanis_iem_w_paypal_260/#item-1", "price_num": 260.0, "date_ms": 1784217695000, "listing_status": "active", "condition_text": "the unused stock cable", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 1, "title": "Ziigaat Arcanis", "raw_text": "[SOLD] Ziigaat Arcanis - $210 (No box, includes 3rd party cable)\nsubmitted by /u/TheDeliBoyChronicles\n[link] [comments]", "seller_username": "TheDeliBoyChronicles", "url": "https://old.reddit.com/r/AVexchange/comments/1rwa988/wts_usnyc_h_crinear_daybreak_ziigaat_arcanis_w/#item-2", "price_num": 210.0, "date_ms": 1773762431000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=crinear"}, {"row_id": 2, "title": "Ziigaat Arcanis", "raw_text": "Ziigaat Arcanis - $250", "seller_username": "Roydashme", "url": "https://old.reddit.com/r/AVexchange/comments/1qd6n14/wts_usaca_h_assortment_of_iems_w_paypal/#item-9", "price_num": 250.0, "date_ms": 1768442432000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kefine"}];
 const originalMsrpUsd = 399.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

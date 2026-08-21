@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -694,7 +694,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-06-30</td>
 <td>$40</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8471_json=429:len0</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td>excellent</td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -707,7 +707,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "\u200b\ud83d\udd37 Shure SE215 |", "raw_text": "\u200b\ud83d\udd37 Shure SE215 | Price: $40 Shipped\nCondition: Excellent. Clear inner-housing text print verified genuine. Includes stock cable, tip baggie, cleaning tool, and soft oval zipper case. No original retail box.\n\u200b\ud83d\udd0c Turnkey Desktop Bundles & Priority Policies", "seller_username": "cmwells20", "url": "https://old.reddit.com/r/AVexchange/comments/1ujxw7n/wts_usaco_h_massive_gear_clearout_massdrop_koss/#item-9", "price_num": 40.0, "date_ms": 1782845328000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8471_json=429:len0", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}];
+const allRows = [{"row_id": 0, "title": "\u200b\ud83d\udd37 Shure SE215 |", "raw_text": "\u200b\ud83d\udd37 Shure SE215 | Price: $40 Shipped\nCondition: Excellent. Clear inner-housing text print verified genuine. Includes stock cable, tip baggie, cleaning tool, and soft oval zipper case. No original retail box.\n\u200b\ud83d\udd0c Turnkey Desktop Bundles & Priority Policies", "seller_username": "cmwells20", "url": "https://old.reddit.com/r/AVexchange/comments/1ujxw7n/wts_usaco_h_massive_gear_clearout_massdrop_koss/#item-9", "price_num": 40.0, "date_ms": 1782845328000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}];
 const originalMsrpUsd = 119.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

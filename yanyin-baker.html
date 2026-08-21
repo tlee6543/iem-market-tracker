@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -694,7 +694,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-11</td>
 <td>$315</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8465_json=429:len0</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td>for sale</td>
 <td>1</td>
 <td>reddit_rss</td>
@@ -710,7 +710,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-04-17</td>
 <td>$325</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -726,7 +726,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-03-28</td>
 <td>$340</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason">lister never updated</td>
+<td class="status-reason">Stale — no sale confirmed</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -742,7 +742,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-03-21</td>
 <td>$340</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason">lister never updated</td>
+<td class="status-reason">Stale — no sale confirmed</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -755,7 +755,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Yanyin Baker IEMs", "raw_text": "Yanyin Baker IEMs in very good to excellent condition for sale. Great sounding and well built.\nComes with original accessories, case, and box.\n$315 PayPal G&S, includes shipping in continental US\n-8-Driver Hybrid System: 6 BA and 2 Planar each side\n-Aluminum & Damascus Steel Build\n-Interchangeable Plugs for Versatility (3.5 & 4.4mm)\n-Comfortable Fit with Metal Sound Tube\n-High-Quality 6N Copper-Plated Cable\nsubmitted by /u/BackgroundLivid2055\n[link] [comments]", "seller_username": "BackgroundLivid2055", "url": "https://www.reddit.com/r/AVexchange/comments/1vlsgdn/wts_usut_h_yanyin_baker_iems_w_paypal_315/#item-1", "price_num": 315.0, "date_ms": 1786478839000, "listing_status": "active", "condition_text": "for sale", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8465_json=429:len0", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Yanyin Baker", "raw_text": "- Yanyin Baker $325 => $300", "seller_username": "Inspektah94", "url": "https://old.reddit.com/r/AVexchange/comments/1socfyw/wtsusanyh_kefine_klean_sv_yanyin_baker_twistura/#item-3", "price_num": 325.0, "date_ms": 1776457332000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kefine"}, {"row_id": 2, "title": "Yanyin Baker", "raw_text": "- Yanyin Baker: $340", "seller_username": "Inspektah94", "url": "https://old.reddit.com/r/AVexchange/comments/1s69mf2/wtsusanyh_kiwi_ears_etude_kefine_klean_sv_yanyin/#item-2", "price_num": 340.0, "date_ms": 1774726217000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=kefine | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "Yanyin Baker", "raw_text": "- Yanyin Baker : $340\nprices include shipping CONUS. bundle possible.\nnot looking for other trades than AP80 pro max, Onix Xm2 or SMSL pl200/T\nthanks\nsubmitted by /u/Inspektah94\n[link] [comments]", "seller_username": "Inspektah94", "url": "https://old.reddit.com/r/AVexchange/comments/1s02tph/wtsusanyh_kiwi_ears_etude_kefine_klean_sv_yanyin/#item-3", "price_num": 340.0, "date_ms": 1774127274000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=kefine | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}];
+const allRows = [{"row_id": 0, "title": "Yanyin Baker IEMs", "raw_text": "Yanyin Baker IEMs in very good to excellent condition for sale. Great sounding and well built.\nComes with original accessories, case, and box.\n$315 PayPal G&S, includes shipping in continental US\n-8-Driver Hybrid System: 6 BA and 2 Planar each side\n-Aluminum & Damascus Steel Build\n-Interchangeable Plugs for Versatility (3.5 & 4.4mm)\n-Comfortable Fit with Metal Sound Tube\n-High-Quality 6N Copper-Plated Cable\nsubmitted by /u/BackgroundLivid2055\n[link] [comments]", "seller_username": "BackgroundLivid2055", "url": "https://www.reddit.com/r/AVexchange/comments/1vlsgdn/wts_usut_h_yanyin_baker_iems_w_paypal_315/#item-1", "price_num": 315.0, "date_ms": 1786478839000, "listing_status": "active", "condition_text": "for sale", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 1, "title": "Yanyin Baker", "raw_text": "- Yanyin Baker $325 => $300", "seller_username": "Inspektah94", "url": "https://old.reddit.com/r/AVexchange/comments/1socfyw/wtsusanyh_kefine_klean_sv_yanyin_baker_twistura/#item-3", "price_num": 325.0, "date_ms": 1776457332000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kefine"}, {"row_id": 2, "title": "Yanyin Baker", "raw_text": "- Yanyin Baker: $340", "seller_username": "Inspektah94", "url": "https://old.reddit.com/r/AVexchange/comments/1s69mf2/wtsusanyh_kiwi_ears_etude_kefine_klean_sv_yanyin/#item-2", "price_num": 340.0, "date_ms": 1774726217000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=kefine | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "Yanyin Baker", "raw_text": "- Yanyin Baker : $340\nprices include shipping CONUS. bundle possible.\nnot looking for other trades than AP80 pro max, Onix Xm2 or SMSL pl200/T\nthanks\nsubmitted by /u/Inspektah94\n[link] [comments]", "seller_username": "Inspektah94", "url": "https://old.reddit.com/r/AVexchange/comments/1s02tph/wtsusanyh_kiwi_ears_etude_kefine_klean_sv_yanyin/#item-3", "price_num": 340.0, "date_ms": 1774127274000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=kefine | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}];
 const originalMsrpUsd = 499.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

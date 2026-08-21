@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -694,7 +694,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-03</td>
 <td>$185</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8465_json=403:len189908</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td>all accessories and packaging</td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -710,7 +710,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2025-12-27</td>
 <td>$200</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason">lister never updated</td>
+<td class="status-reason">Stale — no sale confirmed</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -726,7 +726,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2025-12-20</td>
 <td>$200</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -739,7 +739,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Ziigaat Crescent", "raw_text": "less than 5hrs on these brand new condition all accessories and packaging. minus a couple eartips. thinning the heard of 20+ iems i bought last couple of months. these just didnt make the cut for 3 or so i am keeping\nCONUS ONLY PAYPAL 185 SHIPPED UPS comment before pm\nsubmitted by /u/Puzzleheaded-Bus-633\n[link] [comments]", "seller_username": "Puzzleheaded-Bus-633", "url": "https://www.reddit.com/r/AVexchange/comments/1veq0yr/wts_useca_h_ziigaat_crescent_w185_shipped/#item-1", "price_num": 185.0, "date_ms": 1785791258000, "listing_status": "active", "condition_text": "all accessories and packaging", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8465_json=403:len189908", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Ziigaat Crescent", "raw_text": "Ziigaat Crescent - $200", "seller_username": "BurnedPopcorn", "url": "https://old.reddit.com/r/AVexchange/comments/1pxb9qj/wts_usca_h_ziigaat_crescent_odyssey_2_epz_p50/#item-1", "price_num": 200.0, "date_ms": 1766876566000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=kefine | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 2, "title": "Ziigaat Crescent", "raw_text": "Ziigaat Crescent - $200", "seller_username": "BurnedPopcorn", "url": "https://old.reddit.com/r/AVexchange/comments/1prqjy8/wts_usaca_h_nicehck_rockies_softears_volume_s/#item-3", "price_num": 200.0, "date_ms": 1766269747000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kefine | auto_repost_duplicate_excluded_keep_latest_120d"}];
+const allRows = [{"row_id": 0, "title": "Ziigaat Crescent", "raw_text": "less than 5hrs on these brand new condition all accessories and packaging. minus a couple eartips. thinning the heard of 20+ iems i bought last couple of months. these just didnt make the cut for 3 or so i am keeping\nCONUS ONLY PAYPAL 185 SHIPPED UPS comment before pm\nsubmitted by /u/Puzzleheaded-Bus-633\n[link] [comments]", "seller_username": "Puzzleheaded-Bus-633", "url": "https://www.reddit.com/r/AVexchange/comments/1veq0yr/wts_useca_h_ziigaat_crescent_w185_shipped/#item-1", "price_num": 185.0, "date_ms": 1785791258000, "listing_status": "active", "condition_text": "all accessories and packaging", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 1, "title": "Ziigaat Crescent", "raw_text": "Ziigaat Crescent - $200", "seller_username": "BurnedPopcorn", "url": "https://old.reddit.com/r/AVexchange/comments/1pxb9qj/wts_usca_h_ziigaat_crescent_odyssey_2_epz_p50/#item-1", "price_num": 200.0, "date_ms": 1766876566000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=kefine | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 2, "title": "Ziigaat Crescent", "raw_text": "Ziigaat Crescent - $200", "seller_username": "BurnedPopcorn", "url": "https://old.reddit.com/r/AVexchange/comments/1prqjy8/wts_usaca_h_nicehck_rockies_softears_volume_s/#item-3", "price_num": 200.0, "date_ms": 1766269747000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kefine | auto_repost_duplicate_excluded_keep_latest_120d"}];
 const originalMsrpUsd = 279.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

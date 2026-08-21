@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -694,7 +694,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-15</td>
 <td>$300</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=200:len318019_page=200:len318014_json=200:len318149</td>
+<td class="status-reason">No sale detected</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -710,7 +710,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-05-30</td>
 <td>$240</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>excellent</td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -726,7 +726,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2025-02-14</td>
 <td>$310</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>with no marks</td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -739,7 +739,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Xenns Top", "raw_text": "Xenns Top - $300.00 (OBO)", "seller_username": "x7xfallen", "url": "https://www.reddit.com/r/AVexchange/comments/1vou021/wtsusanyhhuge_lot_of_iems_headphones_dacs_amps/#item-79", "price_num": 300.0, "date_ms": 1786770793000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len318019_page=200:len318014_json=200:len318149", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Xenns Mangird Top", "raw_text": "Pictures:\nhttps://imgur.com/a/s1nLKeH\nSelling my Xenns Top (OG) I bought from another user last year. Great excellent working condition. Some signs of use. No issues, just not being used and figured they could find a new home.\nWill be cleaned and disinfected before shipping out. Everything you see in the pictures is included.\nAsking $240 Paypal OBO CON-US shipped .\nPlease comment before dm\u2019ing.\nSOLD\nsubmitted by /u/MammmbaE92\n[link] [comments]", "seller_username": "MammmbaE92", "url": "https://old.reddit.com/r/AVexchange/comments/1troxpr/wtsusacah_xenns_mangird_top_w_240/#item-1", "price_num": 240.0, "date_ms": 1780113054000, "listing_status": "closed", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=xenns"}, {"row_id": 2, "title": "Xenns Top", "raw_text": "Xenns Top - $310\nVery good condition with no marks. Function perfectly, have always used with care and stored in case with desiccant. Does not come with stock cable, will include your choice of either OpenHeart 3.5 Cables pictured. Also no stock ear tips but will include unused ear tips if you need some. Everything else included, case, keychain, paperwork.", "seller_username": "4phoneshawty", "url": "https://old.reddit.com/r/AVexchange/comments/1ipfk6z/wts_usma_h_xenns_mangird_top_moondrop_s8_w_paypal/#item-1", "price_num": 310.0, "date_ms": 1739553292000, "listing_status": "closed", "condition_text": "with no marks", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=moondrop s8"}];
+const allRows = [{"row_id": 0, "title": "Xenns Top", "raw_text": "Xenns Top - $300.00 (OBO)", "seller_username": "x7xfallen", "url": "https://www.reddit.com/r/AVexchange/comments/1vou021/wtsusanyhhuge_lot_of_iems_headphones_dacs_amps/#item-79", "price_num": 300.0, "date_ms": 1786770793000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len318051_page=200:len318052_json=200:len125791", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Xenns Mangird Top", "raw_text": "Pictures:\nhttps://imgur.com/a/s1nLKeH\nSelling my Xenns Top (OG) I bought from another user last year. Great excellent working condition. Some signs of use. No issues, just not being used and figured they could find a new home.\nWill be cleaned and disinfected before shipping out. Everything you see in the pictures is included.\nAsking $240 Paypal OBO CON-US shipped .\nPlease comment before dm\u2019ing.\nSOLD\nsubmitted by /u/MammmbaE92\n[link] [comments]", "seller_username": "MammmbaE92", "url": "https://old.reddit.com/r/AVexchange/comments/1troxpr/wtsusacah_xenns_mangird_top_w_240/#item-1", "price_num": 240.0, "date_ms": 1780113054000, "listing_status": "closed", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=xenns"}, {"row_id": 2, "title": "Xenns Top", "raw_text": "Xenns Top - $310\nVery good condition with no marks. Function perfectly, have always used with care and stored in case with desiccant. Does not come with stock cable, will include your choice of either OpenHeart 3.5 Cables pictured. Also no stock ear tips but will include unused ear tips if you need some. Everything else included, case, keychain, paperwork.", "seller_username": "4phoneshawty", "url": "https://old.reddit.com/r/AVexchange/comments/1ipfk6z/wts_usma_h_xenns_mangird_top_moondrop_s8_w_paypal/#item-1", "price_num": 310.0, "date_ms": 1739553292000, "listing_status": "closed", "condition_text": "with no marks", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=moondrop s8"}];
 const originalMsrpUsd = 530.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

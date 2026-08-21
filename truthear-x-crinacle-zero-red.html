@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -694,7 +694,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-13</td>
 <td>$40</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=200:len318047_page=200:len318058_json=200:len318260</td>
+<td class="status-reason">No sale detected</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -710,7 +710,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2025-03-15</td>
 <td>$30</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent, used</td>
 <td>0</td>
 <td>headfi</td>
@@ -726,7 +726,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2024-05-12</td>
 <td>$45</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -739,7 +739,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Truthear x Crinacle Zero: Red", "raw_text": "Truthear x Crinacle Zero: Red - $40", "seller_username": "mzup87", "url": "https://www.reddit.com/r/AVexchange/comments/1vnnhjx/wts_usmn_h_truthear_x_crinacle_zero_collection/#item-2", "price_num": 40.0, "date_ms": 1786655494000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len318047_page=200:len318058_json=200:len318260", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Closed: Truthear x Crinacle ZERO: RED", "raw_text": "For Sale Closed: Truthear x Crinacle ZERO: RED Price 30.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling my Truthear x Crinacle ZERO: RED IEMs with original packaging and accessories. They are in excellent condition and have been used for under 30 minutes. Price includes shipping to CONUS. Four Kneez Listing Mar 15, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Kneez", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero-red.84922/", "price_num": 30.0, "date_ms": 1741996800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: TRUTHEAR x Crinacle Zero:RED", "raw_text": "For Sale Sold: TRUTHEAR x Crinacle Zero:RED Price 45.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America For sale is a TRUTHEAR x Crinacle Zero:RED in excellent condition and all original packaging and accessories. Price includes shipping and PayPal fees. Great IEM, just needs a home where it will get more use. Thanks for looking! nicdub Listing May 12, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "nicdub", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero-red.67828/", "price_num": 45.0, "date_ms": 1715472000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Truthear x Crinacle Zero: Red", "raw_text": "Truthear x Crinacle Zero: Red - $40", "seller_username": "mzup87", "url": "https://www.reddit.com/r/AVexchange/comments/1vnnhjx/wts_usmn_h_truthear_x_crinacle_zero_collection/#item-2", "price_num": 40.0, "date_ms": 1786655494000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len318011_page=200:len318005_json=200:len318211", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Closed: Truthear x Crinacle ZERO: RED", "raw_text": "For Sale Closed: Truthear x Crinacle ZERO: RED Price 30.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling my Truthear x Crinacle ZERO: RED IEMs with original packaging and accessories. They are in excellent condition and have been used for under 30 minutes. Price includes shipping to CONUS. Four Kneez Listing Mar 15, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Kneez", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero-red.84922/", "price_num": 30.0, "date_ms": 1741996800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: TRUTHEAR x Crinacle Zero:RED", "raw_text": "For Sale Sold: TRUTHEAR x Crinacle Zero:RED Price 45.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America For sale is a TRUTHEAR x Crinacle Zero:RED in excellent condition and all original packaging and accessories. Price includes shipping and PayPal fees. Great IEM, just needs a home where it will get more use. Thanks for looking! nicdub Listing May 12, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "nicdub", "url": "https://www.head-fi.org/classifieds/truthear-x-crinacle-zero-red.67828/", "price_num": 45.0, "date_ms": 1715472000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 54.99;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

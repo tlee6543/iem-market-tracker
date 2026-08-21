@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -694,7 +694,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-07</td>
 <td>$150</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8466_json=403:len189908</td>
+<td class="status-reason">No sale detected</td>
 <td>excellent</td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -710,7 +710,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-01</td>
 <td>$200</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=200:len317929_page=200:len317959_json=200:len318214</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td>excellent</td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -726,7 +726,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-07-20</td>
 <td>$180</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+<td class="status-reason">Head-Fi check pending</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -739,7 +739,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Campfire Audio Mammoth", "raw_text": "OG Listing /w more photos\nCampfire Audio Mammoth in excellent condition. No noticeable blemishes or scratches. Comes with compact case, small breezy bag, and glow-in-dark litz cable. No tips or retail box.\nAsking __STRIKE_START__ 250 __STRIKE_END__ __STRIKE_START__ 200 __STRIKE_END__ 150 USD PayPal FF, shipping included CONUS.\nsubmitted by /u/Toxic_Badger1759\n[link] [comments]", "seller_username": "Toxic_Badger1759", "url": "https://www.reddit.com/r/AVexchange/comments/1viewfu/wtsuskyhcampfire_audio_mammoth_w_paypal_ff/#item-1", "price_num": 150.0, "date_ms": 1786141932000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8466_json=403:len189908", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Campfire Audio Mammoth", "raw_text": "OG Listing /w more photos\nCampfire Audio Mammoth in excellent condition. No noticeable blemishes or scratches. Comes with compact case, small breezy bag, and glow-in-dark litz cable. No tips or retail box.\nAsking __STRIKE_START__ 250 __STRIKE_END__ 200 USD PayPal G&S, shipping included CONUS.\nsubmitted by /u/Toxic_Badger1759\n[link] [comments]", "seller_username": "Toxic_Badger1759", "url": "https://old.reddit.com/r/AVexchange/comments/1vcpj5d/wtsuskyhcampfire_audio_mammoth_w_paypal_gs/#item-1", "price_num": 200.0, "date_ms": 1785596196000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len317929_page=200:len317959_json=200:len318214", "notes": "reddit_rss_parser_v16_trade_cash_difference_guard | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Campfire Audio Mammoth", "raw_text": "Campfire Audio Mammoth Listing ID: 112556 For Sale 180.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere Campfire Audio Mammoth in excellent condition. No noticeable blemishes or scratches. Comes with compact case, small breezy bag, and glow-in-dark litz cable. No tips or retail box. Asking 180 USD PayPal G&S, shipping included CONUS. Listed by: Khareef1278 (19) Listed: 2026-07-20 Last edited: 2026-08-07", "seller_username": "Khareef1278", "url": "https://www.head-fi.org/classifieds/campfire-audio-mammoth.112556/", "price_num": 180.0, "date_ms": 1784505600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | safari_ipad_ingest_v1"}];
+const allRows = [{"row_id": 0, "title": "Campfire Audio Mammoth", "raw_text": "OG Listing /w more photos\nCampfire Audio Mammoth in excellent condition. No noticeable blemishes or scratches. Comes with compact case, small breezy bag, and glow-in-dark litz cable. No tips or retail box.\nAsking __STRIKE_START__ 250 __STRIKE_END__ __STRIKE_START__ 200 __STRIKE_END__ 150 USD PayPal FF, shipping included CONUS.\nsubmitted by /u/Toxic_Badger1759\n[link] [comments]", "seller_username": "Toxic_Badger1759", "url": "https://www.reddit.com/r/AVexchange/comments/1viewfu/wtsuskyhcampfire_audio_mammoth_w_paypal_ff/#item-1", "price_num": 150.0, "date_ms": 1786141932000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len317975_page=200:len318004_json=403:len189908", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Campfire Audio Mammoth", "raw_text": "OG Listing /w more photos\nCampfire Audio Mammoth in excellent condition. No noticeable blemishes or scratches. Comes with compact case, small breezy bag, and glow-in-dark litz cable. No tips or retail box.\nAsking __STRIKE_START__ 250 __STRIKE_END__ 200 USD PayPal G&S, shipping included CONUS.\nsubmitted by /u/Toxic_Badger1759\n[link] [comments]", "seller_username": "Toxic_Badger1759", "url": "https://old.reddit.com/r/AVexchange/comments/1vcpj5d/wtsuskyhcampfire_audio_mammoth_w_paypal_gs/#item-1", "price_num": 200.0, "date_ms": 1785596196000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v16_trade_cash_difference_guard | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Campfire Audio Mammoth", "raw_text": "Campfire Audio Mammoth Listing ID: 112556 For Sale 180.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere Campfire Audio Mammoth in excellent condition. No noticeable blemishes or scratches. Comes with compact case, small breezy bag, and glow-in-dark litz cable. No tips or retail box. Asking 180 USD PayPal G&S, shipping included CONUS. Listed by: Khareef1278 (19) Listed: 2026-07-20 Last edited: 2026-08-07", "seller_username": "Khareef1278", "url": "https://www.head-fi.org/classifieds/campfire-audio-mammoth.112556/", "price_num": 180.0, "date_ms": 1784505600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | safari_ipad_ingest_v1"}];
 const originalMsrpUsd = 549.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

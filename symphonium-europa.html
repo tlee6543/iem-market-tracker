@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -694,7 +694,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-09</td>
 <td>$875</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8470_json=403:len189908</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td></td>
 <td>1</td>
 <td>reddit_rss</td>
@@ -710,7 +710,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-05</td>
 <td></td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8464_json=403:len189908</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -726,7 +726,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-04-04</td>
 <td>$1,050</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -739,7 +739,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Symphonium Europa", "raw_text": "Comes with 4w cable\nSlight paint peel inside\nCable slight peel as you can see at Picture\nNo eartips\nsubmitted by /u/tudorbb5\n[link] [comments]", "seller_username": "tudorbb5", "url": "https://www.reddit.com/r/AVexchange/comments/1vk2sdl/wtswttusnjhsymphonium_europa_w_875paypal_gs_or/#item-1", "price_num": 875.0, "date_ms": 1786313278000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8470_json=403:len189908", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Symphonium EUROPA", "raw_text": "[WTT][USA-DE][H] Symphonium EUROPA [W] Other iems!\nLike\nDAWN-x\nMONARCH MK4\nUM maven 2\nOr any similar price points\nI don't have an amp to drive this beast!!\nIts sounds amazing i think its better than\nthieaudio valhalla\nsubmitted by /u/tudorbb5\n[link] [comments]", "seller_username": "tudorbb5", "url": "https://www.reddit.com/r/AVexchange/comments/1vgjpg4/wttusadeh_symphonium_europa_w_other_iems/#item-1", "price_num": null, "date_ms": 1785963225000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8464_json=403:len189908", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Sold: Symphonium Europa", "raw_text": "For Sale Sold: Symphonium Europa Price 1050.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Up for sale is the excellent and rare Europa. This is a great opportunity to own one of the best iems I\u2019ve heard. PM me with any questions. Thanks for looking! Brady bradyc100 Listing Apr 4, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "bradyc100", "url": "https://www.head-fi.org/classifieds/symphonium-europa.106764/", "price_num": 1050.0, "date_ms": 1775260800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Symphonium Europa", "raw_text": "Comes with 4w cable\nSlight paint peel inside\nCable slight peel as you can see at Picture\nNo eartips\nsubmitted by /u/tudorbb5\n[link] [comments]", "seller_username": "tudorbb5", "url": "https://www.reddit.com/r/AVexchange/comments/1vk2sdl/wtswttusnjhsymphonium_europa_w_875paypal_gs_or/#item-1", "price_num": 875.0, "date_ms": 1786313278000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 1, "title": "Symphonium EUROPA", "raw_text": "[WTT][USA-DE][H] Symphonium EUROPA [W] Other iems!\nLike\nDAWN-x\nMONARCH MK4\nUM maven 2\nOr any similar price points\nI don't have an amp to drive this beast!!\nIts sounds amazing i think its better than\nthieaudio valhalla\nsubmitted by /u/tudorbb5\n[link] [comments]", "seller_username": "tudorbb5", "url": "https://www.reddit.com/r/AVexchange/comments/1vgjpg4/wttusadeh_symphonium_europa_w_other_iems/#item-1", "price_num": null, "date_ms": 1785963225000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Sold: Symphonium Europa", "raw_text": "For Sale Sold: Symphonium Europa Price 1050.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Up for sale is the excellent and rare Europa. This is a great opportunity to own one of the best iems I\u2019ve heard. PM me with any questions. Thanks for looking! Brady bradyc100 Listing Apr 4, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "bradyc100", "url": "https://www.head-fi.org/classifieds/symphonium-europa.106764/", "price_num": 1050.0, "date_ms": 1775260800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 1539.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

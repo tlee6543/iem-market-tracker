@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -691,7 +691,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-11</td>
 <td>$275</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8473_json=403:len189908</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -707,7 +707,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-10</td>
 <td>$275</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -720,7 +720,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Penon Fan4", "raw_text": "Penon Fan4 - $275 **PRICE DROPPED*\\ *", "seller_username": "rettij", "url": "https://www.reddit.com/r/AVexchange/comments/1vl4km1/wts_usca_hhisenior_manta_spc_cable_hisenior_mega7/#item-1", "price_num": 275.0, "date_ms": 1786414306000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8473_json=403:len189908", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Penon Fan4", "raw_text": "Penon Fan4 Listing ID: 113705 For Sale 275.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America I am the original owner and they are only about 2 weeks old. Catch and release for me. Price includes G&S and shipping within the CONUS. Listed by: Gubretti (85) Listed: 2026-08-10", "seller_username": "Gubretti", "url": "https://www.head-fi.org/classifieds/penon-fan4.113705/", "price_num": 275.0, "date_ms": 1786320000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}];
+const allRows = [{"row_id": 0, "title": "Penon Fan4", "raw_text": "Penon Fan4 - $275 **PRICE DROPPED*\\ *", "seller_username": "rettij", "url": "https://www.reddit.com/r/AVexchange/comments/1vl4km1/wts_usca_hhisenior_manta_spc_cable_hisenior_mega7/#item-1", "price_num": 275.0, "date_ms": 1786414306000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 1, "title": "Penon Fan4", "raw_text": "Penon Fan4 Listing ID: 113705 For Sale 275.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America I am the original owner and they are only about 2 weeks old. Catch and release for me. Price includes G&S and shipping within the CONUS. Listed by: Gubretti (85) Listed: 2026-08-10", "seller_username": "Gubretti", "url": "https://www.head-fi.org/classifieds/penon-fan4.113705/", "price_num": 275.0, "date_ms": 1786320000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

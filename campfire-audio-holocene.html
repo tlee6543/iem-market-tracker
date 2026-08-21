@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -694,7 +694,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-16</td>
 <td>$300</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8471_json=403:len189908</td>
+<td class="status-reason">No sale detected</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -710,7 +710,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-16</td>
 <td>$275</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason">headfi_skipped_max_headfi_rows_limit_5</td>
+<td class="status-reason">Head-Fi check pending</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
@@ -726,7 +726,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-11</td>
 <td>$325</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8466_json=429:len0</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -742,7 +742,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-05-24</td>
 <td>$200</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td></td>
 <td>0</td>
 <td>headfi</td>
@@ -758,7 +758,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-03-07</td>
 <td>$250</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>used, b-stock</td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -774,7 +774,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-02-01</td>
 <td>$275</td>
 <td><span class="pill">closed</span></td>
-<td class="status-reason"></td>
+<td class="status-reason">Closed</td>
 <td>used, b-stock</td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -787,7 +787,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Campfire Audio Holocene iem", "raw_text": "Repost!! Price drop! Want to get out today!!\n$325 g&s $300 FF shipped!\nsubmitted by /u/Few-Background8619\n[link] [comments]", "seller_username": "Few-Background8619", "url": "https://www.reddit.com/r/AVexchange/comments/1vq3enp/wts_usca_h_campfire_audio_holocene_iem_w_paypal/#item-1", "price_num": 300.0, "date_ms": 1786902146000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8471_json=403:len189908", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Campfire Audio Holocene", "raw_text": "Campfire Audio Holocene Listing ID: 114004 For Sale 275.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Listed by: upsguys88 (79) Listed: 2026-08-16 Last edited: 2026-08-16", "seller_username": "upsguys88", "url": "https://www.head-fi.org/classifieds/campfire-audio-holocene.114004/", "price_num": 275.0, "date_ms": 1786838400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 2, "title": "campfire audio Holocene", "raw_text": "Looking for $340 g&s $325 FF SHIPPED\nsubmitted by /u/Few-Background8619\n[link] [comments]", "seller_username": "Few-Background8619", "url": "https://www.reddit.com/r/AVexchange/comments/1vltfcz/wtsusca_h_campfire_audio_holocene_w_paypal/#item-1", "price_num": 325.0, "date_ms": 1786480975000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8466_json=429:len0", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "Campfire Audio Holocene", "raw_text": "Campfire Audio Holocene\nListing ID: 109574\nFor Sale 200.00 USD\nCondition Good\nNegotiability Or Best Offer\nShips To Anywhere\nPair of Holocene monitors only up for sale. No accessories or packaging. I had them mated to Effect Audio's Eros S II (3.5mm termination; ConX), which I'd add for $150\nListed by: MisterSlaw (24)\nListed: 2026-05-24\nLast edited: 2026-06-27\nSOLD", "seller_username": "MisterSlaw", "url": "https://www.head-fi.org/classifieds/campfire-audio-holocene.109574/", "price_num": 200.0, "date_ms": 1779580800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 4, "title": "CFA Holocene (B-Stock)", "raw_text": "CFA Holocene (B-Stock) - $250\nUsed 10-15 hours.\nsubmitted by /u/kwoodell\n[link] [comments]", "seller_username": "kwoodell", "url": "https://old.reddit.com/r/AVexchange/comments/1rnju3s/wts_usamo_h_fir_audio_kr5_elysian_apostle_2026/#item-6", "price_num": 250.0, "date_ms": 1772913872000, "listing_status": "closed", "condition_text": "used, b-stock", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=binary acoustics"}, {"row_id": 5, "title": "CFA Holocene (B-Stock)", "raw_text": "CFA Holocene (B-Stock) - $275\nUsed 10-15 hours.\nsubmitted by /u/kwoodell\n[link] [comments]", "seller_username": "kwoodell", "url": "https://old.reddit.com/r/AVexchange/comments/1qt76x3/wts_usamo_h_melodic_artification_alter_ego/#item-4", "price_num": 275.0, "date_ms": 1769972220000, "listing_status": "closed", "condition_text": "used, b-stock", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=symphonium helios | auto_repost_duplicate_excluded_keep_latest_120d"}];
+const allRows = [{"row_id": 0, "title": "Campfire Audio Holocene iem", "raw_text": "Repost!! Price drop! Want to get out today!!\n$325 g&s $300 FF shipped!\nsubmitted by /u/Few-Background8619\n[link] [comments]", "seller_username": "Few-Background8619", "url": "https://www.reddit.com/r/AVexchange/comments/1vq3enp/wts_usca_h_campfire_audio_holocene_iem_w_paypal/#item-1", "price_num": 300.0, "date_ms": 1786902146000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len316405_page=200:len122671_json=200:len318223", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Campfire Audio Holocene", "raw_text": "Campfire Audio Holocene Listing ID: 114004 For Sale 275.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Listed by: upsguys88 (79) Listed: 2026-08-16 Last edited: 2026-08-16", "seller_username": "upsguys88", "url": "https://www.head-fi.org/classifieds/campfire-audio-holocene.114004/", "price_num": 275.0, "date_ms": 1786838400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 2, "title": "campfire audio Holocene", "raw_text": "Looking for $340 g&s $325 FF SHIPPED\nsubmitted by /u/Few-Background8619\n[link] [comments]", "seller_username": "Few-Background8619", "url": "https://www.reddit.com/r/AVexchange/comments/1vltfcz/wtsusca_h_campfire_audio_holocene_w_paypal/#item-1", "price_num": 325.0, "date_ms": 1786480975000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "Campfire Audio Holocene", "raw_text": "Campfire Audio Holocene\nListing ID: 109574\nFor Sale 200.00 USD\nCondition Good\nNegotiability Or Best Offer\nShips To Anywhere\nPair of Holocene monitors only up for sale. No accessories or packaging. I had them mated to Effect Audio's Eros S II (3.5mm termination; ConX), which I'd add for $150\nListed by: MisterSlaw (24)\nListed: 2026-05-24\nLast edited: 2026-06-27\nSOLD", "seller_username": "MisterSlaw", "url": "https://www.head-fi.org/classifieds/campfire-audio-holocene.109574/", "price_num": 200.0, "date_ms": 1779580800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 4, "title": "CFA Holocene (B-Stock)", "raw_text": "CFA Holocene (B-Stock) - $250\nUsed 10-15 hours.\nsubmitted by /u/kwoodell\n[link] [comments]", "seller_username": "kwoodell", "url": "https://old.reddit.com/r/AVexchange/comments/1rnju3s/wts_usamo_h_fir_audio_kr5_elysian_apostle_2026/#item-6", "price_num": 250.0, "date_ms": 1772913872000, "listing_status": "closed", "condition_text": "used, b-stock", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=binary acoustics"}, {"row_id": 5, "title": "CFA Holocene (B-Stock)", "raw_text": "CFA Holocene (B-Stock) - $275\nUsed 10-15 hours.\nsubmitted by /u/kwoodell\n[link] [comments]", "seller_username": "kwoodell", "url": "https://old.reddit.com/r/AVexchange/comments/1qt76x3/wts_usamo_h_melodic_artification_alter_ego/#item-4", "price_num": 275.0, "date_ms": 1769972220000, "listing_status": "closed", "condition_text": "used, b-stock", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=symphonium helios | auto_repost_duplicate_excluded_keep_latest_120d"}];
 const originalMsrpUsd = 649.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

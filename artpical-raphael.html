@@ -219,10 +219,10 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
 }
 .badge-stale { background: #f3f3f3; color: #666; }
 .source-breakdown { font-size: 12px; color: #555; }
-/* Prevent long machine-generated status reasons from bleeding across listing-table columns. */
+/* Keep public-facing listing status reasons compact and readable. */
 .status-reason {
-    width: 260px;
-    max-width: 260px;
+    width: 190px;
+    max-width: 190px;
     font-size: 12px;
     color: #555;
     white-space: normal;
@@ -230,7 +230,7 @@ input[type="checkbox"] { transform: scale(1.2); cursor: pointer; }
     word-break: break-word;
     line-height: 1.35;
 }
-th.reason-col { width: 260px; max-width: 260px; }
+th.reason-col { width: 190px; max-width: 190px; }
 td.status-reason { overflow: hidden; }
 .nowrap { white-space: nowrap; }
 .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px; }
@@ -691,7 +691,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-08-08</td>
 <td>$150</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8469_json=403:len189908</td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td>like new</td>
 <td>0</td>
 <td>reddit_rss</td>
@@ -704,7 +704,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "New/Sealed Artpical Raphael (white) $150, Sivga Luan $125, Sennheiser HD 660S2 $300", "raw_text": "Luan and HD 660S2 are both in like new condition. Luan includes the leather Sendy Audio Apollo ear pads. HD 660S2 includes Capra Audio Comfort Strap, Dekoni Elite Velour ear pads, and Tripowin Granvia 4.4 cable. Prices are for PayPal G&S and include shipping.\nsubmitted by /u/SuperShaestings\n[link] [comments]", "seller_username": "SuperShaestings", "url": "https://www.reddit.com/r/AVexchange/comments/1vj6ptf/wtsusnch_newsealed_artpical_raphael_white_150/#item-1", "price_num": 150.0, "date_ms": 1786222225000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_page=200:len8469_json=403:len189908", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}];
+const allRows = [{"row_id": 0, "title": "New/Sealed Artpical Raphael (white) $150, Sivga Luan $125, Sennheiser HD 660S2 $300", "raw_text": "Luan and HD 660S2 are both in like new condition. Luan includes the leather Sendy Audio Apollo ear pads. HD 660S2 includes Capra Audio Comfort Strap, Dekoni Elite Velour ear pads, and Tripowin Granvia 4.4 cable. Prices are for PayPal G&S and include shipping.\nsubmitted by /u/SuperShaestings\n[link] [comments]", "seller_username": "SuperShaestings", "url": "https://www.reddit.com/r/AVexchange/comments/1vj6ptf/wtsusnch_newsealed_artpical_raphael_white_150/#item-1", "price_num": 150.0, "date_ms": 1786222225000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_rate_limited_or_blocked_rss=429:len0_page=200:len8469_json=403:len189908", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
