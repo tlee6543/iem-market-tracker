@@ -9787,9 +9787,9 @@
     "price": "—",
     "comments": "Bassy and dark due to odd scoops in the upper-midrange and mid-treble.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
+    "tracker_slug": "7hz-legato",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -11445,7 +11445,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "fiio-fa19",
     "market_value": 600.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
