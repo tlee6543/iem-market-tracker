@@ -656,7 +656,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 74d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 74d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (41/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 74d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 60/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 30/30, recent sample depth 12/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 3d ago, 1 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 60/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 30/30, recent sample depth 12/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 3d ago, 1 source type(s), two samples; limited volatility read." tabindex="0">Medium (60/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 3d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -664,7 +664,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">3</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -689,7 +689,23 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="reddit" class="listing-row excluded">
+<tr id="row-0" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
+<td>2026-08-19</td>
+<td>$2,100</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Closed</td>
+<td>fantastic, no blemishes or scratches reason for sale: i'm looking to relocate the funds from this sale to purchase something that gives me the treble and... listed by: marcpec (1) listed: 2026-08-19</td>
+<td>0</td>
+<td>headfi</td>
+<td>MarcPec</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">Closed: Good Deal (17.3% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/nightjar-duality.114191/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="reddit" class="listing-row excluded">
 <td></td>
 <td>2026-07-28</td>
 <td></td>
@@ -701,12 +717,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Cactar65</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td><span id="deal-score-1">N/A</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1v94z3c/wts_usoh_h_nightjar_duality_extras_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="reddit" ></td>
+<tr id="row-2" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="reddit" ></td>
 <td>2026-07-17</td>
 <td>$2,200</td>
 <td><span class="pill">active</span></td>
@@ -717,12 +733,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>qzwdnmd</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Great Deal (33.3% below market)</span></td>
+<td><span id="deal-score-2">Good Deal (13.3% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1uzcinl/wtsus_gahnightjar_dualitywpaypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" checked></td>
+<tr id="row-3" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="headfi" checked></td>
 <td>2026-06-08</td>
 <td>$3,300</td>
 <td><span class="pill">closed</span></td>
@@ -733,13 +749,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Dandelion777</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-3">Closed: Overpriced (30.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/nightjar-duality.110423/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Nightjar Duality & extras", "raw_text": "Comment before messaging me or be ignored :)\nI have my Nightjar Duality for sale! I love these things I am the second owner and they work flawlessly. I have all the accessories and some upgrades\nThe vanguard 4w cable\nThe synthesis 8w impedance adapter\nIf you want just the duality\n2000 F&F preferably\n2080 G&S\nIf you want to add any of the other items just ask in the pm for the price addition\nPreferring to ship in the US might be open to shipping outside the us at the buyers expense and risk\nsubmitted by /u/Cactar65\n[link] [comments]", "seller_username": "Cactar65", "url": "https://old.reddit.com/r/AVexchange/comments/1v94z3c/wts_usoh_h_nightjar_duality_extras_w_paypal/#item-1", "price_num": null, "date_ms": 1785259347000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v16_trade_cash_difference_guard | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 1, "title": "NightJar Duality", "raw_text": "Happy Friday! Up for selling my beloved NightJar Duality to fund some other purchases.\nIt's in excellent condition and comes with the package and all accessories with Synthesis 8w cable.\nAsking for $2200 PayPal ff, price includes insured shipping, conus only and not into any trade atm, thanks!\nTimestamp: https://imgur.com/a/Q5HsDeF\nsubmitted by /u/qzwdnmd\n[link] [comments]", "seller_username": "qzwdnmd", "url": "https://old.reddit.com/r/AVexchange/comments/1uzcinl/wtsus_gahnightjar_dualitywpaypal/#item-1", "price_num": 2200.0, "date_ms": 1784323067000, "listing_status": "active", "condition_text": "and comes with the package and all accessories with synthesis 8w cable", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 2, "title": "Nightjar Duality", "raw_text": "Nightjar Duality\nListing ID: 110423\nFor Sale / Trade 3,300.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To United States Of America\nHello, selling my Nightjar Duality bought brand new just last month. First owner. Comes with Blue hour 2w cable and the blue hour 2w impedance adapter (no synthesis cable). Includes box and all accessories. More pictures at request! Price net to...\nListed by: Dandelion777 (60)\nListed: 2026-06-08\nLast edited: 2026-06-08\nSOLD", "seller_username": "Dandelion777", "url": "https://www.head-fi.org/classifieds/nightjar-duality.110423/", "price_num": 3300.0, "date_ms": 1780876800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}];
+const allRows = [{"row_id": 0, "title": "Nightjar Duality", "raw_text": "Nightjar Duality Listing ID: 114191 For Sale 2,100.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere Hey all, its time to part ways with these beasts. Price: I'm after $2100 USD. Condition: Fantastic, no blemishes or scratches Reason for sale: I'm looking to relocate the funds from this sale to purchase something that gives me the treble and... Listed by: MarcPec (1) Listed: 2026-08-19", "seller_username": "MarcPec", "url": "https://www.head-fi.org/classifieds/nightjar-duality.114191/", "price_num": 2100.0, "date_ms": 1787097600000, "listing_status": "closed", "condition_text": "fantastic, no blemishes or scratches reason for sale: i'm looking to relocate the funds from this sale to purchase something that gives me the treble and... listed by: marcpec (1) listed: 2026-08-19", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Nightjar Duality & extras", "raw_text": "Comment before messaging me or be ignored :)\nI have my Nightjar Duality for sale! I love these things I am the second owner and they work flawlessly. I have all the accessories and some upgrades\nThe vanguard 4w cable\nThe synthesis 8w impedance adapter\nIf you want just the duality\n2000 F&F preferably\n2080 G&S\nIf you want to add any of the other items just ask in the pm for the price addition\nPreferring to ship in the US might be open to shipping outside the us at the buyers expense and risk\nsubmitted by /u/Cactar65\n[link] [comments]", "seller_username": "Cactar65", "url": "https://old.reddit.com/r/AVexchange/comments/1v94z3c/wts_usoh_h_nightjar_duality_extras_w_paypal/#item-1", "price_num": null, "date_ms": 1785259347000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v16_trade_cash_difference_guard | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 2, "title": "NightJar Duality", "raw_text": "Happy Friday! Up for selling my beloved NightJar Duality to fund some other purchases.\nIt's in excellent condition and comes with the package and all accessories with Synthesis 8w cable.\nAsking for $2200 PayPal ff, price includes insured shipping, conus only and not into any trade atm, thanks!\nTimestamp: https://imgur.com/a/Q5HsDeF\nsubmitted by /u/qzwdnmd\n[link] [comments]", "seller_username": "qzwdnmd", "url": "https://old.reddit.com/r/AVexchange/comments/1uzcinl/wtsus_gahnightjar_dualitywpaypal/#item-1", "price_num": 2200.0, "date_ms": 1784323067000, "listing_status": "active", "condition_text": "and comes with the package and all accessories with synthesis 8w cable", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 3, "title": "Nightjar Duality", "raw_text": "Nightjar Duality\nListing ID: 110423\nFor Sale / Trade 3,300.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To United States Of America\nHello, selling my Nightjar Duality bought brand new just last month. First owner. Comes with Blue hour 2w cable and the blue hour 2w impedance adapter (no synthesis cable). Includes box and all accessories. More pictures at request! Price net to...\nListed by: Dandelion777 (60)\nListed: 2026-06-08\nLast edited: 2026-06-08\nSOLD", "seller_username": "Dandelion777", "url": "https://www.head-fi.org/classifieds/nightjar-duality.110423/", "price_num": 3300.0, "date_ms": 1780876800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}];
 const originalMsrpUsd = 3000.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
