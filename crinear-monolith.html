@@ -656,7 +656,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 63/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 30/30, recent sample depth 12/15, source diversity 8/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 13d ago, 2 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 63/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 30/30, recent sample depth 12/15, source diversity 8/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 13d ago, 2 source type(s), two samples; limited volatility read." tabindex="0">Medium (63/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 13d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 76/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 30/30, recent sample depth 15/15, source diversity 8/10, price consistency 10/10. Current inputs: 3 included priced sample(s), 3 in the last 90 days, 3 in the last 180 days, latest sample 0d ago, 2 source type(s), price CV 0.06." aria-label="Liquidity/confidence score: 76/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 30/30, recent sample depth 15/15, source diversity 8/10, price consistency 10/10. Current inputs: 3 included priced sample(s), 3 in the last 90 days, 3 in the last 180 days, latest sample 0d ago, 2 source type(s), price CV 0.06." tabindex="0">High (76/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">3 included sample(s), latest 0d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -664,7 +664,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">9</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">10</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -689,7 +689,23 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="reddit" class="listing-row excluded">
+<tr id="row-0" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" checked></td>
+<td>2026-08-23</td>
+<td>$330</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Closed</td>
+<td></td>
+<td>0</td>
+<td>reddit_rss</td>
+<td>Pugfzl</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">Closed: Fair (4.8% below market)</span></td>
+<td><a href="https://www.reddit.com/r/AVexchange/comments/1vwck40/wts_usca_h_hedd_d1_nicehck_nx8ti_softears_edge/#item-5" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="reddit" class="listing-row excluded">
 <td></td>
 <td>2026-08-21</td>
 <td></td>
@@ -701,12 +717,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>fine_friend</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td><span id="deal-score-1">N/A</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vug8ht/wts_usasc_h_crinear_monolith_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="reddit" ></td>
+<tr id="row-2" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="reddit" ></td>
 <td>2026-08-20</td>
 <td>$375</td>
 <td><span class="pill">active</span></td>
@@ -717,12 +733,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>ekman321</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Fair (5.6% above market)</span></td>
+<td><span id="deal-score-2">Fair (8.2% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vtm6u8/wtsuscah_crinear_monolith_w_375_pp_ff/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" ></td>
+<tr id="row-3" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="headfi" ></td>
 <td>2026-08-20</td>
 <td>$375</td>
 <td><span class="pill">active</span></td>
@@ -733,12 +749,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>ekman321</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">Fair (5.6% above market)</span></td>
+<td><span id="deal-score-3">Fair (8.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/crinear-monolith.114223/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="reddit" ></td>
+<tr id="row-4" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="reddit" ></td>
 <td>2026-08-16</td>
 <td>$375</td>
 <td><span class="pill">active</span></td>
@@ -749,11 +765,11 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>ekman321</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-3">Fair (5.6% above market)</span></td>
+<td><span id="deal-score-4">Fair (8.2% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vqblpz/wtsuscah_3_jomos_and_a_monolith_walked_into_a_bar/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-4" data-source="reddit" class="listing-row excluded">
+<tr id="row-5" data-source="reddit" class="listing-row excluded">
 <td></td>
 <td>2026-08-14</td>
 <td></td>
@@ -765,12 +781,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>fine_friend</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-4">N/A</span></td>
+<td><span id="deal-score-5">N/A</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1voe1s9/wts_usasc_h_crinear_monolith_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-5" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="headfi" checked></td>
+<tr id="row-6" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="headfi" checked></td>
 <td>2026-08-10</td>
 <td>$375</td>
 <td><span class="pill">closed</span></td>
@@ -781,12 +797,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>darrellgert</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-5">Closed: Fair (5.6% above market)</span></td>
+<td><span id="deal-score-6">Closed: Fair (8.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/crinear-monolith.113681/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-6" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="reddit" checked></td>
+<tr id="row-7" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="7" data-source="reddit" checked></td>
 <td>2026-08-09</td>
 <td>$335</td>
 <td><span class="pill">closed</span></td>
@@ -797,12 +813,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>JUICEe36</td>
 <td>0</td>
 <td>1</td>
-<td><span id="deal-score-6">Closed: Fair (5.7% below market)</span></td>
+<td><span id="deal-score-7">Closed: Fair (3.4% below market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vjddg9/wts_usmi_h_crinear_monolith_w_paypal_local_cash/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-7" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="7" data-source="reddit" ></td>
+<tr id="row-8" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="8" data-source="reddit" ></td>
 <td>2026-08-07</td>
 <td>$370</td>
 <td><span class="pill">active</span></td>
@@ -813,12 +829,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>fine_friend</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-7">Fair (4.2% above market)</span></td>
+<td><span id="deal-score-8">Fair (6.7% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vi44ja/wts_usasc_h_crinear_monolith_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-8" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="8" data-source="headfi" ></td>
+<tr id="row-9" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="9" data-source="headfi" ></td>
 <td>2026-08-07</td>
 <td>$370</td>
 <td><span class="pill">active</span></td>
@@ -829,12 +845,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Dum101</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-8">Fair (4.2% above market)</span></td>
+<td><span id="deal-score-9">Fair (6.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/crinear-monolith.113509/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-9" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="9" data-source="reddit" ></td>
+<tr id="row-10" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="10" data-source="reddit" ></td>
 <td>2026-07-26</td>
 <td>$370</td>
 <td><span class="pill">active</span></td>
@@ -845,12 +861,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>JUICEe36</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-9">Fair (4.2% above market)</span></td>
+<td><span id="deal-score-10">Fair (6.7% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1v741up/wts_usami_h_crinear_monolith_w_paypal_local_cash/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-10" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="10" data-source="reddit" ></td>
+<tr id="row-11" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="11" data-source="reddit" ></td>
 <td>2026-07-20</td>
 <td>$400</td>
 <td><span class="pill">active</span></td>
@@ -861,13 +877,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Single_Device_7897</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-10">High (12.7% above market)</span></td>
+<td><span id="deal-score-11">High (15.4% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1v16hc1/wts_usava_h_crinear_monolithw_venmo_paypal_cash/#item-1" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Crinear Monolith", "raw_text": "submitted by /u/fine_friend\n[link] [comments]", "seller_username": "fine_friend", "url": "https://www.reddit.com/r/AVexchange/comments/1vug8ht/wts_usasc_h_crinear_monolith_w_paypal/#item-1", "price_num": null, "date_ms": 1787318495000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len317890_page=200:len316268_json=200:len316467", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Crinear Monolith", "raw_text": "Up for sale, the Crinear Monilith. Great bassy set, just downsizing.\nComes complete in retail box.\nFedEx 2 day shipping to the US included in the price.\nComment before chat!\nsubmitted by /u/ekman321\n[link] [comments]", "seller_username": "ekman321", "url": "https://www.reddit.com/r/AVexchange/comments/1vtm6u8/wtsuscah_crinear_monolith_w_375_pp_ff/#item-1", "price_num": 375.0, "date_ms": 1787238654000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len317865_page=200:len317912_json=200:len318107", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 2, "title": "Crinear Monolith", "raw_text": "Crinear Monolith Listing ID: 114223 For Sale 375.00 USD Condition Good Negotiability Firm Ships To United States Of America Up for sale is the bassy Crinear Monolith. Looks great, sounds great. Just downsizing. Comes complete in retail box. Asking for $375 net to me. More photos on request and FedEx 2 day shipping to the US included in the price. Thanks, EK Listed by: ekman321 (58) Listed: 2026-08-20", "seller_username": "ekman321", "url": "https://www.head-fi.org/classifieds/crinear-monolith.114223/", "price_num": 375.0, "date_ms": 1787184000000, "listing_status": "active", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 3, "title": "Crinear Monolith", "raw_text": "Crinear Monolith - $375 PP FF - Bass Cannon with detail - if that's what you're looking for and was disappointed in say the TSMR Armor because of the lack of detail/bleed, this may be the set for you. Shells are gorgeous IMO. Comes complete in retail box.", "seller_username": "ekman321", "url": "https://www.reddit.com/r/AVexchange/comments/1vqblpz/wtsuscah_3_jomos_and_a_monolith_walked_into_a_bar/#item-1", "price_num": 375.0, "date_ms": 1786921901000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len318059_page=200:len318094_json=200:len318251", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 4, "title": "Crinear Monolith", "raw_text": "submitted by /u/fine_friend\n[link] [comments]", "seller_username": "fine_friend", "url": "https://www.reddit.com/r/AVexchange/comments/1voe1s9/wts_usasc_h_crinear_monolith_w_paypal/#item-1", "price_num": null, "date_ms": 1786729345000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Crinear Monolith", "raw_text": "Crinear Monolith Listing ID: 113681 For Sale 375.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere Second owner but all the box is retail clean. Just love it but bought a big bass IEM so time will be reduced. Selling for less than I paid 1 week ago. Third picture is using a different cable not included. Wise preferred. PP add 4%. Listed by: darrellgert (13) Listed: 2026-08-10 Last edited: 2026-08-11", "seller_username": "darrellgert", "url": "https://www.head-fi.org/classifieds/crinear-monolith.113681/", "price_num": 375.0, "date_ms": 1786320000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 6, "title": "Crinear Monolith", "raw_text": "SOLD FOR ASKING\nSelling my Crinear Monolith. Very little use under 8 hours. I did use the large short wide bore tips but comes with everything else included in the packaging.\nNo issues at all.\nAsking: $350 Shipped / $335 Local Cash\nComment before chat and let me know if any questions.\nsubmitted by /u/JUICEe36\n[link] [comments]", "seller_username": "JUICEe36", "url": "https://www.reddit.com/r/AVexchange/comments/1vjddg9/wts_usmi_h_crinear_monolith_w_paypal_local_cash/#item-1", "price_num": 335.0, "date_ms": 1786240750000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_title_or_description_sold_closed | confirmed_priced_nonbundle_included"}, {"row_id": 7, "title": "Crinear Monolith", "raw_text": "Seling a Crinear monolith for 370$ shipped, comes with all pictured accessories\nsubmitted by /u/fine_friend\n[link] [comments]", "seller_username": "fine_friend", "url": "https://www.reddit.com/r/AVexchange/comments/1vi44ja/wts_usasc_h_crinear_monolith_w_paypal/#item-1", "price_num": 370.0, "date_ms": 1786117314000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 8, "title": "Crinear Monolith", "raw_text": "Crinear Monolith Listing ID: 113509 For Sale 370.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America Seling a Crinear monolith for 370$ shipped, comes with all accessories, all tips unused Listed by: Dum101 (9) Listed: 2026-08-07 Last edited: 2026-08-20", "seller_username": "Dum101", "url": "https://www.head-fi.org/classifieds/crinear-monolith.113509/", "price_num": 370.0, "date_ms": 1786060800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "safari_visible_listing_v1 | safari_ipad_ingest_v1 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 9, "title": "Crinear Monolith", "raw_text": "reposting due to incorrect price\nSelling my Project Monolith in like new condition. Used only a couple hours with the large wide bore short tips.\nComes with all accessories and packaging minus the wide large short bore tips i used. Never used the cable and was kept within the case.\nAsking: $380 Shipped / $370 Local Cash\nComment before chatting and let me know if any questions\nsubmitted by /u/JUICEe36\n[link] [comments]", "seller_username": "JUICEe36", "url": "https://old.reddit.com/r/AVexchange/comments/1v741up/wts_usami_h_crinear_monolith_w_paypal_local_cash/#item-1", "price_num": 370.0, "date_ms": 1785072836000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 10, "title": "CRINEAR MONOLITH", "raw_text": "submitted by /u/Single_Device_7897\n[link] [comments]", "seller_username": "Single_Device_7897", "url": "https://old.reddit.com/r/AVexchange/comments/1v16hc1/wts_usava_h_crinear_monolithw_venmo_paypal_cash/#item-1", "price_num": 400.0, "date_ms": 1784507234000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}];
+const allRows = [{"row_id": 0, "title": "Crinear Monolith", "raw_text": "__STRIKE_START__ Crinear Monolith: $330 __STRIKE_END__\n__STRIKE_START__ Not a lot to say about this set. Probably my third favorite bass set after duality and fulgrim. But because of duality, I have no use for this set. Comes with original packaging. __STRIKE_END__ SOLD\nsubmitted by /u/Pugfzl\n[link] [comments]", "seller_username": "Pugfzl", "url": "https://www.reddit.com/r/AVexchange/comments/1vwck40/wts_usca_h_hedd_d1_nicehck_nx8ti_softears_edge/#item-5", "price_num": 330.0, "date_ms": 1787504435000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_item_line_strikethrough_sold | confirmed_priced_nonbundle_included"}, {"row_id": 1, "title": "Crinear Monolith", "raw_text": "submitted by /u/fine_friend\n[link] [comments]", "seller_username": "fine_friend", "url": "https://www.reddit.com/r/AVexchange/comments/1vug8ht/wts_usasc_h_crinear_monolith_w_paypal/#item-1", "price_num": null, "date_ms": 1787318495000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len317890_page=200:len316268_json=200:len316467", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 2, "title": "Crinear Monolith", "raw_text": "Up for sale, the Crinear Monilith. Great bassy set, just downsizing.\nComes complete in retail box.\nFedEx 2 day shipping to the US included in the price.\nComment before chat!\nsubmitted by /u/ekman321\n[link] [comments]", "seller_username": "ekman321", "url": "https://www.reddit.com/r/AVexchange/comments/1vtm6u8/wtsuscah_crinear_monolith_w_375_pp_ff/#item-1", "price_num": 375.0, "date_ms": 1787238654000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len317865_page=200:len317912_json=200:len318107", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 3, "title": "Crinear Monolith", "raw_text": "Crinear Monolith Listing ID: 114223 For Sale 375.00 USD Condition Good Negotiability Firm Ships To United States Of America Up for sale is the bassy Crinear Monolith. Looks great, sounds great. Just downsizing. Comes complete in retail box. Asking for $375 net to me. More photos on request and FedEx 2 day shipping to the US included in the price. Thanks, EK Listed by: ekman321 (58) Listed: 2026-08-20", "seller_username": "ekman321", "url": "https://www.head-fi.org/classifieds/crinear-monolith.114223/", "price_num": 375.0, "date_ms": 1787184000000, "listing_status": "active", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 4, "title": "Crinear Monolith", "raw_text": "Crinear Monolith - $375 PP FF - Bass Cannon with detail - if that's what you're looking for and was disappointed in say the TSMR Armor because of the lack of detail/bleed, this may be the set for you. Shells are gorgeous IMO. Comes complete in retail box.", "seller_username": "ekman321", "url": "https://www.reddit.com/r/AVexchange/comments/1vqblpz/wtsuscah_3_jomos_and_a_monolith_walked_into_a_bar/#item-1", "price_num": 375.0, "date_ms": 1786921901000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=200:len318059_page=200:len318094_json=200:len318251", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Crinear Monolith", "raw_text": "submitted by /u/fine_friend\n[link] [comments]", "seller_username": "fine_friend", "url": "https://www.reddit.com/r/AVexchange/comments/1voe1s9/wts_usasc_h_crinear_monolith_w_paypal/#item-1", "price_num": null, "date_ms": 1786729345000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 6, "title": "Crinear Monolith", "raw_text": "Crinear Monolith Listing ID: 113681 For Sale 375.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere Second owner but all the box is retail clean. Just love it but bought a big bass IEM so time will be reduced. Selling for less than I paid 1 week ago. Third picture is using a different cable not included. Wise preferred. PP add 4%. Listed by: darrellgert (13) Listed: 2026-08-10 Last edited: 2026-08-11", "seller_username": "darrellgert", "url": "https://www.head-fi.org/classifieds/crinear-monolith.113681/", "price_num": 375.0, "date_ms": 1786320000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 7, "title": "Crinear Monolith", "raw_text": "SOLD FOR ASKING\nSelling my Crinear Monolith. Very little use under 8 hours. I did use the large short wide bore tips but comes with everything else included in the packaging.\nNo issues at all.\nAsking: $350 Shipped / $335 Local Cash\nComment before chat and let me know if any questions.\nsubmitted by /u/JUICEe36\n[link] [comments]", "seller_username": "JUICEe36", "url": "https://www.reddit.com/r/AVexchange/comments/1vjddg9/wts_usmi_h_crinear_monolith_w_paypal_local_cash/#item-1", "price_num": 335.0, "date_ms": 1786240750000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_title_or_description_sold_closed | confirmed_priced_nonbundle_included"}, {"row_id": 8, "title": "Crinear Monolith", "raw_text": "Seling a Crinear monolith for 370$ shipped, comes with all pictured accessories\nsubmitted by /u/fine_friend\n[link] [comments]", "seller_username": "fine_friend", "url": "https://www.reddit.com/r/AVexchange/comments/1vi44ja/wts_usasc_h_crinear_monolith_w_paypal/#item-1", "price_num": 370.0, "date_ms": 1786117314000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 9, "title": "Crinear Monolith", "raw_text": "Crinear Monolith Listing ID: 113509 For Sale 370.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America Seling a Crinear monolith for 370$ shipped, comes with all accessories, all tips unused Listed by: Dum101 (9) Listed: 2026-08-07 Last edited: 2026-08-20", "seller_username": "Dum101", "url": "https://www.head-fi.org/classifieds/crinear-monolith.113509/", "price_num": 370.0, "date_ms": 1786060800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "safari_visible_listing_v1 | safari_ipad_ingest_v1 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 10, "title": "Crinear Monolith", "raw_text": "reposting due to incorrect price\nSelling my Project Monolith in like new condition. Used only a couple hours with the large wide bore short tips.\nComes with all accessories and packaging minus the wide large short bore tips i used. Never used the cable and was kept within the case.\nAsking: $380 Shipped / $370 Local Cash\nComment before chatting and let me know if any questions\nsubmitted by /u/JUICEe36\n[link] [comments]", "seller_username": "JUICEe36", "url": "https://old.reddit.com/r/AVexchange/comments/1v741up/wts_usami_h_crinear_monolith_w_paypal_local_cash/#item-1", "price_num": 370.0, "date_ms": 1785072836000, "listing_status": "active", "condition_text": "like new", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 11, "title": "CRINEAR MONOLITH", "raw_text": "submitted by /u/Single_Device_7897\n[link] [comments]", "seller_username": "Single_Device_7897", "url": "https://old.reddit.com/r/AVexchange/comments/1v16hc1/wts_usava_h_crinear_monolithw_venmo_paypal_cash/#item-1", "price_num": 400.0, "date_ms": 1784507234000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}];
 const originalMsrpUsd = 400.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
