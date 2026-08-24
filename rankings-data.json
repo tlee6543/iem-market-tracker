@@ -164,7 +164,7 @@
     "comments": "Exceptional musicality and unfettered driver efficiency.",
     "based_on": "Loaner unit",
     "tracker_slug": "symphonium-zenith",
-    "market_value": 1655.0,
+    "market_value": 1656.25,
     "market_confidence": "High"
   },
   {
@@ -212,8 +212,8 @@
     "comments": "Terrific dynamic range and soundstage depth; the closest I have heard to a two-channel system in an IEM for these qualities.",
     "based_on": "Personal unit",
     "tracker_slug": "64-audio-u12t",
-    "market_value": 922.46,
-    "market_confidence": "Medium"
+    "market_value": 916.95,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -260,7 +260,7 @@
     "comments": "Basically the 64 Audio U12t's Chinese brother. Excellent tonality and layering performance with a slight upper-treble splashiness.",
     "based_on": "Review unit",
     "tracker_slug": "thieaudio-valhalla",
-    "market_value": 1445.73,
+    "market_value": 1425.0,
     "market_confidence": "High"
   },
   {
@@ -452,7 +452,7 @@
     "comments": "Excellent detail retreival and competent tuning. Can be slightly thin sounding and forward in the treble.",
     "based_on": "Loaner",
     "tracker_slug": "thieaudio-monarch-mkiv",
-    "market_value": 859.0,
+    "market_value": 865.83,
     "market_confidence": "High"
   },
   {
@@ -548,7 +548,7 @@
     "comments": "Top-tier bass, treble, and soundstage height and width. I don't approve of the midrange these days.",
     "based_on": "Loaner",
     "tracker_slug": "sony-ier-z1r",
-    "market_value": 899.67,
+    "market_value": 907.25,
     "market_confidence": "High"
   },
   {
@@ -620,7 +620,7 @@
     "comments": "Thick timbre and Hi-fi sound. Slightly spicy mid-treble but barely noticeable with the right tips.",
     "based_on": "Loaner",
     "tracker_slug": "unique-melody-mest-jet-black",
-    "market_value": 922.46,
+    "market_value": 932.79,
     "market_confidence": "Medium"
   },
   {
@@ -740,7 +740,7 @@
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-myth",
-    "market_value": 941.67,
+    "market_value": 929.0,
     "market_confidence": "High"
   },
   {
@@ -1748,7 +1748,7 @@
     "comments": "Quite detailed, but lots of uncanny valley in the midrange (sounds like singers are singing into a cup) and treble is contentiously bright.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "64-audio-fourte-blanc",
-    "market_value": 1648.42,
+    "market_value": 1497.43,
     "market_confidence": "Medium"
   },
   {
@@ -2204,8 +2204,8 @@
     "comments": "Bass lacks texture, but a fairly holographic, \"grand\" presentation that is unique for a V-shaped response.",
     "based_on": "Zepp & Co Unit",
     "tracker_slug": "empire-ears-legend-x",
-    "market_value": 793.55,
-    "market_confidence": "Medium"
+    "market_value": 793.86,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -3500,8 +3500,8 @@
     "comments": "Decent listen overall, a bit thinner in the treble than the Mega 5Est and more technical.",
     "based_on": "Loaner",
     "tracker_slug": "hisenior-mega-7",
-    "market_value": 300.0,
-    "market_confidence": "Low"
+    "market_value": 328.15,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -4700,7 +4700,7 @@
     "comments": "A brighter Oracle. Shouty upper-midrange and artifical sounding treble response.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "thieaudio-oracle-mkii",
-    "market_value": null,
+    "market_value": 300.0,
     "market_confidence": "Low"
   },
   {
@@ -6740,8 +6740,8 @@
     "comments": "Very good detail and sharp imaging, but wonky midrange. Not as holographic as the Andro 2020 either.",
     "based_on": "headphones.com unit",
     "tracker_slug": "campfire-audio-ara",
-    "market_value": 382.14,
-    "market_confidence": "Low"
+    "market_value": 410.7,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -6837,7 +6837,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -6956,7 +6956,7 @@
     "comments": "Pretty good bass texture if not somewhat bloated; overall solid tuning.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "kbear-diamond",
-    "market_value": null,
+    "market_value": 1280.0,
     "market_confidence": "Low"
   },
   {
@@ -10004,7 +10004,7 @@
     "comments": "Good resolution and technicalities but tonality seems a bit poor: sucked lower-midrange and odd pinna gain, treble seems incoherent.",
     "based_on": "Brief demo",
     "tracker_slug": "alpha-omega-omega",
-    "market_value": 1525.0,
+    "market_value": 1565.0,
     "market_confidence": "High"
   },
   {
@@ -10292,7 +10292,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "campfire-andromeda-10",
-    "market_value": 1066.55,
+    "market_value": 1227.99,
     "market_confidence": "Medium"
   },
   {
@@ -10556,8 +10556,8 @@
     "comments": "Literally sounds like balls.",
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-trifecta",
-    "market_value": 1742.81,
-    "market_confidence": "Medium"
+    "market_value": 1783.33,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -10748,7 +10748,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "canpur-silver-flash",
-    "market_value": 95.0,
+    "market_value": 96.0,
     "market_confidence": "High"
   },
   {
@@ -13292,8 +13292,8 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "pmg-audio-apx-me",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 5567.8,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",

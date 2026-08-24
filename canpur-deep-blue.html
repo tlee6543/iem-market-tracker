@@ -656,7 +656,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 19/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 8/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 325d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 19/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 8/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 325d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (19/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 325d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 48/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 67d ago, 1 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 48/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 67d ago, 1 source type(s), two samples; limited volatility read." tabindex="0">Medium (48/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 67d ago.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -686,19 +686,19 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<tr id="row-0" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
 <td>2026-06-18</td>
 <td>$85</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">Head-Fi check pending</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Sale confirmed</td>
 <td>new in box</td>
 <td>0</td>
 <td>headfi</td>
 <td>MilitaryHifi</td>
 <td>1</td>
 <td>1</td>
-<td><span id="deal-score-0">Good Deal (15.0% below market)</span></td>
+<td><span id="deal-score-0">Closed: Fair (2.1% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/canpur-deep-blue-brand-new-factory-sealed.110887/" target="_blank">source</a></td>
 </tr>
 
@@ -714,13 +714,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>MilitaryHifi</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-1">Closed: High (15.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/canpur-deep-blue-dd.96104/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Canpur Deep Blue Brand New Factory Sealed", "raw_text": "Canpur Deep Blue Brand New Factory Sealed\nListing ID: 110887\nFor Sale 85.00 USD\nCondition New In Box\nNegotiability Firm\nShips To United States Of America\nSelling my Canpur Deep Blue Brand New Factory Sealed Driver Config: 10mm PU + PET Composite Diaphragm Dynamic driver One of the best DD iem I have heard. This has made me question my iem collection. Amazing iem. Price includes 2-3 day priority...\nListed by: MilitaryHifi (391)\nListed: 2026-06-18\nLast edited: 2026-07-06", "seller_username": "MilitaryHifi", "url": "https://www.head-fi.org/classifieds/canpur-deep-blue-brand-new-factory-sealed.110887/", "price_num": 85.0, "date_ms": 1781740800000, "listing_status": "active", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "Sold: Canpur Deep Blue DD", "raw_text": "For Sale Sold: Canpur Deep Blue DD Price 100.00 USD Condition New in box Negotiability Firm Ships to United States of America Selling my Canpur Deep Blue Single DD Brand new is shrink wrap Price includes shipping and fees. MilitaryHifi Listing Oct 2, 2025 Comments: 1 Category: Cables, Speakers, Accessories For Sale / Trade", "seller_username": "MilitaryHifi", "url": "https://www.head-fi.org/classifieds/canpur-deep-blue-dd.96104/", "price_num": 100.0, "date_ms": 1759363200000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Canpur Deep Blue Brand New Factory Sealed", "raw_text": "Canpur Deep Blue Brand New Factory Sealed\nListing ID: 110887\nFor Sale 85.00 USD\nCondition New In Box\nNegotiability Firm\nShips To United States Of America\nSelling my Canpur Deep Blue Brand New Factory Sealed Driver Config: 10mm PU + PET Composite Diaphragm Dynamic driver One of the best DD iem I have heard. This has made me question my iem collection. Amazing iem. Price includes 2-3 day priority...\nListed by: MilitaryHifi (391)\nListed: 2026-06-18\nLast edited: 2026-07-06", "seller_username": "MilitaryHifi", "url": "https://www.head-fi.org/classifieds/canpur-deep-blue-brand-new-factory-sealed.110887/", "price_num": 85.0, "date_ms": 1781740800000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 1, "title": "Sold: Canpur Deep Blue DD", "raw_text": "For Sale Sold: Canpur Deep Blue DD Price 100.00 USD Condition New in box Negotiability Firm Ships to United States of America Selling my Canpur Deep Blue Single DD Brand new is shrink wrap Price includes shipping and fees. MilitaryHifi Listing Oct 2, 2025 Comments: 1 Category: Cables, Speakers, Accessories For Sale / Trade", "seller_username": "MilitaryHifi", "url": "https://www.head-fi.org/classifieds/canpur-deep-blue-dd.96104/", "price_num": 100.0, "date_ms": 1759363200000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
