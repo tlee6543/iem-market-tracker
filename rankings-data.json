@@ -89,7 +89,7 @@
     "bias": "9.0",
     "setup": "1DD/4BA/2EST",
     "price": "$3,500",
-    "comments": "Agressive listen with excellent resolution and, currently, the only true implementation of the EST drivers.",
+    "comments": "Agressive listen with excellent resolution and ethereal, butterfly-like treble.",
     "based_on": "Loaner",
     "tracker_slug": "elysian-annihilator-2021",
     "market_value": 3008.43,
@@ -711,7 +711,7 @@
     "imaging": "8.0",
     "dynamics": "8.0",
     "bias": "7.0",
-    "setup": "—",
+    "setup": "1DD/4BA/2MP",
     "price": "$1,000",
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
@@ -1169,7 +1169,7 @@
     "bias": "7.0",
     "setup": "5BA",
     "price": "$1,000",
-    "comments": "Boring, but you won't find anything more well-rounded for the price. Exceptional timbre for a BA IEM.",
+    "comments": "Boring, but well-rounded, forgiving sound that plays well with most all genres. Excellent timbre for a BA IEM.",
     "based_on": "Loaner",
     "tracker_slug": "sony-ier-m9",
     "market_value": 533.46,
@@ -1819,7 +1819,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "letshuoer-ej07m",
+    "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -6885,7 +6885,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -10389,7 +10389,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-alien-brain",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
