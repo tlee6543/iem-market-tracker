@@ -1,6 +1,6 @@
 
 <html>
-<head><title>Ziigaat Crescent - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
+<head><title>BGVP Astrum - IEM Market Tracker</title><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
 body { font-family: Arial; margin: 40px; background: #f7f7f7; color: #111; }
 table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
 .main-table .iem-col { width: 28%; max-width: 320px; }
@@ -626,13 +626,13 @@ score backgrounds cannot be lost to broader table/cell styling.
     
 <p><a id="back-link" href="index.html">← Back to Market Tracker</a></p>
 <div class="iem-title-row">
-    <h1>Ziigaat Crescent</h1>
+    <h1>BGVP Astrum</h1>
     <div class="grab-link-wrap">
         <button id="grab-link-button" class="grab-link-btn" type="button">Grab Link</button>
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-ziigaat.html">Ziigaat</a></p>
+<p><a href="brand-bgvp.html">BGVP</a></p>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -645,26 +645,24 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="card">
 <h2>Product Info</h2>
 <div class="product-grid">
-    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$279</div></div>
-    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2025</div></div>
-    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">2DD/2BA</div></div>
+    <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">N/A</div></div>
+    <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">Unknown</div></div>
+    <div class="product-field"><div class="product-label">Driver Config</div><div class="product-value">Unknown</div></div>
     <div class="product-field"><div class="product-label">Status</div><div class="product-value">Unknown</div></div>
 </div>
-<p class="small"><b>Notes:</b> Stage 1 catalog expansion. 2025 release verified by contemporary launch announcement.</p>
-<p class="small"><a href="https://www.ziigaat.com/products/ziigaat-crescent" target="_blank">Product info source</a> — high confidence</p>
+
+
 </div>
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
-    
-    <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 49/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 30/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 1d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 49/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 30/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 1d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Medium (49/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 1d ago.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">4</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">7</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -679,8 +677,7 @@ score backgrounds cannot be lost to broader table/cell styling.
         <div class="chart-panel">
             <h3>Secondary Value vs Original MSRP</h3>
             
-            <p class="muted">Dots show individual listings. The line is a smoothed retention curve based on available samples. Hover over the line to see the secondary value as a percentage above or below original MSRP at that time.</p>
-            <canvas id="msrpChart"></canvas>
+            <p class="muted">Original MSRP is not available for this IEM yet, so MSRP-retention cannot be calculated.</p>
             
         </div>
     </div>
@@ -689,74 +686,122 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<tr id="row-0" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
 <td>2026-08-23</td>
-<td>$175</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">Active</td>
-<td>like new, excellent, used</td>
+<td>$415</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Closed</td>
+<td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
-<td>MilitaryHifi</td>
+<td>ctjacks336</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
-<td><a href="https://www.head-fi.org/classifieds/ziigaat-crescent.114344/" target="_blank">source</a></td>
+<td><span id="deal-score-0">Closed: Fair (0.0% above market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/bgvp-astrum.114370/" target="_blank">source</a></td>
 </tr>
 
 <tr id="row-1" data-source="reddit" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="reddit" ></td>
-<td>2026-08-03</td>
-<td>$185</td>
+<td>2026-08-19</td>
+<td>$400</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">Check deferred — Reddit rate limit</td>
-<td>all accessories and packaging</td>
-<td>0</td>
-<td>reddit_rss</td>
-<td>Puzzleheaded-Bus-633</td>
-<td>0</td>
-<td>0</td>
-<td><span id="deal-score-1">N/A</span></td>
-<td><a href="https://www.reddit.com/r/AVexchange/comments/1veq0yr/wts_useca_h_ziigaat_crescent_w185_shipped/#item-1" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-2" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="reddit" ></td>
-<td>2025-12-27</td>
-<td>$200</td>
-<td><span class="pill">closed</span></td>
-<td class="status-reason">Stale — no sale confirmed</td>
+<td class="status-reason">Active</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
-<td>BurnedPopcorn</td>
+<td>PerjuryPerpy</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">N/A</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1pxb9qj/wts_usca_h_ziigaat_crescent_odyssey_2_epz_p50/#item-1" target="_blank">source</a></td>
+<td><span id="deal-score-1">Fair (3.6% below market)</span></td>
+<td><a href="https://www.reddit.com/r/AVexchange/comments/1vs9tld/wtsuscah_bgvp_astrum_w_400_via_paypalzellewise/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="reddit" ></td>
-<td>2025-12-20</td>
-<td>$200</td>
-<td><span class="pill">closed</span></td>
-<td class="status-reason">Closed</td>
-<td></td>
+<tr id="row-2" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" ></td>
+<td>2026-08-18</td>
+<td>$400</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Still active</td>
+<td>like new, excellent</td>
 <td>0</td>
-<td>reddit_rss</td>
-<td>BurnedPopcorn</td>
+<td>headfi</td>
+<td>MisterSlaw</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-2">Fair (3.6% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/bgvp-astrum.114139/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-3" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="headfi" ></td>
+<td>2026-08-02</td>
+<td>$400</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Active</td>
+<td>mint, like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>cpu235</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-3">Fair (3.6% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/bgvp-astrum-iem.113256/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-4" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="reddit" ></td>
+<td>2026-06-21</td>
+<td>$450</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Sale confirmed</td>
+<td>bgvp astrum iems</td>
 <td>1</td>
+<td>reddit_rss</td>
+<td>louisbarthas</td>
 <td>0</td>
-<td><span id="deal-score-3">N/A</span></td>
-<td><a href="https://old.reddit.com/r/AVexchange/comments/1prqjy8/wts_usaca_h_nicehck_rockies_softears_volume_s/#item-3" target="_blank">source</a></td>
+<td>0</td>
+<td><span id="deal-score-4">Closed: Fair (8.4% above market)</span></td>
+<td><a href="https://old.reddit.com/r/AVexchange/comments/1ubv5fy/wtsusacahbgvp_astrum_iemswpaypal/#item-1" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-5" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="headfi" ></td>
+<td>2026-06-21</td>
+<td>$449</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Still active</td>
+<td>mint, like new, excellent, used</td>
+<td>0</td>
+<td>headfi</td>
+<td>musicmatters2025</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-5">Fair (8.2% above market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/bgvp-astrum-original-owner-minty-set.111045/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-6" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="headfi" ></td>
+<td>2026-04-27</td>
+<td>$500</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Still active</td>
+<td>mint, like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>mindhooked</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-6">High (20.5% above market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/bgvp-astrum.108092/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Ziigaat Crescent", "raw_text": "Ziigaat Crescent Listing ID: 114344 For Sale 175.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Selling my Ziigaat Crescent Going through my iems, I have a bunch to list, I need to downsize my collection. Accessories Included. Barely used iems. Maybe a few hrs on them. Price includes shipping and fees. Listed by: MilitaryHifi (415) Listed: 2026-08-23 Last edited: 2026-08-23", "seller_username": "MilitaryHifi", "url": "https://www.head-fi.org/classifieds/ziigaat-crescent.114344/", "price_num": 175.0, "date_ms": 1787443200000, "listing_status": "active", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Ziigaat Crescent", "raw_text": "less than 5hrs on these brand new condition all accessories and packaging. minus a couple eartips. thinning the heard of 20+ iems i bought last couple of months. these just didnt make the cut for 3 or so i am keeping\nCONUS ONLY PAYPAL 185 SHIPPED UPS comment before pm\nsubmitted by /u/Puzzleheaded-Bus-633\n[link] [comments]", "seller_username": "Puzzleheaded-Bus-633", "url": "https://www.reddit.com/r/AVexchange/comments/1veq0yr/wts_useca_h_ziigaat_crescent_w185_shipped/#item-1", "price_num": 185.0, "date_ms": 1785791258000, "listing_status": "active", "condition_text": "all accessories and packaging", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_skipped_after_rate_limit_this_run", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 2, "title": "Ziigaat Crescent", "raw_text": "Ziigaat Crescent - $200", "seller_username": "BurnedPopcorn", "url": "https://old.reddit.com/r/AVexchange/comments/1pxb9qj/wts_usca_h_ziigaat_crescent_odyssey_2_epz_p50/#item-1", "price_num": 200.0, "date_ms": 1766876566000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=kefine | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 3, "title": "Ziigaat Crescent", "raw_text": "Ziigaat Crescent - $200", "seller_username": "BurnedPopcorn", "url": "https://old.reddit.com/r/AVexchange/comments/1prqjy8/wts_usaca_h_nicehck_rockies_softears_volume_s/#item-3", "price_num": 200.0, "date_ms": 1766269747000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kefine | auto_repost_duplicate_excluded_keep_latest_120d"}];
-const originalMsrpUsd = 279.0;
+const allRows = [{"row_id": 0, "title": "BGVP Astrum", "raw_text": "BGVP Astrum Listing ID: 114370 For Sale 415.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America Hello everyone! Looking to sale my excellent and fantastic BGVP Astrum. This has been one of my favorite sets of all time. Nice bass thump with vocals being placed forward and front. Not sharp or fatiguing for my ears. Only reason I am selling is... Listed by: ctjacks336 (41) Listed: 2026-08-23 Last edited: 2026-08-24", "seller_username": "ctjacks336", "url": "https://www.head-fi.org/classifieds/bgvp-astrum.114370/", "price_num": 415.0, "date_ms": 1787443200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "BGVP Astrum", "raw_text": "Includes the monitors, cable, and shipping.\nNo illuminated unboxing experience here unfortunately.\nAsking $400 net to me.\nsubmitted by /u/PerjuryPerpy\n[link] [comments]", "seller_username": "PerjuryPerpy", "url": "https://www.reddit.com/r/AVexchange/comments/1vs9tld/wtsuscah_bgvp_astrum_w_400_via_paypalzellewise/#item-1", "price_num": 400.0, "date_ms": 1787106985000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked"}, {"row_id": 2, "title": "BGVP Astrum", "raw_text": "BGVP Astrum Listing ID: 114139 For Sale 400.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Includes the monitors, cable, and shipping. No illuminated unboxing experience here unfortunately. Asking $400 net to me. Listed by: MisterSlaw (39) Listed: 2026-08-18", "seller_username": "MisterSlaw", "url": "https://www.head-fi.org/classifieds/bgvp-astrum.114139/", "price_num": 400.0, "date_ms": 1787011200000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 3, "title": "BGVP Astrum iem", "raw_text": "BGVP Astrum iem\nListing ID: 113256\nFor Sale 400.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To North America\nSelling my BGVP Astrum Mint condition, sounds great and smooth but selling due to having too many iems. No box, only iem and stock cable. I will include an aftermarket carrying pouch. Asking $400, I will handle shipping fees within US and...\nListed by: cpu235 (123)\nListed: 2026-08-02\nLast edited: 2026-08-02", "seller_username": "cpu235", "url": "https://www.head-fi.org/classifieds/bgvp-astrum-iem.113256/", "price_num": 400.0, "date_ms": 1785628800000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "category_listing_id_text_fallback_v8 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged"}, {"row_id": 4, "title": "BGVP Astrum IEMs", "raw_text": "I am selling a set of mint condition BGVP Astrum IEMs. Comes with all accessories: 4.4\" balanced cable, four boxes of unused tips, metal carrying case, and the [in]famously excessive light-up box.\nI like them fine, but they are not getting very much use--not quite crisp enough for me. I would like to find them a good home.\nAsking 450.00 USD Paypal F&F. I will cover shipping to CONUS and will ship quickly.\nsubmitted by /u/louisbarthas\n[link] [comments]", "seller_username": "louisbarthas", "url": "https://old.reddit.com/r/AVexchange/comments/1ubv5fy/wtsusacahbgvp_astrum_iemswpaypal/#item-1", "price_num": 450.0, "date_ms": 1782061203000, "listing_status": "closed", "condition_text": "bgvp astrum iems", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 5, "title": "BGVP Astrum - Original Owner, Minty Set", "raw_text": "BGVP Astrum - Original Owner, Minty Set Listing ID: 111045 For Sale 449.99 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America As the title says, I've got a set of BGVP Astrum up for sale. Great sounding set, really fun sound signature, all wrapped up in a one of a kind presentation. I am the original owner, purchased new from MusicTeck. Only used in my smoke and pet... Listed by: musicmatters2025 (6) Listed: 2026-06-21 Last edited: 2026-08-16", "seller_username": "musicmatters2025", "url": "https://www.head-fi.org/classifieds/bgvp-astrum-original-owner-minty-set.111045/", "price_num": 449.0, "date_ms": 1782000000000, "listing_status": "active", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "category_listing_id_text_fallback_v8 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 6, "title": "BGVP Astrum", "raw_text": "BGVP Astrum Listing ID: 108092 For Sale 500.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Catch and release while downsizing! Bought from a fellow headfier. In mint condition with all original accessories and packaging. OPEN TO TRADES that are of lower value with added cash on your end, but shoot me an offer! I'm open to hearing offers. Listed by: mindhooked (18) Listed: 2026-04-27 Last edited: 2026-08-16", "seller_username": "mindhooked", "url": "https://www.head-fi.org/classifieds/bgvp-astrum.108092/", "price_num": 500.0, "date_ms": 1777248000000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}];
+const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
 
@@ -862,9 +907,9 @@ function updateIemBackLink(source) {
     };
 
     if (origin === "brand") {
-        const brandSlug = String(params.get("brand") || "ziigaat").replace(/[^a-z0-9-]/gi, "");
+        const brandSlug = String(params.get("brand") || "bgvp").replace(/[^a-z0-9-]/gi, "");
         backLink.href = "brand-" + brandSlug + ".html";
-        backLink.textContent = "← Back to Ziigaat";
+        backLink.textContent = "← Back to BGVP";
         return;
     }
 
