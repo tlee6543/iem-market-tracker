@@ -1028,7 +1028,7 @@
     "comments": "A warmer, more coherent MEST with setbacks in resolution and imaging.",
     "based_on": "Antdroid's unit",
     "tracker_slug": "unique-melody-mest-mk2",
-    "market_value": 646.31,
+    "market_value": 644.81,
     "market_confidence": "High"
   },
   {
@@ -1724,7 +1724,7 @@
     "comments": "Strong dynamics and easy-going signature that could use more detail in the midrange.",
     "based_on": "Personal unit",
     "tracker_slug": "64-audio-duo",
-    "market_value": 475.0,
+    "market_value": 481.25,
     "market_confidence": "High"
   },
   {
@@ -5564,8 +5564,8 @@
     "comments": "A leaner, more forward version of the 3001.",
     "based_on": "DUNU loaner",
     "tracker_slug": "dunu-dk-2001",
-    "market_value": 285.0,
-    "market_confidence": "Low"
+    "market_value": 279.39,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
