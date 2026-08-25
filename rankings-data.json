@@ -1628,8 +1628,8 @@
     "comments": "Sinfully addictive tuning hampered only by a slight lack of detail and imaging performance.",
     "based_on": "Personal unit",
     "tracker_slug": "sony-xba-n3",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 199.35,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -1819,7 +1819,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "letshuoer-ej07m",
+    "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -6885,7 +6885,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
