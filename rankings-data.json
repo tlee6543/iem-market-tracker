@@ -1819,7 +1819,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "letshuoer-ej07m",
+    "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -6885,7 +6885,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -11036,7 +11036,7 @@
     "comments": "Treble has some unnatural peaking past 10kHz that lends to a Focal-esque, metallic tinge.",
     "based_on": "Brief demo",
     "tracker_slug": "crinear-daybreak",
-    "market_value": 113.62,
+    "market_value": 118.33,
     "market_confidence": "High"
   },
   {
@@ -14517,7 +14517,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "unique-melody-mest-mk3",
     "market_value": 750.57,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
