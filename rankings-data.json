@@ -2517,7 +2517,7 @@
     "based_on": "Loaner unit",
     "tracker_slug": "ice-lab-prismatica",
     "market_value": 510.05,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
