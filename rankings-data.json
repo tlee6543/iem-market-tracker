@@ -428,7 +428,7 @@
     "comments": "Excellent detail retreival and competent tuning. Can be slightly thin sounding and forward in the treble.",
     "based_on": "Loaner",
     "tracker_slug": "thieaudio-monarch-mkiv",
-    "market_value": 870.71,
+    "market_value": 880.62,
     "market_confidence": "High"
   },
   {
@@ -1819,7 +1819,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "letshuoer-ej07m",
+    "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -4628,8 +4628,8 @@
     "comments": "Decent tonality, but weak treble extension and technicalities.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "letshuoer-ej07",
-    "market_value": 681.82,
-    "market_confidence": "Medium"
+    "market_value": 899.0,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -6885,7 +6885,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -11348,8 +11348,8 @@
     "comments": "Conventionally L-shaped IEM with relaxed midrange and treble. Could use some more upper-treble to boost resolution.",
     "based_on": "Brief demo",
     "tracker_slug": "empire-ears-triton",
-    "market_value": 1068.48,
-    "market_confidence": "Medium"
+    "market_value": 1012.73,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -13364,7 +13364,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "pmg-audio-apx-me",
-    "market_value": 5567.8,
+    "market_value": 5516.67,
     "market_confidence": "Medium"
   },
   {
