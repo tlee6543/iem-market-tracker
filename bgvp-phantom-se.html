@@ -656,13 +656,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 46/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 25d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 46/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 25d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Medium (46/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 25d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 46/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 26d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 46/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 26d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Medium (46/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 26d ago.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -686,8 +686,24 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
+<tr id="row-0" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<td>2026-08-26</td>
+<td>$715</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Active</td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>booktopian66</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">Fair (1.4% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/bgvp-phantom-se.114507/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2026-08-01</td>
 <td>$725</td>
 <td><span class="pill">closed</span></td>
@@ -698,13 +714,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>harshkamboj</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/bgvp-phantom-se.113226/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "BGVP Phantom SE", "raw_text": "BGVP Phantom SE Listing ID: 113226 For Sale 725.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere Selling the incredible quad driver iem from BGVP, their special edition of Phantom, SE has 8 total drivers. Amazing balance of treble, mids and bass with great techs makes it a special set. Comes with all box and accessories in mint condition... Listed by: harshkamboj (172) Listed: 2026-08-01", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/bgvp-phantom-se.113226/", "price_num": 725.0, "date_ms": 1785542400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "category_listing_id_text_fallback_v8 | safari_ipad_ingest_v1"}];
+const allRows = [{"row_id": 0, "title": "BGVP Phantom SE", "raw_text": "BGVP Phantom SE Listing ID: 114507 For Sale 715.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America Here\u2019s another stellar barely touched offering from my \u201clet\u2019s buy everything\u201d period. A great set of IEMs, the BGVP Phantom SE. All original packaging minus one set of ear tips as shown. Asking $715 with insured ups shipping included. Any PP... Listed by: booktopian66 (13) Listed: 2026-08-26", "seller_username": "booktopian66", "url": "https://www.head-fi.org/classifieds/bgvp-phantom-se.114507/", "price_num": 715.0, "date_ms": 1787702400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "BGVP Phantom SE", "raw_text": "BGVP Phantom SE Listing ID: 113226 For Sale 725.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere Selling the incredible quad driver iem from BGVP, their special edition of Phantom, SE has 8 total drivers. Amazing balance of treble, mids and bass with great techs makes it a special set. Comes with all box and accessories in mint condition... Listed by: harshkamboj (172) Listed: 2026-08-01", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/bgvp-phantom-se.113226/", "price_num": 725.0, "date_ms": 1785542400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "category_listing_id_text_fallback_v8 | safari_ipad_ingest_v1"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

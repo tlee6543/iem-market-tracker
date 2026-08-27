@@ -116,7 +116,7 @@
     "comments": "More of an all-rounder with better bass compared to the 2021 version, sacrifices some soundstage.",
     "based_on": "Personal unit",
     "tracker_slug": "elysian-annihilator-2023",
-    "market_value": 2171.02,
+    "market_value": 2284.4,
     "market_confidence": "High"
   },
   {
@@ -1819,7 +1819,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "letshuoer-ej07m",
+    "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -2420,7 +2420,7 @@
     "comments": "Solid rendition of reference tuning that's missing some upper-treble energy for my neutral/reference. Best thought of as a tool.",
     "based_on": "Loaner unit",
     "tracker_slug": "crinear-reference",
-    "market_value": 295.0,
+    "market_value": 292.14,
     "market_confidence": "High"
   },
   {
@@ -6481,6 +6481,30 @@
   },
   {
     "entry_type": "ranked",
+    "iem": "Moondrop Chu 3",
+    "favorite": false,
+    "canonical_name": "",
+    "release_year": "—",
+    "final_score": 4.3,
+    "tonality": "4.0",
+    "bass": "4.0",
+    "midrange": "4.0",
+    "treble": "4.0",
+    "tech": "5.0",
+    "detail": "5.0",
+    "imaging": "6.0",
+    "dynamics": "4.0",
+    "bias": "4.0",
+    "setup": "1DD",
+    "price": "$25",
+    "comments": "Spacious sounding but with some timbral quirks in the midrange and not for those who enjoy rumble.",
+    "based_on": "Review unit",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "ranked",
     "iem": "Moondrop Illustrious",
     "favorite": false,
     "canonical_name": "Moondrop Illustrious",
@@ -6885,7 +6909,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -10076,7 +10100,7 @@
     "comments": "Good resolution and technicalities but tonality seems a bit poor: sucked lower-midrange and odd pinna gain, treble seems incoherent.",
     "based_on": "Brief demo",
     "tracker_slug": "alpha-omega-omega",
-    "market_value": 1575.0,
+    "market_value": 1566.67,
     "market_confidence": "High"
   },
   {
@@ -12710,10 +12734,10 @@
     "detail": "—",
     "imaging": "—",
     "dynamics": "—",
-    "bias": "—",
+    "bias": "4",
     "setup": "—",
     "price": "—",
-    "comments": "can't remember what I heard",
+    "comments": "Sounds pretty close to Harman minus the bass response.",
     "based_on": "Brief demo",
     "tracker_slug": "moondrop-chu-2",
     "market_value": 25.0,
@@ -14228,7 +14252,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "thieaudio-prestige-ltd",
-    "market_value": 843.33,
+    "market_value": 835.0,
     "market_confidence": "High"
   },
   {
