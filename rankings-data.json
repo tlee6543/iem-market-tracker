@@ -5564,8 +5564,8 @@
     "comments": "A leaner, more forward version of the 3001.",
     "based_on": "DUNU loaner",
     "tracker_slug": "dunu-dk-2001",
-    "market_value": 285.0,
-    "market_confidence": "Low"
+    "market_value": 279.26,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -13460,7 +13460,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "punch-audio-martilo",
-    "market_value": 165.0,
+    "market_value": 171.0,
     "market_confidence": "High"
   },
   {
@@ -14828,8 +14828,8 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "volk-audio-x-astell-kern-stella",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 2700.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
