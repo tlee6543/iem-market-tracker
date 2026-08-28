@@ -1124,7 +1124,7 @@
     "comments": "Dull microdynamics and treble at a not-so-dull price.",
     "based_on": "Loaner",
     "tracker_slug": "oriolus-traillii-jp",
-    "market_value": 2603.9,
+    "market_value": 2972.09,
     "market_confidence": "High"
   },
   {
@@ -1819,7 +1819,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "",
+    "tracker_slug": "letshuoer-ej07m",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -1892,7 +1892,7 @@
     "comments": "Thick and rich sound, a departure from the original RSV, but not in a bad way. Surprisingly mid-bass focused, so still sounds BA-ish.",
     "based_on": "Loaner unit",
     "tracker_slug": "softears-rsv-mkii",
-    "market_value": 425.0,
+    "market_value": 431.25,
     "market_confidence": "High"
   },
   {
@@ -2420,7 +2420,7 @@
     "comments": "Solid rendition of reference tuning that's missing some upper-treble energy for my neutral/reference. Best thought of as a tool.",
     "based_on": "Loaner unit",
     "tracker_slug": "crinear-reference",
-    "market_value": 292.14,
+    "market_value": 293.12,
     "market_confidence": "High"
   },
   {
@@ -11324,8 +11324,8 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "empire-ears-odin-mkii",
-    "market_value": 3097.41,
-    "market_confidence": "Low"
+    "market_value": 3253.16,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -11732,8 +11732,8 @@
     "comments": "Thin and glassy sounding upper-midrange and excessive amounts of upper-treble. Clarity focused with poor execution.",
     "based_on": "Brief demo",
     "tracker_slug": "forte-ears-macbeth",
-    "market_value": 2500.0,
-    "market_confidence": "Low"
+    "market_value": 2266.67,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -11780,7 +11780,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "hercules-audio-noah",
-    "market_value": 309.99,
+    "market_value": 300.0,
     "market_confidence": "High"
   },
   {
@@ -12477,7 +12477,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "letshuoer-cadenza-4",
     "market_value": 147.56,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -12501,7 +12501,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "letshuoer-cadenza-4",
     "market_value": 147.56,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",

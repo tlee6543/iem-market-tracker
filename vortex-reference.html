@@ -656,7 +656,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 52/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 12/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 57d ago, 1 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 52/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 12/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 57d ago, 1 source type(s), two samples; limited volatility read." tabindex="0">Medium (52/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 57d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -689,41 +689,41 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<tr id="row-0" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
 <td>2026-07-02</td>
 <td>$2,650</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">Head-Fi check pending</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Sale confirmed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
 <td>PassionForMusic</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td><span id="deal-score-0">Closed: Fair (4.3% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vortex-reference.111622/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" ></td>
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2026-06-18</td>
 <td>$2,900</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">Head-Fi check pending</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Sale confirmed</td>
 <td>like new, excellent, new in box</td>
 <td>0</td>
 <td>headfi</td>
 <td>zlayde</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">N/A</span></td>
+<td><span id="deal-score-1">Closed: Fair (4.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/vortex-reference-27.110868/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Vortex Reference", "raw_text": "Vortex Reference\nListing ID: 111622\nFor Sale / Trade 2,650.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To North America\nSelling Vortex Reference IEM. Rare and special TOTL IEM. Not many available in the US and Europe. Happy to answer questions. Well known head-fi member. Will post photos soon. DD+MEMS set. Comes with two different cables. Note: I do not ship with...\nListed by: PassionForMusic (114)\nListed: 2026-07-02\nLast edited: 2026-07-21", "seller_username": "PassionForMusic", "url": "https://www.head-fi.org/classifieds/vortex-reference.111622/", "price_num": 2650.0, "date_ms": 1782950400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "Vortex Reference #27", "raw_text": "Vortex Reference #27\nListing ID: 110868\nFor Sale / Trade 2,900.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To AnywhereUnited States Of America\nSelling the excellent Vortex Reference IEM. Model #27. This is a truly unique TOTL iem. I am the original owner and can provide receipt. Everything is effectively in brand new in box shape. i tried it for < 2 hours. None of the accessories were...\nListed by: zlayde (160)\nListed: 2026-06-18\nLast edited: 2026-06-24", "seller_username": "zlayde", "url": "https://www.head-fi.org/classifieds/vortex-reference-27.110868/", "price_num": 2900.0, "date_ms": 1781740800000, "listing_status": "active", "condition_text": "like new, excellent, new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}];
+const allRows = [{"row_id": 0, "title": "Vortex Reference", "raw_text": "Vortex Reference\nListing ID: 111622\nFor Sale / Trade 2,650.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To North America\nSelling Vortex Reference IEM. Rare and special TOTL IEM. Not many available in the US and Europe. Happy to answer questions. Well known head-fi member. Will post photos soon. DD+MEMS set. Comes with two different cables. Note: I do not ship with...\nListed by: PassionForMusic (114)\nListed: 2026-07-02\nLast edited: 2026-07-21", "seller_username": "PassionForMusic", "url": "https://www.head-fi.org/classifieds/vortex-reference.111622/", "price_num": 2650.0, "date_ms": 1782950400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 1, "title": "Vortex Reference #27", "raw_text": "Vortex Reference #27\nListing ID: 110868\nFor Sale / Trade 2,900.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To AnywhereUnited States Of America\nSelling the excellent Vortex Reference IEM. Model #27. This is a truly unique TOTL iem. I am the original owner and can provide receipt. Everything is effectively in brand new in box shape. i tried it for < 2 hours. None of the accessories were...\nListed by: zlayde (160)\nListed: 2026-06-18\nLast edited: 2026-06-24", "seller_username": "zlayde", "url": "https://www.head-fi.org/classifieds/vortex-reference-27.110868/", "price_num": 2900.0, "date_ms": 1781740800000, "listing_status": "closed", "condition_text": "like new, excellent, new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}];
 const originalMsrpUsd = 3100.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

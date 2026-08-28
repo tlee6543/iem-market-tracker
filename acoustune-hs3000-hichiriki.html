@@ -656,7 +656,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 43d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 43d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (41/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 43d ago.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -698,29 +698,29 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>gnarmite</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td><span id="deal-score-0">Fair (6.3% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/acoustune-hs3000-complete-package.113222/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" ></td>
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2026-07-16</td>
 <td>$3,150</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">Head-Fi check pending</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Sale confirmed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
 <td>Echo42987</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">N/A</span></td>
+<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/acoustune-hs3000-w-act05-act07.112305/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Acoustune HS3000 - Complete Package", "raw_text": "Acoustune HS3000 - Complete Package\nListing ID: 113222\nFor Sale 2,950.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To United States Of America\nSelling a truly excellent condition Acoustune HS3000 set with original box and all packaging. Everything in the photos is included. It breaks my heart to let these go after buying them recently, but I need to free up the funds. Non-smoking...\nListed by: gnarmite (1)\nListed: 2026-08-01\nLast edited: 2026-08-01", "seller_username": "gnarmite", "url": "https://www.head-fi.org/classifieds/acoustune-hs3000-complete-package.113222/", "price_num": 2950.0, "date_ms": 1785542400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "Acoustune HS3000 w/ ACT05/ACT07", "raw_text": "Acoustune HS3000 w/ ACT05/ACT07\nListing ID: 112305\nFor Sale 3,150.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To United States Of America\nI believe these IEM's need to be on more peoples radar. The fact that you can change out the IEM and change the tuning up on the fly so easily makes them so much fun. You have 3 compleltely different tuning profiles here. The website provides...\nListed by: Echo42987 (70)\nListed: 2026-07-16\nLast edited: 2026-07-23", "seller_username": "Echo42987", "url": "https://www.head-fi.org/classifieds/acoustune-hs3000-w-act05-act07.112305/", "price_num": 3150.0, "date_ms": 1784160000000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}];
+const allRows = [{"row_id": 0, "title": "Acoustune HS3000 - Complete Package", "raw_text": "Acoustune HS3000 - Complete Package\nListing ID: 113222\nFor Sale 2,950.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To United States Of America\nSelling a truly excellent condition Acoustune HS3000 set with original box and all packaging. Everything in the photos is included. It breaks my heart to let these go after buying them recently, but I need to free up the funds. Non-smoking...\nListed by: gnarmite (1)\nListed: 2026-08-01\nLast edited: 2026-08-01", "seller_username": "gnarmite", "url": "https://www.head-fi.org/classifieds/acoustune-hs3000-complete-package.113222/", "price_num": 2950.0, "date_ms": 1785542400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "Acoustune HS3000 w/ ACT05/ACT07", "raw_text": "Acoustune HS3000 w/ ACT05/ACT07\nListing ID: 112305\nFor Sale 3,150.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To United States Of America\nI believe these IEM's need to be on more peoples radar. The fact that you can change out the IEM and change the tuning up on the fly so easily makes them so much fun. You have 3 compleltely different tuning profiles here. The website provides...\nListed by: Echo42987 (70)\nListed: 2026-07-16\nLast edited: 2026-07-23", "seller_username": "Echo42987", "url": "https://www.head-fi.org/classifieds/acoustune-hs3000-w-act05-act07.112305/", "price_num": 3150.0, "date_ms": 1784160000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
