@@ -716,7 +716,7 @@
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-myth",
-    "market_value": 914.0,
+    "market_value": 914.17,
     "market_confidence": "High"
   },
   {
@@ -1028,7 +1028,7 @@
     "comments": "A warmer, more coherent MEST with setbacks in resolution and imaging.",
     "based_on": "Antdroid's unit",
     "tracker_slug": "unique-melody-mest-mk2",
-    "market_value": 646.67,
+    "market_value": 647.5,
     "market_confidence": "High"
   },
   {
@@ -1148,7 +1148,7 @@
     "comments": "Excelllent bass - simply excellent. Midrange could use some work, as could the generally average imaging chops.",
     "based_on": "Personal unit",
     "tracker_slug": "sennheiser-ie900",
-    "market_value": 723.46,
+    "market_value": 715.52,
     "market_confidence": "High"
   },
   {
@@ -1364,7 +1364,7 @@
     "comments": "Slightly colored but well-rounded tonality with minor quirks.",
     "based_on": "Loaner unit",
     "tracker_slug": "xenns-mangird-top-pro",
-    "market_value": 351.25,
+    "market_value": 345.0,
     "market_confidence": "High"
   },
   {
@@ -1484,7 +1484,7 @@
     "comments": "Well-extended on both ends of the spectrum and adds back in the upper-midrange the IE900 lacked.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "sennheiser-ie600",
-    "market_value": 380.91,
+    "market_value": 385.82,
     "market_confidence": "High"
   },
   {
@@ -1819,7 +1819,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "letshuoer-ej07m",
+    "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -1892,7 +1892,7 @@
     "comments": "Thick and rich sound, a departure from the original RSV, but not in a bad way. Surprisingly mid-bass focused, so still sounds BA-ish.",
     "based_on": "Loaner unit",
     "tracker_slug": "softears-rsv-mkii",
-    "market_value": 431.25,
+    "market_value": 437.0,
     "market_confidence": "High"
   },
   {
@@ -2060,7 +2060,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 194.17,
+    "market_value": 192.86,
     "market_confidence": "High"
   },
   {
@@ -2516,8 +2516,8 @@
     "comments": "Fairly palatable, musical sound with some tonal oddity in the midrange.",
     "based_on": "Loaner unit",
     "tracker_slug": "ice-lab-prismatica",
-    "market_value": 510.05,
-    "market_confidence": "Low"
+    "market_value": 596.03,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -3452,8 +3452,8 @@
     "comments": "Decent listen overall, a bit thinner in the treble than the Mega 5Est and more technical.",
     "based_on": "Loaner",
     "tracker_slug": "hisenior-mega-7",
-    "market_value": 328.15,
-    "market_confidence": "Medium"
+    "market_value": 346.67,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -10532,7 +10532,7 @@
     "comments": "Most normal sounding Campfire IEM yet. Neutral with sub-bass boost, very pleasant on the ears but missing some mid-treble for resolution/edge.",
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-clara",
-    "market_value": 1376.26,
+    "market_value": 1283.0,
     "market_confidence": "Medium"
   },
   {
@@ -10748,7 +10748,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "canpur-cp622b",
-    "market_value": 1927.74,
+    "market_value": 1916.67,
     "market_confidence": "High"
   },
   {
@@ -11204,8 +11204,8 @@
     "comments": "Bass has improved but significantly brighter than the Annihilator 2023 and a regression overall.",
     "based_on": "Brief demo",
     "tracker_slug": "elysian-annihilator-2026",
-    "market_value": 2750.0,
-    "market_confidence": "Low"
+    "market_value": 2630.67,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -11228,7 +11228,7 @@
     "comments": "Reminds me of if Elysian tuned more towards 64 Audio's sound while maintaing upper-mids. Colored sound done correctly with great technicalities.",
     "based_on": "Brief demo",
     "tracker_slug": "elysian-apostle-2026",
-    "market_value": 1342.13,
+    "market_value": 1329.11,
     "market_confidence": "High"
   },
   {
@@ -11252,7 +11252,7 @@
     "comments": "Sounds very similar to the original Apostle albeit slightly drier from memory.",
     "based_on": "Brief demo",
     "tracker_slug": "elysian-apostle-2026",
-    "market_value": 1342.13,
+    "market_value": 1329.11,
     "market_confidence": "High"
   },
   {

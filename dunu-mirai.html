@@ -656,7 +656,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 51/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 8/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 2 in the last 180 days, latest sample 87d ago, 2 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 51/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 8/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 2 in the last 180 days, latest sample 87d ago, 2 source type(s), two samples; limited volatility read." tabindex="0">Medium (51/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 87d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 73/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 30/30, recent sample depth 12/15, source diversity 8/10, price consistency 10/10. Current inputs: 3 included priced sample(s), 2 in the last 90 days, 3 in the last 180 days, latest sample 10d ago, 2 source type(s), price CV 0.04." aria-label="Liquidity/confidence score: 73/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 30/30, recent sample depth 12/15, source diversity 8/10, price consistency 10/10. Current inputs: 3 included priced sample(s), 2 in the last 90 days, 3 in the last 180 days, latest sample 10d ago, 2 source type(s), price CV 0.04." tabindex="0">Medium (73/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">3 included sample(s), latest 10d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -689,24 +689,40 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<tr id="row-0" data-source="reddit" class="listing-row excluded">
+<td></td>
+<td>2026-08-19</td>
+<td></td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">No sale detected</td>
+<td></td>
+<td>0</td>
+<td>reddit_rss</td>
+<td>R2YourD2</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">N/A</span></td>
+<td><a href="https://www.reddit.com/r/AVexchange/comments/1vsc0pq/wts_usahi_h_ej07m_resin_mirai_blessing_2/#item-1" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2026-08-18</td>
 <td>$425</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">Head-Fi check pending</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Sale confirmed</td>
 <td>great condition</td>
 <td>0</td>
 <td>headfi</td>
 <td>KyleWithAK</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Fair (6.7% below market)</span></td>
+<td><span id="deal-score-1">Closed: Fair (3.6% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-mirai.114140/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
+<tr id="row-2" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" checked></td>
 <td>2026-06-02</td>
 <td>$470</td>
 <td><span class="pill">closed</span></td>
@@ -717,12 +733,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>moonlee7777</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Closed: Fair (3.2% above market)</span></td>
+<td><span id="deal-score-2">Closed: Fair (6.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/temporary-pd-dunu-mirai.110075/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="reddit" checked></td>
+<tr id="row-3" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="reddit" checked></td>
 <td>2026-05-26</td>
 <td>$440</td>
 <td><span class="pill">closed</span></td>
@@ -733,12 +749,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>ListlessHeart</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">Closed: Fair (3.4% below market)</span></td>
+<td><span id="deal-score-3">Closed: Fair (0.2% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1tnx4nk/wts_usca_h_13_iems_27_cables_snowsky_melody_dac_w/#item-10" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="headfi" ></td>
+<tr id="row-4" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="headfi" ></td>
 <td>2025-11-01</td>
 <td>$899</td>
 <td><span class="pill">stale</span></td>
@@ -749,12 +765,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Joe-Siow</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-3">Overpriced (97.4% above market)</span></td>
+<td><span id="deal-score-4">Overpriced (104.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pd-tansio-mirai-akiba-iem.97755/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-4" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="headfi" ></td>
+<tr id="row-5" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="headfi" ></td>
 <td>2025-11-01</td>
 <td>$999</td>
 <td><span class="pill">stale</span></td>
@@ -765,12 +781,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Joe-Siow</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-4">Overpriced (119.4% above market)</span></td>
+<td><span id="deal-score-5">Overpriced (126.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/tansio-mirai-akiba-iem.97755/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-5" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="headfi" ></td>
+<tr id="row-6" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="headfi" ></td>
 <td></td>
 <td>$520</td>
 <td><span class="pill">active</span></td>
@@ -781,13 +797,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>unknown</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-5">High (14.2% above market)</span></td>
+<td><span id="deal-score-6">High (18.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dunu-mirai.110075/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Dunu Mirai", "raw_text": "Dunu Mirai Listing ID: 114140 For Sale 425.00 USD Condition Good Negotiability Or Best Offer Ships To United States Of America Great condition other than the case which has a stain on it. Comes with grey and s&s tips. Ur pick of cable of either the dark grey or creamy white. Dark grey has 3.5 and 4.4 terminations, Creamy white has 2.5, 3.5, and 4.4 terminations. Listed by: KyleWithAK (24) Listed: 2026-08-18", "seller_username": "KyleWithAK", "url": "https://www.head-fi.org/classifieds/dunu-mirai.114140/", "price_num": 425.0, "date_ms": 1787011200000, "listing_status": "active", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | active_status_checker_headfi_live_check_skipped"}, {"row_id": 1, "title": "[Temporary PD] Dunu Mirai", "raw_text": "[Temporary PD] Dunu Mirai\nListing ID: 110075\nFor Sale 470.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To North America\nSelling a pair of like new Dunu Mirais with all original accessories. Shipping on me, PayPal fees on the buyer. Dropping price for two days to see if anyone wants to pick it up before I go on a long trip.\nListed by: moonlee7777 (8)\nListed: 2026-06-02\nLast edited: 2026-06-24", "seller_username": "moonlee7777", "url": "https://www.head-fi.org/classifieds/temporary-pd-dunu-mirai.110075/", "price_num": 470.0, "date_ms": 1780358400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 2, "title": "Dunu Mirai", "raw_text": "- Dunu Mirai: $440. Bought it here from a seasoned seller. Shells have microscratches from normal wear and tear but nothing noticeable. Comes with most accessories but no eartips same as when I received it.", "seller_username": "ListlessHeart", "url": "https://old.reddit.com/r/AVexchange/comments/1tnx4nk/wts_usca_h_13_iems_27_cables_snowsky_melody_dac_w/#item-10", "price_num": 440.0, "date_ms": 1779772529000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=simgot"}, {"row_id": 3, "title": "[PD] Tansio Mirai Akiba IEM", "raw_text": "[PD] Tansio Mirai Akiba IEM Listing ID: 97755 For Sale 899.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere For sale is the former flagship Tansio Mirai model AKIBA, a 7 BA & 4 EST hybrid I first got the pair as CIEM. Sent them in to Penon for reshell to universal and just received them back this week, so these are literally good as new... Listed by: Joe-Siow (27) Listed: 2025-11-01 Last edited: 2026-07-01", "seller_username": "Joe-Siow", "url": "https://www.head-fi.org/classifieds/pd-tansio-mirai-akiba-iem.97755/", "price_num": 899.0, "date_ms": 1761955200000, "listing_status": "stale", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_unsold_180d", "status_comment": "stale unsold after 180d; not counted as a sale", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_stale_unsold_180d_lister_never_updated | safari_ipad_ingest_v1 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 4, "title": "Tansio Mirai Akiba IEM", "raw_text": "Tansio Mirai Akiba IEM\nListing ID: 97755\nFor Sale 999.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To Anywhere\nFor sale is the former flagship Tansio Mirai model AKIBA, a 7 BA & 4 EST hybrid I first got the pair as CIEM. Sent them in to Penon for reshell to universal and just received them back this week, so these are literally good as new...\nListed by: Joe-Siow (27)\nListed: 2025-11-01\nLast edited: 2026-03-29", "seller_username": "Joe-Siow", "url": "https://www.head-fi.org/classifieds/tansio-mirai-akiba-iem.97755/", "price_num": 999.0, "date_ms": 1761955200000, "listing_status": "stale", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_stale_unsold_60d_lister_never_updated"}, {"row_id": 5, "title": "Dunu Mirai For Sale 520.00 USD Condition Excellent/Like New Negotiability Firm Ships To North America", "raw_text": "Dunu Mirai For Sale 520.00 USD Condition Excellent/Like New Negotiability Firm Ships To North America", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/dunu-mirai.110075/", "price_num": 520.0, "date_ms": null, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "visible_card_collect_with_price_title_match_v6 | active_status_checker_status_unclear_left_unchanged | active_status_checker_verified_or_left_active | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_unclear_left_unchanged"}];
+const allRows = [{"row_id": 0, "title": "EJ07M Resin, Mirai, Blessing 2, Variations, Dusk", "raw_text": "submitted by /u/R2YourD2\n[link] [comments]", "seller_username": "R2YourD2", "url": "https://www.reddit.com/r/AVexchange/comments/1vsc0pq/wts_usahi_h_ej07m_resin_mirai_blessing_2/#item-1", "price_num": null, "date_ms": 1787113332000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len80080:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 1, "title": "Dunu Mirai", "raw_text": "Dunu Mirai Listing ID: 114140 For Sale 425.00 USD Condition Good Negotiability Or Best Offer Ships To United States Of America Great condition other than the case which has a stain on it. Comes with grey and s&s tips. Ur pick of cable of either the dark grey or creamy white. Dark grey has 3.5 and 4.4 terminations, Creamy white has 2.5, 3.5, and 4.4 terminations. Listed by: KyleWithAK (24) Listed: 2026-08-18", "seller_username": "KyleWithAK", "url": "https://www.head-fi.org/classifieds/dunu-mirai.114140/", "price_num": 425.0, "date_ms": 1787011200000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 2, "title": "[Temporary PD] Dunu Mirai", "raw_text": "[Temporary PD] Dunu Mirai\nListing ID: 110075\nFor Sale 470.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To North America\nSelling a pair of like new Dunu Mirais with all original accessories. Shipping on me, PayPal fees on the buyer. Dropping price for two days to see if anyone wants to pick it up before I go on a long trip.\nListed by: moonlee7777 (8)\nListed: 2026-06-02\nLast edited: 2026-06-24", "seller_username": "moonlee7777", "url": "https://www.head-fi.org/classifieds/temporary-pd-dunu-mirai.110075/", "price_num": 470.0, "date_ms": 1780358400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 3, "title": "Dunu Mirai", "raw_text": "- Dunu Mirai: $440. Bought it here from a seasoned seller. Shells have microscratches from normal wear and tear but nothing noticeable. Comes with most accessories but no eartips same as when I received it.", "seller_username": "ListlessHeart", "url": "https://old.reddit.com/r/AVexchange/comments/1tnx4nk/wts_usca_h_13_iems_27_cables_snowsky_melody_dac_w/#item-10", "price_num": 440.0, "date_ms": 1779772529000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=simgot"}, {"row_id": 4, "title": "[PD] Tansio Mirai Akiba IEM", "raw_text": "[PD] Tansio Mirai Akiba IEM Listing ID: 97755 For Sale 899.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere For sale is the former flagship Tansio Mirai model AKIBA, a 7 BA & 4 EST hybrid I first got the pair as CIEM. Sent them in to Penon for reshell to universal and just received them back this week, so these are literally good as new... Listed by: Joe-Siow (27) Listed: 2025-11-01 Last edited: 2026-07-01", "seller_username": "Joe-Siow", "url": "https://www.head-fi.org/classifieds/pd-tansio-mirai-akiba-iem.97755/", "price_num": 899.0, "date_ms": 1761955200000, "listing_status": "stale", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_unsold_180d", "status_comment": "stale unsold after 180d; not counted as a sale", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_stale_unsold_180d_lister_never_updated | safari_ipad_ingest_v1 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Tansio Mirai Akiba IEM", "raw_text": "Tansio Mirai Akiba IEM\nListing ID: 97755\nFor Sale 999.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To Anywhere\nFor sale is the former flagship Tansio Mirai model AKIBA, a 7 BA & 4 EST hybrid I first got the pair as CIEM. Sent them in to Penon for reshell to universal and just received them back this week, so these are literally good as new...\nListed by: Joe-Siow (27)\nListed: 2025-11-01\nLast edited: 2026-03-29", "seller_username": "Joe-Siow", "url": "https://www.head-fi.org/classifieds/tansio-mirai-akiba-iem.97755/", "price_num": 999.0, "date_ms": 1761955200000, "listing_status": "stale", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_stale_unsold_60d_lister_never_updated"}, {"row_id": 6, "title": "Dunu Mirai For Sale 520.00 USD Condition Excellent/Like New Negotiability Firm Ships To North America", "raw_text": "Dunu Mirai For Sale 520.00 USD Condition Excellent/Like New Negotiability Firm Ships To North America", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/dunu-mirai.110075/", "price_num": 520.0, "date_ms": null, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "visible_card_collect_with_price_title_match_v6 | active_status_checker_status_unclear_left_unchanged | active_status_checker_verified_or_left_active | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_unclear_left_unchanged"}];
 const originalMsrpUsd = 1100.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
