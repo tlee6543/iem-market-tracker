@@ -741,7 +741,7 @@
     "based_on": "Loaner unit",
     "tracker_slug": "prisma-audio-lumen",
     "market_value": 1450.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -1196,7 +1196,7 @@
     "comments": "A solid improvement in imaging with slightly more palatable tonality than its predecessor.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "thieaudio-monarch-mkii",
-    "market_value": 531.25,
+    "market_value": 516.67,
     "market_confidence": "High"
   },
   {
@@ -2060,7 +2060,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 192.86,
+    "market_value": 198.33,
     "market_confidence": "High"
   },
   {
