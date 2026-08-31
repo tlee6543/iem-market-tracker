@@ -884,7 +884,7 @@
     "comments": "Exceptional tuning and treble refinement; sets the benchmark at $400.",
     "based_on": "Loaner",
     "tracker_slug": "yu9-que",
-    "market_value": 346.0,
+    "market_value": 338.75,
     "market_confidence": "High"
   },
   {
@@ -1268,8 +1268,8 @@
     "comments": "Out-of-head imaging, plus terrific layering chops and musicality. Stay away if you want good bass.",
     "based_on": "Personal unit",
     "tracker_slug": "campfire-andromeda-2020",
-    "market_value": 642.42,
-    "market_confidence": "Medium"
+    "market_value": 615.01,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -1819,7 +1819,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "letshuoer-ej07m",
+    "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
   },
