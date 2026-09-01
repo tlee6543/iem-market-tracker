@@ -188,7 +188,7 @@
     "comments": "Pretty much the closest to a tonal panacea that I've heard only held back by the bass.",
     "based_on": "Loaner",
     "tracker_slug": "7th-acoustics-asteria",
-    "market_value": 3366.67,
+    "market_value": 3450.6,
     "market_confidence": "High"
   },
   {
@@ -428,7 +428,7 @@
     "comments": "Excellent detail retreival and competent tuning. Can be slightly thin sounding and forward in the treble.",
     "based_on": "Loaner",
     "tracker_slug": "thieaudio-monarch-mkiv",
-    "market_value": 870.56,
+    "market_value": 868.5,
     "market_confidence": "High"
   },
   {
@@ -1006,6 +1006,30 @@
     "tracker_slug": "moondrop-s8",
     "market_value": 344.3,
     "market_confidence": "High"
+  },
+  {
+    "entry_type": "ranked",
+    "iem": "Nightjar Duality",
+    "favorite": false,
+    "canonical_name": "Nightjar Duality",
+    "release_year": "—",
+    "final_score": 7.1,
+    "tonality": "7.3",
+    "bass": "8.0",
+    "midrange": "7.0",
+    "treble": "7.0",
+    "tech": "7.0",
+    "detail": "7.0",
+    "imaging": "7.0",
+    "dynamics": "7.0",
+    "bias": "7.0",
+    "setup": "2DD",
+    "price": "—",
+    "comments": "",
+    "based_on": "Loaner unit",
+    "tracker_slug": "nightjar-duality",
+    "market_value": 2537.78,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -10220,8 +10244,8 @@
     "comments": "Mostly decent but the treble is excessively bright past 15kHz and gives me a headache.",
     "based_on": "Brief demo",
     "tracker_slug": "pmg-audio-apx-me",
-    "market_value": 5516.67,
-    "market_confidence": "Medium"
+    "market_value": 5412.5,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -11750,7 +11774,7 @@
     "detail": "—",
     "imaging": "—",
     "dynamics": "—",
-    "bias": "—",
+    "bias": "5",
     "setup": "—",
     "price": "—",
     "comments": "",
@@ -13430,7 +13454,7 @@
     "detail": "—",
     "imaging": "—",
     "dynamics": "—",
-    "bias": "—",
+    "bias": "5.5",
     "setup": "—",
     "price": "—",
     "comments": "More expensive, slightly worse Moondrop May based on memory.",
@@ -13585,9 +13609,9 @@
   },
   {
     "entry_type": "demoed",
-    "iem": "Nightjar Duality (Proto)",
+    "iem": "Nightjar Singularity",
     "favorite": false,
-    "canonical_name": "Nightjar Duality",
+    "canonical_name": "Nightjar Singularity",
     "release_year": "—",
     "final_score": null,
     "tonality": "—",
@@ -13598,14 +13622,14 @@
     "detail": "—",
     "imaging": "—",
     "dynamics": "—",
-    "bias": "—",
+    "bias": "5.5",
     "setup": "—",
     "price": "—",
     "comments": "",
     "based_on": "Brief demo",
-    "tracker_slug": "nightjar-duality",
-    "market_value": 2537.78,
-    "market_confidence": "Medium"
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "demoed",
@@ -14132,8 +14156,8 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "pmg-audio-apx-me",
-    "market_value": 5516.67,
-    "market_confidence": "Medium"
+    "market_value": 5412.5,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -15812,12 +15836,12 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "xenns-mangird-tea-pro-se",
-    "market_value": 320.0,
+    "market_value": 330.0,
     "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
-    "iem": "Ziigaat Horzon",
+    "iem": "Ziigaat Horizon",
     "favorite": false,
     "canonical_name": "Ziigaat Horizon",
     "release_year": "2025",
