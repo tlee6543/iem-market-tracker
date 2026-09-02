@@ -1843,7 +1843,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "letshuoer-ej07m",
+    "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -5588,8 +5588,8 @@
     "comments": "A leaner, more forward version of the 3001.",
     "based_on": "DUNU loaner",
     "tracker_slug": "dunu-dk-2001",
-    "market_value": 279.26,
-    "market_confidence": "Medium"
+    "market_value": 285.0,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -7035,7 +7035,7 @@
     "entry_type": "ranked",
     "iem": "Kbear Diamond",
     "favorite": false,
-    "canonical_name": "KBear Diamond",
+    "canonical_name": "KBEAR Diamond",
     "release_year": "2020",
     "final_score": 4.1,
     "tonality": "4.3",
@@ -7051,9 +7051,9 @@
     "price": "$80",
     "comments": "Pretty good bass texture if not somewhat bloated; overall solid tuning.",
     "based_on": "Super*Review's unit",
-    "tracker_slug": "kbear-diamond",
-    "market_value": 1280.0,
-    "market_confidence": "Low"
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
