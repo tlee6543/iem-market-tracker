@@ -266,7 +266,7 @@
   {
     "entry_type": "ranked",
     "iem": "64 Audio Tia Trio",
-    "favorite": true,
+    "favorite": false,
     "canonical_name": "64 Audio Tia Trio",
     "release_year": "2017",
     "final_score": 8.1,
