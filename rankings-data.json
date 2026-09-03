@@ -5588,8 +5588,8 @@
     "comments": "A leaner, more forward version of the 3001.",
     "based_on": "DUNU loaner",
     "tracker_slug": "dunu-dk-2001",
-    "market_value": 279.13,
-    "market_confidence": "Medium"
+    "market_value": 285.0,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
