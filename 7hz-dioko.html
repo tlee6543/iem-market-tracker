@@ -664,7 +664,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">3</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -689,8 +689,24 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" checked></td>
+<tr id="row-0" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<td>2026-09-01</td>
+<td>$200</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Active</td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>FreeWheelinAudioLuv2</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">Overpriced (233.3% above market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/sound-rhyme-sp01-3-am16-balanced-salnotes-dioko-fengru-wdm01.114820/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="reddit" checked></td>
 <td>2026-05-24</td>
 <td>$60</td>
 <td><span class="pill">closed</span></td>
@@ -701,12 +717,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Serelistia</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1tm1m9b/wts_usapa_h_magicone_em6l_dioko_tanchjim_one_w/#item-2" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" ></td>
+<tr id="row-2" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" ></td>
 <td>2023-06-02</td>
 <td>$220</td>
 <td><span class="pill">closed</span></td>
@@ -717,13 +733,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>ndhuanhuan</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Closed: Overpriced (266.7% above market)</span></td>
+<td><span id="deal-score-2">Closed: Overpriced (266.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/bundle-blessing-2-7hz-dioko.48683/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Salnotes Dioko has been taken for", "raw_text": "Salnotes Dioko has been taken for $60 shipped!", "seller_username": "Serelistia", "url": "https://old.reddit.com/r/AVexchange/comments/1tm1m9b/wts_usapa_h_magicone_em6l_dioko_tanchjim_one_w/#item-2", "price_num": 60.0, "date_ms": 1779596030000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_transaction_trigger_and_confirmation | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=simgot"}, {"row_id": 1, "title": "Closed: (Bundle) Blessing 2 + 7hz Dioko", "raw_text": "For Sale Closed: (Bundle) Blessing 2 + 7hz Dioko Price 220.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Blessing 2 , I\u2019ve used for around 20 hours. The condition is pretty good and I\u2019m the first owner. No scratches and fully functional. I don\u2019t have the Waifu outer box. 7Hz dioko was bought on Headfi, since I already own Timeless, I don\u2019t need it anymore. Only IEM, cable, and carrying bag are... ndhuanhuan Listing Jun 2, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "ndhuanhuan", "url": "https://www.head-fi.org/classifieds/bundle-blessing-2-7hz-dioko.48683/", "price_num": 220.0, "date_ms": 1685664000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Sound Rhyme SP01 + 3 (AM16 Balanced, Salnotes Dioko, Fengru WDM01)", "raw_text": "Sound Rhyme SP01 + 3 (AM16 Balanced, Salnotes Dioko, Fengru WDM01) Listing ID: 114820 For Sale 200.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Sound Rhyme SP01 (red) bundle with KZ AM16 Balanced, 7HZ Salnotes Dioko, and Fengru WDM01 DLC!! This is a value bundle (so cannot sell this set separate), including the Sound Rhyme SP01 with original accessories (minus upgrade cable) and box... Listed by: FreeWheelinAudioLuv2 (8) Listed: 2026-09-01", "seller_username": "FreeWheelinAudioLuv2", "url": "https://www.head-fi.org/classifieds/sound-rhyme-sp01-3-am16-balanced-salnotes-dioko-fengru-wdm01.114820/", "price_num": 200.0, "date_ms": 1788220800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Salnotes Dioko has been taken for", "raw_text": "Salnotes Dioko has been taken for $60 shipped!", "seller_username": "Serelistia", "url": "https://old.reddit.com/r/AVexchange/comments/1tm1m9b/wts_usapa_h_magicone_em6l_dioko_tanchjim_one_w/#item-2", "price_num": 60.0, "date_ms": 1779596030000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_transaction_trigger_and_confirmation | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=simgot"}, {"row_id": 2, "title": "Closed: (Bundle) Blessing 2 + 7hz Dioko", "raw_text": "For Sale Closed: (Bundle) Blessing 2 + 7hz Dioko Price 220.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Blessing 2 , I\u2019ve used for around 20 hours. The condition is pretty good and I\u2019m the first owner. No scratches and fully functional. I don\u2019t have the Waifu outer box. 7Hz dioko was bought on Headfi, since I already own Timeless, I don\u2019t need it anymore. Only IEM, cable, and carrying bag are... ndhuanhuan Listing Jun 2, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "ndhuanhuan", "url": "https://www.head-fi.org/classifieds/bundle-blessing-2-7hz-dioko.48683/", "price_num": 220.0, "date_ms": 1685664000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 100.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
