@@ -2032,8 +2032,8 @@
     "dynamics": "6.0",
     "bias": "6.0",
     "setup": "—",
-    "price": "—",
-    "comments": "Very pleasant listen tonally, just lacking some texture/grip in the bass despite it having good weight.",
+    "price": "$190",
+    "comments": "Very pleasant listen tonally and with smooth, micro-peaked treble that belies its price point.",
     "based_on": "Loaner unit",
     "tracker_slug": "",
     "market_value": null,
@@ -5612,8 +5612,8 @@
     "comments": "A leaner, more forward version of the 3001.",
     "based_on": "DUNU loaner",
     "tracker_slug": "dunu-dk-2001",
-    "market_value": 285.0,
-    "market_confidence": "Low"
+    "market_value": 279.13,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -10700,8 +10700,8 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-alien-brain",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 600.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
