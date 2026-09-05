@@ -332,8 +332,8 @@
     "comments": "Basically a more sub-bass focused Annihilator 2021 with some trade-offs in technicalities.",
     "based_on": "Zepp & Co Unit",
     "tracker_slug": "elysian-x",
-    "market_value": 452.9,
-    "market_confidence": "Low"
+    "market_value": 2600.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -6957,7 +6957,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -11732,7 +11732,7 @@
     "comments": "Great detail pick-up and solid tuning at the expense of being somewhat strident.",
     "based_on": "Brief demo",
     "tracker_slug": "elysian-pilgrim",
-    "market_value": 233.07,
+    "market_value": 199.97,
     "market_confidence": "High"
   },
   {
