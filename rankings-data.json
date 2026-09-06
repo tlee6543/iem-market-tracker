@@ -1388,7 +1388,7 @@
     "comments": "Slightly colored but well-rounded tonality with minor quirks.",
     "based_on": "Loaner unit",
     "tracker_slug": "xenns-mangird-top-pro",
-    "market_value": 345.0,
+    "market_value": 347.5,
     "market_confidence": "High"
   },
   {
@@ -2036,8 +2036,8 @@
     "comments": "Very pleasant listen tonally and with smooth, micro-peaked treble that belies its price point. Missing a little grip in the bass despite good quantity.",
     "based_on": "Loaner unit",
     "tracker_slug": "juzear-light-shuttle",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 180.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -13268,7 +13268,7 @@
     "comments": "Thin, reference sound with a slight lack of trebel extension and average imaging.",
     "based_on": "Brief demo",
     "tracker_slug": "lime-ears-aether",
-    "market_value": 95.18,
+    "market_value": 92.1,
     "market_confidence": "Medium"
   },
   {
