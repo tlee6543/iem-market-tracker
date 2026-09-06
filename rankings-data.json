@@ -97,30 +97,6 @@
   },
   {
     "entry_type": "ranked",
-    "iem": "Symphonium Audio Zenith",
-    "favorite": true,
-    "canonical_name": "Symphonium Zenith",
-    "release_year": "2026",
-    "final_score": 8.6,
-    "tonality": "8.7",
-    "bass": "9.0",
-    "midrange": "8.0",
-    "treble": "9.0",
-    "tech": "8.7",
-    "detail": "9.0",
-    "imaging": "9.0",
-    "dynamics": "8.0",
-    "bias": "8.5",
-    "setup": "4BA",
-    "price": "$1,800",
-    "comments": "Exceptional musicality and unfettered driver efficiency.",
-    "based_on": "Loaner unit",
-    "tracker_slug": "symphonium-zenith",
-    "market_value": 1641.67,
-    "market_confidence": "High"
-  },
-  {
-    "entry_type": "ranked",
     "iem": "Elysian Annihilator 2021",
     "favorite": false,
     "canonical_name": "Elysian Annihilator 2021",
@@ -165,6 +141,30 @@
     "based_on": "Personal unit",
     "tracker_slug": "elysian-annihilator-2023",
     "market_value": 2284.4,
+    "market_confidence": "High"
+  },
+  {
+    "entry_type": "ranked",
+    "iem": "Symphonium Audio Zenith",
+    "favorite": true,
+    "canonical_name": "Symphonium Zenith",
+    "release_year": "2026",
+    "final_score": 8.4,
+    "tonality": "8.7",
+    "bass": "9.0",
+    "midrange": "8.0",
+    "treble": "9.0",
+    "tech": "8.7",
+    "detail": "9.0",
+    "imaging": "9.0",
+    "dynamics": "8.0",
+    "bias": "8.0",
+    "setup": "4BA",
+    "price": "$1,800",
+    "comments": "Exceptional musicality and unfettered driver efficiency.",
+    "based_on": "Loaner unit",
+    "tracker_slug": "symphonium-zenith",
+    "market_value": 1641.67,
     "market_confidence": "High"
   },
   {
@@ -10292,8 +10292,8 @@
     "comments": "Mostly decent but the treble is excessively bright past 15kHz and gives me a headache.",
     "based_on": "Brief demo",
     "tracker_slug": "pmg-audio-apx-me",
-    "market_value": 5337.5,
-    "market_confidence": "Medium"
+    "market_value": 5270.0,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -14228,8 +14228,8 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "pmg-audio-apx-me",
-    "market_value": 5337.5,
-    "market_confidence": "Medium"
+    "market_value": 5270.0,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -14660,8 +14660,8 @@
     "comments": "L-shaped listen with a smooth sound. Bombastic bass that's missing some texture.",
     "based_on": "Brief demo",
     "tracker_slug": "quill-acoustics-karma",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "market_value": 810.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
