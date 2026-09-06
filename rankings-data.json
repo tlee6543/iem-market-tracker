@@ -44,7 +44,7 @@
     "comments": "Slightly intense in the treble and odd tonally but easily at the top for a sense of detail and dynamics.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-hex",
-    "market_value": 9166.33,
+    "market_value": 9157.83,
     "market_confidence": "High"
   },
   {
@@ -1843,7 +1843,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "",
+    "tracker_slug": "letshuoer-ej07m",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -2019,8 +2019,8 @@
     "entry_type": "ranked",
     "iem": "Juzear Light Shuttle",
     "favorite": false,
-    "canonical_name": "",
-    "release_year": "—",
+    "canonical_name": "Juzear Light Shuttle",
+    "release_year": "2026",
     "final_score": 6.3,
     "tonality": "7.0",
     "bass": "7.0",
@@ -2035,9 +2035,9 @@
     "price": "$190",
     "comments": "Very pleasant listen tonally and with smooth, micro-peaked treble that belies its price point. Missing a little grip in the bass despite good quantity.",
     "based_on": "Loaner unit",
-    "tracker_slug": "",
+    "tracker_slug": "juzear-light-shuttle",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -10940,7 +10940,7 @@
     "comments": "Literally sounds like balls.",
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-trifecta",
-    "market_value": 1762.5,
+    "market_value": 1800.0,
     "market_confidence": "High"
   },
   {
@@ -11564,7 +11564,7 @@
     "comments": "More realistic sounding than the Destin, adds back some weight to the sub-bass and lower-treble. Good techs, a bit lacking in tuning refinement.",
     "based_on": "Brief demo",
     "tracker_slug": "dita-ventura",
-    "market_value": 3483.33,
+    "market_value": 3460.0,
     "market_confidence": "High"
   },
   {
