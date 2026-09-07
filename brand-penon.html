@@ -382,6 +382,144 @@ score backgrounds cannot be lost to broader table/cell styling.
 .rankings-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
 .rankings-title-row h1 { margin: 0; }
 .rankings-title-actions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; flex-wrap: wrap; margin-left: auto; }
+.ranking-changelog-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+    border-radius: 999px;
+    padding: 8px 13px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.ranking-changelog-link:hover { background: #333; color: #fff; }
+.changelog-shell { max-width: 1100px; margin: 0 auto; }
+.changelog-hero { margin-bottom: 16px; }
+.changelog-hero h1 { margin-bottom: 8px; }
+.changelog-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 14px 0 18px;
+}
+.changelog-summary-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 14px;
+    background: #fff;
+}
+.changelog-summary-value {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 3px;
+}
+.changelog-build {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #fff;
+    margin: 0 0 16px;
+    overflow: hidden;
+}
+.changelog-build-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 15px 16px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fafafa;
+}
+.changelog-build-header h2 { margin: 0 0 4px; font-size: 18px; }
+.changelog-build-counts { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.changelog-badge {
+    display: inline-flex;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    background: #fff;
+    white-space: nowrap;
+}
+.changelog-badge.added { border-color: #8ec99d; background: #edf8f0; }
+.changelog-badge.updated { border-color: #9bbce5; background: #eef5ff; }
+.changelog-badge.removed { border-color: #e2a3a3; background: #fff1f1; }
+.changelog-iem {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+}
+.changelog-iem:last-child { border-bottom: 0; }
+.changelog-iem-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-weight: 800;
+    margin-bottom: 7px;
+}
+.changelog-action {
+    font-size: 11px;
+    border-radius: 999px;
+    padding: 3px 7px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+.changelog-action.added { background: #dff3e4; color: #216b34; }
+.changelog-action.updated { background: #e7f0ff; color: #245b9d; }
+.changelog-action.removed { background: #fde5e5; color: #9c2f2f; }
+.changelog-field-list {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.changelog-field-row {
+    display: grid;
+    grid-template-columns: minmax(110px, 170px) minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    font-size: 13px;
+}
+.changelog-field-name { font-weight: 700; color: #444; }
+.changelog-old { color: #8a3c3c; text-decoration: line-through; text-decoration-thickness: 1px; }
+.changelog-new { color: #245b38; font-weight: 700; }
+.changelog-arrow { color: #888; padding: 0 4px; }
+.changelog-snapshot {
+    margin-top: 8px;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    background: #fafafa;
+    padding: 8px 10px;
+}
+.changelog-snapshot summary {
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+.changelog-snapshot-grid {
+    display: grid;
+    grid-template-columns: minmax(120px, 180px) minmax(0, 1fr);
+    gap: 5px 10px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+.changelog-empty {
+    text-align: center;
+    padding: 28px 18px;
+}
+.changelog-back {
+    display: inline-flex;
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
 .demoed-toggle {
     display: inline-flex;
     align-items: center;
@@ -566,6 +704,10 @@ score backgrounds cannot be lost to broader table/cell styling.
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
+    .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .changelog-build-header { display: block; }
+    .changelog-build-counts { justify-content: flex-start; margin-top: 9px; }
+    .changelog-field-row { grid-template-columns: 1fr; gap: 2px; }
     .demoed-toggle { white-space: normal; }
     .score-distribution-popover { display: inline-block; margin: 0; }
     .score-distribution-panel { left: 0; right: auto; width: min(430px, calc(100vw - 32px)); }
@@ -600,6 +742,7 @@ score backgrounds cannot be lost to broader table/cell styling.
             <nav class="site-nav" aria-label="Site navigation">
                 <a href="index.html">Market Tracker</a>
                 <a href="rankings.html">Rankings</a>
+                <a href="ranking-changelog.html">Ranking Changelog</a>
                 <a href="market-dashboard.html">Market Dashboard</a>
                 <a href="resale-leaders.html">Resale Leaders</a>
                 <a href="recent-listings.html">Recent Listings</a>
@@ -667,11 +810,11 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 <tr>
     <td class="iem-col"><a href="penon-uniq.html?from=brand&brand=penon">Penon Uniq</a></td>
-    <td title="single clean closed-sale sample">$160</td>
+    <td title="recency-weighted 365d closed sales, 2 samples, 90d half-life">$163.2</td>
+    <td>$162.5</td>
     <td>$160</td>
-    <td>$160</td>
-    <td>$160</td>
-    <td>1</td>
+    <td>$165</td>
+    <td>2</td>
 </tr>
 
 <tr>
@@ -689,6 +832,8 @@ score backgrounds cannot be lost to broader table/cell styling.
         <div class="site-footer-row">
             <div class="site-footer-links">
                 <a href="about.html">About this site</a>
+                <span class="footer-separator" aria-hidden="true">•</span>
+                <a href="ranking-changelog.html">Ranking changelog</a>
                 <span class="footer-separator" aria-hidden="true">•</span>
                 <span>Independent IEM market data and rankings</span>
             </div>

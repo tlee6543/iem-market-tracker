@@ -382,6 +382,144 @@ score backgrounds cannot be lost to broader table/cell styling.
 .rankings-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
 .rankings-title-row h1 { margin: 0; }
 .rankings-title-actions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; flex-wrap: wrap; margin-left: auto; }
+.ranking-changelog-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+    border-radius: 999px;
+    padding: 8px 13px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.ranking-changelog-link:hover { background: #333; color: #fff; }
+.changelog-shell { max-width: 1100px; margin: 0 auto; }
+.changelog-hero { margin-bottom: 16px; }
+.changelog-hero h1 { margin-bottom: 8px; }
+.changelog-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 14px 0 18px;
+}
+.changelog-summary-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 14px;
+    background: #fff;
+}
+.changelog-summary-value {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 3px;
+}
+.changelog-build {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #fff;
+    margin: 0 0 16px;
+    overflow: hidden;
+}
+.changelog-build-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 15px 16px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fafafa;
+}
+.changelog-build-header h2 { margin: 0 0 4px; font-size: 18px; }
+.changelog-build-counts { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.changelog-badge {
+    display: inline-flex;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    background: #fff;
+    white-space: nowrap;
+}
+.changelog-badge.added { border-color: #8ec99d; background: #edf8f0; }
+.changelog-badge.updated { border-color: #9bbce5; background: #eef5ff; }
+.changelog-badge.removed { border-color: #e2a3a3; background: #fff1f1; }
+.changelog-iem {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+}
+.changelog-iem:last-child { border-bottom: 0; }
+.changelog-iem-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-weight: 800;
+    margin-bottom: 7px;
+}
+.changelog-action {
+    font-size: 11px;
+    border-radius: 999px;
+    padding: 3px 7px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+.changelog-action.added { background: #dff3e4; color: #216b34; }
+.changelog-action.updated { background: #e7f0ff; color: #245b9d; }
+.changelog-action.removed { background: #fde5e5; color: #9c2f2f; }
+.changelog-field-list {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.changelog-field-row {
+    display: grid;
+    grid-template-columns: minmax(110px, 170px) minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    font-size: 13px;
+}
+.changelog-field-name { font-weight: 700; color: #444; }
+.changelog-old { color: #8a3c3c; text-decoration: line-through; text-decoration-thickness: 1px; }
+.changelog-new { color: #245b38; font-weight: 700; }
+.changelog-arrow { color: #888; padding: 0 4px; }
+.changelog-snapshot {
+    margin-top: 8px;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    background: #fafafa;
+    padding: 8px 10px;
+}
+.changelog-snapshot summary {
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+.changelog-snapshot-grid {
+    display: grid;
+    grid-template-columns: minmax(120px, 180px) minmax(0, 1fr);
+    gap: 5px 10px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+.changelog-empty {
+    text-align: center;
+    padding: 28px 18px;
+}
+.changelog-back {
+    display: inline-flex;
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
 .demoed-toggle {
     display: inline-flex;
     align-items: center;
@@ -566,6 +704,10 @@ score backgrounds cannot be lost to broader table/cell styling.
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
+    .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .changelog-build-header { display: block; }
+    .changelog-build-counts { justify-content: flex-start; margin-top: 9px; }
+    .changelog-field-row { grid-template-columns: 1fr; gap: 2px; }
     .demoed-toggle { white-space: normal; }
     .score-distribution-popover { display: inline-block; margin: 0; }
     .score-distribution-panel { left: 0; right: auto; width: min(430px, calc(100vw - 32px)); }
@@ -600,6 +742,7 @@ score backgrounds cannot be lost to broader table/cell styling.
             <nav class="site-nav" aria-label="Site navigation">
                 <a href="index.html">Market Tracker</a>
                 <a href="rankings.html">Rankings</a>
+                <a href="ranking-changelog.html">Ranking Changelog</a>
                 <a href="market-dashboard.html">Market Dashboard</a>
                 <a href="resale-leaders.html">Resale Leaders</a>
                 <a href="recent-listings.html">Recent Listings</a>
@@ -656,7 +799,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 76d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 76d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (41/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 76d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 63/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 30/30, recent sample depth 12/15, source diversity 8/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 1d ago, 2 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 63/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 30/30, recent sample depth 12/15, source diversity 8/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 1d ago, 2 source type(s), two samples; limited volatility read." tabindex="0">Medium (63/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 1d ago.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -686,11 +829,11 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
+<tr id="row-0" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" checked></td>
 <td>2026-09-06</td>
 <td>$165</td>
-<td><span class="pill">active</span></td>
+<td><span class="pill">closed</span></td>
 <td class="status-reason">Sale confirmed</td>
 <td></td>
 <td>0</td>
@@ -698,7 +841,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Legitjoe87</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Fair (3.1% above market)</span></td>
+<td><span id="deal-score-0">Closed: Fair (1.1% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1w8h6x8/wts_usok_h_grell_oae2_aune_ar5000_effect_audio/#item-2" target="_blank">source</a></td>
 </tr>
 
@@ -714,7 +857,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>LegitJoe87</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Fair (3.1% above market)</span></td>
+<td><span id="deal-score-1">Fair (1.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/penon-uniq.115044/" target="_blank">source</a></td>
 </tr>
 
@@ -730,7 +873,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Drock6</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">Fair (9.4% above market)</span></td>
+<td><span id="deal-score-2">Fair (7.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/penon-uniq.112578/" target="_blank">source</a></td>
 </tr>
 
@@ -746,13 +889,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>drummguy26</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-3">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-3">Closed: Fair (2.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/penon-uniq.111165/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Penon Uniq", "raw_text": "Penon Uniq - $165 obo - https://imgur.com/a/ALhDHAi\nEngaging, musical IEM with lush vocals, impactful bass, and a smooth, fatigue-free tuning. One of the the best single DD I\u2019ve experienced. Includes all tips, accessories and packaging.", "seller_username": "Legitjoe87", "url": "https://www.reddit.com/r/AVexchange/comments/1w8h6x8/wts_usok_h_grell_oae2_aune_ar5000_effect_audio/#item-2", "price_num": 165.0, "date_ms": 1788654385000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Penon Uniq", "raw_text": "Penon Uniq Listing ID: 115044 For Sale 165.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America $165 obo - G&S fees and shipping included. Engaging, musical IEM with lush vocals, impactful bass, and a smooth, fatigue-free tuning. One of the the best single DD I\u2019ve experienced. Includes all tips, accessories and packaging. Pet/Smoke free... Listed by: LegitJoe87 (56) Listed: 2026-09-05", "seller_username": "LegitJoe87", "url": "https://www.head-fi.org/classifieds/penon-uniq.115044/", "price_num": 165.0, "date_ms": 1788566400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 2, "title": "Penon Uniq", "raw_text": "Penon Uniq\nListing ID: 112578\nFor Sale 175.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To United States Of America\nSelling my Penon Uniq in excellent condition. Love this set, but I'm trying some new things and it's not getting the listening time it deserves. Includes the original box and all accessories. Cable has very little wear, and the stock tips are...\nListed by: Drock6 (18)\nListed: 2026-07-21\nLast edited: 2026-07-21", "seller_username": "Drock6", "url": "https://www.head-fi.org/classifieds/penon-uniq.112578/", "price_num": 175.0, "date_ms": 1784592000000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "category_listing_id_text_fallback_v8 | headfi_extension_status_checker_unclear_left_unchanged | active_status_checker_headfi_live_check_skipped"}, {"row_id": 3, "title": "Penon UNIQ", "raw_text": "Penon UNIQ\nListing ID: 111165\nFor Sale 160.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To North America\nSelling my pristine Penon UNIQ's. Only used the IEMs for less than 10hrs. Tips, accessories, cable and case are all unopened and unused. This is a practically new set. Selling because I need the money and also these are slightly vented and I...\nListed by: drummguy26 (26)\nListed: 2026-06-23\nLast edited: 2026-06-23\nSOLD", "seller_username": "drummguy26", "url": "https://www.head-fi.org/classifieds/penon-uniq.111165/", "price_num": 160.0, "date_ms": 1782172800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}];
+const allRows = [{"row_id": 0, "title": "Penon Uniq", "raw_text": "Penon Uniq - $165 obo - https://imgur.com/a/ALhDHAi\nEngaging, musical IEM with lush vocals, impactful bass, and a smooth, fatigue-free tuning. One of the the best single DD I\u2019ve experienced. Includes all tips, accessories and packaging.", "seller_username": "Legitjoe87", "url": "https://www.reddit.com/r/AVexchange/comments/1w8h6x8/wts_usok_h_grell_oae2_aune_ar5000_effect_audio/#item-2", "price_num": 165.0, "date_ms": 1788654385000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_item_text"}, {"row_id": 1, "title": "Penon Uniq", "raw_text": "Penon Uniq Listing ID: 115044 For Sale 165.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America $165 obo - G&S fees and shipping included. Engaging, musical IEM with lush vocals, impactful bass, and a smooth, fatigue-free tuning. One of the the best single DD I\u2019ve experienced. Includes all tips, accessories and packaging. Pet/Smoke free... Listed by: LegitJoe87 (56) Listed: 2026-09-05", "seller_username": "LegitJoe87", "url": "https://www.head-fi.org/classifieds/penon-uniq.115044/", "price_num": 165.0, "date_ms": 1788566400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 2, "title": "Penon Uniq", "raw_text": "Penon Uniq\nListing ID: 112578\nFor Sale 175.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To United States Of America\nSelling my Penon Uniq in excellent condition. Love this set, but I'm trying some new things and it's not getting the listening time it deserves. Includes the original box and all accessories. Cable has very little wear, and the stock tips are...\nListed by: Drock6 (18)\nListed: 2026-07-21\nLast edited: 2026-07-21", "seller_username": "Drock6", "url": "https://www.head-fi.org/classifieds/penon-uniq.112578/", "price_num": 175.0, "date_ms": 1784592000000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "category_listing_id_text_fallback_v8 | headfi_extension_status_checker_unclear_left_unchanged | active_status_checker_headfi_live_check_skipped"}, {"row_id": 3, "title": "Penon UNIQ", "raw_text": "Penon UNIQ\nListing ID: 111165\nFor Sale 160.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To North America\nSelling my pristine Penon UNIQ's. Only used the IEMs for less than 10hrs. Tips, accessories, cable and case are all unopened and unused. This is a practically new set. Selling because I need the money and also these are slightly vented and I...\nListed by: drummguy26 (26)\nListed: 2026-06-23\nLast edited: 2026-06-23\nSOLD", "seller_username": "drummguy26", "url": "https://www.head-fi.org/classifieds/penon-uniq.111165/", "price_num": 160.0, "date_ms": 1782172800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -1696,6 +1839,8 @@ setMarketplaceSource(getInitialMarketplaceSource());
         <div class="site-footer-row">
             <div class="site-footer-links">
                 <a href="about.html">About this site</a>
+                <span class="footer-separator" aria-hidden="true">•</span>
+                <a href="ranking-changelog.html">Ranking changelog</a>
                 <span class="footer-separator" aria-hidden="true">•</span>
                 <span>Independent IEM market data and rankings</span>
             </div>

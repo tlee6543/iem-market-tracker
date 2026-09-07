@@ -382,6 +382,144 @@ score backgrounds cannot be lost to broader table/cell styling.
 .rankings-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
 .rankings-title-row h1 { margin: 0; }
 .rankings-title-actions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; flex-wrap: wrap; margin-left: auto; }
+.ranking-changelog-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+    border-radius: 999px;
+    padding: 8px 13px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.ranking-changelog-link:hover { background: #333; color: #fff; }
+.changelog-shell { max-width: 1100px; margin: 0 auto; }
+.changelog-hero { margin-bottom: 16px; }
+.changelog-hero h1 { margin-bottom: 8px; }
+.changelog-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 14px 0 18px;
+}
+.changelog-summary-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 14px;
+    background: #fff;
+}
+.changelog-summary-value {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 3px;
+}
+.changelog-build {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #fff;
+    margin: 0 0 16px;
+    overflow: hidden;
+}
+.changelog-build-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 15px 16px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fafafa;
+}
+.changelog-build-header h2 { margin: 0 0 4px; font-size: 18px; }
+.changelog-build-counts { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.changelog-badge {
+    display: inline-flex;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    background: #fff;
+    white-space: nowrap;
+}
+.changelog-badge.added { border-color: #8ec99d; background: #edf8f0; }
+.changelog-badge.updated { border-color: #9bbce5; background: #eef5ff; }
+.changelog-badge.removed { border-color: #e2a3a3; background: #fff1f1; }
+.changelog-iem {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+}
+.changelog-iem:last-child { border-bottom: 0; }
+.changelog-iem-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-weight: 800;
+    margin-bottom: 7px;
+}
+.changelog-action {
+    font-size: 11px;
+    border-radius: 999px;
+    padding: 3px 7px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+.changelog-action.added { background: #dff3e4; color: #216b34; }
+.changelog-action.updated { background: #e7f0ff; color: #245b9d; }
+.changelog-action.removed { background: #fde5e5; color: #9c2f2f; }
+.changelog-field-list {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.changelog-field-row {
+    display: grid;
+    grid-template-columns: minmax(110px, 170px) minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    font-size: 13px;
+}
+.changelog-field-name { font-weight: 700; color: #444; }
+.changelog-old { color: #8a3c3c; text-decoration: line-through; text-decoration-thickness: 1px; }
+.changelog-new { color: #245b38; font-weight: 700; }
+.changelog-arrow { color: #888; padding: 0 4px; }
+.changelog-snapshot {
+    margin-top: 8px;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    background: #fafafa;
+    padding: 8px 10px;
+}
+.changelog-snapshot summary {
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+.changelog-snapshot-grid {
+    display: grid;
+    grid-template-columns: minmax(120px, 180px) minmax(0, 1fr);
+    gap: 5px 10px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+.changelog-empty {
+    text-align: center;
+    padding: 28px 18px;
+}
+.changelog-back {
+    display: inline-flex;
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
 .demoed-toggle {
     display: inline-flex;
     align-items: center;
@@ -566,6 +704,10 @@ score backgrounds cannot be lost to broader table/cell styling.
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
+    .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .changelog-build-header { display: block; }
+    .changelog-build-counts { justify-content: flex-start; margin-top: 9px; }
+    .changelog-field-row { grid-template-columns: 1fr; gap: 2px; }
     .demoed-toggle { white-space: normal; }
     .score-distribution-popover { display: inline-block; margin: 0; }
     .score-distribution-panel { left: 0; right: auto; width: min(430px, calc(100vw - 32px)); }
@@ -600,6 +742,7 @@ score backgrounds cannot be lost to broader table/cell styling.
             <nav class="site-nav" aria-label="Site navigation">
                 <a href="index.html">Market Tracker</a>
                 <a href="rankings.html">Rankings</a>
+                <a href="ranking-changelog.html">Ranking Changelog</a>
                 <a href="market-dashboard.html">Market Dashboard</a>
                 <a href="resale-leaders.html">Resale Leaders</a>
                 <a href="recent-listings.html">Recent Listings</a>
@@ -848,7 +991,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 275$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!\nBeyerdynamic DT 770 PRO 250 Ohm headphones Studio ( foto 7,8 ) - sold\nsubmitted by /u/headphones_lover_123\n[link] [comments]", "seller_username": "headphones_lover_123", "url": "https://www.reddit.com/r/AVexchange/comments/1w5o1cg/wtsukrukrh_dunu_dk2001_acoustune_hs1551_kinera/#item-3", "price_num": 275.0, "date_ms": 1788385038000, "listing_status": "active", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len88347:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 275$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!\nBeyerdynamic DT 770 PRO 250 Ohm headphones Studio ( foto 7,8 ) - sold\nsubmitted by /u/headphones_lover_123\n[link] [comments]", "seller_username": "headphones_lover_123", "url": "https://www.reddit.com/r/AVexchange/comments/1vz9m87/wtsukrukrh_dunu_dk2001_acoustune_hs1551_kinera/#item-3", "price_num": 275.0, "date_ms": 1787777940000, "listing_status": "active", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len68761:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 275$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!\nBeyerdynamic DT 770 PRO 250 Ohm headphones Studio ( foto 7,8 ) - sold\nsubmitted by /u/headphones_lover_123\n[link] [comments]", "seller_username": "headphones_lover_123", "url": "https://www.reddit.com/r/AVexchange/comments/1vszhwa/wtsukrukrh_dunu_dk2001_acoustune_hs1551_kinera/#item-3", "price_num": 275.0, "date_ms": 1787174335000, "listing_status": "active", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len68797:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 275$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!\nBeyerdynamic DT 770 PRO 250 Ohm headphones Studio ( foto 7,8 ) - sold\nsubmitted by /u/headphones_lover_123\n[link] [comments]", "seller_username": "headphones_lover_123", "url": "https://www.reddit.com/r/AVexchange/comments/1vkgb3z/wtsukrukrh_dunu_dk2001_acoustune_hs1551_kinera/#item-3", "price_num": 275.0, "date_ms": 1786355186000, "listing_status": "active", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_http_backoff_this_run_rss=None:len0_pages=none_http_skipped=1_browser=0_browser_budget_exhausted", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 4, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 265$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!", "seller_username": "headphones_lover_123", "url": "https://old.reddit.com/r/AVexchange/comments/1vah2ul/wtsukrukrh_abyss_ab1266_phi_tc_dunu_dk2001/#item-3", "price_num": 265.0, "date_ms": 1785379279000, "listing_status": "active", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_http_backoff_this_run_rss=None:len0_pages=none_http_skipped=1_browser=0_browser_budget_exhausted", "notes": "reddit_rss_parser_v16_trade_cash_difference_guard | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 265$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!", "seller_username": "headphones_lover_123", "url": "https://old.reddit.com/r/AVexchange/comments/1v1ryou/wtsukrukrh_abyss_ab1266_phi_tc_dunu_dk2001/#item-3", "price_num": 265.0, "date_ms": 1784568352000, "listing_status": "active", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_http_backoff_this_run_rss=None:len0_pages=none_http_skipped=1_browser=0_browser_budget_exhausted", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 6, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 265$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!", "seller_username": "headphones_lover_123", "url": "https://old.reddit.com/r/AVexchange/comments/1uoy17b/wtsukrukrh_abyss_ab1266_phi_tc_dunu_dk2001/#item-4", "price_num": 265.0, "date_ms": 1783346049000, "listing_status": "stale", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | active_status_checker_stale_unsold_60d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 7, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 265$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!", "seller_username": "headphones_lover_123", "url": "https://old.reddit.com/r/AVexchange/comments/1uklghz/wtsukrukrh_abyss_ab1266_phi_tc_dunu_dk2001/#item-4", "price_num": 265.0, "date_ms": 1782911842000, "listing_status": "stale", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | active_status_checker_stale_unsold_60d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 8, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 265$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!", "seller_username": "headphones_lover_123", "url": "https://old.reddit.com/r/AVexchange/comments/1uag5v8/wtsukrukrh_abyss_ab1266_phi_tc_dunu_dk2001/#item-4", "price_num": 265.0, "date_ms": 1781909300000, "listing_status": "closed", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 9, "title": "Acoustune limited hs1551 cu red Earplugs Headphones", "raw_text": "Acoustune limited hs1551 cu red Earplugs Headphones Listing ID: 110778 For Sale 285.00 USD Condition Good Negotiability Firm Ships To Anywhere Technically 10/10 Cosmetically 6.5/10 (condition in the photo) In the kit only what is in the photo! The sound is deep and clear! \u2022 Worldwide shipping \u2022 Real photos (what you see is what you get) \u2022 I can ship to the US, Europe, and Asia and etc... Listed by: condajackcall1976 (2) Listed: 2026-06-16 Last edited: 2026-07-19", "seller_username": "condajackcall1976", "url": "https://www.head-fi.org/classifieds/acoustune-limited-hs1551-cu-red-earplugs-headphones.110778/", "price_num": 285.0, "date_ms": 1781568000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "category_listing_id_text_fallback_v8 | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix | safari_ipad_ingest_v1"}];
+const allRows = [{"row_id": 0, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 275$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!\nBeyerdynamic DT 770 PRO 250 Ohm headphones Studio ( foto 7,8 ) - sold\nsubmitted by /u/headphones_lover_123\n[link] [comments]", "seller_username": "headphones_lover_123", "url": "https://www.reddit.com/r/AVexchange/comments/1w5o1cg/wtsukrukrh_dunu_dk2001_acoustune_hs1551_kinera/#item-3", "price_num": 275.0, "date_ms": 1788385038000, "listing_status": "active", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len88319:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 275$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!\nBeyerdynamic DT 770 PRO 250 Ohm headphones Studio ( foto 7,8 ) - sold\nsubmitted by /u/headphones_lover_123\n[link] [comments]", "seller_username": "headphones_lover_123", "url": "https://www.reddit.com/r/AVexchange/comments/1vz9m87/wtsukrukrh_dunu_dk2001_acoustune_hs1551_kinera/#item-3", "price_num": 275.0, "date_ms": 1787777940000, "listing_status": "active", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len68808:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 275$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!\nBeyerdynamic DT 770 PRO 250 Ohm headphones Studio ( foto 7,8 ) - sold\nsubmitted by /u/headphones_lover_123\n[link] [comments]", "seller_username": "headphones_lover_123", "url": "https://www.reddit.com/r/AVexchange/comments/1vszhwa/wtsukrukrh_dunu_dk2001_acoustune_hs1551_kinera/#item-3", "price_num": 275.0, "date_ms": 1787174335000, "listing_status": "active", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len68797:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 275$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!\nBeyerdynamic DT 770 PRO 250 Ohm headphones Studio ( foto 7,8 ) - sold\nsubmitted by /u/headphones_lover_123\n[link] [comments]", "seller_username": "headphones_lover_123", "url": "https://www.reddit.com/r/AVexchange/comments/1vkgb3z/wtsukrukrh_dunu_dk2001_acoustune_hs1551_kinera/#item-3", "price_num": 275.0, "date_ms": 1786355186000, "listing_status": "active", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_http_backoff_this_run_rss=None:len0_pages=none_http_skipped=1_browser=0_browser_budget_exhausted", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 4, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 265$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!", "seller_username": "headphones_lover_123", "url": "https://old.reddit.com/r/AVexchange/comments/1vah2ul/wtsukrukrh_abyss_ab1266_phi_tc_dunu_dk2001/#item-3", "price_num": 265.0, "date_ms": 1785379279000, "listing_status": "active", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_http_backoff_this_run_rss=None:len0_pages=none_http_skipped=1_browser=0_browser_budget_exhausted", "notes": "reddit_rss_parser_v16_trade_cash_difference_guard | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 265$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!", "seller_username": "headphones_lover_123", "url": "https://old.reddit.com/r/AVexchange/comments/1v1ryou/wtsukrukrh_abyss_ab1266_phi_tc_dunu_dk2001/#item-3", "price_num": 265.0, "date_ms": 1784568352000, "listing_status": "active", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_http_backoff_this_run_rss=None:len0_pages=none_http_skipped=1_browser=0_browser_budget_exhausted", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 6, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 265$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!", "seller_username": "headphones_lover_123", "url": "https://old.reddit.com/r/AVexchange/comments/1uoy17b/wtsukrukrh_abyss_ab1266_phi_tc_dunu_dk2001/#item-4", "price_num": 265.0, "date_ms": 1783346049000, "listing_status": "stale", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | active_status_checker_stale_unsold_60d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 7, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 265$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!", "seller_username": "headphones_lover_123", "url": "https://old.reddit.com/r/AVexchange/comments/1uklghz/wtsukrukrh_abyss_ab1266_phi_tc_dunu_dk2001/#item-4", "price_num": 265.0, "date_ms": 1782911842000, "listing_status": "stale", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "reddit_rss_parser_v14_trailing_dollar_and_description_price_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | active_status_checker_stale_unsold_60d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 8, "title": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 )", "raw_text": "Acoustune limited hs1551 cu red earplugs headphones ( foto 9/10 ) - 265$\nTechnically 10/10\nCosmetically 6.5/10 (condition in the photo)\nIn the kit only what is in the photo!\nThe sound is deep and clear!", "seller_username": "headphones_lover_123", "url": "https://old.reddit.com/r/AVexchange/comments/1uag5v8/wtsukrukrh_abyss_ab1266_phi_tc_dunu_dk2001/#item-4", "price_num": 265.0, "date_ms": 1781909300000, "listing_status": "closed", "condition_text": "in the photo", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 9, "title": "Acoustune limited hs1551 cu red Earplugs Headphones", "raw_text": "Acoustune limited hs1551 cu red Earplugs Headphones Listing ID: 110778 For Sale 285.00 USD Condition Good Negotiability Firm Ships To Anywhere Technically 10/10 Cosmetically 6.5/10 (condition in the photo) In the kit only what is in the photo! The sound is deep and clear! \u2022 Worldwide shipping \u2022 Real photos (what you see is what you get) \u2022 I can ship to the US, Europe, and Asia and etc... Listed by: condajackcall1976 (2) Listed: 2026-06-16 Last edited: 2026-07-19", "seller_username": "condajackcall1976", "url": "https://www.head-fi.org/classifieds/acoustune-limited-hs1551-cu-red-earplugs-headphones.110778/", "price_num": 285.0, "date_ms": 1781568000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "category_listing_id_text_fallback_v8 | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix | safari_ipad_ingest_v1"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -1792,6 +1935,8 @@ setMarketplaceSource(getInitialMarketplaceSource());
         <div class="site-footer-row">
             <div class="site-footer-links">
                 <a href="about.html">About this site</a>
+                <span class="footer-separator" aria-hidden="true">•</span>
+                <a href="ranking-changelog.html">Ranking changelog</a>
                 <span class="footer-separator" aria-hidden="true">•</span>
                 <span>Independent IEM market data and rankings</span>
             </div>

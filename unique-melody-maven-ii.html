@@ -382,6 +382,144 @@ score backgrounds cannot be lost to broader table/cell styling.
 .rankings-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
 .rankings-title-row h1 { margin: 0; }
 .rankings-title-actions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; flex-wrap: wrap; margin-left: auto; }
+.ranking-changelog-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+    border-radius: 999px;
+    padding: 8px 13px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.ranking-changelog-link:hover { background: #333; color: #fff; }
+.changelog-shell { max-width: 1100px; margin: 0 auto; }
+.changelog-hero { margin-bottom: 16px; }
+.changelog-hero h1 { margin-bottom: 8px; }
+.changelog-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 14px 0 18px;
+}
+.changelog-summary-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 14px;
+    background: #fff;
+}
+.changelog-summary-value {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 3px;
+}
+.changelog-build {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #fff;
+    margin: 0 0 16px;
+    overflow: hidden;
+}
+.changelog-build-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 15px 16px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fafafa;
+}
+.changelog-build-header h2 { margin: 0 0 4px; font-size: 18px; }
+.changelog-build-counts { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.changelog-badge {
+    display: inline-flex;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    background: #fff;
+    white-space: nowrap;
+}
+.changelog-badge.added { border-color: #8ec99d; background: #edf8f0; }
+.changelog-badge.updated { border-color: #9bbce5; background: #eef5ff; }
+.changelog-badge.removed { border-color: #e2a3a3; background: #fff1f1; }
+.changelog-iem {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+}
+.changelog-iem:last-child { border-bottom: 0; }
+.changelog-iem-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-weight: 800;
+    margin-bottom: 7px;
+}
+.changelog-action {
+    font-size: 11px;
+    border-radius: 999px;
+    padding: 3px 7px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+.changelog-action.added { background: #dff3e4; color: #216b34; }
+.changelog-action.updated { background: #e7f0ff; color: #245b9d; }
+.changelog-action.removed { background: #fde5e5; color: #9c2f2f; }
+.changelog-field-list {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.changelog-field-row {
+    display: grid;
+    grid-template-columns: minmax(110px, 170px) minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    font-size: 13px;
+}
+.changelog-field-name { font-weight: 700; color: #444; }
+.changelog-old { color: #8a3c3c; text-decoration: line-through; text-decoration-thickness: 1px; }
+.changelog-new { color: #245b38; font-weight: 700; }
+.changelog-arrow { color: #888; padding: 0 4px; }
+.changelog-snapshot {
+    margin-top: 8px;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    background: #fafafa;
+    padding: 8px 10px;
+}
+.changelog-snapshot summary {
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+.changelog-snapshot-grid {
+    display: grid;
+    grid-template-columns: minmax(120px, 180px) minmax(0, 1fr);
+    gap: 5px 10px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+.changelog-empty {
+    text-align: center;
+    padding: 28px 18px;
+}
+.changelog-back {
+    display: inline-flex;
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
 .demoed-toggle {
     display: inline-flex;
     align-items: center;
@@ -566,6 +704,10 @@ score backgrounds cannot be lost to broader table/cell styling.
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
+    .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .changelog-build-header { display: block; }
+    .changelog-build-counts { justify-content: flex-start; margin-top: 9px; }
+    .changelog-field-row { grid-template-columns: 1fr; gap: 2px; }
     .demoed-toggle { white-space: normal; }
     .score-distribution-popover { display: inline-block; margin: 0; }
     .score-distribution-panel { left: 0; right: auto; width: min(430px, calc(100vw - 32px)); }
@@ -600,6 +742,7 @@ score backgrounds cannot be lost to broader table/cell styling.
             <nav class="site-nav" aria-label="Site navigation">
                 <a href="index.html">Market Tracker</a>
                 <a href="rankings.html">Rankings</a>
+                <a href="ranking-changelog.html">Ranking Changelog</a>
                 <a href="market-dashboard.html">Market Dashboard</a>
                 <a href="resale-leaders.html">Resale Leaders</a>
                 <a href="recent-listings.html">Recent Listings</a>
@@ -690,7 +833,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td></td>
 <td>2026-09-06</td>
 <td></td>
-<td><span class="pill">active</span></td>
+<td><span class="pill">closed</span></td>
 <td class="status-reason">Sale confirmed</td>
 <td></td>
 <td>0</td>
@@ -800,7 +943,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Unique Melody Maven II", "raw_text": "https://imgur.com/a/VkcEb6Y\nCONUS only, No trades, comment first then chat.\nUnique Melody Maven II comes with what's seen in the photos. They were polished to a shine by previous owner. They are my first introduction to kilobuck iems and sound amazing, but my ears just can't do iems, they consistently fall out of my right ear no matter the tips.\nGonna hang on to them for now\nsubmitted by /u/bl00drunzc0ld\n[link] [comments]", "seller_username": "bl00drunzc0ld", "url": "https://www.reddit.com/r/AVexchange/comments/1w8j22d/wts_uswa_h_unique_melody_maven_ii_w_paypal/#item-1", "price_num": null, "date_ms": 1788659827000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | no_price_unchecked"}, {"row_id": 1, "title": "Unique Melody Maven II, Crescent, Maven 2", "raw_text": "Unique Melody Maven II, Crescent, Maven 2 Listing ID: 114414 For Sale / Trade 950.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Lightly used set with all accessories and original box etc. Free postage in Australia. Overseas - postage to be discussed, buyer responsible for any customs/import costs. Listed by: somnarium (5) Listed: 2026-08-24", "seller_username": "somnarium", "url": "https://www.head-fi.org/classifieds/unique-melody-maven-ii-crescent-maven-2.114414/", "price_num": 950.0, "date_ms": 1787529600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 2, "title": "Unique Melody Maven II", "raw_text": "Unique Melody Maven II Listing ID: 113017 For Sale 0.01 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America I\u2019m selling my UM Maven II in excellent condition, with all the accessories. All tips are unused. This has been an enjoyable set but I'm looking for something different. The price includes shipping (UPS Ground, insured, CONUS) and PP G&S fees... Listed by: BlorkinZork (3) Listed: 2026-07-29 Last edited: 2026-08-04", "seller_username": "BlorkinZork", "url": "https://www.head-fi.org/classifieds/unique-melody-maven-ii.113017/", "price_num": 950.0, "date_ms": 1785283200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | safari_ipad_ingest_v1"}, {"row_id": 3, "title": "UM Maven 2", "raw_text": "SOLD Unique Melody Maven 2: Great condition including all original accessories. 950 Paypal FF\n\u200b\nShip to US only, no trades, please add 3.4% if pay through Paypal G&S. Please comment before sensing DM.\nsubmitted by /u/Laziske\n[link] [comments]", "seller_username": "Laziske", "url": "https://old.reddit.com/r/AVexchange/comments/1u9dnuy/wtsusailh_um_maven_2w_paypal/#item-1", "price_num": null, "date_ms": 1781805976000, "listing_status": "closed", "condition_text": "including all original accessories", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | no_price_unchecked"}, {"row_id": 4, "title": "Unique Melody Maven 2 #74", "raw_text": "Unique Melody Maven 2 #74: $980", "seller_username": "Laziske", "url": "https://old.reddit.com/r/AVexchange/comments/1tblhgn/wtsusailh_aful_dawnx_maven_2_andromeda_10_w_paypal/#item-2", "price_num": 980.0, "date_ms": 1778636616000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=unique melody | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Unique Melody Maven II", "raw_text": "Details posted in the comments\nSee timestamp in the last pic\nsubmitted by /u/OGArchibald\n[link] [comments]", "seller_username": "OGArchibald", "url": "https://old.reddit.com/r/AVexchange/comments/1scrtgm/wtsuscah_unique_melody_maven_ii_w_paypal_zelle/#item-1", "price_num": null, "date_ms": 1775356052000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=unique melody | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 6, "title": "Closed: Trade - UM Maven 2 for Elysian Apostle?", "raw_text": "For Trade Closed: Trade - UM Maven 2 for Elysian Apostle? Price 0.00 USD Condition Good Negotiability Or best offer Ships to United States of America Just throwing this out there... Anyone willing to do a flat out trade for a UM Maven 2 in exchange for an Elysian Apostle? theintention Listing Nov 2, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "theintention", "url": "https://www.head-fi.org/classifieds/trade-um-maven-2-for-elysian-apostle.97844/", "price_num": null, "date_ms": 1762041600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Unique Melody Maven II", "raw_text": "https://imgur.com/a/VkcEb6Y\nCONUS only, No trades, comment first then chat.\nUnique Melody Maven II comes with what's seen in the photos. They were polished to a shine by previous owner. They are my first introduction to kilobuck iems and sound amazing, but my ears just can't do iems, they consistently fall out of my right ear no matter the tips.\nGonna hang on to them for now\nsubmitted by /u/bl00drunzc0ld\n[link] [comments]", "seller_username": "bl00drunzc0ld", "url": "https://www.reddit.com/r/AVexchange/comments/1w8j22d/wts_uswa_h_unique_melody_maven_ii_w_paypal/#item-1", "price_num": null, "date_ms": 1788659827000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 1, "title": "Unique Melody Maven II, Crescent, Maven 2", "raw_text": "Unique Melody Maven II, Crescent, Maven 2 Listing ID: 114414 For Sale / Trade 950.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Lightly used set with all accessories and original box etc. Free postage in Australia. Overseas - postage to be discussed, buyer responsible for any customs/import costs. Listed by: somnarium (5) Listed: 2026-08-24", "seller_username": "somnarium", "url": "https://www.head-fi.org/classifieds/unique-melody-maven-ii-crescent-maven-2.114414/", "price_num": 950.0, "date_ms": 1787529600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 2, "title": "Unique Melody Maven II", "raw_text": "Unique Melody Maven II Listing ID: 113017 For Sale 0.01 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America I\u2019m selling my UM Maven II in excellent condition, with all the accessories. All tips are unused. This has been an enjoyable set but I'm looking for something different. The price includes shipping (UPS Ground, insured, CONUS) and PP G&S fees... Listed by: BlorkinZork (3) Listed: 2026-07-29 Last edited: 2026-08-04", "seller_username": "BlorkinZork", "url": "https://www.head-fi.org/classifieds/unique-melody-maven-ii.113017/", "price_num": 950.0, "date_ms": 1785283200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_skipped_max_headfi_rows_limit_5", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | safari_ipad_ingest_v1"}, {"row_id": 3, "title": "UM Maven 2", "raw_text": "SOLD Unique Melody Maven 2: Great condition including all original accessories. 950 Paypal FF\n\u200b\nShip to US only, no trades, please add 3.4% if pay through Paypal G&S. Please comment before sensing DM.\nsubmitted by /u/Laziske\n[link] [comments]", "seller_username": "Laziske", "url": "https://old.reddit.com/r/AVexchange/comments/1u9dnuy/wtsusailh_um_maven_2w_paypal/#item-1", "price_num": null, "date_ms": 1781805976000, "listing_status": "closed", "condition_text": "including all original accessories", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | no_price_unchecked"}, {"row_id": 4, "title": "Unique Melody Maven 2 #74", "raw_text": "Unique Melody Maven 2 #74: $980", "seller_username": "Laziske", "url": "https://old.reddit.com/r/AVexchange/comments/1tblhgn/wtsusailh_aful_dawnx_maven_2_andromeda_10_w_paypal/#item-2", "price_num": 980.0, "date_ms": 1778636616000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=unique melody | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Unique Melody Maven II", "raw_text": "Details posted in the comments\nSee timestamp in the last pic\nsubmitted by /u/OGArchibald\n[link] [comments]", "seller_username": "OGArchibald", "url": "https://old.reddit.com/r/AVexchange/comments/1scrtgm/wtsuscah_unique_melody_maven_ii_w_paypal_zelle/#item-1", "price_num": null, "date_ms": 1775356052000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=unique melody | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 6, "title": "Closed: Trade - UM Maven 2 for Elysian Apostle?", "raw_text": "For Trade Closed: Trade - UM Maven 2 for Elysian Apostle? Price 0.00 USD Condition Good Negotiability Or best offer Ships to United States of America Just throwing this out there... Anyone willing to do a flat out trade for a UM Maven 2 in exchange for an Elysian Apostle? theintention Listing Nov 2, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "theintention", "url": "https://www.head-fi.org/classifieds/trade-um-maven-2-for-elysian-apostle.97844/", "price_num": null, "date_ms": 1762041600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -1744,6 +1887,8 @@ setMarketplaceSource(getInitialMarketplaceSource());
         <div class="site-footer-row">
             <div class="site-footer-links">
                 <a href="about.html">About this site</a>
+                <span class="footer-separator" aria-hidden="true">•</span>
+                <a href="ranking-changelog.html">Ranking changelog</a>
                 <span class="footer-separator" aria-hidden="true">•</span>
                 <span>Independent IEM market data and rankings</span>
             </div>

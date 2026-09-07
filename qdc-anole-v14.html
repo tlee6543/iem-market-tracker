@@ -382,6 +382,144 @@ score backgrounds cannot be lost to broader table/cell styling.
 .rankings-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
 .rankings-title-row h1 { margin: 0; }
 .rankings-title-actions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; flex-wrap: wrap; margin-left: auto; }
+.ranking-changelog-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+    border-radius: 999px;
+    padding: 8px 13px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.ranking-changelog-link:hover { background: #333; color: #fff; }
+.changelog-shell { max-width: 1100px; margin: 0 auto; }
+.changelog-hero { margin-bottom: 16px; }
+.changelog-hero h1 { margin-bottom: 8px; }
+.changelog-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 14px 0 18px;
+}
+.changelog-summary-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 14px;
+    background: #fff;
+}
+.changelog-summary-value {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-top: 3px;
+}
+.changelog-build {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #fff;
+    margin: 0 0 16px;
+    overflow: hidden;
+}
+.changelog-build-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 15px 16px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fafafa;
+}
+.changelog-build-header h2 { margin: 0 0 4px; font-size: 18px; }
+.changelog-build-counts { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.changelog-badge {
+    display: inline-flex;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    background: #fff;
+    white-space: nowrap;
+}
+.changelog-badge.added { border-color: #8ec99d; background: #edf8f0; }
+.changelog-badge.updated { border-color: #9bbce5; background: #eef5ff; }
+.changelog-badge.removed { border-color: #e2a3a3; background: #fff1f1; }
+.changelog-iem {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eee;
+}
+.changelog-iem:last-child { border-bottom: 0; }
+.changelog-iem-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-weight: 800;
+    margin-bottom: 7px;
+}
+.changelog-action {
+    font-size: 11px;
+    border-radius: 999px;
+    padding: 3px 7px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+.changelog-action.added { background: #dff3e4; color: #216b34; }
+.changelog-action.updated { background: #e7f0ff; color: #245b9d; }
+.changelog-action.removed { background: #fde5e5; color: #9c2f2f; }
+.changelog-field-list {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.changelog-field-row {
+    display: grid;
+    grid-template-columns: minmax(110px, 170px) minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    font-size: 13px;
+}
+.changelog-field-name { font-weight: 700; color: #444; }
+.changelog-old { color: #8a3c3c; text-decoration: line-through; text-decoration-thickness: 1px; }
+.changelog-new { color: #245b38; font-weight: 700; }
+.changelog-arrow { color: #888; padding: 0 4px; }
+.changelog-snapshot {
+    margin-top: 8px;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    background: #fafafa;
+    padding: 8px 10px;
+}
+.changelog-snapshot summary {
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+.changelog-snapshot-grid {
+    display: grid;
+    grid-template-columns: minmax(120px, 180px) minmax(0, 1fr);
+    gap: 5px 10px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+.changelog-empty {
+    text-align: center;
+    padding: 28px 18px;
+}
+.changelog-back {
+    display: inline-flex;
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
 .demoed-toggle {
     display: inline-flex;
     align-items: center;
@@ -566,6 +704,10 @@ score backgrounds cannot be lost to broader table/cell styling.
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
+    .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .changelog-build-header { display: block; }
+    .changelog-build-counts { justify-content: flex-start; margin-top: 9px; }
+    .changelog-field-row { grid-template-columns: 1fr; gap: 2px; }
     .demoed-toggle { white-space: normal; }
     .score-distribution-popover { display: inline-block; margin: 0; }
     .score-distribution-panel { left: 0; right: auto; width: min(430px, calc(100vw - 32px)); }
@@ -600,6 +742,7 @@ score backgrounds cannot be lost to broader table/cell styling.
             <nav class="site-nav" aria-label="Site navigation">
                 <a href="index.html">Market Tracker</a>
                 <a href="rankings.html">Rankings</a>
+                <a href="ranking-changelog.html">Ranking Changelog</a>
                 <a href="market-dashboard.html">Market Dashboard</a>
                 <a href="resale-leaders.html">Resale Leaders</a>
                 <a href="recent-listings.html">Recent Listings</a>
@@ -693,15 +836,15 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
 <td>2026-09-04</td>
 <td>$800</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">No sale detected</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Sale confirmed</td>
 <td>and includes the iems along with a 4</td>
 <td>1</td>
 <td>reddit_rss</td>
 <td>Markmurd61</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Good Deal (17.4% below market)</span></td>
+<td><span id="deal-score-0">Closed: Good Deal (17.4% below market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1w6pp7a/wtsustxhqdc_anole_v14_mintwpaypal_80000_obo/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -931,7 +1074,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "QDC Anole V14 - Mint", "raw_text": "This set of QDC Anole V14 are in excellent condition and includes the IEMs along with a 4.4mm 2-pin cable. I can also include the pictured case if requested. The driver configuration is 10BA and 4EST. This set also has 4 tuning switches; one for lows, one for mids, one for highs and one for super highs. Needless to say many tuning options available with this set. It is an excellent set, just have too many sets now and it\u2019s not getting as much ear time now.\nI offer next business day mail out via Priority Mail which is included in the price. No trades at this time please. Thanks for your interest!\nsubmitted by /u/Markmurd61\n[link] [comments]", "seller_username": "Markmurd61", "url": "https://www.reddit.com/r/AVexchange/comments/1w6pp7a/wtsustxhqdc_anole_v14_mintwpaypal_80000_obo/#item-1", "price_num": 800.0, "date_ms": 1788483295000, "listing_status": "active", "condition_text": "and includes the iems along with a 4", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len90848:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "QDC ANOLE V14", "raw_text": "QDC ANOLE V14 Listing ID: 114937 For Sale 800.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America This set of Eminent Ears Amethyst are in excellent condition and includes the IEMs along with a 4.4mm MMXC cable. I can also include the pictured case if requested. The driver configuration is 10BA and 4EST. This set also has 4 tuning switches... Listed by: Markmurd (87) Listed: 2026-09-03", "seller_username": "Markmurd", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.114937/", "price_num": 800.0, "date_ms": 1788393600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 2, "title": "QDC Anole V14", "raw_text": "Looking to continue trying new things, they're in good cosmetic and functional shape but lack any accessories besides a Tripowin QDC 4.4mm cable and unknown 3.5mm QDC cable.\nInterested in energetic sets like Dunu Glacier, Symphonium Crimson, Forte Ears Mefisto, AME Igris, or in Madoo/Acoustune sets. Or $900 shipped CONUS F&F Traded\nsubmitted by /u/emperorlitus\n[link] [comments]", "seller_username": "emperorlitus", "url": "https://old.reddit.com/r/AVexchange/comments/1tnm1zf/wtsusaohh_qdc_anole_v14_w_paypal_trades/#item-1", "price_num": 900.0, "date_ms": 1779743481000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=qdc anole | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 3, "title": "Closed: QDC Anole V14", "raw_text": "For Sale Closed: QDC Anole V14 Price 875.00 USD Condition Good Negotiability Or best offer Ships to Anywhere Looking to recoup funds from a recent purchase, they're in good cosmetic and perfect functional shape but lack any accessories besides a Tripowin QDC 4.4mm cable and unknown 3.5mm QDC cable. emperorlitus Listing May 16, 2026 Comments: 2 Category: In-Ear Monitors", "seller_username": "emperorlitus", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.109085/", "price_num": 875.0, "date_ms": 1778889600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: QDC Anole V14 Universal IEM", "raw_text": "For Sale Sold: QDC Anole V14 Universal IEM Price 1500.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Up for sale is a QDC Anole V14 Universal IEM in as-new condition with under 30 hours of use. It\u2019s in excellent cosmetic shape and works perfectly. Includes: Original box, packaging, and all accessories - see photos attached. Shipping: Free shipping within the continental US Worldwide... Herzog Listing Dec 16, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Herzog", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-universal-iem.100320/", "price_num": 1500.0, "date_ms": 1765843200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Closed: qdc Anole V14", "raw_text": "For Sale Closed: qdc Anole V14 Price 900.00 USD Condition Good Negotiability Or best offer Ships to Anywhere Selling a qdc Anole V14. Comes with the following: - IEMs - Cable with 4.4mm termination (does not come with the 3.5mm or 2.5mm interchangeable jacks) - Case - Eartips - Cleaning tool - airplane adaptor - 6.35mm adaptor - Box (damaged. Please refer to photos) The IEM\u2019s themselves are in... Damz87 Listing Apr 14, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "Damz87", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.86584/", "price_num": 900.0, "date_ms": 1744588800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: QDC Anole V14", "raw_text": "For Sale Sold: QDC Anole V14 Price 1350.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America This set was purchased in Japan on my trip to E earphone, best sounding one to me out of all of the ones I've demo'd and couldnt resist in the purchase. It doesn't come with box because space was limited in my luggage. Price includes shipping CONUS, thanks for looking. Also willing to trade for... Tsunzo Listing Mar 3, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "Tsunzo", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.63682/", "price_num": 1350.0, "date_ms": 1709424000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: QDC Anole V14", "raw_text": "For Sale / Trade Sold: QDC Anole V14 Price 0.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America I have a mint condition QDC Anole V14. It is in mint condition and comes with a three 4.4mm cables along with the cable that came with it (which has interchangeable 2.5, 3.5 & 4.4mm connectors). It comes with all accessories and packaging and the tips have never been used. Willing to trade for... zlayde Listing Nov 30, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "zlayde", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.58363/", "price_num": null, "date_ms": 1701302400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 8, "title": "Closed: QDC ANOLE V14", "raw_text": "For Sale Closed: QDC ANOLE V14 Price 1900.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America ANOLE V14 daijobudes Listing Oct 3, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "daijobudes", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.55379/", "price_num": 1900.0, "date_ms": 1696291200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: qdc Anole V14 - Mint", "raw_text": "For Sale Sold: qdc Anole V14 - Mint Price 0.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Hi guys, Up for sale today is a mint qdc Anole V14 ($2,738). I am the original owner and purchased it from Musicteck in April, 2021 (receipt to be supplied to the buyer). Everything is included other than the stock cable. I\u2019ve priced the V14 at less than half price for two reasons: the absent... jwbrent Listing Oct 23, 2022 Comments: 2 Category: In-Ear Monitors", "seller_username": "jwbrent", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-mint.35068/", "price_num": 2738.0, "date_ms": 1666483200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_high_outlier_70pct_above_median_median_1500.0_cutoff_2550.0"}, {"row_id": 10, "title": "Closed: QDC Anole V14", "raw_text": "For Sale Closed: QDC Anole V14 Price 1750.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America just cycling out IEMs to try more! PcChip Listing Dec 30, 2021 Comments: 4 Category: In-Ear Monitors", "seller_username": "PcChip", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.17198/", "price_num": 1750.0, "date_ms": 1640822400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: *PRICE DROP* qdc Anole V14", "raw_text": "For Sale Sold: *PRICE DROP* qdc Anole V14 Price 0.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling a mint condition pair of QDC Anole V14 IEM's. All packaging and accessories included and in pristine condition. Bought brand new from Musicteck in June 2021 and they've been used for approximately 5 hours. Fantastic IEM's that I'd love to keep, but I need to downsize my collection :)... Damz87 Listing Aug 3, 2021 Comments: 2 Category: In-Ear Monitors", "seller_username": "Damz87", "url": "https://www.head-fi.org/classifieds/price-drop-qdc-anole-v14.8803/", "price_num": null, "date_ms": 1627948800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 12, "title": "Sold: qdc Universal Anole V14 In-Ear Monitors LIKE NEW\udbff\udc25\udbff\udc12\udbff\udc02\udbff\udc0b\udbff\udc07 IN BOX", "raw_text": "For Sale Sold: qdc Universal Anole V14 In-Ear Monitors LIKE NEW\udbff\udc25\udbff\udc12\udbff\udc02\udbff\udc0b\udbff\udc07 IN BOX Price 2199.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere qdc Universal Anole V14 In-Ear Monitors LIKE NEW\udbff\udc25\udbff\udc12\udbff\udc02\udbff\udc0b\udbff\udc07 \udbff\udc34\udbff\udc35\udbff\udc20\udbff\udc04\udbff\udc03\udbff\udc24(SEE ACTUAL PHOTOS). Just purchased June 2021 from Musicteck in the U.S. then decided to downsize my IEM collection and upgrade my desktop setup. Must sell. These TOTL IEMs really are beautiful visually and sonically. The glittery... rcoleman1 Listing Jul 12, 2021 Comments: 0 Category: In-Ear Monitors", "seller_username": "rcoleman1", "url": "https://www.head-fi.org/classifieds/qdc-universal-anole-v14-in-ear-monitors-like-new%F4%8F%B0%A5%F4%8F%B0%92%F4%8F%B0%82%F4%8F%B0%8B%F4%8F%B0%87-in-box.7592/", "price_num": 2199.0, "date_ms": 1626048000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: qdc Anole V14 Cable w/Interchangeable Connectors", "raw_text": "For Sale Sold: qdc Anole V14 Cable w/Interchangeable Connectors", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-cable-w-interchangeable-connectors.12713/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 14, "title": "Sold: qdc Anole V14 Cable w/Interchangeable Connectors", "raw_text": "For Sale Sold: qdc Anole V14 Cable w/Interchangeable Connectors", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-cable-w-interchangeable-connectors.6191/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "QDC Anole V14 - Mint", "raw_text": "This set of QDC Anole V14 are in excellent condition and includes the IEMs along with a 4.4mm 2-pin cable. I can also include the pictured case if requested. The driver configuration is 10BA and 4EST. This set also has 4 tuning switches; one for lows, one for mids, one for highs and one for super highs. Needless to say many tuning options available with this set. It is an excellent set, just have too many sets now and it\u2019s not getting as much ear time now.\nI offer next business day mail out via Priority Mail which is included in the price. No trades at this time please. Thanks for your interest!\nsubmitted by /u/Markmurd61\n[link] [comments]", "seller_username": "Markmurd61", "url": "https://www.reddit.com/r/AVexchange/comments/1w6pp7a/wtsustxhqdc_anole_v14_mintwpaypal_80000_obo/#item-1", "price_num": 800.0, "date_ms": 1788483295000, "listing_status": "closed", "condition_text": "and includes the iems along with a 4", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 1, "title": "QDC ANOLE V14", "raw_text": "QDC ANOLE V14 Listing ID: 114937 For Sale 800.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America This set of Eminent Ears Amethyst are in excellent condition and includes the IEMs along with a 4.4mm MMXC cable. I can also include the pictured case if requested. The driver configuration is 10BA and 4EST. This set also has 4 tuning switches... Listed by: Markmurd (87) Listed: 2026-09-03", "seller_username": "Markmurd", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.114937/", "price_num": 800.0, "date_ms": 1788393600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 2, "title": "QDC Anole V14", "raw_text": "Looking to continue trying new things, they're in good cosmetic and functional shape but lack any accessories besides a Tripowin QDC 4.4mm cable and unknown 3.5mm QDC cable.\nInterested in energetic sets like Dunu Glacier, Symphonium Crimson, Forte Ears Mefisto, AME Igris, or in Madoo/Acoustune sets. Or $900 shipped CONUS F&F Traded\nsubmitted by /u/emperorlitus\n[link] [comments]", "seller_username": "emperorlitus", "url": "https://old.reddit.com/r/AVexchange/comments/1tnm1zf/wtsusaohh_qdc_anole_v14_w_paypal_trades/#item-1", "price_num": 900.0, "date_ms": 1779743481000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=qdc anole | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 3, "title": "Closed: QDC Anole V14", "raw_text": "For Sale Closed: QDC Anole V14 Price 875.00 USD Condition Good Negotiability Or best offer Ships to Anywhere Looking to recoup funds from a recent purchase, they're in good cosmetic and perfect functional shape but lack any accessories besides a Tripowin QDC 4.4mm cable and unknown 3.5mm QDC cable. emperorlitus Listing May 16, 2026 Comments: 2 Category: In-Ear Monitors", "seller_username": "emperorlitus", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.109085/", "price_num": 875.0, "date_ms": 1778889600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: QDC Anole V14 Universal IEM", "raw_text": "For Sale Sold: QDC Anole V14 Universal IEM Price 1500.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Up for sale is a QDC Anole V14 Universal IEM in as-new condition with under 30 hours of use. It\u2019s in excellent cosmetic shape and works perfectly. Includes: Original box, packaging, and all accessories - see photos attached. Shipping: Free shipping within the continental US Worldwide... Herzog Listing Dec 16, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Herzog", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-universal-iem.100320/", "price_num": 1500.0, "date_ms": 1765843200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Closed: qdc Anole V14", "raw_text": "For Sale Closed: qdc Anole V14 Price 900.00 USD Condition Good Negotiability Or best offer Ships to Anywhere Selling a qdc Anole V14. Comes with the following: - IEMs - Cable with 4.4mm termination (does not come with the 3.5mm or 2.5mm interchangeable jacks) - Case - Eartips - Cleaning tool - airplane adaptor - 6.35mm adaptor - Box (damaged. Please refer to photos) The IEM\u2019s themselves are in... Damz87 Listing Apr 14, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "Damz87", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.86584/", "price_num": 900.0, "date_ms": 1744588800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: QDC Anole V14", "raw_text": "For Sale Sold: QDC Anole V14 Price 1350.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America This set was purchased in Japan on my trip to E earphone, best sounding one to me out of all of the ones I've demo'd and couldnt resist in the purchase. It doesn't come with box because space was limited in my luggage. Price includes shipping CONUS, thanks for looking. Also willing to trade for... Tsunzo Listing Mar 3, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "Tsunzo", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.63682/", "price_num": 1350.0, "date_ms": 1709424000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: QDC Anole V14", "raw_text": "For Sale / Trade Sold: QDC Anole V14 Price 0.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America I have a mint condition QDC Anole V14. It is in mint condition and comes with a three 4.4mm cables along with the cable that came with it (which has interchangeable 2.5, 3.5 & 4.4mm connectors). It comes with all accessories and packaging and the tips have never been used. Willing to trade for... zlayde Listing Nov 30, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "zlayde", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.58363/", "price_num": null, "date_ms": 1701302400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 8, "title": "Closed: QDC ANOLE V14", "raw_text": "For Sale Closed: QDC ANOLE V14 Price 1900.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America ANOLE V14 daijobudes Listing Oct 3, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "daijobudes", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.55379/", "price_num": 1900.0, "date_ms": 1696291200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: qdc Anole V14 - Mint", "raw_text": "For Sale Sold: qdc Anole V14 - Mint Price 0.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Hi guys, Up for sale today is a mint qdc Anole V14 ($2,738). I am the original owner and purchased it from Musicteck in April, 2021 (receipt to be supplied to the buyer). Everything is included other than the stock cable. I\u2019ve priced the V14 at less than half price for two reasons: the absent... jwbrent Listing Oct 23, 2022 Comments: 2 Category: In-Ear Monitors", "seller_username": "jwbrent", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-mint.35068/", "price_num": 2738.0, "date_ms": 1666483200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_high_outlier_70pct_above_median_median_1500.0_cutoff_2550.0"}, {"row_id": 10, "title": "Closed: QDC Anole V14", "raw_text": "For Sale Closed: QDC Anole V14 Price 1750.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America just cycling out IEMs to try more! PcChip Listing Dec 30, 2021 Comments: 4 Category: In-Ear Monitors", "seller_username": "PcChip", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14.17198/", "price_num": 1750.0, "date_ms": 1640822400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: *PRICE DROP* qdc Anole V14", "raw_text": "For Sale Sold: *PRICE DROP* qdc Anole V14 Price 0.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling a mint condition pair of QDC Anole V14 IEM's. All packaging and accessories included and in pristine condition. Bought brand new from Musicteck in June 2021 and they've been used for approximately 5 hours. Fantastic IEM's that I'd love to keep, but I need to downsize my collection :)... Damz87 Listing Aug 3, 2021 Comments: 2 Category: In-Ear Monitors", "seller_username": "Damz87", "url": "https://www.head-fi.org/classifieds/price-drop-qdc-anole-v14.8803/", "price_num": null, "date_ms": 1627948800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 12, "title": "Sold: qdc Universal Anole V14 In-Ear Monitors LIKE NEW\udbff\udc25\udbff\udc12\udbff\udc02\udbff\udc0b\udbff\udc07 IN BOX", "raw_text": "For Sale Sold: qdc Universal Anole V14 In-Ear Monitors LIKE NEW\udbff\udc25\udbff\udc12\udbff\udc02\udbff\udc0b\udbff\udc07 IN BOX Price 2199.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere qdc Universal Anole V14 In-Ear Monitors LIKE NEW\udbff\udc25\udbff\udc12\udbff\udc02\udbff\udc0b\udbff\udc07 \udbff\udc34\udbff\udc35\udbff\udc20\udbff\udc04\udbff\udc03\udbff\udc24(SEE ACTUAL PHOTOS). Just purchased June 2021 from Musicteck in the U.S. then decided to downsize my IEM collection and upgrade my desktop setup. Must sell. These TOTL IEMs really are beautiful visually and sonically. The glittery... rcoleman1 Listing Jul 12, 2021 Comments: 0 Category: In-Ear Monitors", "seller_username": "rcoleman1", "url": "https://www.head-fi.org/classifieds/qdc-universal-anole-v14-in-ear-monitors-like-new%F4%8F%B0%A5%F4%8F%B0%92%F4%8F%B0%82%F4%8F%B0%8B%F4%8F%B0%87-in-box.7592/", "price_num": 2199.0, "date_ms": 1626048000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: qdc Anole V14 Cable w/Interchangeable Connectors", "raw_text": "For Sale Sold: qdc Anole V14 Cable w/Interchangeable Connectors", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-cable-w-interchangeable-connectors.12713/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 14, "title": "Sold: qdc Anole V14 Cable w/Interchangeable Connectors", "raw_text": "For Sale Sold: qdc Anole V14 Cable w/Interchangeable Connectors", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/qdc-anole-v14-cable-w-interchangeable-connectors.6191/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 3000.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
@@ -1875,6 +2018,8 @@ setMarketplaceSource(getInitialMarketplaceSource());
         <div class="site-footer-row">
             <div class="site-footer-links">
                 <a href="about.html">About this site</a>
+                <span class="footer-separator" aria-hidden="true">•</span>
+                <a href="ranking-changelog.html">Ranking changelog</a>
                 <span class="footer-separator" aria-hidden="true">•</span>
                 <span>Independent IEM market data and rankings</span>
             </div>
