@@ -5,10 +5,10 @@
     "favorite": true,
     "canonical_name": "Subtonic Storm",
     "release_year": "2022",
-    "final_score": 9.1,
-    "tonality": "8.7",
+    "final_score": 9.2,
+    "tonality": "9.0",
     "bass": "9.0",
-    "midrange": "8.0",
+    "midrange": "9.0",
     "treble": "9.0",
     "tech": "9.7",
     "detail": "10.0",
@@ -1843,7 +1843,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "letshuoer-ej07m",
+    "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -2799,8 +2799,8 @@
     "imaging": "6.0",
     "dynamics": "6.0",
     "bias": "6.0",
-    "setup": "—",
-    "price": "—",
+    "setup": "6BA",
+    "price": "1250",
     "comments": "Hidition's take on a V-shaped signature and one executed pretty well at that. Slightly too much lower-treble begets drier sound.",
     "based_on": "Schezade unit",
     "tracker_slug": "",
@@ -6957,7 +6957,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
