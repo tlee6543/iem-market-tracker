@@ -799,7 +799,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 46/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 16d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 46/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 16d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Medium (46/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 16d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -837,30 +837,30 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>2026-09-03</td>
 <td>$1,250</td>
 <td><span class="pill">active</span></td>
-<td class="status-reason">Active</td>
+<td class="status-reason">Still active</td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
 <td>abelmade8476</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td><span id="deal-score-0">Fair (3.8% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/astell-kern-luna-%E2%80%93-near-mint.114952/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" ></td>
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2026-08-23</td>
 <td>$1,299</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">Still active</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Sale confirmed</td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
 <td>harshkamboj</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">N/A</span></td>
+<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/astell-kern-luna.114331/" target="_blank">source</a></td>
 </tr>
 
@@ -876,13 +876,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>bden59</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">N/A</span></td>
+<td><span id="deal-score-2">Closed: Fair (7.7% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/astell-kern-luna-iem.113351/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Astell&Kern LUNA \u2013 Near Mint", "raw_text": "Astell&Kern LUNA \u2013 Near Mint Listing ID: 114952 For Sale 1,250.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Astell&Kern LUNA in near-mint condition. This sale includes the IEMs and cable only; there is no original box or additional accessories. Everything works perfectly. Price includes CONUS shipping. PayPal G&S fees are not included. International... Listed by: abelmade8476 (5) Listed: 2026-09-03", "seller_username": "abelmade8476", "url": "https://www.head-fi.org/classifieds/astell-kern-luna-%E2%80%93-near-mint.114952/", "price_num": 1250.0, "date_ms": 1788393600000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Astell & Kern Luna", "raw_text": "Astell & Kern Luna Listing ID: 114331 For Sale 1,299.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Selling a mint Luna from A&K. A highly underrated set for what it does. The bass is deep, mids are clean sounding and has a good spacial representation. Overall it is a great iem to enjoy all genres of music. The shell is sturdy with matte... Listed by: harshkamboj (172) Listed: 2026-08-23 Last edited: 2026-08-23", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/astell-kern-luna.114331/", "price_num": 1299.0, "date_ms": 1787443200000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 2, "title": "Astell & Kern Luna IEM", "raw_text": "Astell & Kern Luna IEM Listing ID: 113351 For Sale 1,399.00 USD Condition Good Negotiability Or Best Offer Ships To AnywhereEurope Up for sale Astell&Kern IEMs in very good condition. Comes with box, case and all accessories. I can ship from EU if needed. Listed by: bden59 (47) Listed: 2026-08-04 Last edited: 2026-08-04", "seller_username": "bden59", "url": "https://www.head-fi.org/classifieds/astell-kern-luna-iem.113351/", "price_num": 1399.0, "date_ms": 1785801600000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "category_listing_id_text_fallback_v8 | headfi_extension_status_checker_verified_or_left_active | safari_ipad_ingest_v1"}];
+const allRows = [{"row_id": 0, "title": "Astell&Kern LUNA \u2013 Near Mint", "raw_text": "Astell&Kern LUNA \u2013 Near Mint Listing ID: 114952 For Sale 1,250.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Astell&Kern LUNA in near-mint condition. This sale includes the IEMs and cable only; there is no original box or additional accessories. Everything works perfectly. Price includes CONUS shipping. PayPal G&S fees are not included. International... Listed by: abelmade8476 (5) Listed: 2026-09-03", "seller_username": "abelmade8476", "url": "https://www.head-fi.org/classifieds/astell-kern-luna-%E2%80%93-near-mint.114952/", "price_num": 1250.0, "date_ms": 1788393600000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Astell & Kern Luna", "raw_text": "Astell & Kern Luna Listing ID: 114331 For Sale 1,299.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Selling a mint Luna from A&K. A highly underrated set for what it does. The bass is deep, mids are clean sounding and has a good spacial representation. Overall it is a great iem to enjoy all genres of music. The shell is sturdy with matte... Listed by: harshkamboj (172) Listed: 2026-08-23 Last edited: 2026-08-23", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/astell-kern-luna.114331/", "price_num": 1299.0, "date_ms": 1787443200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 2, "title": "Astell & Kern Luna IEM", "raw_text": "Astell & Kern Luna IEM Listing ID: 113351 For Sale 1,399.00 USD Condition Good Negotiability Or Best Offer Ships To AnywhereEurope Up for sale Astell&Kern IEMs in very good condition. Comes with box, case and all accessories. I can ship from EU if needed. Listed by: bden59 (47) Listed: 2026-08-04 Last edited: 2026-08-04", "seller_username": "bden59", "url": "https://www.head-fi.org/classifieds/astell-kern-luna-iem.113351/", "price_num": 1399.0, "date_ms": 1785801600000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "category_listing_id_text_fallback_v8 | headfi_extension_status_checker_verified_or_left_active | safari_ipad_ingest_v1"}];
 const originalMsrpUsd = 2700.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
