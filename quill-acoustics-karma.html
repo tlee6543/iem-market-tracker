@@ -806,7 +806,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">3</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -831,8 +831,24 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
+<tr id="row-0" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<td>2026-09-09</td>
+<td>$700</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Active</td>
+<td>poor</td>
+<td>0</td>
+<td>headfi</td>
+<td>Lobsterhands</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">Good Deal (13.6% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/quill-acoustics-karma.115228/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2026-09-05</td>
 <td>$820</td>
 <td><span class="pill">closed</span></td>
@@ -843,12 +859,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>DenverFi</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Closed: Fair (1.2% above market)</span></td>
+<td><span id="deal-score-1">Closed: Fair (1.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/quill-acoustics-karma-shipping-fees-included.115031/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
+<tr id="row-2" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" checked></td>
 <td>2026-09-05</td>
 <td>$800</td>
 <td><span class="pill">closed</span></td>
@@ -859,11 +875,11 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>vladzakhar</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Closed: Fair (1.2% below market)</span></td>
+<td><span id="deal-score-2">Closed: Fair (1.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/quill-audio-karma-mint.115019/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" data-source="reddit" class="listing-row excluded">
+<tr id="row-3" data-source="reddit" class="listing-row excluded">
 <td></td>
 <td>2026-08-24</td>
 <td></td>
@@ -875,13 +891,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>tudorbb5</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">N/A</span></td>
+<td><span id="deal-score-3">N/A</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vxh0hq/wttusanjh_quill_karma_w_monarch_mk4/#item-1" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Quill Acoustics Karma - Shipping & Fees included", "raw_text": "Quill Acoustics Karma - Shipping & Fees included Listing ID: 115031 For Sale 820.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America One of the best bass IEMs I\u2019ve ever heard. The nozzles are just a bit too wide for me. None of the accessories (cables, tips) have been opened or used at all. Just cleaned and vacuumed. Price is net to me in CONUS. Listed by: DenverFi (56) Listed: 2026-09-05", "seller_username": "DenverFi", "url": "https://www.head-fi.org/classifieds/quill-acoustics-karma-shipping-fees-included.115031/", "price_num": 820.0, "date_ms": 1788566400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Quill Audio Karma mint", "raw_text": "Quill Audio Karma mint Listing ID: 115019 For Sale 800.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere First owner, bought them from Musicteck 3 weeks ago. Like new. All accessories and boxes except 1 pair of large Baroque Stage tips. Free US shipping, discounted overseas. Listed by: vladzakhar (152) Listed: 2026-09-05", "seller_username": "vladzakhar", "url": "https://www.head-fi.org/classifieds/quill-audio-karma-mint.115019/", "price_num": 800.0, "date_ms": 1788566400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 2, "title": "Quill Karma", "raw_text": "Catch and release\n1 week old Karma mint\nTrade cause its redundant to Mysticraft Myth.\nThe sound signature is so close to my Ears\nI need more neutral tunning.\n(I'll add Cash of course.)\nAlso a member of Headfi and Us audio Mart\nAs you can see on the Photos\nsubmitted by /u/tudorbb5\n[link] [comments]", "seller_username": "tudorbb5", "url": "https://www.reddit.com/r/AVexchange/comments/1vxh0hq/wttusanjh_quill_karma_w_monarch_mk4/#item-1", "price_num": null, "date_ms": 1787608976000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}];
+const allRows = [{"row_id": 0, "title": "Quill Acoustics Karma", "raw_text": "Quill Acoustics Karma Listing ID: 115228 For Sale 700.00 USD Condition Good Negotiability Firm Ships To Anywhere Bought from MusicTeck about a month ago (batch #2) but unfortunately have to sell due to poor fit. The nozzles are just slightly too long and wide for me. I managed to dent the nozzle mesh on one of them as seen in the pictures, trying to a fit... Listed by: Lobsterhands (4) Listed: 2026-09-09 Last edited: 2026-09-09", "seller_username": "Lobsterhands", "url": "https://www.head-fi.org/classifieds/quill-acoustics-karma.115228/", "price_num": 700.0, "date_ms": 1788912000000, "listing_status": "active", "condition_text": "poor", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Quill Acoustics Karma - Shipping & Fees included", "raw_text": "Quill Acoustics Karma - Shipping & Fees included Listing ID: 115031 For Sale 820.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America One of the best bass IEMs I\u2019ve ever heard. The nozzles are just a bit too wide for me. None of the accessories (cables, tips) have been opened or used at all. Just cleaned and vacuumed. Price is net to me in CONUS. Listed by: DenverFi (56) Listed: 2026-09-05", "seller_username": "DenverFi", "url": "https://www.head-fi.org/classifieds/quill-acoustics-karma-shipping-fees-included.115031/", "price_num": 820.0, "date_ms": 1788566400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 2, "title": "Quill Audio Karma mint", "raw_text": "Quill Audio Karma mint Listing ID: 115019 For Sale 800.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere First owner, bought them from Musicteck 3 weeks ago. Like new. All accessories and boxes except 1 pair of large Baroque Stage tips. Free US shipping, discounted overseas. Listed by: vladzakhar (152) Listed: 2026-09-05", "seller_username": "vladzakhar", "url": "https://www.head-fi.org/classifieds/quill-audio-karma-mint.115019/", "price_num": 800.0, "date_ms": 1788566400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 3, "title": "Quill Karma", "raw_text": "Catch and release\n1 week old Karma mint\nTrade cause its redundant to Mysticraft Myth.\nThe sound signature is so close to my Ears\nI need more neutral tunning.\n(I'll add Cash of course.)\nAlso a member of Headfi and Us audio Mart\nAs you can see on the Photos\nsubmitted by /u/tudorbb5\n[link] [comments]", "seller_username": "tudorbb5", "url": "https://www.reddit.com/r/AVexchange/comments/1vxh0hq/wttusanjh_quill_karma_w_monarch_mk4/#item-1", "price_num": null, "date_ms": 1787608976000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | no_price_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}];
 const originalMsrpUsd = 899.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
