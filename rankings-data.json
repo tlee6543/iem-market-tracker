@@ -2397,7 +2397,7 @@
     "based_on": "Loaner",
     "tracker_slug": "thieaudio-v16-divinity",
     "market_value": 950.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -5853,7 +5853,7 @@
     "based_on": "Super*Review's unit",
     "tracker_slug": "tinhifi-t4",
     "market_value": 20.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
