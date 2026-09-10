@@ -1028,7 +1028,7 @@
     "comments": "Still perplexingly poor bass performance, but improves upon the Monarch MKII's treble extension noticeably.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "thieaudio-monarch-mkiii",
-    "market_value": 600.0,
+    "market_value": 605.0,
     "market_confidence": "High"
   },
   {
@@ -2516,8 +2516,8 @@
     "comments": "A warmer rendition of the original SA6, best considered a side-grade than a true upgrade.",
     "based_on": "—",
     "tracker_slug": "dunu-sa6-mk2",
-    "market_value": 250.42,
-    "market_confidence": "Medium"
+    "market_value": 265.78,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -5612,8 +5612,8 @@
     "comments": "A leaner, more forward version of the 3001.",
     "based_on": "DUNU loaner",
     "tracker_slug": "dunu-dk-2001",
-    "market_value": 285.0,
-    "market_confidence": "Low"
+    "market_value": 279.02,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -11156,7 +11156,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "canpur-silver-flash",
-    "market_value": 96.0,
+    "market_value": 97.5,
     "market_confidence": "High"
   },
   {
