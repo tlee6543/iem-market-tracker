@@ -1388,7 +1388,7 @@
     "comments": "Slightly colored but well-rounded tonality with minor quirks.",
     "based_on": "Loaner unit",
     "tracker_slug": "xenns-mangird-top-pro",
-    "market_value": 347.5,
+    "market_value": 346.43,
     "market_confidence": "High"
   },
   {
@@ -5540,8 +5540,8 @@
     "comments": "Sounds plasticky and smoothed; inoffensive to the point of being offensive.",
     "based_on": "Review unit",
     "tracker_slug": "softears-studio-4",
-    "market_value": 250.0,
-    "market_confidence": "Low"
+    "market_value": 229.5,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -10148,7 +10148,7 @@
     "comments": "Smooth sounding but lack of treble extension leads to low-level detail and poor dynamics.",
     "based_on": "Brief demo",
     "tracker_slug": "aful-explorer",
-    "market_value": 75.82,
+    "market_value": 64.83,
     "market_confidence": "High"
   },
   {
