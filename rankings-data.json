@@ -1796,8 +1796,8 @@
     "comments": "Tia Trio's older brother that takes things too far off the beaten path for tonality.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "64-audio-tia-fourte",
-    "market_value": 1275.11,
-    "market_confidence": "Medium"
+    "market_value": 1255.69,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -14252,8 +14252,8 @@
     "comments": "Clarity focused sound with elevated 1-3kHz region and excessive treble energy. Fatiguing to hear.",
     "based_on": "Brief demo",
     "tracker_slug": "pmg-audio-apx-se",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 4700.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
