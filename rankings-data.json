@@ -1843,7 +1843,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "",
+    "tracker_slug": "letshuoer-ej07m",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -6957,7 +6957,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -13483,9 +13483,9 @@
     "price": "—",
     "comments": "Forward lower-treble and somewhat harsh sounding.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
+    "tracker_slug": "moondrop-lan",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
