@@ -804,7 +804,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -828,8 +828,24 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<tr id="row-0" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
+<td>2026-09-14</td>
+<td>$285</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Active</td>
+<td>excellent</td>
+<td>0</td>
+<td>reddit_rss</td>
+<td>sideways2me</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">N/A</span></td>
+<td><a href="https://www.reddit.com/r/AVexchange/comments/1wg02i9/wtscndskhruviest_prelude_w285usd_north_america/#item-1" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" ></td>
 <td>2026-09-04</td>
 <td>$285</td>
 <td><span class="pill">active</span></td>
@@ -840,13 +856,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>sideways</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td><span id="deal-score-1">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/ruviest-prelude.114974/" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Ruviest Prelude", "raw_text": "Ruviest Prelude Listing ID: 114974 For Sale 285.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere After multiple back and forth on this, I have to bring down my sets to a reasonable number for me so I have an excellent set of iems for sale... the Ruviest Prelude! Complete packaging with all eartips unused. Cable is module 3.5mm and 4.4mm... Listed by: sideways (6) Listed: 2026-09-04 Last edited: 2026-09-05", "seller_username": "sideways", "url": "https://www.head-fi.org/classifieds/ruviest-prelude.114974/", "price_num": 285.0, "date_ms": 1788480000000, "listing_status": "active", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}];
+const allRows = [{"row_id": 0, "title": "Ruviest Prelude", "raw_text": "I have an excellent set of iems for sale... the Ruviest Prelude!\nComplete packaging with all eartips unused.\nPrice is $285.00USD and that will include tracked shipping North America. For elsewhere, I'm sure we can work something out!\nI take PayPal.\nPlease contact for more info!\nsubmitted by /u/sideways2me\n[link] [comments]", "seller_username": "sideways2me", "url": "https://www.reddit.com/r/AVexchange/comments/1wg02i9/wtscndskhruviest_prelude_w285usd_north_america/#item-1", "price_num": 285.0, "date_ms": 1789383117000, "listing_status": "active", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Ruviest Prelude", "raw_text": "Ruviest Prelude Listing ID: 114974 For Sale 285.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere After multiple back and forth on this, I have to bring down my sets to a reasonable number for me so I have an excellent set of iems for sale... the Ruviest Prelude! Complete packaging with all eartips unused. Cable is module 3.5mm and 4.4mm... Listed by: sideways (6) Listed: 2026-09-04 Last edited: 2026-09-05", "seller_username": "sideways", "url": "https://www.head-fi.org/classifieds/ruviest-prelude.114974/", "price_num": 285.0, "date_ms": 1788480000000, "listing_status": "active", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
