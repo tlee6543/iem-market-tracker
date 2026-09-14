@@ -1028,7 +1028,7 @@
     "comments": "Still perplexingly poor bass performance, but improves upon the Monarch MKII's treble extension noticeably.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "thieaudio-monarch-mkiii",
-    "market_value": 605.0,
+    "market_value": 614.0,
     "market_confidence": "High"
   },
   {
@@ -1460,8 +1460,8 @@
     "comments": "Bass sounds somewhat 'BA-ish' for being DD, but well-tuned, decently technical, and a very solid package overall.",
     "based_on": "—",
     "tracker_slug": "thieaudio-hype-4",
-    "market_value": 247.32,
-    "market_confidence": "Low"
+    "market_value": 229.97,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -2900,7 +2900,7 @@
     "comments": "Terrific tonal balance, but with slightly gritty treble and poor bass texturing.",
     "based_on": "Personal unit",
     "tracker_slug": "moondrop-blessing-2",
-    "market_value": 154.9,
+    "market_value": 136.8,
     "market_confidence": "High"
   },
   {
@@ -15884,7 +15884,7 @@
     "comments": "Very pleasant tuning with thumpy bass albeit lacking wow factor in techs.",
     "based_on": "Brief demo",
     "tracker_slug": "xenns-mangird-tea-pro",
-    "market_value": 239.63,
+    "market_value": 240.0,
     "market_confidence": "High"
   },
   {
