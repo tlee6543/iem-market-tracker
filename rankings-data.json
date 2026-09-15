@@ -1460,7 +1460,7 @@
     "comments": "Bass sounds somewhat 'BA-ish' for being DD, but well-tuned, decently technical, and a very solid package overall.",
     "based_on": "—",
     "tracker_slug": "thieaudio-hype-4",
-    "market_value": 229.97,
+    "market_value": 277.44,
     "market_confidence": "Medium"
   },
   {
@@ -1748,7 +1748,7 @@
     "comments": "Strong dynamics and easy-going signature that could use more detail in the midrange.",
     "based_on": "Personal unit",
     "tracker_slug": "64-audio-duo",
-    "market_value": 481.25,
+    "market_value": 475.0,
     "market_confidence": "High"
   },
   {
@@ -1843,7 +1843,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "letshuoer-ej07m",
+    "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -6957,7 +6957,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -9716,8 +9716,8 @@
     "comments": "Bloated bass with zero texture meets the gritty, 5kHz peak of death.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "kz-zs10-pro",
-    "market_value": 25.63,
-    "market_confidence": "Low"
+    "market_value": 39.39,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -10148,7 +10148,7 @@
     "comments": "Smooth sounding but lack of treble extension leads to low-level detail and poor dynamics.",
     "based_on": "Brief demo",
     "tracker_slug": "aful-explorer",
-    "market_value": 64.83,
+    "market_value": 71.67,
     "market_confidence": "High"
   },
   {
@@ -11396,7 +11396,7 @@
     "comments": "Treble has some unnatural peaking past 10kHz that lends to a Focal-esque, metallic tinge.",
     "based_on": "Brief demo",
     "tracker_slug": "crinear-daybreak",
-    "market_value": 117.5,
+    "market_value": 114.0,
     "market_confidence": "High"
   },
   {
@@ -12379,9 +12379,9 @@
     "price": "—",
     "comments": "Sounds warm and relatively pleasant, a bit QDC inspired. EST implementation rolls off and could use more texturing overall.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
+    "tracker_slug": "i-o-audio-volare",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -15884,7 +15884,7 @@
     "comments": "Very pleasant tuning with thumpy bass albeit lacking wow factor in techs.",
     "based_on": "Brief demo",
     "tracker_slug": "xenns-mangird-tea-pro",
-    "market_value": 240.0,
+    "market_value": 242.5,
     "market_confidence": "High"
   },
   {
