@@ -885,7 +885,7 @@
     "based_on": "Headphones.com unit",
     "tracker_slug": "64-audio-nio",
     "market_value": 795.88,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -1843,7 +1843,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "",
+    "tracker_slug": "letshuoer-ej07m",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -6957,7 +6957,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -11156,7 +11156,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "canpur-silver-flash",
-    "market_value": 97.5,
+    "market_value": 103.57,
     "market_confidence": "High"
   },
   {
@@ -11541,7 +11541,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "dita-project-m2",
     "market_value": 249.5,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
