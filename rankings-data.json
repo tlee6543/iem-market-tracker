@@ -236,7 +236,7 @@
     "comments": "Basically the 64 Audio U12t's Chinese brother. Excellent tonality and layering performance with a slight upper-treble splashiness.",
     "based_on": "Review unit",
     "tracker_slug": "thieaudio-valhalla",
-    "market_value": 1445.44,
+    "market_value": 1451.94,
     "market_confidence": "High"
   },
   {
@@ -404,7 +404,7 @@
     "comments": "Excellent detail retreival and competent tuning. Can be slightly thin sounding and forward in the treble.",
     "based_on": "Loaner",
     "tracker_slug": "thieaudio-monarch-mkiv",
-    "market_value": 869.58,
+    "market_value": 869.09,
     "market_confidence": "High"
   },
   {
@@ -1843,7 +1843,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "letshuoer-ej07m",
+    "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -1916,7 +1916,7 @@
     "comments": "Thick and rich sound, a departure from the original RSV, but not in a bad way. Surprisingly mid-bass focused, so still sounds BA-ish.",
     "based_on": "Loaner unit",
     "tracker_slug": "softears-rsv-mkii",
-    "market_value": 440.83,
+    "market_value": 439.0,
     "market_confidence": "High"
   },
   {
@@ -6957,7 +6957,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -14253,7 +14253,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "pmg-audio-apx-se",
     "market_value": 4700.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
