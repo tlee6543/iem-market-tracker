@@ -354,6 +354,26 @@ td.status-reason { overflow: hidden; }
 .rankings-table { min-width: 1710px; border: 0; table-layout: auto; }
 .rankings-table.breakdowns-collapsed { min-width: 1240px; }
 .rankings-table th { position: sticky; top: 0; z-index: 2; white-space: nowrap; }
+.rankings-sticky-header {
+    position: fixed;
+    top: 0;
+    z-index: 950;
+    display: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #111;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .22);
+    pointer-events: none;
+}
+.rankings-sticky-header.is-visible { display: block; }
+.rankings-sticky-header .rankings-table {
+    margin: 0;
+    table-layout: fixed;
+}
+.rankings-sticky-header .rankings-table th {
+    position: static;
+    box-sizing: border-box;
+}
 .rankings-table td { vertical-align: middle; }
 .rankings-table .score-cell { font-size: 16px; font-weight: bold; text-align: center; white-space: nowrap; }
 .rankings-table .subscore-cell,
@@ -962,7 +982,7 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span class="score-scale-item"><span class="score-scale-swatch score-band-2"></span>Below 3.0</span>
     </div>
 </div>
-<div class="table-scroll">
+<div id="rankingsTableScroll" class="table-scroll rankings-table-scroll">
 <table id="rankingsTable" class="rankings-table">
 <thead>
 <tr>
@@ -26750,7 +26770,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </table>
 </div>
 <div id="rankingsEmpty" class="card rankings-empty"><p class="muted">No rankings match the current filters.</p></div>
-<p class="small">Data refreshed from the published Google Sheet during the 2026-09-18 18:35 UTC site build.</p>
+<p class="small">Data refreshed from the published Google Sheet during the 2026-09-18 18:45 UTC site build.</p>
 
 <aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
     <div class="fr-preview-header">
@@ -27429,6 +27449,82 @@ updateRankings();
 })();
 </script>
 
+<script>
+(function setupStickyRankingsHeader() {
+    const scrollWrap = document.getElementById("rankingsTableScroll");
+    const table = document.getElementById("rankingsTable");
+    if (!scrollWrap || !table || !table.tHead) return;
+
+    const stickyWrap = document.createElement("div");
+    stickyWrap.className = "rankings-sticky-header";
+    stickyWrap.setAttribute("aria-hidden", "true");
+
+    const stickyTable = document.createElement("table");
+    stickyTable.className = table.className;
+    stickyTable.appendChild(table.tHead.cloneNode(true));
+    stickyWrap.appendChild(stickyTable);
+    document.body.appendChild(stickyWrap);
+
+    let framePending = false;
+
+    function syncHeader() {
+        framePending = false;
+        stickyTable.className = table.className;
+
+        const wrapRect = scrollWrap.getBoundingClientRect();
+        const tableRect = table.getBoundingClientRect();
+        const headRect = table.tHead.getBoundingClientRect();
+        const originalHeaders = Array.from(table.tHead.rows[0].cells);
+        const stickyHeaders = Array.from(stickyTable.tHead.rows[0].cells);
+
+        const visibleLeft = Math.max(0, wrapRect.left);
+        const visibleRight = Math.min(window.innerWidth, wrapRect.right);
+        const visibleWidth = Math.max(0, visibleRight - visibleLeft);
+        const headerHeight = Math.max(1, headRect.height);
+        const shouldShow = headRect.top < 0 && tableRect.bottom > headerHeight && visibleWidth > 0;
+
+        stickyWrap.classList.toggle("is-visible", shouldShow);
+        if (!shouldShow) return;
+
+        stickyWrap.style.left = visibleLeft + "px";
+        stickyWrap.style.width = visibleWidth + "px";
+        stickyWrap.style.height = headerHeight + "px";
+        stickyTable.style.width = table.offsetWidth + "px";
+        stickyTable.style.transform = "translateX(" + (-scrollWrap.scrollLeft) + "px)";
+
+        originalHeaders.forEach(function(header, index) {
+            const clone = stickyHeaders[index];
+            if (!clone) return;
+            const width = header.getBoundingClientRect().width;
+            clone.style.width = width + "px";
+            clone.style.minWidth = width + "px";
+            clone.style.maxWidth = width + "px";
+            clone.style.height = headerHeight + "px";
+        });
+    }
+
+    function scheduleSync() {
+        if (framePending) return;
+        framePending = true;
+        window.requestAnimationFrame(syncHeader);
+    }
+
+    window.addEventListener("scroll", scheduleSync, {passive: true});
+    window.addEventListener("resize", scheduleSync);
+    scrollWrap.addEventListener("scroll", scheduleSync, {passive: true});
+
+    if (window.ResizeObserver) {
+        const resizeObserver = new ResizeObserver(scheduleSync);
+        resizeObserver.observe(scrollWrap);
+        resizeObserver.observe(table);
+    }
+
+    const classObserver = new MutationObserver(scheduleSync);
+    classObserver.observe(table, {attributes: true, attributeFilter: ["class"]});
+
+    scheduleSync();
+})();
+</script>
 
     <footer class="site-footer">
         <div class="site-footer-row">

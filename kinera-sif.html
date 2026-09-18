@@ -351,6 +351,26 @@ td.status-reason { overflow: hidden; }
 .rankings-table { min-width: 1710px; border: 0; table-layout: auto; }
 .rankings-table.breakdowns-collapsed { min-width: 1240px; }
 .rankings-table th { position: sticky; top: 0; z-index: 2; white-space: nowrap; }
+.rankings-sticky-header {
+    position: fixed;
+    top: 0;
+    z-index: 950;
+    display: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #111;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .22);
+    pointer-events: none;
+}
+.rankings-sticky-header.is-visible { display: block; }
+.rankings-sticky-header .rankings-table {
+    margin: 0;
+    table-layout: fixed;
+}
+.rankings-sticky-header .rankings-table th {
+    position: static;
+    box-sizing: border-box;
+}
 .rankings-table td { vertical-align: middle; }
 .rankings-table .score-cell { font-size: 16px; font-weight: bold; text-align: center; white-space: nowrap; }
 .rankings-table .subscore-cell,
