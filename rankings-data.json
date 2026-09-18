@@ -164,7 +164,7 @@
     "comments": "Exceptional musicality and unfettered driver efficiency.",
     "based_on": "Loaner unit",
     "tracker_slug": "symphonium-zenith",
-    "market_value": 1575.0,
+    "market_value": 1617.42,
     "market_confidence": "High"
   },
   {
@@ -2229,7 +2229,7 @@
     "based_on": "Crinacle's unit",
     "tracker_slug": "fatfreq-maestro-mini",
     "market_value": 336.59,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -4964,8 +4964,8 @@
     "comments": "Great bass response and surprisingly good treble extension if you can hear the 15kHz peak.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "ikko-oh10",
-    "market_value": 70.0,
-    "market_confidence": "Low"
+    "market_value": 78.61,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -7771,9 +7771,9 @@
     "price": "$230",
     "comments": "Poor, wonky tonality. Vocals sound uncanny.",
     "based_on": "Crinacle's unit",
-    "tracker_slug": "",
+    "tracker_slug": "kinera-idun-2-0",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",

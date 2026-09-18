@@ -798,13 +798,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 26/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 15/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 92d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 26/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 15/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 92d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (26/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 92d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 26/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 15/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 93d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 26/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 15/30, recent sample depth 0/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 0 in the last 90 days, 1 in the last 180 days, latest sample 93d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (26/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 93d ago.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -828,8 +828,24 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" checked></td>
+<tr id="row-0" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
+<td>2026-09-18</td>
+<td>$125</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Active</td>
+<td>good condition</td>
+<td>0</td>
+<td>reddit_rss</td>
+<td>keyboard_panda</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">Good Deal (10.7% below market)</span></td>
+<td><a href="https://www.reddit.com/r/AVexchange/comments/1wjfp65/wts_usca_h_mangirdxenns_tea_2_read_description_w/#item-2" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="reddit" checked></td>
 <td>2026-06-17</td>
 <td>$140</td>
 <td><span class="pill">closed</span></td>
@@ -840,13 +856,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Deathpoop5</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1u7w7es/wts_usaca_h_hifiman_arya_stealth_xenns_mangird/#item-2" target="_blank">source</a></td>
 </tr>
 
 </table>
 <script>
-const allRows = [{"row_id": 0, "title": "Xenns Mangird Tea2", "raw_text": "Xenns Mangird Tea2 - $140 shipped OBO FF\nPurchased a couple years ago from here.\nIncludes the following:\nAll stock eartips and case.\nStandard 4.4mm cable\nTripowin Zonie IEM Cable - 16 core silver plated 2 pin 0.78mm, 3.5mm Moss Color", "seller_username": "Deathpoop5", "url": "https://old.reddit.com/r/AVexchange/comments/1u7w7es/wts_usaca_h_hifiman_arya_stealth_xenns_mangird/#item-2", "price_num": 140.0, "date_ms": 1781659160000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}];
+const allRows = [{"row_id": 0, "title": "Xenns Tea 2 READ DESCRIPTION", "raw_text": "Xenns Tea 2 READ DESCRIPTION $125\nLooking to sell a pair of Xenns Tea 2s. These are now discontinued, but they originally retailed for $350. They're in good condition, except for the fact that the left monitor has a bit of rattle if you shake it around. The rattle isn't audible when you're listening to them stationary or walking around, nor does it affect audio quality in any (discernible) manner. They come with the original box, original 2.5mm cable, and one pair of the original tips (S believe), and I'll throw in a couple of other tips (Moondrop Spring Tips M & L, Dunu S&S S & M, Tri Clarion L) for free. I'll also throw in a pair of Koss Porta Pro drivers and KSC75 clips, if you want them (with pads). Only selling to upgrade (Mest Mkii), looking for $125 G&S shipped or $110 F&F shipped . Can also do local to the Bay Area!", "seller_username": "keyboard_panda", "url": "https://www.reddit.com/r/AVexchange/comments/1wjfp65/wts_usca_h_mangirdxenns_tea_2_read_description_w/#item-2", "price_num": 125.0, "date_ms": 1789704065000, "listing_status": "active", "condition_text": "good condition", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Xenns Mangird Tea2", "raw_text": "Xenns Mangird Tea2 - $140 shipped OBO FF\nPurchased a couple years ago from here.\nIncludes the following:\nAll stock eartips and case.\nStandard 4.4mm cable\nTripowin Zonie IEM Cable - 16 core silver plated 2 pin 0.78mm, 3.5mm Moss Color", "seller_username": "Deathpoop5", "url": "https://old.reddit.com/r/AVexchange/comments/1u7w7es/wts_usaca_h_hifiman_arya_stealth_xenns_mangird/#item-2", "price_num": 140.0, "date_ms": 1781659160000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
