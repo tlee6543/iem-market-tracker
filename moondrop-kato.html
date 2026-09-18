@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-moondrop.html">Moondrop</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-moondrop.html">Moondrop</a>
+    <button class="fr-preview-trigger" type="button" data-fr-name="Moondrop Kato" data-fr-label="Moondrop Kato" data-fr-embed-url="https://precog.squig.link/?embed&amp;share=Moondrop_Kato_%28Silver%29,Moondrop_Kato_%28Gold%29" data-fr-url="https://precog.squig.link/?share=Moondrop_Kato_%28Silver%29,Moondrop_Kato_%28Gold%29" aria-haspopup="dialog" aria-expanded="false" aria-label="Preview the frequency response for Moondrop Kato"><span class="fr-preview-icon" aria-hidden="true">⌁</span> FR graph</button>
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -798,7 +849,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 40/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 18/35, recency 8/30, recent sample depth 0/15, source diversity 8/10, price consistency 7/10. Current inputs: 4 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 225d ago, 2 source type(s), price CV 0.18." aria-label="Liquidity/confidence score: 40/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 18/35, recency 8/30, recent sample depth 0/15, source diversity 8/10, price consistency 7/10. Current inputs: 4 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 225d ago, 2 source type(s), price CV 0.18." tabindex="0">Low (40/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">4 included sample(s), latest 225d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 40/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 18/35, recency 8/30, recent sample depth 0/15, source diversity 8/10, price consistency 7/10. Current inputs: 4 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 226d ago, 2 source type(s), price CV 0.18." aria-label="Liquidity/confidence score: 40/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 18/35, recency 8/30, recent sample depth 0/15, source diversity 8/10, price consistency 7/10. Current inputs: 4 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 226d ago, 2 source type(s), price CV 0.18." tabindex="0">Low (40/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">4 included sample(s), latest 226d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -944,6 +995,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "Moondrop Kato - Matte Steel", "raw_text": "Moondrop Kato - Matte Steel Listing ID: 114053 For Sale 120.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America Selling my much loved set of Moondrop Kato iems. These come with the original box and all of its original contents. They're in excellent shape and have been well cared for. Haven't reached for them in quite a while now, so time to let them go... Listed by: StivVid (15) Listed: 2026-08-17", "seller_username": "StivVid", "url": "https://www.head-fi.org/classifieds/moondrop-kato-matte-steel.114053/", "price_num": 120.0, "date_ms": 1786924800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Moondrop Kato", "raw_text": "Moondrop Kato - $100.00 (OBO)\nMoondrop x Crinacle Dusk - Accepting Fair Offers", "seller_username": "x7xfallen", "url": "https://www.reddit.com/r/AVexchange/comments/1vou021/wtsusanyhhuge_lot_of_iems_headphones_dacs_amps/#item-59", "price_num": 100.0, "date_ms": 1786770793000, "listing_status": "active", "condition_text": "fair", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len698995:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 2, "title": "Moondrop Kato (Blue)", "raw_text": "SOLD - Moondrop Kato (Blue) - $60", "seller_username": "StolenServiceAnimal", "url": "https://old.reddit.com/r/AVexchange/comments/1qvoful/wts_usanm_h_oneplus_buds_4_moondrop_kato_simgot/#item-1", "price_num": 60.0, "date_ms": 1770211398000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=simgot"}, {"row_id": 3, "title": "Moondrop Kato (blue)", "raw_text": "Moondrop Kato (blue) - $90 SOLD", "seller_username": "Traxaber", "url": "https://old.reddit.com/r/AVexchange/comments/1n6wnfo/wts_usnj_h_a_bunch_of_iems_timeless_ae_heyday_s12/#item-4", "price_num": 90.0, "date_ms": 1756849628000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears"}, {"row_id": 4, "title": "Moondrop Kato", "raw_text": "Moondrop Kato: $100, missing the L spring tips, but everything else that came with the original box are included (carrying bag not in photo), 3.5 mm cable", "seller_username": "kregorgregs-list", "url": "https://old.reddit.com/r/AVexchange/comments/1n0c1w6/wts_usama_h_moondrop_kato_blue_moondrop_aria_2/#item-1", "price_num": 100.0, "date_ms": 1756181207000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_transaction_trigger_and_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=moondrop aria"}, {"row_id": 5, "title": "Moondrop Kato (blue)", "raw_text": "Moondrop Kato (blue) - $100", "seller_username": "Traxaber", "url": "https://old.reddit.com/r/AVexchange/comments/1mnx2jr/wts_usnj_h_a_bunch_of_iems_blessing_3_hype_4/#item-12", "price_num": 100.0, "date_ms": 1754966617000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 6, "title": "Sold: Moondrop Kato", "raw_text": "For Sale Sold: Moondrop Kato Price 95.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America With the holiday, these won\u2019t be shipped out until Jan. 3rd. Like new condition, less than 10 hours. Comes complete and original with what you see. Selling because I picked up a set of Variations. I\u2019ll include a new set of xl size Moondrop Spring tips (not pictured). Free shipping in the... trojan2900 Listing Dec 3, 2023 Comments: 4 Category: In-Ear Monitors", "seller_username": "trojan2900", "url": "https://www.head-fi.org/classifieds/moondrop-kato.58555/", "price_num": 95.0, "date_ms": 1701561600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 190.0;
@@ -1884,6 +1951,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">

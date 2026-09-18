@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-audeze.html">Audeze</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-audeze.html">Audeze</a>
+    <button class="fr-preview-trigger" type="button" data-fr-name="Audeze Euclid" data-fr-label="Audeze Euclid" data-fr-embed-url="https://precog.squig.link/?embed&amp;share=Audeze_Euclid" data-fr-url="https://precog.squig.link/?share=Audeze_Euclid" aria-haspopup="dialog" aria-expanded="false" aria-label="Preview the frequency response for Audeze Euclid"><span class="fr-preview-icon" aria-hidden="true">⌁</span> FR graph</button>
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -880,6 +931,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "Audeze Euclid", "raw_text": "Audeze Euclid - $400.00 (OBO)", "seller_username": "x7xfallen", "url": "https://www.reddit.com/r/AVexchange/comments/1vou021/wtsusanyhhuge_lot_of_iems_headphones_dacs_amps/#item-43", "price_num": 400.0, "date_ms": 1786770793000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len698995:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 1, "title": "Audeze Euclid IEMS", "raw_text": "Audeze Euclid IEMS\nListing ID: 108131\nFor Sale 499.00 USD\nCondition Fair\nNegotiability Or Best Offer\nShips To United States Of America\nA pair that is in high regard for it's very high technical performance. Includes the earphones, cable, and pelican case. These sound excellent and as they should from the factory. Pair is in decent condition. overall with minor marks. Asking...\nListed by: elwappo99 (234)\nListed: 2026-04-27\nLast edited: 2026-06-07", "seller_username": "elwappo99", "url": "https://www.head-fi.org/classifieds/audeze-euclid-iems.108131/", "price_num": 499.0, "date_ms": 1777248000000, "listing_status": "stale", "condition_text": "excellent, fair", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_stale_unsold_60d_lister_never_updated"}, {"row_id": 2, "title": "Audeze Euclid (with extra balanced cables)", "raw_text": "Audeze Euclid (with extra balanced cables) Listing ID: 78225 For Sale 390.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America Condition: Excellent (low hours of use) Accessories: Everything comes in the original Audeze packaging. All tips have never been used. Will include the Audeze Cipher Bluetooth cable, 2.5mm silver plated copper cable, 4.4mm silver plated copper... Listed by: BenJoe (13) Listed: 2024-11-16 Last edited: 2026-08-23", "seller_username": "BenJoe", "url": "https://www.head-fi.org/classifieds/audeze-euclid-with-extra-balanced-cables.78225/", "price_num": 390.0, "date_ms": 1731715200000, "listing_status": "active", "condition_text": "excellent (low hours of use) accessories: everything comes in the original audeze packaging. all tips have never been used. will include the audeze cipher bluetooth cable, 2.5mm silver plated copper c", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_page_loaded_no_safe_status_line", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged"}];
 const originalMsrpUsd = 1299.0;
@@ -1820,6 +1887,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">

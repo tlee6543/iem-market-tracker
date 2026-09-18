@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-hercules-audio.html">Hercules Audio</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-hercules-audio.html">Hercules Audio</a>
+    
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -1152,6 +1203,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "Hercules Audio Moses", "raw_text": "Hercules Audio Moses\nListing ID: 111240\nFor Sale 2,650.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To North America\nSelling my HA Moses iem in excellent condition. Includes full packaging with stock cable and accessories as shown in pics. This might be my overall favorite iem, but life is getting in the way so really not getting the ear time they deserve. I'd...\nListed by: jaker782 (272)\nListed: 2026-06-25\nLast edited: 2026-06-25", "seller_username": "jaker782", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.111240/", "price_num": 2650.0, "date_ms": 1782345600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 1, "title": "Hercules Audio Moses", "raw_text": "Hercules Audio Moses\nListing ID: 110463\nFor Sale / Trade 2,575.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To Anywhere\nLooking to sell my Moses since they are not getting used. Includes stock cable and accessories as shown in pics, no eartips.\nListed by: Chiaroscur0 (15)\nListed: 2026-06-09\nLast edited: 2026-07-13", "seller_username": "Chiaroscur0", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.110463/", "price_num": 2575.0, "date_ms": 1780963200000, "listing_status": "active", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_page_loaded_no_safe_status_line", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_unclear_left_unchanged | active_status_checker_status_unclear_left_unchanged"}, {"row_id": 2, "title": "Hercules Moses IEM", "raw_text": "SOLD Up for sale is my Hercules Moses, SN # 45, a now legendary set featuring 1DD, 4 BA & 4EST drivers , and considered to be the direct upgrade to the Elysian Annhialator 23. Tuned by the Legendary Lee of Elysian and Mysticraft Fame, this is a bass forward, detailed, balanced set well worthy of your attention. Comes with box, packaging, cleaning brush , Divinus tips, original cable, leather puck case, Iem bags, and metal Serial number card Selling for $2525 shipped CONUS via PayPal FF or Zelle. Lowest price online so far :)\nsubmitted by /u/BaddAsh13\n[link] [comments]", "seller_username": "BaddAsh13", "url": "https://old.reddit.com/r/AVexchange/comments/1tpb3su/wtsusawah_hercules_moses_iem_w_2525_paypal_zelle/#item-1", "price_num": 2525.0, "date_ms": 1779900168000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=elysian"}, {"row_id": 3, "title": "Closed: Hercules Audio Moses", "raw_text": "For Sale Closed: Hercules Audio Moses Price 2800.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Sold on Reddit For sale is my Hercules Audio Moses that I recently acquired. It is a very new unit less than a month old, delivered 4/22. It's an excellent IEM with an incredible build to it, an upgrade over Anni 23. However I'm looking to allocate funds elsewhere for the time being. Includes... crush Listing May 17, 2026 Comments: 1 Category: In-Ear Monitors", "seller_username": "crush", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.109214/", "price_num": 2800.0, "date_ms": 1778976000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Hercules Audio Moses", "raw_text": "For Sale Sold: Hercules Audio Moses Price 2850.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling my Hercules Audio Moses, serial #0025. I\u2019m in love with it and would prefer to keep it, but I need to recoup funds for other purposes. This set is in excellent condition and includes all packaging and accessories. Shipping within CONUS only. Thanks for looking. Audioenophile Listing Apr 30, 2026 Comments: 1 Category: In-Ear Monitors", "seller_username": "Audioenophile", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.108298/", "price_num": 2850.0, "date_ms": 1777507200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Hercules Audio Moses", "raw_text": "For Sale Sold: Hercules Audio Moses Price 2850.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Listing my Hercules Audio Moses, complete full box set (original box, accessories, stock Scepter 4.4mm cable, and all sizes of the stock velvet tips included). I am the first owner and purchased it new from Jaben Singapore. The unit has been very lightly used and is in excellent condition... main character Listing Mar 10, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "character", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.105200/", "price_num": 2850.0, "date_ms": 1773100800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Hercules Audio Moses", "raw_text": "For Sale Closed: Hercules Audio Moses Price 2800.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling a catch and release Moses (at the best price I've seen!). It's near mint condition with all stock packaging, accessories, and cable. Will ship within 24 hours of purchase. jfleysh Listing Mar 5, 2026 Comments: 4 Category: In-Ear Monitors", "seller_username": "jfleysh", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.104901/", "price_num": 2800.0, "date_ms": 1772668800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Hercules Audio Moses", "raw_text": "For Sale Sold: Hercules Audio Moses Price 1.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Listing my Hercules Moses to fund a purchase for another hobby. Set is very minty and in excellent condition, eartips unused. Not looking for trades right now. Price includes shipping :) shaunbr15 Listing Feb 27, 2026 Comments: 2 Category: In-Ear Monitors", "seller_username": "shaunbr15", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.104552/", "price_num": null, "date_ms": 1772150400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 8, "title": "Closed: ** price drop ** Hercules Audio MOSES", "raw_text": "For Sale Closed: ** price drop ** Hercules Audio MOSES Price 2900.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Hello, This is a Hercules Audio MOSES standard model (SN : 0009). I am the first owner, and it has been barely used, so it\u2019s in mint condition. Of course, all the accessories are included, and it\u2019s unused. I will ship via EMS, so I\u2019m unable to send it to countries where EMS service is not... Taka0302 Listing Feb 21, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "Taka0302", "url": "https://www.head-fi.org/classifieds/price-drop-hercules-audio-moses.104215/", "price_num": 2900.0, "date_ms": 1771632000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Hercules Audio Moses", "raw_text": "For Sale Sold: Hercules Audio Moses Price 3000.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Continued reduction of the collection. Price is $3,000 net to me. Please add fees if you choose to use PayPal Goods & Services and we can discuss shipping costs to the CONUS area based on speed. djkindred Listing Feb 3, 2026 Comments: 3 Category: In-Ear Monitors", "seller_username": "djkindred", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.103113/", "price_num": 3000.0, "date_ms": 1770076800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Hercules Audio Moses", "raw_text": "For Sale Sold: Hercules Audio Moses Price 3200.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Mint condition Moses. All box accessories and goodies untouched. No trade offers pls. Happy to answer questions. luvandp3ace Listing Jan 1, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "luvandp3ace", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.101124/", "price_num": 3200.0, "date_ms": 1767225600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Hercules Audio Moses", "raw_text": "For Sale Sold: Hercules Audio Moses Price 0.01 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere . ranfan Listing Sep 22, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "ranfan", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.95494/", "price_num": null, "date_ms": 1758499200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Hercules Audio Moses", "raw_text": "For Sale Sold: Hercules Audio Moses Price 0.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Selling my Hercules Audio Moses. This is definitively one of the best IEM's I've ever heard. It could easily be my one and done set and I could ride off into the sunset. But alas I enjoy buying and trying new gear too much so I'm putting it up for sale. Includes all original accessories and... zkmd Listing Sep 15, 2025 Comments: 2 Category: In-Ear Monitors", "seller_username": "zkmd", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.95083/", "price_num": null, "date_ms": 1757894400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Hercules Audio Moses", "raw_text": "For Sale / Trade Sold: Hercules Audio Moses Price 1.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling excellent condition HA Moses. Everything is complete/like new and grabbed them from another excellent Head-Fier recently. Bass, layering and soundstage on these is simply amazing! Selling to try some other sets, would also be interested in some other TOTL IEM's for a trade with +/-... sparty09 Listing Jul 26, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "sparty09", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.92362/", "price_num": null, "date_ms": 1753488000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 14, "title": "Traded: Hercules Audio Moses", "raw_text": "For Sale Traded: Hercules Audio Moses Price 0.00 USD Condition New in box Negotiability Firm Ships to EuropeNorth America Selling a new HA Moses, the version with black honeycomb (not limited edition). This is serial number 25. Recognized as the best iem of year 2025, Moses is one of the most pleasant iems to listen to for long listening sessions. I bought this for a friend alongside mine but he preferred to go... harshkamboj Listing Jul 14, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.91669/", "price_num": null, "date_ms": 1752451200000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 15, "title": "Closed: Hercules Audio Moses", "raw_text": "For Sale Closed: Hercules Audio Moses Price 3600.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Hercules Audio Moses. Everything included! G&S net to me! Shipping to CONUSA included. Write with confidence! Dandelion777 Listing Jul 14, 2025 Comments: 3 Category: In-Ear Monitors", "seller_username": "Dandelion777", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.91671/", "price_num": 3600.0, "date_ms": 1752451200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: PD: Hercules Moses", "raw_text": "For Sale Sold: PD: Hercules Moses Price 2999.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Selling a like-new set of one of the top IEMs out there. Second owner. Bought from an excellent Head-fier in June, who got it only a few weeks before that from Elise Audio. Selling only for non-audio-related reasons. This set is outstanding in every way. Whole offering is mint, except for the... fejnomit Listing Jun 12, 2025 Comments: 4 Category: In-Ear Monitors", "seller_username": "fejnomit", "url": "https://www.head-fi.org/classifieds/pd-hercules-moses.89985/", "price_num": 2999.0, "date_ms": 1749686400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Hercules Audio Moses", "raw_text": "For Sale Sold: Hercules Audio Moses Price 3700.00 USD Condition New in box Negotiability Or best offer Ships to EuropeNorth America Selling the most liked iem at the Canjam this year, Moses is the flagship tribrid iem from HA which entails 9 drivers . As the images show, this is unopened as I have decided to skip this and buy a couple of flagship cables. Shipping will be included in North America but open to ship elsewhere. harshkamboj Listing Jun 11, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.89948/", "price_num": 3700.0, "date_ms": 1749600000000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 18, "title": "Traded: Hercules Audio Moses", "raw_text": "For Sale / Trade Traded: Hercules Audio Moses Price 3700.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Just looking to scratch the itch for even more new stuff and see if I can get any trades (cash on my end or yours if necessary) Looking for: AK Aura PMG Apx SE Elysian X FE Macbeth (Don't judge me\ud83d\ude05) Trailli (Red& Black or non standard faceplate options) Aroma Jewel Aroma Feiwan (Non stock... KuroKitsu Listing Jun 7, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "KuroKitsu", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.89731/", "price_num": 3700.0, "date_ms": 1749254400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Closed: Hercules Audio Moses", "raw_text": "For Sale Closed: Hercules Audio Moses Price 3700.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Greetings For sale is my Hercules Audio- Moses Its in like new condition, first owner Buyer pays shipping 50 euro worldwide Best wishes Sound Eq Listing Jun 5, 2025 Comments: 5 Category: In-Ear Monitors", "seller_username": "Eq", "url": "https://www.head-fi.org/classifieds/hercules-audio-moses.89589/", "price_num": 3700.0, "date_ms": 1749081600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 3800.0;
@@ -2092,6 +2159,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">

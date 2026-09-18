@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-vision-ears.html">Vision Ears</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-vision-ears.html">Vision Ears</a>
+    
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -992,6 +1043,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "Vision Ears EXT MKII", "raw_text": "This set of Vision Ears EXT MKII are in excellent condition and includes the original packaging along with a 2-pin 4.4mm cable and original accessories. The driver configuration is 2DD and 4 EST, a pretty unique configuration. It also has adjusted the fit from the original EXT by narrowing the nozzle for more comfort. It is an incredible set, just have too many sets now and it\u2019s not getting as much ear time as it was.\nI offer next business day mail out via Priority Mail which is included in the price. No trades at this time please. Thanks for your interest!\nsubmitted by /u/Markmurd61\n[link] [comments]", "seller_username": "Markmurd61", "url": "https://www.reddit.com/r/AVexchange/comments/1wgh3px/wtsustxhvision_ears_ext_mkii_wpaypal_175000/#item-1", "price_num": 1750.0, "date_ms": 1789422165000, "listing_status": "active", "condition_text": "and includes the original packaging along with a 2-pin 4", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Vision Ears EXT MKII", "raw_text": "Vision Ears EXT MKII Listing ID: 115502 For Sale 1,750.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere This set of Vision Ears EXT MKII are in excellent condition and includes the original packaging along with a 2-pin 4.4mm cable and original accessories. The driver configuration is 2DD and 4 EST, a pretty unique configuration. It also has... Listed by: Markmurd (87) Listed: 2026-09-14 Last edited: 2026-09-15", "seller_username": "Markmurd", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.115502/", "price_num": 1750.0, "date_ms": 1789344000000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 2, "title": "Vision Ears EXT MKII ( MK2 )", "raw_text": "Vision Ears EXT MKII ( MK2 ) Listing ID: 114929 For Sale 1,750.00 USD Condition Excellent/Like New Negotiability Firm Ships To AnywhereUnited States Of America Selling the incredibly unique Vision Ears EXT MKII. This is a DD and ESTs IEM that blazes its own trail. Very organic and highly resolving. Next level staging as evil. This is the gray version, recently refreshed by Vision Ears so it's... Listed by: zlayde (169) Listed: 2026-09-03", "seller_username": "zlayde", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii-mk2.114929/", "price_num": 1750.0, "date_ms": 1788393600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 3, "title": "Sold: [PD] Vision Ears EXT MKII Limited Edition", "raw_text": "For Sale Sold: [PD] Vision Ears EXT MKII Limited Edition Price 2300.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere It\u2019s never easy to write something like this\u2026 Up for sale is my Vision Ears EXT MKII Limited Edition, a truly exceptional set that has been nothing short of breathtaking in my entire hobby. These IEMs represent a rare balance between top-tier technical performance and deep, emotional musicality... Oleh Popovskyi Listing Mar 22, 2026 Comments: 4 Category: In-Ear Monitors", "seller_username": "Popovskyi", "url": "https://www.head-fi.org/classifieds/pd-vision-ears-ext-mkii-limited-edition.105905/", "price_num": 2300.0, "date_ms": 1774137600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "[PD] Vision Ears EXT MKII", "raw_text": "For Sale [PD] Vision Ears EXT MKII Price 1900.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Hello folks up for sale is my ext mkii in excellent condition it's the gray color great iem for almost every genre sad to let it go but I have too many iems Asking for $1900 PayPal and shipping fees included thanks for looking and happy holidays! Pabsu Listing Dec 27, 2025 Comments: 3 Category: In-Ear Monitors", "seller_username": "Pabsu", "url": "https://www.head-fi.org/classifieds/pd-vision-ears-ext-mkii.100871/", "price_num": 1900.0, "date_ms": 1766793600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "visible_card_collect_with_price_title_match_v6 | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 5, "title": "Traded: Vision Ears EXT MkII", "raw_text": "For Sale Traded: Vision Ears EXT MkII Price 2150.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America In perfect condition with everything included, including outer shipping box from Vision Ears. Receipt from Audio46 included. Mllump Listing Oct 25, 2025 Comments: 2 Category: In-Ear Monitors", "seller_username": "Mllump", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.97367/", "price_num": 2150.0, "date_ms": 1761350400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Vision Ears EXT MKII", "raw_text": "For Sale Closed: Vision Ears EXT MKII Price 2150.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America In perfect condition with everything included, including outer shipping box from Vision Ears. Receipt from Audio46 included. Need cash. No trades, unless you have something around $1k and can add $1k. Mllump Listing Oct 22, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Mllump", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.97257/", "price_num": 2150.0, "date_ms": 1761091200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 7, "title": "Traded: Vision Ears EXT MKII", "raw_text": "For Sale Traded: Vision Ears EXT MKII Price 2700.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling a pair of Vision Ears EXT MKII IEMs. These have less than an hour of listening time and are thus in immaculate condition. All original packaging and accessories including case, cable, and eartips, except that I have soemhow misplaced the medium-size Sedna Fit eartips that came with... moosophocles Listing Oct 11, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "moosophocles", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mkii.96621/", "price_num": 2700.0, "date_ms": 1760140800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Vision Ears EXT MK2 (Gray) *mint*", "raw_text": "For Sale / Trade Sold: Vision Ears EXT MK2 (Gray) *mint* Price 0.01 USD Condition Excellent/Like new Negotiability Or best offer Ships to AnywhereUnited States of America ...thread. It's truly special and unique. It's an incredibly analog-type of sound that is deeply satisfying. No BAs. I'm a huge fan of Vision Ears and this is one of their best. Everything is in pristine shape. Nothing in the box was used. I tried the cable briefly. The IEMs themselves work... zlayde Listing Sep 19, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "zlayde", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mk2-gray-mint.95332/", "price_num": null, "date_ms": 1758240000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 9, "title": "Traded: Vision Ears EXT MK2 (Gray) *MINT*", "raw_text": "For Sale / Trade Traded: Vision Ears EXT MK2 (Gray) *MINT* Price 0.01 USD Condition Excellent/Like new Negotiability Firm Ships to AnywhereUnited States of America ...thread. It's truly special and unique. It's an incredibly analog-type of sound that is deeply satisfying. No BAs. I'm a huge fan of Vision Ears and this is one of their best. Everything is in pristine shape. Nothing in the box was used. I tried the cable briefly. The IEMs themselves work... zlayde Listing Jul 28, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "zlayde", "url": "https://www.head-fi.org/classifieds/vision-ears-ext-mk2-gray-mint.92468/", "price_num": null, "date_ms": 1753660800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}];
 const originalMsrpUsd = 3400.0;
@@ -1932,6 +1999,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">

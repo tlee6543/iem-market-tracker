@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-dunu.html">Dunu</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-dunu.html">Dunu</a>
+    <button class="fr-preview-trigger" type="button" data-fr-name="Dunu SA6" data-fr-label="DUNU SA6" data-fr-embed-url="https://precog.squig.link/?embed&amp;share=DUNU_SA6,DUNU_SA6_%28Atmospheric%29" data-fr-url="https://precog.squig.link/?share=DUNU_SA6,DUNU_SA6_%28Atmospheric%29" aria-haspopup="dialog" aria-expanded="false" aria-label="Preview the frequency response for Dunu SA6"><span class="fr-preview-icon" aria-hidden="true">⌁</span> FR graph</button>
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -1328,6 +1379,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "Sold: Dunu SA6", "raw_text": "For Sale Sold: Dunu SA6 Price 0.00 USD Condition Good Negotiability Firm Ships to Anywhere Dunu SA6 in great condition with box, tips and all accessories. Bought it brand new. Price is including shipping. Recently shipped an iem to USA smoothly with no issues to a head-fi buyer. OrionDayz Listing Mar 2, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "OrionDayz", "url": "https://www.head-fi.org/classifieds/dunu-sa6.84168/", "price_num": null, "date_ms": 1740873600000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 1, "title": "Sold: Price Drop: Dunu SA6", "raw_text": "For Sale / Trade Sold: Price Drop: Dunu SA6 Price 299.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Selling the OG Sa6 from Dunu, which is the termed as reference iem for its price category. Great overall set with 2 switches for sound configuration. Comes with original box and all accessories. Probably the lowest ever sold. Shipping is included in North America. harshkamboj Listing Jan 15, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/price-drop-dunu-sa6.81630/", "price_num": 299.0, "date_ms": 1736899200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: *Pending Sale* Dunu SA6", "raw_text": "For Sale Sold: *Pending Sale* Dunu SA6 Price 240.00 USD Condition Good Negotiability Or best offer Ships to United States of America Selling Dunu SA6 OG got these in a trade a while back and although they're good not really what I'm looking to keep in my IEM collection since I am downsizing massively. These do not come with eartips or original packaging unfortunately PayPal fees and shipping included for US. Sitilac Listing Nov 21, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Sitilac", "url": "https://www.head-fi.org/classifieds/pending-sale-dunu-sa6.78566/", "price_num": 240.0, "date_ms": 1732147200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Traded: Dunu SA6", "raw_text": "For Sale Traded: Dunu SA6 Price 300.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Complete like new Dunu SA6 original for sale. No accessories except IEM's and cable have been used. This one also came with the newer version of the original cable that has darker jacks. Beautiful purple faceplates! RFS: Too many IEM's \ud83d\ude05 Will be shipping from Norway. World wide shipping is... Erkil Listing Sep 17, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Erkil", "url": "https://www.head-fi.org/classifieds/dunu-sa6.74950/", "price_num": 300.0, "date_ms": 1726531200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Closed: OG Dunu SA6", "raw_text": "For Sale Closed: OG Dunu SA6 Price 275.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Lightly used Perfect working condition with no cosmetic damage as you can see from the picture. Shipping to NA is covered. OG Come with original Dunu 3.5MM cable and case. Prefer Paypal F&F to avoid fees and tax. JAYAUDIO88 Listing Nov 6, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "JAYAUDIO88", "url": "https://www.head-fi.org/classifieds/og-dunu-sa6.57186/", "price_num": 275.0, "date_ms": 1699228800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Closed: Dunu SA6", "raw_text": "For Sale Closed: Dunu SA6 Price 295.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Excellent condition and I think they sound great but I prefer my SeekReal Fusions. It\u2019s close yet I only have 2 ears. Comes with box, case, tips, and all 3 cable ends. Free shipping in the states and pp fees are on me. trojan2900 Listing Aug 24, 2023 Comments: 2 Category: In-Ear Monitors", "seller_username": "trojan2900", "url": "https://www.head-fi.org/classifieds/dunu-sa6.53119/", "price_num": 295.0, "date_ms": 1692835200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: Dunu SA6", "raw_text": "For Sale Closed: Dunu SA6 Price 350.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Photos: https://imgur.com/a/tsTYShj For sale is an excellent condition Dunu SA6 (OG). Price includes shipping + fees. Included are all of the original accessories. The cable and tips attached to the IEM currently will not be included. Willing to do a discount for local sales in OC/LA area. No... Gromu Listing Aug 10, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "Gromu", "url": "https://www.head-fi.org/classifieds/dunu-sa6.52380/", "price_num": 350.0, "date_ms": 1691625600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Dunu SA6", "raw_text": "For Sale Sold: Dunu SA6 Price 350.00 USD Condition Good Negotiability Firm Ships to Anywhere Selling my Dunu SA6 in great condition, is coming with all the accessories and tips. no trades. Shipping included, Payment in Paypal. listen4joy Listing Mar 28, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "listen4joy", "url": "https://www.head-fi.org/classifieds/dunu-sa6.44557/", "price_num": 350.0, "date_ms": 1679961600000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Traded: Dunu SA6", "raw_text": "For Sale / Trade Traded: Dunu SA6 Price 360.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Selling my Dunu SA6. They're in great condition, though I've put like 100 hours on them. I've only ever used 1 pair of the ear tips, so there are a couple packaged tips still unused. I've sanitized the tips I used and will leave them on the IEMs so you know which ones were the ones I used... Krekmate Listing Mar 4, 2023 Comments: 2 Category: In-Ear Monitors", "seller_username": "Krekmate", "url": "https://www.head-fi.org/classifieds/dunu-sa6.42889/", "price_num": 360.0, "date_ms": 1677888000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: DUNU SA6 with Extra Cable", "raw_text": "For Sale Sold: DUNU SA6 with Extra Cable Price 385.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America For sale is my very lightly used DUNU SA6. I purchased these from Headphones.com this past fall because I was having neck pain due to a bike accident and thought my Audezes were exacerbating the issue. The SA6s sound great, but I found that IEMs aren't for comfortable for me over long listening... mcmyers Listing Jan 17, 2023 Comments: 2 Category: In-Ear Monitors", "seller_username": "mcmyers", "url": "https://www.head-fi.org/classifieds/dunu-sa6-with-extra-cable.39907/", "price_num": 385.0, "date_ms": 1673913600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: DUNU SA6", "raw_text": "For Sale Sold: DUNU SA6 Price 420.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America SOLD 9/20/22 DUNU SA6 with all accessories shown. LInk to specs: https://www.dunu-topsound.com/product-page/studio-sa6 US sales only jclyle Listing Sep 20, 2022 Comments: 2 Category: In-Ear Monitors", "seller_username": "jclyle", "url": "https://www.head-fi.org/classifieds/dunu-sa6.33192/", "price_num": 420.0, "date_ms": 1663632000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Dunu SA6", "raw_text": "For Sale Sold: Dunu SA6 Price 425.00 USD Condition Good Negotiability Firm Ships to United States of America Hey All! I\u2019m really sorry to have to put these amazing iems up for sale, but sadly they just do not fit my ears well. I can get about 15 mins with them before they start to hurt\u2026really a shame. These have to be the best sounding BA iems I\u2019ve ever heard. Typically, at least for me, BA\u2019s have... Olumm Listing Jul 18, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "Olumm", "url": "https://www.head-fi.org/classifieds/dunu-sa6.29558/", "price_num": 425.0, "date_ms": 1658102400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: DUNU SA6", "raw_text": "For Sale Sold: DUNU SA6 Price 445.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America DUNU SA6 up for sale (no trades). Excellent condition. No damage or marks anywhere that I see. Condition is exactly as seen in pics. To me the colors on this particular unit are amazing. Only selling because I want to try some other IEMs. Comes with everything seen in pics which is everything... 04gto Listing Jun 22, 2022 Comments: 1 Category: In-Ear Monitors", "seller_username": "04gto", "url": "https://www.head-fi.org/classifieds/dunu-sa6.27987/", "price_num": 445.0, "date_ms": 1655856000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Dunu SA6", "raw_text": "For Sale Sold: Dunu SA6 Price 400.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America For sale are the Dunu SA6s. I'm the original owner and these were purchased directly from DUNU's online store. The IEMs are in excellent condition. You'll notice some air bubbles where the resin meets the wood. I'm guessing that's just a result of the assembly process. The IEMs themselves... Ruprit Listing Jun 11, 2022 Comments: 4 Category: In-Ear Monitors", "seller_username": "Ruprit", "url": "https://www.head-fi.org/classifieds/dunu-sa6.27374/", "price_num": 400.0, "date_ms": 1654905600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Closed: Dunu SA6", "raw_text": "For Sale Closed: Dunu SA6 Price 450.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America TIMESTAMP: https://imgur.com/a/FAWYFyL For sale is an excellent condition Dunu SA6. These were a catch and release for me. Only listened for maybe 10 hours and as much as I loved every minute and absolutely adore the sound, I also own the U12T which not surprisingly I prefer over these. So... drewbadour Listing May 18, 2022 Comments: 2 Category: In-Ear Monitors", "seller_username": "drewbadour", "url": "https://www.head-fi.org/classifieds/dunu-sa6.25968/", "price_num": 450.0, "date_ms": 1652832000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Dunu SA6 Like new!", "raw_text": "For Sale Sold: Dunu SA6 Like new! Price 400.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America I picked up this set from Head-fi just to try out. I read that it sounds a bit like the 64 audio U12t and liked them but I have the UM MEST now and I like them better. This a great IEM for the price. Comes with everything like new, let me know if you have any questions. BTW the cable on this... declinedesign Listing Feb 5, 2022 Comments: 1 Category: In-Ear Monitors", "seller_username": "declinedesign", "url": "https://www.head-fi.org/classifieds/dunu-sa6-like-new.19636/", "price_num": 400.0, "date_ms": 1644019200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: DUNU SA6", "raw_text": "For Sale Sold: DUNU SA6 Price 380.00 USD Condition Good Negotiability Or best offer Ships to United States of America Up for sale are a clean pair of DUNU SA6. I'm the second owner of this set. I do not have the original packaging for these. Items below included in the sale: - DUNU SA6 - DUNU modular cable w/4.4mm, 3.5mm and 2.5mm terminations - DUNU case - Assorted silicone tips (unused) Asking $400 $380 -... Garney Listing Jan 30, 2022 Comments: 1 Category: In-Ear Monitors", "seller_username": "Garney", "url": "https://www.head-fi.org/classifieds/dunu-sa6.19213/", "price_num": 380.0, "date_ms": 1643500800000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Dunu SA6", "raw_text": "For Sale Sold: Dunu SA6 Price 450.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Offering up my Dunu SA6, no issues with them, just wanting to check out some new gear (yall know how it is) I am the original and only owner, bought Feb 2021, no kids in home, no COVID ever in home. Always kept in their case, never dropped or abused, nor turned up past a reasonable volume... kadinh Listing Dec 18, 2021 Comments: 2 Category: In-Ear Monitors", "seller_username": "kadinh", "url": "https://www.head-fi.org/classifieds/dunu-sa6.16561/", "price_num": 450.0, "date_ms": 1639785600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Closed: SOLD Dunu SA6 IEM - like new, extra cable - price drop", "raw_text": "For Sale Closed: SOLD Dunu SA6 IEM - like new, extra cable - price drop Price 425.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America SOLD SOLD SOLD Dunu SA6 IEMs, bought a few weeks ago new from headphones.com. I bought a pair of Andromeda 2020s at the same time and figured I'd see which one I liked best. The SA6 actually is a great set of IEMs, but the Andro edge them out. These have a handful of hours on them, never... imnostatic Listing Nov 13, 2021 Comments: 0 Category: In-Ear Monitors", "seller_username": "imnostatic", "url": "https://www.head-fi.org/classifieds/sold-dunu-sa6-iem-like-new-extra-cable-price-drop.14551/", "price_num": 425.0, "date_ms": 1636761600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Closed: Dunu SA6 (Like New)", "raw_text": "For Sale Closed: Dunu SA6 (Like New) Price 425.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Purchased on September 25th. I decided to upgrade, so I am selling these. I'm actually quite surprised how close these get to the $1000+ IEM tier. If you like a more neutral sound, these are for you. Original box and accessories are included. $425 shipped to CONUS I have 800+ feedback on Ebay... thomasu Listing Nov 10, 2021 Comments: 2 Category: In-Ear Monitors", "seller_username": "thomasu", "url": "https://www.head-fi.org/classifieds/dunu-sa6-like-new.14381/", "price_num": 425.0, "date_ms": 1636502400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Dunu SA6", "raw_text": "For Sale Sold: Dunu SA6 Price 410.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Up for sale is Dunu SA6. I am the second owner. I bought this about a month ago here from fellow head-fier @Aenemo. It is like new condition. I only listen to this less than 10 hours. It will come with original box and accessories. Price include shipping (CONUS only) and paypal fee. koopig Listing Oct 15, 2021 Comments: 3 Category: In-Ear Monitors", "seller_username": "koopig", "url": "https://www.head-fi.org/classifieds/dunu-sa6.12929/", "price_num": 410.0, "date_ms": 1634256000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: DUNU SA6", "raw_text": "For Sale Sold: DUNU SA6 Price 420.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere DUNU SA6. Purchase directly from DUNU. Complete with box, warranty, and full cable connectors (2.5 / 3.5 / 4.4). Not even a sign of wear on the shells and not even on the cable pins. I sell or exchange (with a difference at my expense) with: 1) Elysium Poseidon 2) Aroma Audio Ace 3) QDC 8CS or... fabio19 Listing Oct 4, 2021 Comments: 1 Category: In-Ear Monitors", "seller_username": "fabio19", "url": "https://www.head-fi.org/classifieds/dunu-sa6.12315/", "price_num": 420.0, "date_ms": 1633305600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: Dunu SA6", "raw_text": "For Sale / Trade Sold: Dunu SA6 Price 460.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Selling a pair of Dunu SA6s. These are like new, used less than an hour. Including all original accessories that came with them. Super confortable sound great, but I am looking for an IEM with a little bit more slam. $460 shipped to CONTUS, also would consider a trade for a Thieaudio Monarch or... Aenemo Listing Sep 14, 2021 Comments: 1 Category: In-Ear Monitors", "seller_username": "Aenemo", "url": "https://www.head-fi.org/classifieds/dunu-sa6.11236/", "price_num": 460.0, "date_ms": 1631577600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Sold: Dunu SA6", "raw_text": "For Sale Sold: Dunu SA6 Price 0.01 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Like new Dunu SA6 for sale. Purchased new 2 months ago from an eBay seller. Includes all accessories (missing one pair of medium ear tips) and original box. The shallower fit on these didn\u2019t pair well with my larger, longer ear canals. Sound is undeniably great, though. Mids top notch. Price is... Pete7 Listing Sep 4, 2021 Comments: 1 Category: In-Ear Monitors", "seller_username": "Pete7", "url": "https://www.head-fi.org/classifieds/dunu-sa6.10633/", "price_num": null, "date_ms": 1630713600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 24, "title": "Sold: FS [US-GA]: Dunu SA6", "raw_text": "For Sale Sold: FS [US-GA]: Dunu SA6 Price 420.00 USD Condition Good Negotiability Or best offer Ships to United States of America Sold Price includes shipping and PayPal fees. Item is in good condition with original packaging and accessories. No trades please. - Dunu SA6 ($420) Apex Eight Listing Aug 17, 2021 Comments: 4 Category: In-Ear Monitors", "seller_username": "Eight", "url": "https://www.head-fi.org/classifieds/fs-us-ga-dunu-sa6.9549/", "price_num": 420.0, "date_ms": 1629158400000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: Dunu SA6", "raw_text": "For Sale Sold: Dunu SA6 Price 400.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America I received these about 2 months ago. I am the first owner of these. I never really expected to keep them so I've kept all original accessories except for the stock tips that came on the actual iems. They are quite wonderful but decided to free up some funds for other iem endeavours. Price is... SteelCookie Listing May 18, 2021 Comments: 3 Category: In-Ear Monitors", "seller_username": "SteelCookie", "url": "https://www.head-fi.org/classifieds/dunu-sa6.4765/", "price_num": 400.0, "date_ms": 1621296000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: Dunu SA6", "raw_text": "For Sale Sold: Dunu SA6 Price 365.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Hi. I am original/only owner, purchased new from MusicTeck recently. Excellent, \u2018like new\u2019 condition, flawless performance. Maybe ten hours use. Comes with all items pictured. All factory tips present and unused. NOTE: I am selling this with DUW02 interchangeable, Dunu brand cable, rather than... morndewey Listing May 16, 2021 Comments: 1 Category: In-Ear Monitors", "seller_username": "morndewey", "url": "https://www.head-fi.org/classifieds/dunu-sa6.4641/", "price_num": 365.0, "date_ms": 1621123200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Sold: Dunu SA6", "raw_text": "For Sale Sold: Dunu SA6 Price 440.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Selling off my Dunu SA6. It is in pristine condition with no signs or wear as this is getting the least amount of listening time. Got it around February 2021. So age is about 2 months old. It is a very well tuned IEM for the price point. Selling to fund my other purchases. Tips are all in good... williamVT Listing Apr 6, 2021 Comments: 2 Category: In-Ear Monitors", "seller_username": "williamVT", "url": "https://www.head-fi.org/classifieds/dunu-sa6.2138/", "price_num": 440.0, "date_ms": 1617667200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Sold: Dunu SA6", "raw_text": "For Sale Sold: Dunu SA6 Price 430.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America First owner, excellent condition. Comes with all original accessories and box. Price is shipped to US. thesheik137 Listing Apr 5, 2021 Comments: 1 Category: In-Ear Monitors", "seller_username": "thesheik137", "url": "https://www.head-fi.org/classifieds/dunu-sa6.2040/", "price_num": 430.0, "date_ms": 1617580800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Closed: Dunu SA6", "raw_text": "For Sale Closed: Dunu SA6 Price 450.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Just a few hours on these and essentially new. I am struggling with the fit. It includes all accessories and originally packaging. I will post a picture tomorrow. The color is orange, grey and black. Includes Paypal and Shipping CON US> Dash Listing Mar 27, 2021 Comments: 0 Category: In-Ear Monitors", "seller_username": "Dash", "url": "https://www.head-fi.org/classifieds/dunu-sa6.1561/", "price_num": 450.0, "date_ms": 1616803200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: Dunu SA6", "raw_text": "For Sale Sold: Dunu SA6 Price 420.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Seling my Dunu Studio SA6 one of the best tuned IEM in its price IMO really like the sound of it and only letting it go to fund anole VX which have similar sound sig the unit is in mint condition, comes with all the accesories and box. the eartips are unused. looking for 420 USD which already... andra555 Listing Mar 9, 2021 Comments: 2 Category: In-Ear Monitors", "seller_username": "andra555", "url": "https://www.head-fi.org/classifieds/dunu-sa6.419/", "price_num": 420.0, "date_ms": 1615248000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 550.0;
@@ -2268,6 +2335,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">

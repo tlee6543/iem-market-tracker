@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-softears.html">Softears</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-softears.html">Softears</a>
+    <button class="fr-preview-trigger" type="button" data-fr-name="Softears RSV" data-fr-label="Softears RSV" data-fr-embed-url="https://precog.squig.link/?embed&amp;share=SoftEars_RSV,SoftEars_RSV_S2,SoftEars_RSV_%28CIEM%29" data-fr-url="https://precog.squig.link/?share=SoftEars_RSV,SoftEars_RSV_S2,SoftEars_RSV_%28CIEM%29" aria-haspopup="dialog" aria-expanded="false" aria-label="Preview the frequency response for Softears RSV"><span class="fr-preview-icon" aria-hidden="true">⌁</span> FR graph</button>
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -1168,6 +1219,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "Closed: Softears RSV", "raw_text": "For Sale Closed: Softears RSV Price 375.00 USD Condition Good Negotiability Firm Ships to United States of America IEM in great condition. It comes with original tips and box, cable and additional 3.5mm cable. Asking $375 net to me. sev7n14 Listing Aug 1, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "sev7n14", "url": "https://www.head-fi.org/classifieds/softears-rsv.92700/", "price_num": 375.0, "date_ms": 1754006400000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Sold: Softears RSV", "raw_text": "For Sale Sold: Softears RSV Price 425.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Sparingly used Softears RSV with original box, case, cable and all ear tips in new like condition. Multiple shipping options to all around the world. Can have it shipped immediately. PM if you\u2019d like to buy. HunterT Listing Apr 9, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "HunterT", "url": "https://www.head-fi.org/classifieds/softears-rsv.86326/", "price_num": 425.0, "date_ms": 1744156800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: Softears RSV", "raw_text": "For Sale Sold: Softears RSV Price 375.00 USD Condition Good Negotiability Or best offer Ships to United States of America Looking to pass on my RSV to a better home where they will get more use. I couldn't get the fit quite right and as such they spend a lot of time in the case. I am the second owner but put very little time on them. Previous owner had for at least a year but unsure exactly. Price includes... DyfeStrax Listing Mar 29, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "DyfeStrax", "url": "https://www.head-fi.org/classifieds/softears-rsv.85753/", "price_num": 375.0, "date_ms": 1743206400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Final PD - Softears RSV", "raw_text": "For Sale Sold: Final PD - Softears RSV Price 425.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Parting with my Softears RSV, complete with box and full accessories. One of my favourites ever when it comes to vocals and timbre, its reputation speaks for itself.. Price includes shipping within the US. peter1808 Listing Nov 21, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "peter1808", "url": "https://www.head-fi.org/classifieds/final-pd-softears-rsv.78516/", "price_num": 425.0, "date_ms": 1732147200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Softears RSV", "raw_text": "For Sale Sold: Softears RSV Price 450.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Excellent working condition comes with tips, stock case, and 3rd party cable. Shipping to NA is covered. Graph can be provided. JAYAUDIO88 Listing Apr 24, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "JAYAUDIO88", "url": "https://www.head-fi.org/classifieds/softears-rsv.66777/", "price_num": 450.0, "date_ms": 1713916800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Softears RSV", "raw_text": "For Sale Sold: Softears RSV Price 390.00 USD Condition Good Negotiability Firm Ships to United States of America Up for sale is Softears RSV. It is in good condition. The original box and accessories are included. Price includes shipping (CONUS only) and paypal fees. koopig Listing Jul 5, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "koopig", "url": "https://www.head-fi.org/classifieds/softears-rsv.50480/", "price_num": 390.0, "date_ms": 1688515200000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: Softears RSV", "raw_text": "For Sale / Trade Sold: Softears RSV Price 550.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Softears RSV with box and all accessories except some tips. I will also include 2 pairs of softears tips. Looking for either PayPal or iems with EST drivers. Can send more images on request. Thanks for looking! :) User650 Listing Apr 29, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "User650", "url": "https://www.head-fi.org/classifieds/softears-rsv.46784/", "price_num": 550.0, "date_ms": 1682726400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Softears RSV", "raw_text": "For Sale Sold: Softears RSV Price 400.00 USD Condition Good Negotiability Firm Ships to United States of America The only things that are missing are the original outer box and the original silicone tips. Includes the original foam tips but looks like the previous owner may have tried them on. IEMS are in excellent shape. Price includes paypal and shipping fees. wizzman121 Listing Feb 25, 2023 Comments: 3 Category: In-Ear Monitors", "seller_username": "wizzman121", "url": "https://www.head-fi.org/classifieds/softears-rsv.42394/", "price_num": 400.0, "date_ms": 1677283200000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Softears RSV like new", "raw_text": "For Sale / Trade Sold: Softears RSV like new Price 400.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Great shape. Comes with all accessories. Free shipping with contus. Buyer pays outside contus. Rated highly. Good timbre, but I need that bass. This is more neutral tuning.. JoshG1217 Listing Jan 28, 2023 Comments: 6 Category: In-Ear Monitors", "seller_username": "JoshG1217", "url": "https://www.head-fi.org/classifieds/softears-rsv-like-new.40666/", "price_num": 400.0, "date_ms": 1674864000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Softears RSV", "raw_text": "For Sale Sold: Softears RSV Price 400.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America $400 shipped. Buyer pays palpal fee ($415.97). Come with the box and all original accessories. Faustchz Listing Oct 15, 2022 Comments: 6 Category: In-Ear Monitors", "seller_username": "Faustchz", "url": "https://www.head-fi.org/classifieds/softears-rsv.34586/", "price_num": 400.0, "date_ms": 1665792000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Softears RSV", "raw_text": "For Sale Sold: Softears RSV Price 500.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Softears RSV in perfect condition. I'm the original owner. I love the sound, but the nozzle diameter is just a little too thick for me. I will cover shipping and paypal fees. US shipping only. Buckeyedentite Listing May 31, 2022 Comments: 1 Category: In-Ear Monitors", "seller_username": "Buckeyedentite", "url": "https://www.head-fi.org/classifieds/softears-rsv.26754/", "price_num": 500.0, "date_ms": 1653955200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Softears RSV", "raw_text": "For Sale Sold: Softears RSV Price 475.00 USD Condition Good Negotiability Firm Ships to North America Fantastic condition, all accessories are here, only the box is missing. Prince includes first class USPS postage to CONUS. I can upgrade to priority mail for $3. Price can be $475 with F&F, or $490 with G&S Detailed but unfatiguing, gorgeous mids, excellent stage, bass is very satisfying. rattlingblanketwoman Listing Dec 13, 2021 Comments: 0 Category: In-Ear Monitors", "seller_username": "rattlingblanketwoman", "url": "https://www.head-fi.org/classifieds/softears-rsv.16262/", "price_num": 475.0, "date_ms": 1639353600000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Softears RSV", "raw_text": "For Sale Sold: Softears RSV Price 529.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America For sale is my gently used pair of Softears RSVs. These are phenomenally organic and balanced iems with a great cable to boot. I am upgrading to the Cerberus I loved these so much. Not sure how much better they can be but I am addicted to the Softears house sound. Comes with original box and... fejnomit Listing Oct 27, 2021 Comments: 0 Category: In-Ear Monitors", "seller_username": "fejnomit", "url": "https://www.head-fi.org/classifieds/softears-rsv.13614/", "price_num": 529.0, "date_ms": 1635292800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Sold: Softears RSV", "raw_text": "For Sale Sold: Sold: Softears RSV Price 0.00 USD Condition Good Negotiability Firm Ships to United States of America Hi. Softears RSV iem for sale. I am the second owner, purchased a couple months back from reputable fellow headfier. Condition is excellent. I listed \u2018good\u2019 because I am, like said, second owner. I see no flaws, blemishes on iem nor cable. Perfect working order. Very low hours use on my part... morndewey Listing Sep 28, 2021 Comments: 1 Category: In-Ear Monitors", "seller_username": "morndewey", "url": "https://www.head-fi.org/classifieds/sold-softears-rsv.12004/", "price_num": null, "date_ms": 1632787200000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 14, "title": "Sold: Softears RSV", "raw_text": "For Sale Sold: Softears RSV Price 509.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Available for sale is a Softears RSV in like new condition with little to no signs of usage. Will come included with original packaging and accessories, with the exception of the original tips (with a few aftermarket tips supplied instead). This IEM was originally listed on eBay and is being... kvzrock Listing Sep 15, 2021 Comments: 0 Category: In-Ear Monitors", "seller_username": "kvzrock", "url": "https://www.head-fi.org/classifieds/softears-rsv.11278/", "price_num": 509.0, "date_ms": 1631664000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Closed: For Sale: Softears RSV IEMs", "raw_text": "For Sale Closed: For Sale: Softears RSV IEMs Price 600.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Hey all, Today I\u2019m looking to sell my lightly-used Softears RSV IEMs. They did not quite fit my extremely small ears, so you may have better luck. These only have about 5 hours of use on them in the time that I\u2019ve owned them. I\u2019m the original owner, so I have all the original packaging and... SilverLodestar Listing May 18, 2021 Comments: 2 Category: In-Ear Monitors", "seller_username": "SilverLodestar", "url": "https://www.head-fi.org/classifieds/for-sale-softears-rsv-iems.4789/", "price_num": 600.0, "date_ms": 1621296000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Softears RSV", "raw_text": "For Sale Sold: Softears RSV Price 544.99 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Minimally used set of Softears RSV for sale. Condition is as new, and functions as new from manufacturer. Comes in original packaging, and with all original accessories. Price includes Paypal / shipping for continental US only. Sold cn11 Listing May 10, 2021 Comments: 0 Category: In-Ear Monitors", "seller_username": "cn11", "url": "https://www.head-fi.org/classifieds/softears-rsv.4289/", "price_num": 544.0, "date_ms": 1620604800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Closed: Softears RSV", "raw_text": "For Sale Closed: Softears RSV Price 650.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Minimally used set of Softears RSV for sale. Condition is as new, and functions as new from manufacturer. Comes in original packaging, and with all original accessories. Price includes Paypal / shipping for continental US only. $650 cn11 Listing Apr 21, 2021 Comments: 0 Category: In-Ear Monitors", "seller_username": "cn11", "url": "https://www.head-fi.org/classifieds/softears-rsv.3051/", "price_num": 650.0, "date_ms": 1618963200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 18, "title": "Sold: Softears RSV", "raw_text": "For Sale / Trade Sold: Softears RSV Price 670.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Mint condition. Includes all original accessories and box. Unfortunately fit was not for me, but the sound was. Price is shipped to US. Willing to trade only for Sony IER-M9 or Penon Volt. thesheik137 Listing Apr 17, 2021 Comments: 0 Category: In-Ear Monitors", "seller_username": "thesheik137", "url": "https://www.head-fi.org/classifieds/softears-rsv.2810/", "price_num": 670.0, "date_ms": 1618617600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Sold: Softears RSV", "raw_text": "For Sale Sold: Softears RSV Price 675.00 USD Condition Excellent/Like new Negotiability Firm Ships to CanadaUnited States of America Less than a week old.. I've decided to sell these fantastic though not well known iems. You can read about them here: https://www.head-fi.org/threads/softears-discussion-appreciation.953921/ They are really a detailed, well balanced sound. They do seem to be sensitive to output impedance so a... SBranson Listing Mar 14, 2021 Comments: 1 Category: In-Ear Monitors", "seller_username": "SBranson", "url": "https://www.head-fi.org/classifieds/softears-rsv.721/", "price_num": 675.0, "date_ms": 1615680000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Closed: Moon Audio Black Dragon IEM Cable 2-pin (recessed) 4.4mm Softears RSV", "raw_text": "For Sale Closed: Moon Audio Black Dragon IEM Cable 2-pin (recessed) 4.4mm Softears RSV", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/moon-audio-black-dragon-iem-cable-2-pin-recessed-4-4mm-softears-rsv.12167/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 730.0;
@@ -2108,6 +2175,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">

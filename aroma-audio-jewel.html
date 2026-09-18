@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-aroma-audio.html">Aroma Audio</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-aroma-audio.html">Aroma Audio</a>
+    
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -1344,6 +1395,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "Sold: Aroma Audio Jewel", "raw_text": "For Sale Sold: Aroma Audio Jewel Price 2200.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere For sale: Aroma Audio Jewel in absolutely excellent condition. Technically they are 100% perfect and cosmetically also 100/100. I am the second owner and purchased them here on Head-Fi. The IEMs came back from the official Aroma Audio service in China just two weeks ago, where they were fully... zajcev Listing Apr 27, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "zajcev", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.108101/", "price_num": 2200.0, "date_ms": 1777248000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 1, "title": "Closed: Aroma Audio Jewel Custom Excellent", "raw_text": "For Sale Closed: Aroma Audio Jewel Custom Excellent Price 2000.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Up for sale is the excellent and revered Aroma Jewel in excellent condition. Now that I have Immanis I rarely use any IEMs, someone else should enjoy it and at a hefty discount even with reshelling. Includes nuke-proof case, leather pocket case, stock cable and box all pristine. Hard to let... Ike1985 Listing Jan 2, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "Ike1985", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel-custom-excellent.101223/", "price_num": 2000.0, "date_ms": 1767312000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Traded: Aroma Audio Jewel", "raw_text": "For Sale / Trade Traded: Aroma Audio Jewel Price 2300.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere I would like to trade my Aroma jewel with Fir Audio Rn6 iem. Pics on demand. Interested party ping me. Thank you. Dr Riyaz Listing Dec 4, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Riyaz", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.99679/", "price_num": 2300.0, "date_ms": 1764806400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Aroma Audio Jewel", "raw_text": "For Sale Sold: Aroma Audio Jewel Price 500.00 USD Condition Excellent/Like new Negotiability Firm Ships to AsiaEuropeUnited Kingdom of Great Britain and Northern Ireland Aroma Audio Jewel Done. ;) gumpdog Listing Sep 12, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "gumpdog", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.94906/", "price_num": 500.0, "date_ms": 1757635200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_low_outlier_70pct_below_median_median_2550.0_cutoff_765.0"}, {"row_id": 4, "title": "Closed: Aroma Audio Jewel", "raw_text": "For Sale Closed: Aroma Audio Jewel Price 1950.00 USD Condition Excellent/Like new Negotiability Firm Ships to AnywhereAsiaNorth America Aroma Audio Jewl in excellent condition with all accessories. gumpdog Listing Aug 12, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "gumpdog", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.93277/", "price_num": 1950.0, "date_ms": 1754956800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "Sold: Aroma Audio Jewel", "raw_text": "For Sale Sold: Aroma Audio Jewel Price 2050.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Aroma Audio Jewel Only iems + puck case Will include new small and medium tri clarion tips No box or cable Includes free shipping and G&S fee Nakamura98 Listing Dec 30, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Nakamura98", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.80648/", "price_num": 2050.0, "date_ms": 1735516800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: Aroma Audio Jewel in Excellent Condition", "raw_text": "For Sale / Trade Sold: Aroma Audio Jewel in Excellent Condition Price 1.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America For sale/trade is the Aroma Audio Jewel in Excellent Condition. This version has the darker tinted blue shell and a custom faceplate that looks really nice in person. Includes everything seen in the pics. Backdrop: I have dreamed to own this set for a long time and finally was able to do so... KevinS2020 Listing Oct 31, 2024 Comments: 3 Category: In-Ear Monitors", "seller_username": "KevinS2020", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel-in-excellent-condition.77293/", "price_num": null, "date_ms": 1730332800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 7, "title": "Sold: AROMA Audio Jewel 4.4mm (Universal)", "raw_text": "For Sale Sold: AROMA Audio Jewel 4.4mm (Universal) Price 2250.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Need to move these along. You probably know all about these already. They do everything pristinely, but I tend to reach for the Trifecta first. Think of these like the best vanilla ice cream you've ever had in your life. Comes with full kit, and cable/ear tips are unused. 4.4mm termination. No... stream41 Listing Oct 14, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "stream41", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel-4-4mm-universal.76406/", "price_num": 2250.0, "date_ms": 1728864000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Closed: Aroma Audio Jewel CIEM /w PW 1950s Shielding Cable", "raw_text": "For Sale Closed: Aroma Audio Jewel CIEM /w PW 1950s Shielding Cable Price 2500.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Original owner here...comes with PW 1950s shielding cable. Original box also included. Selling due to getting out of the portable hobby Item is pristine, barely used, please check my prior feedback for proof showing I always buy stuff brand new, barely use, then sell at large losses. Good... F208Frank Listing Oct 2, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "F208Frank", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel-ciem-w-pw-1950s-shielding-cable.75737/", "price_num": 2500.0, "date_ms": 1727827200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Aroma Audio Jewel IEM (universal)", "raw_text": "For Sale Sold: Aroma Audio Jewel IEM (universal) Price 2300.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Selling my mint Aroma Jewel. Less than 20h of use since I bought a few IEMs over the past years and didn't have time to put many hours in the Jewel. First owner, never brought the IEM out of my house. All original package included in intact form (as you can see in the pictures). Never used the... Allears79 Listing Oct 2, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Allears79", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel-iem-universal.75743/", "price_num": 2300.0, "date_ms": 1727827200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Traded: Aroma Audio Jewel (Custom Faceplate)", "raw_text": "For Sale Traded: Aroma Audio Jewel (Custom Faceplate) Price 2500.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Selling the legendary iem and one that changed the summit fi market for good, Jewel is a 13 driver iem with 6 BA, 6 EST and 1DD configuration. This iem is one of the most detailed iems with slamming lows, gorgeous mids and large stage. The imaging on these is picture perfect. This is the... harshkamboj Listing Aug 4, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel-custom-faceplate.72551/", "price_num": 2500.0, "date_ms": 1722729600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Traded: Aroma Audio Jewel", "raw_text": "For Sale / Trade Traded: Aroma Audio Jewel Price 2550.00 USD Condition Excellent/Like new Negotiability Firm Ships to North AmericaUnited States of America Got my excellent condition Aroma Jewels with a custom faceplate/body color. Comes with all the boxes and the original cable but no eartips. These are the UNIVERSAL FIT. Not a pair of CIEM. WILL NO LONGER INCLUDE THE ELETECH VICTORIA CABLE. For trades other iems or electronics. RazorItoh Listing Jun 26, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "RazorItoh", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.70480/", "price_num": 2550.0, "date_ms": 1719360000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Traded: FOR TRADE: Aroma Audio Jewel", "raw_text": "For Trade Traded: FOR TRADE: Aroma Audio Jewel Price 0.01 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America I'm interested in other flagships or really solid IEMs + cash. Mint condition comes with everything. It's a top tier IEM. Also open to selling them if we agree on price. Cheers! zlayde Listing May 9, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "zlayde", "url": "https://www.head-fi.org/classifieds/for-trade-aroma-audio-jewel.67645/", "price_num": null, "date_ms": 1715212800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 13, "title": "Sold: AROMA Audio Jewel", "raw_text": "For Sale Sold: AROMA Audio Jewel Price 3000.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Selling my Excellent condition AROMA Audio Jewel\uff0c I\u2018m the first owner purchased from Musicteck in 2023 Includes all original brand new accessories and original cable\uff0coriginal box Shipping included to US Paypal no trades please Thank you! Also selling\uff1aEffect audio centurion black gold limited... ajlolo Listing Apr 30, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "ajlolo", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.67139/", "price_num": 3000.0, "date_ms": 1714435200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: Aroma Audio Jewel", "raw_text": "For Sale Sold: Aroma Audio Jewel Price 2400.00 USD Condition Good Negotiability Firm Ships to Anywhere Selling this Aroma Audio Jewel. I acquired it recently. It sounds excellent and the monitors are in very good if not excellent condition. Jewel is one of the benchmark reference-grade TOTL IEMs. I'm moving on from it in order to finance other gear. This comes with all original accessories -... btwine Listing Apr 3, 2024 Comments: 3 Category: In-Ear Monitors", "seller_username": "btwine", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.65559/", "price_num": 2400.0, "date_ms": 1712102400000, "listing_status": "closed", "condition_text": "excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Aroma Audio Jewel", "raw_text": "For Sale Sold: Aroma Audio Jewel Price 2500.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Aroma Audio Jewel for sale. Comes with original iem cable not PW cable. PM if you have any questions. PassionForMusic Listing Mar 7, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "PassionForMusic", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.63924/", "price_num": 2500.0, "date_ms": 1709769600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Closed: [SOLD] Aroma Audio Jewel", "raw_text": "For Sale Closed: [SOLD] Aroma Audio Jewel Price 2700.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to AnywhereNorth America Up for sale are my mint condition Aroma Jewel. I'm the original owner, purchased in March 2022. Comes with the original packaging, cable, leather travel case, and at least 1 set of the original tips (the other 2 sizes if I can find them) Asking $2700 shipped, preferably within the US or Canada... solstice15 Listing Feb 11, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "solstice15", "url": "https://www.head-fi.org/classifieds/sold-aroma-audio-jewel.62454/", "price_num": 2700.0, "date_ms": 1707609600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Closed: Aroma Audio Jewel", "raw_text": "For Sale Closed: Aroma Audio Jewel Price 2199.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere For sale is an Aroma Audio Jewel CIEM. Bundle w/ Eletech Aeneid at 3090 USD (includes PayPal fee, for other arrangement please PM). Aroma Audio will reshell these to the stock blue universal shell or custom for 500 USD direct. FAQ Free Shipping to USA I am willing to ship worldwide at... bigbeans Listing Nov 25, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "bigbeans", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.58078/", "price_num": 2199.0, "date_ms": 1700870400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: SOLD Aroma Audio Jewel", "raw_text": "For Sale Sold: SOLD Aroma Audio Jewel Price 2800.00 USD Condition Excellent/Like new Negotiability Firm Ships to AnywhereNorth AmericaUnited States of America A pair of mint condition Aroma Audio Jewel. Comes with with everything in photos. shipping is included. gumpdog Listing Oct 17, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "gumpdog", "url": "https://www.head-fi.org/classifieds/sold-aroma-audio-jewel.56134/", "price_num": 2800.0, "date_ms": 1697500800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Closed: Aroma Audio Jewel", "raw_text": "For Sale Closed: Aroma Audio Jewel Price 3000.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America A pair of mint condition Aroma Audio Jewell. Comes with with everything in photos. shipping is included. gumpdog Listing Oct 12, 2023 Comments: 2 Category: In-Ear Monitors", "seller_username": "gumpdog", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.55824/", "price_num": 3000.0, "date_ms": 1697068800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 20, "title": "Traded: Aroma Audio Jewel", "raw_text": "For Trade Traded: Aroma Audio Jewel Price 0.01 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Looking to trade my favorite iems till date to try new high end iems in the market. This comes with original box and all accessories are untouched. No stock cable (anyways you would not use it as it's close to garbage). Open to trades for Ronin, Mentor, Phonix LE, RN6, FT Shielding, Fourte... harshkamboj Listing Apr 16, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.45937/", "price_num": null, "date_ms": 1681603200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Aroma audio Jewel", "raw_text": "For Sale Sold: Aroma audio Jewel Price 3000.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere My Aroma jewel is in excellent condition. It comes with original hard case and stock cable. Price included shipping in us. International buyer please contact me for dhl shipping quote Only want to trade for hifiman susvara from good feedback heartier Sold to @hung031086 $3000 briantrinh86 Listing Apr 12, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "briantrinh86", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.45666/", "price_num": 3000.0, "date_ms": 1681257600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: *LAST PD* Aroma Audio Jewel", "raw_text": "For Sale Sold: *LAST PD* Aroma Audio Jewel Price 2900.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Up for sale is my amazing set of Aroma Audio Jewel. Purchased from Musicteck. Comes with all original packaging and accessories. Shipping on me within the CONUS. Not accepting trades. cradon Listing Apr 4, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "cradon", "url": "https://www.head-fi.org/classifieds/last-pd-aroma-audio-jewel.45079/", "price_num": 2900.0, "date_ms": 1680566400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Sold: Aroma Audio Jewel (mint)", "raw_text": "For Sale Sold: Aroma Audio Jewel (mint) Price 3200.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Original owner, mint condition. All the original packaging and accessories are included. Tips are still new. Will ship double boxed. Hours are probably 10-15 of listening, I don't do break-in so these will probably open up more with use. The og cable was used for even fewer hours. The metal box... velcrothrash Listing Mar 27, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "velcrothrash", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel-mint.44517/", "price_num": 3200.0, "date_ms": 1679875200000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Closed: Aroma Audio Jewel", "raw_text": "For Sale Closed: Aroma Audio Jewel Price 3200.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Selling an Aroma Audio Jewel flagship IEM in immaculate condition. The IEM has recently come back from being serviced by Aroma Audio with brand new resin shells and it\u2019s in perfect condition both functionally and cosmetically. All accessories and packaging are included, in like new condition... Damz87 Listing Mar 21, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "Damz87", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.44123/", "price_num": 3200.0, "date_ms": 1679356800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: Aroma Audio Jewel - Price Drop", "raw_text": "For Sale Sold: Aroma Audio Jewel - Price Drop Price 3199.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Like new reference level IEM with superb resolution, dynamics, and imaging. The reviews are not hype. I'm only selling to raise some much-needed funds and hope to purchase again in the future. I'll cover the shipping within CONUS. mt-hifidelity Listing Mar 12, 2023 Comments: 3 Category: In-Ear Monitors", "seller_username": "mt-hifidelity", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel-price-drop.43513/", "price_num": 3199.0, "date_ms": 1678579200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: Aroma Audio Jewel", "raw_text": "For Sale Sold: Aroma Audio Jewel Price 3500.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Selling a mint set of Aroma Audio Jewel flagship IEMs. Bought originally from Musicteck last year. Comes with all accessories and packaging, also in excellent condition. Price includes worldwide shipping via EMS from Australia. Damz87 Listing Mar 1, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "Damz87", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.42655/", "price_num": 3500.0, "date_ms": 1677628800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 27, "title": "Sold: Aroma Audio Jewel Mint", "raw_text": "For Sale Sold: Aroma Audio Jewel Mint Price 3500.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere With great regret I am selling the Aroma Jewel IEMs. TOTL of TOTLs. Need money for another projects. I am the first owner and bought it directly from Musicteck about 4 months ago. Will provide the invoice if requested. Everything is mint and was used at home only with great care. The box is... vladzakhar Listing Jan 20, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "vladzakhar", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel-mint.40066/", "price_num": 3500.0, "date_ms": 1674172800000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 28, "title": "Closed: Aroma audio Jewel", "raw_text": "For Sale Closed: Aroma audio Jewel Price 3500.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Hello fellow Head-fiers, I am unfortunately putting my Aroma Audio Jewel up for sale due to medical bills. I'll be having my 2nd surgery in 4 months. I have all original packaging and accessories. Purchased in August from musicteck. Price listed at $3500 includes PayPal and shipping. I'm still... wazzupi Listing Dec 29, 2022 Comments: 8 Category: In-Ear Monitors", "seller_username": "wazzupi", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.38692/", "price_num": 3500.0, "date_ms": 1672272000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 29, "title": "Sold: Aroma Audio Jewel CIEM", "raw_text": "For Sale Sold: Aroma Audio Jewel CIEM Price 2950.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere For sale is an Aroma Audio Jewel CIEM. Aroma Audio will reshell these to universal or custom for $500 USD. I have had these since April of this year. It comes with all original accessories (leather case, stock cable, and tin box). The tin box has some scratches on it as customs opened them... aaf evo Listing Dec 8, 2022 Comments: 4 Category: In-Ear Monitors", "seller_username": "evo", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel-ciem.37586/", "price_num": 2950.0, "date_ms": 1670457600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 30, "title": "Sold: Aroma Audio Jewel", "raw_text": "For Sale Sold: Aroma Audio Jewel Price 3500.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere First owner. More photos / vid upon request. Price excludes shipping, PayPal fees etc. Do note that the weight of the Jewel metallic box is hefty. metaljem77 Listing Sep 18, 2022 Comments: 6 Category: In-Ear Monitors", "seller_username": "metaljem77", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.33040/", "price_num": 3500.0, "date_ms": 1663459200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 31, "title": "Sold: Aroma Audio Jewel", "raw_text": "For Sale Sold: Aroma Audio Jewel Price 0.01 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America After much deliberation, I have decided I want to purchase these in CIEM form, so my universals are for sale. I am the only owner, comes with all packaging and accessories. PM me if you have any questions. Thanks! aaf evo Listing Mar 23, 2022 Comments: 4 Category: In-Ear Monitors", "seller_username": "evo", "url": "https://www.head-fi.org/classifieds/aroma-audio-jewel.22604/", "price_num": null, "date_ms": 1647993600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 5130.0;
@@ -2284,6 +2351,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">

@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-64-audio.html">64 Audio</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-64-audio.html">64 Audio</a>
+    <button class="fr-preview-trigger" type="button" data-fr-name="64 Audio Volur" data-fr-label="64 Audio Volur" data-fr-embed-url="https://precog.squig.link/?embed&amp;share=64A_Volur" data-fr-url="https://precog.squig.link/?share=64A_Volur" aria-haspopup="dialog" aria-expanded="false" aria-label="Preview the frequency response for 64 Audio Volur"><span class="fr-preview-icon" aria-hidden="true">⌁</span> FR graph</button>
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -1264,6 +1315,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "64 Audio Volur", "raw_text": "64 Audio Volur - $1400 Shipped SOLD\nOriginal owner, great condition. Includes original box and contents. Cable is 3.5mm terminated .\nsubmitted by /u/clifak\n[link] [comments]", "seller_username": "clifak", "url": "https://old.reddit.com/r/AVexchange/comments/1skvfkm/wtsusvah_64_audio_volur_w_paypal_local_cash/#item-1", "price_num": 1400.0, "date_ms": 1776132615000, "listing_status": "closed", "condition_text": "great condition", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=64 audio"}, {"row_id": 1, "title": "Sold: 64 Audio Volur", "raw_text": "For Sale Sold: 64 Audio Volur Price 1500.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Have a pair of 64 audio Volur in really nice condition with all original packaging and sound amazing. Unused cable and all eartips included. Price includes shipping in the Conus. Will ship within 24 hours of sale. Fees not included in pricing. mmmwafflerunoff Listing Feb 10, 2026 Comments: 1 Category: In-Ear Monitors", "seller_username": "mmmwafflerunoff", "url": "https://www.head-fi.org/classifieds/64-audio-volur.103522/", "price_num": 1500.0, "date_ms": 1770681600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Closed: 64 Audio Volur", "raw_text": "For Sale Closed: 64 Audio Volur Price 1400.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America The Volur from 64Audio is a flagship IEM! In immaculate condition. Moving on to some headphones and need to consolidate the collection. IEMS are in great shape. Includes: IEMs Original cable, 3.5mm termination Orignal box 2 sets of ear tips All original APEX modules Cleaning tool... lefty748 Listing Oct 18, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "lefty748", "url": "https://www.head-fi.org/classifieds/64-audio-volur.96970/", "price_num": 1400.0, "date_ms": 1760745600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: 64 audio volur", "raw_text": "For Sale Sold: 64 audio volur Price 1100.00 USD Condition Good Negotiability Or best offer Ships to United States of America For sale is my 64 audio volur. Will come with the orginal cable, the volur iems, the apex modules, puckcase and cleaning brush. If interested let me know. I update this add with cleaer photos. I will ship within CONUS and will absorb the paypal fees. tink97 Listing Sep 7, 2025 Comments: 2 Category: In-Ear Monitors", "seller_username": "tink97", "url": "https://www.head-fi.org/classifieds/64-audio-volur.94628/", "price_num": 1100.0, "date_ms": 1757203200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: 64 Audio Volur", "raw_text": "For Sale Sold: 64 Audio Volur Price 1250.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America 64 Audio Volur with original box and accessories including Gold apex module. UPS Ground with insurance and Paypal G&S fees included. geocleojohn Listing Jun 21, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "geocleojohn", "url": "https://www.head-fi.org/classifieds/64-audio-volur.90485/", "price_num": 1250.0, "date_ms": 1750464000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: 64 Audio Volur (Vol\u00fcr)", "raw_text": "For Sale Sold: 64 Audio Volur (Vol\u00fcr) Price 1300.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Hello, I am looking to sell my 64 Audio Volur (Vol\u00fcr). They are in excellent condition and comes with all stock accessories, including the M12 Apex Module. I am looking for $1300 PayPal. Shipping to CONUS with insurance and signature confirmation is included for both prices. Please let me know... KL9PZ Listing May 24, 2025 Comments: 3 Category: In-Ear Monitors", "seller_username": "KL9PZ", "url": "https://www.head-fi.org/classifieds/64-audio-volur-vol%C3%BCr.88881/", "price_num": 1300.0, "date_ms": 1748044800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: 64 Audio Volur", "raw_text": "For Sale Closed: 64 Audio Volur Price 1250.00 USD Condition Good Negotiability Firm Ships to United States of America Sold on reddit. Selling my 64 Audio Volur that I recently acquired. Includes the IEMs, stock 3.5 and 4.4mm cables, case, box, tips, and 4 sets of APEX modules. Condition marked as good due to micro scratches on the acrylic faceplate. Please feel free to reach out with any questions. Only trade... crush Listing May 3, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "crush", "url": "https://www.head-fi.org/classifieds/64-audio-volur.87655/", "price_num": 1250.0, "date_ms": 1746230400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: 64 Audio Volur IEM\u2019s - Like New", "raw_text": "For Sale Sold: 64 Audio Volur IEM\u2019s - Like New Price 1300.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere For sale is my like new condition 64 Audio Volur iem\u2019s, complete with boxes, all accessories + will include a like new Eletech Socrates 4.4mm / 2-pin copper cable. Purchased new by me from Addicted to Audio, Melbourne in 2024. PayPal for transaction. Cheers ! jaydoc1 Listing Apr 22, 2025 Comments: 3 Category: In-Ear Monitors", "seller_username": "jaydoc1", "url": "https://www.head-fi.org/classifieds/64-audio-volur-iem%E2%80%99s-like-new.87029/", "price_num": 1300.0, "date_ms": 1745280000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Closed: 64 Audio Volur", "raw_text": "For Sale Closed: 64 Audio Volur Price 1300.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Up for sale are my 64 Audio Vol\u00fcr in-ear monitors (IEMs) in like-new condition. These premium hybrid IEMs deliver exceptional sound quality with a detailed, balanced signature and impressive bass response. Condition: Lightly used and meticulously cared for. No scratches, dents, or signs of... bidea117 Listing Mar 23, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "bidea117", "url": "https://www.head-fi.org/classifieds/64-audio-volur.85421/", "price_num": 1300.0, "date_ms": 1742688000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: 64 Audio Volur", "raw_text": "For Sale Sold: 64 Audio Volur Price 1250.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Includes all the original accessories. The Foam Tips have been used but I do have a bag of unused medium foam tips. Everything has been sanitized and cleaned. Includes PP fees and insured shipping to CON-US Any question please ask Khaos663 Listing Mar 14, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Khaos663", "url": "https://www.head-fi.org/classifieds/64-audio-volur.84864/", "price_num": 1250.0, "date_ms": 1741910400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Traded: (Pending) 64 Audio Volur", "raw_text": "For Sale / Trade Traded: (Pending) 64 Audio Volur Price 1300.00 USD Condition Good Negotiability Or best offer Ships to North America Selling my 64 Audio Volur in good/great condition. Comes with box, case, all stock apex modules, and variety of tips. Only cosmetic issue of note is the blemishes on one of the earpieces as pictured. Always up for trades, just please feel free to reach out. crush Listing Feb 24, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "crush", "url": "https://www.head-fi.org/classifieds/pending-64-audio-volur.83850/", "price_num": 1300.0, "date_ms": 1740355200000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 11, "title": "Sold: 64 Audio Volur", "raw_text": "For Sale Sold: 64 Audio Volur Price 1150.00 USD Condition Good Negotiability Firm Ships to North America Comes with the puck case, all modules, original cable and a dunu hulk pro mini cable. The second cable is included as the wires by the ear hooks have unbraided, therefore I think it\u2019s only fair to include a solid second cable. Iem is in good condition. There is some slight silver glint on its... jmo04 Listing Feb 9, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "jmo04", "url": "https://www.head-fi.org/classifieds/64-audio-volur.83005/", "price_num": 1150.0, "date_ms": 1739059200000, "listing_status": "closed", "condition_text": "good condition, fair", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: 64 Audio Volur", "raw_text": "For Sale Sold: 64 Audio Volur Price 1350.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Up for sale is a perfect condition 64 Audio Volur iem. Sold with its full packaging. Perfect condition with no scratch or dents whatsoever. Also comes with optional Gold Module for a total of 4x pairs of tuning modules. Willing to ship North America wide, local pickup in Montreal QC area... Will-CD Listing Jan 14, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "Will-CD", "url": "https://www.head-fi.org/classifieds/64-audio-volur.81564/", "price_num": 1350.0, "date_ms": 1736812800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Closed: 64 Audio Volur (Immaculate, Original Owner, Complete Set)", "raw_text": "For Sale / Trade Closed: 64 Audio Volur (Immaculate, Original Owner, Complete Set) Price 1550.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Looking to part way with the Volur. I am the original owner bought in person from 64 Audio HQ in March 2024, receipt included, I just don't use them often anymore. The IEMs, accessories and all packaging is in like new condition. I will mail same day, US Domestic only. Send PayPal email for... n2413 Listing Dec 28, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "n2413", "url": "https://www.head-fi.org/classifieds/64-audio-volur-immaculate-original-owner-complete-set.80503/", "price_num": 1550.0, "date_ms": 1735344000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Traded: 64 Audio Volur", "raw_text": "For Sale / Trade Traded: 64 Audio Volur Price 1330.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Hi! Selling a pair of 64 Audio Volurs purchased from a fellow HeadFi user. They are in great condition with nothing I can find that would take points off. Everything is present, other than one of the smallest eartip sizes. Can't speak for the previous owner but have less than 5 hours of use on... bulkkot Listing Dec 12, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "bulkkot", "url": "https://www.head-fi.org/classifieds/64-audio-volur.79682/", "price_num": 1330.0, "date_ms": 1733961600000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: 64 Audio Volur - all packaging/great condition", "raw_text": "For Sale Sold: 64 Audio Volur - all packaging/great condition Price 1349.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America ...for an in-person sale. 64 Audio volur with all packaging/accessories minus two sets of medium tips. All modules as well as an extra set of Fir Audio 17db isolation modules, and extra one module set carrier piece - great if you just want to bring one extra set of modules with you vs all of... PixelSquish Listing Dec 12, 2024 Comments: 2 Category: In-Ear Monitors", "seller_username": "PixelSquish", "url": "https://www.head-fi.org/classifieds/64-audio-volur-all-packaging-great-condition.79714/", "price_num": 1349.0, "date_ms": 1733961600000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: 64 Audio Volur - PRICE DROP", "raw_text": "For Sale Sold: 64 Audio Volur - PRICE DROP Price 1350.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Selling my 64 Audio Volurs in excellent condition. Comes with accessories, outer packaging sleeve is missing. Looking for $1350 via PayPal G&S Can offer discount for local payment. poker. Listing Dec 9, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "poker.", "url": "https://www.head-fi.org/classifieds/64-audio-volur-price-drop.79514/", "price_num": 1350.0, "date_ms": 1733702400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Traded: 64A Volur (Original Owner)", "raw_text": "For Sale / Trade Traded: 64A Volur (Original Owner) Price 1550.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Volur is in great shape with all modules and stock cable (not pictured, but in its puck case). Thanks for your interest. dleblanc343 Listing Nov 23, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "dleblanc343", "url": "https://www.head-fi.org/classifieds/64a-volur-original-owner.78681/", "price_num": 1550.0, "date_ms": 1732320000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Traded: 64 Audio Volur", "raw_text": "For Sale / Trade Traded: 64 Audio Volur Price 0.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Wonderful set! Amazing soundstage and incredibly well tuned! Only selling to downsize collection. Comes with 4 tuning nozzles and various sets of ear tips to continue to have fun with tunings! Tip rolling on these is a blast! I would prefer to sell but open to trades + cash or just trades if... JTiizii Listing Oct 28, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "JTiizii", "url": "https://www.head-fi.org/classifieds/64-audio-volur.77168/", "price_num": null, "date_ms": 1730073600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 19, "title": "Sold: 64 audio volur", "raw_text": "For Sale / Trade Sold: 64 audio volur Price 1350.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Up for sale or trade recently acquired 64 audio volur, come with box and all accessories, look for sale or trade for other high end iem, come with 4 modules instead of 3 fgordan321 Listing Oct 9, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "fgordan321", "url": "https://www.head-fi.org/classifieds/64-audio-volur.76150/", "price_num": 1350.0, "date_ms": 1728432000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: 64 Audio Volur (Full kit)", "raw_text": "For Sale Sold: 64 Audio Volur (Full kit) Price 1750.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Full original kit included, including all apex modules. Ear tips and 3.5mm cable are untouched. I can't find any signs of wear! Basically like buying a new set, except these are already broken in. Price includes PayPal/Square fees, and we can talk about shipping. Will use UPS or USPS with full... stream41 Listing Oct 1, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "stream41", "url": "https://www.head-fi.org/classifieds/64-audio-volur-full-kit.75664/", "price_num": 1750.0, "date_ms": 1727740800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: 64 Audio Volur", "raw_text": "For Sale Sold: 64 Audio Volur Price 1450.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Up for sale are one of my favorite IEM's to date. The collection is growing and it's time for someone else to experiance and love these. They're also one of my favorite looking with the beautiful Violet Abolone. The best part about them is their fit. Due to their smaller size they fit so... Echo42987 Listing Sep 9, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Echo42987", "url": "https://www.head-fi.org/classifieds/64-audio-volur.74596/", "price_num": 1450.0, "date_ms": 1725840000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Closed: 64 Audio Volur", "raw_text": "For Sale Closed: 64 Audio Volur Price 2000.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America These were purchased from Bloom Audio in March. Mint condition. Comes with everything. I would like to try the Noble Onyx next. I\u2019ll cover shipping and PayPal fees. Buckeyedentite Listing Jul 30, 2024 Comments: 7 Category: In-Ear Monitors", "seller_username": "Buckeyedentite", "url": "https://www.head-fi.org/classifieds/64-audio-volur.72292/", "price_num": 2000.0, "date_ms": 1722297600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Closed: 64 Audio Volur", "raw_text": "For Sale Closed: 64 Audio Volur Price 1350.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling the 64 Audio volur in perfect condition. It comes with all modules, even the m12. However, this one does not have a box or the tips. Just the case, cable and modules. Thanks! jmo04 Listing Jun 27, 2024 Comments: 7 Category: In-Ear Monitors", "seller_username": "jmo04", "url": "https://www.head-fi.org/classifieds/64-audio-volur.70544/", "price_num": 1350.0, "date_ms": 1719446400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 24, "title": "Sold: [PD] 64 Audio Volur / Vol\u00fcr", "raw_text": "For Sale / Trade Sold: [PD] 64 Audio Volur / Vol\u00fcr Price 1600.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Selling my 64 Audio Volur IEM. The monitors are in excellent condition, and they sound and look terrific. I'm selling this so I can try other gear. This comes with all original accessories - 2-pin/3.5mm stock \"premium\" cable, 4-set Apex modules, unused tips, puck case, and box. Mainly looking... btwine Listing Apr 29, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "btwine", "url": "https://www.head-fi.org/classifieds/pd-64-audio-volur-vol%C3%BCr.67065/", "price_num": 1600.0, "date_ms": 1714348800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Closed: 64 Audio Volur (pristine)", "raw_text": "For Sale Closed: 64 Audio Volur (pristine) Price 1900.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere I have used this for less than 10 hours. Condition is as good as new. Bought in Dec 2023 from a US retailer, so it has warranty coverage. Reached me only 10 days ago because I was traveling. My price: $1900. Will ship via DHL international shipping which will add $80 to the price for buyers in... Sajid Amit Listing Feb 12, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Amit", "url": "https://www.head-fi.org/classifieds/64-audio-volur-pristine.62521/", "price_num": 1900.0, "date_ms": 1707696000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Closed: 64 Audio Volur", "raw_text": "For Sale Closed: 64 Audio Volur Price 1700.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Hello, I am selling my like new 64 Audio Volur Iems. Comes with box, case, tips, and receipt for warranty. No issues. Only selling as I have multiple medical bills that I need to pay. Selling for $1700. Free shipping in the US. Will be overnight shipping in the US These are the best iems I... Scott2578 Listing Jan 31, 2024 Comments: 2 Category: In-Ear Monitors", "seller_username": "Scott2578", "url": "https://www.head-fi.org/classifieds/64-audio-volur.61774/", "price_num": 1700.0, "date_ms": 1706659200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 2500.0;
@@ -2204,6 +2271,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">

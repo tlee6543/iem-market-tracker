@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-empire-ears.html">Empire Ears</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-empire-ears.html">Empire Ears</a>
+    
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -1136,6 +1187,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "FS/FT: Astell&Kern x Empire Ears NOVUS", "raw_text": "FS/FT: Astell&Kern x Empire Ears NOVUS Listing ID: 113292 For Sale / Trade 3,100.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Up for sale (or trade) is my Astell&Kern x Empire Ears NOVUS. I am the first and only owner. I bought it from Musicteck. I d\u0131 not have outer box. The IEM is in excellent cosmetic and functional condition and has been very well cared for... Listed by: whattodo (6) Listed: 2026-08-02 Last edited: 2026-08-02", "seller_username": "whattodo", "url": "https://www.head-fi.org/classifieds/fs-ft-astell-kern-x-empire-ears-novus.113292/", "price_num": 3100.0, "date_ms": 1785628800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "category_listing_id_text_fallback_v8 | safari_ipad_ingest_v1 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged"}, {"row_id": 1, "title": "(PD) Astell&Kern x Empire Ears NOVUS", "raw_text": "(PD) Astell&Kern x Empire Ears NOVUS Listing ID: 113292 For Sale / Trade 2,950.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Up for sale (or trade) is my Astell&Kern x Empire Ears NOVUS. I am the first and only owner. I bought it from Musicteck. I d\u0131 not have outer box. The IEM is in excellent cosmetic and functional condition and has been very well cared for... Listed by: whattodo (6) Listed: 2026-08-02 Last edited: 2026-08-31", "seller_username": "whattodo", "url": "https://www.head-fi.org/classifieds/pd-astell-kern-x-empire-ears-novus.113292/", "price_num": 2950.0, "date_ms": 1785628800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "*Pending* AK x EE Novus (Minty)", "raw_text": "*Pending* AK x EE Novus (Minty)\nListing ID: 111572\nFor Sale / Trade 2,900.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To Anywhere\nSelling my Mint AK x EE Novus with all accessories and box. This has zero scratches or dings. In immaculate condition. Only selling as I have a Brise Ibuki incoming and don\u2019t want my main iems to overlap too much in sound. I\u2019m willing to trade...\nListed by: jwilliamhurst (130)\nListed: 2026-07-01\nLast edited: 2026-07-02", "seller_username": "jwilliamhurst", "url": "https://www.head-fi.org/classifieds/pending-ak-x-ee-novus-minty.111572/", "price_num": 2900.0, "date_ms": 1782864000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 3, "title": "PD Astell Kern & Empire Ears Novus IEM", "raw_text": "PD Astell Kern & Empire Ears Novus IEM\nListing ID: 109907\nFor Sale / Trade 2,900.00 USD\nCondition Excellent/Like New\nNegotiability Or Best Offer\nShips To Anywhere\nI am the first and only owner. I am selling it to buy another IEM. It is in perfect condition. I do not have outer box. I perefer Wise for payment. I can trade with Ibuki, Lotoo Mjolnir, N30LE, N8iii with cash from my side.\nListed by: whattodo (5)\nListed: 2026-05-30\nLast edited: 2026-08-01", "seller_username": "whattodo", "url": "https://www.head-fi.org/classifieds/pd-astell-kern-empire-ears-novus-iem.109907/", "price_num": 2900.0, "date_ms": 1780099200000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_classified_page_loaded_no_safe_status_line", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_unclear_left_unchanged | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 4, "title": "AK Empire Ears Novus", "raw_text": "AK Empire Ears Novus\nListing ID: 109411\nFor Sale 2,700.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To United States Of America\nSelling my AK Novus They are in excellent condition, other than tiny areas where paint is rubbed off on the ear-facing side, is there any Novus that is not like that? :) Includes all original boxes and accesories as shown in pictures. Amazing...\nListed by: mcemce13 (18)\nListed: 2026-05-21\nLast edited: 2026-06-24", "seller_username": "mcemce13", "url": "https://www.head-fi.org/classifieds/ak-empire-ears-novus.109411/", "price_num": 2700.0, "date_ms": 1779321600000, "listing_status": "stale", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_status_unclear_left_unchanged | active_status_checker_headfi_live_check_skipped | active_status_checker_stale_unsold_60d_lister_never_updated"}, {"row_id": 5, "title": "Closed: Astell&Kern & Empire Ears NOVUS iem", "raw_text": "For Sale Closed: Astell&Kern & Empire Ears NOVUS iem Price 3500.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere #Wts# Astell&Kern novus iem. One of the best and most complete iem I have ever come across. Simply One of the best. Under Warranty. Full box all accessories intact Buyer pm me please Thank you for looking Dr Riyaz Listing Mar 9, 2026 Comments: 1 Category: In-Ear Monitors", "seller_username": "Riyaz", "url": "https://www.head-fi.org/classifieds/astell-kern-empire-ears-novus-iem.105105/", "price_num": 3500.0, "date_ms": 1773014400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: AK Empire Ears Novus", "raw_text": "For Sale Sold: AK Empire Ears Novus Price 2900.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America First owner of this Novus. They are in excellent condition, though the paint rubbed off in tiny areas on the ear-facing side, as it does on every pair of the Novus (that's the only reason I have to put 'good' instead of 'excellent / like new'). You can see in the pics. These sound amazing. I... mt-hifidelity Listing Feb 15, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "mt-hifidelity", "url": "https://www.head-fi.org/classifieds/ak-empire-ears-novus.103856/", "price_num": 2900.0, "date_ms": 1771113600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: AK x Empire Ears Novus", "raw_text": "For Sale Sold: AK x Empire Ears Novus Price 2790.00 USD Condition Good Negotiability Firm Ships to Anywhere Selling my AK x Empire Ears Novus. First owner, bought new for $5,200 from a Swiss dealer. I believe still under warranty. Condition as shown in the photo. The only cosmetic flaw is minor scuffs on the edges. But this is inevitable, they get scratched from the air\ud83d\ude12 That\u201ds why listed as \u201cgood... zajcev Listing Oct 22, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "zajcev", "url": "https://www.head-fi.org/classifieds/ak-x-empire-ears-novus.97214/", "price_num": 2790.0, "date_ms": 1761091200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Empire Ears Novus", "raw_text": "For Sale Sold: Empire Ears Novus Price 2850.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America This is another pair that is hard for me to walk away from, but it's someone elses turn to enjoy these beauties! I've been hard pressed to find an IEM that has as good as a build as these have. They're gorgeous. The glass faceplate, hammered shell, fit is amazing for the size. The sound on... Echo42987 Listing Oct 21, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Echo42987", "url": "https://www.head-fi.org/classifieds/empire-ears-novus.97185/", "price_num": 2850.0, "date_ms": 1761004800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Astell&Kern/Empire Ears Novus", "raw_text": "Astell&Kern/Empire Ears Novus Listing ID: 90885 For Sale 2,499.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America For sale is my well-loved pair of AA/EE Novus. Original owner (Jan 2025 Musicteck). They come with all original packaging and materials. It is impossible to keep the shells on these perfect, so you will see edges of the facets where the black... Listed by: fejnomit (218) Listed: 2025-06-29 Last edited: 2026-09-15", "seller_username": "fejnomit", "url": "https://www.head-fi.org/classifieds/astell-kern-empire-ears-novus.90885/", "price_num": 2499.0, "date_ms": 1751155200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "visible_card_collect_with_price_title_match_v6 | safari_ipad_ingest_v1 | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 10, "title": "Traded: Astell&Kern x Empire Ears Novus", "raw_text": "For Sale / Trade Traded: Astell&Kern x Empire Ears Novus Price 3100.00 USD Condition Good Negotiability Or best offer Ships to United States of America Great condition Novus for sale or trade. Recently acquired in a trade here on Head-Fi and condition and details still the same \ud83d\ude03 Excellent sound and bass but fit was a little finicky for me. Some very minor wear on the shells and it was called out that sound may drop if wire gets bent wrong way... sparty09 Listing May 26, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "sparty09", "url": "https://www.head-fi.org/classifieds/astell-kern-x-empire-ears-novus.89029/", "price_num": 3100.0, "date_ms": 1748217600000, "listing_status": "closed", "condition_text": "excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Empire Ears NOVUS", "raw_text": "For Sale / Trade Sold: Empire Ears NOVUS Price 3200.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America I am either looking to trade for an Empire Ears ODIN plus 1600 USD on your end or 3200 USD PayPal G&S with shipping included for this NOVUS. Hey guys, I have a NOVUS that I bought BRAND NEW from Bloomaudio.com last month that I want to sell/trade. This unit is in excellent condition & this will... acaldejon Listing Apr 30, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "acaldejon", "url": "https://www.head-fi.org/classifieds/empire-ears-novus.87471/", "price_num": 3200.0, "date_ms": 1745971200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Closed: Astell & Kern Empire Ears Novus", "raw_text": "For Sale Closed: Astell & Kern Empire Ears Novus Price 3275.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Make me a reasonable offer! Selling my Astell & Kern Empire Ears Novus to fund other things. I am second owner. Priced aggressively to sell. Includes original packaging and accessories. Has a small superficial scratch on one of the shells and slight wear on the finish at some points on the... jjb3 Listing Apr 17, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "jjb3", "url": "https://www.head-fi.org/classifieds/astell-kern-empire-ears-novus.86741/", "price_num": 3275.0, "date_ms": 1744848000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Traded: [PD] Astell & Kern + Empire Ears Novus", "raw_text": "For Sale / Trade Traded: [PD] Astell & Kern + Empire Ears Novus Price 3175.00 USD Condition Good Negotiability Firm Ships to AnywhereUnited States of America ...fixed by rotating the plug. Some very slight wears on the shell body otherwise great condition. Has driver flex which is not uncommon for Empire Ears IEMS and normal according to Astell & Kern when I messaged them about it. \"The driver diaphragm inside the unit appears to be the sound... Noobzilla Listing Apr 17, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "Noobzilla", "url": "https://www.head-fi.org/classifieds/pd-astell-kern-empire-ears-novus.86753/", "price_num": 3175.0, "date_ms": 1744848000000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "AK Empire Ears NOVUS IEM", "raw_text": "For Sale AK Empire Ears NOVUS IEM Price 4099.00 USD Condition New in box Negotiability Or best offer Ships to Anywhere Astell&Kern x Empire Ears Novus IEM Flagship I pre-ordered an extra, won't need. Arrived today! Will be brand new sealed. Check my reviews, honest seller. And over buyer lol crazyhank Listing Mar 10, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "crazyhank", "url": "https://www.head-fi.org/classifieds/ak-empire-ears-novus-iem.84654/", "price_num": 4099.0, "date_ms": 1741564800000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "visible_card_collect_with_price_title_match_v6 | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 15, "title": "Sold: AK Empire Ears NOVUS IEM", "raw_text": "For Sale Sold: AK Empire Ears NOVUS IEM Price 4099.00 USD Condition New in box Negotiability Or best offer Ships to Anywhere Astell&Kern x Empire Ears Novus IEM Flagship I pre-ordered an extra, won't need. Arrived today! Will be brand new sealed. Check my reviews, honest seller. And over buyer lol crazyhank Listing Dec 8, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "crazyhank", "url": "https://www.head-fi.org/classifieds/ak-empire-ears-novus-iem.79468/", "price_num": 4099.0, "date_ms": 1733616000000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 16, "title": "Sold: Empire Ears NOVUS", "raw_text": "For Sale Sold: Empire Ears NOVUS Price 3800.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Hey, I have a like new/excellent condition NOVUS that I want to sell. I bought this last month from Moon Audio BRAND NEW. Also, I am located in Shreveport, Louisiana & I will only ship in the lower 48 United States. I am asking for 3800 USD PayPal G&S with shipping already included in the price... acaldejon Listing Nov 6, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "acaldejon", "url": "https://www.head-fi.org/classifieds/empire-ears-novus.77680/", "price_num": 3800.0, "date_ms": 1730851200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Astell&Kern x Empire Ears Novus IEM Flagship", "raw_text": "For Sale Sold: Astell&Kern x Empire Ears Novus IEM Flagship Price 4499.00 USD Condition New in box Negotiability Or best offer Ships to Anywhere Astell&Kern x Empire Ears Novus IEM Flagship Because it's limited release, I pre-ordered 2 from different dealers. Both will be arriving this week. I definitely don't need both :) Will be brand new sealed. Check my reviews, honest seller. And over buyer lol crazyhank Listing Aug 13, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "crazyhank", "url": "https://www.head-fi.org/classifieds/astell-kern-x-empire-ears-novus-iem-flagship.73111/", "price_num": 4499.0, "date_ms": 1723507200000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 18, "title": "Astell Kern & Empire Ears Novus IEM", "raw_text": "For Sale / Trade Astell Kern & Empire Ears Novus IEM Price 3250.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere I am the first and only owner. I am selling it to buy another IEM. It is in perfect condition. I do not have outer box. I can trade with Storm with cash from my side. whattodo Listing Saturday at 2:25 PM Comments: 0 Category: In-Ear Monitors", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/astell-kern-empire-ears-novus-iem.109907/", "price_num": 3250.0, "date_ms": null, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_page_loaded_no_safe_status_line", "notes": "visible_card_collect_with_price_title_match_v6 | active_status_checker_status_unclear_left_unchanged | active_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged"}];
 const originalMsrpUsd = 5000.0;
@@ -2076,6 +2143,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">

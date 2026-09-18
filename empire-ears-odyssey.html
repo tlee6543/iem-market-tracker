@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-empire-ears.html">Empire Ears</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-empire-ears.html">Empire Ears</a>
+    
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -1056,6 +1107,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "Astell & Kern x Empire Ears Odyssey", "raw_text": "For Sale Astell & Kern x Empire Ears Odyssey Price 1450.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Update: Price Drop. With a bit of sadness, Im selling my Astell&Kern \u00d7 Empire Ears Odyssey Universal IEM. Flawless in sound and condition for me, they have served me well since release. But Im downsizing full collection to max of 2 IEM and with much thought, Im keeping my Legend X and my Z1R... Bootup22 Listing Apr 15, 2026 Comments: 3 Category: In-Ear Monitors", "seller_username": "Bootup22", "url": "https://www.head-fi.org/classifieds/astell-kern-x-empire-ears-odyssey.107405/", "price_num": 1450.0, "date_ms": 1776211200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "visible_card_collect_with_price_title_match_v6 | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 1, "title": "Sold: Price Drop: Empire Ears Odyssey (Priced to Sell)", "raw_text": "For Sale Sold: Price Drop: Empire Ears Odyssey (Priced to Sell) Price 1525.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Selling mint EE \u00d7 AK Odyssey, which comes with box and all accessories. Shipping will be included in North America but open to ship elsewhere. This is the lowest price sold on Odyssey till date. harshkamboj Listing May 29, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/price-drop-empire-ears-odyssey-priced-to-sell.89201/", "price_num": 1525.0, "date_ms": 1748476800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: Astell Kern Empire Ears Odyssey", "raw_text": "For Sale Sold: Astell Kern Empire Ears Odyssey Price 1575.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Rare chance to own these limited edition IEM\u2019s. Described as the combination of the Odin and Evo taking the best from each. They are quite the ride for sure. Have to make some tough choices in my effort to downgrade. They never leave the house and when not in my ears always in their pouch and... Bjorn154 Listing May 23, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Bjorn154", "url": "https://www.head-fi.org/classifieds/astell-kern-empire-ears-odyssey.88853/", "price_num": 1575.0, "date_ms": 1747958400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Closed: Empire Ears Odyssey", "raw_text": "For Sale Closed: Empire Ears Odyssey Price 1700.00 USD Condition Good Negotiability Firm Ships to United States of America SOLD ON EBAY SOLD ON EBAY SOLD ON EBAY Hey, I have an Odyseey in very good condition that I want to sell. I bought this second hand on Ebay 4 months ago & this will come with the original box & all original accessories. Also, I am located in Shreveport, Louisiana & I will only ship in the lower... acaldejon Listing Jan 2, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "acaldejon", "url": "https://www.head-fi.org/classifieds/empire-ears-odyssey.80800/", "price_num": 1700.0, "date_ms": 1735776000000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Closed: Astell Kern Empire Ears Odyssey", "raw_text": "For Sale Closed: Astell Kern Empire Ears Odyssey Price 1595.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Rare chance to own these limited edition IEM\u2019s. Described as the combination of the Odin and Evo taking the best from each. They are quite the ride for sure. Have to make some tough choices in my effort to downgrade. They never leave the house and when not in my ears always in their pouch and... Bjorn154 Listing Dec 13, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "Bjorn154", "url": "https://www.head-fi.org/classifieds/astell-kern-empire-ears-odyssey.79748/", "price_num": 1595.0, "date_ms": 1734048000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Brand New Empire Ears Odyssey", "raw_text": "For Sale Sold: Brand New Empire Ears Odyssey Price 1800.00 USD Condition New in box Negotiability Or best offer Ships to Anywhere Hi Headfiers. I have a brand new Empire Ears Odyssey that I purchased a year ago but never opened. Unfortunately i had to move for work and my wife forgot where she packed it thus it lived in a box. Following that, I really got into headphones [HD800s, Focal Utopia and Susvara] and for the... kdoninel Listing Nov 11, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "kdoninel", "url": "https://www.head-fi.org/classifieds/brand-new-empire-ears-odyssey.77987/", "price_num": 1800.0, "date_ms": 1731283200000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: Empire Ears Odyssey", "raw_text": "For Sale Sold: Empire Ears Odyssey Price 1900.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to AnywhereNorth America Selling the LE A/K Empire Ears Odyssey enjoy :) tjzurlaaa Listing Nov 1, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "tjzurlaaa", "url": "https://www.head-fi.org/classifieds/empire-ears-odyssey.77364/", "price_num": 1900.0, "date_ms": 1730419200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Empire Ears Odyssey", "raw_text": "For Sale Sold: Empire Ears Odyssey Price 1900.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Selling for a friend. In like new condition Will ship anywhere. Price includes CONUS shipping and paypal fees If shipping outside of CONUS please PM for price quote. Do not hesitate to dm with questions. :) jwilliamhurst Listing Jan 5, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "jwilliamhurst", "url": "https://www.head-fi.org/classifieds/empire-ears-odyssey.60231/", "price_num": 1900.0, "date_ms": 1704412800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Empire Ears Odyssey", "raw_text": "For Sale Sold: Empire Ears Odyssey Price 9999.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Sold Homrsimson Listing Dec 28, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "Homrsimson", "url": "https://www.head-fi.org/classifieds/empire-ears-odyssey.59788/", "price_num": 9999.0, "date_ms": 1703721600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_high_outlier_70pct_above_median_median_1900.0_cutoff_3230.0 | auto_high_outlier_50pct_above_msrp_msrp_3400.0_cutoff_5100.0"}, {"row_id": 9, "title": "Closed: Empire Ears Odyssey Price Drop (traded elsewhere)", "raw_text": "For Sale Closed: Empire Ears Odyssey Price Drop (traded elsewhere) Price 2150.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling my Empire Ears Odyssey to fund other purchases. They have some of the best bass I have heard in an IEM. They were mostly minimally used. Around 20 hours of total use. Bought them used from a fellow head-fi user in July. They were treated well and in near perfect condition. The iems... unfitstew Listing Sep 12, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "unfitstew", "url": "https://www.head-fi.org/classifieds/empire-ears-odyssey-price-drop-traded-elsewhere.54230/", "price_num": 2150.0, "date_ms": 1694476800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Astell & Kern + Empire Ears Odyssey BIG Price Drop", "raw_text": "For Sale Sold: Astell & Kern + Empire Ears Odyssey BIG Price Drop Price 2200.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling my AK x EE Odysseys. I\u2019m the second owner, purchased from a fellow head-fier. They originally purchased the item in December 2022. Price includes shipping and PayPal fees. No trades, cash only! AEIOU9 Listing Aug 23, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "AEIOU9", "url": "https://www.head-fi.org/classifieds/astell-kern-empire-ears-odyssey-big-price-drop.53078/", "price_num": 2200.0, "date_ms": 1692748800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Traded: Astell & Kern + Empire Ears Odyssey", "raw_text": "For Sale / Trade Traded: Astell & Kern + Empire Ears Odyssey Price 1.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Up for sale is my set of my set of EE/AK Odyssey. I\u2019m the original owner of the IEMs, purchased from Bloom Audio. Haven't been using the IEMs since I last listed this for sale, so I'm selling to recoup some funds. Things to note: Mild dent on the box Slight wear on the 3.5mm adapter ifi Gold... stacey Listing Aug 13, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "stacey", "url": "https://www.head-fi.org/classifieds/astell-kern-empire-ears-odyssey.52555/", "price_num": null, "date_ms": 1691884800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Astell & Kern x Empire Ears Odyssey *mint", "raw_text": "For Sale Sold: Astell & Kern x Empire Ears Odyssey *mint Price 2500.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America ...Have probably less than 30 hours on them. I bought them brand new from Bloom so should have all warranty with it. IMHO, these are Empire Ears best IEM and truly an end game IEM if you like a balanced sound with a punchy bass and TOTL technicalities. Comes with all original accessories and... Chronos Listing May 13, 2023 Comments: 6 Category: In-Ear Monitors", "seller_username": "Chronos", "url": "https://www.head-fi.org/classifieds/astell-kern-x-empire-ears-odyssey-mint.47609/", "price_num": 2500.0, "date_ms": 1683936000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Astell & Kern X Empire Ears Odyssey - Brand New", "raw_text": "For Sale Sold: Astell & Kern X Empire Ears Odyssey - Brand New Price 2650.00 USD Condition New in box Negotiability Firm Ships to Anywhere Selling a Brand New and still sealed A&K Empire Eare Odyssey flagship IEM. This is a warranty replacement from A&K that arrived a couple of weeks ago. New full 12 month warranty and purchase receipt provided. Price includes shipping to anywhere (from Australia) using EMS. Happy to upgrade to... Damz87 Listing Apr 27, 2023 Comments: 5 Category: In-Ear Monitors", "seller_username": "Damz87", "url": "https://www.head-fi.org/classifieds/astell-kern-x-empire-ears-odyssey-brand-new.46698/", "price_num": 2650.0, "date_ms": 1682553600000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 3400.0;
@@ -1996,6 +2063,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">

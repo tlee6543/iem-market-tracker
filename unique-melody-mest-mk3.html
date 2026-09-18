@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-unique-melody.html">Unique Melody</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-unique-melody.html">Unique Melody</a>
+    <button class="fr-preview-trigger" type="button" data-fr-name="Unique Melody MEST MK3" data-fr-label="Unique Melody MEST MK3" data-fr-embed-url="https://precog.squig.link/?embed&amp;share=Unique_Melody_MEST_MK3" data-fr-url="https://precog.squig.link/?share=Unique_Melody_MEST_MK3" aria-haspopup="dialog" aria-expanded="false" aria-label="Preview the frequency response for Unique Melody MEST MK3"><span class="fr-preview-icon" aria-hidden="true">⌁</span> FR graph</button>
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -1296,6 +1347,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "UM MEST mk3 CF + THIEAUDIO EliteNoir Cable", "raw_text": "UM MEST mk3 CF + THIEAUDIO EliteNoir Cable Listing ID: 113813 For Sale 0.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America This is a stunning pair of the Unique Melody MEST MKIII Carbon Fiber Edition in Blue. I am the second owner. The original owner had them for approximately 6 months and put about 30 hours. I had these for about a year in a smoke-free, pet-free... Listed by: khalder (39) Listed: 2026-08-12 Last edited: 2026-08-13", "seller_username": "khalder", "url": "https://www.head-fi.org/classifieds/um-mest-mk3-cf-thieaudio-elitenoir-cable.113813/", "price_num": null, "date_ms": 1786492800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "*PRICE DROP REPOST* Unique Melody MEST MK3 Red", "raw_text": "Timestamp: https://imgur.com/a/cfWfgJC\nHello all!\nTrying to fund other purchases so listing these beauties for sale. The best IEM I've ever had so far.\nIn excellent cosmetic condition and sound as they should. Comes with all original packaging and accessories except the stock cable (which many hated) and S/M size of the \"petal\" eartips. I'm the second owner and no included tips were worn by me. Smoke free home.\nAsking $820 $790 shipped CONUS or trade your IEM of similar value!\n-Brands of interest:\nUnique Melody\nThieaudio\n64 Audio\nCampfire\nSymphonium\n-Models of interest (* denotes I'd add cash on top):\nUM Maven 2 Crescent\nUM Mest Jet Black*\nThieaudio Valhalla*, Monarch MKIV*\nCampfire Andromeda variants*\nThese are just preferences, offer me any IEM! The worst I can say is no thank you :) Thanks for looking.\nsubmitted by /u/baycop99\n[link] [comments]", "seller_username": "baycop99", "url": "https://old.reddit.com/r/AVexchange/comments/1tp2k3z/wtsusavah_price_drop_repost_unique_melody_mest/#item-1", "price_num": 790.0, "date_ms": 1779880811000, "listing_status": "closed", "condition_text": "and sound as they should", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=campfire"}, {"row_id": 2, "title": "Unique Melody Mest MK3 CF Red", "raw_text": "Timestamp: https://imgur.com/a/cfWfgJC\nHello all!\nContinuing my fun habit of finding new IEMs to try and figuring out what truly works for me. Today the offer is the Mest MK3 CF: a lush, warmish all-rounder that can be worn and listened to for hours. On top of that, it's an imaging and soundstage beast. I am the second owner and it was purchased from this subreddit ~6 months ago.\nIn excellent cosmetic condition and no audible issues. Comes with all original packaging. All accessories included except the stock cable (which many hated) and S/M size of the \"petal\" eartips. No included tips were worn by me. Smoke free home.\nAsking $820 shipped CONUS , or preferably, trade your IEM of similar value!\n-Brands of interest:\nUnique Melody\nThieaudio\n64 Audio\nCampfire\nSymphonium\n-Models of interest (* denotes I'd add cash on top):\nUM Maven 2 Crescent\nUM Mest Jet Black*\nThieaudio Valhalla*, Monarch MKIV*\nCampfire Andromeda variants*\nSennheiser IE900 (possibly, still thinking ab it)\nAgain, these are just preferences, offer me any IEM! Maybe a cheaper IEM with cash! The worst I can say is no thank you :) Thanks for looking!!\nsubmitted by /u/baycop99\n[link] [comments]", "seller_username": "baycop99", "url": "https://old.reddit.com/r/AVexchange/comments/1t9rj8j/wtsusavah_unique_melody_mest_mk3_cf_red_w_paypal/#item-1", "price_num": 820.0, "date_ms": 1778470088000, "listing_status": "closed", "condition_text": "and no audible issues", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=campfire | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "Sold: UM MEST MKIII (no cable)", "raw_text": "For Sale Sold: UM MEST MKIII (no cable) Price 800.00 USD Condition Good Negotiability Firm Ships to North America Looking to sell my UM MEST MKIII. This is the version without a cable, but it will come with an aftermarket one. All original accessories and box included. Price includes PP fees + shipping. Farrellc Listing Mar 29, 2026 Comments: 1 Category: In-Ear Monitors", "seller_username": "Farrellc", "url": "https://www.head-fi.org/classifieds/um-mest-mkiii-no-cable.106345/", "price_num": 800.0, "date_ms": 1774742400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Unique Melody Mest MK3", "raw_text": "For Sale Sold: Unique Melody Mest MK3 Price 650.00 USD Condition Good Negotiability Firm Ships to North America Catch and release for me. Comes with: - IEMs in great condition - after market cable (how I got them) - Carry puck - cleaning cloths - original box - original clear tips timestamps : https://imgur.com/a/BtmDXau LegitimateCupcake513 Listing Jan 9, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "LegitimateCupcake513", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mk3.101691/", "price_num": 650.0, "date_ms": 1767916800000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: UM Mest Mk3 blue", "raw_text": "For Sale Sold: UM Mest Mk3 blue Price 750.00 USD Condition Good Negotiability Or best offer Ships to United States of America Pairing down my IEM collections so my UM Mest Mk3 is up for sale. Included are: - IEMs in great condition - after market cable (how I got them) - Carry puck - cleaning cloths - original box - original clear tips Asking for $770 shipped to Continental USA using PayPal G&S musiclover2932 Listing Jan 4, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "musiclover2932", "url": "https://www.head-fi.org/classifieds/um-mest-mk3-blue.101363/", "price_num": 750.0, "date_ms": 1767484800000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Closed: UM Mest MKIII CIEMs", "raw_text": "For Sale Closed: UM Mest MKIII CIEMs Price 500.00 USD Condition Good Negotiability Firm Ships to Anywhere Up for sale are my UM Mest MKIII CIEMs, which I believe can be re-shelled for the next owner by UM for USD $300. Full box & accessories are included, mine have the vastly improved MKII PWA cable which has terrific ergonomics. Price is USD $500 which includes worldwide shipping. Thanks for... Bosk Listing Dec 3, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Bosk", "url": "https://www.head-fi.org/classifieds/um-mest-mkiii-ciems.99611/", "price_num": 500.0, "date_ms": 1764720000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Unique Melody MEST MKIII", "raw_text": "For Sale Sold: Unique Melody MEST MKIII Price 0.00 USD Condition Good Negotiability Or best offer Ships to United States of America Product Page: https://www.uniquemelody.org/products/mest-mkiii-1 Driver Configuration: 1DD + 4BA + 4EST + 1BCD These were acquired through a trade. This sale includes: Unique Melody MEST MKIII Astral Acoustic Pulse Cable Original box and unused accessories (minus stock cable) Leather case UM... kaeswiss Listing Oct 24, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "kaeswiss", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mkiii.97315/", "price_num": null, "date_ms": 1761264000000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 8, "title": "Closed: Unique Melody UM MEST MKIII Blue Carbon Fiber Edition w/ Linsoul Nymph Cables", "raw_text": "For Sale Closed: Unique Melody UM MEST MKIII Blue Carbon Fiber Edition w/ Linsoul Nymph Cables Price 850.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Specifications Product Name: MEST MKIII CF Headphone Type: Dynamic+BA+Electrostatic+Bone Conduction Quadbrid IEMs Driver Counts: 10 Drivers Socket: 2-Pin Socket Impedance: 14\u03a9 Frequency Response Range: 20Hz-70kHz Crossover: 5-way Crossover Configuration: 1 Dynamic Bass Driver + 2 BA Mid... gofishus Listing Sep 11, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "gofishus", "url": "https://www.head-fi.org/classifieds/unique-melody-um-mest-mkiii-blue-carbon-fiber-edition-w-linsoul-nymph-cables.94807/", "price_num": 850.0, "date_ms": 1757548800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Closed: (PD) UM Mest Mk3 (Mkiii) - full set, like new.", "raw_text": "For Sale Closed: (PD) UM Mest Mk3 (Mkiii) - full set, like new. Price 1120.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling my like new Mest mk3. Full set. Unused tips and 4.4mm cable. damascato Listing Jul 1, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "damascato", "url": "https://www.head-fi.org/classifieds/pd-um-mest-mk3-mkiii-full-set-like-new.90953/", "price_num": 1120.0, "date_ms": 1751328000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Closed: UM Mest MKiii - 4.4mm", "raw_text": "For Sale / Trade Closed: UM Mest MKiii - 4.4mm Price 1280.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Hi folks, I'm selling a mint set of Unique Melody Mest MKiii, coming with the original 4.4mm cable (unused). The set was purchased at Minidisc in Sydney and I'm the first owner. Cheers damascato Listing Jun 16, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "damascato", "url": "https://www.head-fi.org/classifieds/um-mest-mkiii-4-4mm.90162/", "price_num": 1280.0, "date_ms": 1750032000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 11, "title": "Closed: Unique Melody MEST MkIII (Mk3) Red", "raw_text": "For Sale Closed: Unique Melody MEST MkIII (Mk3) Red Price 999.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Sold on Reddit. Selling my UM Mest Mk3 that I purchased in like new condition from Musicteck last week. Selling due to the similarities to my mk1 which is in CIEM form. This is the red version, which UM claimed was much more difficult to create than the blue, which is why they historically sold... crush Listing Apr 23, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "crush", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mkiii-mk3-red.87080/", "price_num": 999.0, "date_ms": 1745366400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Unique Melody Mest MK III MK3 - In perfect condition + Kinera ACE 2.0 Convertible cable", "raw_text": "For Sale Sold: Unique Melody Mest MK III MK3 - In perfect condition + Kinera ACE 2.0 Convertible cable Price 1250.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere UM Mest MK III in perfect condition. All of the accessories, ear tips are not even used. Bought a few months ago and a few sessions of listening, UM released a new MEST Jet Black and I have to try it out! :) Everything in like new condition and including Kinera Ace 2.0 cable which has 2.5/3.5/... jjamo Listing Mar 27, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "jjamo", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mk-iii-mk3-in-perfect-condition-kinera-ace-2-0-convertible-cable.85654/", "price_num": 1250.0, "date_ms": 1743033600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: UM mest mk3", "raw_text": "For Sale Sold: UM mest mk3 Price 999.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Mint condition mest mk3 with all accessories except stock tips and warranty card(It will not affect the after-sales service). Cable was replaced by um to newer version stock cable. Including domestic shipping. For destinations outside the United States, shipping is available, but you will need... AudioSep Listing Dec 29, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "AudioSep", "url": "https://www.head-fi.org/classifieds/um-mest-mk3.80580/", "price_num": 999.0, "date_ms": 1735430400000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Closed: Unique Melody MEST MK3 (CF Blue)", "raw_text": "For Sale / Trade Closed: Unique Melody MEST MK3 (CF Blue) Price 1000.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere ************** EDIT: SOLD on a local Aus forum. Still interested in the fatfreq models though! ************** Hey guys, Up for sale is a UM Mest MK3 that I purchased recently from another member here on head-fi. These are absolutely beautiful to listen to and the tuning is fantastic... dweee Listing Nov 12, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "dweee", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mk3-cf-blue.78050/", "price_num": 1000.0, "date_ms": 1731369600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Unique Melody Mest Mkiii (mk3) CF", "raw_text": "For Sale / Trade Sold: Unique Melody Mest Mkiii (mk3) CF Price 950.00 USD Condition Good Negotiability Firm Ships to United States of America Re-listing and selling my Mest3 which in good condition. All accessories like tips, case, box, etc. No stock cable, I decide to keep them but if you want can add $200. Asking for $950 net to me shipped. Can trade with Monarch3 plus cash, or just hit me offer, not looking to add cash on my end. musiland Listing Nov 7, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "musiland", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mkiii-mk3-cf.77712/", "price_num": 950.0, "date_ms": 1730937600000, "listing_status": "closed", "condition_text": "good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Closed: Unique Melody Mest MkIII", "raw_text": "For Sale Closed: Unique Melody Mest MkIII Price 0.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Up for selling my beloved Unique Melody mest3. reserved. musiland Listing Nov 2, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "musiland", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mkiii.77471/", "price_num": null, "date_ms": 1730505600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 17, "title": "Sold: Unique Melody MEST MKIII", "raw_text": "For Sale / Trade Sold: Unique Melody MEST MKIII Price 1100.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Latest generation of MEST, much more neutral tuning than prior generations. Quadbrid with BCD, DD, BA and EST. Full box, manual, and accessories, this is the version that does not come with a cable. Excellent condition, used at home. Filters are clean, one seems slightly flatter than the other... cennis Listing Jul 10, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "cennis", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mkiii.71203/", "price_num": 1100.0, "date_ms": 1720569600000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Closed: UM Mest Mk3 w/ extra", "raw_text": "For Sale Closed: UM Mest Mk3 w/ extra Price 1100.00 USD Condition Excellent/Like new Negotiability Firm Ships to EuropeNorth America Selling in mint condition, the latest Mest, the mk3 is a true upgrade to the renowned mk2. Mk3 stands out for its mids and smooth treble. The shells are beautiful and the fit is extremely comfortable. This is the non cable version as the stock cable is one of the worst cables ever made to... harshkamboj Listing May 14, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "harshkamboj", "url": "https://www.head-fi.org/classifieds/um-mest-mk3-w-extra.67973/", "price_num": 1100.0, "date_ms": 1715644800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Sold: Drop! Unique Melody Mest MKIII CF - IEMs Only", "raw_text": "For Sale Sold: Drop! Unique Melody Mest MKIII CF - IEMs Only Price 1000.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Hello Head-Fi Community, I'm excited to offer my Unique Melody Mest MKIII CF purchased from Musicteck for sale. Here are the details for interested buyers: Features and Conditions: Condition: Like new, with no signs of wear. Comes from a smoke-free and pet-free environment. Drivers: A complex... ken1109 Listing May 3, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "ken1109", "url": "https://www.head-fi.org/classifieds/drop-unique-melody-mest-mkiii-cf-iems-only.67277/", "price_num": 1000.0, "date_ms": 1714694400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: MEST MKIII", "raw_text": "For Sale Sold: MEST MKIII Price 1250.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Up for sale are my blue UM Mest MKIII IEMs, which I acquired from a prominent Head-Fi member who purchased them from Musickteck. They're terrific especially for the price, but I'm clearing some inventory to fund another big purchase. Full retail package is included with the stock 4.4mm cable... Bosk Listing Jan 1, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Bosk", "url": "https://www.head-fi.org/classifieds/mest-mkiii.59997/", "price_num": 1250.0, "date_ms": 1704067200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: UM Mest MKIII in Excellent Condition", "raw_text": "For Sale Sold: UM Mest MKIII in Excellent Condition Price 1400.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Unique Melody Mest MKIII in Excellent/Like New Condition. Carbon Fiber Blue. Comes with the stock cable. I hear such division on the stock cable and some people hate it and some people are like ehhhh. I don\u2019t think it is the greatest either but I understand the value of it paired with the Mest... KevinS2020 Listing Oct 29, 2023 Comments: 2 Category: In-Ear Monitors", "seller_username": "KevinS2020", "url": "https://www.head-fi.org/classifieds/um-mest-mkiii-in-excellent-condition.56758/", "price_num": 1400.0, "date_ms": 1698537600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 22, "title": "Sold: PENDING: UM Mest MKIII RED (Price Drop)", "raw_text": "For Sale Sold: PENDING: UM Mest MKIII RED (Price Drop) Price 1300.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Selling my Mest Mk 3 Red in perfect condition. I purchased these on Head-fi, I am the second owner. They are still under warranty from Musicteck. It comes with original box, leather case, unused stock cable and all the accessories. Shipping is included in the price, will be shipped from Norway... So11rek Listing Oct 28, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "So11rek", "url": "https://www.head-fi.org/classifieds/pending-um-mest-mkiii-red-price-drop.56712/", "price_num": 1300.0, "date_ms": 1698451200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 23, "title": "Closed: UM MEST MKIII Carbon Fiber Edition - Universal unique melody", "raw_text": "For Sale Closed: UM MEST MKIII Carbon Fiber Edition - Universal unique melody Price 0.00 USD Condition New in box Negotiability Or best offer Ships to Anywhere Brand new in box, please PM for details. Thomastb Listing Oct 23, 2023 Comments: 6 Category: In-Ear Monitors", "seller_username": "Thomastb", "url": "https://www.head-fi.org/classifieds/um-mest-mkiii-carbon-fiber-edition-universal-unique-melody.56464/", "price_num": null, "date_ms": 1698019200000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 24, "title": "Sold: Mest MKIII + Cable Option", "raw_text": "For Sale Sold: Mest MKIII + Cable Option Price 1400.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Unique Melody Mest MKIII CF for sale. Purchased new late June from MusicTeck. Includes original packaging and accessories. - (Included in price) Stock cable is a UMxPWAudio collaboration in Cobalt Blue. - (Additional $400) Eletech Victoria HK Limited Release (with original packaging). Not... Visceral Listing Oct 11, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "Visceral", "url": "https://www.head-fi.org/classifieds/mest-mkiii-cable-option.55802/", "price_num": 1400.0, "date_ms": 1696982400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 25, "title": "Sold: Unique Melody MEST MK3 Price Drop!", "raw_text": "For Sale / Trade Sold: Unique Melody MEST MK3 Price Drop! Price 1425.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere I\u2019m going to put my Unique Melody MEST MK3 up for sale. I\u2019ll be buying them again but you know how it is\u2026.I\u2019ve gone a bit nuts lately. Haha. This is the full set with the stock cable. Absolutely mint condition with less than 5 hours on them. For all intents and purposes it\u2019s new in box. Tips... vikinguy Listing Jul 28, 2023 Comments: 5 Category: In-Ear Monitors", "seller_username": "vikinguy", "url": "https://www.head-fi.org/classifieds/unique-melody-mest-mk3-price-drop.51739/", "price_num": 1425.0, "date_ms": 1690502400000, "listing_status": "closed", "condition_text": "mint, like new, excellent, new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 26, "title": "Sold: UM Mest Mk3 Carbon Fiber (Blue)", "raw_text": "For Sale Sold: UM Mest Mk3 Carbon Fiber (Blue) Price 1400.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America **FINAL PRICE REDUCTION** Quick catch and release. Opened once and used less than 2 hours. Decided to go in a different direction. Shipping to CONUS included. Read my feedback and buy with confidence. PM me if you have any questions. buenahora Listing Jun 29, 2023 Comments: 4 Category: In-Ear Monitors", "seller_username": "buenahora", "url": "https://www.head-fi.org/classifieds/um-mest-mk3-carbon-fiber-blue.50131/", "price_num": 1400.0, "date_ms": 1687996800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 27, "title": "Sold: PD: PW Audio 4.4mm 26 AWG cable of Unique Melody Mest Mk3", "raw_text": "For Sale Sold: PD: PW Audio 4.4mm 26 AWG cable of Unique Melody Mest Mk3", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/pd-pw-audio-4-4mm-26-awg-cable-of-unique-melody-mest-mk3.77713/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 28, "title": "Sold: PW Audio Cobalt Blue \u2013 MEST Mk.III stock cable", "raw_text": "For Sale Sold: PW Audio Cobalt Blue \u2013 MEST Mk.III stock cable", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/pw-audio-cobalt-blue-%E2%80%93-mest-mk-iii-stock-cable.58297/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 1900.0;
@@ -2236,6 +2303,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">

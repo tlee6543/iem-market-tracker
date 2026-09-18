@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-elysian.html">Elysian</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-elysian.html">Elysian</a>
+    <button class="fr-preview-trigger" type="button" data-fr-name="Elysian Pilgrim" data-fr-label="Elysian Acoustic Labs Pilgrim" data-fr-embed-url="https://precog.squig.link/?embed&amp;share=Elysian_Pilgrim" data-fr-url="https://precog.squig.link/?share=Elysian_Pilgrim" aria-haspopup="dialog" aria-expanded="false" aria-label="Preview the frequency response for Elysian Pilgrim"><span class="fr-preview-icon" aria-hidden="true">⌁</span> FR graph</button>
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -1184,6 +1235,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "Elysian Pilgrim", "raw_text": "Elysian Pilgrim Listing ID: 114833 For Sale 200.00 USD Condition Fair Negotiability Firm Ships To United States Of America Up for sale is my Elysian pilgrims. They sound great, but I only got this to satiate my curiosity and I don't really listen to it much considering I got storms. This doesn't come with its original carrying case, hence the lower price. Cheers! Listed by: mindhooked (19) Listed: 2026-09-02", "seller_username": "mindhooked", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.114833/", "price_num": 200.0, "date_ms": 1788307200000, "listing_status": "active", "condition_text": "fair", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_page_loaded_no_safe_status_line", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_unclear_left_unchanged"}, {"row_id": 1, "title": "Elysian Pilgrim", "raw_text": "Elysian Pilgrim Listing ID: 113573 For Sale 200.00 USD Condition Good Negotiability Firm Ships To United States Of America Selling my Pilgrims and I'm gonna die mad about it. I LOVE how these things sound; they're open and airy and oh so refreshing and the shells are gorgeous. But unfortunately Pilgrim-chan's shells are also very tsundere to my baka ears and I just... Listed by: LunarMihari (15) Listed: 2026-08-08", "seller_username": "LunarMihari", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.113573/", "price_num": 200.0, "date_ms": 1786147200000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 2, "title": "Sold: Elysian Pilgrim", "raw_text": "For Sale / Trade Sold: Elysian Pilgrim Price 1.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America A bit of an odd listing here. I have a set of Elysian Pilgrim in mint condition, sound great. That\u2019s it. No cable, no box, no accessories. I\u2019m including several pairs of never been used tips in different sizes just so\u2026you have them. Im cool with a sale and will listen to whatever fun trades you... vikinguy Listing May 26, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "vikinguy", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.109702/", "price_num": null, "date_ms": 1779753600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Elysian Pilgrim", "raw_text": "For Sale Sold: Elysian Pilgrim Price 200.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Great condition, essentially open box. Only listened for a handful of times. Please DM with any questions. Free shipping within the continental US. PayPal G&S/F&F or Venmo only. Thanks. ToobinTobes Listing Mar 3, 2026 Comments: 0 Category: In-Ear Monitors", "seller_username": "ToobinTobes", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.104784/", "price_num": 200.0, "date_ms": 1772496000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition, open box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Sold: Elysian Pilgrim", "raw_text": "For Sale Sold: Elysian Pilgrim Price 190.00 USD Condition Good Negotiability Or best offer Ships to United States of America Selling a nice set that is not getting used much. The original owner sold it to me \"well loved\". I tried to show the face of the IEMs as best as possible. The polished sections of the face have lots of hairline scratches. The rest of the body of the IEMs are in excellent shape. The sound is... AlexxxAA85 Listing Dec 30, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "AlexxxAA85", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.101012/", "price_num": 190.0, "date_ms": 1767052800000, "listing_status": "closed", "condition_text": "excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Sold: Elysian Pilgrim", "raw_text": "For Sale Sold: Elysian Pilgrim Price 200.00 USD Condition Good Negotiability Firm Ships to United States of America Elysian Pilgrim for sale! Pictures are from a recent sale that fell through. Smoke-free, pet-free home. Acquired in August and used sparingly (liked them a lot but were overshadowed by other IEMs in my collection). Came to me from the previous owner with microscratches on the polished steel... azli03 Listing Oct 6, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "azli03", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.96334/", "price_num": 200.0, "date_ms": 1759708800000, "listing_status": "closed", "condition_text": "used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 6, "title": "Sold: Elysian Pilgrim", "raw_text": "For Sale Sold: Elysian Pilgrim Price 220.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Selling my Elysian Pilgrim Received them yesterday. Listen to them most of the night, they sound amazing. I have way to many iems. Need to start lowering my collection. Have about 3hrs on them. Like new. Price includes shipping and fees. MilitaryHifi Listing Sep 27, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "MilitaryHifi", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.95818/", "price_num": 220.0, "date_ms": 1758931200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 7, "title": "Sold: Elysian Pilgrim", "raw_text": "For Sale Sold: Elysian Pilgrim Price 200.00 USD Condition Good Negotiability Or best offer Ships to United States of America Sounds great, comes with everything. Buckeyedentite Listing Sep 15, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Buckeyedentite", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.95086/", "price_num": 200.0, "date_ms": 1757894400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Closed: Elysian Pilgrim", "raw_text": "For Sale Closed: Elysian Pilgrim Price 215.00 USD Condition Good Negotiability Or best offer Ships to United States of America Selling this pair of Elysian Pilgrims, it includes all original accessories and original box. Price included shipping and GnS fees. Had a lot more interest in my previous post in the Eros S II cable then I expected so I'm trying to see if I can get the Pilgrims sold off before the cable instead... zkmd Listing Jun 3, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "zkmd", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.89492/", "price_num": 215.0, "date_ms": 1748908800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Closed: SOLD Elysian Pilgrim", "raw_text": "For Sale Closed: SOLD Elysian Pilgrim Price 250.00 USD Condition Excellent/Like new Negotiability Firm Ships to AnywhereNorth America SOLD LOCALLY Selling these pilgrims as I have no need for them anymore. They terminate in 4.4 and the tips have been untouched. They don't have the cleaning tool. Yamson Listing May 30, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Yamson", "url": "https://www.head-fi.org/classifieds/sold-elysian-pilgrim.89260/", "price_num": 250.0, "date_ms": 1748563200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Closed: Elysian Pilgrim", "raw_text": "For Sale Closed: Elysian Pilgrim Price 200.00 USD Condition Good Negotiability Or best offer Ships to North AmericaCanada An Elysian Pilgrim set that is bought brand new and gifted to a relative. Due to fit issues I had sent them a different set that they wore, so these have been sitting in their case. There is some slight yellowing on parts of the cable that can naturally happened with clear plastics so it's... IdleRover47 Listing Dec 29, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "IdleRover47", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.80577/", "price_num": 200.0, "date_ms": 1735430400000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Elysian Pilgrim", "raw_text": "For Sale Sold: Elysian Pilgrim Price 240.00 USD Condition Good Negotiability Firm Ships to United States of America EDIT 2024-11-27 I noticed some hairline scratches on the shiny part of the faceplates. They are more noticeable under certain lighting angles than when viewed in person. Due to this, I\u2019m lowering the price. ($260 -> $240) I\u2019m looking to part with some headphones that haven\u2019t seen much use... jim723 Listing Nov 23, 2024 Comments: 2 Category: In-Ear Monitors", "seller_username": "jim723", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.78670/", "price_num": 240.0, "date_ms": 1732320000000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 12, "title": "Sold: PD: Elysian Pilgrim", "raw_text": "For Sale / Trade Sold: PD: Elysian Pilgrim Price 220.00 USD Condition Good Negotiability Firm Ships to United States of America Hi all, up for selling my Elysian Pilgrim, got this part from a trade and preferred more of my moonlight ultra. In great condition while there\u2019re some unavoidable scratch on the panel, comes with original cable, box, two pair of tips etc. Asking for $245 paypal shipped conus. Open to trades... musiland Listing Nov 22, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "musiland", "url": "https://www.head-fi.org/classifieds/pd-elysian-pilgrim.78623/", "price_num": 220.0, "date_ms": 1732233600000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Elysian Pilgrim", "raw_text": "For Sale Sold: Elysian Pilgrim Price 275.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Selling my like new Elysian Pilgrims. Elysian truly know what they're doing when it comes to Treble. Not throw in a little bit more on the low end and you have the Pilgrim. Such a fun IEM and they deservce to go to someone who will get to spend even more time with them! Let me know if you... Echo42987 Listing Oct 26, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Echo42987", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.77090/", "price_num": 275.0, "date_ms": 1729900800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 14, "title": "Sold: ELYSIAN PILGRIM", "raw_text": "For Sale Sold: ELYSIAN PILGRIM Price 250.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Perfect working condition. Comes with OG cable and case. Free shipping to NA JAYAUDIO88 Listing Oct 20, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "JAYAUDIO88", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.76766/", "price_num": 250.0, "date_ms": 1729382400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Elysian Pilgrim", "raw_text": "For Sale Sold: Elysian Pilgrim Price 280.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere WTS Elysian Pilgrim In excellent condition. Rarely used. Price incl express shipping worldwide No trade. Thanks lycos Listing Sep 16, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "lycos", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.74941/", "price_num": 280.0, "date_ms": 1726444800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Sold: Elysian Pilgrim", "raw_text": "For Sale Sold: Elysian Pilgrim Price 280.00 USD Condition Good Negotiability Or best offer Ships to United States of America Elysian Pilgrim: Got this one very recently, in great condition. It sounds great but the fit isn\u2019t the best for me unfortunately. Comes with original packaging, cable (3.5mm), and original eartips. $280 including shipping in the United States. I\u2019m on reddit with 7 trades on r/AVexchange for... zenwolfe Listing Aug 15, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "zenwolfe", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.73164/", "price_num": 280.0, "date_ms": 1723680000000, "listing_status": "closed", "condition_text": "great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Elysian Pilgrim", "raw_text": "For Sale Sold: Elysian Pilgrim Price 290.00 USD Condition Good Negotiability Or best offer Ships to United States of America Elysian Pilgrim: Just got this one very recently too. For the price, it sounds really good and I think it stands out as a strong contender for best IEM under $500. Unfortunately it sounds a little too reminiscent of my Supernova, so it doesn't really have a place in my collection. Comes with... Zeno26 Listing Aug 12, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Zeno26", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.73035/", "price_num": 290.0, "date_ms": 1723420800000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Closed: Elysian Pilgrim", "raw_text": "For Sale Closed: Elysian Pilgrim Price 320.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Mint condition Elysian Pilgrim. Upgraded to the noir, so selling these. I have an effect audio ares s 4.4 pentaconn ear cable if you\u2019d like to purchase together for $400. Cable retails for $180. With that cable, sounds very close to the noir. Not looking to trade right now Thanks! shaunbr15 Listing Jul 14, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "shaunbr15", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.71428/", "price_num": 320.0, "date_ms": 1720915200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Sold: Elysian Pilgrim", "raw_text": "For Sale Sold: Elysian Pilgrim Price 300.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Up for sale is a like-new Elysian Pilgrim including cable (3.5mm), case and original packaging as shown in photos. Note: the eartips are not included. Really well built with a smooth, resolving sound. Price includes PayPal fees and shipping to CONUS. AaronBroad Listing Jun 28, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "AaronBroad", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.70572/", "price_num": 300.0, "date_ms": 1719532800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 20, "title": "Sold: Elysian Pilgrim", "raw_text": "For Sale Sold: Elysian Pilgrim Price 325.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Like new Elysian Pilgrim with all original packaging. I was planning to wait for the Noir but got trigger happy. Lovely IEM as many have said, but just a tad bright sometimes to be all rounders for my ears, so moving on. Shipping from the NYC metro area in NJ. Shipping via USPS to CONUS only... PixelSquish Listing Jun 4, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "PixelSquish", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.69196/", "price_num": 325.0, "date_ms": 1717459200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 21, "title": "Sold: Elysian Pilgrim", "raw_text": "For Sale Sold: Elysian Pilgrim Price 325.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Selling my Elysian Pilgrim in excellent condition. Just 1 week old. They Sound good for the price but it's a tad bright for my liking. pp fees and shipping included in price singingbee Listing May 18, 2024 Comments: 1 Category: In-Ear Monitors", "seller_username": "singingbee", "url": "https://www.head-fi.org/classifieds/elysian-pilgrim.68197/", "price_num": 325.0, "date_ms": 1715990400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 400.0;
@@ -2124,6 +2191,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">

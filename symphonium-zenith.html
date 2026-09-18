@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-symphonium.html">Symphonium</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-symphonium.html">Symphonium</a>
+    <button class="fr-preview-trigger" type="button" data-fr-name="Symphonium Zenith" data-fr-label="Symphonium Zenith" data-fr-embed-url="https://precog.squig.link/?embed&amp;share=Symphonium_Zenith" data-fr-url="https://precog.squig.link/?share=Symphonium_Zenith" aria-haspopup="dialog" aria-expanded="false" aria-label="Preview the frequency response for Symphonium Zenith"><span class="fr-preview-icon" aria-hidden="true">⌁</span> FR graph</button>
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -1072,6 +1123,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "Symphonium Zenith", "raw_text": "Selling my Symphonium Audio Zenith with stock Litmus cable in flawless condition. It comes with the original box and all acessories.\nPrice: $1500 Shipped Paypal F&F or G&S(+3.5%)\nThanks for looking!\nsubmitted by /u/Amazing-Review6032\n[link] [comments]", "seller_username": "Amazing-Review6032", "url": "https://www.reddit.com/r/AVexchange/comments/1wh6u0o/wts_usmd_h_symphonium_zenith_w_paypal/#item-1", "price_num": 1500.0, "date_ms": 1789493236000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Symphonium Zenith", "raw_text": "Symphonium Zenith Listing ID: 115363 For Sale 1,500.00 USD Condition Excellent/Like New Negotiability Firm Ships To North America Selling my Symphonium Audio Zenith with stock Litmus cable in flawless condition. It comes with the original box and all acessories. Price does not include PayPal fees and I will cover Ground shipping within the U.S I\u2019m also open to trading for... Listed by: sanhnguyen97s (15) Listed: 2026-09-12 Last edited: 2026-09-13", "seller_username": "sanhnguyen97s", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.115363/", "price_num": 1500.0, "date_ms": 1789171200000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 2, "title": "Symphonium Zenith w/ Dark Matter", "raw_text": "Symphonium Zenith w/ Dark Matter Listing ID: 115325 For Sale 1,500.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Up for sale is this awesome newest release from Symphonium. Looking for 1500 net to me. Price does include 2 Day UPS shipping in the Conus, but not PP fees. Would consider Flagship DAP trades. Listed by: mmmwafflerunoff (40) Listed: 2026-09-11 Last edited: 2026-09-11", "seller_username": "mmmwafflerunoff", "url": "https://www.head-fi.org/classifieds/symphonium-zenith-w-dark-matter.115325/", "price_num": 1500.0, "date_ms": 1789084800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 3, "title": "Symphonium Zenith", "raw_text": "Timestamp\nOriginal owner, ordered from Elise Audio. Had them since mid July.\nGreat IEMs, just want to try new things.\nGreat condition with all original packaging and accessories. Comes with the original Litmus cable.\n$1600 with next day air shipping and insured. Signature required. USA ONLY.\nsubmitted by /u/dheisman21892\n[link] [comments]", "seller_username": "dheisman21892", "url": "https://www.reddit.com/r/AVexchange/comments/1wa63lv/wts_usga_h_symphonium_zenith_w_paypal_venmo_zelle/#item-1", "price_num": 1600.0, "date_ms": 1788819036000, "listing_status": "closed", "condition_text": "with all original packaging and accessories", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title | active_status_checker_recovered_price_on_confirmed_close"}, {"row_id": 4, "title": "Symphonium Zenith + Vortex Iris 8W Upgrade Cable, LAIV Crescendo Verse", "raw_text": "Timestamp\nThese are both fantastic, but don't feel like I need them and want to try less expensive things.\nOriginal owner for both and can provide invoices for both. Both owned for about 2 months and used on and off for that time period. Still very new.\nLooking for $1800 shipped for the Zenith (Upgrade cable bundle is $2200 and duties was about 200) and $750 shipped for the Verse .\nOnly considering trades that involve a Myth upgrade cable or a Flathead Audio Studio.\nPlease remember to leave a comment before messaging. Thank you for looking.\nsubmitted by /u/SolLegend\n[link] [comments]", "seller_username": "SolLegend", "url": "https://www.reddit.com/r/AVexchange/comments/1w5meq5/wtsusavah_symphonium_zenith_vortex_iris_8w/#item-1", "price_num": 1800.0, "date_ms": 1788381447000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 5, "title": "Symphonium Zenith", "raw_text": "Wts symphonium zeniths in good condition with og box and accessories\nShipping included for conus intl pays ship\n1600$ obo\nsubmitted by /u/SnooOpinions8623\n[link] [comments]", "seller_username": "SnooOpinions8623", "url": "https://old.reddit.com/r/AVexchange/comments/1v479ni/wtsusca_hsymphonium_zenith_w_paypal/#item-1", "price_num": 1600.0, "date_ms": 1784793375000, "listing_status": "active", "condition_text": "with og box and accessories", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_http_backoff_this_run_rss=None:len0_pages=none_http_skipped=1_browser=0_browser_budget_exhausted", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 6, "title": "Symphonium Zenith", "raw_text": "Symphonium Zenith\nListing ID: 112124\nFor Sale 1,575.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To United States Of America\nSelling my like new Symphonium Zenith. Pristine condition and excellent channel matching (measured to confirm). Box and tips and all accessories included. Cable is Litmus 4W.\nListed by: drewbadour (16)\nListed: 2026-07-13\nLast edited: 2026-07-13\nSOLD", "seller_username": "drewbadour", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.112124/", "price_num": 1575.0, "date_ms": 1783900800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 7, "title": "Symphonium Zenith", "raw_text": "Symphonium Zenith\nListing ID: 110994\nFor Sale 1,650.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To United States Of America\nPristine and complete stock (no upgrade cable). Beautifully tuned. No trades. Reason for sale is financial. Please review my feedback. I'll cover any fees and shipping. Verified address and feedback expected.\nListed by: Mllump (142)\nListed: 2026-06-20\nSOLD", "seller_username": "Mllump", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.110994/", "price_num": 1650.0, "date_ms": 1781913600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "category_listing_id_text_fallback_v8"}, {"row_id": 8, "title": "Symphonium Zenith", "raw_text": "Symphonium Zenith\nListing ID: 110951\nFor Sale 1,625.00 USD\nCondition Excellent/Like New\nNegotiability Firm\nShips To AnywhereNorth AmericaUnited States Of America\nPerfect condition; full box and accessories. Included stock cable is 4.4mm. Price is net to me. Free shipping within USA; international $25-50 extra.\nListed by: Rolu (82)\nListed: 2026-06-19\nLast edited: 2026-06-22", "seller_username": "Rolu", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.110951/", "price_num": 1625.0, "date_ms": 1781827200000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_verified_or_left_active | active_status_checker_status_unclear_left_unchanged | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_unclear_left_unchanged"}, {"row_id": 9, "title": "Sold: Symphonium Zenith [W] Prisma Lux/Lumen", "raw_text": "Sold: Symphonium Zenith [W] Prisma Lux/Lumen Home Classifieds Headphones For Sale / Trade In-Ear Monitors Watch \u2022\u2022\u2022 Listing ID: 110722 Views: 154 1,700.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Symphonium Zenith SN#10 These sound amazing but unfortunately will have to part ways because of fitment issues, despite tip rolling. It has less than 5 hours of use and is in excellent like new condition with no signs of cosmetic wear or damage. Original box and accessories included. Accessories: Metal carrying puck, 2 sets of stock tips SML (Divinus Velvet Wide Bore and Azla Sednaearfit Origin), Mesh cloth IEM carrying pouch, Mesh cloth ear tips pouch, Sticker, Symphonium microfiber, IEM cleaning brush, and 2w cable. Looking for $1700 PayPal net to me. Will ship out within 24 hours of sale. Open to trades for Prisma Lux/Lumen and potentially others higher/lower I have 10+ trades on r/AvExchange and 20+ on r/MouseMarket. Can provide more proof and timestamps if necessary. Listed by: FreeUzi (0) Listed: 2026-06-15 Last edited: 2026-06-15 IMG_3252.jpeg 3.6 MB \u00b7 Views: 0 There are no comments to display.", "seller_username": "FreeUzi", "url": "https://www.head-fi.org/classifieds/symphonium-zenith-w-prisma-lux-lumen.110722/", "price_num": 1700.0, "date_ms": 1781481600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "current_listing_collect_usd_only_clean_v4"}, {"row_id": 10, "title": "Sold: Symphonium Zenith - Mint/8W Cable", "raw_text": "Sold: Symphonium Zenith - Mint/8W Cable Home Classifieds Headphones For Sale / Trade In-Ear Monitors Watch \u2022\u2022\u2022 Listing ID: 110251 Views: 226 1,700.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America This set of Symphonium Zenith are in mint condition as they\u2019ve been minimally used. They include all original packaging and all original accessories. As seen in the main photo this is serial number 3. They are the new flagship set from Symphonium and have received a number of stellar reviews. Selling this due to upgrading. This also includes the Dark Matter 8W upgrade cable. I offer next business day mail out with shipping cost included in the price. Thanks for your interest! Listed by: Markmurd (79) Listed: 2026-06-05 IMG_4790.jpeg 3.2 MB \u00b7 Views: 0 IMG_4792.jpeg 198.7 KB \u00b7 Views: 0 IMG_4793.jpeg 180.9 KB \u00b7 Views: 0 IMG_4791.jpeg 186.2 KB \u00b7 Views: 0 There are no comments to display.", "seller_username": "Markmurd", "url": "https://www.head-fi.org/classifieds/symphonium-zenith-mint-8w-cable.110251/", "price_num": 1700.0, "date_ms": 1780617600000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "current_listing_collect_usd_only_clean_v4"}, {"row_id": 11, "title": "Hello I\u2019m looking to sell my like-new Symphonium Zenith for", "raw_text": "Hello I\u2019m looking to sell my like-new Symphonium Zenith for $1700 net to me. All original packaging and accessories are included as shown in the images. Sad to let this go but I can confirm it is a legendary set. Included is the 8W Dark Matter cable which is valued at $500 and its Serial Number is #2.\nPlease comment before pm.\nEdit: forgot to change state to California but local to Los Angeles area at the moment.\nsubmitted by /u/ddllee19\n[link] [comments]", "seller_username": "ddllee19", "url": "https://old.reddit.com/r/AVexchange/comments/1tw9sz8/wts_usail_h_symphonium_zenith_w_8w_dark_matter/#item-1", "price_num": 1700.0, "date_ms": 1780538165000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 12, "title": "Closed: Symphonium Zenith w/ Dark Matter 8W Cable", "raw_text": "Home Forums Head Gear Articles Sponsors Classifieds Log in Register Search New listings New comments Search listings Closed: Symphonium Zenith w/ Dark Matter 8W Cable Home Classifieds Headphones For Sale / Trade In-Ear Monitors Listing ID: 110022 Views: 137 1,450.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Hi, selling off my mint Symphonium Zenith Launch Edition w/ the Dark Matter 8W upgrade cable which is the $2399 package. Comes with all accessories, box in perfectly mint condition. PP fees and shipping on me. Will ship to CONUS only. Thanks. Listed by: Adnan Firoze (109) Listed: 2026-06-01 008.jpg 1.2 MB \u00b7 Views: 0 001.jpg 1.1 MB \u00b7 Views: 0 002.jpg 2.5 MB \u00b7 Views: 0 003.jpg 1.3 MB \u00b7 Views: 0 004.jpg 1.8 MB \u00b7 Views: 0 005.jpg 2 MB \u00b7 Views: 0 006.jpg 1.2 MB \u00b7 Views: 0 007.jpg 1.3 MB \u00b7 Views: 0 009.jpg 913.1 KB \u00b7 Views: 0 010.jpg 1 MB \u00b7 Views: 0 Adnan Firoze 100+ Head-Fier Adnan Firoze Today at 6:44 PM Keeping it for now. Sounds too good. Maybe soon. Reactions: LegitJoe87, DenverFi and shaunbr15 shaunbr15 Head-Fier shaunbr15 Today at 6:49 PM Agree. I really like Zenith Reactions: LegitJoe87 musiland 100+ Head-Fier musiland 43 minutes ago What a great set! System: TEAC CD3000, Holo Audio Spring3 + Bliss KTE IEMs: Final A4000 Headphones: Meze Elite Tungsten, Hifiman Susvara, Hedd D1, Nan-7, HD490Pro Reactions: LegitJoe87 Home Classifieds Headphones For Sale / Trade In-Ear Monitors English (US) Contact us Terms and rules Privacy policy Help Home RSS Community platform by XenForo\u00ae \u00a9 2010-2026 XenForo Ltd. | Media embeds via s9e/MediaSites This site uses cookies to help personalise content, tailor your experience and to keep you logged in if you register. By continuing to use this site, you are consenting to our use of cookies.", "seller_username": "Adnan Firoze", "url": "https://www.head-fi.org/classifieds/symphonium-zenith-w-dark-matter-8w-cable.110022/", "price_num": 1450.0, "date_ms": 1780272000000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}, {"row_id": 13, "title": "Closed: Symphonium Zenith", "raw_text": "Closed: Symphonium Zenith Home Classifieds Headphones For Sale / Trade In-Ear Monitors Watch \u2022\u2022\u2022 Listing ID: 109678 Views: 1023 1,650.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Up for sale is my Symphonium Zenith with stock 2W cable and full box / accessories. Condition is like new with no visible scratches or scuffs. PayPal G&S only. I can split PayPal fees (2.25% for each party) and tracked and insured shipping. Feel free to ask any questions via DM. No trades please and thanks for looking! Listed by: mancur (4) Listed: 2026-05-26 IMG_3296.jpeg 167.3 KB \u00b7 Views: 0 IMG_3297.jpeg 74.9 KB \u00b7 Views: 0 IMG_3299.jpeg 81.4 KB \u00b7 Views: 0 CB7FB8KgYh24E 500+ Head-Fier CB7FB8KgYh24E Jun 3, 2026 Did PP up their fee? Isnt it 3% total? Like Report Reactions: Takeda`1537 and apagumila apagumila 100+ Head-Fier apagumila Jun 3, 2026 CB7FB8KgYh24E said: Did PP up their fee? Isnt it 3% total? Yup G&S is 2.99%. 4.5% is for international transfers. My personal IEM ranking list IEMs: Aful Dawn-X, Meze Astru, Oriolus Szalayi, Flipears Aisha Electri, Softears RSV MK2, Softears Volume S Headphones: Viking Audioforge Draupnir (soon), SJY Zeph, SJY Horizon Closed Carbon Sources: Luxsin X8, JDS Labs Element IV, Fiio BTR17 Spoiler: Past IEMs Owned and Tested Like Report Reactions: CB7FB8KgYh24E drewbadour 100+ Head-Fier drewbadour Jun 8, 2026 @shaunbr15 audionotions.com | Ranking Lists Headphones: Heddphone D1 IEMs: Lumen, Trio, Onyx, MMK4 Like Report Reactions: shaunbr15", "seller_username": "mancur", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.109678/", "price_num": 1650.0, "date_ms": 1779753600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "current_listing_collect_usd_only_clean_v4"}, {"row_id": 14, "title": "Sold: Symphonium Zenith", "raw_text": "Home Forums Head Gear Articles Sponsors Classifieds Log in Register Search New listings New comments Search listings Sold: Symphonium Zenith Home Classifieds Headphones For Sale / Trade In-Ear Monitors Listing ID: 108829 Views: 198 1,700.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling Symphonium Zenith in excellent condition. Only selling to upgrade, as I love this iem. Serial number 3, comes with the upgraded dark matter 8w cable. Will post pics soon, price net to me. Shipping included Listed by: shaunbr15 (65) Listed: 2026-05-11 There are no comments to display. Home Classifieds Headphones For Sale / Trade In-Ear Monitors English (US) Contact us Terms and rules Privacy policy Help Home RSS Community platform by XenForo\u00ae \u00a9 2010-2026 XenForo Ltd. | Media embeds via s9e/MediaSites This site uses cookies to help personalise content, tailor your experience and to keep you logged in if you register. By continuing to use this site, you are consenting to our use of cookies.", "seller_username": "shaunbr15", "url": "https://www.head-fi.org/classifieds/symphonium-zenith.108829/", "price_num": 1700.0, "date_ms": 1778457600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": ""}];
 const originalMsrpUsd = 1800.0;
@@ -2012,6 +2079,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">

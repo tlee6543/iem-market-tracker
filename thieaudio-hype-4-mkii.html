@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-thieaudio.html">ThieAudio</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-thieaudio.html">ThieAudio</a>
+    <button class="fr-preview-trigger" type="button" data-fr-name="ThieAudio Hype 4 MKII" data-fr-label="Thieaudio Hype 4 MKII" data-fr-embed-url="https://precog.squig.link/?embed&amp;share=ThieAudio_Hype_4_MKII" data-fr-url="https://precog.squig.link/?share=ThieAudio_Hype_4_MKII" aria-haspopup="dialog" aria-expanded="false" aria-label="Preview the frequency response for ThieAudio Hype 4 MKII"><span class="fr-preview-icon" aria-hidden="true">⌁</span> FR graph</button>
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -1056,6 +1107,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "Thieaudio Hype 4 MKII - Complete Box & Full Accessories", "raw_text": "Timestamp: https://imgur.com/a/LmjU35J\nSOLD Up for sale is an immaculate pair of Thieaudio Hype 4 MKII In-Ear Monitors. Bought these used and kept in amazing condition daily. Looking to sell to help fund buying a laptop soon!\nCondition Details:\nIEM Shells & Nozzles : In pristine condition. The aluminum bodies are flawless, and the fine metal nozzle filters have been carefully maintained and are perfectly clean. Fully tested and performing 100% beautifully.\nCable & Hardware : The thick stock cable and swappable modular jacks are completely sanitized; no stiffness or sticky residue.\nAccessories : Complete retail package. Includes the original box, carrying case, modular plugs, tip organization tray, and paperwork.\nCarrying Case Note : The case still opens and closes smoothly. There is a small gap with missing zipper teeth on the left track (see the annotated photo), but the slider glides past it completely fine and the case seals securely.\nPricing:\n$285 Shipped via PayPal Goods & Services (G&S)\nor\n$260 Shipped via PayPal Friends & Family (F&F)\nPrice includes shipping within the continental US. Please comment here before sending a PM!\nsubmitted by /u/vuldera\n[link] [comments]", "seller_username": "vuldera", "url": "https://www.reddit.com/r/AVexchange/comments/1w97ree/wts_usapa_h_thieaudio_hype_4_mkii_complete_box/#item-1", "price_num": 285.0, "date_ms": 1788727638000, "listing_status": "closed", "condition_text": "daily", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_title_or_description_sold_closed | confirmed_priced_nonbundle_included"}, {"row_id": 1, "title": "(RESERVED) ThieAudio Hype 4 MkII \u2014 Like New", "raw_text": "(RESERVED) ThieAudio Hype 4 MkII \u2014 Like New Listing ID: 113699 For Sale 350.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Excellent condition. PayPal or Venmo only. No trade offers please. Free shipping within the CONUS. Please DM with any questions. Thanks! Listed by: ToobinTobes (43) Listed: 2026-08-10 Last edited: 2026-08-10", "seller_username": "ToobinTobes", "url": "https://www.head-fi.org/classifieds/reserved-thieaudio-hype-4-mkii-%E2%80%94-like-new.113699/", "price_num": 350.0, "date_ms": 1786320000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 2, "title": "Thieaudio Hype 4 mk2", "raw_text": "Hello everyone. Looking to sale my excellent condition Thieaudio Hype 4 mk2. I am the original owner and purchased from Musicteck. Comes with full package. Eartips and cable have not been used. They have about 10 hours of use. Only reason for selling is because unexpected expense. These are a fantastic set and I wish I could hold onto them. Would like to get $230 F&F or $240 G&S and that includes shipping. Let me know if you have any questions. Thanks\nsubmitted by /u/Stinkstink3\n[link] [comments]", "seller_username": "Stinkstink3", "url": "https://old.reddit.com/r/AVexchange/comments/1uyjb5o/wtsncushthieaudio_hype_4_mk2wpaypal/#item-1", "price_num": 230.0, "date_ms": 1784245378000, "listing_status": "closed", "condition_text": "thieaudio hype 4 mk2", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 1, "is_possible_duplicate": 1, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title | active_status_checker_recovered_price_on_confirmed_close"}, {"row_id": 3, "title": "Hype 4 MKII", "raw_text": "__STRIKE_START__ Hype 4 MKII __STRIKE_END__ __STRIKE_START__ $200 __STRIKE_END__ __STRIKE_START__ - No box, missing original cable so throwing in a amazon cable i have. No tips. __STRIKE_END__ SOLD", "seller_username": "Moosty_", "url": "https://old.reddit.com/r/AVexchange/comments/1ur9u36/wts_usami_h_thieaudio_hype_4_mkii_fiio_fa19/#item-1", "price_num": 200.0, "date_ms": 1783554618000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v15_inline_description_price_split_fix | reddit_item_line_strikethrough_sold | comments_checked_rss_and_html | confirmed_priced_nonbundle_included"}, {"row_id": 4, "title": "Thieaudio Hype 4 mk2", "raw_text": "Selling my hype 4 mk2 in excellent condition. Has been kept in its case the entire time it's not been used. Original owner.\nI don't have the original box but have all accessories. I have used the medium silicon tips and can sanitize and include if buyer wants it, all other tips are unused.\nAsking: $260 Shipped / $240 Local cash\nShipping only within con us\nComment before sending chat and let me know if any questions.\nsubmitted by /u/JUICEe36\n[link] [comments]", "seller_username": "JUICEe36", "url": "https://old.reddit.com/r/AVexchange/comments/1udx76a/wts_usami_h_thieaudio_hype_4_mk2_w_paypal_local/#item-1", "price_num": 240.0, "date_ms": 1782257671000, "listing_status": "closed", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 5, "title": "Thieaudio Hype 4 MKII", "raw_text": "https://imgur.com/a/7nf4TO5\nbox + accessories\n230 shipped\nsubmitted by /u/phatanvo\n[link] [comments]", "seller_username": "phatanvo", "url": "https://old.reddit.com/r/AVexchange/comments/1toxei5/wtsusaorhthieaudio_hype_4_mkii_w_paypal/#item-1", "price_num": null, "date_ms": 1779863935000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=thieaudio hype | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_stored_reddit_importer_notes"}, {"row_id": 6, "title": "Thieaudio Hype 4 Mk2", "raw_text": "Timestamp: https://imgur.com/a/OVdrght\nShipping to CONUS. Looking for: $290 g&s or $280 F&F\nHave some great condition hype 4 Mk2's\nReally enjoy these, so I'm looking to upgrade to the Monarch mk4s now\nComes with all original accessories. Tips are all unused/unopened. Any questions then feel free to reach out.\nCan ship out same day / next at the latest.\nsubmitted by /u/Osiris33333\n[link] [comments]", "seller_username": "Osiris33333", "url": "https://old.reddit.com/r/AVexchange/comments/1st4wu8/wts_usaks_h_thieaudio_hype_4_mk2_w_paypal/#item-1", "price_num": 290.0, "date_ms": 1776908567000, "listing_status": "closed", "condition_text": "hype 4 mk2", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | no_price_unchecked | reddit_search_rss_query=thieaudio hype"}, {"row_id": 7, "title": "Thieaudio Hype 4 MKII", "raw_text": "Thieaudio Hype 4 MKII: $300", "seller_username": "CaidenNailBite", "url": "https://old.reddit.com/r/AVexchange/comments/1sfyuoi/wts_uspa_h_iem_collection_for_sale_10_likenew/#item-1", "price_num": 300.0, "date_ms": 1775667880000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=thieaudio hype"}, {"row_id": 8, "title": "Thieaudio Hype 4 MKII - Mint Condition", "raw_text": "This set of Thieaudio Hype 4 MKII IEMs are in mint condition as they have only been used on a couple of brief occasions. They include all original packaging as well as all original accessories. Their driver configuration is a hybrid combining 2 Dynamic Drivers and 4 Balanced Armatures with the shells being a metal build. Their cable is a 2-pin with a 4.4mm connector.\nI offer next business day mail out with shipping costs included in the price. I do offer a discount for PayPal Friends & Family. Thanks for your interest!\nsubmitted by /u/Markmurd61\n[link] [comments]", "seller_username": "Markmurd61", "url": "https://old.reddit.com/r/AVexchange/comments/1rxhazj/wtsustxhthieaudio_hype_4_mkii_mint_condition/#item-1", "price_num": null, "date_ms": 1773870157000, "listing_status": "closed", "condition_text": "as they have only been used on a couple of brief occasions", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_unconfirmed_sale_unchecked | no_price_unchecked | reddit_search_rss_query=thieaudio hype | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 9, "title": "Thieaudio Hype 4 MK II", "raw_text": "Sold to u/phatanvo\nPurchased here on r/AVexchange about two weeks ago. IEM is in great condition, comes with original box and accessories. However, the zipper teeth on the carrying case are broken, and zipping is only somewhat functional. I can include another carrying case if needed. Small and medium foam and silicone stock tips have been used and cleaned.\nLooking for 250 G&S Paypal or 240 F&F. Shipping to CONUS only. Comment before DM, and no trades. Thanks!\nsubmitted by /u/bvcao1\n[link] [comments]", "seller_username": "bvcao1", "url": "https://old.reddit.com/r/AVexchange/comments/1ri8ifu/wts_usaca_h_thieaudio_hype_4_mk_ii_w_paypal/#item-1", "price_num": null, "date_ms": 1772397831000, "listing_status": "closed", "condition_text": "great condition", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | no_price_unchecked | reddit_search_rss_query=thieaudio hype"}, {"row_id": 10, "title": "Thieaudio Hype 4 mk2", "raw_text": "Hey everyone! Looking to sale my mint ThieAudio Hype 4 mk2. These come with all original accessories,tips,etc. Eartips and cable are unused. These only have about 5 hours of listening time. I got in the UM Mest mk3 and will be listening to them mainly for a little while. Let me know if you have any questions. Asking $295 shipped. Only looking to sale,no trades. Thanks\nsubmitted by /u/Stinkstink3\n[link] [comments]", "seller_username": "Stinkstink3", "url": "https://old.reddit.com/r/AVexchange/comments/1r49ugu/wtsncushthieaudio_hype_4_mk2wpaypal_295/#item-1", "price_num": 295.0, "date_ms": 1771039577000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=thieaudio hype"}, {"row_id": 11, "title": "Thieaudio Hype 4 Mk II", "raw_text": "Comes with box and all accessories\n$270 paypal G&S\n$260 paypal F&F\nShipping included to CONUS\nPlease comment first and let me know if there are any questions! No trades.\nsubmitted by /u/kwhychange\n[link] [comments]", "seller_username": "kwhychange", "url": "https://old.reddit.com/r/AVexchange/comments/1r2aky4/wtsuscah_thieaudio_hype_4_mk_ii_w_paypal/#item-1", "price_num": 270.0, "date_ms": 1770846138000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=thieaudio hype"}, {"row_id": 12, "title": "Thieaudio Hype 4 Mk II", "raw_text": "Comes with box and all accessories\nPrice drop from a previous post\n$300 paypal G&S\n$290 paypal F&F\nShipping included to CONUS\nPlease comment first and let me know if there are any questions!\nsubmitted by /u/kwhychange\n[link] [comments]", "seller_username": "kwhychange", "url": "https://old.reddit.com/r/AVexchange/comments/1qvafi1/wtsuscah_thieaudio_hype_4_mk_ii_w_paypal/#item-1", "price_num": 300.0, "date_ms": 1770167530000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=thieaudio hype | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 13, "title": "Thieaudio Hype 4 MkII", "raw_text": "Comes with box and all accessories. Tips unused.\n$330 paypal G&S\n$315 paypal F&F\nShipping included to CONUS\nPlease comment first and let me know if there are any questions!\nsubmitted by /u/kwhychange\n[link] [comments]", "seller_username": "kwhychange", "url": "https://old.reddit.com/r/AVexchange/comments/1qsir1y/wtsuscah_thieaudio_hype_4_mkii_w_paypal/#item-1", "price_num": 330.0, "date_ms": 1769904450000, "listing_status": "closed", "condition_text": "used", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=thieaudio hype | active_status_checker_stale_timeout_30d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}];
 const originalMsrpUsd = 400.0;
@@ -1996,6 +2063,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">

@@ -295,6 +295,52 @@ td.status-reason { overflow: hidden; }
 .grab-link-btn:hover { background: #f3f3f3; }
 .grab-link-btn.copied { background: #ecfdf3; border-color: #b7e4c7; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
+.iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
+.iem-subtitle-row > a { font-weight: bold; }
+.fr-preview-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 27px;
+    border: 1px solid #b7c7dc;
+    background: #f4f8fd;
+    color: #164f86;
+    border-radius: 999px;
+    padding: 4px 9px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.fr-preview-trigger:hover,
+.fr-preview-trigger:focus-visible,
+.fr-preview-trigger[aria-expanded="true"] { background: #e5f0fb; border-color: #6f98c3; outline: none; }
+.fr-preview-icon { font-size: 17px; line-height: .7; transform: rotate(-5deg); }
+.iem-ranking-name .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.main-table .iem-col .fr-preview-trigger { display: flex; margin-top: 6px; width: max-content; }
+.fr-preview-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #bcc7d4;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.fr-preview-popover[hidden] { display: none; }
+.fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
+.fr-preview-title { font-size: 15px; font-weight: 800; }
+.fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
+.fr-preview-close { border: 0; background: transparent; color: #555; padding: 0 3px; font-size: 24px; line-height: 1; cursor: pointer; }
+.fr-preview-frame-wrap { position: relative; width: 100%; height: 390px; background: #fafafa; }
+.fr-preview-frame-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.fr-preview-loading { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: #66717d; font-size: 13px; background: #fafafa; }
+.fr-preview-loading[hidden] { display: none; }
+.fr-preview-open { display: block; padding: 9px 12px 11px; border-top: 1px solid #e4e8ec; font-size: 12px; font-weight: 700; }
 .table-scroll {
     width: 100%;
     overflow-x: auto;
@@ -702,6 +748,8 @@ score backgrounds cannot be lost to broader table/cell styling.
     .sponsor-shell { grid-template-columns: 1fr; }
     .iem-title-row { align-items: flex-start; }
     .grab-link-wrap { width: 100%; justify-content: flex-start; }
+    .fr-preview-frame-wrap { height: min(360px, 58vh); }
+    .fr-preview-popover { border-radius: 10px; }
     .rankings-title-row { display: block; }
     .rankings-title-actions { justify-content: flex-start; margin: 12px 0 0 0; }
     .changelog-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -774,7 +822,10 @@ score backgrounds cannot be lost to broader table/cell styling.
         <span id="grab-link-feedback" class="grab-link-feedback" role="status" aria-live="polite"></span>
     </div>
 </div>
-<p><a href="brand-elysian.html">Elysian</a></p>
+<div class="iem-subtitle-row">
+    <a href="brand-elysian.html">Elysian</a>
+    
+</div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
         <span class="source-toggle-label">Marketplace:</span>
@@ -1152,6 +1203,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 </table>
+
+<aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div>
+            <div id="frPreviewTitle" class="fr-preview-title">Frequency response</div>
+            <div id="frPreviewSubtitle" class="fr-preview-subtitle">Precogvision measurements</div>
+        </div>
+        <button id="frPreviewClose" class="fr-preview-close" type="button" aria-label="Close frequency-response preview">×</button>
+    </div>
+    <div class="fr-preview-frame-wrap">
+        <div id="frPreviewLoading" class="fr-preview-loading">Loading graph…</div>
+        <iframe id="frPreviewFrame" title="Frequency-response graph from Precogvision Squiglink" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <a id="frPreviewOpen" class="fr-preview-open" href="https://precog.squig.link/" target="_blank" rel="noopener">Open interactive graph ↗</a>
+</aside>
+
 <script>
 const allRows = [{"row_id": 0, "title": "Time stamps: https://imgur.com/a/elysian-diva", "raw_text": "Time stamps: https://imgur.com/a/elysian-diva-2023-qdc-anole-vx-cables-hugo-2-bluetooth-4-4-pentacon-adapter-lVgFdnu\n\u2060\u2060\u2060 A Diva up for sale in excellent condition. I\u2019m selling them to buy a FatFreq GM I purchased these approximately a week ago. They sound great with forward vocals and a nice thumpy sub-bass. Pictures show whats included. $960 PayPal Goods & Services, shipping is included for the CONUS.\n\u2060\u2060\u2060Selling my second set of VXs so I can upgrade, the paint is slightly fading on the number switches. 3 cables (1 stock, {2 3rd party}) with QDC connectors Stock case no ear tips. $885 shipping is not included, PP G&S fee included.\n\u2060\u2060\u2060$350 Chord Hugo 2 3.5&4.4. bluetooth adapter to use codecs other than APTX. PayPal G&S fee included, shipping is not.\n\u2060\u2060\u2060$50 Dekoni Ensemble Cable 3.5mm pins w. 6.35\n\u2060\u2060\u2060$50 Strauss and Wagner iem Boom Mic, type c connector\nsubmitted by /u/0nly-Temporary\n[link] [comments]", "seller_username": "0nly-Temporary", "url": "https://old.reddit.com/r/AVexchange/comments/1pngca7/wtsusilhelysian_diva_2023_black_qdc_anole_vx/#item-1", "price_num": 2023.0, "date_ms": 1765826372000, "listing_status": "closed", "condition_text": "excellent", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=qdc anole | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 1, "title": "Sold: Elysian Diva 23", "raw_text": "For Sale Sold: Elysian Diva 23 Price 1000.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Excellent condition Elysian Diva. Love this set, just doesn\u2019t get use in my collection right now. Spinfit w1 tips are unused and will add in a couple extra pentaconn ear cables as pictured. No issues, perfect working condition. Not looking for trades right now PayPal and shipping on me :) shaunbr15 Listing Nov 13, 2025 Comments: 5 Category: In-Ear Monitors", "seller_username": "shaunbr15", "url": "https://www.head-fi.org/classifieds/elysian-diva-23.98422/", "price_num": 1000.0, "date_ms": 1762992000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 2, "title": "Sold: Elysian Diva 23 (Blue)", "raw_text": "For Sale Sold: Elysian Diva 23 (Blue) Price 925.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Hey Head Fi, Great condition set of Diva 23's in blue with the metal nozzles. I enjoyed the tuning options, in particular the On/On 'Blue' option for a very fun high bass and high treble. For vocals, outstanding and the bass is definitely no slouch. But I prefer some of my other sets... ekman321 Listing Sep 24, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "ekman321", "url": "https://www.head-fi.org/classifieds/elysian-diva-23-blue.95650/", "price_num": 925.0, "date_ms": 1758672000000, "listing_status": "closed", "condition_text": "like new, excellent, great condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 3, "title": "Sold: Elysian Diva", "raw_text": "For Sale Sold: Elysian Diva Price 1000.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Good condition Elysian Diva 23 All box and accessories included Selling at 1200 USD, excluding shipping and fees. Shipping from Singapore Feel free to reach out and discuss Thanks! noxenal Listing Sep 11, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "noxenal", "url": "https://www.head-fi.org/classifieds/elysian-diva.94814/", "price_num": 1000.0, "date_ms": 1757548800000, "listing_status": "closed", "condition_text": "like new, excellent, good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 4, "title": "Closed: Elysian Diva", "raw_text": "For Sale Closed: Elysian Diva Price 760.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Like new, everything will be included. Timestamp and picture: https://www.reddit.com/r/AVexchange/comments/1nbozcn/wts_usany_h_elysian_diva_w_760_usd_paypal_gs/ David Giler Listing Sep 8, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Giler", "url": "https://www.head-fi.org/classifieds/elysian-diva.94663/", "price_num": 760.0, "date_ms": 1757289600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 5, "title": "Elysian Diva", "raw_text": "Elysian Diva - $880 Moondrop S8 - $300 EJ07 - $475\nsubmitted by /u/OppositeRabbit3194\n[link] [comments]", "seller_username": "OppositeRabbit3194", "url": "https://old.reddit.com/r/AVexchange/comments/1n74ooa/wtsusapgh_h_elysian_diva_no_og_tips_moondrop_s8/#item-1", "price_num": 880.0, "date_ms": 1756871471000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=moondrop s8 | active_status_checker_stale_timeout_30d_lister_never_updated"}, {"row_id": 6, "title": "Closed: Elysian Diva", "raw_text": "For Sale Closed: Elysian Diva Price 920.00 USD Condition Excellent/Like new Negotiability Firm Ships to North America Will include everything. No imperfections visible on the iem itself. $920 shipped. https://imgur.com/a/7SX7R9y David Giler Listing Aug 29, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Giler", "url": "https://www.head-fi.org/classifieds/elysian-diva.94136/", "price_num": 920.0, "date_ms": 1756425600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 7, "title": "Closed: Elysian Diva 23 & Z1R", "raw_text": "For Sale / Trade Closed: Elysian Diva 23 & Z1R Price 950.00 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere Item name: sony ier z1r + Fiio LC RE pro (4.4) worth ($170) Condition: 9/10 mint condition no scratch gasgas or anything if you saw every 1 hairlines/scrarch ill deduct ($10 every scratch/hailines) Complete: yes Price: 850 usd Issue: none perfectly balance l/r *measured* Item name: elysian... cbonao Listing Jun 30, 2025 Comments: 1 Category: In-Ear Monitors", "seller_username": "cbonao", "url": "https://www.head-fi.org/classifieds/elysian-diva-23-z1r.90904/", "price_num": 850.0, "date_ms": 1751241600000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 8, "title": "Sold: Elysian Diva", "raw_text": "For Sale Sold: Elysian Diva Price 950.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Rare and now discontinued. Blue color, perfect condition. Full box and accessories, minus the w1 tips. Including a box of tips - spinfit Omni in size ss, s, and m. Small Dunu ss, medium final type e and a large w1. Let me know your preferred ear tip size and I\u2019ll add some more PayPal and... shaunbr15 Listing Jun 23, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "shaunbr15", "url": "https://www.head-fi.org/classifieds/elysian-diva.90572/", "price_num": 950.0, "date_ms": 1750636800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 9, "title": "Sold: Elysian Diva \u201823 Like New", "raw_text": "For Sale Sold: Elysian Diva \u201823 Like New Price 1100.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America This was reserved, but just became available again. Selling my nearly brand new Elysian Diva 23. I bought it from Noteworthy Audio in January this year, received and opened it on Jan 8th. I love it, but I\u2019ve recently acquired others and would like to recoup some of the funds. Can\u2019t keep all of... Audioenophile Listing Mar 17, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Audioenophile", "url": "https://www.head-fi.org/classifieds/elysian-diva-%E2%80%9823-like-new.85081/", "price_num": 1100.0, "date_ms": 1742169600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 10, "title": "Sold: Elysian Diva (Black)", "raw_text": "For Sale / Trade Sold: Elysian Diva (Black) Price 0.01 USD Condition Excellent/Like new Negotiability Firm Ships to Anywhere This is the much-loved and now rare (no longer in production) Elysian Diva in black. Gorgeous IEM with a focus on stellar vocal delivery. Alas, they are not getting enough use from me. Hoping to find them a good home. Comes with all packaging and accessories. zlayde Listing Feb 17, 2025 Comments: 2 Category: In-Ear Monitors", "seller_username": "zlayde", "url": "https://www.head-fi.org/classifieds/elysian-diva-black.83466/", "price_num": null, "date_ms": 1739750400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 11, "title": "Sold: Elysian Diva", "raw_text": "For Sale Sold: Elysian Diva Price 0.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to Anywhere Great detail and resolution. Please message for more details. Thomastb Listing Jan 30, 2025 Comments: 0 Category: In-Ear Monitors", "seller_username": "Thomastb", "url": "https://www.head-fi.org/classifieds/elysian-diva.82508/", "price_num": null, "date_ms": 1738195200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 12, "title": "Sold: Elysian Diva (Blue)", "raw_text": "For Sale Sold: Elysian Diva (Blue) Price 1050.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Looking to sell my Elysian Divas. They are in excellent condition. Pretty much like new. They were purchased from Musicteck on April 30, 2024. It comes with all original accessories. I used my own tips, so the originals are untouched. I am also open to a local sale in OC/LA area (California). Gromu Listing Nov 20, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "Gromu", "url": "https://www.head-fi.org/classifieds/elysian-diva-blue.78495/", "price_num": 1050.0, "date_ms": 1714435200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 13, "title": "Sold: Elysian Diva '23 - [SOLD]", "raw_text": "For Sale Sold: Elysian Diva '23 - [SOLD] Price 0.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling my lightly used set of Elysian Diva '23 model. I'm the first owner, purchased from Musiteck. Set has very low hours - pick up a pair at a great price. All original accessories and packaging are included. Price includes payal and shipping within the US (no international please). I can... cn11 Listing Feb 14, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "cn11", "url": "https://www.head-fi.org/classifieds/elysian-diva-23-sold.62634/", "price_num": null, "date_ms": 1707868800000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 14, "title": "Sold: Elysian Diva", "raw_text": "For Sale Sold: Elysian Diva Price 1350.00 USD Condition New in box Negotiability Or best offer Ships to Anywhere Selling for a friend. In unopened condition Will ship anywhere. Price includes CONUS shipping and paypal fees If shipping outside of CONUS please PM for price quote. Do not hesitate to dm with questions. :) jwilliamhurst Listing Jan 5, 2024 Comments: 0 Category: In-Ear Monitors", "seller_username": "jwilliamhurst", "url": "https://www.head-fi.org/classifieds/elysian-diva.60228/", "price_num": 1350.0, "date_ms": 1704412800000, "listing_status": "closed", "condition_text": "new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 15, "title": "Sold: Elysian Diva", "raw_text": "For Sale Sold: Elysian Diva Price 1400.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America ...up until Aug 28, 2023 (A little over 4 months left). Also comes with a brand new bonus custom Pentaconn Ear cable (the type of connector for the Diva) with a modular L (right angle) source connector (2.5mm/3.5mm/4.4mm). Accept Paypal, Venmo, Zelle. (-5% off for F&F or Zelle payment). NO... teriboomer Listing Apr 14, 2023 Comments: 2 Category: In-Ear Monitors", "seller_username": "teriboomer", "url": "https://www.head-fi.org/classifieds/elysian-diva.45807/", "price_num": 1400.0, "date_ms": 1693180800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 16, "title": "Closed: 2023 Elysian Diva", "raw_text": "For Sale / Trade Closed: 2023 Elysian Diva Price 1200.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Looking to sell my 2023 Elysian Diva's. I am the first owner and purchased them new from musicteck a few months ago. Have only been lightly used indoors in the office and come with: Iems, 4.4mm cable, case, warranty card, cloth, mode selector and original packaging. Looking to either net $1200... Slap90 Listing Jul 25, 2023 Comments: 0 Category: In-Ear Monitors", "seller_username": "Slap90", "url": "https://www.head-fi.org/classifieds/2023-elysian-diva.51573/", "price_num": 1200.0, "date_ms": 1690243200000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 17, "title": "Sold: Elysian Diva", "raw_text": "For Sale Sold: Elysian Diva Price 1300.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to United States of America Selling excellent condition Elysian Diva. These are the original model without the metal nozzle. I love how they sound but I need to trim down my collection. No trades. Will offer discount for a local sale (OC/LA area in Southern California). Gromu Listing Jun 4, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "Gromu", "url": "https://www.head-fi.org/classifieds/elysian-diva.48772/", "price_num": 1300.0, "date_ms": 1685836800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 18, "title": "Sold: (Price Drop) Elysian Diva", "raw_text": "For Sale Sold: (Price Drop) Elysian Diva Price 1400.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America Asking $1450 shipped with Paypal G&S or $1400 F&F Also interested in trades for: Fatfreq Maestro SE 64 Audio U12T 64 Audio U4s Noble Audio Kublai Khan give or take some cash from either side depending on the IEM Timestamps and more close up pictures: Elysian Diva SOLD Zeno26 Listing Apr 14, 2023 Comments: 2 Category: In-Ear Monitors", "seller_username": "Zeno26", "url": "https://www.head-fi.org/classifieds/price-drop-elysian-diva.45791/", "price_num": 1400.0, "date_ms": 1681430400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}, {"row_id": 19, "title": "Sold: Elysian Diva (upgraded metal nozzle)", "raw_text": "For Sale / Trade Sold: Elysian Diva (upgraded metal nozzle) Price 1450.00 USD Condition Excellent/Like new Negotiability Firm Ships to AnywhereNorth America I have an almost new Elysian Diva. Have had it for just a little over a month (5 month wait time to build and receive) This was the last one Lee made before he stopped taking orders, it has the upgraded metal nozzle and internal wiring. Ships with Liquid Links Conti 4.4 as stock. Ships... jwilliamhurst Listing Mar 6, 2023 Comments: 1 Category: In-Ear Monitors", "seller_username": "jwilliamhurst", "url": "https://www.head-fi.org/classifieds/elysian-diva-upgraded-metal-nozzle.43057/", "price_num": 1450.0, "date_ms": 1678060800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 1500.0;
@@ -2092,6 +2159,117 @@ const grabLinkButton = document.getElementById("grab-link-button");
 if (grabLinkButton) grabLinkButton.addEventListener("click", grabCurrentIemLink);
 setMarketplaceSource(getInitialMarketplaceSource());
 </script>
+
+<script>
+(function setupFrequencyResponsePreviews() {
+    const popover = document.getElementById("frPreviewPopover");
+    const frame = document.getElementById("frPreviewFrame");
+    const title = document.getElementById("frPreviewTitle");
+    const subtitle = document.getElementById("frPreviewSubtitle");
+    const openLink = document.getElementById("frPreviewOpen");
+    const closeButton = document.getElementById("frPreviewClose");
+    if (!popover || !frame) return;
+
+    let activeTrigger = null;
+    let closeTimer = null;
+    let pinned = false;
+
+    function cancelClose() {
+        if (closeTimer) window.clearTimeout(closeTimer);
+        closeTimer = null;
+    }
+
+    function positionPopover(trigger) {
+        const rect = trigger.getBoundingClientRect();
+        const gap = 10;
+        const width = Math.min(720, Math.max(300, window.innerWidth - 24));
+        const height = Math.min(500, Math.max(330, window.innerHeight - 24));
+        popover.style.width = width + "px";
+        popover.style.maxHeight = height + "px";
+
+        let left = rect.left;
+        if (left + width > window.innerWidth - 12) left = window.innerWidth - width - 12;
+        left = Math.max(12, left);
+
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const preferredHeight = Math.min(470, height);
+        let top = spaceBelow >= preferredHeight + gap
+            ? rect.bottom + gap
+            : rect.top - preferredHeight - gap;
+        top = Math.max(12, Math.min(top, window.innerHeight - preferredHeight - 12));
+        popover.style.left = left + "px";
+        popover.style.top = top + "px";
+    }
+
+    function showPreview(trigger, shouldPin) {
+        cancelClose();
+        activeTrigger = trigger;
+        pinned = Boolean(shouldPin);
+        document.querySelectorAll(".fr-preview-trigger[aria-expanded='true']").forEach(function(button) {
+            if (button !== trigger) button.setAttribute("aria-expanded", "false");
+        });
+        trigger.setAttribute("aria-expanded", "true");
+        title.textContent = trigger.dataset.frName || "Frequency response";
+        subtitle.textContent = trigger.dataset.frLabel || "Precogvision measurements";
+        openLink.href = trigger.dataset.frUrl;
+        const nextSrc = trigger.dataset.frEmbedUrl;
+        if (frame.getAttribute("src") !== nextSrc) {
+            frame.removeAttribute("src");
+            document.getElementById("frPreviewLoading").hidden = false;
+            frame.src = nextSrc;
+        }
+        popover.hidden = false;
+        positionPopover(trigger);
+    }
+
+    function hidePreview(force) {
+        if (pinned && !force) return;
+        cancelClose();
+        if (activeTrigger) activeTrigger.setAttribute("aria-expanded", "false");
+        activeTrigger = null;
+        pinned = false;
+        popover.hidden = true;
+    }
+
+    function scheduleHide() {
+        cancelClose();
+        closeTimer = window.setTimeout(function() { hidePreview(false); }, 180);
+    }
+
+    document.querySelectorAll(".fr-preview-trigger").forEach(function(trigger) {
+        trigger.addEventListener("pointerenter", function(event) {
+            if (event.pointerType !== "touch") showPreview(trigger, false);
+        });
+        trigger.addEventListener("pointerleave", scheduleHide);
+        trigger.addEventListener("focus", function() { showPreview(trigger, false); });
+        trigger.addEventListener("blur", scheduleHide);
+        trigger.addEventListener("click", function(event) {
+            event.preventDefault();
+            if (activeTrigger === trigger && pinned && !popover.hidden) hidePreview(true);
+            else showPreview(trigger, true);
+        });
+    });
+
+    popover.addEventListener("pointerenter", cancelClose);
+    popover.addEventListener("pointerleave", scheduleHide);
+    popover.addEventListener("focusin", cancelClose);
+    popover.addEventListener("focusout", scheduleHide);
+    closeButton.addEventListener("click", function() { hidePreview(true); });
+    frame.addEventListener("load", function() {
+        document.getElementById("frPreviewLoading").hidden = true;
+    });
+    window.addEventListener("resize", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    });
+    window.addEventListener("scroll", function() {
+        if (activeTrigger && !popover.hidden) positionPopover(activeTrigger);
+    }, true);
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") hidePreview(true);
+    });
+})();
+</script>
+
 
     <footer class="site-footer">
         <div class="site-footer-row">
