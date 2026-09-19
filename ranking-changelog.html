@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Ranking Changelog - IEM Market Tracker</title>
-    <meta name="ranking-changelog-build-id" content="60">
+    <meta name="ranking-changelog-build-id" content="61">
     <style>
 body { font-family: Arial; margin: 40px; background: #f7f7f7; color: #111; }
 table { width: 100%; border-collapse: collapse; background: white; font-size: 14px; }
@@ -307,7 +307,7 @@ td.status-reason { overflow: hidden; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
 .iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
 .iem-subtitle-row > a { font-weight: bold; }
-.fr-preview-trigger {
+.fr-preview-trigger, .review-preview-trigger {
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -342,6 +342,15 @@ td.status-reason { overflow: hidden; }
     box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
 }
 .fr-preview-popover[hidden] { display: none; }
+.review-preview-trigger:hover, .review-preview-trigger:focus-visible { background: #e5f0fb; border-color: #6f98c3; }
+.review-preview-popover { width: min(420px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); overflow-y: auto; }
+.review-preview-list { display: grid; gap: 12px; padding: 12px; }
+.review-preview-card { display: grid; gap: 6px; color: inherit; overflow-wrap: anywhere; text-decoration: none; }
+.review-preview-card + .review-preview-card { border-top: 1px solid #e4e8ec; padding-top: 12px; }
+.review-preview-card img { width: 100%; max-height: 190px; object-fit: cover; border-radius: 6px; }
+.review-preview-card img[hidden] { display: none; }
+.review-preview-card strong { font-size: 14px; }
+.review-preview-card span { font-size: 12px; color: #164f86; }
 .fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
 .fr-preview-title { font-size: 15px; font-weight: 800; }
 .fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
@@ -869,7 +878,7 @@ score backgrounds cannot be lost to broader table/cell styling.
         </div>
         <div class="changelog-summary-card">
             <div class="product-label">Processed Builds</div>
-            <div class="changelog-summary-value">57</div>
+            <div class="changelog-summary-value">58</div>
         </div>
         <div class="changelog-summary-card">
             <div class="product-label">Logged Changes</div>
@@ -885,7 +894,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="card notice-card">
         <p class="small">
             <b>Latest processed ranking build:</b>
-            #60 · September 19, 2026 at 6:39 PM UTC.
+            #61 · September 19, 2026 at 9:54 PM UTC.
             
             No ranking changes were detected.
             

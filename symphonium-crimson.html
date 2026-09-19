@@ -304,7 +304,7 @@ td.status-reason { overflow: hidden; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
 .iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
 .iem-subtitle-row > a { font-weight: bold; }
-.fr-preview-trigger {
+.fr-preview-trigger, .review-preview-trigger {
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -339,6 +339,15 @@ td.status-reason { overflow: hidden; }
     box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
 }
 .fr-preview-popover[hidden] { display: none; }
+.review-preview-trigger:hover, .review-preview-trigger:focus-visible { background: #e5f0fb; border-color: #6f98c3; }
+.review-preview-popover { width: min(420px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); overflow-y: auto; }
+.review-preview-list { display: grid; gap: 12px; padding: 12px; }
+.review-preview-card { display: grid; gap: 6px; color: inherit; overflow-wrap: anywhere; text-decoration: none; }
+.review-preview-card + .review-preview-card { border-top: 1px solid #e4e8ec; padding-top: 12px; }
+.review-preview-card img { width: 100%; max-height: 190px; object-fit: cover; border-radius: 6px; }
+.review-preview-card img[hidden] { display: none; }
+.review-preview-card strong { font-size: 14px; }
+.review-preview-card span { font-size: 12px; color: #164f86; }
 .fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
 .fr-preview-title { font-size: 15px; font-weight: 800; }
 .fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
@@ -852,6 +861,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="iem-subtitle-row">
     <a href="brand-symphonium.html">Symphonium</a>
     <button class="fr-preview-trigger" type="button" data-fr-name="Symphonium Crimson" data-fr-label="Symphonium Crimson" data-fr-embed-url="https://precog.squig.link/?embed&amp;share=Symphonium_Audio_Crimson" data-fr-url="https://precog.squig.link/?share=Symphonium_Audio_Crimson" aria-haspopup="dialog" aria-expanded="false" aria-label="Preview the frequency response for Symphonium Crimson"><span class="fr-preview-icon" aria-hidden="true">⌁</span> FR graph</button>
+    <button id="reviewPreviewButton" class="review-preview-trigger" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="reviewPreviewPopover">Reviews</button>
 </div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -873,16 +883,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 
 </div>
-
-<section class="card" aria-label="Reviews">
-    <h2>Reviews</h2>
-    <ul>
-    
-        <li><a href="https://headphones.com/blogs/reviews/symphonium-crimson-review" target="_blank" rel="noopener noreferrer">Read review</a></li>
-    
-    </ul>
-</section>
-
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
@@ -2226,6 +2226,90 @@ setMarketplaceSource(getInitialMarketplaceSource());
     });
 })();
 </script>
+
+
+<aside id="reviewPreviewPopover" class="fr-preview-popover review-preview-popover" role="dialog" aria-modal="false" aria-labelledby="reviewPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div id="reviewPreviewTitle" class="fr-preview-title">Reviews</div>
+        <button id="reviewPreviewClose" class="fr-preview-close" type="button" aria-label="Close reviews">×</button>
+    </div>
+    <div class="review-preview-list">
+    
+        <a class="review-preview-card" href="https://headphones.com/blogs/reviews/symphonium-crimson-review" target="_blank" rel="noopener noreferrer">
+            
+            <strong>Symphonium Crimson Review - Precog&#39;s Take</strong>
+            <span>Read review · headphones.com ↗</span>
+        </a>
+    
+    </div>
+</aside>
+
+<script>
+(function () {
+    const button = document.getElementById('reviewPreviewButton');
+    const panel = document.getElementById('reviewPreviewPopover');
+    if (!button || !panel) return;
+    let timer, pinned = false;
+    function cancelClose() { clearTimeout(timer); }
+    function position() {
+        const rect = button.getBoundingClientRect();
+        panel.style.left = Math.max(12, Math.min(rect.left, innerWidth - panel.offsetWidth - 12)) + 'px';
+        const height = panel.offsetHeight;
+        const top = rect.bottom + 8 + height <= innerHeight - 12
+            ? rect.bottom + 8 : rect.top - height - 8;
+        panel.style.top = Math.max(12, Math.min(top, innerHeight - height - 12)) + 'px';
+    }
+    function show() {
+        cancelClose();
+        panel.hidden = false;
+        button.setAttribute('aria-expanded', 'true');
+        panel.querySelectorAll('img[data-src]').forEach(img => {
+            img.onload = position;
+            img.onerror = () => { img.hidden = true; position(); };
+            img.src = img.dataset.src;
+            delete img.dataset.src;
+        });
+        position();
+    }
+    function hide() {
+        cancelClose();
+        panel.hidden = true;
+        pinned = false;
+        button.setAttribute('aria-expanded', 'false');
+    }
+    function scheduleClose() {
+        cancelClose();
+        timer = setTimeout(() => {
+            if (!pinned && !panel.contains(document.activeElement)
+                && document.activeElement !== button) hide();
+        }, 180);
+    }
+    button.addEventListener('pointerenter', e => { if (e.pointerType !== 'touch') show(); });
+    button.addEventListener('pointerleave', scheduleClose);
+    button.addEventListener('focus', show);
+    button.addEventListener('blur', scheduleClose);
+    button.addEventListener('click', () => {
+        if (pinned && !panel.hidden) hide();
+        else { pinned = true; show(); }
+    });
+    panel.addEventListener('pointerenter', cancelClose);
+    panel.addEventListener('pointerleave', scheduleClose);
+    panel.addEventListener('focusin', cancelClose);
+    panel.addEventListener('focusout', scheduleClose);
+    document.getElementById('reviewPreviewClose').addEventListener('click', () => {
+        button.focus(); hide();
+    });
+    document.addEventListener('pointerdown', e => {
+        if (!panel.contains(e.target) && !button.contains(e.target)) hide();
+    });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !panel.hidden) { button.focus(); hide(); }
+    });
+    window.addEventListener('resize', () => { if (!panel.hidden) position(); });
+    window.addEventListener('scroll', () => { if (!panel.hidden) position(); }, true);
+})();
+</script>
+
 
 
     <footer class="site-footer">

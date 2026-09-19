@@ -304,7 +304,7 @@ td.status-reason { overflow: hidden; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
 .iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
 .iem-subtitle-row > a { font-weight: bold; }
-.fr-preview-trigger {
+.fr-preview-trigger, .review-preview-trigger {
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -339,6 +339,15 @@ td.status-reason { overflow: hidden; }
     box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
 }
 .fr-preview-popover[hidden] { display: none; }
+.review-preview-trigger:hover, .review-preview-trigger:focus-visible { background: #e5f0fb; border-color: #6f98c3; }
+.review-preview-popover { width: min(420px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); overflow-y: auto; }
+.review-preview-list { display: grid; gap: 12px; padding: 12px; }
+.review-preview-card { display: grid; gap: 6px; color: inherit; overflow-wrap: anywhere; text-decoration: none; }
+.review-preview-card + .review-preview-card { border-top: 1px solid #e4e8ec; padding-top: 12px; }
+.review-preview-card img { width: 100%; max-height: 190px; object-fit: cover; border-radius: 6px; }
+.review-preview-card img[hidden] { display: none; }
+.review-preview-card strong { font-size: 14px; }
+.review-preview-card span { font-size: 12px; color: #164f86; }
 .fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
 .fr-preview-title { font-size: 15px; font-weight: 800; }
 .fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
@@ -852,6 +861,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="iem-subtitle-row">
     <a href="brand-yu9.html">YU9</a>
     <button class="fr-preview-trigger" type="button" data-fr-name="YU9 Que" data-fr-label="YU9 Audio Que" data-fr-embed-url="https://precog.squig.link/?embed&amp;share=YU9_Que,YU9_Que_S2" data-fr-url="https://precog.squig.link/?share=YU9_Que,YU9_Que_S2" aria-haspopup="dialog" aria-expanded="false" aria-label="Preview the frequency response for YU9 Que"><span class="fr-preview-icon" aria-hidden="true">⌁</span> FR graph</button>
+    
 </div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -873,7 +883,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 
 </div>
-
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
@@ -2665,6 +2674,7 @@ setMarketplaceSource(getInitialMarketplaceSource());
     });
 })();
 </script>
+
 
 
     <footer class="site-footer">

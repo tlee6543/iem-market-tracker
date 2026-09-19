@@ -304,7 +304,7 @@ td.status-reason { overflow: hidden; }
 .grab-link-feedback { min-width: 54px; font-size: 12px; color: #555; }
 .iem-subtitle-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0 16px; }
 .iem-subtitle-row > a { font-weight: bold; }
-.fr-preview-trigger {
+.fr-preview-trigger, .review-preview-trigger {
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -339,6 +339,15 @@ td.status-reason { overflow: hidden; }
     box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
 }
 .fr-preview-popover[hidden] { display: none; }
+.review-preview-trigger:hover, .review-preview-trigger:focus-visible { background: #e5f0fb; border-color: #6f98c3; }
+.review-preview-popover { width: min(420px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); overflow-y: auto; }
+.review-preview-list { display: grid; gap: 12px; padding: 12px; }
+.review-preview-card { display: grid; gap: 6px; color: inherit; overflow-wrap: anywhere; text-decoration: none; }
+.review-preview-card + .review-preview-card { border-top: 1px solid #e4e8ec; padding-top: 12px; }
+.review-preview-card img { width: 100%; max-height: 190px; object-fit: cover; border-radius: 6px; }
+.review-preview-card img[hidden] { display: none; }
+.review-preview-card strong { font-size: 14px; }
+.review-preview-card span { font-size: 12px; color: #164f86; }
 .fr-preview-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 11px 12px 9px; border-bottom: 1px solid #e4e8ec; }
 .fr-preview-title { font-size: 15px; font-weight: 800; }
 .fr-preview-subtitle { margin-top: 2px; color: #66717d; font-size: 11px; }
@@ -1539,17 +1548,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 <tr>
     <td class="rank-col">61</td>
-    <td class="iem-col"><a href="thieaudio-prestige-ltd.html?from=resale-leaders">ThieAudio Prestige LTD</a></td>
-    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
-    <td>$827.5</td>
-    <td>$1,299</td>
-    <td><b>63.7%</b></td>
-    <td>7</td>
-    <td class="small">90d closed-sale avg, 4 samples</td>
-</tr>
-
-<tr>
-    <td class="rank-col">62</td>
     <td class="iem-col"><a href="fatfreq-grand-maestro-anniversary.html?from=resale-leaders">FatFreq Grand Maestro Anniversary</a></td>
     <td><a href="brand-fatfreq.html">FatFreq</a></td>
     <td>$3,486.81</td>
@@ -1557,6 +1555,17 @@ score backgrounds cannot be lost to broader table/cell styling.
     <td><b>63.4%</b></td>
     <td>4</td>
     <td class="small">recency-weighted 365d closed sales, 3 samples, 90d half-life</td>
+</tr>
+
+<tr>
+    <td class="rank-col">62</td>
+    <td class="iem-col"><a href="thieaudio-prestige-ltd.html?from=resale-leaders">ThieAudio Prestige LTD</a></td>
+    <td><a href="brand-thieaudio.html">ThieAudio</a></td>
+    <td>$820</td>
+    <td>$1,299</td>
+    <td><b>63.1%</b></td>
+    <td>7</td>
+    <td class="small">90d closed-sale avg, 3 samples</td>
 </tr>
 
 <tr>
@@ -1638,17 +1647,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 <tr>
     <td class="rank-col">70</td>
-    <td class="iem-col"><a href="kiwi-ears-astral.html?from=resale-leaders">Kiwi Ears Astral</a></td>
-    <td><a href="brand-kiwi-ears.html">Kiwi Ears</a></td>
-    <td>$184</td>
-    <td>$300</td>
-    <td><b>61.3%</b></td>
-    <td>7</td>
-    <td class="small">90d closed-sale avg, 5 samples</td>
-</tr>
-
-<tr>
-    <td class="rank-col">71</td>
     <td class="iem-col"><a href="ziigaat-x-hangout-odyssey-2.html?from=resale-leaders">Ziigaat x Hangout Odyssey 2</a></td>
     <td><a href="brand-ziigaat.html">Ziigaat</a></td>
     <td>$151.67</td>
@@ -1659,7 +1657,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 <tr>
-    <td class="rank-col">72</td>
+    <td class="rank-col">71</td>
     <td class="iem-col"><a href="letshuoer-mystic-8.html?from=resale-leaders">Letshuoer Mystic 8</a></td>
     <td><a href="brand-letshuoer.html">Letshuoer</a></td>
     <td>$600</td>
@@ -1670,7 +1668,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 <tr>
-    <td class="rank-col">73</td>
+    <td class="rank-col">72</td>
     <td class="iem-col"><a href="softears-volume-s.html?from=resale-leaders">Softears Volume S</a></td>
     <td><a href="brand-softears.html">Softears</a></td>
     <td>$193.33</td>
@@ -1681,7 +1679,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </tr>
 
 <tr>
-    <td class="rank-col">74</td>
+    <td class="rank-col">73</td>
     <td class="iem-col"><a href="empire-ears-novus.html?from=resale-leaders">Empire Ears Novus</a></td>
     <td><a href="brand-empire-ears.html">Empire Ears</a></td>
     <td>$3,010.33</td>
@@ -1689,6 +1687,17 @@ score backgrounds cannot be lost to broader table/cell styling.
     <td><b>60.2%</b></td>
     <td>11</td>
     <td class="small">recency-weighted 365d closed sales, 5 samples, 90d half-life</td>
+</tr>
+
+<tr>
+    <td class="rank-col">74</td>
+    <td class="iem-col"><a href="kiwi-ears-astral.html?from=resale-leaders">Kiwi Ears Astral</a></td>
+    <td><a href="brand-kiwi-ears.html">Kiwi Ears</a></td>
+    <td>$180</td>
+    <td>$300</td>
+    <td><b>60.0%</b></td>
+    <td>7</td>
+    <td class="small">90d closed-sale avg, 4 samples</td>
 </tr>
 
 <tr>
