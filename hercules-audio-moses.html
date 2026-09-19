@@ -861,7 +861,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="iem-subtitle-row">
     <a href="brand-hercules-audio.html">Hercules Audio</a>
     
-    
+    <button id="reviewPreviewButton" class="review-preview-trigger" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="reviewPreviewPopover">Reviews</button>
 </div>
 <div class="card">
     <div class="source-toggle" aria-label="Marketplace source">
@@ -2304,6 +2304,89 @@ setMarketplaceSource(getInitialMarketplaceSource());
     document.addEventListener("keydown", function(event) {
         if (event.key === "Escape") hidePreview(true);
     });
+})();
+</script>
+
+
+<aside id="reviewPreviewPopover" class="fr-preview-popover review-preview-popover" role="dialog" aria-modal="false" aria-labelledby="reviewPreviewTitle" hidden>
+    <div class="fr-preview-header">
+        <div id="reviewPreviewTitle" class="fr-preview-title">Reviews</div>
+        <button id="reviewPreviewClose" class="fr-preview-close" type="button" aria-label="Close reviews">×</button>
+    </div>
+    <div class="review-preview-list">
+    
+        <a class="review-preview-card" href="https://headphones.com/blogs/features/the-michelin-guide-to-iems-canjam-socal-2025-edition-part-2?_pos=2&amp;_psq=michelin&amp;_psid=f7d547530&amp;_ss=e" target="_blank" rel="noopener noreferrer">
+            
+            <strong>The Michelin Guide to IEMs - CanJam SoCal 2025 Edition Part 2</strong>
+            <span>Read review · headphones.com ↗</span>
+        </a>
+    
+    </div>
+</aside>
+
+<script>
+(function () {
+    const button = document.getElementById('reviewPreviewButton');
+    const panel = document.getElementById('reviewPreviewPopover');
+    if (!button || !panel) return;
+    let timer, pinned = false;
+    function cancelClose() { clearTimeout(timer); }
+    function position() {
+        const rect = button.getBoundingClientRect();
+        panel.style.left = Math.max(12, Math.min(rect.left, innerWidth - panel.offsetWidth - 12)) + 'px';
+        const height = panel.offsetHeight;
+        const top = rect.bottom + 8 + height <= innerHeight - 12
+            ? rect.bottom + 8 : rect.top - height - 8;
+        panel.style.top = Math.max(12, Math.min(top, innerHeight - height - 12)) + 'px';
+    }
+    function show() {
+        cancelClose();
+        panel.hidden = false;
+        button.setAttribute('aria-expanded', 'true');
+        panel.querySelectorAll('img[data-src]').forEach(img => {
+            img.onload = position;
+            img.onerror = () => { img.hidden = true; position(); };
+            img.src = img.dataset.src;
+            delete img.dataset.src;
+        });
+        position();
+    }
+    function hide() {
+        cancelClose();
+        panel.hidden = true;
+        pinned = false;
+        button.setAttribute('aria-expanded', 'false');
+    }
+    function scheduleClose() {
+        cancelClose();
+        timer = setTimeout(() => {
+            if (!pinned && !panel.contains(document.activeElement)
+                && document.activeElement !== button) hide();
+        }, 180);
+    }
+    button.addEventListener('pointerenter', e => { if (e.pointerType !== 'touch') show(); });
+    button.addEventListener('pointerleave', scheduleClose);
+    button.addEventListener('focus', show);
+    button.addEventListener('blur', scheduleClose);
+    button.addEventListener('click', () => {
+        if (pinned && !panel.hidden) hide();
+        else { pinned = true; show(); }
+    });
+    panel.addEventListener('pointerenter', cancelClose);
+    panel.addEventListener('pointerleave', scheduleClose);
+    panel.addEventListener('focusin', cancelClose);
+    panel.addEventListener('focusout', scheduleClose);
+    document.getElementById('reviewPreviewClose').addEventListener('click', () => {
+        button.focus(); hide();
+    });
+    document.addEventListener('pointerdown', e => {
+        if (!panel.contains(e.target) && !button.contains(e.target)) hide();
+    });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !panel.hidden) { button.focus(); hide(); }
+    });
+    window.addEventListener('resize', () => { if (!panel.hidden) position(); });
+    window.addEventListener('scroll', () => { if (!panel.hidden) position(); }, true);
 })();
 </script>
 
