@@ -11,6 +11,13 @@ th { background: #111; color: white; }
 a { color: #0066cc; text-decoration: none; }
 a:hover { text-decoration: underline; }
 .muted { color: #666; }
+.tracker-help { position: relative; display: inline-block; margin: 0 0 18px; }
+.tracker-help > button { border: 1px solid #bbb; border-radius: 999px; background: white; padding: 9px 14px; cursor: pointer; font-weight: bold; }
+.tracker-help-panel { position: absolute; top: 100%; left: 0; z-index: 960; width: min(560px, calc(100vw - 96px)); box-sizing: border-box; padding: 18px; background: white; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 10px 30px #0003; max-height: 65vh; overflow-y: auto; }
+.tracker-help-panel[hidden] { display: none; }
+.tracker-help-panel h2 { margin: 0 0 12px; font-size: 18px; }
+.tracker-help-panel h3 { margin: 14px 0 5px; font-size: 14px; }
+.tracker-help-panel p { margin: 5px 0 10px; line-height: 1.5; }
 .small { font-size: 13px; color: #666; }
 .top-credit { background: white; border: 1px solid #ddd; padding: 10px 14px; margin-bottom: 20px; font-size: 14px; color: #555; }
 .top-credit a { font-weight: bold; color: #0066cc; }
@@ -869,7 +876,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 98/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 15/15, source diversity 8/10, price consistency 10/10. Current inputs: 17 included priced sample(s), 7 in the last 90 days, 9 in the last 180 days, latest sample 7d ago, 2 source type(s), price CV 0.07." aria-label="Liquidity/confidence score: 98/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 15/15, source diversity 8/10, price consistency 10/10. Current inputs: 17 included priced sample(s), 7 in the last 90 days, 9 in the last 180 days, latest sample 7d ago, 2 source type(s), price CV 0.07." tabindex="0">High (98/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">17 included sample(s), latest 7d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 98/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 15/15, source diversity 8/10, price consistency 10/10. Current inputs: 17 included priced sample(s), 6 in the last 90 days, 9 in the last 180 days, latest sample 7d ago, 2 source type(s), price CV 0.07." aria-label="Liquidity/confidence score: 98/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 15/15, source diversity 8/10, price consistency 10/10. Current inputs: 17 included priced sample(s), 6 in the last 90 days, 9 in the last 180 days, latest sample 7d ago, 2 source type(s), price CV 0.07." tabindex="0">High (98/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">17 included sample(s), latest 7d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -914,7 +921,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>MaintenanceGood7538</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Overpriced (41.4% above market)</span></td>
+<td><span id="deal-score-0">Overpriced (39.7% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1wh47pc/wts_usca_h_many_iems_w_paypal_gs/#item-9" target="_blank">source</a></td>
 </tr>
 
@@ -930,7 +937,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Practical-Solid6463</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Fair (7.6% below market)</span></td>
+<td><span id="deal-score-1">Fair (8.8% below market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1wed1wc/wts_euger_h_xenns_mangird_top_pro_w_paypal_320/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -946,7 +953,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Numerous_Ad_3132</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">Closed: Fair (1.9% below market)</span></td>
+<td><span id="deal-score-2">Closed: Fair (3.1% below market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1wdj731/wtsusanjh_magrid_xenns_top_pro_w_340_ff/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -962,7 +969,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>boozy4200</td>
 <td>0</td>
 <td>1</td>
-<td><span id="deal-score-3">Closed: Fair (5.4% above market)</span></td>
+<td><span id="deal-score-3">Closed: Fair (4.0% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1wbs8c0/wts_usin_h_xenns_top_pro_w_paypal_64_audio_u4s/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -978,7 +985,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>killlugh</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-4">Closed: Fair (3.9% above market)</span></td>
+<td><span id="deal-score-4">Closed: Fair (2.6% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1w7iwty/wtsusazh_xenns_top_pro_w_360_paypal_gs_conus/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -994,7 +1001,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>boozy4200</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-5">Fair (9.7% above market)</span></td>
+<td><span id="deal-score-5">Fair (8.3% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1w6kepj/wts_usin_h_xenns_top_pro_w_paypal_64audio_u4s/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -1010,7 +1017,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>goodvibes</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-6">Fair (3.3% below market)</span></td>
+<td><span id="deal-score-6">Fair (4.5% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-top-pro-like-new.114512/" target="_blank">source</a></td>
 </tr>
 
@@ -1026,7 +1033,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>goodvibes</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-7">Closed: Fair (3.3% below market)</span></td>
+<td><span id="deal-score-7">Closed: Fair (4.5% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sold-xenns-top-pro-1-hour-ear-time-with-other-tips-like-new.114512/" target="_blank">source</a></td>
 </tr>
 
@@ -1042,7 +1049,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Caterham7</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-8">Closed: Fair (3.9% above market)</span></td>
+<td><span id="deal-score-8">Closed: Fair (2.6% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vp8gj2/wts_uspa_h_xenns_top_pro_w_paypal_cash_local/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -1074,7 +1081,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Caterham7</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-10">Fair (8.2% above market)</span></td>
+<td><span id="deal-score-10">Fair (6.9% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vewih0/wts_uspa_h_xenns_top_pro_w_paypal_cash_local/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -1090,7 +1097,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Cactar65</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-11">Closed: Fair (1.0% above market)</span></td>
+<td><span id="deal-score-11">Closed: Fair (0.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-top-pro.112992/" target="_blank">source</a></td>
 </tr>
 
@@ -1106,7 +1113,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>bocchuoi1404</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-12">High (15.5% above market)</span></td>
+<td><span id="deal-score-12">High (14.0% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1v7hz96/wts_cantor_h_xenns_top_pro_w_paypal_gs_400_cad/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -1122,7 +1129,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>NihilisticAnger</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-13">Closed: Fair (1.0% above market)</span></td>
+<td><span id="deal-score-13">Closed: Fair (0.2% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1v6lb0t/wts_ustx_h_xenns_top_pro_focal_bathys_w_paypal_gs/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -1138,7 +1145,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>rjley18</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-14">Fair (1.0% above market)</span></td>
+<td><span id="deal-score-14">Fair (0.2% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1uzkie7/wts_usma_h_xenns_mangird_top_pro_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -1154,7 +1161,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Deathpoop5</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-15">Closed: Fair (0.4% below market)</span></td>
+<td><span id="deal-score-15">Closed: Fair (1.7% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1uvpc1k/wts_usaca_h_hisenior_mega5est_punch_audio_martilo/#item-4" target="_blank">source</a></td>
 </tr>
 
@@ -1170,7 +1177,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>moonbst1</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-16">Closed: Fair (7.6% below market)</span></td>
+<td><span id="deal-score-16">Closed: Fair (8.8% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-mangird-top-pro-paypal-g-s.111028/" target="_blank">source</a></td>
 </tr>
 
@@ -1202,7 +1209,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>PhantomNyan</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-18">Closed: Fair (0.4% below market)</span></td>
+<td><span id="deal-score-18">Closed: Fair (1.7% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-top-pro.107480/" target="_blank">source</a></td>
 </tr>
 
@@ -1218,7 +1225,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Home</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-19">Closed: Fair (9.4% above market)</span></td>
+<td><span id="deal-score-19">Closed: Fair (8.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-top-pro.106244/" target="_blank">source</a></td>
 </tr>
 
@@ -1234,7 +1241,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>ekman321</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-20">Closed: Fair (6.8% above market)</span></td>
+<td><span id="deal-score-20">Closed: Fair (5.5% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-top-pro.101067/" target="_blank">source</a></td>
 </tr>
 
@@ -1250,7 +1257,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>DenverFi</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-21">Closed: Fair (1.9% below market)</span></td>
+<td><span id="deal-score-21">Closed: Fair (3.1% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-mangird-top-pro.99970/" target="_blank">source</a></td>
 </tr>
 
@@ -1266,7 +1273,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>HonoredOne</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-22">Closed: High (12.6% above market)</span></td>
+<td><span id="deal-score-22">Closed: High (11.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-top-pro.99494/" target="_blank">source</a></td>
 </tr>
 
@@ -1282,7 +1289,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>balmainbrian</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-23">Closed: High (12.6% above market)</span></td>
+<td><span id="deal-score-23">Closed: High (11.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-mangird-top-pro.99516/" target="_blank">source</a></td>
 </tr>
 
@@ -1298,7 +1305,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>ctjw33</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-24">Closed: High (12.6% above market)</span></td>
+<td><span id="deal-score-24">Closed: High (11.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-mangird-top-pro.98916/" target="_blank">source</a></td>
 </tr>
 
@@ -1314,7 +1321,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>djkindred</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-25">Closed: High (12.6% above market)</span></td>
+<td><span id="deal-score-25">Closed: High (11.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-top-pro.98868/" target="_blank">source</a></td>
 </tr>
 
@@ -1330,7 +1337,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>subguy812</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-26">Closed: High (16.9% above market)</span></td>
+<td><span id="deal-score-26">Closed: High (15.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-mangird-top-pro-mint.96099/" target="_blank">source</a></td>
 </tr>
 
@@ -1362,7 +1369,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Zeno26</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-28">Closed: High (15.5% above market)</span></td>
+<td><span id="deal-score-28">Closed: High (14.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/xenns-top-pro.95265/" target="_blank">source</a></td>
 </tr>
 
