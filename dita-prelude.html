@@ -886,7 +886,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 46/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 17d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 46/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 27/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 17d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Medium (46/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 17d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -919,19 +919,19 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<tr id="row-0" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
 <td>2026-09-03</td>
 <td>$125</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">Still active</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Sale confirmed</td>
 <td></td>
 <td>0</td>
 <td>headfi</td>
 <td>theintention</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td><span id="deal-score-0">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/dita-prelude.114923/" target="_blank">source</a></td>
 </tr>
 
@@ -947,7 +947,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>bling527</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">N/A</span></td>
+<td><span id="deal-score-1">Closed: Great Deal (28.0% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1spx20w/wts_usny_h_crinear_meta_meze_99_classic_v2_effect/#item-4" target="_blank">source</a></td>
 </tr>
 
@@ -969,7 +969,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "DITA Prelude", "raw_text": "DITA Prelude Listing ID: 114923 For Sale 125.00 USD Condition Good Negotiability Or Best Offer Ships To United States Of America Time to reduce the collection and reset! Only trades I am currently interested in are for Quill Acoustics Karma or Eminent Ears Amethyst. UPS shipping and PayPal fees included in price, shipped next business day. DITA Prelude (case + cable +... Listed by: theintention (27) Listed: 2026-09-03", "seller_username": "theintention", "url": "https://www.head-fi.org/classifieds/dita-prelude.114923/", "price_num": 125.0, "date_ms": 1788393600000, "listing_status": "active", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Dita Prelude", "raw_text": "Dita Prelude - $90 original box, storage case and tips included. Missing USB the dongle.\nsubmitted by /u/bling527\n[link] [comments]", "seller_username": "bling527", "url": "https://old.reddit.com/r/AVexchange/comments/1spx20w/wts_usny_h_crinear_meta_meze_99_classic_v2_effect/#item-4", "price_num": 90.0, "date_ms": 1776614759000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=crinear | active_status_checker_stale_timeout_30d_lister_never_updated"}];
+const allRows = [{"row_id": 0, "title": "DITA Prelude", "raw_text": "DITA Prelude Listing ID: 114923 For Sale 125.00 USD Condition Good Negotiability Or Best Offer Ships To United States Of America Time to reduce the collection and reset! Only trades I am currently interested in are for Quill Acoustics Karma or Eminent Ears Amethyst. UPS shipping and PayPal fees included in price, shipped next business day. DITA Prelude (case + cable +... Listed by: theintention (27) Listed: 2026-09-03", "seller_username": "theintention", "url": "https://www.head-fi.org/classifieds/dita-prelude.114923/", "price_num": 125.0, "date_ms": 1788393600000, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 1, "title": "Dita Prelude", "raw_text": "Dita Prelude - $90 original box, storage case and tips included. Missing USB the dongle.\nsubmitted by /u/bling527\n[link] [comments]", "seller_username": "bling527", "url": "https://old.reddit.com/r/AVexchange/comments/1spx20w/wts_usny_h_crinear_meta_meze_99_classic_v2_effect/#item-4", "price_num": 90.0, "date_ms": 1776614759000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_active_timeout", "status_comment": "lister never updated", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | comments_checked_rss_and_html | reddit_unconfirmed_sale_unchecked | reddit_search_rss_query=crinear | active_status_checker_stale_timeout_30d_lister_never_updated"}];
 const originalMsrpUsd = 159.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

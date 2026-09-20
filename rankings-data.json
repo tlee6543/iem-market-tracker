@@ -572,8 +572,8 @@
     "comments": "Thick timbre and Hi-fi sound. Slightly spicy mid-treble but barely noticeable with the right tips.",
     "based_on": "Loaner",
     "tracker_slug": "unique-melody-mest-jet-black",
-    "market_value": 932.79,
-    "market_confidence": "Medium"
+    "market_value": 905.71,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -1700,8 +1700,8 @@
     "comments": "Fixes Anole VX's bass texture and plastickyness, but comes with its own quirks in the metallic treble.",
     "based_on": "Loaner",
     "tracker_slug": "qdc-anole-v14",
-    "market_value": 967.96,
-    "market_confidence": "Medium"
+    "market_value": 885.02,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -1843,7 +1843,7 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "",
+    "tracker_slug": "letshuoer-ej07m",
     "market_value": null,
     "market_confidence": "N/A"
   },
@@ -2468,7 +2468,7 @@
     "comments": "Solid rendition of reference tuning that's missing some upper-treble energy for my neutral/reference. Best thought of as a tool.",
     "based_on": "Loaner unit",
     "tracker_slug": "crinear-reference",
-    "market_value": 285.0,
+    "market_value": 280.0,
     "market_confidence": "High"
   },
   {
@@ -6957,7 +6957,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -11516,8 +11516,8 @@
     "comments": "More V-shaped listen with some peaking in the lower-treble. Technical but missing some tuning refinement.",
     "based_on": "Brief demo",
     "tracker_slug": "dita-prelude",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 125.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -15716,8 +15716,8 @@
     "comments": "Ridiculously bright, sounds the same as the EXT MKI except with even more upper-treble.",
     "based_on": "Brief demo",
     "tracker_slug": "vision-ears-ext-mkii",
-    "market_value": 2341.62,
-    "market_confidence": "Low"
+    "market_value": 1933.88,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
