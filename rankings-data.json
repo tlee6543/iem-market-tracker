@@ -6957,7 +6957,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -11420,7 +11420,7 @@
     "comments": "Very safe sounding overall albeit competently tuned.",
     "based_on": "Brief demo",
     "tracker_slug": "crinear-meta",
-    "market_value": 247.65,
+    "market_value": 242.27,
     "market_confidence": "High"
   },
   {
