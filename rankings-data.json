@@ -6981,7 +6981,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -15980,8 +15980,8 @@
     "comments": "Decent tuning but too airy past 15kHz leads to some timbre weightlessness and masking detail.",
     "based_on": "Brief demo",
     "tracker_slug": "ziigaat-horizon",
-    "market_value": 218.05,
-    "market_confidence": "Medium"
+    "market_value": 221.3,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
