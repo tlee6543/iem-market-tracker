@@ -2034,7 +2034,7 @@
     "setup": "1DD/4BA/2MP",
     "price": "$190",
     "comments": "Very pleasant listen tonally and with smooth, micro-peaked treble that belies its price point. Missing a little grip in the bass despite good quantity.",
-    "based_on": "Loaner unit",
+    "based_on": "Review unit",
     "tracker_slug": "juzear-light-shuttle",
     "market_value": 180.0,
     "market_confidence": "Medium"
@@ -3716,8 +3716,8 @@
     "comments": "A little odd in some parts of the treble and detailing could use some work, but nothing offensive overall.",
     "based_on": "Linsoul unit",
     "tracker_slug": "xenns-mangird-tea-2",
-    "market_value": 140.0,
-    "market_confidence": "Low"
+    "market_value": 129.92,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -5449,6 +5449,30 @@
   },
   {
     "entry_type": "ranked",
+    "iem": "Juzear Nimbus",
+    "favorite": false,
+    "canonical_name": "Juzear Nimbus",
+    "release_year": "—",
+    "final_score": 5.0,
+    "tonality": "5.0",
+    "bass": "5.0",
+    "midrange": "5.0",
+    "treble": "5.0",
+    "tech": "5.0",
+    "detail": "5.0",
+    "imaging": "5.0",
+    "dynamics": "5.0",
+    "bias": "5.0",
+    "setup": "1DD",
+    "price": "$55",
+    "comments": "",
+    "based_on": "Review unit",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "ranked",
     "iem": "Lime Ears Pneuma",
     "favorite": false,
     "canonical_name": "",
@@ -6957,7 +6981,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
