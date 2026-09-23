@@ -886,7 +886,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 49/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 30/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 13d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 49/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 30/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 13d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Medium (49/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 13d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -919,19 +919,19 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<tr id="row-0" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
 <td>2026-09-10</td>
 <td>$185</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">Still active</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Sale confirmed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
 <td>whammy</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td><span id="deal-score-0">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/final-audio-b3.115296/" target="_blank">source</a></td>
 </tr>
 
@@ -947,7 +947,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>NeedtoBurn</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">N/A</span></td>
+<td><span id="deal-score-1">High (21.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/final-audio-b3-brand-new.106836/" target="_blank">source</a></td>
 </tr>
 
@@ -969,7 +969,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Final Audio B3", "raw_text": "Final Audio B3 Listing ID: 115296 For Sale / Trade 185.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America I am the first owner of these Final Audio B3 IEM's. Great set! One of the best fitting IEM's I have had. I am feeling because I have a couple of sets with similar sound and I need to reduce the number of IEM's I have. PayPal fees and CONUS... Listed by: whammy (53) Listed: 2026-09-10 Last edited: 2026-09-12", "seller_username": "whammy", "url": "https://www.head-fi.org/classifieds/final-audio-b3.115296/", "price_num": 185.0, "date_ms": 1788998400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Final Audio B3 Brand New", "raw_text": "Final Audio B3 Brand New\nListing ID: 106836\nFor Sale 225.00 USD\nCondition New In Box\nNegotiability Or Best Offer\nShips To United States Of America\nI\u2019m downsizing my collection and letting go of a set of Final Audio B3 in essentially brand new condition. These were part of my goal to collect the full Final B-series lineup, but this pair has remained unused and stored in its original...\nListed by: NeedtoBurn (41)\nListed: 2026-04-05\nLast edited: 2026-05-31", "seller_username": "NeedtoBurn", "url": "https://www.head-fi.org/classifieds/final-audio-b3-brand-new.106836/", "price_num": 225.0, "date_ms": 1775347200000, "listing_status": "stale", "condition_text": "used, new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_stale_unsold_60d_lister_never_updated"}];
+const allRows = [{"row_id": 0, "title": "Final Audio B3", "raw_text": "Final Audio B3 Listing ID: 115296 For Sale / Trade 185.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America I am the first owner of these Final Audio B3 IEM's. Great set! One of the best fitting IEM's I have had. I am feeling because I have a couple of sets with similar sound and I need to reduce the number of IEM's I have. PayPal fees and CONUS... Listed by: whammy (53) Listed: 2026-09-10 Last edited: 2026-09-12", "seller_username": "whammy", "url": "https://www.head-fi.org/classifieds/final-audio-b3.115296/", "price_num": 185.0, "date_ms": 1788998400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 1, "title": "Final Audio B3 Brand New", "raw_text": "Final Audio B3 Brand New\nListing ID: 106836\nFor Sale 225.00 USD\nCondition New In Box\nNegotiability Or Best Offer\nShips To United States Of America\nI\u2019m downsizing my collection and letting go of a set of Final Audio B3 in essentially brand new condition. These were part of my goal to collect the full Final B-series lineup, but this pair has remained unused and stored in its original...\nListed by: NeedtoBurn (41)\nListed: 2026-04-05\nLast edited: 2026-05-31", "seller_username": "NeedtoBurn", "url": "https://www.head-fi.org/classifieds/final-audio-b3-brand-new.106836/", "price_num": 225.0, "date_ms": 1775347200000, "listing_status": "stale", "condition_text": "used, new in box", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "category_listing_id_text_fallback_v8 | active_status_checker_stale_unsold_60d_lister_never_updated"}];
 const originalMsrpUsd = 499.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

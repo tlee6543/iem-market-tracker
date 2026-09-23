@@ -284,7 +284,7 @@
     "comments": "Terrific soundstage depth and imaging; the closest I have heard to a two-channel system in an IEM for these qualities.",
     "based_on": "Personal unit",
     "tracker_slug": "64-audio-u12t",
-    "market_value": 916.95,
+    "market_value": 985.06,
     "market_confidence": "High"
   },
   {
@@ -404,7 +404,7 @@
     "comments": "Excellent detail retreival and competent tuning. Can be slightly thin sounding and forward in the treble.",
     "based_on": "Loaner",
     "tracker_slug": "thieaudio-monarch-mkiv",
-    "market_value": 871.0,
+    "market_value": 884.17,
     "market_confidence": "High"
   },
   {
@@ -716,7 +716,7 @@
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-myth",
-    "market_value": 914.17,
+    "market_value": 916.43,
     "market_confidence": "High"
   },
   {
@@ -2108,7 +2108,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 193.33,
+    "market_value": 190.71,
     "market_confidence": "High"
   },
   {
@@ -2468,7 +2468,7 @@
     "comments": "Solid rendition of reference tuning that's missing some upper-treble energy for my neutral/reference. Best thought of as a tool.",
     "based_on": "Loaner unit",
     "tracker_slug": "crinear-reference",
-    "market_value": 280.0,
+    "market_value": 280.71,
     "market_confidence": "High"
   },
   {
@@ -2925,7 +2925,7 @@
     "based_on": "Loaner unit",
     "tracker_slug": "moondrop-may",
     "market_value": 40.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -2996,8 +2996,8 @@
     "comments": "A more muddy Andromeda 2020 that's saving grace is the treble spike.",
     "based_on": "Personal unit",
     "tracker_slug": "campfire-andromeda-pre-2020",
-    "market_value": 460.88,
-    "market_confidence": "Medium"
+    "market_value": 576.25,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -5420,8 +5420,8 @@
     "comments": "One of the better interpretations of Final Audio's house sound with some decent technicalities.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "final-audio-b3",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 185.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -5804,8 +5804,8 @@
     "comments": "Sounds like a thinner Moondrop Aria and not really for the better.",
     "based_on": "Review unit",
     "tracker_slug": "moondrop-aria-snow",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 50.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -6092,8 +6092,8 @@
     "comments": "Weirdly dark and somewhat peaky in the treble.",
     "based_on": "Loaner unit",
     "tracker_slug": "noble-audio-fokus-rex",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 350.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -7700,8 +7700,8 @@
     "comments": "Odd recessions in frequency response lead to unique imaging but uncanny tonality.",
     "based_on": "—",
     "tracker_slug": "fiio-fx15",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 350.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -11180,7 +11180,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "canpur-silver-flash",
-    "market_value": 103.57,
+    "market_value": 103.12,
     "market_confidence": "High"
   },
   {
@@ -11564,8 +11564,8 @@
     "comments": "Generic V-shape sound signature with thin midrange and heavy mid-treble peaking.",
     "based_on": "Brief demo",
     "tracker_slug": "dita-project-m2",
-    "market_value": 249.5,
-    "market_confidence": "Medium"
+    "market_value": 249.6,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -13196,7 +13196,7 @@
     "comments": "Sounds decent overall but could use some refinement.",
     "based_on": "Brief demo",
     "tracker_slug": "letshuoer-cadenza-4",
-    "market_value": 160.3,
+    "market_value": 149.56,
     "market_confidence": "Medium"
   },
   {
@@ -13220,7 +13220,7 @@
     "comments": "Well-balanced overall, just doesn't really have a hook to it and perhaps a tad lean sounding.",
     "based_on": "Brief demo",
     "tracker_slug": "letshuoer-cadenza-4",
-    "market_value": 160.3,
+    "market_value": 149.56,
     "market_confidence": "Medium"
   },
   {
@@ -14708,7 +14708,7 @@
     "comments": "L-shaped listen with a smooth sound. Bombastic bass that's missing some texture.",
     "based_on": "Brief demo",
     "tracker_slug": "quill-acoustics-karma",
-    "market_value": 810.0,
+    "market_value": 773.33,
     "market_confidence": "Medium"
   },
   {
