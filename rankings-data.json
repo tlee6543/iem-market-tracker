@@ -6981,7 +6981,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -14372,7 +14372,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "punch-audio-martilo",
-    "market_value": 171.0,
+    "market_value": 163.75,
     "market_confidence": "High"
   },
   {
