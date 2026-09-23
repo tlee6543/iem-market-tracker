@@ -1916,7 +1916,7 @@
     "comments": "Thick and rich sound, a departure from the original RSV, but not in a bad way. Surprisingly mid-bass focused, so still sounds BA-ish.",
     "based_on": "Loaner unit",
     "tracker_slug": "softears-rsv-mkii",
-    "market_value": 436.25,
+    "market_value": 431.67,
     "market_confidence": "High"
   },
   {
@@ -6981,7 +6981,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
