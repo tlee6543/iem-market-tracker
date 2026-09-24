@@ -140,7 +140,7 @@
     "comments": "More of an all-rounder with better bass compared to the 2021 version, sacrifices some soundstage.",
     "based_on": "Personal unit",
     "tracker_slug": "elysian-annihilator-2023",
-    "market_value": 2284.4,
+    "market_value": 2260.57,
     "market_confidence": "High"
   },
   {
@@ -236,7 +236,7 @@
     "comments": "Basically the 64 Audio U12t's Chinese brother. Excellent tonality and layering performance with a slight upper-treble splashiness.",
     "based_on": "Review unit",
     "tracker_slug": "thieaudio-valhalla",
-    "market_value": 1451.94,
+    "market_value": 1445.73,
     "market_confidence": "High"
   },
   {
@@ -476,8 +476,8 @@
     "comments": "Sounds quite hi-fi and grand sounding, but coherency could use work - bass is distinct from the EST tweeters.",
     "based_on": "Zepp & Co Unit",
     "tracker_slug": "empire-ears-raven",
-    "market_value": 1877.49,
-    "market_confidence": "Medium"
+    "market_value": 1557.2,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -4052,8 +4052,8 @@
     "comments": "Energetic listen biased towards female vocals and with some spice up-top.",
     "based_on": "Review unit",
     "tracker_slug": "qoa-x-7th-acoustics-ryusei",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 125.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -4700,7 +4700,7 @@
     "comments": "Boomy and enveloping sounding; however, lacks the technical chops and raw detail to compete.",
     "based_on": "Review unit",
     "tracker_slug": "softears-edge",
-    "market_value": 384.0,
+    "market_value": 374.86,
     "market_confidence": "High"
   },
   {
@@ -6981,7 +6981,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -10197,7 +10197,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "aful-magicone",
     "market_value": 55.26,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -11564,7 +11564,7 @@
     "comments": "Generic V-shape sound signature with thin midrange and heavy mid-treble peaking.",
     "based_on": "Brief demo",
     "tracker_slug": "dita-project-m2",
-    "market_value": 249.6,
+    "market_value": 244.6,
     "market_confidence": "High"
   },
   {
@@ -13316,7 +13316,7 @@
     "comments": "Thin, reference sound with a slight lack of trebel extension and average imaging.",
     "based_on": "Brief demo",
     "tracker_slug": "lime-ears-aether",
-    "market_value": 85.23,
+    "market_value": 95.0,
     "market_confidence": "High"
   },
   {
@@ -13676,8 +13676,8 @@
     "comments": "Well-rounded, slightly more U-shaped listen. Bouncy sounding bass and treble characterized by strong linearity and crispness up until 15kHz.",
     "based_on": "Brief demo",
     "tracker_slug": "nicehck-nx8ti",
-    "market_value": 229.0,
-    "market_confidence": "Low"
+    "market_value": 257.61,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
