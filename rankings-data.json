@@ -524,7 +524,7 @@
     "comments": "Top-tier bass, treble, and soundstage height and width. I don't approve of the midrange these days.",
     "based_on": "Loaner",
     "tracker_slug": "sony-ier-z1r",
-    "market_value": 925.8,
+    "market_value": 924.75,
     "market_confidence": "High"
   },
   {
@@ -6981,7 +6981,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
