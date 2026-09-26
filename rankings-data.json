@@ -1508,7 +1508,7 @@
     "comments": "Well-extended on both ends of the spectrum and adds back in the upper-midrange the IE900 lacked.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "sennheiser-ie600",
-    "market_value": 373.33,
+    "market_value": 373.75,
     "market_confidence": "High"
   },
   {
@@ -1676,8 +1676,8 @@
     "comments": "A fun U-shape through and through, at the expense of some detail. Fantastic bass and upper-treble extension.",
     "based_on": "Review unit",
     "tracker_slug": "symphonium-meteor",
-    "market_value": 341.29,
-    "market_confidence": "Low"
+    "market_value": 311.73,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -2036,8 +2036,8 @@
     "comments": "Very pleasant listen tonally and with smooth, micro-peaked treble that belies its price point. Missing a little grip in the bass despite good quantity.",
     "based_on": "Review unit",
     "tracker_slug": "juzear-light-shuttle",
-    "market_value": 180.0,
-    "market_confidence": "Medium"
+    "market_value": null,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -2996,7 +2996,7 @@
     "comments": "A more muddy Andromeda 2020 that's saving grace is the treble spike.",
     "based_on": "Personal unit",
     "tracker_slug": "campfire-andromeda-pre-2020",
-    "market_value": 576.25,
+    "market_value": 515.63,
     "market_confidence": "High"
   },
   {
@@ -6981,7 +6981,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -11180,7 +11180,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "canpur-silver-flash",
-    "market_value": 103.12,
+    "market_value": 100.0,
     "market_confidence": "High"
   },
   {
@@ -15548,8 +15548,8 @@
     "comments": "Basically sounds very similar to the Indigo version.",
     "based_on": "Brief demo",
     "tracker_slug": "unique-melody-mest-mk3",
-    "market_value": 750.57,
-    "market_confidence": "Medium"
+    "market_value": 868.2,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
