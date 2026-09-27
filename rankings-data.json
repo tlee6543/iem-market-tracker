@@ -716,7 +716,7 @@
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-myth",
-    "market_value": 916.43,
+    "market_value": 933.0,
     "market_confidence": "High"
   },
   {
@@ -3500,7 +3500,7 @@
     "comments": "Decent listen overall, a bit thinner in the treble than the Mega 5Est and more technical.",
     "based_on": "Loaner",
     "tracker_slug": "hisenior-mega-7",
-    "market_value": 353.75,
+    "market_value": 351.67,
     "market_confidence": "High"
   },
   {
@@ -10389,7 +10389,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "artpical-raphael",
     "market_value": 125.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -14372,7 +14372,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "punch-audio-martilo",
-    "market_value": 163.75,
+    "market_value": 165.0,
     "market_confidence": "High"
   },
   {
