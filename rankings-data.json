@@ -1803,7 +1803,7 @@
     "entry_type": "ranked",
     "iem": "Fiio FX17",
     "favorite": false,
-    "canonical_name": "",
+    "canonical_name": "FiiO FX17",
     "release_year": "—",
     "final_score": 6.4,
     "tonality": "6.3",
@@ -1819,9 +1819,9 @@
     "price": "$1,500",
     "comments": "Wide staging and unique imaging at the expense of slightly peaky upper-treble. Just a little odd sounding overall.",
     "based_on": "Loaner",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "fiio-fx17",
+    "market_value": 1100.0,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -5379,7 +5379,7 @@
     "entry_type": "ranked",
     "iem": "Fiio FH9",
     "favorite": false,
-    "canonical_name": "",
+    "canonical_name": "FiiO FH19",
     "release_year": "—",
     "final_score": 5.0,
     "tonality": "5.0",
@@ -5516,8 +5516,8 @@
     "comments": "Basically sounds like a leaner/sharper Moondrop Kato w/ the same lack of dynamics.",
     "based_on": "Loaner unit",
     "tracker_slug": "moondrop-kadenz",
-    "market_value": 89.14,
-    "market_confidence": "Low"
+    "market_value": 78.69,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -6355,9 +6355,9 @@
     "price": "$20",
     "comments": "Pleasant tonal balance with some minor treble oddity.",
     "based_on": "Review unit",
-    "tracker_slug": "7hz-zero",
+    "tracker_slug": "",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -9987,7 +9987,7 @@
     "entry_type": "demoed",
     "iem": "7Hz Salnotes Zero 2",
     "favorite": false,
-    "canonical_name": "",
+    "canonical_name": "7Hz Zero 2",
     "release_year": "—",
     "final_score": null,
     "tonality": "—",
@@ -10003,9 +10003,9 @@
     "price": "—",
     "comments": "Very well tuned just falls short in terms of resolution. Satisfying mid-bass presence.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "7hz-zero-2",
+    "market_value": 20.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -15117,7 +15117,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "symphonium-titan",
     "market_value": 550.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
