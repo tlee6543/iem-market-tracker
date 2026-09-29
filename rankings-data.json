@@ -140,7 +140,7 @@
     "comments": "More of an all-rounder with better bass compared to the 2021 version, sacrifices some soundstage.",
     "based_on": "Personal unit",
     "tracker_slug": "elysian-annihilator-2023",
-    "market_value": 2260.57,
+    "market_value": 2300.0,
     "market_confidence": "High"
   },
   {
@@ -1052,7 +1052,7 @@
     "comments": "A warmer, more coherent MEST with setbacks in resolution and imaging.",
     "based_on": "Antdroid's unit",
     "tracker_slug": "unique-melody-mest-mk2",
-    "market_value": 647.5,
+    "market_value": 638.0,
     "market_confidence": "High"
   },
   {
@@ -5564,8 +5564,8 @@
     "comments": "Sounds plasticky and smoothed; inoffensive to the point of being offensive.",
     "based_on": "Review unit",
     "tracker_slug": "softears-studio-4",
-    "market_value": 216.74,
-    "market_confidence": "Medium"
+    "market_value": 201.67,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -14708,8 +14708,8 @@
     "comments": "L-shaped listen with a smooth sound. Bombastic bass that's missing some texture.",
     "based_on": "Brief demo",
     "tracker_slug": "quill-acoustics-karma",
-    "market_value": 773.33,
-    "market_confidence": "Medium"
+    "market_value": 766.25,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
