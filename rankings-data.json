@@ -644,8 +644,8 @@
     "comments": "Nearly immaculate tonality, coherency, and timbre with reasonably good technicalities.",
     "based_on": "Tour unit",
     "tracker_slug": "7th-acoustics-supernova",
-    "market_value": 548.25,
-    "market_confidence": "Medium"
+    "market_value": 540.88,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -2036,8 +2036,8 @@
     "comments": "Very pleasant listen tonally and with smooth, micro-peaked treble that belies its price point. Missing a little grip in the bass despite good quantity.",
     "based_on": "Review unit",
     "tracker_slug": "juzear-light-shuttle",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 120.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -2108,7 +2108,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 192.5,
+    "market_value": 193.57,
     "market_confidence": "High"
   },
   {
@@ -6981,7 +6981,7 @@
     "based_on": "Review unit",
     "tracker_slug": "truthear-gate",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
