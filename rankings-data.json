@@ -1845,7 +1845,7 @@
     "based_on": "Review unit",
     "tracker_slug": "letshuoer-ej07m",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -2108,7 +2108,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 193.57,
+    "market_value": 192.5,
     "market_confidence": "High"
   },
   {
@@ -5253,7 +5253,7 @@
     "based_on": "Review unit",
     "tracker_slug": "dunu-titan-s",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -5564,7 +5564,7 @@
     "comments": "Sounds plasticky and smoothed; inoffensive to the point of being offensive.",
     "based_on": "Review unit",
     "tracker_slug": "softears-studio-4",
-    "market_value": 229.5,
+    "market_value": 216.74,
     "market_confidence": "Medium"
   },
   {
@@ -8085,7 +8085,7 @@
     "based_on": "Super*Review's unit",
     "tracker_slug": "sennheiser-ie300",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -15429,7 +15429,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "ultimate-ears-reference-remastered",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
