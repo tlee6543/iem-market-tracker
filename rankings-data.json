@@ -3428,8 +3428,8 @@
     "comments": "Controlled bass and darker treble. Narrow imaging, but solid technicalities for a single DD.",
     "based_on": "Personal unit",
     "tracker_slug": "etymotic-er2xr",
-    "market_value": 48.53,
-    "market_confidence": "Medium"
+    "market_value": 70.02,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -3645,7 +3645,7 @@
     "based_on": "Review unit",
     "tracker_slug": "juzear-harrier",
     "market_value": 183.52,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -4556,7 +4556,7 @@
     "comments": "See KXXS. Just slightly less upper-midrange and more bass.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "moondrop-aria",
-    "market_value": 43.17,
+    "market_value": 46.95,
     "market_confidence": "Medium"
   },
   {
@@ -15596,7 +15596,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "unique-melody-pentara",
-    "market_value": null,
+    "market_value": 3325.0,
     "market_confidence": "Low"
   },
   {

@@ -886,7 +886,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 51/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 8/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 54d ago, 2 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 51/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 22/30, recent sample depth 8/15, source diversity 8/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 54d ago, 2 source type(s), two samples; limited volatility read." tabindex="0">Medium (51/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 54d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 70/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 30/30, recent sample depth 12/15, source diversity 8/10, price consistency 7/10. Current inputs: 3 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 0d ago, 2 source type(s), price CV 0.14." aria-label="Liquidity/confidence score: 70/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 30/30, recent sample depth 12/15, source diversity 8/10, price consistency 7/10. Current inputs: 3 included priced sample(s), 2 in the last 90 days, 2 in the last 180 days, latest sample 0d ago, 2 source type(s), price CV 0.14." tabindex="0">Medium (70/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">3 included sample(s), latest 0d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -919,19 +919,19 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
+<tr id="row-0" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" checked></td>
 <td>2026-10-03</td>
 <td>$50</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">Active</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Check deferred — Reddit rate limit</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
 <td>jimmysofat6864</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">High (15.8% above market)</span></td>
+<td><span id="deal-score-0">Closed: Fair (6.5% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1wwgpxe/wtsuscah_blessing_3_dusk_7hz_timeless_moondrop/#item-4" target="_blank">source</a></td>
 </tr>
 
@@ -947,7 +947,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>AuxNuke</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Closed: Fair (4.2% above market)</span></td>
+<td><span id="deal-score-1">Closed: Fair (4.2% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-aria-og.113710/" target="_blank">source</a></td>
 </tr>
 
@@ -963,7 +963,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>logwagon</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">Closed: Good Deal (18.9% below market)</span></td>
+<td><span id="deal-score-2">Closed: Great Deal (25.5% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1qooqjr/wts_usasc_h_audio_cleanout_he6se_v2_wiim_mini/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -985,7 +985,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Moondrop Aria", "raw_text": "Moondrop Aria - $50 shipped", "seller_username": "jimmysofat6864", "url": "https://www.reddit.com/r/AVexchange/comments/1wwgpxe/wtsuscah_blessing_3_dusk_7hz_timeless_moondrop/#item-4", "price_num": 50.0, "date_ms": 1791011052000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Moondrop Aria (OG)", "raw_text": "Moondrop Aria (OG) Listing ID: 113710 For Sale 45.00 USD Condition Excellent/Like New Negotiability Firm Ships To CanadaUnited States Of America For sale is a never used Moondrop Aria in mint condition. Bought for my wife but she has always used wireless buds instead. Info - Headphone was bought new; I am the original owner. - All original accessories and box are included - I ship to... Listed by: AuxNuke (24) Listed: 2026-08-10", "seller_username": "AuxNuke", "url": "https://www.head-fi.org/classifieds/moondrop-aria-og.113710/", "price_num": 45.0, "date_ms": 1786320000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 2, "title": "Moondrop Aria OG", "raw_text": "Sold Moondrop Aria OG - $35 shipped | Timestamps\nNo box or tips, original cable. Slight paint chipping on left shell, otherwise functional, includes small leather carrying pouch.\nSold Moondrop Chu OG - $15 shipped | Timestamps\nIncludes box and set of medium spring tips", "seller_username": "logwagon", "url": "https://old.reddit.com/r/AVexchange/comments/1qooqjr/wts_usasc_h_audio_cleanout_he6se_v2_wiim_mini/#item-1", "price_num": 35.0, "date_ms": 1769543989000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=moondrop aria"}];
+const allRows = [{"row_id": 0, "title": "Pending payment) Moondrop Aria", "raw_text": "__STRIKE_START__ (Sold, Pending payment) __STRIKE_END__ __STRIKE_START__ Moondrop Aria - $50 shipped __STRIKE_END__", "seller_username": "jimmysofat6864", "url": "https://www.reddit.com/r/AVexchange/comments/1wwgpxe/wtsuscah_blessing_3_dusk_7hz_timeless_moondrop/#item-4", "price_num": 50.0, "date_ms": 1791011052000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=429:len0_pages=old.reddit.com:200:len321885:target=0:closed=0,www.reddit.com:200:len8474:target=0:closed=0,browser:old.reddit.com:200:len118120:target=1:closed=0_http_skipped=0_browser=1", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_item_line_strikethrough_sold | confirmed_priced_nonbundle_included"}, {"row_id": 1, "title": "Moondrop Aria (OG)", "raw_text": "Moondrop Aria (OG) Listing ID: 113710 For Sale 45.00 USD Condition Excellent/Like New Negotiability Firm Ships To CanadaUnited States Of America For sale is a never used Moondrop Aria in mint condition. Bought for my wife but she has always used wireless buds instead. Info - Headphone was bought new; I am the original owner. - All original accessories and box are included - I ship to... Listed by: AuxNuke (24) Listed: 2026-08-10", "seller_username": "AuxNuke", "url": "https://www.head-fi.org/classifieds/moondrop-aria-og.113710/", "price_num": 45.0, "date_ms": 1786320000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 2, "title": "Moondrop Aria OG", "raw_text": "Sold Moondrop Aria OG - $35 shipped | Timestamps\nNo box or tips, original cable. Slight paint chipping on left shell, otherwise functional, includes small leather carrying pouch.\nSold Moondrop Chu OG - $15 shipped | Timestamps\nIncludes box and set of medium spring tips", "seller_username": "logwagon", "url": "https://old.reddit.com/r/AVexchange/comments/1qooqjr/wts_usasc_h_audio_cleanout_he6se_v2_wiim_mini/#item-1", "price_num": 35.0, "date_ms": 1769543989000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=moondrop aria"}];
 const originalMsrpUsd = 80.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
