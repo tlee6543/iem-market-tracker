@@ -2108,7 +2108,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 193.57,
+    "market_value": 192.5,
     "market_confidence": "High"
   },
   {
@@ -4627,9 +4627,9 @@
     "price": "$110",
     "comments": "See KXXS. Just slightly less upper-midrange.",
     "based_on": "Super*Review's unit",
-    "tracker_slug": "",
+    "tracker_slug": "moondrop-starfield",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -5564,8 +5564,8 @@
     "comments": "Sounds plasticky and smoothed; inoffensive to the point of being offensive.",
     "based_on": "Review unit",
     "tracker_slug": "softears-studio-4",
-    "market_value": 210.14,
-    "market_confidence": "Medium"
+    "market_value": 201.67,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -7051,9 +7051,9 @@
     "price": "$35",
     "comments": "V-shaped with decent bass but shouty upper-midrange and slightly scratchy treble.",
     "based_on": "Review unit",
-    "tracker_slug": "",
+    "tracker_slug": "dunu-titan-x",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -7723,9 +7723,9 @@
     "price": "$40",
     "comments": "Shouty thanks to 13dB of pinna compensation, but excellent note definition and imaging for the price.",
     "based_on": "Personal unit",
-    "tracker_slug": "",
+    "tracker_slug": "moondrop-ssr",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -15236,7 +15236,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "thieaudio-prestige-ltd",
-    "market_value": 900.0,
+    "market_value": 870.83,
     "market_confidence": "High"
   },
   {
