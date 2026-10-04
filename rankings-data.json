@@ -404,7 +404,7 @@
     "comments": "Excellent detail retreival and competent tuning. Can be slightly thin sounding and forward in the treble.",
     "based_on": "Loaner",
     "tracker_slug": "thieaudio-monarch-mkiv",
-    "market_value": 879.0,
+    "market_value": 876.67,
     "market_confidence": "High"
   },
   {
@@ -620,7 +620,7 @@
     "comments": "Fantastic colored tonality with options, and the unique technical qualities to back it up. M12/M15 modules recommended.",
     "based_on": "Review unit",
     "tracker_slug": "64-audio-u4s",
-    "market_value": 704.72,
+    "market_value": 695.05,
     "market_confidence": "High"
   },
   {
@@ -644,7 +644,7 @@
     "comments": "Nearly immaculate tonality, coherency, and timbre with reasonably good technicalities.",
     "based_on": "Tour unit",
     "tracker_slug": "7th-acoustics-supernova",
-    "market_value": 526.38,
+    "market_value": 521.65,
     "market_confidence": "High"
   },
   {
@@ -1508,7 +1508,7 @@
     "comments": "Well-extended on both ends of the spectrum and adds back in the upper-midrange the IE900 lacked.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "sennheiser-ie600",
-    "market_value": 373.75,
+    "market_value": 374.0,
     "market_confidence": "High"
   },
   {
@@ -2108,7 +2108,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 193.57,
+    "market_value": 192.5,
     "market_confidence": "High"
   },
   {
@@ -2996,7 +2996,7 @@
     "comments": "A more muddy Andromeda 2020 that's saving grace is the treble spike.",
     "based_on": "Personal unit",
     "tracker_slug": "campfire-andromeda-pre-2020",
-    "market_value": 515.63,
+    "market_value": 503.6,
     "market_confidence": "High"
   },
   {
@@ -5564,8 +5564,8 @@
     "comments": "Sounds plasticky and smoothed; inoffensive to the point of being offensive.",
     "based_on": "Review unit",
     "tracker_slug": "softears-studio-4",
-    "market_value": 210.14,
-    "market_confidence": "Medium"
+    "market_value": 201.67,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -13339,9 +13339,9 @@
     "price": "—",
     "comments": "Midrange is scooped from 1-3kHz and a bit too dark sounding past 15kHz. Good midrange detail but not much else.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
+    "tracker_slug": "linsoul-avant",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -13604,8 +13604,8 @@
     "comments": "Exemplifies my critiques of JM1 to a T. Very safe listen and sounds like the midrange and treble are a bit clouded over.",
     "based_on": "Brief demo",
     "tracker_slug": "moondrop-silicon",
-    "market_value": 175.0,
-    "market_confidence": "Medium"
+    "market_value": null,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -16003,9 +16003,9 @@
     "price": "—",
     "comments": "Dark and slow-sounding with a slight mid-treble peak. Competes with the Aful Explorer for the 'sleepy' award.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
+    "tracker_slug": "ziigaat-lush",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
