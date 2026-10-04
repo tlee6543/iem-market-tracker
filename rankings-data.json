@@ -573,7 +573,7 @@
     "based_on": "Loaner",
     "tracker_slug": "unique-melody-mest-jet-black",
     "market_value": 905.71,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -1028,7 +1028,7 @@
     "comments": "Still perplexingly poor bass performance, but improves upon the Monarch MKII's treble extension noticeably.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "thieaudio-monarch-mkiii",
-    "market_value": 614.0,
+    "market_value": 611.25,
     "market_confidence": "High"
   },
   {
@@ -1701,7 +1701,7 @@
     "based_on": "Loaner",
     "tracker_slug": "qdc-anole-v14",
     "market_value": 885.02,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -2108,7 +2108,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 193.57,
+    "market_value": 192.5,
     "market_confidence": "High"
   },
   {
@@ -5564,8 +5564,8 @@
     "comments": "Sounds plasticky and smoothed; inoffensive to the point of being offensive.",
     "based_on": "Review unit",
     "tracker_slug": "softears-studio-4",
-    "market_value": 210.14,
-    "market_confidence": "Medium"
+    "market_value": 201.67,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -7701,7 +7701,7 @@
     "based_on": "—",
     "tracker_slug": "fiio-fx15",
     "market_value": 350.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -10844,7 +10844,7 @@
     "comments": "Most normal sounding Campfire IEM yet. Neutral with sub-bass boost, very pleasant on the ears but missing some mid-treble for resolution/edge.",
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-clara",
-    "market_value": 1283.0,
+    "market_value": 1295.73,
     "market_confidence": "Medium"
   },
   {
@@ -11541,7 +11541,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "dita-prelude",
     "market_value": 125.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -11685,7 +11685,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "elysian-annihilator-2026",
     "market_value": 2479.02,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
