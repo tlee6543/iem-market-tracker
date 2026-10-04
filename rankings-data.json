@@ -284,7 +284,7 @@
     "comments": "Terrific soundstage depth and imaging; the closest I have heard to a two-channel system in an IEM for these qualities.",
     "based_on": "Personal unit",
     "tracker_slug": "64-audio-u12t",
-    "market_value": 985.06,
+    "market_value": 999.96,
     "market_confidence": "High"
   },
   {
@@ -716,7 +716,7 @@
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-myth",
-    "market_value": 925.83,
+    "market_value": 933.0,
     "market_confidence": "High"
   },
   {
@@ -2108,7 +2108,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 192.5,
+    "market_value": 193.57,
     "market_confidence": "High"
   },
   {
@@ -3117,7 +3117,7 @@
     "based_on": "Review unit",
     "tracker_slug": "sennheiser-ie200",
     "market_value": 80.0,
-    "market_confidence": "Medium"
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -4484,8 +4484,8 @@
     "comments": "See ER2XR but with less sub-bass.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "etymotic-er2se",
-    "market_value": 44.92,
-    "market_confidence": "Low"
+    "market_value": 65.96,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -5564,8 +5564,8 @@
     "comments": "Sounds plasticky and smoothed; inoffensive to the point of being offensive.",
     "based_on": "Review unit",
     "tracker_slug": "softears-studio-4",
-    "market_value": 201.67,
-    "market_confidence": "High"
+    "market_value": 210.14,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -7052,8 +7052,8 @@
     "comments": "V-shaped with decent bass but shouty upper-midrange and slightly scratchy treble.",
     "based_on": "Review unit",
     "tracker_slug": "dunu-titan-x",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 25.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -7724,8 +7724,8 @@
     "comments": "Shouty thanks to 13dB of pinna compensation, but excellent note definition and imaging for the price.",
     "based_on": "Personal unit",
     "tracker_slug": "moondrop-ssr",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 25.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -12164,7 +12164,7 @@
     "comments": "Good detail, but frequency response is contentious.",
     "based_on": "Brief demo",
     "tracker_slug": "fir-audio-xenon-6",
-    "market_value": 1954.05,
+    "market_value": 1917.52,
     "market_confidence": "High"
   },
   {
@@ -15932,7 +15932,7 @@
     "comments": "Very pleasant tuning with thumpy bass albeit lacking wow factor in techs.",
     "based_on": "Brief demo",
     "tracker_slug": "xenns-mangird-tea-pro",
-    "market_value": 242.5,
+    "market_value": 247.0,
     "market_confidence": "High"
   },
   {
