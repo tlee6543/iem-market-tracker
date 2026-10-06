@@ -524,7 +524,7 @@
     "comments": "Top-tier bass, treble, and soundstage height and width. I don't approve of the midrange these days.",
     "based_on": "Loaner",
     "tracker_slug": "sony-ier-z1r",
-    "market_value": 899.83,
+    "market_value": 909.8,
     "market_confidence": "High"
   },
   {
@@ -860,7 +860,7 @@
     "comments": "Exceptional tuning and treble refinement; sets the benchmark at $400.",
     "based_on": "Loaner",
     "tracker_slug": "yu9-que",
-    "market_value": 339.29,
+    "market_value": 338.12,
     "market_confidence": "High"
   },
   {
@@ -1028,7 +1028,7 @@
     "comments": "Still perplexingly poor bass performance, but improves upon the Monarch MKII's treble extension noticeably.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "thieaudio-monarch-mkiii",
-    "market_value": 611.25,
+    "market_value": 589.0,
     "market_confidence": "High"
   },
   {
@@ -2108,7 +2108,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 193.57,
+    "market_value": 192.5,
     "market_confidence": "High"
   },
   {
@@ -2468,7 +2468,7 @@
     "comments": "Solid rendition of reference tuning that's missing some upper-treble energy for my neutral/reference. Best thought of as a tool.",
     "based_on": "Loaner unit",
     "tracker_slug": "crinear-reference",
-    "market_value": 273.75,
+    "market_value": 274.44,
     "market_confidence": "High"
   },
   {
@@ -5564,8 +5564,8 @@
     "comments": "Sounds plasticky and smoothed; inoffensive to the point of being offensive.",
     "based_on": "Review unit",
     "tracker_slug": "softears-studio-4",
-    "market_value": 210.14,
-    "market_confidence": "Medium"
+    "market_value": 201.67,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
