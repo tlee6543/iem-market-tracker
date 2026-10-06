@@ -332,7 +332,7 @@
     "comments": "Colored tonality done correctly with incredible bass and dynamics. Upper-treble can be slightly too zingy depending on source.",
     "based_on": "Zepp & Co Unit",
     "tracker_slug": "symphonium-crimson",
-    "market_value": 829.2,
+    "market_value": 826.54,
     "market_confidence": "Medium"
   },
   {
@@ -404,7 +404,7 @@
     "comments": "Excellent detail retreival and competent tuning. Can be slightly thin sounding and forward in the treble.",
     "based_on": "Loaner",
     "tracker_slug": "thieaudio-monarch-mkiv",
-    "market_value": 876.67,
+    "market_value": 876.5,
     "market_confidence": "High"
   },
   {
@@ -452,8 +452,8 @@
     "comments": "High-clarity signature that invokes a sense of stateliness.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "empire-ears-odin",
-    "market_value": 1486.9,
-    "market_confidence": "Medium"
+    "market_value": 1492.42,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -788,7 +788,7 @@
     "comments": "Quite exciting and dynamic, possibly a bit bright in the treble.",
     "based_on": "—",
     "tracker_slug": "dunu-glacier",
-    "market_value": 771.22,
+    "market_value": 770.0,
     "market_confidence": "High"
   },
   {
@@ -860,7 +860,7 @@
     "comments": "Exceptional tuning and treble refinement; sets the benchmark at $400.",
     "based_on": "Loaner",
     "tracker_slug": "yu9-que",
-    "market_value": 331.88,
+    "market_value": 339.29,
     "market_confidence": "High"
   },
   {
@@ -2108,7 +2108,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 193.57,
+    "market_value": 192.5,
     "market_confidence": "High"
   },
   {
@@ -5564,8 +5564,8 @@
     "comments": "Sounds plasticky and smoothed; inoffensive to the point of being offensive.",
     "based_on": "Review unit",
     "tracker_slug": "softears-studio-4",
-    "market_value": 210.14,
-    "market_confidence": "Medium"
+    "market_value": 201.67,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -9956,8 +9956,8 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "64-audio-volur",
-    "market_value": 1385.57,
-    "market_confidence": "Medium"
+    "market_value": 1477.71,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -10317,7 +10317,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "pmg-audio-apx-me",
     "market_value": 5175.0,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -11180,7 +11180,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "canpur-silver-flash",
-    "market_value": 101.25,
+    "market_value": 101.43,
     "market_confidence": "High"
   },
   {
@@ -14301,7 +14301,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "pmg-audio-apx-me",
     "market_value": 5175.0,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -14732,8 +14732,8 @@
     "comments": "L-shaped listen with a smooth sound. Bombastic bass that's missing some texture.",
     "based_on": "Brief demo",
     "tracker_slug": "quill-acoustics-karma",
-    "market_value": 766.25,
-    "market_confidence": "Medium"
+    "market_value": 763.0,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
