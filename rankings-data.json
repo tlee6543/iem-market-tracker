@@ -2108,7 +2108,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 193.57,
+    "market_value": 192.5,
     "market_confidence": "High"
   },
   {
@@ -2468,7 +2468,7 @@
     "comments": "Solid rendition of reference tuning that's missing some upper-treble energy for my neutral/reference. Best thought of as a tool.",
     "based_on": "Loaner unit",
     "tracker_slug": "crinear-reference",
-    "market_value": 274.44,
+    "market_value": 273.75,
     "market_confidence": "High"
   },
   {
@@ -5564,8 +5564,8 @@
     "comments": "Sounds plasticky and smoothed; inoffensive to the point of being offensive.",
     "based_on": "Review unit",
     "tracker_slug": "softears-studio-4",
-    "market_value": 210.14,
-    "market_confidence": "Medium"
+    "market_value": 201.67,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -16005,7 +16005,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "ziigaat-horizon",
     "market_value": 221.3,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
