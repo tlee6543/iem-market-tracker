@@ -188,7 +188,7 @@
     "comments": "Pretty much the closest to a tonal panacea that I've heard only held back by the bass.",
     "based_on": "Loaner",
     "tracker_slug": "7th-acoustics-asteria",
-    "market_value": 3376.87,
+    "market_value": 3200.0,
     "market_confidence": "High"
   },
   {
@@ -2108,7 +2108,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 192.5,
+    "market_value": 193.57,
     "market_confidence": "High"
   },
   {
@@ -2468,7 +2468,7 @@
     "comments": "Solid rendition of reference tuning that's missing some upper-treble energy for my neutral/reference. Best thought of as a tool.",
     "based_on": "Loaner unit",
     "tracker_slug": "crinear-reference",
-    "market_value": 273.75,
+    "market_value": 275.0,
     "market_confidence": "High"
   },
   {
@@ -3284,8 +3284,8 @@
     "comments": "Has the planar advantage with most of its disadvantages and a reasonable tonality.",
     "based_on": "Review unit",
     "tracker_slug": "7hz-timeless",
-    "market_value": 92.28,
-    "market_confidence": "Medium"
+    "market_value": 96.14,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -15380,8 +15380,8 @@
     "comments": "Very boring and dark albeit safe.",
     "based_on": "Brief demo",
     "tracker_slug": "truthear-pure",
-    "market_value": 59.8,
-    "market_confidence": "Medium"
+    "market_value": 58.33,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
