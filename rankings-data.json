@@ -20,7 +20,7 @@
     "comments": "Easily at the top for resolution and dynamic contrast, accompanied by rigid transients and pinpoint layering. The zenith of colored clarity.",
     "based_on": "Demo",
     "tracker_slug": "subtonic-storm",
-    "market_value": 7033.0,
+    "market_value": 6966.03,
     "market_confidence": "High"
   },
   {
@@ -716,7 +716,7 @@
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-myth",
-    "market_value": 933.0,
+    "market_value": 927.5,
     "market_confidence": "High"
   },
   {
@@ -2108,7 +2108,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 192.5,
+    "market_value": 194.38,
     "market_confidence": "High"
   },
   {
@@ -4364,8 +4364,8 @@
     "comments": "Sounds like a warmer, lo-res Moondrop B2, emphasis on lo-res in the bass.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "truthear-hexa",
-    "market_value": 54.82,
-    "market_confidence": "Medium"
+    "market_value": 60.06,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -11180,7 +11180,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "canpur-silver-flash",
-    "market_value": 101.43,
+    "market_value": 101.25,
     "market_confidence": "High"
   },
   {
@@ -12860,7 +12860,7 @@
     "comments": "New meta style tuning that's a little more forward than the KE4. More depth to sound but also more fatiguing.",
     "based_on": "Brief demo",
     "tracker_slug": "kiwi-ears-astral",
-    "market_value": 174.0,
+    "market_value": 183.33,
     "market_confidence": "High"
   },
   {
@@ -13700,8 +13700,8 @@
     "comments": "Well-rounded, slightly more U-shaped listen. Bouncy sounding bass and treble characterized by strong linearity and crispness up until 15kHz.",
     "based_on": "Brief demo",
     "tracker_slug": "nicehck-nx8ti",
-    "market_value": 257.61,
-    "market_confidence": "Medium"
+    "market_value": 229.0,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
