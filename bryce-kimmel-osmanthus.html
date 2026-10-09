@@ -892,7 +892,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -918,6 +918,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 <tr id="row-0" data-source="headfi" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<td>2026-10-06</td>
+<td>$2,750</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Active</td>
+<td>like new, excellent, good condition</td>
+<td>0</td>
+<td>headfi</td>
+<td>Pelilin</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">N/A</span></td>
+<td><a href="https://www.head-fi.org/classifieds/bryce-and-kimmel-osmanthus-100.116590/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" ></td>
 <td>2026-08-26</td>
 <td>$2,700</td>
 <td><span class="pill">active</span></td>
@@ -926,9 +942,9 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>0</td>
 <td>headfi</td>
 <td>Pelilin</td>
-<td>0</td>
-<td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td>1</td>
+<td>1</td>
+<td><span id="deal-score-1">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/bryce-and-kimmel-osmanthus-100.114479/" target="_blank">source</a></td>
 </tr>
 
@@ -950,7 +966,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Bryce And Kimmel Osmanthus #100", "raw_text": "Bryce And Kimmel Osmanthus #100 Listing ID: 114479 For Sale 2,700.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere As per today i found out my mom is sick and need headroom cash to help her medication. Im selling this very low already for anyone interested please PM me thank you. It is fullset and have very minimum wear and like new. If you have any... Listed by: Pelilin (3) Listed: 2026-08-26 Last edited: 2026-10-03", "seller_username": "Pelilin", "url": "https://www.head-fi.org/classifieds/bryce-and-kimmel-osmanthus-100.114479/", "price_num": 2700.0, "date_ms": 1787702400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged"}];
+const allRows = [{"row_id": 0, "title": "Bryce And Kimmel Osmanthus #100", "raw_text": "Bryce And Kimmel Osmanthus #100 Listing ID: 116590 For Sale 2,750.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere It is in very good like new condition and fullset. Working perfectly and still look pristine. Recently i also dont have many time listening to my IEMs so it is still in a very good condition. I am not smoking and i keep it clean in a pouch so... Listed by: Pelilin (3) Listed: 2026-10-06 Last edited: 2026-10-08", "seller_username": "Pelilin", "url": "https://www.head-fi.org/classifieds/bryce-and-kimmel-osmanthus-100.116590/", "price_num": 2750.0, "date_ms": 1791244800000, "listing_status": "active", "condition_text": "like new, excellent, good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Bryce And Kimmel Osmanthus #100", "raw_text": "Bryce And Kimmel Osmanthus #100 Listing ID: 114479 For Sale 2,700.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere As per today i found out my mom is sick and need headroom cash to help her medication. Im selling this very low already for anyone interested please PM me thank you. It is fullset and have very minimum wear and like new. If you have any... Listed by: Pelilin (3) Listed: 2026-08-26 Last edited: 2026-10-03", "seller_username": "Pelilin", "url": "https://www.head-fi.org/classifieds/bryce-and-kimmel-osmanthus-100.114479/", "price_num": 2700.0, "date_ms": 1787702400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged | auto_repost_duplicate_excluded_keep_latest_120d"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

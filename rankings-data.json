@@ -91,9 +91,9 @@
     "price": "$7,700",
     "comments": "A more tonally correct version of the Mysticraft HEX. Still some tuning oddity but largely maintains the top-tier technical performance.",
     "based_on": "Loaner unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "mysticraft-tet",
+    "market_value": 7700.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -620,7 +620,7 @@
     "comments": "Fantastic colored tonality with options, and the unique technical qualities to back it up. M12/M15 modules recommended.",
     "based_on": "Review unit",
     "tracker_slug": "64-audio-u4s",
-    "market_value": 695.05,
+    "market_value": 692.9,
     "market_confidence": "High"
   },
   {
@@ -764,7 +764,7 @@
     "comments": "Great tuning and rendition of colored sound overall. Has some issues with dynamics in the midrange/treble for louder listening.",
     "based_on": "Loaner unit",
     "tracker_slug": "aful-dawn-x",
-    "market_value": 852.56,
+    "market_value": 855.45,
     "market_confidence": "High"
   },
   {
@@ -11395,9 +11395,9 @@
     "price": "—",
     "comments": "JM1 style tuning for $100. Warm and extremely forgiving, tuned a bit too safe but decent overall.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "crinear-nightfall",
+    "market_value": 89.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
