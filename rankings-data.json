@@ -2468,7 +2468,7 @@
     "comments": "Solid rendition of reference tuning that's missing some upper-treble energy for my neutral/reference. Best thought of as a tool.",
     "based_on": "Loaner unit",
     "tracker_slug": "crinear-reference",
-    "market_value": 275.0,
+    "market_value": 271.88,
     "market_confidence": "High"
   },
   {
@@ -3453,7 +3453,7 @@
     "based_on": "Schezade unit",
     "tracker_slug": "fir-audio-radon-6",
     "market_value": 1918.8,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -10989,7 +10989,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-chimera",
     "market_value": 4999.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -15333,7 +15333,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "oriolus-traillii-ultra-iem-system",
     "market_value": 7000.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
