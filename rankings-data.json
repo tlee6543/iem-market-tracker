@@ -260,8 +260,8 @@
     "comments": "Rich bass and out-of-head imaging.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "64-audio-tia-trio",
-    "market_value": 991.03,
-    "market_confidence": "Medium"
+    "market_value": 947.5,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -644,7 +644,7 @@
     "comments": "Nearly immaculate tonality, coherency, and timbre with reasonably good technicalities.",
     "based_on": "Tour unit",
     "tracker_slug": "7th-acoustics-supernova",
-    "market_value": 521.65,
+    "market_value": 526.76,
     "market_confidence": "High"
   },
   {
@@ -2300,8 +2300,8 @@
     "comments": "Detail-oriented signature at the expense of sounding quite anemic.",
     "based_on": "—",
     "tracker_slug": "moondrop-blessing-3",
-    "market_value": 263.0,
-    "market_confidence": "Medium"
+    "market_value": 233.69,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -5636,8 +5636,8 @@
     "comments": "A leaner, more forward version of the 3001.",
     "based_on": "DUNU loaner",
     "tracker_slug": "dunu-dk-2001",
-    "market_value": 285.0,
-    "market_confidence": "Low"
+    "market_value": 301.36,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -9956,7 +9956,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "64-audio-volur",
-    "market_value": 1477.71,
+    "market_value": 1466.27,
     "market_confidence": "High"
   },
   {
@@ -13028,8 +13028,8 @@
     "comments": "Safe neutral warm tuning lacking the excitement to take it to the next level. Typical BA bass and weightless transients.",
     "based_on": "Brief demo",
     "tracker_slug": "kiwi-ears-orchestra-lite",
-    "market_value": 113.14,
-    "market_confidence": "Medium"
+    "market_value": 125.07,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -13630,6 +13630,30 @@
     "tracker_slug": "moondrop-silicon",
     "market_value": null,
     "market_confidence": "Low"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Moondrop Starfield 3",
+    "favorite": false,
+    "canonical_name": "",
+    "release_year": "—",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "—",
+    "setup": "—",
+    "price": "—",
+    "comments": "A little less timbrally pleasing than previous Starfields. Treble sounds more unnatural. Bass is more sub-bassy focused, more carved out frequency response in general.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "demoed",
@@ -15385,6 +15409,78 @@
   },
   {
     "entry_type": "demoed",
+    "iem": "Twistura Beta",
+    "favorite": false,
+    "canonical_name": "",
+    "release_year": "—",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "3",
+    "setup": "—",
+    "price": "—",
+    "comments": "Very odd vocal suppression, muddy bass, and generally unpleasant to hear.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Twistura Omega",
+    "favorite": false,
+    "canonical_name": "",
+    "release_year": "—",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "5",
+    "setup": "—",
+    "price": "—",
+    "comments": "Warm and somewhat fuzzy/dark sounding in the treble with a slight shapeless. Techs are lacking and sounds like an old BA IEM.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
+    "iem": "Twistura Wood",
+    "favorite": false,
+    "canonical_name": "",
+    "release_year": "—",
+    "final_score": null,
+    "tonality": "—",
+    "bass": "—",
+    "midrange": "—",
+    "treble": "—",
+    "tech": "—",
+    "detail": "—",
+    "imaging": "—",
+    "dynamics": "—",
+    "bias": "4",
+    "setup": "—",
+    "price": "—",
+    "comments": "Typical single DD sound with a bit more sharpness in the mid-treble and a slight mid-bass focus that promotes good note texture albeit more fatigue.",
+    "based_on": "Brief demo",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "demoed",
     "iem": "UE Live",
     "favorite": false,
     "canonical_name": "",
@@ -15980,7 +16076,7 @@
     "comments": "Excellent rendition of slightly musical sound that builds off the Tea Pro with slightly better treble extension.",
     "based_on": "Brief demo",
     "tracker_slug": "xenns-mangird-tea-pro-se",
-    "market_value": 330.0,
+    "market_value": 334.0,
     "market_confidence": "High"
   },
   {
