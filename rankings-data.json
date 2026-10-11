@@ -764,7 +764,7 @@
     "comments": "Great tuning and rendition of colored sound overall. Has some issues with dynamics in the midrange/treble for louder listening.",
     "based_on": "Loaner unit",
     "tracker_slug": "aful-dawn-x",
-    "market_value": 855.45,
+    "market_value": 823.06,
     "market_confidence": "High"
   },
   {
@@ -788,7 +788,7 @@
     "comments": "Quite exciting and dynamic, possibly a bit bright in the treble.",
     "based_on": "—",
     "tracker_slug": "dunu-glacier",
-    "market_value": 770.0,
+    "market_value": 827.5,
     "market_confidence": "High"
   },
   {
@@ -1388,7 +1388,7 @@
     "comments": "Slightly colored but well-rounded tonality with minor quirks.",
     "based_on": "Loaner unit",
     "tracker_slug": "xenns-mangird-top-pro",
-    "market_value": 350.71,
+    "market_value": 349.38,
     "market_confidence": "High"
   },
   {
@@ -1460,8 +1460,8 @@
     "comments": "Bass sounds somewhat 'BA-ish' for being DD, but well-tuned, decently technical, and a very solid package overall.",
     "based_on": "—",
     "tracker_slug": "thieaudio-hype-4",
-    "market_value": 277.44,
-    "market_confidence": "Medium"
+    "market_value": 273.33,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -2156,7 +2156,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 194.38,
+    "market_value": 193.57,
     "market_confidence": "High"
   },
   {
@@ -5572,7 +5572,7 @@
     "iem": "Juzear Nimbus",
     "favorite": false,
     "canonical_name": "Juzear Nimbus",
-    "release_year": "—",
+    "release_year": "2026",
     "final_score": 5.0,
     "tonality": "5.0",
     "bass": "5.0",
@@ -11756,7 +11756,7 @@
     "comments": "Generic V-shape sound signature with thin midrange and heavy mid-treble peaking.",
     "based_on": "Brief demo",
     "tracker_slug": "dita-project-m2",
-    "market_value": 244.6,
+    "market_value": 233.83,
     "market_confidence": "High"
   },
   {
@@ -16348,7 +16348,7 @@
     "iem": "Ziigaat Thunder",
     "favorite": false,
     "canonical_name": "Ziigaat Thunder",
-    "release_year": "—",
+    "release_year": "2026",
     "final_score": null,
     "tonality": "—",
     "bass": "—",
