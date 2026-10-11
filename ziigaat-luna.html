@@ -814,6 +814,33 @@ score backgrounds cannot be lost to broader table/cell styling.
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#0f1f38">
+
+<style id="iem-product-media-styles">
+.product-media-panel {
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    margin: 0 0 16px; padding: 14px; border: 1px solid #eee;
+    border-radius: 10px; background: #fafafa;
+}
+.product-media-image-wrap {
+    flex: 0 0 220px; width: 220px; max-width: 100%; min-height: 120px;
+    display: flex; align-items: center; justify-content: center;
+    box-sizing: border-box; padding: 10px; border: 1px solid #e4e4e4;
+    border-radius: 8px; background: #fff;
+}
+.product-media-image { display: block; width: 100%; height: auto; max-height: 220px; object-fit: contain; }
+.product-media-actions { flex: 1 1 220px; min-width: 0; }
+.product-media-actions p { margin: 0 0 10px; color: #666; line-height: 1.45; }
+.product-page-link {
+    display: inline-flex; align-items: center; min-height: 38px; box-sizing: border-box;
+    padding: 0 14px; border: 1px solid #111; border-radius: 999px;
+    background: #111; color: #fff; font-weight: bold;
+}
+.product-page-link:hover { color: #fff; background: #333; text-decoration: none; }
+@media (max-width: 620px) {
+    .product-media-panel { align-items: stretch; }
+    .product-media-image-wrap { width: 100%; flex-basis: 100%; }
+}
+</style>
 </head>
 <body>
 
@@ -874,6 +901,9 @@ score backgrounds cannot be lost to broader table/cell styling.
 </div>
 <div class="card">
 <h2>Product Info</h2>
+<!-- iem-product-media:v1 -->
+<div class="product-media-panel"><div class="product-media-actions"><p>Product reference</p><a class="product-page-link" href="https://www.ziigaat.com/products/ziigaat-luna" target="_blank" rel="noopener noreferrer">View product / reference page ↗</a></div></div>
+
 <div class="product-grid">
     <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$379</div></div>
     <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2025</div></div>
@@ -886,7 +916,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 65/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 22/30, recent sample depth 15/15, source diversity 8/10, price consistency 7/10. Current inputs: 3 included priced sample(s), 3 in the last 90 days, 3 in the last 180 days, latest sample 48d ago, 2 source type(s), price CV 0.14." aria-label="Liquidity/confidence score: 65/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 22/30, recent sample depth 15/15, source diversity 8/10, price consistency 7/10. Current inputs: 3 included priced sample(s), 3 in the last 90 days, 3 in the last 180 days, latest sample 48d ago, 2 source type(s), price CV 0.14." tabindex="0">Medium (65/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">3 included sample(s), latest 48d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 62/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 22/30, recent sample depth 12/15, source diversity 8/10, price consistency 7/10. Current inputs: 3 included priced sample(s), 2 in the last 90 days, 3 in the last 180 days, latest sample 49d ago, 2 source type(s), price CV 0.14." aria-label="Liquidity/confidence score: 62/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 13/35, recency 22/30, recent sample depth 12/15, source diversity 8/10, price consistency 7/10. Current inputs: 3 included priced sample(s), 2 in the last 90 days, 3 in the last 180 days, latest sample 49d ago, 2 source type(s), price CV 0.14." tabindex="0">Medium (62/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">3 included sample(s), latest 49d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -931,7 +961,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>arejay_33</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">High (22.7% above market)</span></td>
+<td><span id="deal-score-0">High (21.8% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1wieo79/wts_usla_h_ziigaat_luna_w_paypal_ff/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -947,7 +977,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>stayfido</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Closed: Fair (7.3% below market)</span></td>
+<td><span id="deal-score-1">Closed: Fair (8.0% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/ziigaat-luna.114340/" target="_blank">source</a></td>
 </tr>
 
@@ -963,7 +993,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>ajohnsonrpi</td>
 <td>0</td>
 <td>1</td>
-<td><span id="deal-score-2">Closed: High (20.0% above market)</span></td>
+<td><span id="deal-score-2">Closed: High (19.0% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vnxaf9/wts_uspa_h_ziigaat_luna_w_price_drop_220_shipped/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -979,7 +1009,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>ajohnsonrpi</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-3">Overpriced (41.8% above market)</span></td>
+<td><span id="deal-score-3">Overpriced (40.7% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vk12dg/wts_uspa_h_ziigaat_luna_w_price_drop_260_shipped/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -995,7 +1025,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>ajohnsonrpi</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-4">Overpriced (52.7% above market)</span></td>
+<td><span id="deal-score-4">Overpriced (51.5% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vi9vyf/wts_uspa_h_ziigaat_luna_w_price_drop_280_310/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -1011,7 +1041,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>ajohnsonrpi</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-5">Overpriced (69.1% above market)</span></td>
+<td><span id="deal-score-5">Overpriced (67.7% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vgfsgn/wts_uspa_h_ziigaat_luna_w_310_shipped_obo_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -1027,7 +1057,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>superfrogyto</td>
 <td>0</td>
 <td>1</td>
-<td><span id="deal-score-6">Fair (1.8% below market)</span></td>
+<td><span id="deal-score-6">Fair (2.6% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1v41d4t/wts_wtt_usany_h_ziigaat_luna_w_other_iems_or/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -1043,7 +1073,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>superfrogyto</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-7">Overpriced (107.3% above market)</span></td>
+<td><span id="deal-score-7">Overpriced (105.6% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1v18o7p/wts_wtt_usany_h_ziigaat_luna_w_other_iems_or/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -1059,7 +1089,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>bozodidthedub</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-8">Great Deal (32.9% below market)</span></td>
+<td><span id="deal-score-8">Great Deal (33.4% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/my-ziigaat-luna-for-your-hype-4-or-tea-pro-og.112261/" target="_blank">source</a></td>
 </tr>
 
@@ -1075,7 +1105,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Josh83</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-9">Closed: Good Deal (12.7% below market)</span></td>
+<td><span id="deal-score-9">Closed: Good Deal (13.4% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/ziigaat-luna-single-owner-mint-all-tips-unused.112102/" target="_blank">source</a></td>
 </tr>
 
@@ -1091,7 +1121,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>bschnell9</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-10">Fair (4.5% below market)</span></td>
+<td><span id="deal-score-10">Fair (5.3% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/ziigaat-luna.111092/" target="_blank">source</a></td>
 </tr>
 
@@ -1107,7 +1137,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>rcoleman1</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-11">Overpriced (50.0% above market)</span></td>
+<td><span id="deal-score-11">Overpriced (48.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/ziigaat-luna-balanced-armature-iems-mint-in-box.108531/" target="_blank">source</a></td>
 </tr>
 
@@ -1123,7 +1153,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>rcoleman1</td>
 <td>0</td>
 <td>1</td>
-<td><span id="deal-score-12">Good Deal (18.2% below market)</span></td>
+<td><span id="deal-score-12">Good Deal (18.8% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pd-ziigaat-luna-balanced-armature-iems-mint-in-box.108531/" target="_blank">source</a></td>
 </tr>
 

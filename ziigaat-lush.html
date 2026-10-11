@@ -814,6 +814,33 @@ score backgrounds cannot be lost to broader table/cell styling.
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#0f1f38">
+
+<style id="iem-product-media-styles">
+.product-media-panel {
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    margin: 0 0 16px; padding: 14px; border: 1px solid #eee;
+    border-radius: 10px; background: #fafafa;
+}
+.product-media-image-wrap {
+    flex: 0 0 220px; width: 220px; max-width: 100%; min-height: 120px;
+    display: flex; align-items: center; justify-content: center;
+    box-sizing: border-box; padding: 10px; border: 1px solid #e4e4e4;
+    border-radius: 8px; background: #fff;
+}
+.product-media-image { display: block; width: 100%; height: auto; max-height: 220px; object-fit: contain; }
+.product-media-actions { flex: 1 1 220px; min-width: 0; }
+.product-media-actions p { margin: 0 0 10px; color: #666; line-height: 1.45; }
+.product-page-link {
+    display: inline-flex; align-items: center; min-height: 38px; box-sizing: border-box;
+    padding: 0 14px; border: 1px solid #111; border-radius: 999px;
+    background: #111; color: #fff; font-weight: bold;
+}
+.product-page-link:hover { color: #fff; background: #333; text-decoration: none; }
+@media (max-width: 620px) {
+    .product-media-panel { align-items: stretch; }
+    .product-media-image-wrap { width: 100%; flex-basis: 100%; }
+}
+</style>
 </head>
 <body>
 
@@ -874,6 +901,9 @@ score backgrounds cannot be lost to broader table/cell styling.
 </div>
 <div class="card">
 <h2>Product Info</h2>
+<!-- iem-product-media:v1 -->
+<div class="product-media-panel"><div class="product-media-actions"><p>Product reference</p><a class="product-page-link" href="https://www.linsoul.com/products/ziigaat-lush" target="_blank" rel="noopener noreferrer">View product / reference page ↗</a></div></div>
+
 <div class="product-grid">
     <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$179</div></div>
     <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2025</div></div>
@@ -922,7 +952,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr id="row-0" data-source="headfi" class="listing-row excluded">
 <td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
 <td>2026-10-03</td>
-<td>$90</td>
+<td>$85</td>
 <td><span class="pill">active</span></td>
 <td class="status-reason">Still active</td>
 <td>like new, excellent</td>
@@ -953,7 +983,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Ziigaat Lush", "raw_text": "Ziigaat Lush Listing ID: 116475 For Sale 90.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Selling my Ziigaat Lush Accessories Included. Price includes shipping and fees. Listed by: MilitaryHifi (429) Listed: 2026-10-03 Last edited: 2026-10-07", "seller_username": "MilitaryHifi", "url": "https://www.head-fi.org/classifieds/ziigaat-lush.116475/", "price_num": 90.0, "date_ms": 1790985600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}];
+const allRows = [{"row_id": 0, "title": "Ziigaat Lush", "raw_text": "Ziigaat Lush Listing ID: 116475 For Sale 85.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Selling my Ziigaat Lush Accessories Included. Price includes shipping and fees. Listed by: MilitaryHifi (451) Listed: 2026-10-03 Last edited: 2026-10-09", "seller_username": "MilitaryHifi", "url": "https://www.head-fi.org/classifieds/ziigaat-lush.116475/", "price_num": 85.0, "date_ms": 1790985600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}];
 const originalMsrpUsd = 179.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

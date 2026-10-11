@@ -814,6 +814,33 @@ score backgrounds cannot be lost to broader table/cell styling.
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#0f1f38">
+
+<style id="iem-product-media-styles">
+.product-media-panel {
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    margin: 0 0 16px; padding: 14px; border: 1px solid #eee;
+    border-radius: 10px; background: #fafafa;
+}
+.product-media-image-wrap {
+    flex: 0 0 220px; width: 220px; max-width: 100%; min-height: 120px;
+    display: flex; align-items: center; justify-content: center;
+    box-sizing: border-box; padding: 10px; border: 1px solid #e4e4e4;
+    border-radius: 8px; background: #fff;
+}
+.product-media-image { display: block; width: 100%; height: auto; max-height: 220px; object-fit: contain; }
+.product-media-actions { flex: 1 1 220px; min-width: 0; }
+.product-media-actions p { margin: 0 0 10px; color: #666; line-height: 1.45; }
+.product-page-link {
+    display: inline-flex; align-items: center; min-height: 38px; box-sizing: border-box;
+    padding: 0 14px; border: 1px solid #111; border-radius: 999px;
+    background: #111; color: #fff; font-weight: bold;
+}
+.product-page-link:hover { color: #fff; background: #333; text-decoration: none; }
+@media (max-width: 620px) {
+    .product-media-panel { align-items: stretch; }
+    .product-media-image-wrap { width: 100%; flex-basis: 100%; }
+}
+</style>
 </head>
 <body>
 
@@ -874,6 +901,9 @@ score backgrounds cannot be lost to broader table/cell styling.
 </div>
 <div class="card">
 <h2>Product Info</h2>
+<!-- iem-product-media:v1 -->
+<div class="product-media-panel"><div class="product-media-actions"><p>Product reference</p><a class="product-page-link" href="https://crinacle.com/rankings/iems/pre2023/" target="_blank" rel="noopener noreferrer">View product / reference page ↗</a></div></div>
+
 <div class="product-grid">
     <div class="product-field"><div class="product-label">Original MSRP</div><div class="product-value">$1,315</div></div>
     <div class="product-field"><div class="product-label">Release Year</div><div class="product-value">2020</div></div>
@@ -886,7 +916,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 21/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 745d ago, 1 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 21/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 745d ago, 1 source type(s), two samples; limited volatility read." tabindex="0">Low (21/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 745d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 21/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 746d ago, 1 source type(s), two samples; limited volatility read." aria-label="Liquidity/confidence score: 21/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 9/35, recency 3/30, recent sample depth 0/15, source diversity 5/10, price consistency 4/10. Current inputs: 2 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 746d ago, 1 source type(s), two samples; limited volatility read." tabindex="0">Low (21/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">2 included sample(s), latest 746d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
