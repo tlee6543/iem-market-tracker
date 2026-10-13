@@ -1628,8 +1628,8 @@
     "comments": "Very bouncy bass but midrange sounds sucked out and has some oddity. Original sounds more coherent even if less exciting/detailed.",
     "based_on": "—",
     "tracker_slug": "hisenior-mega-5-est",
-    "market_value": 202.24,
-    "market_confidence": "Low"
+    "market_value": 287.77,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -4628,7 +4628,7 @@
     "comments": "New meta style tuning that's a little more forward than the KE4. More depth to sound but also more fatiguing.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "kiwi-ears-astral",
-    "market_value": 183.33,
+    "market_value": 183.0,
     "market_confidence": "High"
   },
   {
@@ -7723,9 +7723,9 @@
     "price": "$160",
     "comments": "Singers sound like they're choking.",
     "based_on": "Super*Review's unit",
-    "tracker_slug": "",
+    "tracker_slug": "tanchjim-hana",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -9452,8 +9452,8 @@
     "comments": "CFA whiffs again. Muffled midrange with a peak somewhere in the mid treble and no air.",
     "based_on": "Loaner",
     "tracker_slug": "campfire-audio-saber",
-    "market_value": 250.0,
-    "market_confidence": "Low"
+    "market_value": 266.26,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -13172,8 +13172,8 @@
     "comments": "Quite a bassy listen, more V-shape with a big sound but a bhit too intense for me.",
     "based_on": "Brief demo",
     "tracker_slug": "kiwi-ears-ke4",
-    "market_value": 119.62,
-    "market_confidence": "Medium"
+    "market_value": 200.0,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
