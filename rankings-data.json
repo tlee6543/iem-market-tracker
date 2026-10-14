@@ -620,7 +620,7 @@
     "comments": "Fantastic colored tonality with options, and the unique technical qualities to back it up. M12/M15 modules recommended.",
     "based_on": "Review unit",
     "tracker_slug": "64-audio-u4s",
-    "market_value": 678.33,
+    "market_value": 673.33,
     "market_confidence": "High"
   },
   {
@@ -1148,7 +1148,7 @@
     "comments": "Dull microdynamics and treble at a not-so-dull price.",
     "based_on": "Loaner",
     "tracker_slug": "oriolus-traillii-jp",
-    "market_value": 3248.33,
+    "market_value": 3311.25,
     "market_confidence": "High"
   },
   {
@@ -1484,7 +1484,7 @@
     "comments": "Warm signature and excellent bass sabotaged by spicy upper-treble response.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "64-audio-volur",
-    "market_value": 1483.33,
+    "market_value": 1512.5,
     "market_confidence": "High"
   },
   {
@@ -9187,9 +9187,9 @@
     "price": "$220",
     "comments": "Just another V-shaped tuning with low-level detailing.",
     "based_on": "Super*Review's unit",
-    "tracker_slug": "",
+    "tracker_slug": "qdc-uranus",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -10412,8 +10412,8 @@
     "comments": "Decent tuning that improves upper-treble on the Performer 5 whilst maintaining some harshness in the lower-treble.",
     "based_on": "Brief demo",
     "tracker_slug": "aful-performer-5-2",
-    "market_value": 138.81,
-    "market_confidence": "Medium"
+    "market_value": 132.78,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -10820,7 +10820,7 @@
     "comments": "A darker version of the Fugaku. Bass resonates a bit more, midrange is slightly more colored, and treble is darker/more upper-treble focused.",
     "based_on": "Brief demo",
     "tracker_slug": "brise-audio-ibuki",
-    "market_value": 6329.8,
+    "market_value": 6333.17,
     "market_confidence": "High"
   },
   {
@@ -14948,7 +14948,7 @@
     "comments": "L-shaped listen with a smooth sound. Bombastic bass that's missing some texture.",
     "based_on": "Brief demo",
     "tracker_slug": "quill-acoustics-karma",
-    "market_value": 760.83,
+    "market_value": 759.29,
     "market_confidence": "High"
   },
   {
