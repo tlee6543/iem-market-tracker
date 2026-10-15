@@ -886,7 +886,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 40/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 18/35, recency 8/30, recent sample depth 0/15, source diversity 8/10, price consistency 7/10. Current inputs: 4 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 252d ago, 2 source type(s), price CV 0.18." aria-label="Liquidity/confidence score: 40/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 18/35, recency 8/30, recent sample depth 0/15, source diversity 8/10, price consistency 7/10. Current inputs: 4 included priced sample(s), 0 in the last 90 days, 0 in the last 180 days, latest sample 252d ago, 2 source type(s), price CV 0.18." tabindex="0">Low (40/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">4 included sample(s), latest 252d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 75/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 22/35, recency 30/30, recent sample depth 8/15, source diversity 8/10, price consistency 7/10. Current inputs: 5 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 1d ago, 2 source type(s), price CV 0.17." aria-label="Liquidity/confidence score: 75/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 22/35, recency 30/30, recent sample depth 8/15, source diversity 8/10, price consistency 7/10. Current inputs: 5 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 1d ago, 2 source type(s), price CV 0.17." tabindex="0">High (75/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">5 included sample(s), latest 1d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -919,19 +919,19 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
+<tr id="row-0" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" checked></td>
 <td>2026-10-13</td>
 <td>$100</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">Active</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Sale confirmed</td>
 <td></td>
 <td>0</td>
 <td>reddit_rss</td>
 <td>Caryking_66</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Overpriced (37.1% above market)</span></td>
+<td><span id="deal-score-0">Closed: Fair (5.3% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1x4ztya/wtsusanch_dunu_koto_ito_moondrop_kato_tanchjim/#item-2" target="_blank">source</a></td>
 </tr>
 
@@ -947,7 +947,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>StivVid</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">Overpriced (64.5% above market)</span></td>
+<td><span id="deal-score-1">Overpriced (26.4% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-kato-matte-steel.114053/" target="_blank">source</a></td>
 </tr>
 
@@ -955,15 +955,15 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="reddit" ></td>
 <td>2026-08-15</td>
 <td>$100</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">No sale detected</td>
+<td><span class="pill">stale</span></td>
+<td class="status-reason">Stale — no sale confirmed</td>
 <td>fair</td>
 <td>0</td>
 <td>reddit_rss</td>
 <td>x7xfallen</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">Overpriced (37.1% above market)</span></td>
+<td><span id="deal-score-2">Fair (5.3% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vou021/wtsusanyhhuge_lot_of_iems_headphones_dacs_amps/#item-59" target="_blank">source</a></td>
 </tr>
 
@@ -979,7 +979,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>StolenServiceAnimal</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-3">Closed: Good Deal (17.7% below market)</span></td>
+<td><span id="deal-score-3">Closed: Great Deal (36.8% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1qvoful/wts_usanm_h_oneplus_buds_4_moondrop_kato_simgot/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -995,7 +995,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Traxaber</td>
 <td>0</td>
 <td>1</td>
-<td><span id="deal-score-4">Closed: High (23.4% above market)</span></td>
+<td><span id="deal-score-4">Closed: Fair (5.2% below market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1n6wnfo/wts_usnj_h_a_bunch_of_iems_timeless_ae_heyday_s12/#item-4" target="_blank">source</a></td>
 </tr>
 
@@ -1011,7 +1011,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>kregorgregs-list</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-5">Closed: Overpriced (37.1% above market)</span></td>
+<td><span id="deal-score-5">Closed: Fair (5.3% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1n0c1w6/wts_usama_h_moondrop_kato_blue_moondrop_aria_2/#item-1" target="_blank">source</a></td>
 </tr>
 
@@ -1027,7 +1027,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Traxaber</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-6">Closed: Overpriced (37.1% above market)</span></td>
+<td><span id="deal-score-6">Closed: Fair (5.3% above market)</span></td>
 <td><a href="https://old.reddit.com/r/AVexchange/comments/1mnx2jr/wts_usnj_h_a_bunch_of_iems_blessing_3_hype_4/#item-12" target="_blank">source</a></td>
 </tr>
 
@@ -1043,7 +1043,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>trojan2900</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-7">Closed: Overpriced (30.2% above market)</span></td>
+<td><span id="deal-score-7">Closed: Fair (0.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/moondrop-kato.58555/" target="_blank">source</a></td>
 </tr>
 
@@ -1065,7 +1065,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Moondrop Kato", "raw_text": "Moondrop Kato - $100", "seller_username": "Caryking_66", "url": "https://www.reddit.com/r/AVexchange/comments/1x4ztya/wtsusanch_dunu_koto_ito_moondrop_kato_tanchjim/#item-2", "price_num": 100.0, "date_ms": 1791905580000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Moondrop Kato - Matte Steel", "raw_text": "Moondrop Kato - Matte Steel Listing ID: 114053 For Sale 120.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America Selling my much loved set of Moondrop Kato iems. These come with the original box and all of its original contents. They're in excellent shape and have been well cared for. Haven't reached for them in quite a while now, so time to let them go... Listed by: StivVid (15) Listed: 2026-08-17", "seller_username": "StivVid", "url": "https://www.head-fi.org/classifieds/moondrop-kato-matte-steel.114053/", "price_num": 120.0, "date_ms": 1786924800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 2, "title": "Moondrop Kato", "raw_text": "Moondrop Kato - $100.00 (OBO)\nMoondrop x Crinacle Dusk - Accepting Fair Offers", "seller_username": "x7xfallen", "url": "https://www.reddit.com/r/AVexchange/comments/1vou021/wtsusanyhhuge_lot_of_iems_headphones_dacs_amps/#item-59", "price_num": 100.0, "date_ms": 1786770793000, "listing_status": "active", "condition_text": "fair", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len692193:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 3, "title": "Moondrop Kato (Blue)", "raw_text": "SOLD - Moondrop Kato (Blue) - $60", "seller_username": "StolenServiceAnimal", "url": "https://old.reddit.com/r/AVexchange/comments/1qvoful/wts_usanm_h_oneplus_buds_4_moondrop_kato_simgot/#item-1", "price_num": 60.0, "date_ms": 1770211398000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=simgot"}, {"row_id": 4, "title": "Moondrop Kato (blue)", "raw_text": "Moondrop Kato (blue) - $90 SOLD", "seller_username": "Traxaber", "url": "https://old.reddit.com/r/AVexchange/comments/1n6wnfo/wts_usnj_h_a_bunch_of_iems_timeless_ae_heyday_s12/#item-4", "price_num": 90.0, "date_ms": 1756849628000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears"}, {"row_id": 5, "title": "Moondrop Kato", "raw_text": "Moondrop Kato: $100, missing the L spring tips, but everything else that came with the original box are included (carrying bag not in photo), 3.5 mm cable", "seller_username": "kregorgregs-list", "url": "https://old.reddit.com/r/AVexchange/comments/1n0c1w6/wts_usama_h_moondrop_kato_blue_moondrop_aria_2/#item-1", "price_num": 100.0, "date_ms": 1756181207000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_transaction_trigger_and_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=moondrop aria"}, {"row_id": 6, "title": "Moondrop Kato (blue)", "raw_text": "Moondrop Kato (blue) - $100", "seller_username": "Traxaber", "url": "https://old.reddit.com/r/AVexchange/comments/1mnx2jr/wts_usnj_h_a_bunch_of_iems_blessing_3_hype_4/#item-12", "price_num": 100.0, "date_ms": 1754966617000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 7, "title": "Sold: Moondrop Kato", "raw_text": "For Sale Sold: Moondrop Kato Price 95.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America With the holiday, these won\u2019t be shipped out until Jan. 3rd. Like new condition, less than 10 hours. Comes complete and original with what you see. Selling because I picked up a set of Variations. I\u2019ll include a new set of xl size Moondrop Spring tips (not pictured). Free shipping in the... trojan2900 Listing Dec 3, 2023 Comments: 4 Category: In-Ear Monitors", "seller_username": "trojan2900", "url": "https://www.head-fi.org/classifieds/moondrop-kato.58555/", "price_num": 95.0, "date_ms": 1701561600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Moondrop Kato", "raw_text": "Moondrop Kato - $100", "seller_username": "Caryking_66", "url": "https://www.reddit.com/r/AVexchange/comments/1x4ztya/wtsusanch_dunu_koto_ito_moondrop_kato_tanchjim/#item-2", "price_num": 100.0, "date_ms": 1791905580000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 1, "title": "Moondrop Kato - Matte Steel", "raw_text": "Moondrop Kato - Matte Steel Listing ID: 114053 For Sale 120.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America Selling my much loved set of Moondrop Kato iems. These come with the original box and all of its original contents. They're in excellent shape and have been well cared for. Haven't reached for them in quite a while now, so time to let them go... Listed by: StivVid (15) Listed: 2026-08-17", "seller_username": "StivVid", "url": "https://www.head-fi.org/classifieds/moondrop-kato-matte-steel.114053/", "price_num": 120.0, "date_ms": 1786924800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | active_status_checker_headfi_live_check_skipped | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 2, "title": "Moondrop Kato", "raw_text": "Moondrop Kato - $100.00 (OBO)\nMoondrop x Crinacle Dusk - Accepting Fair Offers", "seller_username": "x7xfallen", "url": "https://www.reddit.com/r/AVexchange/comments/1vou021/wtsusanyhhuge_lot_of_iems_headphones_dacs_amps/#item-59", "price_num": 100.0, "date_ms": 1786770793000, "listing_status": "stale", "condition_text": "fair", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | active_status_checker_stale_unsold_60d_lister_never_updated"}, {"row_id": 3, "title": "Moondrop Kato (Blue)", "raw_text": "SOLD - Moondrop Kato (Blue) - $60", "seller_username": "StolenServiceAnimal", "url": "https://old.reddit.com/r/AVexchange/comments/1qvoful/wts_usanm_h_oneplus_buds_4_moondrop_kato_simgot/#item-1", "price_num": 60.0, "date_ms": 1770211398000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=simgot"}, {"row_id": 4, "title": "Moondrop Kato (blue)", "raw_text": "Moondrop Kato (blue) - $90 SOLD", "seller_username": "Traxaber", "url": "https://old.reddit.com/r/AVexchange/comments/1n6wnfo/wts_usnj_h_a_bunch_of_iems_timeless_ae_heyday_s12/#item-4", "price_num": 90.0, "date_ms": 1756849628000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_title_or_description_sold_closed | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears"}, {"row_id": 5, "title": "Moondrop Kato", "raw_text": "Moondrop Kato: $100, missing the L spring tips, but everything else that came with the original box are included (carrying bag not in photo), 3.5 mm cable", "seller_username": "kregorgregs-list", "url": "https://old.reddit.com/r/AVexchange/comments/1n0c1w6/wts_usama_h_moondrop_kato_blue_moondrop_aria_2/#item-1", "price_num": 100.0, "date_ms": 1756181207000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_transaction_trigger_and_confirmation | comments_checked_rss_and_html | auto_bundle_excluded | reddit_search_rss_query=moondrop aria"}, {"row_id": 6, "title": "Moondrop Kato (blue)", "raw_text": "Moondrop Kato (blue) - $100", "seller_username": "Traxaber", "url": "https://old.reddit.com/r/AVexchange/comments/1mnx2jr/wts_usnj_h_a_bunch_of_iems_blessing_3_hype_4/#item-12", "price_num": 100.0, "date_ms": 1754966617000, "listing_status": "closed", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v8_raw_comment_confirmation | reddit_comments_avexchangebot_added_trade | comments_checked_rss_and_html | confirmed_priced_nonbundle_included | reddit_search_rss_query=kiwiears | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 7, "title": "Sold: Moondrop Kato", "raw_text": "For Sale Sold: Moondrop Kato Price 95.00 USD Condition Excellent/Like new Negotiability Firm Ships to United States of America With the holiday, these won\u2019t be shipped out until Jan. 3rd. Like new condition, less than 10 hours. Comes complete and original with what you see. Selling because I picked up a set of Variations. I\u2019ll include a new set of xl size Moondrop Spring tips (not pictured). Free shipping in the... trojan2900 Listing Dec 3, 2023 Comments: 4 Category: In-Ear Monitors", "seller_username": "trojan2900", "url": "https://www.head-fi.org/classifieds/moondrop-kato.58555/", "price_num": 95.0, "date_ms": 1701561600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 190.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

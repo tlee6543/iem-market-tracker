@@ -476,7 +476,7 @@
     "comments": "Sounds quite hi-fi and grand sounding, but coherency could use work - bass is distinct from the EST tweeters.",
     "based_on": "Zepp & Co Unit",
     "tracker_slug": "empire-ears-raven",
-    "market_value": 1557.2,
+    "market_value": 1892.01,
     "market_confidence": "High"
   },
   {
@@ -524,7 +524,7 @@
     "comments": "Top-tier bass, treble, and soundstage height and width. I don't approve of the midrange these days.",
     "based_on": "Loaner",
     "tracker_slug": "sony-ier-z1r",
-    "market_value": 899.8,
+    "market_value": 908.17,
     "market_confidence": "High"
   },
   {
@@ -716,7 +716,7 @@
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-myth",
-    "market_value": 927.5,
+    "market_value": 916.43,
     "market_confidence": "High"
   },
   {
@@ -1220,7 +1220,7 @@
     "comments": "A solid improvement in imaging with slightly more palatable tonality than its predecessor.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "thieaudio-monarch-mkii",
-    "market_value": 560.79,
+    "market_value": 533.55,
     "market_confidence": "High"
   },
   {
@@ -1388,7 +1388,7 @@
     "comments": "Slightly colored but well-rounded tonality with minor quirks.",
     "based_on": "Loaner unit",
     "tracker_slug": "xenns-mangird-top-pro",
-    "market_value": 350.0,
+    "market_value": 351.25,
     "market_confidence": "High"
   },
   {
@@ -1532,7 +1532,7 @@
     "comments": "Well-extended on both ends of the spectrum and adds back in the upper-midrange the IE900 lacked.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "sennheiser-ie600",
-    "market_value": 374.0,
+    "market_value": 377.5,
     "market_confidence": "High"
   },
   {
@@ -1916,7 +1916,7 @@
     "comments": "Basically the EJ07M with some adjustment to the bass for more clarity.",
     "based_on": "Review unit",
     "tracker_slug": "letshuoer-ej07m-kinda-lava",
-    "market_value": 352.4,
+    "market_value": 351.3,
     "market_confidence": "Medium"
   },
   {
@@ -1964,7 +1964,7 @@
     "comments": "Thick and rich sound, a departure from the original RSV, but not in a bad way. Surprisingly mid-bass focused, so still sounds BA-ish.",
     "based_on": "Loaner unit",
     "tracker_slug": "softears-rsv-mkii",
-    "market_value": 431.67,
+    "market_value": 421.25,
     "market_confidence": "High"
   },
   {
@@ -3044,7 +3044,7 @@
     "comments": "A more muddy Andromeda 2020 that's saving grace is the treble spike.",
     "based_on": "Personal unit",
     "tracker_slug": "campfire-andromeda-pre-2020",
-    "market_value": 503.6,
+    "market_value": 478.33,
     "market_confidence": "High"
   },
   {
@@ -3428,8 +3428,8 @@
     "comments": "A slight improvement over the KXXS all-round in the technical department.",
     "based_on": "Review unit",
     "tracker_slug": "moondrop-kato",
-    "market_value": 72.94,
-    "market_confidence": "Low"
+    "market_value": 94.95,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -5756,8 +5756,8 @@
     "comments": "A leaner, more forward version of the 3001.",
     "based_on": "DUNU loaner",
     "tracker_slug": "dunu-dk-2001",
-    "market_value": 285.0,
-    "market_confidence": "Low"
+    "market_value": 301.57,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -7724,8 +7724,8 @@
     "comments": "Singers sound like they're choking.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "tanchjim-hana",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 75.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -11036,7 +11036,7 @@
     "comments": "Most normal sounding Campfire IEM yet. Neutral with sub-bass boost, very pleasant on the ears but missing some mid-treble for resolution/edge.",
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-clara",
-    "market_value": 1295.73,
+    "market_value": 1366.33,
     "market_confidence": "Medium"
   },
   {
@@ -12141,7 +12141,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "fatfreq-x-hbb-deuce",
     "market_value": 179.59,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -13172,8 +13172,8 @@
     "comments": "Quite a bassy listen, more V-shape with a big sound but a bhit too intense for me.",
     "based_on": "Brief demo",
     "tracker_slug": "kiwi-ears-ke4",
-    "market_value": 200.0,
-    "market_confidence": "Low"
+    "market_value": 119.29,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -15812,8 +15812,8 @@
     "comments": "Andromeda-esque sound signature without the technicalities to back it up.",
     "based_on": "Brief demo",
     "tracker_slug": "unique-melody-fusang",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 1390.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -15908,8 +15908,8 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "unique-melody-pentara",
-    "market_value": 3325.0,
-    "market_confidence": "Low"
+    "market_value": 2700.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
