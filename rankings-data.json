@@ -524,7 +524,7 @@
     "comments": "Top-tier bass, treble, and soundstage height and width. I don't approve of the midrange these days.",
     "based_on": "Loaner",
     "tracker_slug": "sony-ier-z1r",
-    "market_value": 908.17,
+    "market_value": 889.8,
     "market_confidence": "High"
   },
   {
@@ -1388,7 +1388,7 @@
     "comments": "Slightly colored but well-rounded tonality with minor quirks.",
     "based_on": "Loaner unit",
     "tracker_slug": "xenns-mangird-top-pro",
-    "market_value": 351.25,
+    "market_value": 351.11,
     "market_confidence": "High"
   },
   {
@@ -3356,7 +3356,7 @@
     "comments": "Has the planar advantage with most of its disadvantages and a reasonable tonality.",
     "based_on": "Review unit",
     "tracker_slug": "7hz-timeless",
-    "market_value": 96.14,
+    "market_value": 96.35,
     "market_confidence": "High"
   },
   {
@@ -4580,8 +4580,8 @@
     "comments": "See ER2XR but with less sub-bass.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "etymotic-er2se",
-    "market_value": 65.96,
-    "market_confidence": "Medium"
+    "market_value": 44.92,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -7244,8 +7244,8 @@
     "comments": "V-shaped with decent bass but shouty upper-midrange and slightly scratchy treble.",
     "based_on": "Review unit",
     "tracker_slug": "dunu-titan-x",
-    "market_value": 25.0,
-    "market_confidence": "Medium"
+    "market_value": null,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -7940,8 +7940,8 @@
     "comments": "Shouty thanks to 13dB of pinna compensation, but excellent note definition and imaging for the price.",
     "based_on": "Personal unit",
     "tracker_slug": "moondrop-ssr",
-    "market_value": 25.0,
-    "market_confidence": "Medium"
+    "market_value": null,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -11972,8 +11972,8 @@
     "comments": "Sounds like a darker version of the normal Elysian Pilgrim.",
     "based_on": "Brief demo",
     "tracker_slug": "elysian-x-effect-audio-pilgrim-noir",
-    "market_value": 411.06,
-    "market_confidence": "Medium"
+    "market_value": 421.86,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
