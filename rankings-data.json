@@ -7244,8 +7244,8 @@
     "comments": "V-shaped with decent bass but shouty upper-midrange and slightly scratchy treble.",
     "based_on": "Review unit",
     "tracker_slug": "dunu-titan-x",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 20.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -7940,8 +7940,8 @@
     "comments": "Shouty thanks to 13dB of pinna compensation, but excellent note definition and imaging for the price.",
     "based_on": "Personal unit",
     "tracker_slug": "moondrop-ssr",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 20.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -13220,8 +13220,8 @@
     "comments": "Pretty safe listen overall.",
     "based_on": "Brief demo",
     "tracker_slug": "kiwi-ears-stardust",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 55.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
