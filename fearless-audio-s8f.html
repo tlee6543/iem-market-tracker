@@ -2106,7 +2106,7 @@ setMarketplaceSource(getInitialMarketplaceSource());
       <select class="iem-alert-select" id="iemAlertFrequency" name="frequency"><option value="instant">Immediately</option><option value="daily">Daily digest</option></select>
       <button class="iem-alert-submit" id="iemAlertSubmit" type="submit">Create alert</button>
       <div class="iem-alert-status" id="iemAlertStatus" aria-live="polite"></div>
-      <div class="iem-alert-note">We'll email you a confirmation link first. Every notification includes a one-click unsubscribe link.</div>
+      <div class="iem-alert-note">We'll email you a confirmation link first. If you don't see it within a few minutes, check your spam or junk folder. Every notification includes a one-click unsubscribe link.</div>
     </form>
   </div>
 </div>
@@ -2198,7 +2198,7 @@ setMarketplaceSource(getInitialMarketplaceSource());
       const r = await fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) });
       const data = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(data.error || 'Could not create alert.');
-      setStatus(data.message || 'Check your email to activate the alert.', 'ok');
+      setStatus('Check your email to activate the alert. If you don’t see it within a few minutes, check your spam or junk folder.', 'ok');
     } catch (err) { setStatus(err.message || 'Could not create alert.', 'err'); }
     finally { submit.disabled = false; submit.textContent = 'Create alert'; }
   });

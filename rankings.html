@@ -22797,7 +22797,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <td class="setup-cell">—</td>
     <td class="nowrap">—</td>
     <td class="nowrap"><a href="lime-ears-aether.html?from=rankings">$92.5</a></td>
-    <td><span class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 92/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 15/15, source diversity 5/10, price consistency 7/10. Current inputs: 8 included priced sample(s), 4 in the last 90 days, 4 in the last 180 days, latest sample 1d ago, 1 source type(s), price CV 0.18." aria-label="Liquidity/confidence score: 92/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 15/15, source diversity 5/10, price consistency 7/10. Current inputs: 8 included priced sample(s), 4 in the last 90 days, 4 in the last 180 days, latest sample 1d ago, 1 source type(s), price CV 0.18." tabindex="0">High</span></td>
+    <td><span class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 92/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 15/15, source diversity 5/10, price consistency 7/10. Current inputs: 8 included priced sample(s), 4 in the last 90 days, 4 in the last 180 days, latest sample 2d ago, 1 source type(s), price CV 0.18." aria-label="Liquidity/confidence score: 92/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 35/35, recency 30/30, recent sample depth 15/15, source diversity 5/10, price consistency 7/10. Current inputs: 8 included priced sample(s), 4 in the last 90 days, 4 in the last 180 days, latest sample 2d ago, 1 source type(s), price CV 0.18." tabindex="0">High</span></td>
     <td class="comments-cell">Thin, reference sound with a slight lack of trebel extension and average imaging.</td>
     <td class="based-on-cell">Brief demo</td>
 </tr>
@@ -27366,7 +27366,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </table>
 </div>
 <div id="rankingsEmpty" class="card rankings-empty"><p class="muted">No rankings match the current filters.</p></div>
-<p class="small">Data refreshed from the published Google Sheet during the 2026-10-18 15:56 UTC site build.</p>
+<p class="small">Data refreshed from the published Google Sheet during the 2026-10-18 16:06 UTC site build.</p>
 
 <aside id="frPreviewPopover" class="fr-preview-popover" role="dialog" aria-modal="false" aria-labelledby="frPreviewTitle" hidden>
     <div class="fr-preview-header">
@@ -28193,7 +28193,7 @@ updateRankings();
       <select class="iem-alert-select" id="iemAlertFrequency" name="frequency"><option value="instant">Immediately</option><option value="daily">Daily digest</option></select>
       <button class="iem-alert-submit" id="iemAlertSubmit" type="submit">Create alert</button>
       <div class="iem-alert-status" id="iemAlertStatus" aria-live="polite"></div>
-      <div class="iem-alert-note">We'll email you a confirmation link first. Every notification includes a one-click unsubscribe link.</div>
+      <div class="iem-alert-note">We'll email you a confirmation link first. If you don't see it within a few minutes, check your spam or junk folder. Every notification includes a one-click unsubscribe link.</div>
     </form>
   </div>
 </div>
@@ -28285,7 +28285,7 @@ updateRankings();
       const r = await fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) });
       const data = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(data.error || 'Could not create alert.');
-      setStatus(data.message || 'Check your email to activate the alert.', 'ok');
+      setStatus('Check your email to activate the alert. If you don’t see it within a few minutes, check your spam or junk folder.', 'ok');
     } catch (err) { setStatus(err.message || 'Could not create alert.', 'err'); }
     finally { submit.disabled = false; submit.textContent = 'Create alert'; }
   });
