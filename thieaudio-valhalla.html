@@ -2996,5 +2996,109 @@ setMarketplaceSource(getInitialMarketplaceSource());
         </div>
     </footer>
     
+
+<!-- IEM_LISTING_ALERTS_V1 -->
+<style>
+  .iem-alert-fab{position:fixed;right:22px;bottom:22px;z-index:99990;border:1px solid rgba(255,255,255,.18);background:#171b22;color:#fff;border-radius:999px;padding:11px 16px;font:600 14px/1 system-ui,-apple-system,Segoe UI,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.28);cursor:pointer}
+  .iem-alert-fab:hover{transform:translateY(-1px);background:#202631}
+  .iem-alert-backdrop{display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.6);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:18px}
+  .iem-alert-backdrop.is-open{display:flex}
+  .iem-alert-modal{width:min(520px,100%);max-height:min(760px,calc(100vh - 36px));overflow:auto;background:#fff;color:#17191f;border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.42);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+  .iem-alert-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:22px 22px 10px}
+  .iem-alert-head h2{margin:0;font-size:22px;color:#17191f}.iem-alert-head p{margin:7px 0 0;color:#667085;font-size:13px;line-height:1.45}
+  .iem-alert-close{border:0;background:#f1f3f5;border-radius:9px;width:34px;height:34px;font-size:20px;cursor:pointer;color:#343a40}
+  .iem-alert-form{padding:12px 22px 22px}.iem-alert-label{display:block;margin:14px 0 6px;font-size:13px;font-weight:700;color:#343a40}
+  .iem-alert-input,.iem-alert-select{box-sizing:border-box;width:100%;border:1px solid #d6dae1;border-radius:10px;padding:11px 12px;background:#fff;color:#17191f;font:14px system-ui,-apple-system,Segoe UI,sans-serif;outline:none}
+  .iem-alert-input:focus,.iem-alert-select:focus{border-color:#7b8798;box-shadow:0 0 0 3px rgba(80,100,130,.12)}
+  .iem-alert-platforms{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px;font-size:14px}.iem-alert-platforms label{display:flex;align-items:center;gap:7px}
+  .iem-alert-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.iem-alert-submit{width:100%;margin-top:18px;border:0;border-radius:11px;background:#17191f;color:white;padding:12px 14px;font-weight:700;cursor:pointer}.iem-alert-submit:disabled{opacity:.55;cursor:wait}
+  .iem-alert-status{min-height:20px;margin:11px 0 0;font-size:13px;line-height:1.45}.iem-alert-status.ok{color:#08783e}.iem-alert-status.err{color:#b42318}
+  .iem-alert-note{margin-top:12px;color:#667085;font-size:11px;line-height:1.45}
+  @media(max-width:560px){.iem-alert-fab{right:14px;bottom:14px}.iem-alert-row{grid-template-columns:1fr}.iem-alert-modal{border-radius:15px}.iem-alert-head,.iem-alert-form{padding-left:17px;padding-right:17px}}
+</style>
+<button class="iem-alert-fab" id="iemAlertFab" type="button" aria-haspopup="dialog">🔔 Listing alerts</button>
+<div class="iem-alert-backdrop" id="iemAlertBackdrop" role="dialog" aria-modal="true" aria-labelledby="iemAlertTitle">
+  <div class="iem-alert-modal">
+    <div class="iem-alert-head">
+      <div><h2 id="iemAlertTitle">Create a listing alert</h2><p>Get notified when a matching IEM is added to the tracker.</p></div>
+      <button class="iem-alert-close" id="iemAlertClose" type="button" aria-label="Close">×</button>
+    </div>
+    <form class="iem-alert-form" id="iemAlertForm">
+      <label class="iem-alert-label" for="iemAlertName">IEM</label>
+      <input class="iem-alert-input" id="iemAlertName" name="canonical_name" list="iemAlertNames" autocomplete="off" placeholder="Start typing an IEM name…" required>
+      <datalist id="iemAlertNames"></datalist>
+
+      <div class="iem-alert-row">
+        <div><label class="iem-alert-label" for="iemAlertEmail">Email</label><input class="iem-alert-input" id="iemAlertEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+        <div><label class="iem-alert-label" for="iemAlertPrice">Maximum price (optional)</label><input class="iem-alert-input" id="iemAlertPrice" name="max_price" type="number" inputmode="decimal" min="0" step="0.01" placeholder="Any price"></div>
+      </div>
+
+      <label class="iem-alert-label">Marketplace</label>
+      <div class="iem-alert-platforms">
+        <label><input type="checkbox" name="platform" value="reddit_rss" checked> Reddit</label>
+        <label><input type="checkbox" name="platform" value="headfi" checked> Head-Fi</label>
+      </div>
+
+      <label class="iem-alert-label" for="iemAlertFrequency">Notify me</label>
+      <select class="iem-alert-select" id="iemAlertFrequency" name="frequency">
+        <option value="instant">Immediately</option>
+        <option value="daily">Daily digest</option>
+      </select>
+
+      <button class="iem-alert-submit" id="iemAlertSubmit" type="submit">Create alert</button>
+      <div class="iem-alert-status" id="iemAlertStatus" aria-live="polite"></div>
+      <div class="iem-alert-note">We'll email you a confirmation link first. Every notification includes a one-click unsubscribe link.</div>
+    </form>
+  </div>
+</div>
+<script>
+(() => {
+  const API = 'https://beeowbqgrlcnlfoocmvi.supabase.co/functions/v1/listing-alerts';
+  const fab = document.getElementById('iemAlertFab');
+  const backdrop = document.getElementById('iemAlertBackdrop');
+  const close = document.getElementById('iemAlertClose');
+  const form = document.getElementById('iemAlertForm');
+  const nameInput = document.getElementById('iemAlertName');
+  const list = document.getElementById('iemAlertNames');
+  const status = document.getElementById('iemAlertStatus');
+  const submit = document.getElementById('iemAlertSubmit');
+  let namesLoaded = false;
+
+  function setStatus(msg, kind='') { status.textContent = msg; status.className = 'iem-alert-status ' + kind; }
+  async function loadNames() {
+    if (namesLoaded) return;
+    try {
+      const r = await fetch(API + '?action=iems');
+      const data = await r.json();
+      if (!r.ok) throw new Error(data.error || 'Could not load IEMs.');
+      const frag = document.createDocumentFragment();
+      (data.iems || []).forEach(x => { const o = document.createElement('option'); o.value = x.canonical_name; frag.appendChild(o); });
+      list.replaceChildren(frag); namesLoaded = true;
+    } catch (e) { setStatus(e.message || 'Could not load IEM list.', 'err'); }
+  }
+  function openModal() { backdrop.classList.add('is-open'); loadNames(); setTimeout(() => nameInput.focus(), 30); }
+  function closeModal() { backdrop.classList.remove('is-open'); }
+  fab.addEventListener('click', openModal); close.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault(); setStatus('');
+    const fd = new FormData(form);
+    const platforms = [...form.querySelectorAll('input[name="platform"]:checked')].map(x => x.value);
+    if (!platforms.length) { setStatus('Choose at least one marketplace.', 'err'); return; }
+    submit.disabled = true; submit.textContent = 'Creating…';
+    try {
+      const payload = { action:'subscribe', email:fd.get('email'), canonical_name:fd.get('canonical_name'), max_price:fd.get('max_price'), frequency:fd.get('frequency'), platforms };
+      const r = await fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) });
+      const data = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(data.error || 'Could not create alert.');
+      setStatus(data.message || 'Check your email to activate the alert.', 'ok');
+    } catch (err) { setStatus(err.message || 'Could not create alert.', 'err'); }
+    finally { submit.disabled = false; submit.textContent = 'Create alert'; }
+  });
+})();
+</script>
+
 </body>
 </html>
