@@ -2169,6 +2169,13 @@ setMarketplaceSource(getInitialMarketplaceSource());
   .iem-alert-form{padding:12px 22px 22px}.iem-alert-label{display:block;margin:14px 0 6px;font-size:13px;font-weight:700;color:#343a40}
   .iem-alert-input,.iem-alert-select{box-sizing:border-box;width:100%;border:1px solid #d6dae1;border-radius:10px;padding:11px 12px;background:#fff;color:#17191f;font:14px system-ui,-apple-system,Segoe UI,sans-serif;outline:none}
   .iem-alert-input:focus,.iem-alert-select:focus{border-color:#7b8798;box-shadow:0 0 0 3px rgba(80,100,130,.12)}
+  .iem-alert-picker{position:relative}
+  .iem-alert-suggestions{display:none;position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:12;max-height:240px;overflow:auto;-webkit-overflow-scrolling:touch;background:#fff;border:1px solid #d6dae1;border-radius:11px;box-shadow:0 12px 30px rgba(16,24,40,.18);padding:5px}
+  .iem-alert-suggestions.is-open{display:block}
+  .iem-alert-suggestion{display:block;width:100%;border:0;background:#fff;color:#17191f;text-align:left;padding:10px 11px;border-radius:8px;font:14px/1.25 system-ui,-apple-system,Segoe UI,sans-serif;cursor:pointer}
+  .iem-alert-suggestion:hover,.iem-alert-suggestion:focus{background:#f2f4f7;outline:none}
+  .iem-alert-suggestion-brand{display:block;margin-top:2px;color:#8a9099;font-size:11px}
+  .iem-alert-suggestion-note{padding:9px 11px;color:#8a9099;font-size:11px;line-height:1.35}
   .iem-alert-platforms{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px;font-size:14px}.iem-alert-platforms label{display:flex;align-items:center;gap:7px}
   .iem-alert-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.iem-alert-submit{width:100%;margin-top:18px;border:0;border-radius:11px;background:#17191f;color:white;padding:12px 14px;font-weight:700;cursor:pointer}.iem-alert-submit:disabled{opacity:.55;cursor:wait}
   .iem-alert-status{min-height:20px;margin:11px 0 0;font-size:13px;line-height:1.45}.iem-alert-status.ok{color:#08783e}.iem-alert-status.err{color:#b42318}
@@ -2176,7 +2183,8 @@ setMarketplaceSource(getInitialMarketplaceSource());
   .iem-alert-result{padding:34px 28px 30px;text-align:center}.iem-alert-result-icon{width:68px;height:68px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;font-size:34px;font-weight:800;background:#e9f9ef;color:#168447;border:1px solid #bfe8cc}.iem-alert-result-icon.off{background:#f4f4f5;color:#5f6368;border-color:#dddfe3}
   .iem-alert-result h2{margin:0;color:#17191f;font-size:25px}.iem-alert-result p{margin:10px auto 0;max-width:410px;color:#667085;font-size:14px;line-height:1.55}.iem-alert-result strong{color:#17191f}
   .iem-alert-result-btn{display:inline-block;margin-top:22px;border:0;border-radius:11px;background:#17191f;color:#fff;padding:12px 18px;font-weight:700;cursor:pointer;text-decoration:none}.iem-alert-result-sub{margin-top:12px!important;font-size:12px!important;color:#8a9099!important}
-  @media(max-width:560px){.iem-alert-fab{right:14px;bottom:14px}.iem-alert-row{grid-template-columns:1fr}.iem-alert-modal{border-radius:15px;max-height:calc(100dvh - 24px)}.iem-alert-head,.iem-alert-form{padding-left:17px;padding-right:17px}.iem-alert-result{padding:30px 20px 26px}.iem-alert-backdrop{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(0,0,0,.68);padding:12px}}
+  @media(max-width:560px){.iem-alert-fab{right:14px;bottom:14px}.iem-alert-row{grid-template-columns:1fr}.iem-alert-modal{border-radius:15px;max-height:calc(100dvh - 24px)}.iem-alert-head,.iem-alert-form{padding-left:17px;padding-right:17px}.iem-alert-result{padding:30px 20px 26px}.iem-alert-backdrop{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(0,0,0,.68);padding:12px}.iem-alert-suggestions{max-height:190px}}
+  @media(hover:none),(pointer:coarse){.iem-alert-backdrop{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(0,0,0,.68)!important}.iem-alert-modal{max-height:calc(100dvh - 24px)!important}.iem-alert-suggestion{padding:12px 11px}}
 </style>
 
 <style id="IEM_LISTING_ALERTS_TOUCH_FIX">
@@ -2202,8 +2210,10 @@ setMarketplaceSource(getInitialMarketplaceSource());
     </div>
     <form class="iem-alert-form" id="iemAlertForm">
       <label class="iem-alert-label" for="iemAlertName">IEM</label>
-      <input class="iem-alert-input" id="iemAlertName" name="canonical_name" list="iemAlertNames" autocomplete="off" placeholder="Start typing an IEM name…" required>
-      <datalist id="iemAlertNames"></datalist>
+      <div class="iem-alert-picker" id="iemAlertPicker">
+        <input class="iem-alert-input" id="iemAlertName" name="canonical_name" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Search IEMs…" required>
+        <div class="iem-alert-suggestions" id="iemAlertSuggestions" role="listbox" aria-label="IEM suggestions"></div>
+      </div>
       <div class="iem-alert-row">
         <div><label class="iem-alert-label" for="iemAlertEmail">Email</label><input class="iem-alert-input" id="iemAlertEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
         <div><label class="iem-alert-label" for="iemAlertPrice">Maximum price (optional)</label><input class="iem-alert-input" id="iemAlertPrice" name="max_price" type="number" inputmode="decimal" min="0" step="0.01" placeholder="Any price"></div>
@@ -2239,8 +2249,9 @@ setMarketplaceSource(getInitialMarketplaceSource());
   const backdrop = document.getElementById('iemAlertBackdrop');
   const close = document.getElementById('iemAlertClose');
   const form = document.getElementById('iemAlertForm');
+  const picker = document.getElementById('iemAlertPicker');
   const nameInput = document.getElementById('iemAlertName');
-  const list = document.getElementById('iemAlertNames');
+  const suggestions = document.getElementById('iemAlertSuggestions');
   const status = document.getElementById('iemAlertStatus');
   const submit = document.getElementById('iemAlertSubmit');
   const resultBackdrop = document.getElementById('iemAlertResultBackdrop');
@@ -2251,9 +2262,45 @@ setMarketplaceSource(getInitialMarketplaceSource());
   const resultDone = document.getElementById('iemAlertResultDone');
   let namesLoaded = false;
   let namesLoading = false;
-  const isTouchMobile = matchMedia('(max-width: 560px)').matches || matchMedia('(hover: none)').matches || matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 1 || /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  let iems = [];
+  const isTouchMobile = matchMedia('(max-width:560px)').matches || matchMedia('(hover:none)').matches || matchMedia('(pointer:coarse)').matches || navigator.maxTouchPoints > 1 || /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   function setStatus(msg, kind='') { status.textContent = msg; status.className = 'iem-alert-status ' + kind; }
+  function closeSuggestions(){ suggestions.classList.remove('is-open'); }
+  function renderSuggestions() {
+    if (!namesLoaded) {
+      suggestions.innerHTML = '<div class="iem-alert-suggestion-note">Loading IEMs…</div>';
+      suggestions.classList.add('is-open');
+      return;
+    }
+    const q = nameInput.value.trim().toLowerCase();
+    let matches = iems;
+    if (q) {
+      matches = iems.filter(x => x.nameLower.includes(q));
+      matches.sort((a,b) => {
+        const as = a.nameLower.startsWith(q) ? 0 : 1;
+        const bs = b.nameLower.startsWith(q) ? 0 : 1;
+        return as - bs || a.name.localeCompare(b.name);
+      });
+    }
+    const shown = matches.slice(0, 50);
+    suggestions.replaceChildren();
+    if (!shown.length) {
+      const empty = document.createElement('div'); empty.className = 'iem-alert-suggestion-note'; empty.textContent = 'No matching IEMs.'; suggestions.appendChild(empty);
+    } else {
+      const frag = document.createDocumentFragment();
+      shown.forEach(x => {
+        const b = document.createElement('button'); b.type = 'button'; b.className = 'iem-alert-suggestion'; b.setAttribute('role','option');
+        const name = document.createElement('span'); name.textContent = x.name; b.appendChild(name);
+        if (x.brand && !x.name.toLowerCase().startsWith(x.brand.toLowerCase())) { const brand = document.createElement('span'); brand.className='iem-alert-suggestion-brand'; brand.textContent=x.brand; b.appendChild(brand); }
+        b.addEventListener('click', () => { nameInput.value = x.name; closeSuggestions(); nameInput.blur(); });
+        frag.appendChild(b);
+      });
+      if (matches.length > shown.length || !q) { const note = document.createElement('div'); note.className='iem-alert-suggestion-note'; note.textContent = q ? `Showing first ${shown.length} matches — keep typing to narrow it down.` : 'Type to search the full IEM list.'; frag.appendChild(note); }
+      suggestions.appendChild(frag);
+    }
+    suggestions.classList.add('is-open');
+  }
   async function loadNames() {
     if (namesLoaded || namesLoading) return;
     namesLoading = true;
@@ -2261,37 +2308,24 @@ setMarketplaceSource(getInitialMarketplaceSource());
       const r = await fetch(API + '?action=iems');
       const data = await r.json();
       if (!r.ok) throw new Error(data.error || 'Could not load IEMs.');
-      const frag = document.createDocumentFragment();
-      (data.iems || []).forEach(x => { const o = document.createElement('option'); o.value = x.canonical_name; frag.appendChild(o); });
-      list.replaceChildren(frag); namesLoaded = true;
-    } catch (e) { setStatus(e.message || 'Could not load IEM list.', 'err'); }
+      iems = (data.iems || []).map(x => ({name:x.canonical_name, nameLower:String(x.canonical_name||'').toLowerCase(), brand:x.brand||''}));
+      namesLoaded = true;
+      if (document.activeElement === nameInput) renderSuggestions();
+    } catch (e) { setStatus(e.message || 'Could not load IEM list.', 'err'); closeSuggestions(); }
     finally { namesLoading = false; }
   }
-  function scheduleNameLoad() {
-    if ('requestIdleCallback' in window) requestIdleCallback(loadNames, {timeout: 1200});
-    else setTimeout(loadNames, 250);
-  }
-  function openModal() {
-    backdrop.classList.add('is-open');
-    requestAnimationFrame(() => requestAnimationFrame(scheduleNameLoad));
-    if (!isTouchMobile) setTimeout(() => nameInput.focus(), 80);
-  }
-  function closeModal() { backdrop.classList.remove('is-open'); }
+  function scheduleNameLoad() { if ('requestIdleCallback' in window) requestIdleCallback(loadNames,{timeout:1200}); else setTimeout(loadNames,250); }
+  function openModal() { backdrop.classList.add('is-open'); requestAnimationFrame(() => requestAnimationFrame(scheduleNameLoad)); if (!isTouchMobile) setTimeout(() => nameInput.focus(),80); }
+  function closeModal() { closeSuggestions(); backdrop.classList.remove('is-open'); }
   function closeResult() { resultBackdrop.classList.remove('is-open'); }
   function showResult(kind, iem) {
     const name = iem || 'this IEM';
     if (kind === 'activated') {
-      resultIcon.textContent = '✓'; resultIcon.classList.remove('off');
-      resultTitle.textContent = 'Your alert is active';
-      resultMessage.innerHTML = 'You’ll now receive notifications when a matching <strong></strong> listing is added.';
-      resultMessage.querySelector('strong').textContent = name;
-      resultSub.textContent = 'No further action is needed.';
+      resultIcon.textContent='✓'; resultIcon.classList.remove('off'); resultTitle.textContent='Your alert is active';
+      resultMessage.innerHTML='You’ll now receive notifications when a matching <strong></strong> listing is added.'; resultMessage.querySelector('strong').textContent=name; resultSub.textContent='No further action is needed.';
     } else {
-      resultIcon.textContent = '✓'; resultIcon.classList.add('off');
-      resultTitle.textContent = 'Alert turned off';
-      resultMessage.innerHTML = 'Notifications for <strong></strong> have been disabled.';
-      resultMessage.querySelector('strong').textContent = name;
-      resultSub.textContent = 'You can create a new alert at any time.';
+      resultIcon.textContent='✓'; resultIcon.classList.add('off'); resultTitle.textContent='Alert turned off';
+      resultMessage.innerHTML='Notifications for <strong></strong> have been disabled.'; resultMessage.querySelector('strong').textContent=name; resultSub.textContent='You can create a new alert at any time.';
     }
     resultBackdrop.classList.add('is-open');
   }
@@ -2299,31 +2333,32 @@ setMarketplaceSource(getInitialMarketplaceSource());
   fab.addEventListener('click', openModal); close.addEventListener('click', closeModal); resultDone.addEventListener('click', closeResult);
   backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
   resultBackdrop.addEventListener('click', e => { if (e.target === resultBackdrop) closeResult(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeResult(); } });
+  nameInput.addEventListener('focus', () => { loadNames(); renderSuggestions(); });
+  nameInput.addEventListener('click', () => { loadNames(); renderSuggestions(); });
+  nameInput.addEventListener('input', renderSuggestions);
+  document.addEventListener('pointerdown', e => { if (!picker.contains(e.target)) closeSuggestions(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeSuggestions(); closeModal(); closeResult(); } });
 
   const params = new URLSearchParams(location.search);
   const alertState = params.get('alert_status');
   if (alertState === 'activated' || alertState === 'unsubscribed') {
-    showResult(alertState, params.get('iem'));
-    params.delete('alert_status'); params.delete('iem');
-    const q = params.toString();
-    history.replaceState({}, '', location.pathname + (q ? '?' + q : '') + location.hash);
+    showResult(alertState, params.get('iem')); params.delete('alert_status'); params.delete('iem');
+    const q = params.toString(); history.replaceState({},'',location.pathname+(q?'?'+q:'')+location.hash);
   }
 
   form.addEventListener('submit', async e => {
-    e.preventDefault(); setStatus('');
+    e.preventDefault(); setStatus(''); closeSuggestions();
     const fd = new FormData(form);
     const platforms = [...form.querySelectorAll('input[name="platform"]:checked')].map(x => x.value);
-    if (!platforms.length) { setStatus('Choose at least one marketplace.', 'err'); return; }
-    submit.disabled = true; submit.textContent = 'Creating…';
+    if (!platforms.length) { setStatus('Choose at least one marketplace.','err'); return; }
+    submit.disabled=true; submit.textContent='Creating…';
     try {
-      const payload = { action:'subscribe', email:fd.get('email'), canonical_name:fd.get('canonical_name'), max_price:fd.get('max_price'), frequency:fd.get('frequency'), platforms };
-      const r = await fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) });
-      const data = await r.json().catch(() => ({}));
-      if (!r.ok) throw new Error(data.error || 'Could not create alert.');
-      setStatus('Check your email to activate the alert. If you don’t see it within a few minutes, check your spam or junk folder.', 'ok');
-    } catch (err) { setStatus(err.message || 'Could not create alert.', 'err'); }
-    finally { submit.disabled = false; submit.textContent = 'Create alert'; }
+      const payload={action:'subscribe',email:fd.get('email'),canonical_name:fd.get('canonical_name'),max_price:fd.get('max_price'),frequency:fd.get('frequency'),platforms};
+      const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const data=await r.json().catch(()=>({})); if(!r.ok) throw new Error(data.error||'Could not create alert.');
+      setStatus('Check your email to activate the alert. If you don’t see it within a few minutes, check your spam or junk folder.','ok');
+    } catch(err) { setStatus(err.message||'Could not create alert.','err'); }
+    finally { submit.disabled=false; submit.textContent='Create alert'; }
   });
 })();
 </script>
