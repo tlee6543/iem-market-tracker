@@ -924,7 +924,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -959,10 +959,26 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>0</td>
 <td>headfi</td>
 <td>MilitaryHifi</td>
-<td>0</td>
+<td>1</td>
 <td>0</td>
 <td><span id="deal-score-0">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/ziigaat-lush.116475/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" ></td>
+<td>2026-10-03</td>
+<td>$100</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Active</td>
+<td>like new, excellent</td>
+<td>1</td>
+<td>headfi</td>
+<td>MilitaryHifi</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-1">N/A</span></td>
+<td><a href="https://www.head-fi.org/classifieds/iem-bundle-kbear-tourbilon-pro-ziigaat-lush-qkz-ak9.116475/" target="_blank">source</a></td>
 </tr>
 
 </table>
@@ -983,7 +999,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Ziigaat Lush", "raw_text": "Ziigaat Lush Listing ID: 116475 For Sale 85.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Selling my Ziigaat Lush Accessories Included. Price includes shipping and fees. Listed by: MilitaryHifi (451) Listed: 2026-10-03 Last edited: 2026-10-09", "seller_username": "MilitaryHifi", "url": "https://www.head-fi.org/classifieds/ziigaat-lush.116475/", "price_num": 85.0, "date_ms": 1790985600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged"}];
+const allRows = [{"row_id": 0, "title": "Ziigaat Lush", "raw_text": "Ziigaat Lush Listing ID: 116475 For Sale 85.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Selling my Ziigaat Lush Accessories Included. Price includes shipping and fees. Listed by: MilitaryHifi (451) Listed: 2026-10-03 Last edited: 2026-10-09", "seller_username": "MilitaryHifi", "url": "https://www.head-fi.org/classifieds/ziigaat-lush.116475/", "price_num": 85.0, "date_ms": 1790985600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 1, "title": "Iem Bundle Kbear Tourbilon Pro, Ziigaat Lush, QKZ AK9", "raw_text": "Iem Bundle Kbear Tourbilon Pro, Ziigaat Lush, QKZ AK9 Listing ID: 116475 For Sale 100.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Selling my Iem Bundle Kbear Tourbilon Pro, Ziigaat Lush, QKZ AK9 Accessories Included. Price includes shipping and fees. Listed by: MilitaryHifi (457) Listed: 2026-10-03 Last edited: 2026-10-14", "seller_username": "MilitaryHifi", "url": "https://www.head-fi.org/classifieds/iem-bundle-kbear-tourbilon-pro-ziigaat-lush-qkz-ak9.116475/", "price_num": 100.0, "date_ms": 1790985600000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}];
 const originalMsrpUsd = 179.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

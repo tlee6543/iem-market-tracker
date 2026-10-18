@@ -380,8 +380,8 @@
     "comments": "Great technicalities. Lacking that last leg of refinement in terms of coherency.",
     "based_on": "Symphonium tour unit",
     "tracker_slug": "symphonium-helios",
-    "market_value": 495.06,
-    "market_confidence": "Medium"
+    "market_value": 495.33,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -740,8 +740,8 @@
     "comments": "Great rendition of neutral-warm tonality with the technical sauce to accompany it.",
     "based_on": "Loaner unit",
     "tracker_slug": "prisma-audio-lumen",
-    "market_value": 1466.14,
-    "market_confidence": "Medium"
+    "market_value": 1431.25,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -2084,7 +2084,7 @@
     "comments": "Very pleasant listen tonally and with smooth, micro-peaked treble that belies its price point. Missing a little grip in the bass despite good quantity.",
     "based_on": "Review unit",
     "tracker_slug": "juzear-light-shuttle",
-    "market_value": 125.0,
+    "market_value": 112.17,
     "market_confidence": "Medium"
   },
   {
@@ -3020,8 +3020,8 @@
     "comments": "Decent tonality and BC seems to work in the midrange, but low-level note definition.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "unique-melody-mext",
-    "market_value": 450.0,
-    "market_confidence": "Low"
+    "market_value": 425.22,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -3165,7 +3165,7 @@
     "based_on": "Review unit",
     "tracker_slug": "sennheiser-ie200",
     "market_value": 80.0,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -5204,7 +5204,7 @@
     "comments": "Thin, crunchy, and unnaturally boosted treble that pervades to the rest of the sound. Hard listen tbh.",
     "based_on": "Loaner unit",
     "tracker_slug": "thieaudio-hype-4-mkii",
-    "market_value": 316.67,
+    "market_value": 311.33,
     "market_confidence": "High"
   },
   {
@@ -5540,7 +5540,7 @@
     "comments": "One of the better interpretations of Final Audio's house sound with some decent technicalities.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "final-audio-b3",
-    "market_value": 185.0,
+    "market_value": null,
     "market_confidence": "Low"
   },
   {
@@ -5924,8 +5924,8 @@
     "comments": "Good dynamics however treble tuning is unnecessarily sharp sounding and somewhat grating.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "meze-alba",
-    "market_value": 94.89,
-    "market_confidence": "Medium"
+    "market_value": 100.47,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -11612,7 +11612,7 @@
     "comments": "Treble has some unnatural peaking past 10kHz that lends to a Focal-esque, metallic tinge.",
     "based_on": "Brief demo",
     "tracker_slug": "crinear-daybreak",
-    "market_value": 115.0,
+    "market_value": 114.17,
     "market_confidence": "High"
   },
   {
@@ -15860,7 +15860,7 @@
     "comments": "Basically sounds very similar to the Indigo version.",
     "based_on": "Brief demo",
     "tracker_slug": "unique-melody-mest-mk3",
-    "market_value": 868.2,
+    "market_value": 823.48,
     "market_confidence": "High"
   },
   {
