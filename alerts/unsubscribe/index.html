@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Unsubscribe · IEM Market Tracker</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;background:#0b0f14;color:#f5f7fb;font-family:system-ui,-apple-system,Segoe UI,sans-serif}.card{width:min(560px,100%);text-align:center;background:#151a22;border:1px solid #2a3340;border-radius:22px;padding:38px 30px;box-shadow:0 24px 80px rgba(0,0,0,.45)}.brand{font-size:13px;font-weight:700;letter-spacing:.04em;color:#8e99a8;margin-bottom:22px}.icon{width:70px;height:70px;border-radius:50%;display:grid;place-items:center;margin:0 auto 20px;font-size:34px;font-weight:800;background:#173c2b;color:#7cf0b1;border:1px solid #285d44}.icon.error{background:#402023;color:#ff9b9b;border-color:#693238}h1{margin:0 0 12px;font-size:30px;line-height:1.15}p{margin:0 auto;color:#c6ccd7;line-height:1.6;max-width:430px}.btn{display:inline-block;margin-top:24px;padding:12px 18px;border-radius:10px;background:#f5f7fb;color:#10141a;text-decoration:none;font-weight:750}.small{margin-top:14px;font-size:12px;color:#7f8997}.spinner{width:28px;height:28px;margin:4px auto 22px;border:3px solid #35404d;border-top-color:#f5f7fb;border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="brand">IEM MARKET TRACKER</div>
+    <div id="spinner" class="spinner"></div>
+    <div id="icon" class="icon" style="display:none">✓</div>
+    <h1 id="title">Turning off your alert…</h1>
+    <p id="message">We’re disabling notifications for this listing alert.</p>
+    <a class="btn" href="https://iemmarkettracker.com">Back to the tracker</a>
+    <div class="small" id="small">Please keep this page open for a moment.</div>
+  </main>
+<script>
+(async () => {
+  const API = 'https://beeowbqgrlcnlfoocmvi.supabase.co/functions/v1/listing-alerts';
+  const ACTION = 'unsubscribe';
+  const token = new URLSearchParams(location.search).get('token') || '';
+  const spinner = document.getElementById('spinner');
+  const icon = document.getElementById('icon');
+  const title = document.getElementById('title');
+  const message = document.getElementById('message');
+  const small = document.getElementById('small');
+  try {
+    if (!token) throw new Error('This link is missing its security token.');
+    const r = await fetch(API + '?action=' + encodeURIComponent(ACTION) + '&format=json&token=' + encodeURIComponent(token));
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok || !data.ok) throw new Error(data.error || 'This link is invalid or has expired.');
+    spinner.style.display = 'none';
+    icon.style.display = 'grid';
+    if (ACTION === 'verify') {
+      title.textContent = 'Your alert is active';
+      message.textContent = 'You’ll now receive notifications when a matching ' + data.canonical_name + ' listing is added.';
+      small.textContent = 'No further action is needed.';
+    } else {
+      title.textContent = 'Alert turned off';
+      message.textContent = 'Notifications for ' + data.canonical_name + ' have been disabled.';
+      small.textContent = 'You can create a new alert at any time.';
+    }
+    history.replaceState({}, '', location.pathname);
+  } catch (e) {
+    spinner.style.display = 'none';
+    icon.style.display = 'grid';
+    icon.classList.add('error');
+    icon.textContent = '!';
+    title.textContent = ACTION === 'verify' ? 'Couldn’t activate this alert' : 'Couldn’t update this alert';
+    message.textContent = e.message || 'This link is invalid or has expired.';
+    small.textContent = 'You can return to the tracker and create a new alert if needed.';
+  }
+})();
+</script>
+</body>
+</html>
