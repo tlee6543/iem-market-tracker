@@ -236,7 +236,7 @@
     "comments": "Basically the 64 Audio U12t's Chinese brother. Excellent tonality and layering performance with a slight upper-treble splashiness.",
     "based_on": "Review unit",
     "tracker_slug": "thieaudio-valhalla",
-    "market_value": 1458.75,
+    "market_value": 1464.75,
     "market_confidence": "High"
   },
   {
@@ -716,7 +716,7 @@
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-myth",
-    "market_value": 916.43,
+    "market_value": 916.0,
     "market_confidence": "High"
   },
   {
@@ -1532,7 +1532,7 @@
     "comments": "Well-extended on both ends of the spectrum and adds back in the upper-midrange the IE900 lacked.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "sennheiser-ie600",
-    "market_value": 377.5,
+    "market_value": 373.0,
     "market_confidence": "High"
   },
   {
@@ -1581,7 +1581,7 @@
     "based_on": "Review unit",
     "tracker_slug": "binary-acoustics-ep321-mems",
     "market_value": 191.67,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -5036,8 +5036,8 @@
     "comments": "Inoffensive other than being a bit too gritty and clacky in the treble.",
     "based_on": "Review unit",
     "tracker_slug": "aful-performer-5",
-    "market_value": 148.07,
-    "market_confidence": "Medium"
+    "market_value": 124.89,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -10508,7 +10508,7 @@
     "comments": "Mostly decent but the treble is excessively bright past 15kHz and gives me a headache.",
     "based_on": "Brief demo",
     "tracker_slug": "pmg-audio-apx-me",
-    "market_value": 5100.0,
+    "market_value": 5214.05,
     "market_confidence": "Medium"
   },
   {
@@ -11036,7 +11036,7 @@
     "comments": "Most normal sounding Campfire IEM yet. Neutral with sub-bass boost, very pleasant on the ears but missing some mid-treble for resolution/edge.",
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-clara",
-    "market_value": 1366.33,
+    "market_value": 1312.81,
     "market_confidence": "Medium"
   },
   {
@@ -11156,8 +11156,8 @@
     "comments": "Literally sounds like balls.",
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-trifecta",
-    "market_value": 1800.0,
-    "market_confidence": "High"
+    "market_value": 1778.17,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -13197,7 +13197,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "kiwi-ears-orchestra-lite",
     "market_value": 125.07,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -14516,7 +14516,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "pmg-audio-apx-me",
-    "market_value": 5100.0,
+    "market_value": 5214.05,
     "market_confidence": "Medium"
   },
   {

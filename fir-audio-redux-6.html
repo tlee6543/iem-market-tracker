@@ -886,7 +886,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 49/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 30/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 5d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 49/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 30/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 5d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Medium (49/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 5d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -919,19 +919,19 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<tr id="row-0" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
 <td>2026-10-15</td>
 <td>$2,300</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">Active</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Sale confirmed</td>
 <td>like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
 <td>StarlingCurve</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td><span id="deal-score-0">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/fir-audio-rx6.117095/" target="_blank">source</a></td>
 </tr>
 
@@ -947,7 +947,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>greygrey</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-1">N/A</span></td>
+<td><span id="deal-score-1">Closed: Fair (0.4% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/fir-audio-redux-6-last-price-drop.115290/" target="_blank">source</a></td>
 </tr>
 
@@ -963,7 +963,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>greygrey</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-2">N/A</span></td>
+<td><span id="deal-score-2">Fair (8.3% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/fir-audio-redux-6-price-drop.115290/" target="_blank">source</a></td>
 </tr>
 
@@ -985,7 +985,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Fir Audio Rx6", "raw_text": "Fir Audio Rx6 Listing ID: 117095 For Sale / Trade 2,300.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America I am the only and first owner of these and they look and sound new. everything included, I did not use the included tips and they are, of course included as well. ATOM modules included as well! (Black, gold and silver) I have so many sets of... Listed by: StarlingCurve (17) Listed: 2026-10-15 Last edited: 2026-10-16", "seller_username": "StarlingCurve", "url": "https://www.head-fi.org/classifieds/fir-audio-rx6.117095/", "price_num": 2300.0, "date_ms": 1792022400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Fir Audio Redux 6 last price drop", "raw_text": "Fir Audio Redux 6 last price drop Listing ID: 115290 For Sale 2,290.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere FiR audio Redux 6 in excellent condition. Bought in may 26 from authorised dealer 1st owner. Original invoice Compl\u00e8te with all packaging and accessoires Shipping included. Not paypal fees One of the best in ears i had. Listed by: greygrey (26) Listed: 2026-09-10 Last edited: 2026-10-11", "seller_username": "greygrey", "url": "https://www.head-fi.org/classifieds/fir-audio-redux-6-last-price-drop.115290/", "price_num": 2290.0, "date_ms": 1788998400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Fir Audio Redux 6 price drop", "raw_text": "Fir Audio Redux 6 price drop Listing ID: 115290 For Sale 2,490.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere FiR audio Redux 6 in excellent condition. Bought in may 26 from authorised dealer 1st owner. Original invoice Compl\u00e8te with all packaging and accessoires Shipping included. Not paypal fees One of the best in ears i had. Listed by: greygrey (26) Listed: 2026-09-10 Last edited: 2026-10-04", "seller_username": "greygrey", "url": "https://www.head-fi.org/classifieds/fir-audio-redux-6-price-drop.115290/", "price_num": 2490.0, "date_ms": 1788998400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged"}];
+const allRows = [{"row_id": 0, "title": "Fir Audio Rx6", "raw_text": "Fir Audio Rx6 Listing ID: 117095 For Sale / Trade 2,300.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America I am the only and first owner of these and they look and sound new. everything included, I did not use the included tips and they are, of course included as well. ATOM modules included as well! (Black, gold and silver) I have so many sets of... Listed by: StarlingCurve (17) Listed: 2026-10-15 Last edited: 2026-10-16", "seller_username": "StarlingCurve", "url": "https://www.head-fi.org/classifieds/fir-audio-rx6.117095/", "price_num": 2300.0, "date_ms": 1792022400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 1, "title": "Fir Audio Redux 6 last price drop", "raw_text": "Fir Audio Redux 6 last price drop Listing ID: 115290 For Sale 2,290.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere FiR audio Redux 6 in excellent condition. Bought in may 26 from authorised dealer 1st owner. Original invoice Compl\u00e8te with all packaging and accessoires Shipping included. Not paypal fees One of the best in ears i had. Listed by: greygrey (26) Listed: 2026-09-10 Last edited: 2026-10-11", "seller_username": "greygrey", "url": "https://www.head-fi.org/classifieds/fir-audio-redux-6-last-price-drop.115290/", "price_num": 2290.0, "date_ms": 1788998400000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 2, "title": "Fir Audio Redux 6 price drop", "raw_text": "Fir Audio Redux 6 price drop Listing ID: 115290 For Sale 2,490.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere FiR audio Redux 6 in excellent condition. Bought in may 26 from authorised dealer 1st owner. Original invoice Compl\u00e8te with all packaging and accessoires Shipping included. Not paypal fees One of the best in ears i had. Listed by: greygrey (26) Listed: 2026-09-10 Last edited: 2026-10-04", "seller_username": "greygrey", "url": "https://www.head-fi.org/classifieds/fir-audio-redux-6-price-drop.115290/", "price_num": 2490.0, "date_ms": 1788998400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged"}];
 const originalMsrpUsd = 3500.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
