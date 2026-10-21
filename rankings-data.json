@@ -2156,7 +2156,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 192.5,
+    "market_value": 191.43,
     "market_confidence": "High"
   },
   {
@@ -2276,8 +2276,8 @@
     "comments": "Extreme basshead's dream. Incredible sub-bass shelf while maintaining midrange and treble balance.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "fatfreq-maestro-mini",
-    "market_value": 336.59,
-    "market_confidence": "Medium"
+    "market_value": 350.0,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -11732,8 +11732,8 @@
     "comments": "More V-shaped listen with some peaking in the lower-treble. Technical but missing some tuning refinement.",
     "based_on": "Brief demo",
     "tracker_slug": "dita-prelude",
-    "market_value": 125.0,
-    "market_confidence": "Low"
+    "market_value": 112.07,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
