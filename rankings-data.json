@@ -164,7 +164,7 @@
     "comments": "Exceptional musicality and unfettered driver efficiency.",
     "based_on": "Loaner unit",
     "tracker_slug": "symphonium-zenith",
-    "market_value": 1589.49,
+    "market_value": 1483.0,
     "market_confidence": "High"
   },
   {
@@ -716,7 +716,7 @@
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-myth",
-    "market_value": 916.0,
+    "market_value": 913.33,
     "market_confidence": "High"
   },
   {
@@ -1891,9 +1891,9 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "letshuoer-ej07m",
+    "tracker_slug": "",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -2516,7 +2516,7 @@
     "comments": "Solid rendition of reference tuning that's missing some upper-treble energy for my neutral/reference. Best thought of as a tool.",
     "based_on": "Loaner unit",
     "tracker_slug": "crinear-reference",
-    "market_value": 270.56,
+    "market_value": 271.0,
     "market_confidence": "High"
   },
   {
@@ -4580,8 +4580,8 @@
     "comments": "See ER2XR but with less sub-bass.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "etymotic-er2se",
-    "market_value": 44.92,
-    "market_confidence": "Low"
+    "market_value": 58.89,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -4628,7 +4628,7 @@
     "comments": "New meta style tuning that's a little more forward than the KE4. More depth to sound but also more fatiguing.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "kiwi-ears-astral",
-    "market_value": 182.5,
+    "market_value": 176.0,
     "market_confidence": "High"
   },
   {
@@ -5540,7 +5540,7 @@
     "comments": "One of the better interpretations of Final Audio's house sound with some decent technicalities.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "final-audio-b3",
-    "market_value": null,
+    "market_value": 130.0,
     "market_confidence": "Low"
   },
   {
@@ -5756,8 +5756,8 @@
     "comments": "A leaner, more forward version of the 3001.",
     "based_on": "DUNU loaner",
     "tracker_slug": "dunu-dk-2001",
-    "market_value": 285.0,
-    "market_confidence": "Low"
+    "market_value": 301.83,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -9884,8 +9884,8 @@
     "comments": "Slightly more resolving than the Vega 2020 from the midrange and up, but even more piercing.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "campfire-audio-dorado-2020",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 399.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -11780,7 +11780,7 @@
     "comments": "Generic V-shape sound signature with thin midrange and heavy mid-treble peaking.",
     "based_on": "Brief demo",
     "tracker_slug": "dita-project-m2",
-    "market_value": 233.83,
+    "market_value": 229.0,
     "market_confidence": "High"
   },
   {
@@ -16124,8 +16124,8 @@
     "comments": "Sounds like a VE8 with a DD jammed into the mix. Treble sounds pretty decent on second listen, retune?",
     "based_on": "Brief demo",
     "tracker_slug": "vision-ears-ve10",
-    "market_value": 1557.26,
-    "market_confidence": "Medium"
+    "market_value": 1681.04,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -16268,7 +16268,7 @@
     "comments": "Very pleasant tuning with thumpy bass albeit lacking wow factor in techs.",
     "based_on": "Brief demo",
     "tracker_slug": "xenns-mangird-tea-pro",
-    "market_value": 247.0,
+    "market_value": 247.5,
     "market_confidence": "High"
   },
   {
