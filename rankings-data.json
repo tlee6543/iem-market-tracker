@@ -740,7 +740,7 @@
     "comments": "Great rendition of neutral-warm tonality with the technical sauce to accompany it.",
     "based_on": "Loaner unit",
     "tracker_slug": "prisma-audio-lumen",
-    "market_value": 1431.25,
+    "market_value": 1428.0,
     "market_confidence": "High"
   },
   {
@@ -1891,9 +1891,9 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "",
+    "tracker_slug": "letshuoer-ej07m",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -6556,7 +6556,7 @@
     "iem": "7Hz Zero 2",
     "favorite": false,
     "canonical_name": "7Hz Zero 2",
-    "release_year": "—",
+    "release_year": "2023",
     "final_score": 4.4,
     "tonality": "4.7",
     "bass": "4.0",
@@ -6579,8 +6579,8 @@
     "entry_type": "ranked",
     "iem": "7Hz Zero 3",
     "favorite": false,
-    "canonical_name": "7Hz Zero",
-    "release_year": "2022",
+    "canonical_name": "7Hz Zero 3",
+    "release_year": "2026",
     "final_score": 4.4,
     "tonality": "4.7",
     "bass": "5.0",
