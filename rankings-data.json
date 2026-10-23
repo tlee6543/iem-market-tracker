@@ -1268,8 +1268,8 @@
     "comments": "Warm and shimmery with excellent imaging. Dampening in the mid-treble elevates this above the standard planar IEM experience.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "64-audio-solo",
-    "market_value": 790.57,
-    "market_confidence": "Low"
+    "market_value": 623.14,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -1891,9 +1891,9 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "letshuoer-ej07m",
+    "tracker_slug": "",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -2684,7 +2684,7 @@
     "comments": "Poor bass performance and sounds like surface-level detailing due to mid-treble recession despite great frequency response.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "thieaudio-hype-2",
-    "market_value": 157.61,
+    "market_value": 123.54,
     "market_confidence": "Medium"
   },
   {
@@ -12380,7 +12380,7 @@
     "comments": "Good detail, but frequency response is contentious.",
     "based_on": "Brief demo",
     "tracker_slug": "fir-audio-xenon-6",
-    "market_value": 1808.33,
+    "market_value": 1968.75,
     "market_confidence": "High"
   },
   {
