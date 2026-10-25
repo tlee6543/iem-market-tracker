@@ -164,7 +164,7 @@
     "comments": "Exceptional musicality and unfettered driver efficiency.",
     "based_on": "Loaner unit",
     "tracker_slug": "symphonium-zenith",
-    "market_value": 1483.0,
+    "market_value": 1449.75,
     "market_confidence": "High"
   },
   {
@@ -1148,7 +1148,7 @@
     "comments": "Dull microdynamics and treble at a not-so-dull price.",
     "based_on": "Loaner",
     "tracker_slug": "oriolus-traillii-jp",
-    "market_value": 3311.25,
+    "market_value": 3248.33,
     "market_confidence": "High"
   },
   {
@@ -1891,9 +1891,9 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "",
+    "tracker_slug": "letshuoer-ej07m",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -3332,8 +3332,8 @@
     "comments": "Somewhat studio monitor-esque presentation with a segmented, fun character in the bass and some midrange thinness.",
     "based_on": "Review unit",
     "tracker_slug": "ziigaat-x-jay-audio-seraphim",
-    "market_value": 225.0,
-    "market_confidence": "Medium"
+    "market_value": 211.67,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -10484,7 +10484,7 @@
     "comments": "Enveloping yet controlled bass with an aggressive upper-midrange tilt to keep things together. Excellent fun.",
     "based_on": "Brief demo",
     "tracker_slug": "alpha-omega-omega",
-    "market_value": 1674.56,
+    "market_value": 1648.46,
     "market_confidence": "High"
   },
   {
@@ -10868,8 +10868,8 @@
     "comments": "More V-shaped than Lily of the Valley yet reigned in with the treble. Great rendition that strays tastefully from neutral with bass boost.",
     "based_on": "Brief demo",
     "tracker_slug": "bryce-kimmel-osmanthus",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 2400.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -11924,7 +11924,7 @@
     "comments": "Reminds me of if Elysian tuned more towards 64 Audio's sound while maintaing upper-mids. Colored sound done correctly with great technicalities.",
     "based_on": "Brief demo",
     "tracker_slug": "elysian-apostle-2026",
-    "market_value": 1329.11,
+    "market_value": 1305.38,
     "market_confidence": "High"
   },
   {
@@ -11948,7 +11948,7 @@
     "comments": "Sounds very similar to the original Apostle albeit slightly drier from memory.",
     "based_on": "Brief demo",
     "tracker_slug": "elysian-apostle-2026",
-    "market_value": 1329.11,
+    "market_value": 1305.38,
     "market_confidence": "High"
   },
   {
@@ -15909,7 +15909,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "unique-melody-multiverse-mentor",
     "market_value": 2100.0,
-    "market_confidence": "Low"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
