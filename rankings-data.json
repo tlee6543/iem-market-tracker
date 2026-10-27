@@ -1796,7 +1796,7 @@
     "comments": "Strong dynamics and easy-going signature that could use more detail in the midrange.",
     "based_on": "Personal unit",
     "tracker_slug": "64-audio-duo",
-    "market_value": 475.0,
+    "market_value": 481.59,
     "market_confidence": "High"
   },
   {
@@ -2997,7 +2997,7 @@
     "based_on": "headphones.com unit",
     "tracker_slug": "thieaudio-monarch-mki",
     "market_value": 343.67,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -9979,9 +9979,9 @@
     "price": "$10",
     "comments": "Literally gas station pickup tier.",
     "based_on": "Super*Review's unit",
-    "tracker_slug": "",
+    "tracker_slug": "hifiman-bolt",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
