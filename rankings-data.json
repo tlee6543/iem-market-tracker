@@ -716,7 +716,7 @@
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-myth",
-    "market_value": 913.33,
+    "market_value": 906.0,
     "market_confidence": "High"
   },
   {
@@ -740,7 +740,7 @@
     "comments": "Great rendition of neutral-warm tonality with the technical sauce to accompany it.",
     "based_on": "Loaner unit",
     "tracker_slug": "prisma-audio-lumen",
-    "market_value": 1428.0,
+    "market_value": 1422.5,
     "market_confidence": "High"
   },
   {
@@ -1891,9 +1891,9 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "",
+    "tracker_slug": "letshuoer-ej07m",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -2156,7 +2156,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 205.71,
+    "market_value": 200.0,
     "market_confidence": "High"
   },
   {
