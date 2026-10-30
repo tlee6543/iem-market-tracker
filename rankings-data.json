@@ -44,8 +44,8 @@
     "comments": "Slightly intense in the treble and odd tonally but easily at the top for a sense of detail and dynamics.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-hex",
-    "market_value": 9157.83,
-    "market_confidence": "Medium"
+    "market_value": 9013.78,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -404,7 +404,7 @@
     "comments": "Excellent detail retreival and competent tuning. Can be slightly thin sounding and forward in the treble.",
     "based_on": "Loaner",
     "tracker_slug": "thieaudio-monarch-mkiv",
-    "market_value": 887.5,
+    "market_value": 897.22,
     "market_confidence": "High"
   },
   {
@@ -692,8 +692,8 @@
     "comments": "An improvment over the LX SE's bass, but still lacking in the Odin's control. BC is no gimmick at least.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "empire-ears-evo",
-    "market_value": 1241.8,
-    "market_confidence": "Medium"
+    "market_value": 1466.41,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -1891,9 +1891,9 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "",
+    "tracker_slug": "letshuoer-ej07m",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -2516,7 +2516,7 @@
     "comments": "Solid rendition of reference tuning that's missing some upper-treble energy for my neutral/reference. Best thought of as a tool.",
     "based_on": "Loaner unit",
     "tracker_slug": "crinear-reference",
-    "market_value": 269.44,
+    "market_value": 267.27,
     "market_confidence": "High"
   },
   {
@@ -3548,8 +3548,8 @@
     "comments": "Probably the most palatable FiR IEM, colored presentation with spicy mid and upper-treble.",
     "based_on": "Schezade unit",
     "tracker_slug": "fir-audio-radon-6",
-    "market_value": 1918.8,
-    "market_confidence": "Medium"
+    "market_value": 1750.11,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -6835,9 +6835,9 @@
     "price": "$900",
     "comments": "Sounds like it has metallic timbre. Percussino compression around 5kHz due to lack of treble extension and generally bad tuning.",
     "based_on": "Super*Review's unit",
-    "tracker_slug": "",
+    "tracker_slug": "moondrop-illustrious",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -10484,7 +10484,7 @@
     "comments": "Enveloping yet controlled bass with an aggressive upper-midrange tilt to keep things together. Excellent fun.",
     "based_on": "Brief demo",
     "tracker_slug": "alpha-omega-omega",
-    "market_value": 1648.46,
+    "market_value": 1608.33,
     "market_confidence": "High"
   },
   {
@@ -11349,7 +11349,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "canpur-cp752b",
     "market_value": 3625.84,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -12380,7 +12380,7 @@
     "comments": "Good detail, but frequency response is contentious.",
     "based_on": "Brief demo",
     "tracker_slug": "fir-audio-xenon-6",
-    "market_value": 1968.75,
+    "market_value": 1935.0,
     "market_confidence": "High"
   },
   {
@@ -13533,7 +13533,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "linsoul-avant",
     "market_value": 320.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -14972,7 +14972,7 @@
     "comments": "L-shaped listen with a smooth sound. Bombastic bass that's missing some texture.",
     "based_on": "Brief demo",
     "tracker_slug": "quill-acoustics-karma",
-    "market_value": 759.29,
+    "market_value": 755.0,
     "market_confidence": "High"
   },
   {
