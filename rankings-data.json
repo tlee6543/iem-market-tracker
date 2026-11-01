@@ -740,7 +740,7 @@
     "comments": "Great rendition of neutral-warm tonality with the technical sauce to accompany it.",
     "based_on": "Loaner unit",
     "tracker_slug": "prisma-audio-lumen",
-    "market_value": 1422.5,
+    "market_value": 1424.0,
     "market_confidence": "High"
   },
   {
@@ -788,7 +788,7 @@
     "comments": "Quite exciting and dynamic, possibly a bit bright in the treble.",
     "based_on": "—",
     "tracker_slug": "dunu-glacier",
-    "market_value": 827.5,
+    "market_value": 858.33,
     "market_confidence": "High"
   },
   {
@@ -1891,9 +1891,9 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "",
+    "tracker_slug": "letshuoer-ej07m",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -3357,7 +3357,7 @@
     "based_on": "Review unit",
     "tracker_slug": "7hz-timeless",
     "market_value": 96.35,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -14636,7 +14636,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "punch-audio-martilo",
-    "market_value": 185.62,
+    "market_value": 191.67,
     "market_confidence": "High"
   },
   {
