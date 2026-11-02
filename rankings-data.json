@@ -620,7 +620,7 @@
     "comments": "Fantastic colored tonality with options, and the unique technical qualities to back it up. M12/M15 modules recommended.",
     "based_on": "Review unit",
     "tracker_slug": "64-audio-u4s",
-    "market_value": 673.33,
+    "market_value": 681.77,
     "market_confidence": "High"
   },
   {
@@ -1891,9 +1891,9 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "",
+    "tracker_slug": "letshuoer-ej07m",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -4628,7 +4628,7 @@
     "comments": "New meta style tuning that's a little more forward than the KE4. More depth to sound but also more fatiguing.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "kiwi-ears-astral",
-    "market_value": 182.5,
+    "market_value": 176.67,
     "market_confidence": "High"
   },
   {
@@ -11780,7 +11780,7 @@
     "comments": "Generic V-shape sound signature with thin midrange and heavy mid-treble peaking.",
     "based_on": "Brief demo",
     "tracker_slug": "dita-project-m2",
-    "market_value": 229.0,
+    "market_value": 225.5,
     "market_confidence": "High"
   },
   {
@@ -12021,7 +12021,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "empire-ears-odin-mkii",
     "market_value": 3253.16,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
