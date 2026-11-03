@@ -284,7 +284,7 @@
     "comments": "Terrific soundstage depth and imaging; the closest I have heard to a two-channel system in an IEM for these qualities.",
     "based_on": "Personal unit",
     "tracker_slug": "64-audio-u12t",
-    "market_value": 999.96,
+    "market_value": 1200.0,
     "market_confidence": "High"
   },
   {
@@ -860,7 +860,7 @@
     "comments": "Exceptional tuning and treble refinement; sets the benchmark at $400.",
     "based_on": "Loaner",
     "tracker_slug": "yu9-que",
-    "market_value": 332.86,
+    "market_value": 353.62,
     "market_confidence": "High"
   },
   {
@@ -981,7 +981,7 @@
     "based_on": "Headphones.com unit",
     "tracker_slug": "moondrop-s8",
     "market_value": 344.3,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -1148,7 +1148,7 @@
     "comments": "Dull microdynamics and treble at a not-so-dull price.",
     "based_on": "Loaner",
     "tracker_slug": "oriolus-traillii-jp",
-    "market_value": 3248.33,
+    "market_value": 3486.25,
     "market_confidence": "High"
   },
   {
@@ -1388,7 +1388,7 @@
     "comments": "Slightly colored but well-rounded tonality with minor quirks.",
     "based_on": "Loaner unit",
     "tracker_slug": "xenns-mangird-top-pro",
-    "market_value": 354.38,
+    "market_value": 357.22,
     "market_confidence": "High"
   },
   {
@@ -1580,7 +1580,7 @@
     "comments": "Exceptional dynamics and treble extension. Tuning/coherency could use some work.",
     "based_on": "Review unit",
     "tracker_slug": "binary-acoustics-ep321-mems",
-    "market_value": 191.67,
+    "market_value": 186.38,
     "market_confidence": "Medium"
   },
   {
@@ -6931,9 +6931,9 @@
     "price": "Discontinued",
     "comments": "See MH755, just slightly worse.",
     "based_on": "Personal unit",
-    "tracker_slug": "",
+    "tracker_slug": "sony-mh750",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
