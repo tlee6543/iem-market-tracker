@@ -910,7 +910,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <h2>IEM Secondary Market at a Glance</h2>
     <p class="muted">
         The <b>Same-IEM Price Index</b> shows what actually happened to comparable used-IEM prices, including normal product aging.
-        The experimental <b>Lifecycle-Adjusted Index</b> asks the harder question: are those IEMs becoming cheaper or more expensive than we would normally expect purely from age? Both are anchored to <b>100 in January 2024</b>.
+        The experimental <b>Lifecycle-Adjusted Index</b> asks the harder question: are those IEMs becoming cheaper or more expensive than historical IEMs did at comparable ages? Both are anchored to <b>100 in January 2024</b>.
     </p>
     <p class="small"><b>Drill-through:</b> click a headline metric, chart point/bar, or MSRP-tier row to see the IEMs behind it.</p>
 </div>
@@ -979,7 +979,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
     <section class="card dashboard-chart-card dashboard-wide">
         <h2>Lifecycle-Adjusted Market Index <span class="badge">Experimental</span></h2>
-        <p class="small">Compares the observed same-IEM price path with the depreciation expected purely from product age, using only pre-2024 observations to learn the lifecycle benchmark. 100 means prices are tracking that historical aging path; below 100 means they are depreciating faster.</p>
+        <p class="small">Compares the observed same-IEM price path with a historical age-peer depreciation benchmark, learned only from pre-2024 observations and equal-weighted across IEMs. 100 means prices are tracking that historical aging path; below 100 means they are depreciating faster.</p>
         
         <div class="dashboard-chart-wrap"><canvas id="lifecycleAdjustedChart"></canvas></div>
         <p class="small"><b>Current interpretation:</b> 97.5 means the post-2024 market has performed -2.5% relative to the historical age/depreciation path. This is a residual market indicator, not a causal estimate of demand.</p>
@@ -1141,7 +1141,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 
 <section class="card">
     <h2>Lifecycle Benchmark <span class="badge">Experimental</span></h2>
-    <p class="small">The expected aging curve is learned only from pre-January-2024 observations. Because most catalog entries have a release year rather than an exact release date, broad age bands are used; when only a year is known, July 1 is used as the neutral midpoint.</p>
+    <p class="small">The historical age-peer curve is learned only from pre-January-2024 observations. Each IEM gets one vote within an age band so frequently traded models cannot dominate it. Because most catalog entries have a release year rather than an exact release date, broad age bands are used; when only a year is known, July 1 is used as the neutral midpoint.</p>
     
     <div class="table-scroll dashboard-table-scroll">
         <table class="main-table dashboard-table">
@@ -1161,7 +1161,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="how-to-grid">
         <div class="how-to-card">
             <h3>1. Learn normal aging</h3>
-            <p class="small">Pre-2024 monthly median prices are divided by original MSRP and grouped into broad age bands. Post-2024 observations never train the benchmark.</p>
+            <p class="small">Pre-2024 monthly median prices are divided by original MSRP and grouped into broad age bands. Each IEM is reduced to one typical retention value per band, and post-2024 observations never train the benchmark.</p>
         </div>
         <div class="how-to-card">
             <h3>2. Subtract expected depreciation</h3>
@@ -1172,7 +1172,7 @@ score backgrounds cannot be lost to broader table/cell styling.
             <p class="small">Each month's median excess move is compounded from 100. Below 100 means the market is weaker than the historical lifecycle path; above 100 means stronger.</p>
         </div>
     </div>
-    <p class="small"><b>Caveat:</b> this does not isolate a pure demand shock. Successor launches, changing tastes, product/cohort mix, condition, and incomplete legacy coverage can remain in the residual. It is best read as “performance beyond expected aging,” not “demand is down X%.”</p>
+    <p class="small"><b>Caveat:</b> age, calendar period, and release cohort cannot be perfectly separated without additional assumptions. Successor launches, changing tastes, cohort mix, condition, and incomplete legacy coverage can remain in the residual. Read this as “performance versus historical age peers,” not “demand is down X%.”</p>
 </section>
 
 <section class="card">
