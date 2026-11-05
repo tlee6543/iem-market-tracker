@@ -620,7 +620,7 @@
     "comments": "Fantastic colored tonality with options, and the unique technical qualities to back it up. M12/M15 modules recommended.",
     "based_on": "Review unit",
     "tracker_slug": "64-audio-u4s",
-    "market_value": 666.67,
+    "market_value": 668.75,
     "market_confidence": "High"
   },
   {
@@ -740,7 +740,7 @@
     "comments": "Great rendition of neutral-warm tonality with the technical sauce to accompany it.",
     "based_on": "Loaner unit",
     "tracker_slug": "prisma-audio-lumen",
-    "market_value": 1424.0,
+    "market_value": 1432.14,
     "market_confidence": "High"
   },
   {
@@ -2516,7 +2516,7 @@
     "comments": "Solid rendition of reference tuning that's missing some upper-treble energy for my neutral/reference. Best thought of as a tool.",
     "based_on": "Loaner unit",
     "tracker_slug": "crinear-reference",
-    "market_value": 267.27,
+    "market_value": 267.0,
     "market_confidence": "High"
   },
   {
@@ -3332,7 +3332,7 @@
     "comments": "Somewhat studio monitor-esque presentation with a segmented, fun character in the bass and some midrange thinness.",
     "based_on": "Review unit",
     "tracker_slug": "ziigaat-x-jay-audio-seraphim",
-    "market_value": 211.67,
+    "market_value": 211.25,
     "market_confidence": "High"
   },
   {
@@ -11636,7 +11636,7 @@
     "comments": "Treble has some unnatural peaking past 10kHz that lends to a Focal-esque, metallic tinge.",
     "based_on": "Brief demo",
     "tracker_slug": "crinear-daybreak",
-    "market_value": 114.17,
+    "market_value": 113.57,
     "market_confidence": "High"
   },
   {
@@ -11804,7 +11804,7 @@
     "comments": "More realistic sounding than the Destin, adds back some weight to the sub-bass and lower-treble. Good techs, a bit lacking in tuning refinement.",
     "based_on": "Brief demo",
     "tracker_slug": "dita-ventura",
-    "market_value": 3425.0,
+    "market_value": 3370.0,
     "market_confidence": "High"
   },
   {
@@ -13196,8 +13196,8 @@
     "comments": "Quite a bassy listen, more V-shape with a big sound but a bhit too intense for me.",
     "based_on": "Brief demo",
     "tracker_slug": "kiwi-ears-ke4",
-    "market_value": 200.0,
-    "market_confidence": "Low"
+    "market_value": 118.02,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -13244,8 +13244,8 @@
     "comments": "Pretty safe listen overall.",
     "based_on": "Brief demo",
     "tracker_slug": "kiwi-ears-stardust",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 50.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
