@@ -453,7 +453,7 @@
     "based_on": "Headphones.com unit",
     "tracker_slug": "empire-ears-odin",
     "market_value": 1492.42,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -3308,8 +3308,8 @@
     "comments": "The first \"passable\" implementation of the Sonion ESTs. Not particularly coherent, unfortunately.",
     "based_on": "AudioTiers tour",
     "tracker_slug": "vision-ears-elysium",
-    "market_value": 987.09,
-    "market_confidence": "Medium"
+    "market_value": 1012.56,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
