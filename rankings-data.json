@@ -10844,7 +10844,7 @@
     "comments": "A darker version of the Fugaku. Bass resonates a bit more, midrange is slightly more colored, and treble is darker/more upper-treble focused.",
     "based_on": "Brief demo",
     "tracker_slug": "brise-audio-ibuki",
-    "market_value": 6333.17,
+    "market_value": 6300.0,
     "market_confidence": "High"
   },
   {
@@ -11613,7 +11613,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "crinear-nightfall",
     "market_value": 89.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -11804,7 +11804,7 @@
     "comments": "More realistic sounding than the Destin, adds back some weight to the sub-bass and lower-treble. Good techs, a bit lacking in tuning refinement.",
     "based_on": "Brief demo",
     "tracker_slug": "dita-ventura",
-    "market_value": 3370.0,
+    "market_value": 3312.5,
     "market_confidence": "High"
   },
   {
