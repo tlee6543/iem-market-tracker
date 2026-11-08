@@ -524,7 +524,7 @@
     "comments": "Top-tier bass, treble, and soundstage height and width. I don't approve of the midrange these days.",
     "based_on": "Loaner",
     "tracker_slug": "sony-ier-z1r",
-    "market_value": 1017.71,
+    "market_value": 1037.5,
     "market_confidence": "High"
   },
   {
@@ -1532,7 +1532,7 @@
     "comments": "Well-extended on both ends of the spectrum and adds back in the upper-midrange the IE900 lacked.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "sennheiser-ie600",
-    "market_value": 373.33,
+    "market_value": 369.0,
     "market_confidence": "High"
   },
   {
@@ -4844,7 +4844,7 @@
     "comments": "Boomy and enveloping sounding; however, lacks the technical chops and raw detail to compete.",
     "based_on": "Review unit",
     "tracker_slug": "softears-edge",
-    "market_value": 340.0,
+    "market_value": 330.0,
     "market_confidence": "High"
   },
   {
@@ -5228,7 +5228,7 @@
     "comments": "Thin, crunchy, and unnaturally boosted treble that pervades to the rest of the sound. Hard listen tbh.",
     "based_on": "Loaner unit",
     "tracker_slug": "thieaudio-hype-4-mkii",
-    "market_value": 311.33,
+    "market_value": 284.22,
     "market_confidence": "High"
   },
   {
@@ -11301,7 +11301,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "canpur-cp622b",
     "market_value": 1975.38,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -11780,7 +11780,7 @@
     "comments": "Generic V-shape sound signature with thin midrange and heavy mid-treble peaking.",
     "based_on": "Brief demo",
     "tracker_slug": "dita-project-m2",
-    "market_value": 220.6,
+    "market_value": 213.5,
     "market_confidence": "High"
   },
   {
@@ -12573,7 +12573,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "hercules-audio-noah",
     "market_value": 307.55,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
