@@ -1891,9 +1891,9 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "",
+    "tracker_slug": "letshuoer-ej07m",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -6646,6 +6646,30 @@
     "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "ranked",
+    "iem": "Elysian Pilgrim 2026",
+    "favorite": false,
+    "canonical_name": "Elysian Pilgrim",
+    "release_year": "2024",
+    "final_score": 4.4,
+    "tonality": "4.7",
+    "bass": "8.0",
+    "midrange": "3.0",
+    "treble": "3.0",
+    "tech": "6.0",
+    "detail": "6.0",
+    "imaging": "6.0",
+    "dynamics": "6.0",
+    "bias": "3.0",
+    "setup": "1DD/3BA",
+    "price": "$300",
+    "comments": "A more V-shaped version of the original Pilgrim with scuffed midrange and ear-piercing treble.",
+    "based_on": "Review unit",
+    "tracker_slug": "elysian-pilgrim",
+    "market_value": 199.56,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -15933,7 +15957,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "unique-melody-pentara",
     "market_value": 2700.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
