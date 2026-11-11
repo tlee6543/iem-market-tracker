@@ -7,6 +7,14 @@ table { width: 100%; border-collapse: collapse; background: white; font-size: 14
 .main-table td:first-child { max-width: 320px; }
 th, td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
 th { background: #111; color: white; }
+/* Keep the main Market Tracker column labels visible while scrolling through the table. */
+#marketTable th {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #111;
+    box-shadow: 0 2px 0 rgba(255,255,255,.12), 0 3px 8px rgba(0,0,0,.18);
+}
 .card { background: white; padding: 20px; border: 1px solid #ddd; margin-bottom: 20px; }
 a { color: #0066cc; text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -630,6 +638,22 @@ score backgrounds cannot be lost to broader table/cell styling.
     font-size: 11px;
     text-align: center;
 }
+.demoed-price-sort {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #bbb;
+    background: #fff;
+    border-radius: 999px;
+    padding: 9px 13px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.demoed-price-sort:hover:not(:disabled) { background: #f3f3f3; }
+.demoed-price-sort.is-active { background: #111; color: #fff; border-color: #111; }
+.demoed-price-sort:disabled { opacity: .45; cursor: not-allowed; }
 .rankings-table td.score-cell.score-demoed {
     background-color: #eeeeee !important;
     color: #444 !important;
@@ -964,22 +988,6 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>0</td>
 <td>0</td>
 <td><span id="deal-score-0">N/A</span></td>
-<td><a href="https://www.head-fi.org/classifieds/gucraftsman-ie300-ie600-ie900-cable-5n-ofc-silver-plating-graphene.85075/" target="_blank">source</a></td>
-</tr>
-
-<tr id="row-1" data-source="headfi" class="listing-row excluded">
-<td></td>
-<td></td>
-<td></td>
-<td><span class="pill">closed</span></td>
-<td class="status-reason">Closed</td>
-<td></td>
-<td>0</td>
-<td>headfi</td>
-<td>unknown</td>
-<td>1</td>
-<td>0</td>
-<td><span id="deal-score-1">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie300-ie600-ie900.33444/" target="_blank">source</a></td>
 </tr>
 
@@ -1001,7 +1009,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Closed: GUCraftsman IE300/IE600/IE900 Cable 5N OFC Silver Plating+graphene", "raw_text": "For Sale Closed: GUCraftsman IE300/IE600/IE900 Cable 5N OFC Silver Plating+graphene", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/gucraftsman-ie300-ie600-ie900-cable-5n-ofc-silver-plating-graphene.85075/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}, {"row_id": 1, "title": "Sold: Sennheiser IE300 IE600 IE900", "raw_text": "For Sale Sold: Sennheiser IE300 IE600 IE900", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/sennheiser-ie300-ie600-ie900.33444/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Sold: Sennheiser IE300 IE600 IE900", "raw_text": "For Sale Sold: Sennheiser IE300 IE600 IE900", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/sennheiser-ie300-ie600-ie900.33444/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 300.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
