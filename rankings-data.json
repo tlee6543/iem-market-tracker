@@ -212,8 +212,8 @@
     "comments": "Sounds like a warmer, more forgiving Elysian Annihilator with great spherical-esque imaging.",
     "based_on": "Loaner unit",
     "tracker_slug": "hercules-audio-moses",
-    "market_value": 2789.89,
-    "market_confidence": "Medium"
+    "market_value": 2696.02,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -860,7 +860,7 @@
     "comments": "Exceptional tuning and treble refinement; sets the benchmark at $400.",
     "based_on": "Loaner",
     "tracker_slug": "yu9-que",
-    "market_value": 353.62,
+    "market_value": 364.33,
     "market_confidence": "High"
   },
   {
@@ -1388,7 +1388,7 @@
     "comments": "Slightly colored but well-rounded tonality with minor quirks.",
     "based_on": "Loaner unit",
     "tracker_slug": "xenns-mangird-top-pro",
-    "market_value": 357.22,
+    "market_value": 353.5,
     "market_confidence": "High"
   },
   {
@@ -2156,7 +2156,7 @@
     "comments": "Extremely punchy mid-bass response and one of the better renditions of the New Meta-style tuning.",
     "based_on": "Review unit",
     "tracker_slug": "softears-volume-s",
-    "market_value": 198.33,
+    "market_value": 195.0,
     "market_confidence": "High"
   },
   {
@@ -2180,8 +2180,8 @@
     "comments": "One of the more technically proficient single-DDs on the market.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "softears-turii",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 1650.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -4628,7 +4628,7 @@
     "comments": "New meta style tuning that's a little more forward than the KE4. More depth to sound but also more fatiguing.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "kiwi-ears-astral",
-    "market_value": 176.67,
+    "market_value": 172.5,
     "market_confidence": "High"
   },
   {
@@ -7700,8 +7700,8 @@
     "comments": "Lower half of tuning sounds extremely muddy, midrange is muffled, and treble lacks extension past 10kHz. Nothing superior about this.",
     "based_on": "—",
     "tracker_slug": "qdc-superior-ex",
-    "market_value": 132.74,
-    "market_confidence": "Low"
+    "market_value": 116.53,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -14996,7 +14996,7 @@
     "comments": "L-shaped listen with a smooth sound. Bombastic bass that's missing some texture.",
     "based_on": "Brief demo",
     "tracker_slug": "quill-acoustics-karma",
-    "market_value": 755.0,
+    "market_value": 748.89,
     "market_confidence": "High"
   },
   {
@@ -16292,7 +16292,7 @@
     "comments": "Very pleasant tuning with thumpy bass albeit lacking wow factor in techs.",
     "based_on": "Brief demo",
     "tracker_slug": "xenns-mangird-tea-pro",
-    "market_value": 252.0,
+    "market_value": 246.67,
     "market_confidence": "High"
   },
   {

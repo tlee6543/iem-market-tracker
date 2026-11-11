@@ -883,7 +883,7 @@ score backgrounds cannot be lost to broader table/cell styling.
         <div class="supporter-card">
             <div class="supporter-label">Supporters</div>
             <div class="small">Thanks to the people helping keep this tool alive.</div>
-            <div class="supporter-list"><span class="supporter-chip">anmosasi</span></div>
+            <div class="supporter-list"><span class="supporter-chip">anmosasi</span><span class="supporter-chip">Taylor Smith</span></div>
         </div>
     </div>
     
@@ -926,7 +926,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 49/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 30/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 6d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 49/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 30/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 6d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Medium (49/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 6d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -934,7 +934,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -971,8 +971,24 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Switch2phile</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td><span id="deal-score-0">Fair (9.1% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1xp409d/wts_usaca_h_softears_turii_ti_limited_edition/#item-1" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
+<td>2026-11-05</td>
+<td>$1,650</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Closed</td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>s2kphile</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/softears-turii-ti-limited-edition-27-88-%E2%80%94-complete-kit.118257/" target="_blank">source</a></td>
 </tr>
 
 </table>
@@ -993,7 +1009,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Softears Turii Ti Limited Edition (#27", "raw_text": "Softears Turii Ti Limited Edition (#27 $1800\nPrice: __STRIKE_START__ $1,800 __STRIKE_END__ $1,650 Shipped OBO", "seller_username": "Switch2phile", "url": "https://www.reddit.com/r/AVexchange/comments/1xp409d/wts_usaca_h_softears_turii_ti_limited_edition/#item-1", "price_num": 1800.0, "date_ms": 1793940094000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_http_backoff_this_run_rss=None:len0_pages=none_http_skipped=1_browser=0_chrome_attach_failed:Message: session not created: cannot connect to chrome at 127.0.0.1:9222\nfrom chrome not reachable; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception\nStacktrace:\nSymbols not available. Dumping unresolved backtrace:\n\t(No symbol) [0x7ff6ec7cbe65]\n\t(No symbol) [0x7ff6ec6d35f0]\n\t(No symbol) [0x7ff6ecac1dad]\n\t(No symbol) [0x7ff6ecd1026c]\n\t(No symbol) [0x7ff6ec55ac87]\n\t(No symbol) [0x7ff6ecd3d1ad]\n\t(No symbol) [0x7ff6ecd6a6ca]\n\t(No symbol) [0x7ff6ecd6a306]\n\t(No symbol) [0x7ff6ec55b969]\n\t(No symbol) [0x7ff6ec55cca3]\n\t(No symbol) [0x7ff6ecc45af1]\n\t(No symbol) [0x7ff6ecc667f7]\n\t(No symbol) [0x7ff6ecc5ce20]\n\t(No symbol) [0x7ff6ec8eff8e]\n\t(No symbol) [0x7ff6ec6e2865]\n\t(No symbol) [0x7ff6ec6dd1d4]\n\t(No symbol) [0x7ff6ec6dd364]\n\t(No symbol) [0x7ff6ec6c644c]\n\t(No symbol) [0x7ff9f58fdda7]\n\t(No symbol) [0x7ff9f679ee4c]", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}];
+const allRows = [{"row_id": 0, "title": "Softears Turii Ti Limited Edition (#27", "raw_text": "Softears Turii Ti Limited Edition (#27 $1800\nPrice: __STRIKE_START__ $1,800 __STRIKE_END__ $1,650 Shipped OBO", "seller_username": "Switch2phile", "url": "https://www.reddit.com/r/AVexchange/comments/1xp409d/wts_usaca_h_softears_turii_ti_limited_edition/#item-1", "price_num": 1800.0, "date_ms": 1793940094000, "listing_status": "active", "condition_text": "", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_http_backoff_this_run_rss=None:len0_pages=none_http_skipped=1_browser=0_chrome_attach_failed:Message: session not created: cannot connect to chrome at 127.0.0.1:9222\nfrom chrome not reachable; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception\nStacktrace:\nSymbols not available. Dumping unresolved backtrace:\n\t(No symbol) [0x7ff6ec7cbe65]\n\t(No symbol) [0x7ff6ec6d35f0]\n\t(No symbol) [0x7ff6ecac1dad]\n\t(No symbol) [0x7ff6ecd1026c]\n\t(No symbol) [0x7ff6ec55ac87]\n\t(No symbol) [0x7ff6ecd3d1ad]\n\t(No symbol) [0x7ff6ecd6a6ca]\n\t(No symbol) [0x7ff6ecd6a306]\n\t(No symbol) [0x7ff6ec55b969]\n\t(No symbol) [0x7ff6ec55cca3]\n\t(No symbol) [0x7ff6ecc45af1]\n\t(No symbol) [0x7ff6ecc667f7]\n\t(No symbol) [0x7ff6ecc5ce20]\n\t(No symbol) [0x7ff6ec8eff8e]\n\t(No symbol) [0x7ff6ec6e2865]\n\t(No symbol) [0x7ff6ec6dd1d4]\n\t(No symbol) [0x7ff6ec6dd364]\n\t(No symbol) [0x7ff6ec6c644c]\n\t(No symbol) [0x7ff9f58fdda7]\n\t(No symbol) [0x7ff9f679ee4c]", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry"}, {"row_id": 1, "title": "Softears Turii Ti (Limited Edition #27/88) \u2014 Complete Kit", "raw_text": "Softears Turii Ti (Limited Edition #27/88) \u2014 Complete Kit Listing ID: 118257 For Sale 1,650.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America Up for sale is my Softears Turii Ti flagship single dynamic driver IEM set (No. 27 of 88 worldwide). It features an expansive soundstage, precise imaging, and smooth tonal balance in a lightweight titanium housing. Condition & Details... Listed by: s2kphile (29) Listed: 2026-11-05 Last edited: 2026-11-05", "seller_username": "s2kphile", "url": "https://www.head-fi.org/classifieds/softears-turii-ti-limited-edition-27-88-%E2%80%94-complete-kit.118257/", "price_num": 1650.0, "date_ms": 1793836800000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}];
 const originalMsrpUsd = 1400.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
