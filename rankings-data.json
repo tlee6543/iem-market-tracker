@@ -620,7 +620,7 @@
     "comments": "Fantastic colored tonality with options, and the unique technical qualities to back it up. M12/M15 modules recommended.",
     "based_on": "Review unit",
     "tracker_slug": "64-audio-u4s",
-    "market_value": 668.75,
+    "market_value": 666.67,
     "market_confidence": "High"
   },
   {
@@ -1891,9 +1891,9 @@
     "price": "$600",
     "comments": "Excellent tonality and dynamic bass held back only by a lack of intangible performance.",
     "based_on": "Review unit",
-    "tracker_slug": "letshuoer-ej07m",
+    "tracker_slug": "",
     "market_value": null,
-    "market_confidence": "Low"
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -2037,7 +2037,7 @@
     "based_on": "DUNU loaner",
     "tracker_slug": "dunu-zen-pro",
     "market_value": 400.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -11660,7 +11660,7 @@
     "comments": "Treble has some unnatural peaking past 10kHz that lends to a Focal-esque, metallic tinge.",
     "based_on": "Brief demo",
     "tracker_slug": "crinear-daybreak",
-    "market_value": 113.12,
+    "market_value": 112.14,
     "market_confidence": "High"
   },
   {
@@ -16292,7 +16292,7 @@
     "comments": "Very pleasant tuning with thumpy bass albeit lacking wow factor in techs.",
     "based_on": "Brief demo",
     "tracker_slug": "xenns-mangird-tea-pro",
-    "market_value": 247.5,
+    "market_value": 252.0,
     "market_confidence": "High"
   },
   {
