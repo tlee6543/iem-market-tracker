@@ -260,7 +260,7 @@
     "comments": "Rich bass and out-of-head imaging.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "64-audio-tia-trio",
-    "market_value": 947.5,
+    "market_value": 925.71,
     "market_confidence": "High"
   },
   {
@@ -716,7 +716,7 @@
     "comments": "Colored frequency response leads to spherical imaging and excellent technicalities. Sounds a bit weird, though.",
     "based_on": "Loaner unit",
     "tracker_slug": "mysticraft-myth",
-    "market_value": 926.67,
+    "market_value": 887.0,
     "market_confidence": "High"
   },
   {
@@ -1388,7 +1388,7 @@
     "comments": "Slightly colored but well-rounded tonality with minor quirks.",
     "based_on": "Loaner unit",
     "tracker_slug": "xenns-mangird-top-pro",
-    "market_value": 353.5,
+    "market_value": 352.78,
     "market_confidence": "High"
   },
   {
@@ -1436,8 +1436,8 @@
     "comments": "A slightly refined SA6 with better treble extension. Very coherent.",
     "based_on": "Headphones.com unit",
     "tracker_slug": "dunu-sa6-ultra",
-    "market_value": 318.82,
-    "market_confidence": "Medium"
+    "market_value": 566.08,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -7797,7 +7797,7 @@
     "based_on": "Super*Review's unit",
     "tracker_slug": "tanchjim-hana",
     "market_value": 75.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -11804,7 +11804,7 @@
     "comments": "Generic V-shape sound signature with thin midrange and heavy mid-treble peaking.",
     "based_on": "Brief demo",
     "tracker_slug": "dita-project-m2",
-    "market_value": 213.5,
+    "market_value": 201.67,
     "market_confidence": "High"
   },
   {
