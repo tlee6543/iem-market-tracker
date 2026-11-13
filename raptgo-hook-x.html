@@ -934,7 +934,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -959,8 +959,24 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
+<tr id="row-0" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="reddit" ></td>
+<td>2026-11-12</td>
+<td>$130</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Active</td>
+<td>good condition</td>
+<td>0</td>
+<td>reddit_rss</td>
+<td>Quick_Apple_5842</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">Great Deal (45.6% below market)</span></td>
+<td><a href="https://www.reddit.com/r/AVexchange/comments/1xusaau/wts_usapr_h_aful_performer_5_moondrop_blessing_2/#item-3" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2022-10-20</td>
 <td>$239</td>
 <td><span class="pill">closed</span></td>
@@ -971,7 +987,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>drummguy26</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sold-blessing-2-for-raptgo-hook-x.34886/" target="_blank">source</a></td>
 </tr>
 
@@ -993,7 +1009,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Sold: *SOLD* Blessing 2 for Raptgo Hook X", "raw_text": "For Sale / Trade Sold: *SOLD* Blessing 2 for Raptgo Hook X Price 239.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Want to sell my rarely used Blessing 2 or trade for a Raptgo Hook X. I've used the Blessing 2's a few times but I have many other sets that in listening to more at the moment and these are just collecting dust. They're in pristine condition. Comes with box and all accessories. Will also hear... drummguy26 Listing Oct 20, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "drummguy26", "url": "https://www.head-fi.org/classifieds/sold-blessing-2-for-raptgo-hook-x.34886/", "price_num": 239.0, "date_ms": 1666224000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Raptgo Hook-X", "raw_text": "Raptgo Hook-X \u2013 $130 shipped\nUsed, good condition", "seller_username": "Quick_Apple_5842", "url": "https://www.reddit.com/r/AVexchange/comments/1xusaau/wts_usapr_h_aful_performer_5_moondrop_blessing_2/#item-3", "price_num": 130.0, "date_ms": 1794526457000, "listing_status": "active", "condition_text": "good condition", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked"}, {"row_id": 1, "title": "Sold: *SOLD* Blessing 2 for Raptgo Hook X", "raw_text": "For Sale / Trade Sold: *SOLD* Blessing 2 for Raptgo Hook X Price 239.00 USD Condition Excellent/Like new Negotiability Or best offer Ships to North America Want to sell my rarely used Blessing 2 or trade for a Raptgo Hook X. I've used the Blessing 2's a few times but I have many other sets that in listening to more at the moment and these are just collecting dust. They're in pristine condition. Comes with box and all accessories. Will also hear... drummguy26 Listing Oct 20, 2022 Comments: 0 Category: In-Ear Monitors", "seller_username": "drummguy26", "url": "https://www.head-fi.org/classifieds/sold-blessing-2-for-raptgo-hook-x.34886/", "price_num": 239.0, "date_ms": 1666224000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_with_price_title_match_v6"}];
 const originalMsrpUsd = 239.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
