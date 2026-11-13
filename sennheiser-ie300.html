@@ -934,7 +934,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">0</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -960,6 +960,22 @@ score backgrounds cannot be lost to broader table/cell styling.
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
 <tr id="row-0" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<td>2026-11-12</td>
+<td>$70</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Active</td>
+<td>like new, excellent, good condition, used</td>
+<td>0</td>
+<td>headfi</td>
+<td>pbandstefanwich</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">N/A</span></td>
+<td><a href="https://www.head-fi.org/classifieds/sennheiser-ie300.118598/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td></td>
 <td></td>
@@ -971,7 +987,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>unknown</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td><span id="deal-score-1">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sennheiser-ie300-ie600-ie900.33444/" target="_blank">source</a></td>
 </tr>
 
@@ -993,7 +1009,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Sold: Sennheiser IE300 IE600 IE900", "raw_text": "For Sale Sold: Sennheiser IE300 IE600 IE900", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/sennheiser-ie300-ie600-ie900.33444/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
+const allRows = [{"row_id": 0, "title": "Sennheiser IE300", "raw_text": "Sennheiser IE300 Listing ID: 118598 For Sale 70.00 USD Condition Excellent/Like New Negotiability Firm Ships To North America Sennheiser IE300 IEMs for sale. Very good condition. I only used them for about an hour or so to test them out. They've been in the box since then, just sitting on my shelf. Foam tips are a little squished on one side from how they were sitting... Listed by: pbandstefanwich (104) Listed: 2026-11-12", "seller_username": "pbandstefanwich", "url": "https://www.head-fi.org/classifieds/sennheiser-ie300.118598/", "price_num": 70.0, "date_ms": 1794441600000, "listing_status": "active", "condition_text": "like new, excellent, good condition, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Sold: Sennheiser IE300 IE600 IE900", "raw_text": "For Sale Sold: Sennheiser IE300 IE600 IE900", "seller_username": "unknown", "url": "https://www.head-fi.org/classifieds/sennheiser-ie300-ie600-ie900.33444/", "price_num": null, "date_ms": null, "listing_status": "closed", "condition_text": "", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "visible_card_collect_no_price_title_match_v6"}];
 const originalMsrpUsd = 300.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

@@ -926,7 +926,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 37d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 37d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (41/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 37d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 38d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 41/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 22/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 38d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Low (41/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 38d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -934,7 +934,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">1</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">2</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -959,8 +959,24 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
+<tr id="row-0" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<td>2026-11-05</td>
+<td>$7,700</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Active</td>
+<td>mint, like new, excellent, used</td>
+<td>0</td>
+<td>headfi</td>
+<td>slumberman</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">Fair (0.0% above market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/mysticraft-acoustic-research-tet.118220/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2026-10-06</td>
 <td>$7,700</td>
 <td><span class="pill">closed</span></td>
@@ -971,7 +987,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Damz87</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/mysticraft-acoustic-research-tet.116593/" target="_blank">source</a></td>
 </tr>
 
@@ -993,7 +1009,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Mysticraft Acoustic Research TET", "raw_text": "Mysticraft Acoustic Research TET Listing ID: 116593 For Sale 7,700.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Selling a Mysticraft TET in mint condition. Serial #9 and comes with all packaging, accessories and the Evenir Ascension cable. Price includes DHL Express shipping worldwide. Listed by: Damz87 (104) Listed: 2026-10-06", "seller_username": "Damz87", "url": "https://www.head-fi.org/classifieds/mysticraft-acoustic-research-tet.116593/", "price_num": 7700.0, "date_ms": 1791244800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}];
+const allRows = [{"row_id": 0, "title": "Mysticraft Acoustic Research TET", "raw_text": "Mysticraft Acoustic Research TET Listing ID: 118220 For Sale / Trade 7,700.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Parting with a mint condition TET, with Ascension upgrade silver cable. Includes all accessories, box and unused tips. UPS shipping included. Trades considered : Brise Audio Nishiki 16w, Shirogane 16w and Murakumo3, all Pconn. Please let me... Listed by: slumberman (62) Listed: 2026-11-05 Last edited: 2026-11-11", "seller_username": "slumberman", "url": "https://www.head-fi.org/classifieds/mysticraft-acoustic-research-tet.118220/", "price_num": 7700.0, "date_ms": 1793836800000, "listing_status": "active", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Mysticraft Acoustic Research TET", "raw_text": "Mysticraft Acoustic Research TET Listing ID: 116593 For Sale 7,700.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere Selling a Mysticraft TET in mint condition. Serial #9 and comes with all packaging, accessories and the Evenir Ascension cable. Price includes DHL Express shipping worldwide. Listed by: Damz87 (104) Listed: 2026-10-06", "seller_username": "Damz87", "url": "https://www.head-fi.org/classifieds/mysticraft-acoustic-research-tet.116593/", "price_num": 7700.0, "date_ms": 1791244800000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}];
 const originalMsrpUsd = 7700.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

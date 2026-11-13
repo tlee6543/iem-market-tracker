@@ -212,7 +212,7 @@
     "comments": "Sounds like a warmer, more forgiving Elysian Annihilator with great spherical-esque imaging.",
     "based_on": "Loaner unit",
     "tracker_slug": "hercules-audio-moses",
-    "market_value": 2696.02,
+    "market_value": 2697.07,
     "market_confidence": "High"
   },
   {
@@ -404,7 +404,7 @@
     "comments": "Excellent detail retreival and competent tuning. Can be slightly thin sounding and forward in the treble.",
     "based_on": "Loaner",
     "tracker_slug": "thieaudio-monarch-mkiv",
-    "market_value": 897.22,
+    "market_value": 887.5,
     "market_confidence": "High"
   },
   {
@@ -860,7 +860,7 @@
     "comments": "Exceptional tuning and treble refinement; sets the benchmark at $400.",
     "based_on": "Loaner",
     "tracker_slug": "yu9-que",
-    "market_value": 364.33,
+    "market_value": 370.9,
     "market_confidence": "High"
   },
   {
@@ -1052,7 +1052,7 @@
     "comments": "A warmer, more coherent MEST with setbacks in resolution and imaging.",
     "based_on": "Antdroid's unit",
     "tracker_slug": "unique-melody-mest-mk2",
-    "market_value": 638.0,
+    "market_value": 635.0,
     "market_confidence": "High"
   },
   {
@@ -1964,7 +1964,7 @@
     "comments": "Thick and rich sound, a departure from the original RSV, but not in a bad way. Surprisingly mid-bass focused, so still sounds BA-ish.",
     "based_on": "Loaner unit",
     "tracker_slug": "softears-rsv-mkii",
-    "market_value": 421.25,
+    "market_value": 422.0,
     "market_confidence": "High"
   },
   {
@@ -2180,7 +2180,7 @@
     "comments": "One of the more technically proficient single-DDs on the market.",
     "based_on": "Crinacle's unit",
     "tracker_slug": "softears-turii",
-    "market_value": 1650.0,
+    "market_value": 1725.35,
     "market_confidence": "Medium"
   },
   {
@@ -3572,8 +3572,8 @@
     "comments": "Decent listen overall, a bit thinner in the treble than the Mega 5Est and more technical.",
     "based_on": "Loaner",
     "tracker_slug": "hisenior-mega-7",
-    "market_value": 358.16,
-    "market_confidence": "Medium"
+    "market_value": 358.33,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -4460,7 +4460,7 @@
     "comments": "Sounds like a warmer, lo-res Moondrop B2, emphasis on lo-res in the bass.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "truthear-hexa",
-    "market_value": 60.06,
+    "market_value": 55.99,
     "market_confidence": "High"
   },
   {
@@ -7027,9 +7027,9 @@
     "price": "$19",
     "comments": "Pleasant tonality but somewhat slow, blunted sounding with not much else going for it.",
     "based_on": "Review unit",
-    "tracker_slug": "",
-    "market_value": null,
-    "market_confidence": "N/A"
+    "tracker_slug": "truthear-hola",
+    "market_value": 30.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -10219,9 +10219,9 @@
     "price": "—",
     "comments": "Highly technical listen with massive spectrum of tuning flexibility; however, somewhat lacking in treble refinement.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
+    "tracker_slug": "64-audio-ocean",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -10819,9 +10819,9 @@
     "price": "—",
     "comments": "Excellent bass response, just falls slightly short in control. Could use more treble extension.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
+    "tracker_slug": "beyerdynamic-xelento",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -10868,7 +10868,7 @@
     "comments": "A darker version of the Fugaku. Bass resonates a bit more, midrange is slightly more colored, and treble is darker/more upper-treble focused.",
     "based_on": "Brief demo",
     "tracker_slug": "brise-audio-ibuki",
-    "market_value": 6300.0,
+    "market_value": 6250.0,
     "market_confidence": "High"
   },
   {
@@ -12020,7 +12020,7 @@
     "comments": "Sounds like a darker version of the normal Elysian Pilgrim.",
     "based_on": "Brief demo",
     "tracker_slug": "elysian-x-effect-audio-pilgrim-noir",
-    "market_value": 421.86,
+    "market_value": 385.26,
     "market_confidence": "High"
   },
   {
@@ -13868,8 +13868,8 @@
     "comments": "Exemplifies my critiques of JM1 to a T. Very safe listen and sounds like the midrange and treble are a bit clouded over.",
     "based_on": "Brief demo",
     "tracker_slug": "moondrop-silicon",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 300.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -14996,7 +14996,7 @@
     "comments": "L-shaped listen with a smooth sound. Bombastic bass that's missing some texture.",
     "based_on": "Brief demo",
     "tracker_slug": "quill-acoustics-karma",
-    "market_value": 748.89,
+    "market_value": 741.36,
     "market_confidence": "High"
   },
   {
@@ -16340,8 +16340,8 @@
     "comments": "Decent tuning but too airy past 15kHz leads to some timbre weightlessness and masking detail.",
     "based_on": "Brief demo",
     "tracker_slug": "ziigaat-horizon",
-    "market_value": 221.3,
-    "market_confidence": "Medium"
+    "market_value": 211.67,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
