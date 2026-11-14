@@ -860,7 +860,7 @@
     "comments": "Exceptional tuning and treble refinement; sets the benchmark at $400.",
     "based_on": "Loaner",
     "tracker_slug": "yu9-que",
-    "market_value": 370.9,
+    "market_value": 374.89,
     "market_confidence": "High"
   },
   {
@@ -3409,6 +3409,30 @@
   },
   {
     "entry_type": "ranked",
+    "iem": "Penon Ambience",
+    "favorite": false,
+    "canonical_name": "",
+    "release_year": "—",
+    "final_score": 5.8,
+    "tonality": "5.7",
+    "bass": "7.0",
+    "midrange": "5.0",
+    "treble": "5.0",
+    "tech": "6.3",
+    "detail": "7.0",
+    "imaging": "5.0",
+    "dynamics": "7.0",
+    "bias": "5.5",
+    "setup": "2DD/2BA/2BC",
+    "price": "$330",
+    "comments": "Intense, upper-mid focused sound with odd imaging albeit nice technical qualities otherwise.",
+    "based_on": "Review unit",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "ranked",
     "iem": "Raptgo Hook X",
     "favorite": false,
     "canonical_name": "Raptgo Hook X",
@@ -3788,8 +3812,8 @@
     "comments": "A little odd in some parts of the treble and detailing could use some work, but nothing offensive overall.",
     "based_on": "Linsoul unit",
     "tracker_slug": "xenns-mangird-tea-2",
-    "market_value": 140.32,
-    "market_confidence": "Medium"
+    "market_value": 135.0,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -4844,7 +4868,7 @@
     "comments": "Boomy and enveloping sounding; however, lacks the technical chops and raw detail to compete.",
     "based_on": "Review unit",
     "tracker_slug": "softears-edge",
-    "market_value": 330.0,
+    "market_value": 358.27,
     "market_confidence": "High"
   },
   {
@@ -6525,7 +6549,7 @@
     "based_on": "Super*Review's unit",
     "tracker_slug": "simgot-em6l",
     "market_value": 62.82,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -9909,7 +9933,7 @@
     "based_on": "Headphones.com unit",
     "tracker_slug": "campfire-audio-dorado-2020",
     "market_value": 399.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
