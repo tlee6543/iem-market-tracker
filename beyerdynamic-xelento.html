@@ -896,7 +896,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-low" data-tooltip="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." aria-label="Liquidity/confidence score: 0/100. No included clean priced samples are available yet." tabindex="0">Low (0/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">No included priced samples.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-medium" data-tooltip="Liquidity/confidence score: 49/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 30/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 5d ago, 1 source type(s), single sample; no volatility read." aria-label="Liquidity/confidence score: 49/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 4/35, recency 30/30, recent sample depth 8/15, source diversity 5/10, price consistency 2/10. Current inputs: 1 included priced sample(s), 1 in the last 90 days, 1 in the last 180 days, latest sample 5d ago, 1 source type(s), single sample; no volatility read." tabindex="0">Medium (49/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">1 included sample(s), latest 5d ago.</span></div>
     
     <div class="stat"><b>Average</b><br><span id="stat-average">$N/A</span></div>
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
@@ -938,23 +938,23 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>cpu235</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-0">N/A</span></td>
+<td><span id="deal-score-0">High (21.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/beyerdynamic-xelento-remote-2.118571/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" ></td>
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2026-11-11</td>
 <td>$330</td>
-<td><span class="pill">active</span></td>
-<td class="status-reason">Still active</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Sale confirmed</td>
 <td>mint, like new, excellent</td>
 <td>0</td>
 <td>headfi</td>
 <td>cpu235</td>
 <td>0</td>
 <td>1</td>
-<td><span id="deal-score-1">N/A</span></td>
+<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pd-beyerdynamic-xelento-remote-2.118571/" target="_blank">source</a></td>
 </tr>
 
@@ -976,7 +976,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Beyerdynamic Xelento remote 2", "raw_text": "Beyerdynamic Xelento remote 2 Listing ID: 118571 For Sale / Trade 400.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America Selling my Beyerdynamic Xelento 2 Full set with everything, Iem is in mint condition, box has some tape and stickers around it. I am the third owner. Selling as I am downsizing. $400 plus 3% PP fees, I will pay shipping within US and Canada... Listed by: cpu235 (129) Listed: 2026-11-11 Last edited: 2026-11-11", "seller_username": "cpu235", "url": "https://www.head-fi.org/classifieds/beyerdynamic-xelento-remote-2.118571/", "price_num": 400.0, "date_ms": 1794355200000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_unclear_left_unchanged | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 1, "title": "(Pd) Beyerdynamic Xelento remote 2", "raw_text": "(Pd) Beyerdynamic Xelento remote 2 Listing ID: 118571 For Sale / Trade 330.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America Selling my Beyerdynamic Xelento 2 Full set with everything, Iem is in mint condition, box has some tape and stickers around it. I am the third owner. Selling as I am downsizing. $400 $330 plus 3% PP fees, I will pay shipping within US and... Listed by: cpu235 (129) Listed: 2026-11-11 Last edited: 2026-11-14", "seller_username": "cpu235", "url": "https://www.head-fi.org/classifieds/pd-beyerdynamic-xelento-remote-2.118571/", "price_num": 330.0, "date_ms": 1794355200000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}];
+const allRows = [{"row_id": 0, "title": "Beyerdynamic Xelento remote 2", "raw_text": "Beyerdynamic Xelento remote 2 Listing ID: 118571 For Sale / Trade 400.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America Selling my Beyerdynamic Xelento 2 Full set with everything, Iem is in mint condition, box has some tape and stickers around it. I am the third owner. Selling as I am downsizing. $400 plus 3% PP fees, I will pay shipping within US and Canada... Listed by: cpu235 (129) Listed: 2026-11-11 Last edited: 2026-11-11", "seller_username": "cpu235", "url": "https://www.head-fi.org/classifieds/beyerdynamic-xelento-remote-2.118571/", "price_num": 400.0, "date_ms": 1794355200000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_unclear_left_unchanged | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 1, "title": "(Pd) Beyerdynamic Xelento remote 2", "raw_text": "(Pd) Beyerdynamic Xelento remote 2 Listing ID: 118571 For Sale / Trade 330.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America Selling my Beyerdynamic Xelento 2 Full set with everything, Iem is in mint condition, box has some tape and stickers around it. I am the third owner. Selling as I am downsizing. $400 $330 plus 3% PP fees, I will pay shipping within US and... Listed by: cpu235 (129) Listed: 2026-11-11 Last edited: 2026-11-14", "seller_username": "cpu235", "url": "https://www.head-fi.org/classifieds/pd-beyerdynamic-xelento-remote-2.118571/", "price_num": 330.0, "date_ms": 1794355200000, "listing_status": "closed", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}];
 const originalMsrpUsd = null;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

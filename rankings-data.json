@@ -1052,7 +1052,7 @@
     "comments": "A warmer, more coherent MEST with setbacks in resolution and imaging.",
     "based_on": "Antdroid's unit",
     "tracker_slug": "unique-melody-mest-mk2",
-    "market_value": 630.0,
+    "market_value": 639.44,
     "market_confidence": "High"
   },
   {
@@ -1245,7 +1245,7 @@
     "based_on": "Loaner",
     "tracker_slug": "qdc-anole-vx",
     "market_value": 727.8,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "ranked",
@@ -4652,7 +4652,7 @@
     "comments": "New meta style tuning that's a little more forward than the KE4. More depth to sound but also more fatiguing.",
     "based_on": "Super*Review's unit",
     "tracker_slug": "kiwi-ears-astral",
-    "market_value": 172.5,
+    "market_value": 168.0,
     "market_confidence": "High"
   },
   {
@@ -10844,8 +10844,8 @@
     "comments": "Excellent bass response, just falls slightly short in control. Could use more treble extension.",
     "based_on": "Brief demo",
     "tracker_slug": "beyerdynamic-xelento",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 330.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -13988,7 +13988,7 @@
     "comments": "Well-rounded, slightly more U-shaped listen. Bouncy sounding bass and treble characterized by strong linearity and crispness up until 15kHz.",
     "based_on": "Brief demo",
     "tracker_slug": "nicehck-nx8ti",
-    "market_value": 215.26,
+    "market_value": 207.65,
     "market_confidence": "Medium"
   },
   {
