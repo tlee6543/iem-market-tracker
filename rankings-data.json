@@ -188,7 +188,7 @@
     "comments": "Pretty much the closest to a tonal panacea that I've heard only held back by the bass.",
     "based_on": "Loaner",
     "tracker_slug": "7th-acoustics-asteria",
-    "market_value": 3210.0,
+    "market_value": 3032.25,
     "market_confidence": "High"
   },
   {
@@ -2516,7 +2516,7 @@
     "comments": "Solid rendition of reference tuning that's missing some upper-treble energy for my neutral/reference. Best thought of as a tool.",
     "based_on": "Loaner unit",
     "tracker_slug": "crinear-reference",
-    "market_value": 265.83,
+    "market_value": 265.31,
     "market_confidence": "High"
   },
   {
@@ -10988,8 +10988,8 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-alien-brain",
-    "market_value": 559.07,
-    "market_confidence": "Medium"
+    "market_value": 551.67,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -11853,7 +11853,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "dita-ventura",
     "market_value": 3459.29,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -13988,8 +13988,8 @@
     "comments": "Well-rounded, slightly more U-shaped listen. Bouncy sounding bass and treble characterized by strong linearity and crispness up until 15kHz.",
     "based_on": "Brief demo",
     "tracker_slug": "nicehck-nx8ti",
-    "market_value": 207.65,
-    "market_confidence": "Medium"
+    "market_value": 203.0,
+    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
@@ -14684,7 +14684,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "punch-audio-martilo",
-    "market_value": 186.67,
+    "market_value": 190.0,
     "market_confidence": "High"
   },
   {
@@ -15620,8 +15620,8 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "oriolus-traillii-ultra-iem-system",
-    "market_value": 7000.0,
-    "market_confidence": "Low"
+    "market_value": 6435.26,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
