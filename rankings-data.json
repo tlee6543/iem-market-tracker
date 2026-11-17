@@ -788,7 +788,7 @@
     "comments": "Quite exciting and dynamic, possibly a bit bright in the treble.",
     "based_on": "—",
     "tracker_slug": "dunu-glacier",
-    "market_value": 856.31,
+    "market_value": 854.41,
     "market_confidence": "High"
   },
   {
@@ -7341,7 +7341,7 @@
     "based_on": "Review unit",
     "tracker_slug": "dunu-titan-x",
     "market_value": 20.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -8037,7 +8037,7 @@
     "based_on": "Personal unit",
     "tracker_slug": "moondrop-ssr",
     "market_value": 20.0,
-    "market_confidence": "Medium"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -9763,9 +9763,9 @@
     "price": "$250",
     "comments": "Campfire's latest (and worst) bloated nightmare.",
     "based_on": "Headphones.com unit",
-    "tracker_slug": "",
+    "tracker_slug": "campfire-audio-honeydew",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -11444,7 +11444,7 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "canpur-silver-flash",
-    "market_value": 101.25,
+    "market_value": 102.86,
     "market_confidence": "High"
   },
   {
@@ -11852,7 +11852,7 @@
     "comments": "More realistic sounding than the Destin, adds back some weight to the sub-bass and lower-treble. Good techs, a bit lacking in tuning refinement.",
     "based_on": "Brief demo",
     "tracker_slug": "dita-ventura",
-    "market_value": 3366.67,
+    "market_value": 3459.29,
     "market_confidence": "High"
   },
   {
