@@ -620,7 +620,7 @@
     "comments": "Fantastic colored tonality with options, and the unique technical qualities to back it up. M12/M15 modules recommended.",
     "based_on": "Review unit",
     "tracker_slug": "64-audio-u4s",
-    "market_value": 687.5,
+    "market_value": 695.0,
     "market_confidence": "High"
   },
   {
@@ -788,7 +788,7 @@
     "comments": "Quite exciting and dynamic, possibly a bit bright in the treble.",
     "based_on": "—",
     "tracker_slug": "dunu-glacier",
-    "market_value": 854.41,
+    "market_value": 900.0,
     "market_confidence": "High"
   },
   {
@@ -10244,8 +10244,8 @@
     "comments": "Highly technical listen with massive spectrum of tuning flexibility; however, somewhat lacking in treble refinement.",
     "based_on": "Brief demo",
     "tracker_slug": "64-audio-ocean",
-    "market_value": null,
-    "market_confidence": "Low"
+    "market_value": 3500.0,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -11228,7 +11228,7 @@
     "comments": "Literally sounds like balls.",
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-trifecta",
-    "market_value": 1768.13,
+    "market_value": 1750.79,
     "market_confidence": "High"
   },
   {
@@ -15668,7 +15668,7 @@
     "comments": "Very boring and dark albeit safe.",
     "based_on": "Brief demo",
     "tracker_slug": "truthear-pure",
-    "market_value": 58.33,
+    "market_value": 61.33,
     "market_confidence": "High"
   },
   {
