@@ -1196,7 +1196,7 @@
     "comments": "Boring, but well-rounded, forgiving sound that plays well with most all genres. Excellent timbre for a BA IEM.",
     "based_on": "Loaner",
     "tracker_slug": "sony-ier-m9",
-    "market_value": 550.0,
+    "market_value": 544.2,
     "market_confidence": "High"
   },
   {
@@ -7724,8 +7724,8 @@
     "comments": "Lower half of tuning sounds extremely muddy, midrange is muffled, and treble lacks extension past 10kHz. Nothing superior about this.",
     "based_on": "—",
     "tracker_slug": "qdc-superior-ex",
-    "market_value": 116.53,
-    "market_confidence": "Medium"
+    "market_value": 132.74,
+    "market_confidence": "Low"
   },
   {
     "entry_type": "ranked",
@@ -11323,9 +11323,9 @@
     "price": "—",
     "comments": "Clearly tuned for an analytical listen; however, takes it too far. Treble is somewhat brittle and mids are quite lean.",
     "based_on": "Brief demo",
-    "tracker_slug": "",
+    "tracker_slug": "canpur-cp104e",
     "market_value": null,
-    "market_confidence": "N/A"
+    "market_confidence": "Low"
   },
   {
     "entry_type": "demoed",
@@ -15669,7 +15669,7 @@
     "based_on": "Brief demo",
     "tracker_slug": "truthear-pure",
     "market_value": 61.33,
-    "market_confidence": "High"
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -16364,7 +16364,7 @@
     "comments": "Decent tuning but too airy past 15kHz leads to some timbre weightlessness and masking detail.",
     "based_on": "Brief demo",
     "tracker_slug": "ziigaat-horizon",
-    "market_value": 211.67,
+    "market_value": 212.83,
     "market_confidence": "High"
   },
   {
