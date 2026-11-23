@@ -140,7 +140,7 @@
     "comments": "More of an all-rounder with better bass compared to the 2021 version, sacrifices some soundstage.",
     "based_on": "Personal unit",
     "tracker_slug": "elysian-annihilator-2023",
-    "market_value": 2348.2,
+    "market_value": 2310.25,
     "market_confidence": "High"
   },
   {
@@ -236,7 +236,7 @@
     "comments": "Basically the 64 Audio U12t's Chinese brother. Excellent tonality and layering performance with a slight upper-treble splashiness.",
     "based_on": "Review unit",
     "tracker_slug": "thieaudio-valhalla",
-    "market_value": 1516.67,
+    "market_value": 1481.67,
     "market_confidence": "High"
   },
   {
@@ -2516,7 +2516,7 @@
     "comments": "Solid rendition of reference tuning that's missing some upper-treble energy for my neutral/reference. Best thought of as a tool.",
     "based_on": "Loaner unit",
     "tracker_slug": "crinear-reference",
-    "market_value": 265.31,
+    "market_value": 262.42,
     "market_confidence": "High"
   },
   {
@@ -2974,6 +2974,30 @@
     "tracker_slug": "moondrop-may",
     "market_value": 40.0,
     "market_confidence": "Low"
+  },
+  {
+    "entry_type": "ranked",
+    "iem": "NICEHCK NX8Ti",
+    "favorite": false,
+    "canonical_name": "NICEHCK NX8Ti",
+    "release_year": "2026",
+    "final_score": 6.0,
+    "tonality": "6.0",
+    "bass": "6.0",
+    "midrange": "6.0",
+    "treble": "6.0",
+    "tech": "6.0",
+    "detail": "6.0",
+    "imaging": "6.0",
+    "dynamics": "6.0",
+    "bias": "6.0",
+    "setup": "1DD/6BA/1PZ",
+    "price": "$400",
+    "comments": "Slighty more sparkly and technical than the regular NX8 for better balance in the treble.",
+    "based_on": "Super*Review's unit",
+    "tracker_slug": "nicehck-nx8ti",
+    "market_value": 203.0,
+    "market_confidence": "High"
   },
   {
     "entry_type": "ranked",
@@ -3742,6 +3766,30 @@
     "tracker_slug": "juzear-harrier",
     "market_value": 183.52,
     "market_confidence": "Low"
+  },
+  {
+    "entry_type": "ranked",
+    "iem": "NICEHCK NX8",
+    "favorite": false,
+    "canonical_name": "",
+    "release_year": "—",
+    "final_score": 5.6,
+    "tonality": "5.7",
+    "bass": "6.0",
+    "midrange": "6.0",
+    "treble": "5.0",
+    "tech": "5.7",
+    "detail": "6.0",
+    "imaging": "6.0",
+    "dynamics": "5.0",
+    "bias": "5.5",
+    "setup": "1DD/6BA/1PZ",
+    "price": "$200",
+    "comments": "Warm and slightly intense in the lower-treble.",
+    "based_on": "Super*Review's unit",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
   },
   {
     "entry_type": "ranked",
@@ -5299,6 +5347,30 @@
     "price": "$170",
     "comments": "Probably the weak link out of the planar resurgence.",
     "based_on": "Super*Review's unit",
+    "tracker_slug": "",
+    "market_value": null,
+    "market_confidence": "N/A"
+  },
+  {
+    "entry_type": "ranked",
+    "iem": "Ziigaat x B Media Jade",
+    "favorite": false,
+    "canonical_name": "",
+    "release_year": "—",
+    "final_score": 5.1,
+    "tonality": "5.3",
+    "bass": "6.0",
+    "midrange": "5.0",
+    "treble": "5.0",
+    "tech": "5.0",
+    "detail": "5.0",
+    "imaging": "5.0",
+    "dynamics": "5.0",
+    "bias": "5.0",
+    "setup": "1DD/2BA/2MP/1MEMS",
+    "price": "$300",
+    "comments": "Lacks body to vocals and plays better at louder listening volumes but lacks detail for price point.",
+    "based_on": "Review unit",
     "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
@@ -10988,8 +11060,8 @@
     "comments": "",
     "based_on": "Brief demo",
     "tracker_slug": "campfire-audio-alien-brain",
-    "market_value": 551.67,
-    "market_confidence": "High"
+    "market_value": 545.89,
+    "market_confidence": "Medium"
   },
   {
     "entry_type": "demoed",
@@ -13966,30 +14038,6 @@
     "tracker_slug": "",
     "market_value": null,
     "market_confidence": "N/A"
-  },
-  {
-    "entry_type": "demoed",
-    "iem": "NiceHCK NX8 Ti",
-    "favorite": false,
-    "canonical_name": "NICEHCK NX8Ti",
-    "release_year": "2026",
-    "final_score": null,
-    "tonality": "—",
-    "bass": "—",
-    "midrange": "—",
-    "treble": "—",
-    "tech": "—",
-    "detail": "—",
-    "imaging": "—",
-    "dynamics": "—",
-    "bias": "6.5",
-    "setup": "—",
-    "price": "—",
-    "comments": "Well-rounded, slightly more U-shaped listen. Bouncy sounding bass and treble characterized by strong linearity and crispness up until 15kHz.",
-    "based_on": "Brief demo",
-    "tracker_slug": "nicehck-nx8ti",
-    "market_value": 203.0,
-    "market_confidence": "High"
   },
   {
     "entry_type": "demoed",
