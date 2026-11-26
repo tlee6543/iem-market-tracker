@@ -929,8 +929,24 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
+<tr id="row-0" data-source="headfi" class="listing-row excluded">
+<td></td>
+<td>2026-11-24</td>
+<td></td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Closed</td>
+<td>like new, excellent, used</td>
+<td>0</td>
+<td>headfi</td>
+<td>zlayde</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">N/A</span></td>
+<td><a href="https://www.head-fi.org/classifieds/elysian-x.119194/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" checked></td>
 <td>2026-08-15</td>
 <td>$2,600</td>
 <td><span class="pill">closed</span></td>
@@ -941,7 +957,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Adnan</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-0">Closed: Fair (0.0% above market)</span></td>
+<td><span id="deal-score-1">Closed: Fair (0.0% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/elysian-x.113952/" target="_blank">source</a></td>
 </tr>
 
@@ -963,7 +979,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Elysian X", "raw_text": "Elysian X Listing ID: 113952 For Sale 2,600.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Hi, selling my beloved and now-rare Elysian Acoustic Labs X. Legendary set with fantastic tuning from Lee - easily more meaty and powerful Anni 23 imo. Perfect cosmetic and sonic condition. Has full packaging and stock accessories and copper... Listed by: Adnan Firoze (121) Listed: 2026-08-15 Last edited: 2026-08-15", "seller_username": "Adnan", "url": "https://www.head-fi.org/classifieds/elysian-x.113952/", "price_num": 2600.0, "date_ms": 1786752000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}];
+const allRows = [{"row_id": 0, "title": "Elysian X", "raw_text": "Elysian X Listing ID: 119194 For Sale 0.01 USD Condition Excellent/Like New Negotiability Firm Ships To AnywhereUnited States Of America Selling to pretty rare Elysian X. The X has some of the DNA of the Annihilator with a slightly meatier, more balanced sound. The legendary Lee tuning is here. Comes with box, aftermarket cable, original case and unused tips. Cheers. Listed by: zlayde (182) Listed: 2026-11-24 Last edited: 2026-11-25", "seller_username": "zlayde", "url": "https://www.head-fi.org/classifieds/elysian-x.119194/", "price_num": null, "date_ms": 1795478400000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Elysian X", "raw_text": "Elysian X Listing ID: 113952 For Sale 2,600.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Hi, selling my beloved and now-rare Elysian Acoustic Labs X. Legendary set with fantastic tuning from Lee - easily more meaty and powerful Anni 23 imo. Perfect cosmetic and sonic condition. Has full packaging and stock accessories and copper... Listed by: Adnan Firoze (121) Listed: 2026-08-15 Last edited: 2026-08-15", "seller_username": "Adnan", "url": "https://www.head-fi.org/classifieds/elysian-x.113952/", "price_num": 2600.0, "date_ms": 1786752000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}];
 const originalMsrpUsd = 3500.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";

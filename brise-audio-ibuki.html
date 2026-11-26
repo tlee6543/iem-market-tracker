@@ -926,7 +926,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <div class="stats">
     <div class="stat"><b>Market Value</b><br><span id="stat-market-value">$N/A</span><br><span id="stat-market-basis" class="small"></span></div>
     <div class="stat"><b>Estimated Market Value Range</b><br><span id="stat-market-range">N/A</span><br><span id="stat-market-range-basis" class="small"></span></div>
-    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 81/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 26/35, recency 22/30, recent sample depth 15/15, source diversity 8/10, price consistency 10/10. Current inputs: 6 included priced sample(s), 4 in the last 90 days, 6 in the last 180 days, latest sample 44d ago, 2 source type(s), price CV 0.02." aria-label="Liquidity/confidence score: 81/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 26/35, recency 22/30, recent sample depth 15/15, source diversity 8/10, price consistency 10/10. Current inputs: 6 included priced sample(s), 4 in the last 90 days, 6 in the last 180 days, latest sample 44d ago, 2 source type(s), price CV 0.02." tabindex="0">High (81/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">6 included sample(s), latest 44d ago.</span></div>
+    <div class="stat"><b>Liquidity / Confidence</b><br><span id="stat-liquidity-confidence" class="badge badge-score badge-high" data-tooltip="Liquidity/confidence score: 94/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 31/35, recency 30/30, recent sample depth 15/15, source diversity 8/10, price consistency 10/10. Current inputs: 7 included priced sample(s), 5 in the last 90 days, 7 in the last 180 days, latest sample 3d ago, 2 source type(s), price CV 0.03." aria-label="Liquidity/confidence score: 94/100. This estimates how trustworthy and liquid the current secondary-market read is. Formula: sample count 31/35, recency 30/30, recent sample depth 15/15, source diversity 8/10, price consistency 10/10. Current inputs: 7 included priced sample(s), 5 in the last 90 days, 7 in the last 180 days, latest sample 3d ago, 2 source type(s), price CV 0.03." tabindex="0">High (94/100)</span><br><span id="stat-liquidity-confidence-detail" class="small">7 included sample(s), latest 3d ago.</span></div>
     
     <div class="stat"><b>Market vs MSRP</b><br><span id="stat-market-vs-msrp">N/A</span><br><span id="stat-market-vs-msrp-detail" class="small"></span></div>
     
@@ -934,7 +934,7 @@ score backgrounds cannot be lost to broader table/cell styling.
     <div class="stat"><b>Low</b><br><span id="stat-low">$N/A</span></div>
     <div class="stat"><b>High</b><br><span id="stat-high">$N/A</span></div>
     <div class="stat"><b>Selected Samples</b><br><span id="stat-samples">0</span></div>
-    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">20</span></div>
+    <div class="stat"><b>Total Priced Rows</b><br><span id="stat-total-priced-rows">22</span></div>
 </div>
 <div class="card">
     <h2>Price Over Time</h2>
@@ -959,8 +959,40 @@ score backgrounds cannot be lost to broader table/cell styling.
 <table>
 <tr><th>Use?</th><th>Date</th><th>Price</th><th>Status</th><th class="reason-col">Reason</th><th>Condition</th><th>Bundle?</th><th>Platform</th><th>Seller</th><th>Duplicate?</th><th>Price Drop?</th><th>Deal Score</th><th>Link</th></tr>
 
-<tr id="row-0" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" ></td>
+<tr id="row-0" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="0" data-source="headfi" checked></td>
+<td>2026-11-23</td>
+<td>$5,900</td>
+<td><span class="pill">closed</span></td>
+<td class="status-reason">Closed</td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>timeslip</td>
+<td>0</td>
+<td>0</td>
+<td><span id="deal-score-0">Closed: Fair (4.5% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/brise-ibuki-limited-edition.119163/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-1" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="1" data-source="headfi" ></td>
+<td>2026-11-19</td>
+<td>$5,700</td>
+<td><span class="pill">active</span></td>
+<td class="status-reason">Active</td>
+<td>like new, excellent</td>
+<td>0</td>
+<td>headfi</td>
+<td>So11rek</td>
+<td>0</td>
+<td>1</td>
+<td><span id="deal-score-1">Fair (7.8% below market)</span></td>
+<td><a href="https://www.head-fi.org/classifieds/brise-audio-ibuki-se-pd.118903/" target="_blank">source</a></td>
+</tr>
+
+<tr id="row-2" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="headfi" ></td>
 <td>2026-11-19</td>
 <td>$6,100</td>
 <td><span class="pill">active</span></td>
@@ -969,13 +1001,13 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>0</td>
 <td>headfi</td>
 <td>So11rek</td>
-<td>0</td>
 <td>1</td>
-<td><span id="deal-score-0">Fair (2.4% below market)</span></td>
+<td>1</td>
+<td><span id="deal-score-2">Fair (1.3% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/brise-audio-ibuki-se.118903/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-1" data-source="headfi" class="listing-row excluded">
+<tr id="row-3" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2026-11-17</td>
 <td></td>
@@ -987,12 +1019,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>KevinS2020</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-1">N/A</span></td>
+<td><span id="deal-score-3">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/brise-audio-ibuki-in-excellent-condition.118829/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-2" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="2" data-source="reddit" ></td>
+<tr id="row-4" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="reddit" ></td>
 <td>2026-11-14</td>
 <td>$6,195</td>
 <td><span class="pill">active</span></td>
@@ -1003,12 +1035,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>fytize</td>
 <td>0</td>
 <td>1</td>
-<td><span id="deal-score-2">Fair (0.9% below market)</span></td>
+<td><span id="deal-score-4">Fair (0.2% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1xw4bp2/wtsusgah_brise_audio_ibuki_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-3" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="3" data-source="reddit" ></td>
+<tr id="row-5" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="reddit" ></td>
 <td>2026-11-08</td>
 <td>$6,225</td>
 <td><span class="pill">active</span></td>
@@ -1019,12 +1051,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>fytize</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-3">Fair (0.4% below market)</span></td>
+<td><span id="deal-score-5">Fair (0.7% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1xr5wmr/wtsusgah_brise_audio_ibuki_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-4" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="4" data-source="reddit" ></td>
+<tr id="row-6" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="reddit" ></td>
 <td>2026-11-03</td>
 <td>$6,295</td>
 <td><span class="pill">active</span></td>
@@ -1035,12 +1067,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>fytize</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-4">Fair (0.7% above market)</span></td>
+<td><span id="deal-score-6">Fair (1.9% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1xn4c2l/wtsusgah_brise_audio_ibuki_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-5" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="5" data-source="headfi" ></td>
+<tr id="row-7" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="7" data-source="headfi" ></td>
 <td>2026-11-03</td>
 <td>$6,195</td>
 <td><span class="pill">active</span></td>
@@ -1051,12 +1083,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>fytize</td>
 <td>0</td>
 <td>1</td>
-<td><span id="deal-score-5">Fair (0.9% below market)</span></td>
+<td><span id="deal-score-7">Fair (0.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/pd-brise-audio-ibuki.118108/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-6" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="6" data-source="headfi" ></td>
+<tr id="row-8" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="8" data-source="headfi" ></td>
 <td>2026-11-03</td>
 <td>$5,999</td>
 <td><span class="pill">active</span></td>
@@ -1067,12 +1099,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>fytize</td>
 <td>1</td>
 <td>1</td>
-<td><span id="deal-score-6">Fair (4.0% below market)</span></td>
+<td><span id="deal-score-8">Fair (2.9% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/mint-brise-audio-ibuki-se.118108/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-7" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="7" data-source="headfi" ></td>
+<tr id="row-9" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="9" data-source="headfi" ></td>
 <td>2026-11-03</td>
 <td>$6,295</td>
 <td><span class="pill">active</span></td>
@@ -1083,11 +1115,11 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>fytize</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-7">Fair (0.7% above market)</span></td>
+<td><span id="deal-score-9">Fair (1.9% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/brise-audio-ibuki.118108/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-8" data-source="headfi" class="listing-row excluded">
+<tr id="row-10" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2026-10-14</td>
 <td></td>
@@ -1099,12 +1131,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Aetherhole</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-8">N/A</span></td>
+<td><span id="deal-score-10">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/sold-brise-audio-ibuki-launch-edition.117052/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-9" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="9" data-source="reddit" checked></td>
+<tr id="row-11" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="11" data-source="reddit" checked></td>
 <td>2026-10-12</td>
 <td>$6,350</td>
 <td><span class="pill">closed</span></td>
@@ -1115,12 +1147,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Amazing-Review6032</td>
 <td>0</td>
 <td>1</td>
-<td><span id="deal-score-9">Closed: Fair (1.6% above market)</span></td>
+<td><span id="deal-score-11">Closed: Fair (2.8% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1x46ics/wts_usmd_h_brise_audio_ibuki_le_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-10" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="10" data-source="headfi" checked></td>
+<tr id="row-12" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="12" data-source="headfi" checked></td>
 <td>2026-10-12</td>
 <td>$6,350</td>
 <td><span class="pill">closed</span></td>
@@ -1131,11 +1163,11 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>sanhnguyen97s</td>
 <td>0</td>
 <td>1</td>
-<td><span id="deal-score-10">Closed: Fair (1.6% above market)</span></td>
+<td><span id="deal-score-12">Closed: Fair (2.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/brise-audio-ibuki-le.116935/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-11" data-source="headfi" class="listing-row excluded">
+<tr id="row-13" data-source="headfi" class="listing-row excluded">
 <td></td>
 <td>2026-10-09</td>
 <td></td>
@@ -1147,12 +1179,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>MedicineMan05</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-11">N/A</span></td>
+<td><span id="deal-score-13">N/A</span></td>
 <td><a href="https://www.head-fi.org/classifieds/wtt-hex-ss4-for-ibuki.116772/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-12" data-source="reddit" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="12" data-source="reddit" checked></td>
+<tr id="row-14" data-source="reddit" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="14" data-source="reddit" checked></td>
 <td>2026-10-08</td>
 <td>$6,150</td>
 <td><span class="pill">closed</span></td>
@@ -1163,12 +1195,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>PossibilityTime6615</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-12">Closed: Fair (1.6% below market)</span></td>
+<td><span id="deal-score-14">Closed: Fair (0.5% below market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1x0zi9v/wts_ustx_h_brise_audio_ibuki_mint_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-13" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="13" data-source="headfi" checked></td>
+<tr id="row-15" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="15" data-source="headfi" checked></td>
 <td>2026-10-04</td>
 <td>$6,150</td>
 <td><span class="pill">closed</span></td>
@@ -1179,12 +1211,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>IEMLover02</td>
 <td>0</td>
 <td>1</td>
-<td><span id="deal-score-13">Closed: Fair (1.6% below market)</span></td>
+<td><span id="deal-score-15">Closed: Fair (0.5% below market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/brise-audio-ibuki-mint.116512/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-14" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="14" data-source="headfi" ></td>
+<tr id="row-16" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="16" data-source="headfi" ></td>
 <td>2026-09-26</td>
 <td>$9,999</td>
 <td><span class="pill">unknown</span></td>
@@ -1195,12 +1227,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>IEMLover02</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-14">Overpriced (60.0% above market)</span></td>
+<td><span id="deal-score-16">Overpriced (61.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/ibuki-for-chronicle.116116/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-15" data-source="reddit" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="15" data-source="reddit" ></td>
+<tr id="row-17" data-source="reddit" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="17" data-source="reddit" ></td>
 <td>2026-08-31</td>
 <td>$6,450</td>
 <td><span class="pill">stale</span></td>
@@ -1211,12 +1243,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Amazing-Review6032</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-15">Fair (3.2% above market)</span></td>
+<td><span id="deal-score-17">Fair (4.4% above market)</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1w3g4s5/wts_usmd_h_brise_audio_ibuki_le_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-16" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="16" data-source="headfi" ></td>
+<tr id="row-18" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="18" data-source="headfi" ></td>
 <td>2026-08-30</td>
 <td>$8,100</td>
 <td><span class="pill">closed</span></td>
@@ -1227,12 +1259,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>tfenton02</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-16">Closed: Overpriced (29.6% above market)</span></td>
+<td><span id="deal-score-18">Closed: Overpriced (31.1% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/brise-audio-ibuki-le-with-orochi-ultimate-cable.114690/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-17" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="17" data-source="headfi" ></td>
+<tr id="row-19" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="19" data-source="headfi" ></td>
 <td>2026-08-28</td>
 <td>$6,400</td>
 <td><span class="pill">closed</span></td>
@@ -1243,12 +1275,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>sanhnguyen97s</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-17">Closed: Fair (2.4% above market)</span></td>
+<td><span id="deal-score-19">Closed: Fair (3.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/brise-audio-ibuki-le.114593/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-18" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="18" data-source="headfi" ></td>
+<tr id="row-20" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="20" data-source="headfi" ></td>
 <td>2026-08-27</td>
 <td>$6,400</td>
 <td><span class="pill">active</span></td>
@@ -1259,11 +1291,11 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>So11rek</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-18">Fair (2.4% above market)</span></td>
+<td><span id="deal-score-20">Fair (3.6% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/brise-audio-ibuki-le.114526/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-19" data-source="reddit" class="listing-row excluded">
+<tr id="row-21" data-source="reddit" class="listing-row excluded">
 <td></td>
 <td>2026-08-20</td>
 <td></td>
@@ -1275,12 +1307,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>Amazing-Review6032</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-19">N/A</span></td>
+<td><span id="deal-score-21">N/A</span></td>
 <td><a href="https://www.reddit.com/r/AVexchange/comments/1vtqz4y/wts_usmd_h_brise_audio_ibuki_le_w_paypal/#item-1" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-20" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="20" data-source="headfi" ></td>
+<tr id="row-22" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="22" data-source="headfi" ></td>
 <td>2026-08-20</td>
 <td>$6,500</td>
 <td><span class="pill">closed</span></td>
@@ -1291,12 +1323,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>sanhnguyen97s</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-20">Closed: Fair (4.0% above market)</span></td>
+<td><span id="deal-score-22">Closed: Fair (5.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/brise-audio-ibuki-le.114211/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-21" data-source="headfi" class="listing-row excluded">
-<td><input type="checkbox" class="row-toggle" data-row-id="21" data-source="headfi" ></td>
+<tr id="row-23" data-source="headfi" class="listing-row excluded">
+<td><input type="checkbox" class="row-toggle" data-row-id="23" data-source="headfi" ></td>
 <td>2026-08-15</td>
 <td>$6,600</td>
 <td><span class="pill">closed</span></td>
@@ -1307,12 +1339,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>jwilliamhurst</td>
 <td>1</td>
 <td>0</td>
-<td><span id="deal-score-21">Closed: Fair (5.6% above market)</span></td>
+<td><span id="deal-score-23">Closed: Fair (6.8% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/interest-check-ibuki-le.113947/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-22" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="22" data-source="headfi" checked></td>
+<tr id="row-24" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="24" data-source="headfi" checked></td>
 <td>2026-08-15</td>
 <td>$6,500</td>
 <td><span class="pill">closed</span></td>
@@ -1323,12 +1355,12 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>jwilliamhurst</td>
 <td>0</td>
 <td>1</td>
-<td><span id="deal-score-22">Closed: Fair (4.0% above market)</span></td>
+<td><span id="deal-score-24">Closed: Fair (5.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/ibuki-le.113947/" target="_blank">source</a></td>
 </tr>
 
-<tr id="row-23" data-source="headfi" class="listing-row included">
-<td><input type="checkbox" class="row-toggle" data-row-id="23" data-source="headfi" checked></td>
+<tr id="row-25" data-source="headfi" class="listing-row included">
+<td><input type="checkbox" class="row-toggle" data-row-id="25" data-source="headfi" checked></td>
 <td>2026-08-09</td>
 <td>$6,499</td>
 <td><span class="pill">closed</span></td>
@@ -1339,7 +1371,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 <td>jfleysh</td>
 <td>0</td>
 <td>0</td>
-<td><span id="deal-score-23">Closed: Fair (4.0% above market)</span></td>
+<td><span id="deal-score-25">Closed: Fair (5.2% above market)</span></td>
 <td><a href="https://www.head-fi.org/classifieds/brise-audio-ibuki-le.113597/" target="_blank">source</a></td>
 </tr>
 
@@ -1361,7 +1393,7 @@ score backgrounds cannot be lost to broader table/cell styling.
 </aside>
 
 <script>
-const allRows = [{"row_id": 0, "title": "Brise Audio IBUKI SE", "raw_text": "Brise Audio IBUKI SE Listing ID: 118903 For Sale 6,100.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere I'm selling my Ibuki in excellent condition. As I've discovered, Ibuki units can differ slightly in sound. This particular unit has very good coherence and is one of the better-sounding versions I've tried. This is my second attempt at owning... Listed by: So11rek (17) Listed: 2026-11-19", "seller_username": "So11rek", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-se.118903/", "price_num": 6100.0, "date_ms": 1795046400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active"}, {"row_id": 1, "title": "Brise Audio IBUKI in Excellent Condition", "raw_text": "Brise Audio IBUKI in Excellent Condition Listing ID: 118829 For Sale 1.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America For sale is a gem \ud83d\udc8e - Brise Audio IBUKI in Excellent Condition. Comes with everything - all accessories and box. Works fantastic and I have thoroughly enjoyed my time with IBUKI. Terms: I plan to either overnight or 2-day UPS Air (latest). I... Listed by: KevinS2020 (179) Listed: 2026-11-17 Last edited: 2026-11-17", "seller_username": "KevinS2020", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-in-excellent-condition.118829/", "price_num": null, "date_ms": 1794873600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 2, "title": "Brise Audio IBUKI", "raw_text": "Price dropped for the Brise Audio IBUKI to $6195 shipped and will trade for a mint Meze Elite Tungsten + cash. Thanks\ud83d\ude42\nhttps://www.reddit.com/r/AVexchange/comments/1xn4c2l/wtsusgah_brise_audio_ibuki_w_paypal/\nsubmitted by /u/fytize\n[link] [comments]", "seller_username": "fytize", "url": "https://www.reddit.com/r/AVexchange/comments/1xw4bp2/wtsusgah_brise_audio_ibuki_w_paypal/#item-1", "price_num": 6195.0, "date_ms": 1794668105000, "listing_status": "active", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len75513:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 3, "title": "Brise Audio IBUKI", "raw_text": "Price dropped for the Brise Audio IBUKI to $6225 shipped and will trade for a mint Meze Elite Tungsten + cash. Thanks\ud83d\ude42\nhttps://www.reddit.com/r/AVexchange/comments/1xn4c2l/wtsusgah_brise_audio_ibuki_w_paypal/\nsubmitted by /u/fytize\n[link] [comments]", "seller_username": "fytize", "url": "https://www.reddit.com/r/AVexchange/comments/1xr5wmr/wtsusgah_brise_audio_ibuki_w_paypal/#item-1", "price_num": 6225.0, "date_ms": 1794163959000, "listing_status": "active", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len71487:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_reddit_deferred_retry | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 4, "title": "Brise Audio IBUKI", "raw_text": "I have my Brise Audio IBUKI Standard Edition in mint condition up for sale. The IEMs have less than 10 hours on them and sound amazing--definitely end-game material! All the accessories and original packaging will be included. Asking $6295 shipped. Paypal G&S add 3.5%.\nPlease respond to thread before messaging me. Thanks!\nhttps://preview.redd.it/i3y2qyt0kgzh1.jpeg?width=3000&format=pjpg&auto=webp&s=4cbcbeee49012871b5908d3c392fa4083455f95a\nhttps://preview.redd.it/ad0ga0u0kgzh1.jpeg?width=3000&format=pjpg&auto=webp&s=bc46811f4415448a3d5436a8a5d8fb22c716affd\nhttps://preview.redd.it/i7y9uyt0kgzh1.jpeg?width=3000&format=pjpg&auto=webp&s=acc41f4c31a7ba7c92f3dc797a1c2c2780ff1d33\nsubmitted by /u/fytize\n[link] [comments]", "seller_username": "fytize", "url": "https://www.reddit.com/r/AVexchange/comments/1xn4c2l/wtsusgah_brise_audio_ibuki_w_paypal/#item-1", "price_num": 6295.0, "date_ms": 1793738012000, "listing_status": "active", "condition_text": "up for sale", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len112855:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 5, "title": "(PD) Brise Audio IBUKI", "raw_text": "(PD) Brise Audio IBUKI Listing ID: 118108 For Sale / Trade 6,195.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America I'm the original owner and have my Brise Audio IBUKI Standard Edition in mint condition up for sale. The IEMs have less than 10 hours on them and sound amazing--definitely end-game material! All the accessories and original packaging will be... Listed by: fytize (7) Listed: 2026-11-03 Last edited: 2026-11-15", "seller_username": "fytize", "url": "https://www.head-fi.org/classifieds/pd-brise-audio-ibuki.118108/", "price_num": 6195.0, "date_ms": 1793664000000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged"}, {"row_id": 6, "title": "Mint Brise Audio IBUKI SE", "raw_text": "Mint Brise Audio IBUKI SE Listing ID: 118108 For Sale / Trade 5,999.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America II'm the original owner of the Brise Audio IBUKI Standard Edition in mint condition that's up for sale. The IEMs are the best sounding I've heard so far! All the accessories and original packaging will be included. Asking $5999 shipped FF. You... Listed by: fytize (7) Listed: 2026-11-03 Last edited: 2026-11-19", "seller_username": "fytize", "url": "https://www.head-fi.org/classifieds/mint-brise-audio-ibuki-se.118108/", "price_num": 5999.0, "date_ms": 1793664000000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 7, "title": "Brise Audio IBUKI", "raw_text": "Brise Audio IBUKI Listing ID: 118108 For Sale 6,295.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America I have my Brise Audio IBUKI Standard Edition in mint condition up for sale. The IEMs have less than 10 hours on them and sound amazing--definitely end-game material! All the accessories and original packaging will be included. Shipping is... Listed by: fytize (7) Listed: 2026-11-03", "seller_username": "fytize", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki.118108/", "price_num": 6295.0, "date_ms": 1793664000000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 8, "title": "***SOLD*** Brise Audio Ibuki Launch Edition", "raw_text": "***SOLD*** Brise Audio Ibuki Launch Edition Listing ID: 117052 For Sale 0.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America ***SOLD*** I\u2019m selling my Brise Audio Ibuki Launch Edition. This IEM needs no introduction. IEM is in excellent condition as I baby all my gear. Included are all the original accessories and never used any of the accessories (aside from the... Listed by: Aetherhole (68) Listed: 2026-10-14 Last edited: 2026-10-14", "seller_username": "Aetherhole", "url": "https://www.head-fi.org/classifieds/sold-brise-audio-ibuki-launch-edition.117052/", "price_num": null, "date_ms": 1791936000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 9, "title": "Brise Audio Ibuki LE", "raw_text": "I'm selling a very good condition Brise Audio Ibuki LE. It comes with every acessories in the original box.\nPrice: $6350 Shipped within the U.S, Paypal F&F or G&S(+3.5%)\nFeel free to cmt before pm me if you have any question. Thank you.\nsubmitted by /u/Amazing-Review6032\n[link] [comments]", "seller_username": "Amazing-Review6032", "url": "https://www.reddit.com/r/AVexchange/comments/1x46ics/wts_usmd_h_brise_audio_ibuki_le_w_paypal/#item-1", "price_num": 6350.0, "date_ms": 1791822524000, "listing_status": "closed", "condition_text": "brise audio ibuki le", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 10, "title": "Brise Audio Ibuki LE", "raw_text": "Brise Audio Ibuki LE Listing ID: 116935 For Sale 6,350.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America I'm selling a very good condition Brise Audio Ibuki LE. It comes with every accessories in the original box. Price does not include Paypal fee, and I will cover ground shipping in the U.S Feel free to pm me if you have any question. Thank you. Listed by: sanhnguyen97s (26) Listed: 2026-10-12 Last edited: 2026-10-12", "seller_username": "sanhnguyen97s", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-le.116935/", "price_num": 6350.0, "date_ms": 1791763200000, "listing_status": "closed", "condition_text": "like new, excellent, good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 11, "title": "WTT: HEX + SS4 for Ibuki", "raw_text": "WTT: HEX + SS4 for Ibuki Listing ID: 116772 For Sale / Trade 12,345.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere WTT: HEX + SS4 for Ibuki + Wata + Murakumo IC or equivalent (open to offers) Listed by: MedicineMan05 (8) Listed: 2026-10-09 Last edited: 2026-10-09", "seller_username": "MedicineMan05", "url": "https://www.head-fi.org/classifieds/wtt-hex-ss4-for-ibuki.116772/", "price_num": null, "date_ms": 1791504000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 12, "title": "Brise audio Ibuki - Mint", "raw_text": "I\u2019m selling my Brise Audio IBUKI Standard Edition in absolutely mint condition.\nI purchased it from the last batch and received it on August 13th. It has been used very carefully and kept in a smoke-free and pet-free environment.\nThe next batch will ship in early December, so catch it with save some money!\nAs you can see in the photos, everything has been carefully repacked just as it was when I first received it. It comes with all the boxes accessories.\n$6150 net to me including shipping on CONUS. Paypal G&S will be add 3.5%. And no trade.\nThank you for looking, and please feel free to reach out if you have any questions!\nsubmitted by /u/PossibilityTime6615\n[link] [comments]", "seller_username": "PossibilityTime6615", "url": "https://www.reddit.com/r/AVexchange/comments/1x0zi9v/wts_ustx_h_brise_audio_ibuki_mint_w_paypal/#item-1", "price_num": 6150.0, "date_ms": 1791485996000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 13, "title": "Brise audio Ibuki - Mint", "raw_text": "Brise audio Ibuki - Mint Listing ID: 116512 For Sale 6,150.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere I\u2019m selling my Brise Audio IBUKI Standard Edition in absolutely mint condition. I purchased it from the last batch and received it on August 13th. It has been used very carefully and kept in a smoke-free and pet-free environment. The next batch... Listed by: IEMLover02 (12) Listed: 2026-10-04 Last edited: 2026-10-08", "seller_username": "IEMLover02", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-mint.116512/", "price_num": 6150.0, "date_ms": 1791072000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 14, "title": "Ibuki for Chronicle", "raw_text": "Ibuki for Chronicle Listing ID: 116116 For Trade 9,999.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America I\u2019m looking to trade my brise audio Ibuki for a noble audio Chronicle, or I'm open to buying a Chronicle. If you have one and are interested in either option, please send me a message. Brise audio Ibuki is absolute mint condition with all boxes... Listed by: IEMLover02 (11) Listed: 2026-09-26 Last edited: 2026-09-26", "seller_username": "IEMLover02", "url": "https://www.head-fi.org/classifieds/ibuki-for-chronicle.116116/", "price_num": 9999.0, "date_ms": 1790380800000, "listing_status": "unknown", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 15, "title": "Brise Audio Ibuki LE", "raw_text": "Hello everyone,\nI\u2019m selling my Brise Audio Ibuki LE. It is in flawless condition and comes with all original accessories and everything included in the box.\nThis is honestly one of the best IEMs I\u2019ve ever heard. In fact, I\u2019ve actually bought the Ibuki twice, which should say something about how much I enjoy it. Unfortunately, I\u2019m a little tight on money right now, so I have to let it go.\nPrice: $6450 Paypal F&F or G&S(+3.5%). I will cover ground shipping within the U.S.\nThank you for looking!\nsubmitted by /u/Amazing-Review6032\n[link] [comments]", "seller_username": "Amazing-Review6032", "url": "https://www.reddit.com/r/AVexchange/comments/1w3g4s5/wts_usmd_h_brise_audio_ibuki_le_w_paypal/#item-1", "price_num": 6450.0, "date_ms": 1788188012000, "listing_status": "stale", "condition_text": "and comes with all original accessories and everything included in the box", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_stale_unsold_60d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 16, "title": "Brise Audio Ibuki LE with Orochi Ultimate Cable", "raw_text": "Brise Audio Ibuki LE with Orochi Ultimate Cable Listing ID: 114690 For Sale 8,100.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America Listing Brise Audio Ibuki with Orochi Utlimate cable, original owner. Purchase bundle to save or buy either. Orochi lifts mid range, adds density to vocals and more texture. No trades. Paypal transaction with insured shipping within North... Listed by: tfenton02 (36) Listed: 2026-08-30 Last edited: 2026-08-30", "seller_username": "tfenton02", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-le-with-orochi-ultimate-cable.114690/", "price_num": 8100.0, "date_ms": 1788048000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 17, "title": "Brise Audio Ibuki LE", "raw_text": "Brise Audio Ibuki LE Listing ID: 114593 For Sale 6,400.00 USD Condition Excellent/Like New Negotiability Firm Ships To North America Hello everyone, I\u2019m selling my Brise Audio Ibuki LE. It is in flawless condition and comes with all original accessories and everything included in the box. This is honestly one of the best IEMs I\u2019ve ever heard. In fact, I\u2019ve actually bought... Listed by: sanhnguyen97s (15) Listed: 2026-08-28 Last edited: 2026-08-31", "seller_username": "sanhnguyen97s", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-le.114593/", "price_num": 6400.0, "date_ms": 1787875200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 18, "title": "Brise Audio IBUKI LE", "raw_text": "Brise Audio IBUKI LE Listing ID: 114526 For Sale 6,400.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere Selling my IBUKI LE, only one week old. I\u2019m the original owner and bought them brand new. Full package. Shipping is included in the price. Listed by: So11rek (16) Listed: 2026-08-27", "seller_username": "So11rek", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-le.114526/", "price_num": 6400.0, "date_ms": 1787788800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 19, "title": "Brise Audio Ibuki LE", "raw_text": "I'm selling a flawless condition Ibuki LE. It has the best bass in the world, even better than Hex and Fugaku imo. Comes with every acessories in the box.\nPrice: SOLD\nThank you.\nsubmitted by /u/Amazing-Review6032\n[link] [comments]", "seller_username": "Amazing-Review6032", "url": "https://www.reddit.com/r/AVexchange/comments/1vtqz4y/wts_usmd_h_brise_audio_ibuki_le_w_paypal/#item-1", "price_num": null, "date_ms": 1787249049000, "listing_status": "closed", "condition_text": "ibuki le", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_title_or_description_sold_closed | no_price_unchecked | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 20, "title": "Brise Audio Ibuki LE", "raw_text": "Brise Audio Ibuki LE Listing ID: 114211 For Sale 6,500.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America I\u2019m selling a flawless-condition Ibuki LE. It has the best bass in the world, even better than the Hex and Fugaku, IMO. It comes with all the original accessories in the box. The price does not include PayPal fees, and I\u2019ll cover ground shipping... Listed by: sanhnguyen97s (13) Listed: 2026-08-20 Last edited: 2026-08-20", "seller_username": "sanhnguyen97s", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-le.114211/", "price_num": 6500.0, "date_ms": 1787184000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 21, "title": "Interest check Ibuki Le", "raw_text": "Interest check Ibuki Le Listing ID: 113947 For Sale 6,600.00 USD Condition Excellent/Like New Negotiability Firm Ships To AnywhereNorth America Interest check on an Ibuki LE bought brand new from Musicteck. Let me know if you are interested. Price is net to me. Thanks for looking and please don\u2019t hesitate to ask questions Ships for free in USA with all accessories and box as new. Listed by: jwilliamhurst (133) Listed: 2026-08-15", "seller_username": "jwilliamhurst", "url": "https://www.head-fi.org/classifieds/interest-check-ibuki-le.113947/", "price_num": 6600.0, "date_ms": 1786752000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 22, "title": "Ibuki Le", "raw_text": "Ibuki Le Listing ID: 113947 For Sale 6,500.00 USD Condition Excellent/Like New Negotiability Firm Ships To AnywhereNorth America Ibuki LE bought brand new from Musicteck. Let me know if you are interested. Price is net to me. Thanks for looking and please don\u2019t hesitate to ask questions Ships for free in USA with all accessories and box as new. Listed by: jwilliamhurst (133) Listed: 2026-08-15 Last edited: 2026-08-23", "seller_username": "jwilliamhurst", "url": "https://www.head-fi.org/classifieds/ibuki-le.113947/", "price_num": 6500.0, "date_ms": 1786752000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 23, "title": "Brise Audio Ibuki (LE)", "raw_text": "Brise Audio Ibuki (LE) Listing ID: 113597 For Sale 6,499.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Selling pristine condition Brise Audio Ibuki (Limited Edition). Price is net. Comes with everything stock. Not first owner but I do have receipt etc for warranty. No trades please. Will ship within 24 hours of purchase. Thank you! Listed by: jfleysh (69) Listed: 2026-08-09 Last edited: 2026-08-09", "seller_username": "jfleysh", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-le.113597/", "price_num": 6499.0, "date_ms": 1786233600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}];
+const allRows = [{"row_id": 0, "title": "Brise Ibuki Limited Edition", "raw_text": "Brise Ibuki Limited Edition Listing ID: 119163 For Sale 5,900.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere There is no damage on the iems or cable and will be shipped with the original box. Prices includes PP fees and S&H in CONUS. If international, please reach out to me for the difference in price. Listed by: timeslip (99) Listed: 2026-11-23", "seller_username": "timeslip", "url": "https://www.head-fi.org/classifieds/brise-ibuki-limited-edition.119163/", "price_num": 5900.0, "date_ms": 1795392000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 1, "title": "Brise Audio IBUKI SE (PD)", "raw_text": "Brise Audio IBUKI SE (PD) Listing ID: 118903 For Sale 5,700.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere I'm selling my Ibuki in excellent condition. As I've discovered, Ibuki units can differ slightly in sound. This particular unit has very good coherence and is one of the better-sounding versions I've tried. This is my second attempt at owning... Listed by: So11rek (17) Listed: 2026-11-19 Last edited: 2026-11-25", "seller_username": "So11rek", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-se-pd.118903/", "price_num": 5700.0, "date_ms": 1795046400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 2, "title": "Brise Audio IBUKI SE", "raw_text": "Brise Audio IBUKI SE Listing ID: 118903 For Sale 6,100.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere I'm selling my Ibuki in excellent condition. As I've discovered, Ibuki units can differ slightly in sound. This particular unit has very good coherence and is one of the better-sounding versions I've tried. This is my second attempt at owning... Listed by: So11rek (17) Listed: 2026-11-19", "seller_username": "So11rek", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-se.118903/", "price_num": 6100.0, "date_ms": 1795046400000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 3, "title": "Brise Audio IBUKI in Excellent Condition", "raw_text": "Brise Audio IBUKI in Excellent Condition Listing ID: 118829 For Sale 1.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America For sale is a gem \ud83d\udc8e - Brise Audio IBUKI in Excellent Condition. Comes with everything - all accessories and box. Works fantastic and I have thoroughly enjoyed my time with IBUKI. Terms: I plan to either overnight or 2-day UPS Air (latest). I... Listed by: KevinS2020 (179) Listed: 2026-11-17 Last edited: 2026-11-17", "seller_username": "KevinS2020", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-in-excellent-condition.118829/", "price_num": null, "date_ms": 1794873600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 4, "title": "Brise Audio IBUKI", "raw_text": "Price dropped for the Brise Audio IBUKI to $6195 shipped and will trade for a mint Meze Elite Tungsten + cash. Thanks\ud83d\ude42\nhttps://www.reddit.com/r/AVexchange/comments/1xn4c2l/wtsusgah_brise_audio_ibuki_w_paypal/\nsubmitted by /u/fytize\n[link] [comments]", "seller_username": "fytize", "url": "https://www.reddit.com/r/AVexchange/comments/1xw4bp2/wtsusgah_brise_audio_ibuki_w_paypal/#item-1", "price_num": 6195.0, "date_ms": 1794668105000, "listing_status": "active", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len75513:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active"}, {"row_id": 5, "title": "Brise Audio IBUKI", "raw_text": "Price dropped for the Brise Audio IBUKI to $6225 shipped and will trade for a mint Meze Elite Tungsten + cash. Thanks\ud83d\ude42\nhttps://www.reddit.com/r/AVexchange/comments/1xn4c2l/wtsusgah_brise_audio_ibuki_w_paypal/\nsubmitted by /u/fytize\n[link] [comments]", "seller_username": "fytize", "url": "https://www.reddit.com/r/AVexchange/comments/1xr5wmr/wtsusgah_brise_audio_ibuki_w_paypal/#item-1", "price_num": 6225.0, "date_ms": 1794163959000, "listing_status": "active", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len71487:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_reddit_deferred_retry | active_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 6, "title": "Brise Audio IBUKI", "raw_text": "I have my Brise Audio IBUKI Standard Edition in mint condition up for sale. The IEMs have less than 10 hours on them and sound amazing--definitely end-game material! All the accessories and original packaging will be included. Asking $6295 shipped. Paypal G&S add 3.5%.\nPlease respond to thread before messaging me. Thanks!\nhttps://preview.redd.it/i3y2qyt0kgzh1.jpeg?width=3000&format=pjpg&auto=webp&s=4cbcbeee49012871b5908d3c392fa4083455f95a\nhttps://preview.redd.it/ad0ga0u0kgzh1.jpeg?width=3000&format=pjpg&auto=webp&s=bc46811f4415448a3d5436a8a5d8fb22c716affd\nhttps://preview.redd.it/i7y9uyt0kgzh1.jpeg?width=3000&format=pjpg&auto=webp&s=acc41f4c31a7ba7c92f3dc797a1c2c2780ff1d33\nsubmitted by /u/fytize\n[link] [comments]", "seller_username": "fytize", "url": "https://www.reddit.com/r/AVexchange/comments/1xn4c2l/wtsusgah_brise_audio_ibuki_w_paypal/#item-1", "price_num": 6295.0, "date_ms": 1793738012000, "listing_status": "active", "condition_text": "up for sale", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "reddit_no_confirmed_sale_signal_rss=None:len0_pages=browser:old.reddit.com:200:len112855:target=1:closed=0_http_skipped=1_browser=1", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_reddit_deferred_retry | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 7, "title": "(PD) Brise Audio IBUKI", "raw_text": "(PD) Brise Audio IBUKI Listing ID: 118108 For Sale / Trade 6,195.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America I'm the original owner and have my Brise Audio IBUKI Standard Edition in mint condition up for sale. The IEMs have less than 10 hours on them and sound amazing--definitely end-game material! All the accessories and original packaging will be... Listed by: fytize (7) Listed: 2026-11-03 Last edited: 2026-11-15", "seller_username": "fytize", "url": "https://www.head-fi.org/classifieds/pd-brise-audio-ibuki.118108/", "price_num": 6195.0, "date_ms": 1793664000000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged"}, {"row_id": 8, "title": "Mint Brise Audio IBUKI SE", "raw_text": "Mint Brise Audio IBUKI SE Listing ID: 118108 For Sale / Trade 5,999.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America II'm the original owner of the Brise Audio IBUKI Standard Edition in mint condition that's up for sale. The IEMs are the best sounding I've heard so far! All the accessories and original packaging will be included. Asking $5999 shipped FF. You... Listed by: fytize (7) Listed: 2026-11-03 Last edited: 2026-11-19", "seller_username": "fytize", "url": "https://www.head-fi.org/classifieds/mint-brise-audio-ibuki-se.118108/", "price_num": 5999.0, "date_ms": 1793664000000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 9, "title": "Brise Audio IBUKI", "raw_text": "Brise Audio IBUKI Listing ID: 118108 For Sale 6,295.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America I have my Brise Audio IBUKI Standard Edition in mint condition up for sale. The IEMs have less than 10 hours on them and sound amazing--definitely end-game material! All the accessories and original packaging will be included. Shipping is... Listed by: fytize (7) Listed: 2026-11-03", "seller_username": "fytize", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki.118108/", "price_num": 6295.0, "date_ms": 1793664000000, "listing_status": "active", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 10, "title": "***SOLD*** Brise Audio Ibuki Launch Edition", "raw_text": "***SOLD*** Brise Audio Ibuki Launch Edition Listing ID: 117052 For Sale 0.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America ***SOLD*** I\u2019m selling my Brise Audio Ibuki Launch Edition. This IEM needs no introduction. IEM is in excellent condition as I baby all my gear. Included are all the original accessories and never used any of the accessories (aside from the... Listed by: Aetherhole (68) Listed: 2026-10-14 Last edited: 2026-10-14", "seller_username": "Aetherhole", "url": "https://www.head-fi.org/classifieds/sold-brise-audio-ibuki-launch-edition.117052/", "price_num": null, "date_ms": 1791936000000, "listing_status": "closed", "condition_text": "like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 11, "title": "Brise Audio Ibuki LE", "raw_text": "I'm selling a very good condition Brise Audio Ibuki LE. It comes with every acessories in the original box.\nPrice: $6350 Shipped within the U.S, Paypal F&F or G&S(+3.5%)\nFeel free to cmt before pm me if you have any question. Thank you.\nsubmitted by /u/Amazing-Review6032\n[link] [comments]", "seller_username": "Amazing-Review6032", "url": "https://www.reddit.com/r/AVexchange/comments/1x46ics/wts_usmd_h_brise_audio_ibuki_le_w_paypal/#item-1", "price_num": 6350.0, "date_ms": 1791822524000, "listing_status": "closed", "condition_text": "brise audio ibuki le", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 12, "title": "Brise Audio Ibuki LE", "raw_text": "Brise Audio Ibuki LE Listing ID: 116935 For Sale 6,350.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America I'm selling a very good condition Brise Audio Ibuki LE. It comes with every accessories in the original box. Price does not include Paypal fee, and I will cover ground shipping in the U.S Feel free to pm me if you have any question. Thank you. Listed by: sanhnguyen97s (26) Listed: 2026-10-12 Last edited: 2026-10-12", "seller_username": "sanhnguyen97s", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-le.116935/", "price_num": 6350.0, "date_ms": 1791763200000, "listing_status": "closed", "condition_text": "like new, excellent, good condition", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 13, "title": "WTT: HEX + SS4 for Ibuki", "raw_text": "WTT: HEX + SS4 for Ibuki Listing ID: 116772 For Sale / Trade 12,345.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To Anywhere WTT: HEX + SS4 for Ibuki + Wata + Murakumo IC or equivalent (open to offers) Listed by: MedicineMan05 (8) Listed: 2026-10-09 Last edited: 2026-10-09", "seller_username": "MedicineMan05", "url": "https://www.head-fi.org/classifieds/wtt-hex-ss4-for-ibuki.116772/", "price_num": null, "date_ms": 1791504000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 14, "title": "Brise audio Ibuki - Mint", "raw_text": "I\u2019m selling my Brise Audio IBUKI Standard Edition in absolutely mint condition.\nI purchased it from the last batch and received it on August 13th. It has been used very carefully and kept in a smoke-free and pet-free environment.\nThe next batch will ship in early December, so catch it with save some money!\nAs you can see in the photos, everything has been carefully repacked just as it was when I first received it. It comes with all the boxes accessories.\n$6150 net to me including shipping on CONUS. Paypal G&S will be add 3.5%. And no trade.\nThank you for looking, and please feel free to reach out if you have any questions!\nsubmitted by /u/PossibilityTime6615\n[link] [comments]", "seller_username": "PossibilityTime6615", "url": "https://www.reddit.com/r/AVexchange/comments/1x0zi9v/wts_ustx_h_brise_audio_ibuki_mint_w_paypal/#item-1", "price_num": 6150.0, "date_ms": 1791485996000, "listing_status": "closed", "condition_text": "mint", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from source check", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_confirmed_sold_from_reddit_page_flair_or_title"}, {"row_id": 15, "title": "Brise audio Ibuki - Mint", "raw_text": "Brise audio Ibuki - Mint Listing ID: 116512 For Sale 6,150.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere I\u2019m selling my Brise Audio IBUKI Standard Edition in absolutely mint condition. I purchased it from the last batch and received it on August 13th. It has been used very carefully and kept in a smoke-free and pet-free environment. The next batch... Listed by: IEMLover02 (12) Listed: 2026-10-04 Last edited: 2026-10-08", "seller_username": "IEMLover02", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-mint.116512/", "price_num": 6150.0, "date_ms": 1791072000000, "listing_status": "closed", "condition_text": "mint, like new, excellent, used", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "confirmed_sold", "status_comment": "confirmed sold from Head-Fi extension source check", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_confirmed_sold_from_headfi_title_prefix"}, {"row_id": 16, "title": "Ibuki for Chronicle", "raw_text": "Ibuki for Chronicle Listing ID: 116116 For Trade 9,999.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To United States Of America I\u2019m looking to trade my brise audio Ibuki for a noble audio Chronicle, or I'm open to buying a Chronicle. If you have one and are interested in either option, please send me a message. Brise audio Ibuki is absolute mint condition with all boxes... Listed by: IEMLover02 (11) Listed: 2026-09-26 Last edited: 2026-09-26", "seller_username": "IEMLover02", "url": "https://www.head-fi.org/classifieds/ibuki-for-chronicle.116116/", "price_num": 9999.0, "date_ms": 1790380800000, "listing_status": "unknown", "condition_text": "mint, like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 17, "title": "Brise Audio Ibuki LE", "raw_text": "Hello everyone,\nI\u2019m selling my Brise Audio Ibuki LE. It is in flawless condition and comes with all original accessories and everything included in the box.\nThis is honestly one of the best IEMs I\u2019ve ever heard. In fact, I\u2019ve actually bought the Ibuki twice, which should say something about how much I enjoy it. Unfortunately, I\u2019m a little tight on money right now, so I have to let it go.\nPrice: $6450 Paypal F&F or G&S(+3.5%). I will cover ground shipping within the U.S.\nThank you for looking!\nsubmitted by /u/Amazing-Review6032\n[link] [comments]", "seller_username": "Amazing-Review6032", "url": "https://www.reddit.com/r/AVexchange/comments/1w3g4s5/wts_usmd_h_brise_audio_ibuki_le_w_paypal/#item-1", "price_num": 6450.0, "date_ms": 1788188012000, "listing_status": "stale", "condition_text": "and comes with all original accessories and everything included in the box", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "stale_unsold_60d", "status_comment": "stale unsold after 60d; not counted as a sale", "notes": "reddit_rss_parser_v18_stock_cable_price_fix | reddit_unconfirmed_sale_unchecked | active_status_checker_verified_or_left_active | active_status_checker_stale_unsold_60d_lister_never_updated | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 18, "title": "Brise Audio Ibuki LE with Orochi Ultimate Cable", "raw_text": "Brise Audio Ibuki LE with Orochi Ultimate Cable Listing ID: 114690 For Sale 8,100.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America Listing Brise Audio Ibuki with Orochi Utlimate cable, original owner. Purchase bundle to save or buy either. Orochi lifts mid range, adds density to vocals and more texture. No trades. Paypal transaction with insured shipping within North... Listed by: tfenton02 (36) Listed: 2026-08-30 Last edited: 2026-08-30", "seller_username": "tfenton02", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-le-with-orochi-ultimate-cable.114690/", "price_num": 8100.0, "date_ms": 1788048000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 1, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 19, "title": "Brise Audio Ibuki LE", "raw_text": "Brise Audio Ibuki LE Listing ID: 114593 For Sale 6,400.00 USD Condition Excellent/Like New Negotiability Firm Ships To North America Hello everyone, I\u2019m selling my Brise Audio Ibuki LE. It is in flawless condition and comes with all original accessories and everything included in the box. This is honestly one of the best IEMs I\u2019ve ever heard. In fact, I\u2019ve actually bought... Listed by: sanhnguyen97s (15) Listed: 2026-08-28 Last edited: 2026-08-31", "seller_username": "sanhnguyen97s", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-le.114593/", "price_num": 6400.0, "date_ms": 1787875200000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_classified_status_line_active", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 20, "title": "Brise Audio IBUKI LE", "raw_text": "Brise Audio IBUKI LE Listing ID: 114526 For Sale 6,400.00 USD Condition Excellent/Like New Negotiability Firm Ships To Anywhere Selling my IBUKI LE, only one week old. I\u2019m the original owner and bought them brand new. Full package. Shipping is included in the price. Listed by: So11rek (16) Listed: 2026-08-27", "seller_username": "So11rek", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-le.114526/", "price_num": 6400.0, "date_ms": 1787788800000, "listing_status": "active", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "headfi_extension_url_mismatch_expected_listing_left_unchanged:headfi_extension_url_mismatch_left_unchanged", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | headfi_extension_status_checker_verified_or_left_active | headfi_extension_status_checker_unclear_left_unchanged | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 21, "title": "Brise Audio Ibuki LE", "raw_text": "I'm selling a flawless condition Ibuki LE. It has the best bass in the world, even better than Hex and Fugaku imo. Comes with every acessories in the box.\nPrice: SOLD\nThank you.\nsubmitted by /u/Amazing-Review6032\n[link] [comments]", "seller_username": "Amazing-Review6032", "url": "https://www.reddit.com/r/AVexchange/comments/1vtqz4y/wts_usmd_h_brise_audio_ibuki_le_w_paypal/#item-1", "price_num": null, "date_ms": 1787249049000, "listing_status": "closed", "condition_text": "ibuki le", "platform": "reddit_rss", "source_key": "reddit", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "reddit_rss_parser_v17_rss_endpoint_validation | reddit_title_or_description_sold_closed | no_price_unchecked | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 22, "title": "Brise Audio Ibuki LE", "raw_text": "Brise Audio Ibuki LE Listing ID: 114211 For Sale 6,500.00 USD Condition Excellent/Like New Negotiability Or Best Offer Ships To North America I\u2019m selling a flawless-condition Ibuki LE. It has the best bass in the world, even better than the Hex and Fugaku, IMO. It comes with all the original accessories in the box. The price does not include PayPal fees, and I\u2019ll cover ground shipping... Listed by: sanhnguyen97s (13) Listed: 2026-08-20 Last edited: 2026-08-20", "seller_username": "sanhnguyen97s", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-le.114211/", "price_num": 6500.0, "date_ms": 1787184000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 23, "title": "Interest check Ibuki Le", "raw_text": "Interest check Ibuki Le Listing ID: 113947 For Sale 6,600.00 USD Condition Excellent/Like New Negotiability Firm Ships To AnywhereNorth America Interest check on an Ibuki LE bought brand new from Musicteck. Let me know if you are interested. Price is net to me. Thanks for looking and please don\u2019t hesitate to ask questions Ships for free in USA with all accessories and box as new. Listed by: jwilliamhurst (133) Listed: 2026-08-15", "seller_username": "jwilliamhurst", "url": "https://www.head-fi.org/classifieds/interest-check-ibuki-le.113947/", "price_num": 6600.0, "date_ms": 1786752000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 1, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1 | auto_repost_duplicate_excluded_keep_latest_120d"}, {"row_id": 24, "title": "Ibuki Le", "raw_text": "Ibuki Le Listing ID: 113947 For Sale 6,500.00 USD Condition Excellent/Like New Negotiability Firm Ships To AnywhereNorth America Ibuki LE bought brand new from Musicteck. Let me know if you are interested. Price is net to me. Thanks for looking and please don\u2019t hesitate to ask questions Ships for free in USA with all accessories and box as new. Listed by: jwilliamhurst (133) Listed: 2026-08-15 Last edited: 2026-08-23", "seller_username": "jwilliamhurst", "url": "https://www.head-fi.org/classifieds/ibuki-le.113947/", "price_num": 6500.0, "date_ms": 1786752000000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}, {"row_id": 25, "title": "Brise Audio Ibuki (LE)", "raw_text": "Brise Audio Ibuki (LE) Listing ID: 113597 For Sale 6,499.00 USD Condition Excellent/Like New Negotiability Firm Ships To United States Of America Selling pristine condition Brise Audio Ibuki (Limited Edition). Price is net. Comes with everything stock. Not first owner but I do have receipt etc for warranty. No trades please. Will ship within 24 hours of purchase. Thank you! Listed by: jfleysh (69) Listed: 2026-08-09 Last edited: 2026-08-09", "seller_username": "jfleysh", "url": "https://www.head-fi.org/classifieds/brise-audio-ibuki-le.113597/", "price_num": 6499.0, "date_ms": 1786233600000, "listing_status": "closed", "condition_text": "like new, excellent", "platform": "headfi", "source_key": "headfi", "is_bundle": 0, "is_possible_duplicate": 0, "closed_reason": "", "status_comment": "", "notes": "safari_category_v5 | safari_ipad_ingest_v1"}];
 const originalMsrpUsd = 6200.0;
 const hasOriginalMsrp = originalMsrpUsd !== null && originalMsrpUsd > 0;
 let currentMarketplaceSource = "both";
